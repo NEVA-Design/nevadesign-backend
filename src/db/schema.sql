@@ -23,7 +23,12 @@ ALTER TABLE profiles
   ADD COLUMN IF NOT EXISTS avatar_url TEXT,
   ADD COLUMN IF NOT EXISTS discord_handle TEXT,
   ADD COLUMN IF NOT EXISTS bio TEXT,
-  ADD COLUMN IF NOT EXISTS notification_prefs JSONB NOT NULL DEFAULT '{}'::jsonb;
+  ADD COLUMN IF NOT EXISTS notification_prefs JSONB NOT NULL DEFAULT '{}'::jsonb,
+  -- Discord lié via notre propre app OAuth (voir src/lib/discord.ts),
+  -- indépendant des "linked identities" Supabase.
+  ADD COLUMN IF NOT EXISTS discord_id TEXT,
+  ADD COLUMN IF NOT EXISTS discord_username TEXT,
+  ADD COLUMN IF NOT EXISTS discord_avatar_url TEXT;
 
 -- ── Credit transactions (journal d'audit) ───────────────────────────────────
 CREATE TABLE IF NOT EXISTS credit_transactions (

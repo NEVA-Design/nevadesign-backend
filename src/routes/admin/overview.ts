@@ -32,7 +32,19 @@ export const adminOverviewRoutes = new Elysia()
   .get('/admin/verify', async ({ request }) => {
     const guard = await requireAdmin(request)
     if (isResponse(guard)) return guard
-    return Response.json({ email: guard.admin.email, source: guard.admin.source })
+
+    const { data: profile } = await guard.auth.supabase
+      .from('profiles')
+      .select('display_name, avatar_url')
+      .eq('id', guard.auth.user.id)
+      .single()
+
+    return Response.json({
+      email: guard.admin.email,
+      source: guard.admin.source,
+      displayName: profile?.display_name || null,
+      avatarUrl: profile?.avatar_url ?? null,
+    })
   })
   .get('/admin/overview', async ({ request }) => {
     const guard = await requireAdmin(request)

@@ -38,7 +38,13 @@ function extractBearerToken(request: Request): string | null {
 export async function getAuth(request: Request): Promise<AuthContext | null> {
   const token = extractBearerToken(request)
   if (!token) return null
+  return getAuthFromToken(token)
+}
 
+// For flows where the token can't travel as a header — e.g. a plain
+// browser navigation kicking off an OAuth redirect — and arrives as a
+// query param instead.
+export async function getAuthFromToken(token: string): Promise<AuthContext | null> {
   const supabase = createUserClient(token)
   const { data, error } = await supabase.auth.getUser(token)
   if (error || !data.user) return null

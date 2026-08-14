@@ -28,6 +28,14 @@ export const env = {
   GEMINI_FALLBACK_MODEL: process.env.GEMINI_FALLBACK_MODEL ?? 'gemini-3.1-flash-image',
   GOOGLE_AI_API_KEY: process.env.GOOGLE_AI_API_KEY ?? '',
 
+  // Discord OAuth — notre propre app Discord Developer Portal, flux géré
+  // entièrement par ce backend (pas de passage par Supabase Auth).
+  DISCORD_CLIENT_ID: process.env.DISCORD_CLIENT_ID ?? '',
+  DISCORD_CLIENT_SECRET: process.env.DISCORD_CLIENT_SECRET ?? '',
+  // Doit correspondre exactement à une "Redirect URI" enregistrée sur
+  // https://discord.com/developers/applications — ex: http://localhost:4000/profile/discord/callback
+  DISCORD_REDIRECT_URI: process.env.DISCORD_REDIRECT_URI ?? '',
+
   STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY ?? '',
   STRIPE_WEBHOOK_SECRET: process.env.STRIPE_WEBHOOK_SECRET ?? '',
   STRIPE_PRICE_CREATOR_MONTHLY: process.env.STRIPE_PRICE_CREATOR_MONTHLY ?? '',

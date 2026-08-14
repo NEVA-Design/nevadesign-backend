@@ -33,9 +33,11 @@ export const adminUsersRoutes = new Elysia({ prefix: '/admin/users' })
       const start = (page - 1) * perPage
       authUsers = filtered.slice(start, start + perPage)
     } else {
-      const { data } = await service.auth.admin.listUsers({ page, perPage })
+      const [{ data }, { count }] = await Promise.all([
+        service.auth.admin.listUsers({ page, perPage }),
+        service.from('profiles').select('*', { count: 'exact', head: true }),
+      ])
       authUsers = data?.users ?? []
-      const { count } = await service.from('profiles').select('*', { count: 'exact', head: true })
       total = count ?? authUsers.length
     }
 
