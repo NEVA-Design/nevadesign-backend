@@ -21,6 +21,11 @@ import { GeminiError } from '../../lib/ai/gemini'
 // LE CLIENT qui déclenche chaque génération (POST /run). Aucun débit de
 // crédits — coût réel affiché, loggé en kind admin_test_*.
 
+// SEULE exception au « zéro logo sur flash » : la variante A/B « ancien
+// chemin » de cette page de test, qui documente précisément ce qu'on a quitté.
+// Aucune route produit n'y touche.
+const LEGACY_FLASH_LOGO_AB = 'gemini-3.1-flash-image'
+
 const REDSIDE_ANSWERS: StyleAnswers = { universe: 'cartel', energie: 85, modernite: 60, couleur: '#E63946' }
 const ETE_ANSWERS: StyleAnswers = { universe: 'ete_plage', energie: 25, modernite: 70, couleur: '#118AB2' }
 
@@ -138,8 +143,8 @@ function buildCases(): TestCase[] {
       titre: 'A/B logo — ancien chemin vs v2',
       attendu: 'Mêmes réponses de wizard (nom complet). v1 : guide JSON brut, aucune référence jointe, « never render this name » dans le prompt. v2 : recette few-shot, références jointes, épellation forcée, OCR gate.',
       variants: [
-        { id: 'v1', label: 'Ancien chemin (run 5)', pipeline: 'v1', kind: 'logo', model: ENGINE_MODELS.proposal, count: 1, prompt: logoV1.prompt, referencesJointes: 0, ocrAttendus: [], aspectRatio: '1:1' },
-        v2Variant('v2', 'Chemin v2 (run 5.2)', 'logo', logoV2, ENGINE_MODELS.proposal),
+        { id: 'v1', label: 'Ancien chemin (run 5)', pipeline: 'v1', kind: 'logo', model: LEGACY_FLASH_LOGO_AB, count: 1, prompt: logoV1.prompt, referencesJointes: 0, ocrAttendus: [], aspectRatio: '1:1' },
+        v2Variant('v2', 'Chemin v2 (run 5.2)', 'logo', logoV2, LEGACY_FLASH_LOGO_AB),
       ],
     },
     {
@@ -156,7 +161,7 @@ function buildCases(): TestCase[] {
       titre: 'Orthographe piège — « L6RYS » ×3',
       attendu: 'Trois propositions en logo et en bannière : zéro faute affichée. L’OCR gate rejette et régénère en silence (max 2 par slot) — les rejets sont comptés ci-dessous.',
       variants: [
-        v2Variant('logo', 'Logo L6RYS ×3', 'logo', l6Logo, ENGINE_MODELS.proposal, 3),
+        v2Variant('logo', 'Logo L6RYS ×3', 'logo', l6Logo, LEGACY_FLASH_LOGO_AB, 3),
         v2Variant('banniere', 'Bannière L6RYS ×3', 'hero', l6Hero, ENGINE_MODELS.scene, 3),
       ],
     },

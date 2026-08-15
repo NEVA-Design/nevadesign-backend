@@ -375,6 +375,55 @@ export function compileLogoPromptV2(opts: {
   }
 }
 
+// ── LOGO v3 : habillage technique du prompt de concept (run 5.3, LOT 1) ──────
+// Le prompt créatif vient du directeur artistique (étage 1). Ici on ne
+// touche PAS à l'intention — on ajoute les contraintes machine : épellation
+// forcée + OCR, fond d'atelier quand le livrable est un PNG détouré, format.
+
+export type LogoConceptCompiled = {
+  prompt: string
+  expectedTexts: string[]
+  background: string | null
+}
+
+export function compileLogoConceptPrompt(opts: {
+  projectName: string
+  conceptPrompt: string
+  type: 'lettre' | 'nom' | 'embleme'
+  fond: 'transparent' | 'plein' | 'degrade_motifs'
+}): LogoConceptCompiled {
+  const name = opts.projectName.trim().toUpperCase()
+  const expectedTexts: string[] = []
+  let spellingBlock = ''
+  if (opts.type === 'nom') {
+    spellingBlock = `SPELLING — NON NEGOTIABLE: the wordmark reads exactly "${name}", spelled ${spellOut(name)}. Triple-check every letter: no missing, doubled, swapped or invented characters. No other words anywhere.`
+    expectedTexts.push(name)
+  } else if (opts.type === 'lettre') {
+    const letter = (name[0] ?? 'N').toUpperCase()
+    spellingBlock = `SPELLING — NON NEGOTIABLE: the ONLY character in the mark is the capital letter "${letter}", drawn once. No other letters, no words.`
+    expectedTexts.push(letter)
+  } else {
+    spellingBlock = 'NO LETTERING: pure pictorial emblem — zero characters of any alphabet anywhere.'
+  }
+
+  // Fond transparent = livrable PNG détouré → atelier gris neutre imposé.
+  // Fond plein / dégradé+motifs : le fond fait partie du logo, décrit par le
+  // concept — on n'impose que la propreté des bords.
+  const background = opts.fond === 'transparent' ? LOGO_BACKGROUND_HEX : null
+  const backgroundBlock = background
+    ? `BACKGROUND — CRITICAL FOR CUTOUT: perfectly flat, uniform, seamless light grey ${background} background. No gradient, no vignette, no texture, no shadow on the background, no reflection under the logo.`
+    : 'BACKGROUND: full-bleed as described in the concept above — it IS part of the logo. Edge-to-edge clean rendering, no vignette added on top.'
+
+  const prompt = [
+    opts.conceptPrompt.trim(),
+    spellingBlock,
+    backgroundBlock,
+    `Square 1:1 composition, mark perfectly centered, professional vector-grade edges${background ? ', the mark must not touch the frame edges — keep 12% padding on all sides' : ''}. No watermark, no signature, no UI.`,
+  ].join('\n\n')
+
+  return { prompt, expectedTexts, background }
+}
+
 // ── Retouche d'un calque héro par instruction courte (run 5.2, LOT 4) ────────
 // « passe le titre en chrome », « scène de nuit », « retire le personnage de
 // gauche » — le rendu actuel voyage en référence, l'épellation est re-forcée.

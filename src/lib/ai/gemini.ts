@@ -10,7 +10,14 @@ const BASE_URL = 'https://generativelanguage.googleapis.com/v1beta'
 // aux clés récentes (« no longer available to new users »). Tout le backend
 // utilise désormais la génération 3.5+ ; thinkingBudget: 0 est indispensable
 // sur les étapes JSON, sinon le raisonnement consomme maxOutputTokens.
+// NOTE run 5.3 : les modèles Gemini 3 pilotent le raisonnement par
+// thinkingLevel (minimal/low/medium/high, défaut medium) — c'est le réglage
+// des étapes qui DOIVENT réfléchir (DA logo, génération logo pro image).
+// thinkingBudget: 0 y est interdit ; il reste réservé aux étapes JSON
+// mécaniques (OCR, parsing) sur les modèles flash.
 export const DEFAULT_VISION_MODEL = 'gemini-3.5-flash'
+
+export type ThinkingLevel = 'minimal' | 'low' | 'medium' | 'high'
 
 export class GeminiError extends Error {
   status: number
@@ -91,6 +98,8 @@ export async function geminiText(opts: {
   maxOutputTokens?: number
   json?: boolean
   thinkingBudget?: number
+  // Gemini 3 : niveau de raisonnement explicite — exclusif de thinkingBudget
+  thinkingLevel?: ThinkingLevel
   onUsage?: (usage: GeminiUsage) => void
 }): Promise<string> {
   const body: Record<string, unknown> = {
@@ -99,7 +108,11 @@ export async function geminiText(opts: {
       temperature: opts.temperature ?? 0.4,
       maxOutputTokens: opts.maxOutputTokens ?? 1024,
       ...(opts.json ? { responseMimeType: 'application/json' } : {}),
-      ...(opts.thinkingBudget !== undefined ? { thinkingConfig: { thinkingBudget: opts.thinkingBudget } } : {}),
+      ...(opts.thinkingLevel
+        ? { thinkingConfig: { thinkingLevel: opts.thinkingLevel } }
+        : opts.thinkingBudget !== undefined
+          ? { thinkingConfig: { thinkingBudget: opts.thinkingBudget } }
+          : {}),
     },
   }
   if (opts.systemInstruction) {
@@ -125,6 +138,7 @@ export async function geminiJson<T>(opts: {
   temperature?: number
   maxOutputTokens?: number
   thinkingBudget?: number
+  thinkingLevel?: ThinkingLevel
   onUsage?: (usage: GeminiUsage) => void
 }): Promise<T | null> {
   const text = await geminiText({ ...opts, json: true })
@@ -309,6 +323,9 @@ export async function geminiImageEditRich(opts: {
   // 1K/2K/4K rendus par le modèle lui-même (pas par recadrage local).
   // Ne passer que des champs supportés par le modèle ciblé.
   imageConfig?: { aspectRatio?: string; imageSize?: '1K' | '2K' | '4K' }
+  // Gemini 3 image : niveau de raisonnement avant rendu (run 5.3 — le logo
+  // se génère toujours avec thinking, jamais coupé)
+  thinkingLevel?: ThinkingLevel
 }): Promise<GeminiImageResult> {
   const validReferences = (opts.referenceImages ?? []).filter((img) => img.data && img.mimeType)
   const parts: GeminiPart[] =
@@ -325,6 +342,9 @@ export async function geminiImageEditRich(opts: {
       ...(opts.imageConfig.aspectRatio ? { aspectRatio: opts.imageConfig.aspectRatio } : {}),
       ...(opts.imageConfig.imageSize ? { imageSize: opts.imageConfig.imageSize } : {}),
     }
+  }
+  if (opts.thinkingLevel) {
+    generationConfig.thinkingConfig = { thinkingLevel: opts.thinkingLevel }
   }
 
   const res = await post(opts.model, 'generateContent', {

@@ -1,5 +1,5 @@
 import sharp from 'sharp'
-import { geminiVisionJson, GeminiError } from '../ai/gemini'
+import { geminiVisionJson, GeminiError, type ThinkingLevel } from '../ai/gemini'
 import { generateWithSoftRetry, type EngineGenerationLog, type EngineGenerationResult } from './generation'
 import { logGeneration } from './guards'
 
@@ -91,6 +91,10 @@ export async function verifyRenderedText(opts: {
 export type OcrGatedResult = EngineGenerationResult & {
   ocrRejects: number
   ocrDetail: string
+  // tokens vision consommés par la porte OCR (toutes tentatives) — alimente
+  // le coût « relecture » de la page de test (run 5.3)
+  ocrTokensIn: number
+  ocrTokensOut: number
 }
 
 // Génération + porte OCR : régénère en silence tant que l'orthographe n'est
@@ -101,11 +105,14 @@ export async function generateWithOcrGate(opts: {
   prompt: string
   referenceImages?: Array<{ data: string; mimeType: string }>
   imageConfig?: { aspectRatio?: string; imageSize?: '1K' | '2K' | '4K' }
+  thinkingLevel?: ThinkingLevel
   expectedTexts: string[]
   log: EngineGenerationLog
 }): Promise<OcrGatedResult> {
   let rejects = 0
   let lastDetail = 'exact'
+  let totalOcrIn = 0
+  let totalOcrOut = 0
 
   for (let attempt = 0; attempt <= MAX_OCR_RETRIES; attempt += 1) {
     const result = await generateWithSoftRetry({
@@ -113,11 +120,12 @@ export async function generateWithOcrGate(opts: {
       prompt: opts.prompt,
       referenceImages: opts.referenceImages,
       imageConfig: opts.imageConfig,
+      thinkingLevel: opts.thinkingLevel,
       log: opts.log,
     })
 
     if (!opts.expectedTexts.length) {
-      return { ...result, ocrRejects: rejects, ocrDetail: 'aucun texte attendu' }
+      return { ...result, ocrRejects: rejects, ocrDetail: 'aucun texte attendu', ocrTokensIn: totalOcrIn, ocrTokensOut: totalOcrOut }
     }
 
     let ocrTokensIn = 0
@@ -130,9 +138,11 @@ export async function generateWithOcrGate(opts: {
         ocrTokensOut += tOut
       },
     })
+    totalOcrIn += ocrTokensIn
+    totalOcrOut += ocrTokensOut
 
     if (verdict.ok) {
-      return { ...result, ocrRejects: rejects, ocrDetail: verdict.detail }
+      return { ...result, ocrRejects: rejects, ocrDetail: verdict.detail, ocrTokensIn: totalOcrIn, ocrTokensOut: totalOcrOut }
     }
 
     // Rejet silencieux : l'utilisateur ne voit rien, le système logge tout

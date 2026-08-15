@@ -9,20 +9,26 @@ import {
   CATEGORY_IMAGE_CONFIG,
   compileHeroPromptV2,
   compileInstructPrompt,
-  compileLogoPromptV2,
+  LOGO_BACKGROUND_HEX,
   listSceneTemplates,
+  spellOut,
   type EngineCategory,
-  type LogoAnswersV2,
   type SceneAnswers,
 } from '../lib/engine/compiler'
 import { artDirectionForProject } from '../lib/engine/mapping'
 import {
   ENGINE_MODELS,
+  LOGO_THINKING_LEVEL,
   fetchAsReference,
   storeBuffer,
   storeRender,
 } from '../lib/engine/generation'
 import { generateWithOcrGate } from '../lib/engine/ocr-gate'
+import { parseLogoAnswersV3 } from '../lib/engine/logo-brief'
+import { directLogoConcepts } from '../lib/engine/logo-director'
+import { generateLogoProposition, type LogoProposition } from '../lib/engine/logo-pipeline'
+import { pickExemplars } from '../lib/engine/exemplars'
+import { estimateCostEur } from '../lib/engine/pricing'
 import { cutoutFlatBackground, makeMonochrome } from '../lib/engine/cutout'
 import { makeLayerId, type Layer } from '../lib/engine/layers'
 import { composeAsset, effectFileBuffer, effectsManifest } from '../lib/engine/composite'
@@ -39,19 +45,8 @@ import { GeminiError } from '../lib/ai/gemini'
 const INCLUDED_RETOUCHES = 5
 const RATE_LIMIT_PER_MINUTE = 10
 
-const LOGO_TYPES = ['lettre', 'nom', 'embleme'] as const
-
 function isEngineCategory(value: unknown): value is EngineCategory {
   return typeof value === 'string' && value in CATEGORY_IMAGE_CONFIG
-}
-
-// v2 : le style ne se demande plus — il se déduit du mapping projet.
-// Le wizard logo ne répond qu'à « Ton logo idéal ? » (lettre/nom/emblème).
-function parseLogoAnswers(raw: unknown): LogoAnswersV2 | null {
-  const input = raw as { type?: unknown } | null
-  if (!input) return null
-  const type = LOGO_TYPES.includes(input.type as never) ? (input.type as LogoAnswersV2['type']) : null
-  return type ? { type } : null
 }
 
 function parseSceneAnswers(raw: unknown): SceneAnswers {
@@ -316,7 +311,11 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
     })
   })
 
-  // ── Logo v2 : 3 propositions en 1K, références jointes, OCR gate ────────
+  // ── Logo v3 : le pipeline réfléchi (run 5.3, LOT 1) ─────────────────────
+  // Étage 1 : le DA (Gemini 3.1 Pro, thinking HIGH) écrit 3 concepts
+  // distincts. Étage 2 : chaque concept est exécuté par le pro image (2K,
+  // thinking, 2-3 références jointes). Étage 3 : OCR gate + contrôle de
+  // concept, 1 régénération ciblée max. Le flash ne touche plus au logo.
   .post('/logo/proposals', async ({ request }) => {
     try {
       const auth = await requireUser(request)
@@ -331,7 +330,7 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
         assetId?: string
         answers?: unknown
       } | null
-      const answers = parseLogoAnswers(body?.answers)
+      const answers = parseLogoAnswersV3(body?.answers)
       if (!body?.projectId || !answers) return jsonError('invalid_body', 400, 'Réponses du questionnaire logo incomplètes.')
 
       const project = await loadOwnedProject(user.id, body.projectId)
@@ -340,6 +339,7 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
         return jsonError('logo_already_set', 409, 'Le logo master est en place — il se compose, il ne se régénère pas.')
       }
 
+      // 3 propositions + jusqu'à 3 régénérations ciblées possibles
       const guard = await checkEngineGuards(user.id, 3)
       if (!guard.ok) return jsonError(guard.code, guard.status, guard.message)
 
@@ -382,26 +382,72 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
       if (!asset) return jsonError('asset_create_failed', 500)
 
       const { da, energie, modernite } = artDirectionForProject(project)
-      const compiled = compileLogoPromptV2({ project, da, answers, energie, modernite })
 
-      const generations = await Promise.all(
-        Array.from({ length: 3 }, () =>
-          generateWithOcrGate({
-            model: ENGINE_MODELS.proposal,
-            prompt: compiled.prompt,
-            referenceImages: compiled.references,
-            imageConfig: { aspectRatio: '1:1', imageSize: '1K' },
-            expectedTexts: compiled.expectedTexts,
-            log: { userId: user.id, projectId: body.projectId, assetId: asset.id, kind: 'logo_proposal', resolution: '1K' },
+      // ÉTAGE 1 — le directeur artistique écrit 3 concepts distincts
+      const direction = await directLogoConcepts({
+        project,
+        da,
+        answers,
+        energie,
+        modernite,
+        log: { userId: user.id, projectId: body.projectId, assetId: asset.id },
+      })
+      const daEur = estimateCostEur({
+        model: ENGINE_MODELS.logoDirector,
+        tokensIn: direction.usage.tokensIn,
+        tokensOut: direction.usage.tokensOut,
+      })
+
+      // Références jointes à CHAQUE génération : cluster du mapping d'abord,
+      // puis les références uploadées par l'utilisateur (3 max au total).
+      const exemplars = pickExemplars({ category: 'logo', da, energie, modernite, maxPrompts: 0, maxReferences: 2 })
+      const references = [...exemplars.references]
+      const userRefs = ((project.ambiance?.references ?? []) as string[]).slice(0, 3 - references.length)
+      for (const url of userRefs) {
+        const ref = await fetchAsReference(url)
+        if (ref) references.push(ref)
+      }
+
+      // ÉTAGES 2 + 3 — un concept = une proposition, relue avant affichage.
+      // allSettled : un concept qui échoue (OCR à bout, refus) ne coule pas
+      // les deux autres.
+      const settled = await Promise.allSettled(
+        direction.concepts.map((concept, i) =>
+          generateLogoProposition({
+            projectName: project.name,
+            answers,
+            concept,
+            references,
+            resolution: '2K',
+            log: { userId: user.id, projectId: body.projectId, assetId: asset.id, kind: `logo_proposal_${i + 1}` },
           })
         )
       )
+      const propositions = settled
+        .filter((s): s is PromiseFulfilledResult<LogoProposition> => s.status === 'fulfilled')
+        .map((s) => s.value)
+      if (!propositions.length) {
+        const firstError = settled.find((s): s is PromiseRejectedResult => s.status === 'rejected')
+        const reason = firstError?.reason as Error | undefined
+        return jsonError('generation_failed', 502, reason?.message ?? 'Aucune proposition n’a passé la relecture — relance la génération.')
+      }
 
-      const proposals = await Promise.all(
-        generations.map((gen, i) =>
-          storeRender(`${user.id}/${body.projectId}/logo/proposition-${Date.now()}-${i}.png`, gen.dataUrl)
-        )
+      const stored = await Promise.all(
+        propositions.map(async (prop, i) => ({
+          url: await storeRender(`${user.id}/${body.projectId}/logo/proposition-${Date.now()}-${i}.png`, prop.dataUrl),
+          concept: prop.concept,
+          ocrRejects: prop.ocrRejects,
+          conceptOk: prop.conceptOk,
+          defauts: prop.defauts,
+          regenere: prop.regenere,
+        }))
       )
+
+      const coutParEtage = {
+        daEur,
+        generationEur: Math.round(propositions.reduce((s, p) => s + p.cout.generationEur, 0) * 10000) / 10000,
+        relectureEur: Math.round(propositions.reduce((s, p) => s + p.cout.relectureEur, 0) * 10000) / 10000,
+      }
 
       await service
         .from('project_assets')
@@ -409,7 +455,14 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
           wizard_answers: answers,
           compiled_prompts: [
             ...(asset.compiled_prompts ?? []),
-            { kind: 'logo_proposals', prompt: compiled.prompt, exemplars: compiled.exemplarSlugs, references: compiled.references.length, at: new Date().toISOString() },
+            {
+              kind: 'logo_concepts',
+              concepts: direction.concepts,
+              references: references.length,
+              exemplars: exemplars.slugs,
+              coutParEtage,
+              at: new Date().toISOString(),
+            },
           ],
           updated_at: new Date().toISOString(),
         })
@@ -422,8 +475,14 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
 
       return Response.json({
         assetId: asset.id,
-        proposals,
-        compiledPrompt: compiled.prompt,
+        propositions: stored,
+        // compat éditeur/wizard : la liste d'URLs reste disponible
+        proposals: stored.map((p) => p.url),
+        concepts: direction.concepts,
+        coutParEtage: {
+          ...coutParEtage,
+          totalEur: Math.round((coutParEtage.daEur + coutParEtage.generationEur + coutParEtage.relectureEur) * 10000) / 10000,
+        },
         retouchesUsed,
         includedRetouches: INCLUDED_RETOUCHES,
         creditCharged,
@@ -471,37 +530,63 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
       const reference = await fetchAsReference(body.chosenUrl)
       if (!reference) return jsonError('reference_unreachable', 400, 'La proposition choisie est introuvable.')
 
-      const answers = parseLogoAnswers(asset.wizard_answers) ?? { type: 'embleme' as const }
-      const { da, energie, modernite } = artDirectionForProject(project)
-      const compiled = compileLogoPromptV2({ project, da, answers, energie, modernite })
+      const answers = parseLogoAnswersV3(asset.wizard_answers) ?? parseLogoAnswersV3({ type: 'embleme' })!
+      const name = project.name.trim().toUpperCase()
+      const expectedTexts =
+        answers.type === 'nom' ? [name] : answers.type === 'lettre' ? [(name[0] ?? 'N').toUpperCase()] : []
 
+      // Fond transparent = master détouré → atelier gris imposé au re-rendu.
+      // Fond plein / dégradé+motifs : le fond FAIT PARTIE du logo, on le
+      // reproduit tel quel et on ne détoure pas.
+      const cutoutNeeded = answers.fond === 'transparent'
       const masterPrompt = [
         'Reproduce the EXACT same logo as the attached reference image — identical design, identical colors, identical proportions, identical spelling. Do not redesign, do not add elements.',
         'Render it at maximum sharpness with vector-grade clean edges.',
-        `Background: perfectly flat, uniform, seamless light grey ${compiled.background}. Nothing else in the frame. The mark must not touch the edges — keep 12% padding.`,
+        cutoutNeeded
+          ? `Background: perfectly flat, uniform, seamless light grey ${LOGO_BACKGROUND_HEX}. Nothing else in the frame. The mark must not touch the edges — keep 12% padding.`
+          : 'Background: reproduce the reference background identically, full-bleed — it is part of the logo.',
         'Square 1:1 composition, mark perfectly centered.',
-      ].join('\n')
+        expectedTexts.length
+          ? `The lettering still reads exactly "${expectedTexts[0]}" — spelled ${spellOut(expectedTexts[0]!)} — perfect spelling.`
+          : '',
+      ].filter(Boolean).join('\n')
 
       const master = await generateWithOcrGate({
         model: ENGINE_MODELS.master,
         prompt: masterPrompt,
         referenceImages: [reference],
         imageConfig: { aspectRatio: '1:1', imageSize: '4K' },
-        expectedTexts: compiled.expectedTexts,
+        thinkingLevel: LOGO_THINKING_LEVEL,
+        expectedTexts,
         log: { userId: user.id, projectId: body.projectId, assetId: asset.id, kind: 'logo_master', resolution: '4K' },
       })
 
-      // Détourage local (zéro appel API) + recadrage 8 % + déclinaisons
+      // Détourage local (zéro appel API) + déclinaisons — seulement quand le
+      // livrable est un PNG transparent ; sinon le master reste plein cadre.
       const masterBuffer = Buffer.from(master.dataUrl.split(',').pop() ?? '', 'base64')
-      const cutout = await cutoutFlatBackground(masterBuffer)
-      const [white, black] = await Promise.all([
-        makeMonochrome(cutout.png, 'white'),
-        makeMonochrome(cutout.png, 'black'),
-      ])
+      let masterPng: Buffer = masterBuffer
+      let masterWidth = 4096
+      let masterHeight = 4096
+      let white: Buffer = masterBuffer
+      let black: Buffer = masterBuffer
+      if (cutoutNeeded) {
+        const cutout = await cutoutFlatBackground(masterBuffer)
+        masterPng = cutout.png
+        masterWidth = cutout.width
+        masterHeight = cutout.height
+        ;[white, black] = await Promise.all([
+          makeMonochrome(cutout.png, 'white'),
+          makeMonochrome(cutout.png, 'black'),
+        ])
+      } else {
+        const meta = await sharp(masterBuffer).metadata()
+        masterWidth = meta.width ?? 4096
+        masterHeight = meta.height ?? 4096
+      }
 
       const base = `${user.id}/${body.projectId}/logo`
       const [url, whiteUrl, blackUrl] = await Promise.all([
-        storeBuffer(`${base}/master.png`, cutout.png, 'image/png'),
+        storeBuffer(`${base}/master.png`, masterPng, 'image/png'),
         storeBuffer(`${base}/master-blanc.png`, white, 'image/png'),
         storeBuffer(`${base}/master-noir.png`, black, 'image/png'),
       ])
@@ -511,7 +596,7 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
         return jsonError('insufficient_credits', 402, 'Plus de création disponible. Recharge dans Abonnement.')
       }
 
-      const logoMaster = { url, whiteUrl, blackUrl, width: cutout.width, height: cutout.height }
+      const logoMaster = { url, whiteUrl, blackUrl, width: masterWidth, height: masterHeight }
       await service.from('projects').update({ logo_master: logoMaster, updated_at: new Date().toISOString() }).eq('id', project.id)
       await service
         .from('project_assets')

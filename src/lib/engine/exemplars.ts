@@ -19,6 +19,12 @@ export type ExemplarEntry = {
   energie: number
   modernite: number
   couleurs: string[]
+  // run 5.3 : 'humaine' = recette écrite par le client (fichiers .txt du
+  // dossier d'entraînement) — passe TOUJOURS avant les reverse-prompts
+  priorite?: 'humaine' | 'reverse'
+  // description de la typographie générée (manifest v2/v3) — sert aux notes
+  // de référence transmises au directeur artistique logo
+  typographie_generee?: string
 }
 
 type Manifest = { exemplaires: ExemplarEntry[] }
@@ -70,9 +76,12 @@ export function invalidateExemplarsCache() {
 
 function scoreEntry(entry: ExemplarEntry, da: ArtDirection, energie: number, modernite: number): number {
   const tagOverlap = entry.tags.filter((t) => da.clusterTags.includes(t)).length
-  // le recouvrement de cluster domine ; l'écart énergie/modernité départage
+  // le recouvrement de cluster domine ; l'écart énergie/modernité départage.
+  // Run 5.3 : les recettes humaines (validées par le client) passent AVANT
+  // tout reverse-prompt, à recouvrement de cluster égal ou non.
   const distance = Math.abs(entry.energie - energie) + Math.abs(entry.modernite - modernite)
-  return tagOverlap * 1000 - distance
+  const humanBoost = entry.priorite === 'humaine' ? 1_000_000 : 0
+  return humanBoost + tagOverlap * 1000 - distance
 }
 
 export type ExemplarSelection = {
@@ -119,4 +128,29 @@ export function pickExemplars(opts: {
   }
 
   return { reversePrompts, references, slugs: slugs.slice(0, Math.max(maxPrompts, maxReferences)) }
+}
+
+// Notes descriptives des meilleures références du cluster — transmises au
+// directeur artistique logo (étage 1) pour qu'il sache À QUOI ressemblent
+// les références qui seront jointes à la génération. Zéro image ici : que
+// les métadonnées du manifest (typo générée, couleurs, tags).
+export function pickExemplarNotes(opts: {
+  category: string
+  da: ArtDirection
+  energie?: number
+  modernite?: number
+  max?: number
+}): string[] {
+  const { entries } = loadCategory(opts.category)
+  if (!entries.length) return []
+  const energie = opts.energie ?? 50
+  const modernite = opts.modernite ?? 50
+  return [...entries]
+    .sort((a, b) => scoreEntry(b, opts.da, energie, modernite) - scoreEntry(a, opts.da, energie, modernite))
+    .slice(0, opts.max ?? 4)
+    .map((e) => {
+      const typo = e.typographie_generee && e.typographie_generee !== 'none' ? ` — lettering: ${e.typographie_generee}` : ''
+      const couleurs = e.couleurs.length ? ` — colors ${e.couleurs.join(', ')}` : ''
+      return `${e.slug} [${e.tags.join(', ')}]${typo}${couleurs}`
+    })
 }

@@ -1,21 +1,33 @@
-import { geminiImageEditRich, GeminiError, type GeminiImageResult } from '../ai/gemini'
+import { geminiImageEditRich, GeminiError, type GeminiImageResult, type ThinkingLevel } from '../ai/gemini'
 import { createServiceClient } from '../supabase'
 import { logGeneration } from './guards'
 import { softenPrompt } from './compiler'
 
-// Génération moteur (run 5, LOT 3) : modèles par étape, retry adouci sur
-// refus safety, stockage des rendus, journal de coût systématique.
+// Génération moteur (run 5, LOT 3 → run 5.3, LOT 1) : modèles par étape,
+// retry adouci sur refus safety, stockage des rendus, journal de coût.
 
-// Résolutions par étape : propositions et itérations en 1K, master à la
-// résolution du plan de l'abonné (8K = upscale local à l'export).
+// Run 5.3 : le logo est l'asset fondateur — plus AUCUN appel logo sur un
+// modèle flash. Le pipeline logo = 3 étages : DA texte (raisonnement) →
+// pro image (thinking) → relecture critique (OCR + concept).
+// Identifiants vérifiés contre la doc Gemini (docs/generate-content/gemini-3,
+// docs/image-generation) : Gemini 3.1 Pro = raisonnement complexe,
+// gemini-3-pro-image = Nano Banana Pro (2K/4K, rendu de texte précis).
 export const ENGINE_MODELS = {
-  // 3 propositions de logo — rapide et économique
-  proposal: 'gemini-3.1-flash-image',
+  // Étage 1 — le directeur artistique logo : texte, thinking HIGH, jamais 0
+  logoDirector: 'gemini-3.1-pro-preview',
+  // Étage 2 — génération logo : propositions 2K, master 4K, thinking activé
+  logoImage: 'gemini-3-pro-image',
   // calque scène des créations — la barre de qualité du produit
   scene: 'gemini-3-pro-image',
   // master final (logo 4K, scène à la résolution du plan)
   master: 'gemini-3-pro-image',
+  // drafts d'itération HORS logo uniquement (le flash ne touche plus au logo)
+  draft: 'gemini-3.1-flash-image',
 } as const
+
+// Niveau de raisonnement des étages logo — centralisé pour le grep de preuve :
+// jamais 'minimal', jamais un thinkingBudget: 0 sur le DA ou la génération logo.
+export const LOGO_THINKING_LEVEL: ThinkingLevel = 'high'
 
 export function planImageSize(plan: string): '1K' | '2K' | '4K' {
   if (plan === 'pro') return '4K'
@@ -44,6 +56,7 @@ export async function generateWithSoftRetry(opts: {
   prompt: string
   referenceImages?: Array<{ data: string; mimeType: string }>
   imageConfig?: { aspectRatio?: string; imageSize?: '1K' | '2K' | '4K' }
+  thinkingLevel?: ThinkingLevel
   log: EngineGenerationLog
 }): Promise<EngineGenerationResult> {
   const startedAt = Date.now()
@@ -62,6 +75,7 @@ export async function generateWithSoftRetry(opts: {
       prompt: opts.prompt,
       referenceImages: opts.referenceImages,
       imageConfig: opts.imageConfig,
+      thinkingLevel: opts.thinkingLevel,
     })
     void logGeneration({
       ...baseLog,
@@ -84,6 +98,7 @@ export async function generateWithSoftRetry(opts: {
         prompt: softened,
         referenceImages: opts.referenceImages,
         imageConfig: opts.imageConfig,
+        thinkingLevel: opts.thinkingLevel,
       })
       void logGeneration({
         ...baseLog,
