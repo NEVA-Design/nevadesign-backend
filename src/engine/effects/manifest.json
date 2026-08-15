@@ -1,0 +1,50 @@
+[
+  {
+    "id": "grain-fin",
+    "label": "Grain fin",
+    "blend": "overlay",
+    "opacity": 0.35
+  },
+  {
+    "id": "grain-fort",
+    "label": "Grain marqué",
+    "blend": "overlay",
+    "opacity": 0.4
+  },
+  {
+    "id": "vignette",
+    "label": "Vignette",
+    "blend": "normal",
+    "opacity": 0.85
+  },
+  {
+    "id": "topo",
+    "label": "Lignes topographiques",
+    "blend": "screen",
+    "opacity": 0.22
+  },
+  {
+    "id": "halftone",
+    "label": "Halftone",
+    "blend": "screen",
+    "opacity": 0.2
+  },
+  {
+    "id": "glow-chaud",
+    "label": "Glow chaud",
+    "blend": "screen",
+    "opacity": 0.75
+  },
+  {
+    "id": "glow-froid",
+    "label": "Glow froid",
+    "blend": "screen",
+    "opacity": 0.75
+  },
+  {
+    "id": "particules",
+    "label": "Particules",
+    "blend": "screen",
+    "opacity": 0.6
+  }
+]
