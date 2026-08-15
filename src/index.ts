@@ -27,6 +27,7 @@ import { adminSecurityAlertsRoutes } from './routes/admin/security-alerts'
 import { adminUsersRoutes } from './routes/admin/users'
 import { adminOverviewRoutes } from './routes/admin/overview'
 import { adminEngineRoutes } from './routes/admin/engine'
+import { adminTestEngineRoutes } from './routes/admin/test-engine'
 import { projectRoutes } from './routes/projects'
 import { filesRoutes } from './routes/files'
 import { engineRoutes } from './routes/engine'
@@ -67,6 +68,7 @@ const app = new Elysia()
   .use(adminUsersRoutes)
   .use(adminOverviewRoutes)
   .use(adminEngineRoutes)
+  .use(adminTestEngineRoutes)
   .use(projectRoutes)
   .use(filesRoutes)
   .use(engineRoutes)
