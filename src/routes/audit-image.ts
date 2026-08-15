@@ -144,13 +144,16 @@ Return ONLY valid JSON with this shape:
       }
 
       const totalCost = AUDIT_COST + (generateImprovedVersion ? IMPROVED_VERSION_COST : 0)
-      const deduction = await deductCredits(
-        supabase,
-        user.id,
-        totalCost,
-        generateImprovedVersion ? 'image_audit_improved' : 'image_audit',
-        generateImprovedVersion ? 'Neva Audit + improved version' : 'Neva Audit'
-      )
+      const [deduction, watermarkEnabled] = await Promise.all([
+        deductCredits(
+          supabase,
+          user.id,
+          totalCost,
+          generateImprovedVersion ? 'image_audit_improved' : 'image_audit',
+          generateImprovedVersion ? 'Neva Audit + improved version' : 'Neva Audit'
+        ),
+        userNeedsWatermark(supabase, user.id),
+      ])
 
       if (!deduction.success) {
         return Response.json({
@@ -160,7 +163,6 @@ Return ONLY valid JSON with this shape:
         }, { status: 402 })
       }
 
-      const watermarkEnabled = await userNeedsWatermark(supabase, user.id)
       const finalImprovedImage = improvedImage && watermarkEnabled
         ? await applyWatermarkToImage(improvedImage)
         : improvedImage

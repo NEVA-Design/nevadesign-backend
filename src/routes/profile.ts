@@ -167,7 +167,10 @@ export const profileRoutes = new Elysia({ prefix: '/profile' })
   .get('/discord/link', async ({ request }) => {
     const url = new URL(request.url)
     const token = url.searchParams.get('token')
-    const origin = request.headers.get('origin') ?? url.searchParams.get('origin') ?? env.SITE_URL
+    // Never trust the request's Origin header or a query param for the
+    // redirect target — both are attacker-controlled and would otherwise
+    // allow an open redirect. Only our own configured site URL is valid.
+    const origin = env.SITE_URL
 
     if (!token) return Response.json({ error: 'Unauthorized' }, { status: 401 })
 

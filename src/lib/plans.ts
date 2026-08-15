@@ -1,7 +1,7 @@
 // Client-safe monetization constants.
 // The database column is still named `credits`, but the product language is "creations".
 // Grille run 2 (14/08/2026) — décision business client :
-// Découverte 3 créations à l'inscription (one-shot), Creator 24 €/12,
+// Découverte 0 création à l'inscription (aperçu seul), Creator 24 €/12,
 // Studio 59 €/25, Agence 129 €/45 ; recharges 10/30/100 à 2,90 €/création.
 import { env } from '../config/env'
 
@@ -10,11 +10,10 @@ export const PLANS = {
     id: 'free',
     name: 'Découverte',
     price: 0,
-    credits: 3,
+    credits: 0,
     priceId: null as string | null,
-    description: "Un aperçu complet de l'atelier, sans carte bancaire",
+    description: "Aperçu de l'atelier — passez à un plan payant pour créer",
     features: [
-      "3 créations à l'inscription",
       'Prévisualisations filigranées',
       'Historique limité',
       'Usage non commercial',

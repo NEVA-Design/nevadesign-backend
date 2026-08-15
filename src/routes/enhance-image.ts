@@ -228,13 +228,16 @@ export const enhanceImageRoutes = new Elysia({ prefix: '/enhance-image' })
         })
         .toBuffer()
 
-      const deduction = await deductCredits(
-        supabase,
-        user.id,
-        ENHANCE_COST,
-        'image_enhancement',
-        `Neva Enhance - ${mode} - ${upscale.toUpperCase()}`
-      )
+      const [deduction, watermarkEnabled] = await Promise.all([
+        deductCredits(
+          supabase,
+          user.id,
+          ENHANCE_COST,
+          'image_enhancement',
+          `Neva Enhance - ${mode} - ${upscale.toUpperCase()}`
+        ),
+        userNeedsWatermark(supabase, user.id),
+      ])
 
       if (!deduction.success) {
         return Response.json(
@@ -248,7 +251,6 @@ export const enhanceImageRoutes = new Elysia({ prefix: '/enhance-image' })
       }
 
       const cleanImage = `data:image/webp;base64,${output.toString('base64')}`
-      const watermarkEnabled = await userNeedsWatermark(supabase, user.id)
       const finalImage = watermarkEnabled ? await applyWatermarkToImage(cleanImage) : cleanImage
 
       return Response.json({

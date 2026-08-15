@@ -140,13 +140,16 @@ export const characterAssetsRoutes = new Elysia({ prefix: '/character-assets' })
         referenceImages: [validatedSource.image],
       })
 
-      const deduction = await deductCredits(
-        supabase,
-        user.id,
-        CHARACTER_COST,
-        'character_asset',
-        `Neva Character - ${ASSET_LABELS[assetType]}`
-      )
+      const [deduction, watermarkEnabled] = await Promise.all([
+        deductCredits(
+          supabase,
+          user.id,
+          CHARACTER_COST,
+          'character_asset',
+          `Neva Character - ${ASSET_LABELS[assetType]}`
+        ),
+        userNeedsWatermark(supabase, user.id),
+      ])
 
       if (!deduction.success) {
         return Response.json({
@@ -156,7 +159,6 @@ export const characterAssetsRoutes = new Elysia({ prefix: '/character-assets' })
         }, { status: 402 })
       }
 
-      const watermarkEnabled = await userNeedsWatermark(supabase, user.id)
       const finalImage = watermarkEnabled ? await applyWatermarkToImage(image) : image
 
       return Response.json({

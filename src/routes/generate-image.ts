@@ -494,7 +494,9 @@ export const generateImageRoutes = new Elysia({ prefix: '/generate-image' })
 
       const imageModel = getImageModel(imageModelId)
       const generationCost = imageModel.creditCost ?? CREDIT_COSTS.image_generation
-      const watermarkEnabled = await userNeedsWatermark(supabase, user.id)
+      // Kick off the watermark lookup now — it's independent of prompt/reference
+      // processing below, so let it resolve concurrently instead of blocking first.
+      const watermarkEnabledPromise = userNeedsWatermark(supabase, user.id)
       const candidateReferenceImages = (
         Array.isArray(rawReferenceImages) && rawReferenceImages.length > 0
           ? rawReferenceImages
@@ -560,11 +562,14 @@ export const generateImageRoutes = new Elysia({ prefix: '/generate-image' })
         const modelUsed = imageModel.name
         const totalCost = generationCost * renderCount
 
-        const rawImages = await Promise.all(
-          Array.from({ length: renderCount }, () =>
-            generateSingleImage(finalPrompt, imageModel, safeAspectRatio, referenceImages)
-          )
-        )
+        const [rawImages, watermarkEnabled] = await Promise.all([
+          Promise.all(
+            Array.from({ length: renderCount }, () =>
+              generateSingleImage(finalPrompt, imageModel, safeAspectRatio, referenceImages)
+            )
+          ),
+          watermarkEnabledPromise,
+        ])
         const images = await Promise.all(
           rawImages.map((image) =>
             normalizeGeneratedImage({

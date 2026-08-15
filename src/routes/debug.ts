@@ -10,9 +10,8 @@ export const debugRoutes = new Elysia({ prefix: '/debug' })
     const key = env.GOOGLE_AI_API_KEY
     if (!key) return Response.json({ error: 'No API key' }, { status: 500 })
 
-    const results: Record<string, unknown> = {}
-
-    for (const version of ['v1beta', 'v1']) {
+    const versions = ['v1beta', 'v1'] as const
+    const entries = await Promise.all(versions.map(async (version) => {
       try {
         const res = await fetch(
           `https://generativelanguage.googleapis.com/${version}/models?key=${key}&pageSize=200`
@@ -24,15 +23,17 @@ export const debugRoutes = new Elysia({ prefix: '/debug' })
           m.name.toLowerCase().includes('flash-exp') ||
           (m.supportedGenerationMethods ?? []).some((method: string) => method.includes('generate'))
         )
-        results[version] = imageModels.map((m: { name: string; displayName?: string; supportedGenerationMethods?: string[] }) => ({
+        return [version, imageModels.map((m: { name: string; displayName?: string; supportedGenerationMethods?: string[] }) => ({
           name: m.name,
           displayName: m.displayName,
           methods: m.supportedGenerationMethods,
-        }))
+        }))] as const
       } catch (e) {
-        results[version] = { error: String(e) }
+        return [version, { error: String(e) }] as const
       }
-    }
+    }))
+
+    const results: Record<string, unknown> = Object.fromEntries(entries)
 
     return Response.json(results)
   })
