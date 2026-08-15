@@ -36,7 +36,14 @@ function boxBlur3(src: Uint8Array, width: number, height: number): Uint8Array {
   return out
 }
 
-export async function cutoutFlatBackground(input: Buffer, tolerance = 34): Promise<CutoutResult> {
+// Depuis le run 5.2 le fond logo est #F2F2F2 (jamais pur) : la tolérance
+// descend à 18 pour qu'un logo blanc (#FFFFFF, distance ≈ 22) ou noir ne
+// soit pas mangé par le flood-fill, et la marge du recadrage passe à 8 %.
+export async function cutoutFlatBackground(
+  input: Buffer,
+  tolerance = 18,
+  marginRatio = 0.08
+): Promise<CutoutResult> {
   const { data, info } = await sharp(input).ensureAlpha().raw().toBuffer({ resolveWithObject: true })
   const { width, height } = info
   const channels = 4
@@ -116,8 +123,7 @@ export async function cutoutFlatBackground(input: Buffer, tolerance = 34): Promi
     return { png, width, height }
   }
 
-  // marge de 2 %
-  const margin = Math.round(Math.max(maxX - minX, maxY - minY) * 0.02)
+  const margin = Math.round(Math.max(maxX - minX, maxY - minY) * marginRatio)
   const left = Math.max(0, minX - margin)
   const top = Math.max(0, minY - margin)
   const cropWidth = Math.min(width - left, maxX - minX + margin * 2)
