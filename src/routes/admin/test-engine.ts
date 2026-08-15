@@ -3,7 +3,6 @@ import { requireAdmin, isResponse } from '../../lib/require-auth'
 import {
   compileHeroPromptV2,
   compileInstructPrompt,
-  compileLogoPromptLegacy,
   compileLogoPromptV2,
   compileScenePromptLegacy,
   type CompiledPromptV2,
@@ -13,21 +12,31 @@ import { resolveArtDirection, type StyleAnswers } from '../../lib/engine/mapping
 import { ENGINE_MODELS, generateWithSoftRetry } from '../../lib/engine/generation'
 import { generateWithOcrGate } from '../../lib/engine/ocr-gate'
 import { estimateCostEur } from '../../lib/engine/pricing'
+import { parseLogoAnswersV3, renderLogoBrief, type LogoAnswersV3 } from '../../lib/engine/logo-brief'
+import { directLogoConcepts, type LogoConcept } from '../../lib/engine/logo-director'
+import { generateLogoProposition } from '../../lib/engine/logo-pipeline'
+import { pickExemplars } from '../../lib/engine/exemplars'
+import { UNIVERSE_LABELS } from '../../lib/engine/mapping'
 import { GeminiError } from '../../lib/ai/gemini'
 
-// ── /admin/test-moteur (run 5.2, LOT 5) ──────────────────────────────────────
-// La page de test à boutons : chaque cas affiche son prompt compilé AVANT
-// tout lancement (GET /cases = compilation pure, zéro appel API), et c'est
-// LE CLIENT qui déclenche chaque génération (POST /run). Aucun débit de
-// crédits — coût réel affiché, loggé en kind admin_test_*.
+// ── /admin/test-moteur (run 5.2 LOT 5 → run 5.3 LOT 4) ───────────────────────
+// La page de test à boutons : chaque cas affiche son brief et ses prompts
+// AVANT tout lancement (GET /cases = compilation pure, zéro appel API), et
+// c'est LE CLIENT qui déclenche chaque génération (POST /run). Aucun débit
+// de crédits — coût réel affiché par étage, loggé en kind admin_test_*.
+// Run 5.3 : cas logo v3 en DEUX temps — « Écrire les 3 concepts » (étage 1,
+// les prompts du DA s'affichent dépliables) puis « Générer les 3
+// propositions » (étages 2+3). Compteurs de session : rejets OCR, échecs de
+// concept, coût cumulé.
 
 // SEULE exception au « zéro logo sur flash » : la variante A/B « ancien
-// chemin » de cette page de test, qui documente précisément ce qu'on a quitté.
+// chemin » ci-dessous, qui documente précisément ce qu'on a quitté.
 // Aucune route produit n'y touche.
 const LEGACY_FLASH_LOGO_AB = 'gemini-3.1-flash-image'
 
 const REDSIDE_ANSWERS: StyleAnswers = { universe: 'cartel', energie: 85, modernite: 60, couleur: '#E63946' }
 const ETE_ANSWERS: StyleAnswers = { universe: 'ete_plage', energie: 25, modernite: 70, couleur: '#118AB2' }
+const FRUITZ_ANSWERS: StyleAnswers = { universe: 'ete_plage', energie: 45, modernite: 75, couleur: '#FF6B4A' }
 
 const REDSIDE: ProjectLike = {
   name: 'REDSIDE',
@@ -47,6 +56,34 @@ const L6RYS: ProjectLike = {
   ambiance: { styleAnswers: { universe: 'rp_urbain', energie: 60, modernite: 80, couleur: '#00D2FF' } },
   palette: [],
 }
+const FRUITZ: ProjectLike = {
+  name: 'Fruitz',
+  sector: 'fivem',
+  ambiance: { styleAnswers: FRUITZ_ANSWERS },
+  palette: [],
+}
+const AZURE: ProjectLike = {
+  name: 'Azure Bay',
+  sector: 'fivem',
+  ambiance: { styleAnswers: ETE_ANSWERS },
+  palette: [],
+}
+
+// Briefs v3 des cas logo — exactement ce que le wizard v3 transmettrait.
+const FRUITZ_BRIEF: LogoAnswersV3 = parseLogoAnswersV3({
+  type: 'nom',
+  sujet: 'fruit, été, juteux',
+  ambiance: 'ete',
+  couleurs: { mode: 'degrade', couleurs: ['#FF6B4A', '#FFC4A3'], angle: 45 },
+  fond: 'degrade_motifs',
+})!
+const DAUPHIN_BRIEF: LogoAnswersV3 = parseLogoAnswersV3({
+  type: 'nom',
+  sujet: 'dauphin, océan',
+  ambiance: 'ete',
+  couleurs: { mode: 'degrade', couleurs: ['#118AB2', '#06D6A0'], angle: 90 },
+  fond: 'degrade_motifs',
+})!
 
 const REDSIDE_SCENE = {
   lieu: 'rain-slick downtown Los Santos intersection at night',
@@ -57,8 +94,9 @@ const REDSIDE_SCENE = {
 type Variant = {
   id: string
   label: string
-  // 'v1' = pipeline legacy (A/B), 'v2' = pipeline run 5.2, 'instruct' = édition
-  pipeline: 'v1' | 'v2' | 'instruct'
+  // v1 = legacy (A/B) · v2 = run 5.2 · instruct = édition ·
+  // logo_v3_concepts = étage 1 seul · logo_v3_generation = étages 2+3
+  pipeline: 'v1' | 'v2' | 'instruct' | 'logo_v3_concepts' | 'logo_v3_generation'
   kind: 'logo' | 'hero'
   model: string
   count: number
@@ -72,6 +110,7 @@ type TestCase = {
   id: string
   titre: string
   attendu: string
+  brief?: string
   variants: Variant[]
 }
 
@@ -90,26 +129,74 @@ function v2Variant(id: string, label: string, kind: 'logo' | 'hero', compiled: C
   }
 }
 
-// Compilation pure des 5 cas — rejouée à chaque GET (et au POST, pour que le
+function logoV3Case(opts: {
+  id: string
+  titre: string
+  attendu: string
+  project: ProjectLike
+  brief: LogoAnswersV3
+  generationLabel: string
+}): TestCase {
+  const { da } = daFor(opts.project)
+  const briefText = renderLogoBrief({
+    projectName: opts.project.name,
+    answers: opts.brief,
+    mappingPalette: da.palette,
+    universeLabel: UNIVERSE_LABELS[da.universe],
+  })
+  return {
+    id: opts.id,
+    titre: opts.titre,
+    attendu: opts.attendu,
+    brief: briefText,
+    variants: [
+      {
+        id: 'concepts',
+        label: 'Étage 1 — écrire les 3 concepts (DA, thinking high)',
+        pipeline: 'logo_v3_concepts',
+        kind: 'logo',
+        model: ENGINE_MODELS.logoDirector,
+        count: 1,
+        prompt: briefText,
+        referencesJointes: 0,
+        ocrAttendus: [],
+        aspectRatio: '1:1',
+      },
+      {
+        id: 'generation',
+        label: opts.generationLabel,
+        pipeline: 'logo_v3_generation',
+        kind: 'logo',
+        model: ENGINE_MODELS.logoImage,
+        count: 3,
+        prompt: '(les 3 prompts viennent de l’étage 1 — lancer « concepts » d’abord)',
+        referencesJointes: 0,
+        ocrAttendus: opts.brief.type === 'nom' ? [opts.project.name.toUpperCase()] : [],
+        aspectRatio: '1:1',
+      },
+    ],
+  }
+}
+
+function daFor(project: ProjectLike) {
+  const answers = project.ambiance.styleAnswers as StyleAnswers
+  return { da: resolveArtDirection(answers, project.name), energie: answers.energie, modernite: answers.modernite }
+}
+
+// Compilation pure des cas — rejouée à chaque GET (et au POST, pour que le
 // prompt exécuté soit exactement celui affiché).
 function buildCases(): TestCase[] {
   const daRedside = resolveArtDirection(REDSIDE_ANSWERS, REDSIDE.name)
   const daEte = resolveArtDirection(ETE_ANSWERS, VESPUCCI.name)
   const daL6rys = resolveArtDirection({ universe: 'rp_urbain', energie: 60, modernite: 80, couleur: '#00D2FF' }, L6RYS.name)
+  const daFruitz = resolveArtDirection(FRUITZ_ANSWERS, FRUITZ.name)
 
-  // 1. A/B logo — mêmes réponses de wizard (nom complet), ancien chemin vs v2
-  const logoV1 = compileLogoPromptLegacy({
-    project: REDSIDE,
-    answers: { type: 'nom', style: 'chrome', palette: ['#E63946', '#D4A017', '#0F0F0F'] },
-  })
-  const logoV2 = compileLogoPromptV2({ project: REDSIDE, da: daRedside, answers: { type: 'nom' }, energie: 85, modernite: 60 })
+  // A/B flash sans DA (ancien, run 5.2) vs pro+DA (nouveau) — MÊME brief
+  const fruitzOldPath = compileLogoPromptV2({ project: FRUITZ, da: daFruitz, answers: { type: 'nom' }, energie: 45, modernite: 75 })
 
-  // 2. A/B bannière « REDSIDE » — entrelacement titre/sujets attendu en v2
+  // Cas héro conservés du run 5.2
   const banV1 = compileScenePromptLegacy({ project: REDSIDE, category: 'banniere_discord', answers: REDSIDE_SCENE })
   const banV2 = compileHeroPromptV2({ project: REDSIDE, category: 'banniere_discord', da: daRedside, answers: REDSIDE_SCENE, energie: 85, modernite: 60 })
-
-  // 3. Orthographe piège « L6RYS » ×3 — zéro faute affichée attendue
-  const l6Logo = compileLogoPromptV2({ project: L6RYS, da: daL6rys, answers: { type: 'nom' }, energie: 60, modernite: 80 })
   const l6Hero = compileHeroPromptV2({
     project: L6RYS,
     category: 'banniere_discord',
@@ -118,9 +205,6 @@ function buildCases(): TestCase[] {
     energie: 60,
     modernite: 80,
   })
-
-  // 4. Le mapping : deux directions nettement distinctes attendues
-  const mapCartel = banV2
   const mapEte = compileHeroPromptV2({
     project: VESPUCCI,
     category: 'banniere_discord',
@@ -129,8 +213,6 @@ function buildCases(): TestCase[] {
     energie: 25,
     modernite: 70,
   })
-
-  // 5. Instruction courte sur le dernier rendu v2 de ce cas ou du cas 2
   const instruct = compileInstructPrompt({
     project: REDSIDE,
     instruction: 'passe le titre en chrome poli, reflets durs',
@@ -138,19 +220,60 @@ function buildCases(): TestCase[] {
   })
 
   return [
+    logoV3Case({
+      id: 'fruitz_reel',
+      titre: 'Cas Fruitz réel — le brief complet du wizard v3',
+      attendu:
+        'Sujet « fruit, été, juteux », dégradé corail→pêche (#FF6B4A→#FFC4A3, 45°), fond dégradé + doodles. Étage 1 : 3 concepts DISTINCTS affichés AVANT toute image (dépliables). Étage 2+3 : pro image 2K thinking + OCR + contrôle de concept. Plus jamais une boussole pour un projet fruit.',
+      project: FRUITZ,
+      brief: FRUITZ_BRIEF,
+      generationLabel: 'Étages 2+3 — générer les 3 propositions (pro 2K + relecture)',
+    }),
     {
-      id: 'ab_logo',
-      titre: 'A/B logo — ancien chemin vs v2',
-      attendu: 'Mêmes réponses de wizard (nom complet). v1 : guide JSON brut, aucune référence jointe, « never render this name » dans le prompt. v2 : recette few-shot, références jointes, épellation forcée, OCR gate.',
+      id: 'ab_flash_da',
+      titre: 'A/B — flash sans DA (ancien) vs pro+DA (nouveau), même brief Fruitz',
+      attendu:
+        'Ancien (run 5.2) : flash 1K, prompt compilé sans sujet, ~2 s sans réflexion. Nouveau : le concept 1 du DA exécuté par le pro 2K avec thinking + relecture. Le nouveau chemin doit montrer le thème fruit et le dégradé — l’ancien montre ce qui ne va plus.',
       variants: [
-        { id: 'v1', label: 'Ancien chemin (run 5)', pipeline: 'v1', kind: 'logo', model: LEGACY_FLASH_LOGO_AB, count: 1, prompt: logoV1.prompt, referencesJointes: 0, ocrAttendus: [], aspectRatio: '1:1' },
-        v2Variant('v2', 'Chemin v2 (run 5.2)', 'logo', logoV2, LEGACY_FLASH_LOGO_AB),
+        {
+          id: 'ancien',
+          label: 'Ancien chemin — flash sans DA (run 5.2)',
+          pipeline: 'v1',
+          kind: 'logo',
+          model: LEGACY_FLASH_LOGO_AB,
+          count: 1,
+          prompt: fruitzOldPath.prompt,
+          referencesJointes: 0,
+          ocrAttendus: fruitzOldPath.expectedTexts,
+          aspectRatio: '1:1',
+        },
+        {
+          id: 'nouveau',
+          label: 'Nouveau chemin — concept 1 du DA sur pro 2K (lancer d’abord l’étage 1 du cas Fruitz)',
+          pipeline: 'logo_v3_generation',
+          kind: 'logo',
+          model: ENGINE_MODELS.logoImage,
+          count: 1,
+          prompt: '(le prompt = concept 1 de l’étage 1 du cas Fruitz)',
+          referencesJointes: 0,
+          ocrAttendus: ['FRUITZ'],
+          aspectRatio: '1:1',
+        },
       ],
     },
+    logoV3Case({
+      id: 'theme_animal',
+      titre: 'Thème animal — « dauphin, océan » pour Azure Bay',
+      attendu:
+        'Attendu : une construction type ALYA — lettrage épousant/fusionnant la silhouette du dauphin, fond dégradé océan + doodles marins — PAS un blason esport générique. Le thème est transmis, le DA ne peut plus l’inventer.',
+      project: AZURE,
+      brief: DAUPHIN_BRIEF,
+      generationLabel: 'Étages 2+3 — générer les 3 propositions (pro 2K + relecture)',
+    }),
     {
       id: 'ab_banniere',
       titre: 'A/B bannière « REDSIDE » — ancien vs v2',
-      attendu: 'v1 : scène sans texte (le titre était un calque système plat). v2 : titre REDSIDE généré DANS l’image, lettres partiellement derrière les sujets, baseline ROLEPLAY — le cas qui a déclenché le run 5.2.',
+      attendu: 'v1 : scène sans texte (le titre était un calque système plat). v2 : titre REDSIDE généré DANS l’image, lettres partiellement derrière les sujets, baseline ROLEPLAY.',
       variants: [
         { id: 'v1', label: 'Ancien chemin (scène no-text)', pipeline: 'v1', kind: 'hero', model: ENGINE_MODELS.scene, count: 1, prompt: banV1.prompt, referencesJointes: 0, ocrAttendus: [], aspectRatio: banV1.aspectRatio },
         v2Variant('v2', 'Héro v2 (titre dans l’image)', 'hero', banV2, ENGINE_MODELS.scene),
@@ -158,10 +281,9 @@ function buildCases(): TestCase[] {
     },
     {
       id: 'orthographe',
-      titre: 'Orthographe piège — « L6RYS » ×3',
-      attendu: 'Trois propositions en logo et en bannière : zéro faute affichée. L’OCR gate rejette et régénère en silence (max 2 par slot) — les rejets sont comptés ci-dessous.',
+      titre: 'Orthographe piège — bannière « L6RYS » ×3',
+      attendu: 'Trois bannières : zéro faute affichée, l’OCR gate rejette et régénère en silence (max 2 par slot). L’orthographe logo se vérifie désormais sur les cas Fruitz / dauphin (wordmarks, même OCR gate).',
       variants: [
-        v2Variant('logo', 'Logo L6RYS ×3', 'logo', l6Logo, LEGACY_FLASH_LOGO_AB, 3),
         v2Variant('banniere', 'Bannière L6RYS ×3', 'hero', l6Hero, ENGINE_MODELS.scene, 3),
       ],
     },
@@ -170,18 +292,18 @@ function buildCases(): TestCase[] {
       titre: 'Le mapping — Cartel+Agressif+Rouge vs Été+Élégant+Teal',
       attendu: 'Deux directions nettement distinctes : lettrage condensé agressif chrome sombre étalonné rouge/noir, contre typo dégradé sunset lumière solaire cluster été.',
       variants: [
-        v2Variant('cartel', 'REDSIDE — Cartel + Agressif + Rouge', 'hero', mapCartel, ENGINE_MODELS.scene),
+        v2Variant('cartel', 'REDSIDE — Cartel + Agressif + Rouge', 'hero', banV2, ENGINE_MODELS.scene),
         v2Variant('ete', 'Vespucci Life — Été + Élégant + Teal', 'hero', mapEte, ENGINE_MODELS.scene),
       ],
     },
     {
       id: 'gomme_instruction',
       titre: 'Gomme + instruction — « passe le titre en chrome »',
-      attendu: 'L’instruction rejoue le dernier rendu v2 du cas 2 (à lancer d’abord) avec le changement demandé, épellation re-forcée + OCR. La gomme non destructive se teste dans l’éditeur sur n’importe quelle création (masque, taille 10-200 px, dureté, undo/redo).',
+      attendu: 'L’instruction rejoue le dernier rendu v2 du cas bannière (à lancer d’abord) avec le changement demandé, épellation re-forcée + OCR. La gomme non destructive se teste dans l’éditeur.',
       variants: [
         {
           id: 'chrome',
-          label: 'Instruction sur le rendu du cas 2 (v2)',
+          label: 'Instruction sur le rendu du cas bannière (v2)',
           pipeline: 'instruct',
           kind: 'hero',
           model: ENGINE_MODELS.scene,
@@ -196,16 +318,47 @@ function buildCases(): TestCase[] {
   ]
 }
 
-// Derniers rendus par cas/variante — mémoire process, suffisant pour la page
-// de test (le cas 5 rejoue le rendu du cas 2 v2).
+// ── État de session (mémoire process — suffisant pour la page de test) ──────
 const lastRenders = new Map<string, string>()
+// concepts du DA par cas logo v3 — la génération rejoue EXACTEMENT ces prompts
+const conceptsByCase = new Map<string, { concepts: LogoConcept[]; daEur: number }>()
+// Les compteurs demandés au LOT 4 : rejets OCR, échecs de concept, coût cumulé
+const compteurs = {
+  generations: 0,
+  ocrRejets: 0,
+  echecsConcept: 0,
+  regenerationsCiblees: 0,
+  coutCumuleEur: 0,
+}
+
+function addCost(eur: number) {
+  compteurs.coutCumuleEur = Math.round((compteurs.coutCumuleEur + eur) * 10000) / 10000
+}
+
+const CASE_PROJECTS: Record<string, { project: ProjectLike; brief: LogoAnswersV3 }> = {
+  fruitz_reel: { project: FRUITZ, brief: FRUITZ_BRIEF },
+  ab_flash_da: { project: FRUITZ, brief: FRUITZ_BRIEF },
+  theme_animal: { project: AZURE, brief: DAUPHIN_BRIEF },
+}
 
 export const adminTestEngineRoutes = new Elysia({ prefix: '/admin/test-moteur' })
-  // Compilation pure — AUCUN appel API : les prompts s'affichent avant tout
+  // Compilation pure — AUCUN appel API : briefs et prompts s'affichent avant tout
   .get('/cases', async ({ request }) => {
     const guard = await requireAdmin(request)
     if (isResponse(guard)) return guard
-    return Response.json({ cases: buildCases(), pretRendus: [...lastRenders.keys()] })
+    return Response.json({
+      cases: buildCases(),
+      pretRendus: [...lastRenders.keys()],
+      conceptsPrets: [...conceptsByCase.keys()],
+      compteurs,
+    })
+  })
+
+  // Compteurs seuls (rafraîchissement léger côté page)
+  .get('/compteurs', async ({ request }) => {
+    const guard = await requireAdmin(request)
+    if (isResponse(guard)) return guard
+    return Response.json({ compteurs })
   })
 
   // Lancement d'UNE variante — à l'initiative du client, coût réel renvoyé
@@ -219,29 +372,116 @@ export const adminTestEngineRoutes = new Elysia({ prefix: '/admin/test-moteur' }
     const variant = testCase?.variants.find((v) => v.id === body?.variantId)
     if (!testCase || !variant) return Response.json({ error: 'Cas de test inconnu.' }, { status: 400 })
 
-    const referenceImages: Array<{ data: string; mimeType: string }> = []
-    if (variant.pipeline === 'instruct') {
-      const source = lastRenders.get('ab_banniere:v2')
-      if (!source) {
-        return Response.json({ error: 'Lance d’abord le cas 2 (bannière v2) : l’instruction retouche son rendu.' }, { status: 409 })
-      }
-      referenceImages.push({ data: source.split(',').pop() ?? '', mimeType: 'image/png' })
-    } else if (variant.pipeline === 'v2') {
-      // recompile pour récupérer les références jointes (le prompt affiché
-      // au GET est recompilé à l'identique — même code, mêmes entrées)
-      const again = buildCases().find((c) => c.id === testCase.id)?.variants.find((v) => v.id === variant.id)
-      if (again) variant.prompt = again.prompt
-      const compiledRefs = collectReferences(testCase.id, variant.id)
-      referenceImages.push(...compiledRefs)
-    }
-
     const startedAt = Date.now()
-    const results: Array<{ dataUrl: string; ocrRejects: number; retried: boolean }> = []
-    let tokensIn = 0
-    let tokensOut = 0
-    let imagesOut = 0
 
     try {
+      // ── Étage 1 seul : le DA écrit les 3 concepts, aucune image ──────────
+      if (variant.pipeline === 'logo_v3_concepts') {
+        const ctx = CASE_PROJECTS[testCase.id]
+        if (!ctx) return Response.json({ error: 'Cas logo v3 sans projet câblé.' }, { status: 400 })
+        const { da, energie, modernite } = daFor(ctx.project)
+        const direction = await directLogoConcepts({
+          project: ctx.project,
+          da,
+          answers: ctx.brief,
+          energie,
+          modernite,
+          log: { userId: adminUserId },
+        })
+        const daEur = estimateCostEur({
+          model: ENGINE_MODELS.logoDirector,
+          tokensIn: direction.usage.tokensIn,
+          tokensOut: direction.usage.tokensOut,
+        })
+        conceptsByCase.set(testCase.id, { concepts: direction.concepts, daEur })
+        // le brief Fruitz nourrit aussi l'A/B (variante « nouveau »)
+        if (testCase.id === 'fruitz_reel') conceptsByCase.set('ab_flash_da', { concepts: direction.concepts, daEur })
+        addCost(daEur)
+        return Response.json({
+          caseId: testCase.id,
+          variantId: variant.id,
+          concepts: direction.concepts,
+          coutParEtage: { daEur, generationEur: 0, relectureEur: 0, totalEur: daEur },
+          dureeMs: Date.now() - startedAt,
+          compteurs,
+        })
+      }
+
+      // ── Étages 2+3 : générer les propositions depuis les concepts ────────
+      if (variant.pipeline === 'logo_v3_generation') {
+        const ctx = CASE_PROJECTS[testCase.id]
+        const stored = conceptsByCase.get(testCase.id)
+        if (!ctx || !stored) {
+          return Response.json({ error: 'Lance d’abord l’étage 1 (les 3 concepts du DA) — la génération exécute exactement ces prompts.' }, { status: 409 })
+        }
+        const { da, energie, modernite } = daFor(ctx.project)
+        const exemplars = pickExemplars({ category: 'logo', da, energie, modernite, maxPrompts: 0, maxReferences: 3 })
+        const concepts = stored.concepts.slice(0, variant.count)
+
+        const propositions = []
+        let generationEur = 0
+        let relectureEur = 0
+        for (const [i, concept] of concepts.entries()) {
+          const prop = await generateLogoProposition({
+            projectName: ctx.project.name,
+            answers: ctx.brief,
+            concept,
+            references: exemplars.references,
+            resolution: '2K',
+            log: { userId: adminUserId, kind: `admin_test_${testCase.id}_${variant.id}_${i + 1}` },
+          })
+          propositions.push({
+            dataUrl: prop.dataUrl,
+            concept: prop.concept,
+            ocrRejects: prop.ocrRejects,
+            conceptOk: prop.conceptOk,
+            defauts: prop.defauts,
+            regenere: prop.regenere,
+          })
+          generationEur += prop.cout.generationEur
+          relectureEur += prop.cout.relectureEur
+          compteurs.generations += 1
+          compteurs.ocrRejets += prop.ocrRejects
+          if (!prop.conceptOk) compteurs.echecsConcept += 1
+          if (prop.regenere) compteurs.regenerationsCiblees += 1
+        }
+        addCost(generationEur + relectureEur)
+
+        const last = propositions[propositions.length - 1]
+        if (last) lastRenders.set(`${testCase.id}:${variant.id}`, last.dataUrl)
+
+        return Response.json({
+          caseId: testCase.id,
+          variantId: variant.id,
+          propositions,
+          coutParEtage: {
+            daEur: stored.daEur,
+            generationEur: Math.round(generationEur * 10000) / 10000,
+            relectureEur: Math.round(relectureEur * 10000) / 10000,
+            totalEur: Math.round((stored.daEur + generationEur + relectureEur) * 10000) / 10000,
+          },
+          dureeMs: Date.now() - startedAt,
+          compteurs,
+        })
+      }
+
+      // ── Chemins v1 / v2 / instruct (run 5.2, conservés) ──────────────────
+      const referenceImages: Array<{ data: string; mimeType: string }> = []
+      if (variant.pipeline === 'instruct') {
+        const source = lastRenders.get('ab_banniere:v2')
+        if (!source) {
+          return Response.json({ error: 'Lance d’abord le cas bannière (v2) : l’instruction retouche son rendu.' }, { status: 409 })
+        }
+        referenceImages.push({ data: source.split(',').pop() ?? '', mimeType: 'image/png' })
+      } else if (variant.pipeline === 'v2') {
+        referenceImages.push(...collectReferences(testCase.id, variant.id))
+      }
+
+      const results: Array<{ dataUrl: string; ocrRejects: number; retried: boolean }> = []
+      let tokensIn = 0
+      let tokensOut = 0
+      let imagesOut = 0
+
       for (let i = 0; i < variant.count; i += 1) {
         if (variant.pipeline === 'v1') {
           const result = await generateWithSoftRetry({
@@ -268,54 +508,52 @@ export const adminTestEngineRoutes = new Elysia({ prefix: '/admin/test-moteur' }
           tokensOut += result.usage.tokensOut
           // les rejets OCR sont des images générées puis écartées : payées
           imagesOut += 1 + result.ocrRejects
+          compteurs.ocrRejets += result.ocrRejects
         }
+        compteurs.generations += 1
       }
+
+      const last = results[results.length - 1]
+      if (last) lastRenders.set(`${testCase.id}:${variant.id}`, last.dataUrl)
+
+      const coutEur = estimateCostEur({
+        model: variant.model,
+        tokensIn,
+        tokensOut,
+        imagesOut,
+        resolution: '1K',
+      })
+      addCost(coutEur)
+
+      return Response.json({
+        caseId: testCase.id,
+        variantId: variant.id,
+        promptExecute: variant.prompt,
+        resultats: results,
+        coutEur,
+        dureeMs: Date.now() - startedAt,
+        compteurs,
+      })
     } catch (error) {
       if (error instanceof GeminiError) {
         return Response.json({ error: error.message }, { status: error.status >= 400 ? error.status : 500 })
       }
       console.error('[admin/test-moteur]', error)
-      return Response.json({ error: 'Génération échouée.' }, { status: 500 })
+      return Response.json({ error: (error as Error).message || 'Génération échouée.' }, { status: 500 })
     }
-
-    const last = results[results.length - 1]
-    if (last) lastRenders.set(`${testCase.id}:${variant.id}`, last.dataUrl)
-
-    const coutEur = estimateCostEur({
-      model: variant.model,
-      tokensIn,
-      tokensOut,
-      imagesOut,
-      resolution: '1K',
-    })
-
-    return Response.json({
-      caseId: testCase.id,
-      variantId: variant.id,
-      promptExecute: variant.prompt,
-      resultats: results,
-      coutEur,
-      dureeMs: Date.now() - startedAt,
-    })
   })
 
-// Références d'entraînement de la variante — recompilées comme au GET.
+// Références d'entraînement des variantes v2 héro — recompilées comme au GET.
 function collectReferences(caseId: string, variantId: string): Array<{ data: string; mimeType: string }> {
   const daRedside = resolveArtDirection(REDSIDE_ANSWERS, REDSIDE.name)
   const daEte = resolveArtDirection(ETE_ANSWERS, VESPUCCI.name)
   const daL6rys = resolveArtDirection({ universe: 'rp_urbain', energie: 60, modernite: 80, couleur: '#00D2FF' }, L6RYS.name)
 
-  if (caseId === 'ab_logo' && variantId === 'v2') {
-    return compileLogoPromptV2({ project: REDSIDE, da: daRedside, answers: { type: 'nom' }, energie: 85, modernite: 60 }).references
-  }
   if ((caseId === 'ab_banniere' || caseId === 'mapping') && (variantId === 'v2' || variantId === 'cartel')) {
     return compileHeroPromptV2({ project: REDSIDE, category: 'banniere_discord', da: daRedside, answers: REDSIDE_SCENE, energie: 85, modernite: 60 }).references
   }
   if (caseId === 'mapping' && variantId === 'ete') {
     return compileHeroPromptV2({ project: VESPUCCI, category: 'banniere_discord', da: daEte, answers: { templateId: 'fivem-beach-cabana-wideangle' }, energie: 25, modernite: 70 }).references
-  }
-  if (caseId === 'orthographe' && variantId === 'logo') {
-    return compileLogoPromptV2({ project: L6RYS, da: daL6rys, answers: { type: 'nom' }, energie: 60, modernite: 80 }).references
   }
   if (caseId === 'orthographe' && variantId === 'banniere') {
     return compileHeroPromptV2({ project: L6RYS, category: 'banniere_discord', da: daL6rys, answers: { lieu: 'neon-lit underground parking garage' }, energie: 60, modernite: 80 }).references
