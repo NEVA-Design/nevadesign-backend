@@ -6,6 +6,9 @@ out
 dist
 *.tgz
 
+# mode dev local (store JSON + fichiers générés) — jamais commité
+data/
+
 # code coverage
 coverage
 *.lcov

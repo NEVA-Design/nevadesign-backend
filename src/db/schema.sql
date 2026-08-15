@@ -390,6 +390,92 @@ INSERT INTO profiles (id, credits, plan)
 SELECT id, 0, 'free' FROM auth.users
 ON CONFLICT (id) DO NOTHING;
 
+-- ── Projets (run 5, LOT 1) — la colonne vertébrale de la cohérence ──────────
+-- Un projet = un serveur client : son nom, son secteur, son ambiance
+-- (réponses du questionnaire), sa palette et son logo master. Tout asset
+-- créé dans le projet HÉRITE de ces éléments — le logo n'est jamais
+-- régénéré, toujours composé.
+CREATE TABLE IF NOT EXISTS projects (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+  name TEXT NOT NULL,
+  sector TEXT NOT NULL DEFAULT 'fivem',
+  -- { universe: "l'univers en une phrase", chips: ["Luxe","Sombre"], references: [urls] }
+  ambiance JSONB NOT NULL DEFAULT '{}'::jsonb,
+  -- 5-6 couleurs hex, la première est dominante
+  palette JSONB NOT NULL DEFAULT '[]'::jsonb,
+  -- { url, whiteUrl, blackUrl, width, height } — PNG alpha 4K + déclinaisons
+  logo_master JSONB,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE INDEX IF NOT EXISTS projects_user_idx ON projects(user_id, updated_at DESC);
+
+ALTER TABLE projects ENABLE ROW LEVEL SECURITY;
+DROP POLICY IF EXISTS "Users manage own projects" ON projects;
+DROP POLICY IF EXISTS "Service role full access projects" ON projects;
+CREATE POLICY "Users manage own projects" ON projects FOR ALL TO authenticated
+  USING (auth.uid() = user_id) WITH CHECK (auth.uid() = user_id);
+CREATE POLICY "Service role full access projects" ON projects FOR ALL TO service_role USING (true) WITH CHECK (true);
+
+-- ── Assets d'un projet — piles de calques éditables ─────────────────────────
+CREATE TABLE IF NOT EXISTS project_assets (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  project_id UUID NOT NULL REFERENCES projects(id) ON DELETE CASCADE,
+  user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+  category TEXT NOT NULL,
+  title TEXT,
+  status TEXT NOT NULL DEFAULT 'draft' CHECK (status IN ('draft', 'ready', 'exported')),
+  -- dimensions de composition du canvas (px)
+  width INTEGER NOT NULL DEFAULT 1920,
+  height INTEGER NOT NULL DEFAULT 1080,
+  -- pile ordonnée : [{id, type: scene|effect|logo|text|grain, ...transform, ...}]
+  layers JSONB NOT NULL DEFAULT '[]'::jsonb,
+  -- réponses du wizard pour cet asset (rejouables pour régénérer)
+  wizard_answers JSONB NOT NULL DEFAULT '{}'::jsonb,
+  -- historique des prompts compilés envoyés au moteur
+  compiled_prompts JSONB NOT NULL DEFAULT '[]'::jsonb,
+  -- 5 retouches incluses par création, la 6e reprend 1 création
+  retouches_used INTEGER NOT NULL DEFAULT 0,
+  preview_url TEXT,
+  -- [{ url, resolution, at }]
+  exports JSONB NOT NULL DEFAULT '[]'::jsonb,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE INDEX IF NOT EXISTS project_assets_project_idx ON project_assets(project_id, updated_at DESC);
+CREATE INDEX IF NOT EXISTS project_assets_user_idx ON project_assets(user_id, updated_at DESC);
+
+ALTER TABLE project_assets ENABLE ROW LEVEL SECURITY;
+DROP POLICY IF EXISTS "Users manage own project assets" ON project_assets;
+DROP POLICY IF EXISTS "Service role full access project assets" ON project_assets;
+CREATE POLICY "Users manage own project assets" ON project_assets FOR ALL TO authenticated
+  USING (auth.uid() = user_id) WITH CHECK (auth.uid() = user_id);
+CREATE POLICY "Service role full access project assets" ON project_assets FOR ALL TO service_role USING (true) WITH CHECK (true);
+
+-- ── Bucket des fichiers projets (logos, calques, exports) ───────────────────
+INSERT INTO storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
+VALUES (
+  'neva-projects',
+  'neva-projects',
+  true,
+  52428800,
+  ARRAY['image/jpeg', 'image/png', 'image/webp']
+)
+ON CONFLICT (id) DO NOTHING;
+
+DROP POLICY IF EXISTS "Public read neva projects files" ON storage.objects;
+DROP POLICY IF EXISTS "Service role full access neva projects files" ON storage.objects;
+CREATE POLICY "Public read neva projects files" ON storage.objects
+  FOR SELECT TO public
+  USING (bucket_id = 'neva-projects');
+CREATE POLICY "Service role full access neva projects files" ON storage.objects
+  FOR ALL TO service_role
+  USING (bucket_id = 'neva-projects')
+  WITH CHECK (bucket_id = 'neva-projects');
+
 -- ── Journal de coût des générations IA (run 5, LOT 0) ───────────────────────
 -- Chaque appel image/vision est loggé : modèle, résolution, tokens, coût
 -- estimé. Sert aussi de compteur pour le plafond quotidien par compte

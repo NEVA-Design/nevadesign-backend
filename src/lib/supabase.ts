@@ -1,13 +1,16 @@
 import { createClient as createSupabaseClient, type SupabaseClient, type User } from '@supabase/supabase-js'
 import { env } from '../config/env'
+import { devClient, devLocalEnabled } from './dev-local'
 
 export function createServiceClient(): SupabaseClient {
+  if (devLocalEnabled()) return devClient() as unknown as SupabaseClient
   return createSupabaseClient(env.SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY, {
     auth: { autoRefreshToken: false, persistSession: false },
   })
 }
 
 export function createAnonClient(): SupabaseClient {
+  if (devLocalEnabled()) return devClient() as unknown as SupabaseClient
   return createSupabaseClient(env.SUPABASE_URL, env.SUPABASE_ANON_KEY, {
     auth: { autoRefreshToken: false, persistSession: false },
   })
@@ -16,6 +19,7 @@ export function createAnonClient(): SupabaseClient {
 // Per-request client scoped to the caller's JWT — RLS policies apply as if
 // this were the logged-in user (auth.uid() resolves from the token).
 export function createUserClient(accessToken: string): SupabaseClient {
+  if (devLocalEnabled()) return devClient() as unknown as SupabaseClient
   return createSupabaseClient(env.SUPABASE_URL, env.SUPABASE_ANON_KEY, {
     auth: { autoRefreshToken: false, persistSession: false },
     global: { headers: { Authorization: `Bearer ${accessToken}` } },
