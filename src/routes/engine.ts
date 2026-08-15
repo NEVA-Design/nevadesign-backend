@@ -467,6 +467,10 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
           concept: prop.concept,
           ocrRejects: prop.ocrRejects,
           conceptOk: prop.conceptOk,
+          adnOk: prop.adnOk,
+          serveurLogo: prop.serveurLogo,
+          lisible64: prop.lisible64,
+          scores: prop.scores,
           defauts: prop.defauts,
           regenere: prop.regenere,
         }))

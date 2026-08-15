@@ -1,6 +1,6 @@
 import { ENGINE_MODELS, LOGO_THINKING_LEVEL } from './generation'
 import { generateWithOcrGate } from './ocr-gate'
-import { reviewLogoAgainstConcept, type ConceptVerdict } from './logo-critic'
+import { reviewLogoAgainstConcept, type ConceptScores, type ConceptVerdict } from './logo-critic'
 import { compileLogoConceptPrompt } from './compiler'
 import { estimateCostEur } from './pricing'
 import type { LogoAnswersV3 } from './logo-brief'
@@ -23,6 +23,11 @@ export type LogoProposition = {
   concept: LogoConcept
   ocrRejects: number
   conceptOk: boolean
+  // verdicts ADN du contrôle enrichi (run 5.4, LOT 3) — affichés page de test
+  adnOk: boolean
+  serveurLogo: boolean
+  lisible64: boolean
+  scores: ConceptScores
   defauts: string[]
   regenere: boolean
   imagesGenerees: number
@@ -111,6 +116,10 @@ export async function generateLogoProposition(opts: {
     concept: opts.concept,
     ocrRejects: best.ocrRejects,
     conceptOk: best.verdict.ok,
+    adnOk: best.verdict.adnOk,
+    serveurLogo: best.verdict.serveurLogo,
+    lisible64: best.verdict.lisible64,
+    scores: best.verdict.scores,
     defauts: best.verdict.defauts,
     regenere,
     imagesGenerees,

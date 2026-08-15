@@ -12,6 +12,7 @@
 
 import { SECTORS } from './sectors'
 import { pickExemplars } from './exemplars'
+import { adnBlockLogo } from './adn'
 import type { ArtDirection, LogoConstruction } from './mapping'
 import guideAffiche from '../../engine/styles/fivem/affiche.json'
 import guideBackgroundLogo from '../../engine/styles/fivem/background_logo.json'
@@ -414,8 +415,13 @@ export function compileLogoConceptPrompt(opts: {
     ? `BACKGROUND — CRITICAL FOR CUTOUT: perfectly flat, uniform, seamless light grey ${background} background. No gradient, no vignette, no texture, no shadow on the background, no reflection under the logo.`
     : 'BACKGROUND: full-bleed as described in the concept above — it IS part of the logo. Edge-to-edge clean rendering, no vignette added on top.'
 
+  // LOT 3 (run 5.4) : le bloc ADN chiffré voyage dans CHAQUE génération logo.
+  // Le concept du DA le porte déjà en section 0 — la garantie dure est ICI :
+  // adnBlockLogo() JETTE si l'entraînement v4 n'est pas installé, donc aucun
+  // appel logo ne part jamais sans ADN.
   const prompt = [
     opts.conceptPrompt.trim(),
+    `DNA GUARANTEE — the final render must sit inside this measured family:\n${adnBlockLogo()}`,
     spellingBlock,
     backgroundBlock,
     `Square 1:1 composition, mark perfectly centered, professional vector-grade edges${background ? ', the mark must not touch the frame edges — keep 12% padding on all sides' : ''}. No watermark, no signature, no UI.`,
