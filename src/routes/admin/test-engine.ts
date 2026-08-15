@@ -18,6 +18,7 @@ import { generateLogoProposition } from '../../lib/engine/logo-pipeline'
 import { pickExemplars } from '../../lib/engine/exemplars'
 import { UNIVERSE_LABELS } from '../../lib/engine/mapping'
 import { GeminiError } from '../../lib/ai/gemini'
+import { getTrainingStatus, TrainingRequiredError } from '../../lib/engine/adn'
 
 // ── /admin/test-moteur (run 5.2 LOT 5 → run 5.3 LOT 4) ───────────────────────
 // La page de test à boutons : chaque cas affiche son brief et ses prompts
@@ -342,12 +343,26 @@ const CASE_PROJECTS: Record<string, { project: ProjectLike; brief: LogoAnswersV3
 }
 
 export const adminTestEngineRoutes = new Elysia({ prefix: '/admin/test-moteur' })
-  // Compilation pure — AUCUN appel API : briefs et prompts s'affichent avant tout
+  // Compilation pure — AUCUN appel API : briefs et prompts s'affichent avant tout.
+  // LOT 0 (run 5.4) : le badge d'état d'entraînement part TOUJOURS dans la
+  // réponse ; sans entraînement v4, les cas sont renvoyés grisés (bloque:true).
   .get('/cases', async ({ request }) => {
     const guard = await requireAdmin(request)
     if (isResponse(guard)) return guard
+    const entrainement = getTrainingStatus()
+    let cases: TestCase[] = []
+    try {
+      cases = buildCases()
+    } catch (error) {
+      if (!(error instanceof TrainingRequiredError)) throw error
+      // aucun exemplar installé : la compilation few-shot est impossible —
+      // la page affiche les cas grisés avec le message d'entraînement requis
+    }
     return Response.json({
-      cases: buildCases(),
+      cases,
+      entrainement,
+      bloque: !entrainement.installed,
+      messageBlocage: entrainement.installed ? null : 'Entraînement requis — lance `bun run scripts/train-fivem-v4.ts`',
       pretRendus: [...lastRenders.keys()],
       conceptsPrets: [...conceptsByCase.keys()],
       compteurs,
@@ -366,6 +381,15 @@ export const adminTestEngineRoutes = new Elysia({ prefix: '/admin/test-moteur' }
     const guard = await requireAdmin(request)
     if (isResponse(guard)) return guard
     const adminUserId = guard.auth.user.id
+
+    // LOT 0 : aucun lancement possible tant que l'entraînement v4 manque.
+    const entrainement = getTrainingStatus()
+    if (!entrainement.installed) {
+      return Response.json(
+        { error: `Entraînement requis — lance \`bun run scripts/train-fivem-v4.ts\` (${entrainement.manques.join(' ; ')})` },
+        { status: 409 }
+      )
+    }
 
     const body = await request.json().catch(() => null) as { caseId?: string; variantId?: string } | null
     const testCase = buildCases().find((c) => c.id === body?.caseId)

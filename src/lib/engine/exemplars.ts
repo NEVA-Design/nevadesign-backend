@@ -1,15 +1,17 @@
 import { existsSync, readFileSync } from 'fs'
 import { join, resolve } from 'path'
+import { TrainingRequiredError } from './adn'
 import type { ArtDirection } from './mapping'
 
-// ── Sélection des exemplaires d'entraînement (run 5.2, LOT 1) ────────────────
+// ── Sélection des exemplaires d'entraînement (run 5.2 → 5.4) ─────────────────
 // Le compilateur est few-shot : chaque génération embarque 1-2 reverse-prompts
 // exemplaires de sa catégorie comme gabarits de structure, et 2-3 images de
 // référence JOINTES à l'appel. La sélection se fait ici, par recouvrement des
 // tags de cluster du mapping puis proximité énergie/modernité.
-// Les fichiers viennent de scripts/train-fivem-v2.ts (lancé par le client) ;
-// tant qu'il n'a pas tourné, tout retourne vide et le compilateur dégrade
-// proprement (prompt sans few-shot, appel sans référence).
+// Les fichiers viennent de scripts/train-fivem-v4.ts (lancé par le client).
+// Run 5.4, LOT 0 : le mode dégradé est SUPPRIMÉ — une catégorie sans
+// exemplaires installés JETTE TrainingRequiredError, aucun chemin ne compile
+// un prompt sans few-shot ni référence.
 
 const EXEMPLARS_DIR = resolve(import.meta.dir, '../../engine/exemplars/fivem')
 
@@ -118,7 +120,7 @@ export function pickExemplars(opts: {
   const maxReferences = opts.maxReferences ?? 3
 
   const { entries, prompts, images } = loadCategory(category)
-  if (!entries.length) return { reversePrompts: [], references: [], slugs: [] }
+  if (!entries.length) throw new TrainingRequiredError(`exemplaires ${category} absents`)
 
   const ranked = [...entries].sort(
     (a, b) => scoreEntry(b, da, energie, modernite) - scoreEntry(a, da, energie, modernite)
@@ -160,7 +162,7 @@ export function pickExemplarNotes(opts: {
   max?: number
 }): string[] {
   const { entries } = loadCategory(opts.category)
-  if (!entries.length) return []
+  if (!entries.length) throw new TrainingRequiredError(`exemplaires ${opts.category} absents`)
   const energie = opts.energie ?? 50
   const modernite = opts.modernite ?? 50
   return [...entries]

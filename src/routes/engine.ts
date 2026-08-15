@@ -16,6 +16,7 @@ import {
   type SceneAnswers,
 } from '../lib/engine/compiler'
 import { artDirectionForProject } from '../lib/engine/mapping'
+import { getTrainingStatus, requireTraining, TrainingRequiredError } from '../lib/engine/adn'
 import {
   ENGINE_MODELS,
   LOGO_THINKING_LEVEL,
@@ -44,6 +45,17 @@ import { GeminiError } from '../lib/ai/gemini'
 
 const INCLUDED_RETOUCHES = 5
 const RATE_LIMIT_PER_MINUTE = 10
+
+// Garde-fou run 5.4 (LOT 0) : plus AUCUNE génération logo/héro sans
+// entraînement v4 installé — la « dégradation propre » est supprimée.
+function trainingRequiredResponse(error: unknown): Response | null {
+  if (error instanceof TrainingRequiredError) {
+    return jsonError('training_required', 409, error.message)
+  }
+  return null
+}
+
+const TRAINING_REQUIRED_UI_MESSAGE = 'Entraînement requis — lance `bun run scripts/train-fivem-v4.ts`'
 
 function isEngineCategory(value: unknown): value is EngineCategory {
   return typeof value === 'string' && value in CATEGORY_IMAGE_CONFIG
@@ -173,6 +185,15 @@ function planLongEdgeCap(plan: string): number {
 }
 
 export const engineRoutes = new Elysia({ prefix: '/engine' })
+  // ── Badge d'état de l'entraînement (run 5.4, LOT 0) ─────────────────────
+  // Le wizard et la page de test l'affichent en tête : le client ne doit
+  // plus JAMAIS pouvoir tester sans savoir si l'ADN est actif.
+  .get('/training-status', async ({ request }) => {
+    const auth = await requireUser(request)
+    if (isResponse(auth)) return auth
+    return Response.json({ training: getTrainingStatus(), message: TRAINING_REQUIRED_UI_MESSAGE })
+  })
+
   // Bibliothèque d'effets maison — générés une fois, gratuits à vie
   .get('/effects', () => {
     return Response.json({
@@ -206,6 +227,9 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
 
       const body = await request.json().catch(() => null) as { projectId?: string; assetId?: string } | null
       if (!body?.projectId || !body.assetId) return jsonError('invalid_body', 400)
+
+      // L'export peut re-rendre le master : même garde que la génération.
+      requireTraining()
 
       const project = await loadOwnedProject(user.id, body.projectId)
       if (!project) return jsonError('project_not_found', 404, 'Projet introuvable.')
@@ -293,6 +317,8 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
         creditCharged: 1,
       })
     } catch (error) {
+      const training = trainingRequiredResponse(error)
+      if (training) return training
       if (error instanceof GeminiError) return jsonError('generation_failed', error.status >= 400 ? error.status : 500, error.message)
       console.error('[engine/export]', error)
       return jsonError('server_error', 500)
@@ -332,6 +358,9 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
       } | null
       const answers = parseLogoAnswersV3(body?.answers)
       if (!body?.projectId || !answers) return jsonError('invalid_body', 400, 'Réponses du questionnaire logo incomplètes.')
+
+      // LOT 0 : pas d'entraînement v4 installé = pas de génération, point.
+      requireTraining()
 
       const project = await loadOwnedProject(user.id, body.projectId)
       if (!project) return jsonError('project_not_found', 404, 'Projet introuvable.')
@@ -488,6 +517,8 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
         creditCharged,
       })
     } catch (error) {
+      const training = trainingRequiredResponse(error)
+      if (training) return training
       if (error instanceof GeminiError) return jsonError('generation_failed', error.status >= 400 ? error.status : 500, error.message)
       console.error('[engine/logo/proposals]', error)
       return jsonError('server_error', 500)
@@ -512,6 +543,8 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
       if (!body?.projectId || !body.assetId || typeof body.chosenUrl !== 'string') {
         return jsonError('invalid_body', 400)
       }
+
+      requireTraining()
 
       const project = await loadOwnedProject(user.id, body.projectId)
       if (!project) return jsonError('project_not_found', 404, 'Projet introuvable.')
@@ -611,6 +644,8 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
 
       return Response.json({ logoMaster, remaining: deduction.remaining })
     } catch (error) {
+      const training = trainingRequiredResponse(error)
+      if (training) return training
       if (error instanceof GeminiError) return jsonError('generation_failed', error.status >= 400 ? error.status : 500, error.message)
       console.error('[engine/logo/master]', error)
       return jsonError('server_error', 500)
@@ -636,6 +671,9 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
       if (!body?.projectId || !isEngineCategory(body.category) || body.category === 'logo') {
         return jsonError('invalid_body', 400, 'Catégorie de création invalide.')
       }
+
+      // LOT 0 : le chemin héro refuse aussi de générer sans entraînement.
+      requireTraining()
 
       const project = await loadOwnedProject(user.id, body.projectId)
       if (!project) return jsonError('project_not_found', 404, 'Projet introuvable.')
@@ -716,6 +754,8 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
 
       return Response.json({ asset: updated ?? asset, compiledPrompt: generation.finalPrompt, retried: generation.retried })
     } catch (error) {
+      const training = trainingRequiredResponse(error)
+      if (training) return training
       if (error instanceof GeminiError) return jsonError('generation_failed', error.status >= 400 ? error.status : 500, error.message)
       console.error('[engine/scene]', error)
       return jsonError('server_error', 500)
@@ -739,6 +779,8 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
         keepComposition?: boolean
       } | null
       if (!body?.projectId || !body.assetId) return jsonError('invalid_body', 400)
+
+      requireTraining()
 
       const project = await loadOwnedProject(user.id, body.projectId)
       if (!project) return jsonError('project_not_found', 404, 'Projet introuvable.')
@@ -817,6 +859,8 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
         retried: generation.retried,
       })
     } catch (error) {
+      const training = trainingRequiredResponse(error)
+      if (training) return training
       if (error instanceof GeminiError) return jsonError('generation_failed', error.status >= 400 ? error.status : 500, error.message)
       console.error('[engine/scene/regenerate]', error)
       return jsonError('server_error', 500)
@@ -844,6 +888,8 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
       if (!body?.projectId || !body.assetId || instruction.length < 3) {
         return jsonError('invalid_body', 400, 'Décris la retouche en quelques mots.')
       }
+
+      requireTraining()
 
       const project = await loadOwnedProject(user.id, body.projectId)
       if (!project) return jsonError('project_not_found', 404, 'Projet introuvable.')
@@ -911,6 +957,8 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
         retried: generation.retried,
       })
     } catch (error) {
+      const training = trainingRequiredResponse(error)
+      if (training) return training
       if (error instanceof GeminiError) return jsonError('generation_failed', error.status >= 400 ? error.status : 500, error.message)
       console.error('[engine/layer/instruct]', error)
       return jsonError('server_error', 500)

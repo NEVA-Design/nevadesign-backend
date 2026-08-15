@@ -110,8 +110,9 @@ export async function directLogoConcepts(opts: {
   })
 
   // 3-5 recettes exemplaires : recettes humaines du dossier d'abord (boost
-  // dans scoreEntry), reverse-prompts logo ensuite. Vide tant que le client
-  // n'a pas lancé l'entraînement — le DA travaille alors sur brief + guide.
+  // dans scoreEntry), reverse-prompts logo ensuite. Run 5.4 : jette
+  // TrainingRequiredError si l'entraînement n'est pas installé — le DA ne
+  // travaille plus jamais sans few-shot.
   const exemplars = pickExemplars({ category: 'logo', da, energie: opts.energie, modernite: opts.modernite, maxPrompts: 5, maxReferences: 0 })
   const notes = pickExemplarNotes({ category: 'logo', da, energie: opts.energie, modernite: opts.modernite, max: 4 })
 
