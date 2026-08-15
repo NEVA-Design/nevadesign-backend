@@ -1,0 +1,153 @@
+Create an ultra-realistic FiveM / GTA V cinematic screenshot using ONLY my reference character.
+
+Important:
+
+Preserve my character exactly as provided.
+Do NOT modify the face, hairstyle, outfit, proportions, accessories, jewelry, or identity.
+Simply recreate my character as a highly realistic FiveM character.
+Do NOT generate any extra people. The only person visible in the image must be my reference character.
+Scene
+
+The scene takes place on a luxurious palm tree-lined boulevard, inspired by Beverly Hills / Palm Springs, recreated inside the GTA V / FiveM universe.
+
+The road is perfectly clean with smooth asphalt.
+
+On both sides are perfectly maintained green lawns, luxury villas hidden behind hedges, and rows of very tall California palm trees.
+
+In the far background are large mountains, slightly softened by atmospheric haze.
+
+The sky must be a huge vibrant deep blue summer sky, completely cloudless, with bright natural sunlight.
+
+The atmosphere should feel calm, luxurious and cinematic.
+
+Car
+
+My character is sitting on a black Ferrari 488 Spider with the roof down.
+
+The Ferrari should have:
+
+glossy black paint
+realistic reflections
+silver forged wheels
+large yellow brake calipers
+premium black leather interior
+lowered stance
+immaculate condition
+
+The car is parked perfectly parallel to the road.
+
+Camera (MOST IMPORTANT)
+
+The camera is positioned very far away, approximately 12 to 15 meters from the Ferrari.
+
+Use approximately a 70–85mm telephoto lens to compress the background slightly.
+
+The camera is positioned perfectly perpendicular to the driver's side of the Ferrari, creating a true side profile shot.
+
+The Ferrari must appear perfectly horizontal in the frame.
+
+There is no front or rear angle.
+
+The car is viewed exactly from its side.
+
+The camera height is approximately 1.4 meters above the ground, aligned with the middle of the vehicle.
+
+The framing is wide enough to include:
+
+the entire Ferrari
+the complete body of my character
+all surrounding palm trees
+the mountains
+a large portion of the blue sky
+
+The image should feel like a luxury automotive editorial photograph.
+
+Character Pose (COPY EXACTLY)
+
+My character is sitting on top of the driver's door area, exactly like the reference.
+
+The lower body remains on the top edge of the Ferrari.
+
+Both legs hang naturally outside the car.
+
+The feet do not touch the ground.
+
+The knees are slightly apart.
+
+Both hands rest naturally between the legs.
+
+The shoulders are relaxed.
+
+The back leans slightly forward.
+
+The head is turned toward the left side.
+
+My character is NOT looking at the camera.
+
+The gaze is directed toward the landscape.
+
+The expression is relaxed, calm and effortless.
+
+The pose should feel candid rather than posed.
+
+Composition
+
+The Ferrari occupies the lower third of the image.
+
+My character sits perfectly centered on the vehicle.
+
+The tall palm trees rise behind the car.
+
+The mountains stretch across the horizon.
+
+The deep blue sky occupies nearly the upper half of the composition.
+
+The image should have a perfectly balanced luxury lifestyle aesthetic.
+
+Lighting
+
+Use bright summer afternoon sunlight.
+
+Create:
+
+crisp natural shadows
+realistic reflections on the Ferrari
+warm highlights
+vibrant colors
+realistic skin tones
+
+The atmosphere should feel like a perfect California summer day.
+
+Style
+
+Ultra-photorealistic.
+
+Looks like a real luxury automotive lifestyle photoshoot captured inside a heavily modded FiveM / GTA V server.
+
+NOT CGI.
+
+NOT illustration.
+
+NOT painting.
+
+NOT cartoon.
+
+Negative Prompt
+No extra people.
+No traffic.
+No pedestrians.
+No parked cars.
+No clouds.
+No sunset.
+No night.
+No logos.
+No readable text.
+No HUD.
+No UI.
+No watermark.
+No anatomy errors.
+No distorted limbs.
+No duplicate hands.
+No unrealistic reflections.
+
+The final image must faithfully recreate the exact composition of the reference: a perfectly centered side-profile Ferrari, photographed from a distance with a telephoto lens, my reference character sitting casually on the top edge of the driver's side with legs hanging naturally, looking away toward the landscape, beneath a huge crystal-clear blue sky lined with towering California palm trees.

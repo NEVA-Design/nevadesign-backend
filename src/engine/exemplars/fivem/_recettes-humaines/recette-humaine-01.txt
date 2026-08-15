@@ -1,0 +1,168 @@
+Create an ultra-realistic FiveM / GTA V summer lifestyle screenshot using ONLY my reference character.
+
+IMPORTANT: The character reference image I provide is only for the identity and appearance of my character. Preserve the character as accurately as possible: same face, hairstyle, skin tone, outfit, accessories, tattoos, proportions and overall identity. Do not add any other people, NPCs, staff or background characters.
+
+SCENE
+
+The scene takes place beside the swimming pool of a large luxury white villa in Los Santos, during a beautiful bright summer afternoon.
+
+My character is relaxing alone on a blue-and-white striped wooden sun lounger positioned right beside a crystal-clear turquoise swimming pool.
+
+Behind the pool is a large modern luxury villa with:
+
+bright white exterior walls
+multiple floors and balconies
+large windows
+tropical landscaping
+green hedges
+several palm trees
+
+Above everything is a huge, vivid, saturated blue summer sky with a few beautiful soft white clouds.
+
+The overall atmosphere should feel colorful, sunny, relaxed and premium, like a summer vacation photograph inside FiveM.
+
+CAMERA ANGLE — EXTREMELY IMPORTANT
+
+Match the perspective of the reference image very closely.
+
+The camera is positioned very close to the bottom/front-right corner of the sun lounger, approximately 1.2–1.5 meters from my character.
+
+The camera height is approximately 80–100 cm above the ground, around the height of the mattress.
+
+Use a 24–28mm wide-angle lens.
+
+The camera looks diagonally upward along the length of the lounger toward my character's face.
+
+This creates strong forced perspective:
+
+the closest foot appears very large in the foreground
+the shoe sole faces partially toward the camera
+the bent knee appears large and close
+the torso becomes progressively smaller toward the upper-middle of the frame
+the character's head appears farther away
+the umbrella and sky tower above the character
+
+Do NOT use a side-profile camera.
+Do NOT photograph from far away.
+Do NOT use a top-down angle.
+Do NOT center the camera at normal eye level.
+
+The shot should feel like someone placed a wide-angle camera at the foot of the sun lounger, extremely close to the character.
+
+CHARACTER POSE — COPY VERY PRECISELY
+
+My character is reclining comfortably on the sun lounger, not sitting upright.
+
+The back rests against the raised backrest.
+
+The torso is slightly angled backward.
+
+One arm is raised behind the head, with:
+
+elbow pointing outward
+forearm resting behind the head
+relaxed shoulder
+
+The other arm is bent in front of the torso and holds an open colorful book at approximately chest/stomach level.
+
+My character is casually reading the book while relaxing.
+
+LEGS — VERY IMPORTANT
+
+The leg position must reproduce the reference.
+
+One leg is strongly bent upward at the knee, bringing that foot extremely close to the camera.
+
+Because of the wide-angle perspective, this foot and its sole should appear dramatically larger than the rest of the body.
+
+The second leg extends farther down the lounger toward the camera, but remains more relaxed and lower.
+
+The legs should overlap naturally in perspective.
+
+Do NOT make both legs straight.
+
+Do NOT make the character sit cross-legged.
+
+Do NOT make the character sit normally with both feet on the ground.
+
+BOOK
+
+My character holds an open colorful paperback book.
+
+The book should have a retro summer aesthetic with a red/white cover and illustrated graphics.
+
+Do not reproduce existing copyrighted book artwork or readable text. Use fictional, non-readable cover details.
+
+The character should appear to genuinely be reading it rather than simply holding it toward the camera.
+
+SUN LOUNGER & UMBRELLA
+
+The sun lounger has:
+
+wooden frame
+thick comfortable mattress
+bold blue-and-white horizontal stripes
+slightly raised backrest
+
+Directly above the character is a huge luxury white/beige parasol.
+
+The parasol occupies a significant portion of the upper-left corner of the composition.
+
+Its wooden central pole rises vertically beside the lounger.
+
+A second smaller umbrella can appear farther behind to create depth.
+
+POOL
+
+The swimming pool is immediately to the right side of the lounger.
+
+The water is:
+
+bright turquoise blue
+extremely clear
+sparkling in sunlight
+realistic reflections
+subtle ripples
+
+The pool extends toward the luxury villa in the background.
+
+SMALL DETAILS
+
+Beside the lounger is a small wooden side table with a fresh summer drink in a tall transparent glass with ice, lime and a straw.
+
+A colorful inflatable swimming ring can be partially visible in the extreme bottom-left foreground, cropped by the frame.
+
+Another small colorful beach ball may float far inside the pool.
+
+These elements should remain secondary and never distract from my character.
+
+LIGHTING
+
+Use strong bright summer daylight.
+
+The scene should have:
+
+vibrant natural colors
+strong blue sky
+bright turquoise pool
+realistic sun highlights
+soft but defined shadows
+realistic skin tones
+natural reflections
+subtle sunlight filtering through the parasol
+
+The character should be partially shaded by the umbrella while the pool and villa receive strong direct sunlight.
+
+FIVE M / GTA V STYLE
+
+The final image must look like an authentic high-quality screenshot captured inside a heavily modded FiveM / GTA V server.
+
+Keep the rendering realistic while preserving the colorful, slightly exaggerated summer aesthetic of the inspiration.
+
+It should look like a premium FiveM summer campaign, not generic AI artwork.
+
+STRICT NEGATIVE INSTRUCTIONS
+
+No extra people. No NPCs. No pool staff. No pedestrians. No additional characters. No city traffic. No nighttime. No sunset. No dark atmosphere. No HUD. No UI. No watermark. No readable text. No distorted anatomy. No extra fingers. No duplicated limbs. No malformed feet. No duplicate objects.
+
+ABSOLUTE PRIORITY: reproduce the reference perspective — camera extremely close to the foot of the lounger with a 24–28mm wide-angle lens, one bent leg and shoe dominating the foreground, my character reclining farther back while reading a book with one arm behind the head, huge parasol above, turquoise pool to the right, luxury white villa behind, and a massive vivid blue summer sky.

@@ -1,0 +1,159 @@
+Create an ultra-realistic FiveM / GTA V cinematic screenshot using ONLY my reference character.
+
+Important:
+
+Preserve my character exactly as provided.
+Do NOT modify the face, hairstyle, proportions, outfit, accessories, jewelry, or identity.
+Simply recreate my character as a highly realistic FiveM character.
+Do NOT generate any extra people. The only person visible in the image must be my reference character.
+Scene
+
+Recreate the exact same composition as the reference image, but during a bright sunny day instead of at night.
+
+The scene takes place on a quiet urban street corner with modern sidewalks, a pedestrian crossing, and clean city streets.
+
+The environment should feel like a premium car meet location inside the GTA V / FiveM universe.
+
+The sky must be a large, vibrant deep blue summer sky, completely cloudless, occupying a significant portion of the upper background.
+
+The sunlight should create crisp shadows and beautiful reflections on the car.
+
+Car
+
+Behind my character is a white Nissan Silvia S15 with an aggressive stance.
+
+The car must feature:
+
+ultra-low stance
+polished deep-dish wheels
+vented hood
+clean white paint
+glossy reflections
+red racing bucket seats clearly visible through the side window
+realistic tinted windows
+
+The car is parked diagonally behind my character, exactly like in the reference.
+
+License Plate (IMPORTANT)
+
+Instead of a Japanese license plate, create a clean custom plate.
+
+The plate must simply display:
+
+HORIZON
+
+No Japanese characters.
+
+No numbers.
+
+No additional text.
+
+Just HORIZON, centered on the plate in a clean, realistic style.
+
+Camera (MOST IMPORTANT)
+
+The camera angle must match the reference exactly.
+
+The camera is positioned approximately 2.5 to 3 meters above the ground, looking downward at roughly a 45–50° angle.
+
+The camera is standing almost directly in front of my character but slightly offset toward the driver's side of the car.
+
+Use a 24mm ultra-wide lens.
+
+The perspective should naturally exaggerate the foreground while keeping the car large in the background.
+
+The composition is slightly top-down, making the car's hood and roof clearly visible while still emphasizing my character.
+
+The camera is close enough that:
+
+my character fills most of the foreground
+the Nissan S15 occupies nearly the entire background
+the front half of the car remains clearly visible
+Character Pose (COPY EXACTLY)
+
+My character is standing directly in front of the driver's side front fender.
+
+The body faces the camera.
+
+The shoulders are relaxed.
+
+The head is tilted noticeably toward one shoulder, creating a soft, effortless fashion pose.
+
+The eyes look directly into the camera.
+
+The facial expression is calm, slightly serious, and confident.
+
+Both elbows are bent.
+
+Both hands hold the custom HORIZON license plate naturally in front of the waist.
+
+The plate is slightly tilted toward the camera so the word HORIZON is perfectly readable.
+
+The arms remain relaxed, never stiff.
+
+The stance is natural with both feet planted on the sidewalk.
+
+Composition
+
+My character occupies approximately 60% of the frame.
+
+The Nissan fills the entire background behind the character.
+
+The pedestrian crossing remains visible behind the car.
+
+The sidewalks and asphalt should look clean and realistic.
+
+The bright blue sky should be visible above the buildings and occupy a meaningful portion of the image.
+
+Lighting
+
+Use bright midday summer sunlight.
+
+The lighting should produce:
+
+crisp natural shadows
+vibrant colors
+realistic reflections on the white paint
+soft skin tones
+bright highlights
+a premium automotive editorial look
+
+The atmosphere should feel fresh, warm, and luxurious.
+
+Style
+
+Ultra-photorealistic.
+
+Looks like a real screenshot captured inside a heavily modded FiveM / GTA V server.
+
+Luxury automotive lifestyle photography.
+
+NOT CGI.
+
+NOT illustration.
+
+NOT painting.
+
+NOT cartoon.
+
+Negative Prompt
+No extra people.
+No parked cars other than the Nissan S15.
+No pedestrians.
+No cloudy sky.
+No sunset.
+No nighttime.
+No rain.
+No Japanese license plate.
+No numbers on the plate.
+No unreadable text.
+No HUD.
+No UI.
+No logos.
+No watermark.
+No anatomy errors.
+No distorted hands.
+No duplicate limbs.
+No unrealistic reflections.
+
+The final image must faithfully recreate the same composition, camera angle, pose, and framing as the reference, but transformed into a bright sunny day with a huge deep-blue sky and a custom license plate that clearly reads "HORIZON."

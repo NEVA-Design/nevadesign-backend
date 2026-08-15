@@ -1,0 +1,140 @@
+Create an ultra-realistic FiveM / GTA V cinematic screenshot using ONLY my reference character.
+
+Important:
+
+Preserve my character exactly as provided.
+Do NOT modify the face, hairstyle, outfit, proportions, accessories, jewelry, makeup, or identity.
+Simply recreate my character as a highly realistic FiveM character.
+Do NOT generate any extra people. The only person visible must be my reference character.
+Scene
+
+The scene takes place inside an underground luxury parking garage, similar to those found beneath high-end penthouses or luxury hotels.
+
+The floor is polished smooth concrete with subtle reflections.
+
+The walls and pillars are dark concrete with premium architectural lighting.
+
+The garage should feel empty, modern and expensive.
+
+Behind my character is a bright red McLaren 720S parked perfectly centered.
+
+The car should occupy almost the entire width of the frame.
+
+Its glossy paint reflects the overhead LED lights.
+
+The headlights are OFF.
+
+The car sits perfectly straight behind my character, acting as the backdrop.
+
+Camera (MOST IMPORTANT)
+
+The camera angle is what makes this image unique.
+
+The camera is positioned directly above my character, approximately 2.5 to 3 meters high.
+
+It looks almost straight downward at roughly an 80–85° angle, creating a dramatic top-down perspective.
+
+Use an ultra-wide 18–20mm lens.
+
+The lens exaggerates perspective:
+
+My character's head and hands appear noticeably larger.
+The upper body is emphasized.
+The legs appear shorter.
+The boots look slimmer due to the viewing angle.
+
+The camera is centered perfectly with both the character and the McLaren.
+
+The composition is highly symmetrical.
+
+Character Pose (COPY EXACTLY)
+
+My character is standing directly in front of the center of the McLaren, only a few centimeters away from the front bumper.
+
+The feet are close together.
+
+The body is perfectly centered.
+
+The torso leans slightly forward toward the camera.
+
+The shoulders are relaxed.
+
+Both elbows are bent upward.
+
+Both hands are raised in front of the face.
+
+One hand is holding a lighter.
+
+The other hand is shielding the flame while bringing it toward the mouth, as if lighting a cigarette.
+
+The cigarette is already placed naturally between the lips.
+
+The fingers wrap delicately around the lighter.
+
+The hands are positioned close to the face, partially covering the lower mouth.
+
+The head is tilted slightly downward while the eyes look upward toward the camera through the sunglasses.
+
+The facial expression is calm, confident, and effortless.
+
+The pose should feel like an authentic candid fashion photograph, not like a posed portrait.
+
+Composition
+
+The character occupies the center of the image.
+
+The McLaren sits directly behind, perfectly aligned with the body.
+
+The windshield begins just behind the character's shoulders.
+
+The hood fills most of the background.
+
+The image is perfectly balanced and symmetrical.
+
+The garage floor remains visible around the vehicle.
+
+Lighting
+
+Use cinematic overhead LED lighting.
+
+Soft reflections on the McLaren.
+
+Realistic reflections on the sunglasses.
+
+Natural skin tones.
+
+Soft shadows beneath the chin and arms.
+
+Luxury editorial color grading.
+
+Style
+
+Ultra photorealistic.
+
+Looks like a real luxury fashion editorial photographed inside a heavily modded FiveM server.
+
+NOT CGI.
+
+NOT illustration.
+
+NOT painting.
+
+NOT cartoon.
+
+Negative Prompt
+No extra people.
+No parked cars besides the McLaren.
+No pedestrians.
+No smoke effects.
+No exaggerated fire.
+No anatomy errors.
+No distorted hands.
+No duplicate fingers.
+No oversized body parts (except the natural perspective created by the ultra-wide lens).
+No logos.
+No readable text.
+No HUD.
+No UI.
+No watermark.
+
+The final image must faithfully recreate the exact composition of the reference: an extreme bird's-eye view with an ultra-wide lens, my character standing directly in front of a centered red McLaren, leaning slightly toward the camera while lighting a cigarette with both hands close to the face, creating a dramatic luxury editorial look inside a realistic FiveM / GTA V environment.

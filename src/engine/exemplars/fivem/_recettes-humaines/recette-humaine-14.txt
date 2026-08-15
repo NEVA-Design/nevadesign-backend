@@ -1,0 +1,100 @@
+Create an ultra-realistic FiveM / GTA V cinematic screenshot using only my reference character image.
+
+Important: Preserve my reference character exactly as provided. Do not modify the face, hairstyle, outfit, accessories, proportions, or identity. Simply recreate the character as a highly realistic FiveM character.
+
+Character
+
+Replace the woman sitting on the steps with my reference character.
+
+My character must recreate the exact same pose:
+
+Sitting naturally on the white stone steps.
+One hand resting behind on the step for support.
+Legs crossed at the ankles.
+Relaxed shoulders and confident posture.
+Looking directly at the camera.
+A genuine relaxed smile.
+Keep the framing, pose, perspective, and body position identical to the original image.
+Monument
+
+Completely replace the giant Buddha statue with a colossal standing statue of Discord's Wumpus mascot.
+
+The Wumpus must NOT be sitting.
+
+Instead, the Wumpus should be:
+
+Standing completely upright.
+Facing forward.
+Standing proudly like a monumental guardian.
+Similar to the posture of a gigantic lion statue standing on a pedestal or the Statue of Liberty.
+Arms resting naturally alongside the body (or in a subtle confident pose).
+Massive, imposing, and perfectly symmetrical.
+
+The monument must be redesigned so it naturally supports a standing statue instead of a seated one.
+
+The Wumpus should be approximately 40 to 60 meters tall, towering over everything around it.
+
+It should be sculpted from polished white marble with:
+
+realistic stone veins
+carved details
+slight weathering
+subtle cracks
+realistic erosion
+monumental craftsmanship
+
+The statue must feel like a real-world iconic landmark, not a fantasy object.
+
+Environment
+
+Keep the same location and composition:
+
+Large white marble staircase.
+Monument at the top of the stairs.
+Clear blue sky.
+Bright sunny weather.
+White marble architecture.
+Temple surroundings.
+Beautiful open plaza.
+
+A few distant tourists may remain around the monument for realism and scale, but no one should be near or interacting with my character.
+
+Camera
+
+Maintain the same camera composition:
+
+Low-angle shot.
+Camera centered on my character.
+The giant Wumpus fills almost the entire background.
+Approximately a 35mm lens.
+Natural perspective.
+The monument should appear enormous behind my character.
+Lighting
+
+Use bright midday sunlight with:
+
+realistic shadows
+crisp highlights
+vibrant blue sky
+realistic reflections on the white marble
+premium travel photography look
+Style
+
+The final result must look like a real photograph captured inside FiveM / GTA V, not concept art, CGI, painting, illustration, or cartoon.
+
+Make it look like an authentic cinematic screenshot from a heavily modded, photorealistic FiveM server.
+
+Negative Prompt
+No Buddha.
+No seated Wumpus.
+No extra foreground characters.
+No additional companions.
+No HUD.
+No UI.
+No text.
+No logos.
+No watermarks.
+No fantasy effects.
+No exaggerated cartoon proportions.
+
+The only monument in the image must be the gigantic standing white marble Wumpus, dominating the skyline like a world-famous landmark, while my reference character sits alone on the white steps in exactly the same pose, framing, and perspective as the original photo.

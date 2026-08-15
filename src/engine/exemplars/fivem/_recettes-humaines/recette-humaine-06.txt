@@ -1,0 +1,139 @@
+Create an ultra-realistic FiveM / GTA V cinematic screenshot using ONLY my two reference character images.
+
+Important:
+
+Preserve both of my reference characters exactly as provided.
+Do NOT modify their faces, hairstyles, body proportions, skin tone, outfits, accessories, jewelry, or identity.
+Simply recreate them as highly realistic FiveM characters.
+Do NOT generate any extra people. The only people visible in the image must be my two reference characters.
+Scene
+
+The scene takes place in the backyard of a luxury modern villa overlooking a beautiful landscape, recreated inside the GTA V / FiveM universe.
+
+A large curved infinity pool with crystal-clear turquoise water occupies the right side of the image.
+
+The terrace is made of premium natural wood decking with modern outdoor furniture.
+
+Behind the pool are Mediterranean plants, palm trees, luxury stone walls, trimmed hedges, and a few olive trees.
+
+The sky must be a huge deep blue summer sky, completely cloudless, with warm afternoon sunlight creating a luxurious vacation atmosphere.
+
+The environment should feel like an exclusive resort in Los Santos.
+
+Camera (MOST IMPORTANT)
+
+The camera is positioned approximately 2 meters away from the two sun loungers.
+
+Use a 28–35mm lens.
+
+The camera height is approximately 1.2 meters, slightly above the loungers.
+
+The angle is a three-quarter front perspective, positioned slightly to the left of the seated character.
+
+The camera looks diagonally across both loungers, allowing both characters, the pool, and the villa surroundings to remain visible.
+
+The framing is medium-close:
+
+Both loungers are completely visible.
+Both characters fill around 65% of the frame.
+The swimming pool occupies the right side of the composition.
+The sky and landscaping remain visible in the upper background.
+
+The composition should feel like a luxury lifestyle campaign photographed for a premium resort.
+
+Character Placement (COPY EXACTLY)
+Character 1
+
+My first reference character is lying on the left sun lounger.
+
+Lying comfortably on the back.
+One leg slightly bent.
+One arm resting naturally along the lounger.
+The other hand holding a sunscreen bottle above the chest.
+Head turned slightly toward the second character.
+Relaxed facial expression.
+Enjoying the sun.
+Character 2
+
+My second reference character is sitting on the right sun lounger.
+
+Sitting on the knees.
+Back perfectly straight.
+One hand resting behind on the lounger for support.
+The other hand holding a sunscreen bottle at chest height.
+Head turned toward the first character.
+Smiling naturally.
+Relaxed luxury vacation mood.
+Props
+
+Each character is holding one elegant sunscreen bottle.
+
+The bottles should look premium and minimal.
+
+No readable branding or logos.
+
+Lighting
+
+Use bright summer afternoon sunlight.
+
+Create:
+
+warm golden highlights
+realistic skin tones
+crisp shadows
+subtle reflections on the pool water
+soft reflections on the wooden deck
+premium luxury vacation color grading
+
+The atmosphere should feel warm, calm, expensive, and relaxing.
+
+Environment
+
+Include:
+
+crystal-clear swimming pool
+luxury villa architecture
+wooden terrace
+Mediterranean vegetation
+trimmed hedges
+palm trees
+olive trees
+distant hills
+immaculate landscaping
+
+Everything should feel like an exclusive private villa.
+
+Style
+
+Ultra-photorealistic.
+
+Looks like a real luxury vacation photoshoot captured inside a heavily modded FiveM / GTA V server.
+
+NOT CGI.
+
+NOT illustration.
+
+NOT painting.
+
+NOT cartoon.
+
+Negative Prompt
+No extra people.
+No NPCs.
+No children.
+No pool toys.
+No towels.
+No drinks.
+No clouds.
+No rain.
+No sunset.
+No logos.
+No readable text on the sunscreen bottles.
+No HUD.
+No UI.
+No watermark.
+No anatomy errors.
+No distorted hands.
+No duplicate limbs.
+
+The final image must faithfully recreate the exact composition, camera angle, poses, and framing of the reference image, while replacing the models with my two reference characters and preserving the luxurious summer atmosphere around the infinity pool under a huge crystal-clear blue sky.

@@ -1,0 +1,152 @@
+Create an ultra-realistic FiveM / GTA V cinematic screenshot using ONLY my reference character.
+
+Important:
+
+Preserve my character exactly as provided.
+Do NOT modify the face, hairstyle, hair color, outfit, accessories, jewelry, proportions, or identity.
+Simply recreate my character as a realistic FiveM character.
+Do NOT generate any extra people.
+Scene
+
+The scene takes place on a luxurious boulevard inspired by Beverly Hills / Rodeo Drive inside the GTA V / FiveM universe.
+
+A perfectly clean light metallic blue classic American coupe (similar to a 1970s Cadillac Coupe DeVille) is parked on the street.
+
+The paint is glossy with realistic reflections.
+
+Chrome trim surrounds the windows.
+
+The driver's window is completely rolled down.
+
+The interior features luxurious blue leather seats and chrome details.
+
+Behind the vehicle are very tall California palm trees, elegant street lamps, luxury villas, and a deep blue cloudless summer sky.
+
+Camera (MOST IMPORTANT)
+
+The camera is outside the vehicle, positioned only 40–60 cm away from the driver's door.
+
+The lens is approximately 24–28mm.
+
+The camera sits slightly lower than my character's shoulders, around the height of the window frame.
+
+It is positioned at a three-quarter front angle, looking diagonally across the open driver's window.
+
+The camera is very close to the car, almost touching the driver's door.
+
+The composition crops part of the front fender and focuses mainly on:
+
+the upper half of the car
+the open window
+my character
+the palm trees in the background
+
+The character fills about 70% of the frame.
+
+The background remains visible but softly separated by depth of field.
+
+Character Pose (COPY EXACTLY)
+
+This is NOT a standing pose.
+
+My character is sitting inside the driver's seat.
+
+The lower body remains almost completely inside the vehicle.
+
+Only the upper body comes outside through the open driver's window.
+
+The character leans the torso over the top edge of the door, almost hanging outside the window.
+
+The pose should look natural, effortless and elegant.
+
+The left arm is stretched forward and rests naturally on the top of the driver's door.
+
+The left hand grabs the chrome window frame lightly.
+
+The right arm is also outside the car.
+
+The right hand rests farther along the door with relaxed fingers spread naturally.
+
+Both elbows are slightly bent.
+
+The shoulders are outside the window while the hips remain inside the seat.
+
+The torso rotates slightly toward the front of the car.
+
+The neck is elongated.
+
+The chin is lifted slightly.
+
+The head turns approximately 45 degrees away from the camera, looking into the distance.
+
+The character must NOT look at the camera.
+
+The expression is calm, confident and luxurious, like a fashion editorial.
+
+Hair moves slightly with the breeze.
+
+Composition
+
+The driver's window creates a natural frame around the torso.
+
+The character appears to emerge from the car naturally without looking forced.
+
+The palms rise high behind the character.
+
+The horizon remains low.
+
+The sky occupies roughly the upper third of the composition.
+
+The car should remain an important visual element without hiding the character.
+
+Lighting
+
+Bright summer afternoon.
+
+Deep blue sky.
+
+No clouds.
+
+Warm California sunlight.
+
+Natural skin tones.
+
+Soft shadows.
+
+Clean reflections on the metallic paint.
+
+Luxury editorial color grading.
+
+Style
+
+Ultra-photorealistic.
+
+Looks like a real luxury automotive editorial photographed inside a heavily modded FiveM server.
+
+NOT illustration.
+
+NOT CGI.
+
+NOT painting.
+
+NOT cartoon.
+
+Negative Prompt
+No standing outside the car.
+No sitting on the door.
+No leaning against the car.
+No looking at the camera.
+No extra people.
+No traffic.
+No pedestrians.
+No logos.
+No readable text.
+No HUD.
+No UI.
+No watermark.
+No anatomy errors.
+No distorted hands.
+No duplicate limbs.
+No cloudy sky.
+
+The final image must recreate the exact perspective of the reference photo: a close-up editorial shot taken from just outside the driver's door, with my character leaning out through the open window, both hands resting on the top of the door, body still inside the car, and looking confidently into the distance under a clear blue California sky.

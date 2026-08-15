@@ -1,0 +1,159 @@
+Create an ultra-realistic FiveM / GTA V cinematic screenshot using ONLY my reference character.
+
+Important:
+
+Preserve my reference character exactly as provided.
+Do NOT modify the face, hairstyle, body proportions, skin tone, outfit, accessories, jewelry, makeup, or identity.
+Simply recreate my character as a highly realistic FiveM character.
+Do NOT generate any extra people. The only person visible in the image must be my reference character.
+Scene
+
+The scene takes place inside the infinity pool of a luxury tropical villa in the GTA V / FiveM universe.
+
+The water is crystal clear with vibrant turquoise tones and realistic ripples reflecting the bright summer sunlight.
+
+The background features:
+
+tall tropical palm trees
+a huge crystal-clear deep blue sky
+lush tropical vegetation
+luxury resort atmosphere
+no buildings dominating the background
+
+Everything should feel like an exclusive private resort in Los Santos.
+
+Inflatable Float
+
+My character is floating on a large white inflatable swan.
+
+The swan should be:
+
+oversized
+premium quality
+glossy white vinyl
+realistic seams
+soft reflections
+black and yellow beak
+gently floating on calm water
+
+The inflatable occupies a large part of the frame.
+
+Camera (MOST IMPORTANT)
+
+The camera is positioned extremely close to my character, approximately 1 meter away.
+
+Use a 50–85mm portrait lens to create natural proportions with a luxurious editorial look.
+
+The camera sits only a few centimeters above the water surface, almost touching the pool.
+
+The viewpoint is slightly lower than my character's face, creating a subtle upward angle.
+
+The water occupies the lower foreground.
+
+The inflatable fills most of the frame.
+
+The background palm trees remain softly blurred by a shallow depth of field.
+
+The composition is tight, focusing mainly on:
+
+my character
+the upper part of the swan
+the cocktail
+the blue sky
+the palm trees
+
+Everything else should remain secondary.
+
+Character Pose (COPY EXACTLY)
+
+My character is sitting inside the inflatable swan.
+
+The upper body leans naturally over the front edge of the inflatable.
+
+One arm rests comfortably across the inflatable.
+
+The opposite elbow rests on the float while the hand gently supports the chin.
+
+The shoulders are relaxed.
+
+The head tilts slightly toward one shoulder.
+
+The eyes look directly into the camera.
+
+The expression is calm, luxurious and confident.
+
+The pose should feel effortless, like a premium fashion editorial.
+
+Cocktail
+
+My character holds a pink luxury cocktail in one hand.
+
+The cocktail is served in an elegant coupe glass.
+
+The drink should have realistic reflections and condensation.
+
+No branding.
+
+No logos.
+
+Lighting
+
+Use bright summer midday sunlight.
+
+Create:
+
+warm golden skin highlights
+realistic reflections on the water
+glossy reflections on the inflatable
+vibrant tropical colors
+soft shadows
+premium editorial color grading
+
+The image should immediately evoke a luxury vacation.
+
+Environment
+
+Include:
+
+crystal-clear swimming pool
+tropical palm trees
+huge cloudless blue sky
+calm turquoise water
+luxury villa atmosphere
+subtle tropical landscaping
+
+Everything should feel clean, modern and exclusive.
+
+Style
+
+Ultra-photorealistic.
+
+Looks like a real luxury resort editorial photographed inside a heavily modded FiveM / GTA V server.
+
+NOT CGI.
+
+NOT illustration.
+
+NOT painting.
+
+NOT cartoon.
+
+Negative Prompt
+No extra people.
+No pool toys other than the swan.
+No swimmers.
+No clouds.
+No sunset.
+No rain.
+No buildings blocking the sky.
+No logos.
+No readable text.
+No HUD.
+No UI.
+No watermark.
+No anatomy errors.
+No distorted hands.
+No duplicate limbs.
+No exaggerated facial features.
+
+The final image must faithfully recreate the exact composition of the reference: an intimate close-up taken just above the waterline, with my reference character elegantly leaning over a giant white swan inflatable while holding a pink cocktail, beneath a huge crystal-clear blue tropical sky, with softly blurred palm trees creating a luxurious resort atmosphere.

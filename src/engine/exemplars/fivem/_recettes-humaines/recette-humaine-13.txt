@@ -1,0 +1,171 @@
+Create an ultra-realistic FiveM / GTA V cinematic screenshot using ONLY my reference character.
+
+Important:
+
+Preserve my character exactly as in the reference image.
+Do NOT change the face, hairstyle, outfit, proportions, accessories, or identity.
+Do NOT add any extra people.
+The only person visible must be my character.
+Scene
+
+The scene takes place inside a very narrow modern concrete alleyway with tall white concrete walls on both sides.
+
+The walls have realistic cracks, stains, rough concrete texture and subtle weathering.
+
+Above the alley is a beautiful deep blue summer sky, completely clear with no clouds.
+
+Bright sunlight enters from above and illuminates the entire alley naturally.
+
+A single modern street lamp is attached high on one wall.
+
+Giant Smartphone
+
+The smartphone is the main subject of the composition.
+
+It is a massive modern smartphone approximately 3 meters tall, standing vertically in the alley.
+
+The phone is NOT perfectly vertical.
+
+It is leaning slightly backward (around 15°), making it appear like a giant portal emerging from the ground.
+
+The bottom edge of the phone rests directly on the concrete floor.
+
+The top of the phone reaches almost the height of the walls.
+
+The smartphone has:
+
+ultra-thin black bezels
+rounded corners
+glossy black frame
+realistic glass reflections
+premium build quality
+
+The screen displays a live camera view.
+
+No readable text.
+No logos.
+No QR code.
+No watermark.
+
+The phone must feel physically present in the environment, casting realistic shadows onto the ground.
+
+Portal Effect (VERY IMPORTANT)
+
+The smartphone is NOT simply displaying my character.
+
+The screen behaves like a real dimensional portal.
+
+My character is physically walking through the screen.
+
+The transition must be seamless.
+
+The lower half of the body has already exited the phone.
+
+The upper body is still partially inside the screen.
+
+It should genuinely look like the character is crossing between two dimensions.
+
+The screen should wrap naturally around the body during the transition.
+
+There should be no visual cut between the phone and the character.
+
+It must feel physically possible.
+
+Character Pose (Match EXACTLY)
+
+The pose must match the reference image precisely.
+
+One foot has already stepped completely outside the phone.
+That foot is planted on the concrete step.
+The sole of the shoe is only a few centimeters from the camera.
+Because of the ultra-wide lens, the shoe appears enormous.
+The second foot is still emerging from inside the smartphone.
+The body leans slightly forward.
+The torso is halfway outside the portal.
+Both hands are stretched toward the camera.
+Fingers fully spread.
+Arms extended naturally.
+Head slightly lowered.
+Eyes looking directly into the camera.
+Confident fashionable expression.
+
+The body should feel like it is mid-step, not standing still.
+
+It should look exactly like someone climbing out of another dimension.
+
+Camera
+
+The camera angle is the most important part.
+
+The camera is positioned:
+
+almost touching the ground
+directly in front of the phone
+centered
+only a few centimeters away from the front shoe
+
+Use an extreme ultra-wide lens (18–20mm).
+
+The perspective must exaggerate depth.
+
+The front shoe should dominate the foreground.
+
+The phone appears gigantic.
+
+The character towers over the viewer.
+
+The walls converge dramatically upward.
+
+Everything should create a powerful forced-perspective illusion.
+
+Lighting
+
+Bright summer daylight.
+
+Clear blue sky.
+
+Natural sunlight.
+
+Realistic shadows.
+
+Clean highlights.
+
+Realistic reflections on the smartphone glass.
+
+Warm cinematic color grading.
+
+Style
+
+Ultra photorealistic.
+
+Looks like a real screenshot from a heavily modded FiveM server.
+
+NOT CGI.
+
+NOT illustration.
+
+NOT painting.
+
+NOT concept art.
+
+NOT cartoon.
+
+Negative Prompt
+No extra people.
+No duplicate limbs.
+No anatomy errors.
+No oversized hands.
+No distorted feet.
+No floating character.
+No character simply standing in front of the phone.
+No character only displayed on the screen.
+The character must physically pass through the smartphone screen.
+No text.
+No logos.
+No QR codes.
+No HUD.
+No UI.
+No watermark.
+No cloudy sky.
+
+The illusion must immediately make the viewer believe that the giant smartphone is a real portal and that my character is literally stepping out of its screen into the real world.

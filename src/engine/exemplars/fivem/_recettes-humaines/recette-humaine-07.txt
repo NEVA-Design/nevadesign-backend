@@ -1,0 +1,133 @@
+Create an ultra-realistic FiveM / GTA V cinematic screenshot using ONLY my reference character images.
+
+Important:
+
+Preserve both of my reference characters exactly as provided.
+Do NOT modify their faces, hairstyles, outfits, accessories, proportions, or identity.
+Simply recreate them as highly realistic FiveM characters.
+Do NOT generate any extra people. The only people visible in the image must be my two reference characters.
+Scene
+
+Recreate the exact same composition as the reference image, but during a bright sunny summer day instead of at night.
+
+The scene takes place at a modern gas station with clean concrete pavement, fuel pumps, stone pillars, and a premium urban atmosphere. Everything should look bright, clean, and realistic.
+
+The sky must be a large, vibrant deep blue summer sky, completely cloudless, occupying a large portion of the background. The sunlight should create crisp natural shadows and strong reflections on the car.
+
+Car
+
+Behind my characters is a pink Nissan GT-R R35 with:
+
+glossy pink paint
+black carbon fiber hood
+aggressive lowered stance
+premium wheels
+tinted windows
+clean reflections
+immaculate condition
+
+The GT-R is parked perfectly centered behind my characters, just like in the reference.
+
+Camera (MOST IMPORTANT)
+
+The camera is positioned approximately 2 meters away from the front bumper of the GT-R.
+
+Use a 28–35mm lens.
+
+The camera height is approximately 1.4 meters from the ground, around chest height.
+
+The angle is almost perfectly frontal, with only a very slight angle (5° maximum) toward the driver's side.
+
+The framing is medium-close:
+
+Both characters fill most of the foreground.
+The entire front of the GT-R remains visible.
+The hood, headlights, grille, and windshield are clearly seen.
+The car occupies nearly the entire width of the frame.
+
+The composition should feel like a luxury fashion editorial.
+
+Character Pose (COPY EXACTLY)
+
+Both of my characters must recreate the exact pose.
+
+Character 1
+Sitting on the left side of the front bumper.
+Body leaning naturally against the GT-R.
+One shoulder resting slightly against the hood.
+Legs relaxed.
+Head tilted gently toward the other character.
+Looking directly toward the camera with a calm expression.
+Character 2
+Sitting on the right side of the front bumper.
+Body leaning slightly back against the hood.
+Legs naturally apart.
+One elbow resting casually near the other character.
+Looking confidently toward the camera.
+Relaxed editorial expression.
+
+Both characters should appear close together with natural chemistry, just like in the reference.
+
+Lighting
+
+Use bright midday sunlight.
+
+Create:
+
+realistic shadows
+vibrant colors
+glossy reflections on the GT-R
+realistic skin tones
+bright highlights
+premium automotive editorial lighting
+
+The atmosphere should feel warm, luxurious, and summery.
+
+Environment
+
+Keep the gas station modern and clean.
+
+Include:
+
+fuel pumps
+stone columns
+modern architecture
+clean asphalt
+subtle landscaping
+
+The scene should feel realistic without being crowded.
+
+Style
+
+Ultra-photorealistic.
+
+Looks like a real luxury lifestyle photoshoot captured inside a heavily modded FiveM / GTA V server.
+
+NOT CGI.
+
+NOT illustration.
+
+NOT painting.
+
+NOT cartoon.
+
+Negative Prompt
+No extra people.
+No pedestrians.
+No background NPCs.
+No night.
+No sunset.
+No rain.
+No clouds.
+No traffic.
+No additional vehicles.
+No logos.
+No readable text.
+No HUD.
+No UI.
+No watermark.
+No anatomy errors.
+No distorted hands.
+No duplicate limbs.
+
+The final image must faithfully recreate the same composition, camera angle, pose, and framing as the reference, but transformed into a bright summer day under a huge crystal-clear blue sky, with only my two reference characters posing naturally in front of the pink Nissan GT-R.

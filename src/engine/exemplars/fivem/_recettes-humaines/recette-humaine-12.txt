@@ -1,0 +1,112 @@
+Create an ultra-realistic FiveM / GTA V cinematic screenshot using ONLY my two reference character images.
+
+Important:
+
+Preserve both reference characters exactly as provided.
+Do NOT modify their faces, hairstyles, outfits, proportions, accessories, tattoos, or identity.
+Simply recreate them as highly realistic FiveM characters.
+Do NOT generate any extra people. The only people visible in the image must be my two reference characters.
+Scene
+
+The scene takes place on a modern downtown street surrounded by stylish urban buildings with black storefronts, large windows, metal shutters, subtle graffiti, fire escapes, and industrial architecture. The atmosphere should feel like an upscale fashion district in a major city.
+
+Parked beside them is a blue BMW E36 coupe, sitting extremely low on polished deep-dish wheels with a clean stance setup. The paint should have glossy reflections and the car should look meticulously maintained.
+
+The driver's door is fully open, revealing part of a clean black interior. The vehicle is parked naturally on the street.
+
+Character Placement
+
+Both of my reference characters must recreate the composition exactly.
+
+Character 1
+Standing beside the open driver's door.
+One hand casually inside the hoodie pocket.
+Relaxed posture.
+Looking directly at the camera.
+Calm confident facial expression.
+Character 2
+Leaning casually against the rear quarter panel of the BMW.
+Both hands resting naturally near the waist.
+One leg slightly bent.
+Looking directly at the camera.
+Relaxed confident expression.
+
+The body language should feel effortless, stylish and natural, like a premium streetwear campaign.
+
+Camera
+
+The camera should be positioned at approximately waist height.
+
+Use roughly a 35mm lens.
+
+The framing should capture:
+
+the entire BMW
+both characters from head to toe
+the surrounding storefronts
+
+The composition should feel balanced, clean and symmetrical.
+
+Lighting
+
+Use bright summer daylight under a deep vibrant blue sky with no clouds.
+
+Natural sunlight should produce:
+
+realistic soft shadows
+vibrant colors
+clean reflections on the BMW
+realistic skin tones
+crisp details
+
+The atmosphere should feel like a perfect sunny afternoon.
+
+Environment
+
+The street should look alive but uncluttered.
+
+Do NOT place pedestrians near my characters.
+
+Keep the road clean with realistic asphalt textures.
+
+Buildings should feature:
+
+black storefronts
+industrial fire escapes
+modern glass
+subtle urban details
+premium city atmosphere
+Style
+
+The final image must look like a real photograph captured inside FiveM / GTA V.
+
+NOT CGI.
+
+NOT illustration.
+
+NOT cartoon.
+
+NOT painting.
+
+It should resemble a cinematic screenshot from a heavily modded FiveM server with maximum realism.
+
+Negative Prompt
+No extra people.
+No pedestrians.
+No NPCs.
+No police.
+No traffic.
+No logos.
+No readable signs.
+No HUD.
+No UI.
+No text.
+No watermark.
+No cloudy sky.
+No exaggerated body proportions.
+No distorted limbs.
+No duplicate body parts.
+No unrealistic reflections.
+No damaged vehicle.
+
+The final image should feel like a luxury automotive and streetwear editorial photoshoot, with my two reference characters naturally posing beside a perfectly detailed blue BMW E36 under a clear blue summer sky, while preserving the exact pose, framing, perspective, and overall composition of the original reference image.

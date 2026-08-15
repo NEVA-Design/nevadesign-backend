@@ -1,0 +1,156 @@
+Create an ultra-realistic FiveM / GTA V cinematic summer screenshot using ONLY my two reference characters.
+
+IMPORTANT: The reference images I provide are only for the identity and appearance of my characters. Recreate only those exact two characters in the scene. Preserve their faces, hairstyles, skin tones, tattoos, accessories, outfits and overall appearance as accurately as possible. Do not generate any additional people, NPCs, pedestrians or riders.
+
+SCENE
+
+Recreate a dynamic summer road scene where my two reference characters are riding two separate motorcycles side by side.
+
+They are riding together on a wide, sunlit road in a warm California / Los Santos environment.
+
+The road stretches behind them with a subtle desert/coastal California atmosphere, sparse vegetation, distant palm trees and utility poles.
+
+The scene should feel spontaneous, energetic and joyful, like two friends riding motorcycles together during a perfect summer afternoon.
+
+MOTORCYCLES
+
+Use two black custom café-racer / scrambler motorcycles, one for each character.
+
+The motorcycles should have:
+
+large round headlights
+thick tires
+exposed mechanical components
+black metallic frames
+minimal bodywork
+premium custom-bike appearance
+realistic suspension and wheels
+
+Both motorcycles are moving forward parallel to each other, extremely close together but at a safe natural distance.
+
+Do not place one motorcycle behind the other.
+
+CAMERA ANGLE — EXTREMELY IMPORTANT
+
+Reproduce the unusual very low, extremely close frontal tracking angle of the reference.
+
+The camera is moving backward directly in front of both motorcycles at exactly the same speed as them.
+
+Camera height is approximately 60–80 cm above the asphalt, much lower than the riders' faces.
+
+The camera is only around 1.5–2 meters in front of the motorcycles.
+
+Use a 20–24mm wide-angle lens.
+
+The camera points slightly upward toward the riders, creating a dramatic low-angle perspective.
+
+The motorcycles therefore appear large and imposing in the foreground.
+
+The closest handlebars, front forks and wheels extend toward the bottom edges of the image.
+
+The riders' upper bodies rise against the huge blue sky.
+
+Do NOT use a side view. Do NOT photograph them from far away. Do NOT use a normal eye-level camera.
+
+The image should feel like a photographer is riding backward directly in front of them with a wide-angle camera.
+
+EXACT COMPOSITION
+
+The first character rides on the left side of the image, slightly closer to the camera.
+
+The second character rides on the right side, approximately half a meter farther back.
+
+The two riders together fill almost the entire width of the frame.
+
+The left motorcycle is partially cropped by the bottom-left edge of the image because it is extremely close to the camera.
+
+The right motorcycle's large circular headlight and front wheel are clearly visible and dominate the lower-right portion.
+
+The horizon must remain very low in the frame.
+
+Approximately 50–60% of the upper image should be open blue sky, which makes the riders appear larger and gives the composition its distinctive summer feeling.
+
+CHARACTER 1 — LEFT
+
+My first reference character is riding the motorcycle on the left.
+
+The character is:
+
+seated naturally on the motorcycle
+torso leaning slightly forward
+both legs naturally positioned around the bike
+one hand firmly controlling the handlebar
+the other arm relaxed but still naturally positioned for riding
+shoulders relaxed
+head facing mostly forward
+smiling/laughing naturally
+
+The character's hair should react naturally to the speed and wind, flowing backward.
+
+The pose should feel spontaneous and alive, not like someone posing on a stationary motorcycle.
+
+CHARACTER 2 — RIGHT
+
+My second reference character rides the motorcycle on the right.
+
+The character is seated slightly more upright.
+
+Both hands naturally control the handlebars.
+
+The torso is subtly turned toward the first character.
+
+The head is turned toward the character on the left, as if they are sharing a funny moment while riding.
+
+The character has a large natural smile/laugh, creating genuine interaction between them.
+
+Do not make both characters stare directly at the camera.
+
+MOVEMENT
+
+The motorcycles must clearly be moving forward at speed.
+
+Show subtle realistic motion through:
+
+rotating wheels
+slight road motion blur
+hair moving in the wind
+clothing reacting naturally to airflow
+subtle background motion blur
+
+However, both characters and motorcycles must remain sharp and detailed, as if the camera is tracking them at the same speed.
+
+Do not create excessive artificial motion blur.
+
+ENVIRONMENT / SKY
+
+It is a beautiful bright summer day.
+
+I want a huge, intense, crystal-clear blue sky dominating the background.
+
+The sky should be rich blue and mostly cloudless, with at most a tiny amount of soft distant atmospheric cloud near the horizon.
+
+Use strong natural California sunlight.
+
+The sun is high in the sky and creates:
+
+bright highlights on the characters
+realistic shadows
+reflections on the motorcycles
+warm skin tones
+strong summer atmosphere
+slight cinematic lens response without excessive lens flare
+FIVE M / GTA V STYLE
+
+The final result must look like an authentic high-quality screenshot captured inside a heavily modded FiveM / GTA V server, while maintaining the photographic realism and dynamic perspective of the original inspiration.
+
+It should feel like a real lifestyle motorcycle photograph translated perfectly into FiveM.
+
+No cartoon look, no illustration, no painting, no obvious AI aesthetic, no plastic skin.
+
+STRICT NEGATIVE INSTRUCTIONS
+
+ONLY TWO CHARACTERS — exactly the two reference characters I provide.
+
+No third rider. No passengers. No NPCs. No pedestrians. No background characters. No additional motorcycles. No cars blocking the scene. No helmets unless they are present on my reference characters. No police. No HUD. No UI. No text. No logos. No watermark. No distorted motorcycles. No duplicate wheels. No duplicated limbs. No extra fingers. No incorrect hands.
+
+PRIORITY: match the reference composition above everything else — two motorcycles riding side-by-side toward an extremely close, very low frontal tracking camera, left rider slightly closer, right rider slightly farther back and looking toward the left rider, both naturally enjoying the ride, with the motorcycles dominating the lower foreground and a huge vivid blue summer sky filling the upper half of the image.

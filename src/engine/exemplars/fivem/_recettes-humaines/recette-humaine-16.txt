@@ -1,0 +1,30 @@
+Create an ultra-realistic FiveM / GTA V cinematic screenshot using only my reference character images.
+
+Important: Do not modify my reference characters in any way. Preserve their faces, hairstyles, outfits, accessories, proportions, and identity exactly as they appear. Simply recreate them as realistic FiveM characters.
+
+Do NOT generate or add any extra people. The ONLY people visible in the image must be the characters from my reference images. No pedestrians, no passengers, no background NPCs, no bystanders, no additional drivers. Absolutely nobody else.
+
+The scene takes place on a winding coastal mountain road overlooking a calm sea during golden hour, just before sunset. The road curves gently around rocky cliffs with a metal safety guardrail on the left side. The ocean stretches into the distance with a few small sailboats visible on the water, while the horizon is softly illuminated by the warm evening sky. The surrounding landscape features Mediterranean vegetation, rocky hillsides, and a peaceful coastal atmosphere.
+
+In the center of the scene is a black Jeep Wrangler (4-door) with its roof removed, driving slowly toward the camera. The iconic round headlights are switched on, emitting a warm yellow glow. The Jeep should occupy most of the frame and be positioned exactly in the middle of the road.
+
+The camera is positioned slightly above the Jeep and directly in front of it, as if photographed from another moving vehicle or a stabilized camera rig driving backwards. Use a 35mm lens equivalent, creating a natural perspective while keeping both the vehicle and the landscape clearly visible.
+
+My reference characters must recreate the same composition and poses:
+
+One character is driving the Jeep.
+The remaining characters are standing or sitting naturally on top of the Jeep, holding onto the roll bars for balance.
+One character raises a single arm with one finger pointing toward the sky.
+One character spreads both arms wide in celebration.
+The others smile naturally, laugh, or make relaxed celebratory gestures while facing the camera.
+Everyone appears to be enjoying a road trip together.
+
+The Jeep should be moving gently along the road with subtle motion blur on the pavement while the vehicle and characters remain sharp.
+
+Lighting should be warm golden-hour sunlight, creating soft orange highlights, realistic shadows, and cinematic reflections on the black paint of the Jeep. The sea should reflect the sunset with natural colors, while the sky remains soft and slightly hazy.
+
+The overall mood should feel adventurous, relaxed, and cinematic, like friends enjoying an unforgettable coastal drive.
+
+The final result must look like a real screenshot captured inside FiveM / GTA V, not an illustration, painting, cartoon, or promotional artwork.
+
+No HUD, no UI, no text, no logos, no watermarks, no unrealistic effects. The image must look like an authentic in-game cinematic screenshot with maximum realism.

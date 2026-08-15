@@ -1,0 +1,125 @@
+Create an ultra-realistic FiveM / GTA V summer lifestyle screenshot using ONLY my reference character.
+
+Important: Preserve my reference character exactly as provided: same face, hairstyle, body proportions, skin tone, outfit, accessories, tattoos, jewelry, and identity. Do not add any other person, NPC, tourist, staff member, or background character.
+
+Scene
+
+The scene takes place at an exclusive tropical beach club, directly on a beautiful sandy beach.
+
+My character is relaxing inside a large private luxury beach cabana made from dark natural wood with a thick woven straw/thatch roof.
+
+The cabana contains a huge low-profile daybed with:
+
+thick light beige mattress
+several oversized grey and charcoal pillows
+patterned black-and-white cushions
+beige fabric curtains attached to the wooden posts
+premium tropical resort aesthetic
+
+Several similar empty cabanas can be visible farther behind, creating depth.
+
+The ground underneath and between the cabanas is real beach sand, not concrete or wooden flooring.
+
+In the distance, include lush tropical vegetation and subtle glimpses of the beach/resort surroundings.
+
+Camera angle — EXTREMELY IMPORTANT
+
+Recreate the very close, intimate perspective of the reference.
+
+The camera is positioned directly at the bottom/front corner of the daybed, extremely close to my character, approximately 70–100 cm away.
+
+Camera height is only around 70–90 cm above the mattress.
+
+Use a 24–28mm wide-angle lens.
+
+The camera is NOT directly above the character.
+
+Instead, it looks diagonally down the length of the body, from near the character's legs toward the face.
+
+The camera is slightly higher than the character's torso and tilted downward approximately 20–30 degrees.
+
+This creates strong natural perspective:
+
+the closest bent leg appears large in the immediate foreground
+the thigh occupies a significant portion of the lower-right side of the frame
+the hips and torso become progressively smaller toward the center
+the face appears farther away toward the upper-left/center
+the cabana roof and wooden structure remain clearly visible above and behind the character
+
+Do NOT photograph the character from the side. Do NOT use a bird's-eye view. Do NOT place the camera far away.
+
+The image must feel like somebody sitting at the end of the daybed took the photograph with a wide-angle phone camera.
+
+Character pose — COPY VERY PRECISELY
+
+My character is lying completely relaxed on the daybed, diagonally across the mattress.
+
+The upper back and head rest against several large pillows.
+
+The torso is slightly reclined but mostly lying down.
+
+One leg is strongly bent upward at the knee, with the knee rising prominently toward the camera. Because the camera is close and wide-angle, this bent thigh becomes a major foreground element.
+
+The other leg remains lower and more extended along the mattress.
+
+One arm is bent upward with the elbow resting on the mattress/pillow.
+
+That hand is positioned casually across the forehead, as if shielding the eyes slightly from the sunlight.
+
+The opposite arm remains relaxed alongside the torso, with the hand resting naturally near the hip/waist.
+
+The head is turned slightly toward the camera.
+
+The expression is relaxed, calm and slightly dreamy — like someone resting during a hot summer afternoon.
+
+Do not make the character sit upright, kneel, cross-legged, or pose standing.
+
+Composition
+
+The character should dominate the lower half of the image, while the cabana environment occupies the upper half.
+
+The closest bent leg should intentionally appear larger because of perspective.
+
+Behind the character, multiple layers of pillows create depth.
+
+Above the character, clearly show the beautiful woven straw ceiling, wooden beams and large vertical wooden support posts.
+
+Additional empty cabanas should repeat into the background, giving the image a premium tropical resort feeling.
+
+Daylight / Sky
+
+The scene takes place during a beautiful bright summer day.
+
+Where the exterior is visible between the cabanas, show a strong, clean deep-blue sky with no clouds.
+
+Use warm natural sunlight entering from the open sides of the cabana.
+
+The roof provides partial shade over the face and torso while direct sunlight hits parts of the legs and body, creating the same contrast as the reference.
+
+Lighting
+
+Use realistic strong summer sunlight with:
+
+warm highlights
+natural skin tones
+defined but soft-edged shadows
+realistic light bouncing from the sand
+subtle shade created by the straw roof
+bright highlights on the foreground leg
+natural smartphone-camera exposure
+
+Avoid artificial studio lighting. It should look like a spontaneous vacation photo.
+
+FiveM / GTA V Style
+
+The result must look like an authentic photograph taken inside a highly realistic modded FiveM / GTA V server, not like generic AI artwork.
+
+Maintain realistic GTA/FiveM character rendering while keeping the photography natural.
+
+No CGI-looking plastic skin, no illustration, no cartoon, no painting, no excessive depth of field, no artificial cinematic effects.
+
+Negative Prompt
+
+No extra people, no NPCs, no staff, no tourists, no additional characters, no standing pose, no sitting pose, no bird's-eye camera, no distant camera, no side-profile camera, no swimming pool, no city environment, no nighttime, no sunset, no cloudy sky, no HUD, no UI, no text, no logos, no watermark, no anatomy errors, no duplicated limbs, no extra fingers, no distorted legs.
+
+The priority is to reproduce the reference composition: extremely close wide-angle camera from the foot of the daybed, one bent knee dominating the foreground, my character lying diagonally and relaxed with one hand near the forehead, surrounded by oversized pillows inside a wooden thatched luxury beach cabana on a bright summer day.

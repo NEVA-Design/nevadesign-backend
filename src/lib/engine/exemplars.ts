@@ -27,7 +27,7 @@ export type ExemplarEntry = {
   typographie_generee?: string
 }
 
-type Manifest = { exemplaires: ExemplarEntry[] }
+type Manifest = { exemplaires: Array<ExemplarEntry & { categories?: string[] }> }
 
 type CategoryCache = {
   entries: ExemplarEntry[]
@@ -37,34 +37,44 @@ type CategoryCache = {
 
 const cache = new Map<string, CategoryCache>()
 
+// Pool partagé des recettes humaines (run 5.3, LOT 3) : les .txt du dossier
+// d'entraînement, parsés par train-fivem-v3.ts. Chaque recette liste les
+// catégories héro où elle est éligible — elle y passe AVANT les
+// reverse-prompts (boost dans scoreEntry).
+const RECETTES_HUMAINES_DIR = '_recettes-humaines'
+
+function loadManifestInto(result: CategoryCache, dir: string, filterCategory?: string) {
+  const manifestPath = join(dir, '_manifest.json')
+  if (!existsSync(manifestPath)) return
+  try {
+    const manifest = JSON.parse(readFileSync(manifestPath, 'utf-8')) as Manifest
+    for (const entry of manifest.exemplaires ?? []) {
+      if (filterCategory && !(entry.categories ?? []).includes(filterCategory)) continue
+      const promptPath = join(dir, `${entry.slug}.txt`)
+      if (!existsSync(promptPath)) continue
+      result.entries.push(entry)
+      result.prompts.set(entry.slug, readFileSync(promptPath, 'utf-8').trim())
+      const imagePath = join(dir, `${entry.slug}.jpg`)
+      if (existsSync(imagePath)) {
+        result.images.set(entry.slug, {
+          data: readFileSync(imagePath).toString('base64'),
+          mimeType: 'image/jpeg',
+        })
+      }
+    }
+  } catch (error) {
+    console.warn(`[exemplars] manifest illisible (${dir}) :`, (error as Error).message)
+  }
+}
+
 function loadCategory(category: string): CategoryCache {
   const cached = cache.get(category)
   if (cached) return cached
 
-  const dir = join(EXEMPLARS_DIR, category)
-  const manifestPath = join(dir, '_manifest.json')
   const result: CategoryCache = { entries: [], prompts: new Map(), images: new Map() }
-
-  if (existsSync(manifestPath)) {
-    try {
-      const manifest = JSON.parse(readFileSync(manifestPath, 'utf-8')) as Manifest
-      for (const entry of manifest.exemplaires ?? []) {
-        const promptPath = join(dir, `${entry.slug}.txt`)
-        if (!existsSync(promptPath)) continue
-        result.entries.push(entry)
-        result.prompts.set(entry.slug, readFileSync(promptPath, 'utf-8').trim())
-        const imagePath = join(dir, `${entry.slug}.jpg`)
-        if (existsSync(imagePath)) {
-          result.images.set(entry.slug, {
-            data: readFileSync(imagePath).toString('base64'),
-            mimeType: 'image/jpeg',
-          })
-        }
-      }
-    } catch (error) {
-      console.warn(`[exemplars] manifest illisible (${category}) :`, (error as Error).message)
-    }
-  }
+  loadManifestInto(result, join(EXEMPLARS_DIR, category))
+  // recettes humaines éligibles à cette catégorie — prompts sans images
+  loadManifestInto(result, join(EXEMPLARS_DIR, RECETTES_HUMAINES_DIR), category)
 
   cache.set(category, result)
   return result
@@ -118,10 +128,18 @@ export function pickExemplars(opts: {
   const reversePrompts: string[] = []
   const references: Array<{ data: string; mimeType: string }> = []
 
+  // La meilleure recette humaine ouvre le few-shot (boost de score) ; on en
+  // limite UNE par sélection pour que les reverse-prompts spécifiques à la
+  // catégorie (format, construction) gardent leur place.
+  let humanPicked = 0
   for (const entry of ranked) {
     if (references.length >= maxReferences && reversePrompts.length >= maxPrompts) break
+    if (entry.priorite === 'humaine' && humanPicked >= 1) continue
     const prompt = prompts.get(entry.slug)
-    if (reversePrompts.length < maxPrompts && prompt) reversePrompts.push(prompt)
+    if (reversePrompts.length < maxPrompts && prompt) {
+      reversePrompts.push(prompt)
+      if (entry.priorite === 'humaine') humanPicked += 1
+    }
     const image = images.get(entry.slug)
     if (references.length < maxReferences && image) references.push(image)
     slugs.push(entry.slug)

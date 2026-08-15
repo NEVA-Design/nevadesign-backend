@@ -1,0 +1,140 @@
+Create an ultra-realistic FiveM / GTA V cinematic screenshot using ONLY my reference character.
+
+Important:
+
+Preserve my reference character exactly as provided.
+Do NOT modify the face, hairstyle, body proportions, skin tone, outfit, accessories, jewelry, makeup, or identity.
+Simply recreate my character as a highly realistic FiveM character.
+Do NOT generate any extra people. The only person visible in the image must be my reference character.
+Scene
+
+The scene takes place in the crystal-clear swimming pool of a luxury tropical villa inside the GTA V / FiveM universe.
+
+The water is a vibrant turquoise with beautiful sunlight caustics dancing across the pool floor. The pool should feel calm, clean, and luxurious.
+
+Around the pool, include:
+
+tall tropical palm trees
+luxury white sun loungers
+modern Mediterranean architecture
+trimmed tropical plants
+a huge crystal-clear deep blue summer sky
+no clouds
+
+The atmosphere should feel like an exclusive five-star resort in Los Santos.
+
+Inflatable Float
+
+My character is relaxing on a large inflatable donut float.
+
+The float should be:
+
+oversized
+realistic glossy vinyl
+beige pastry texture
+white icing
+colorful sprinkles
+gently floating on the water
+extremely realistic with subtle folds and reflections
+
+The float occupies a large part of the frame.
+
+Camera (MOST IMPORTANT)
+
+The camera angle is the defining element of this image.
+
+The camera is positioned approximately 3 to 4 meters directly above my character, creating a high-angle shot, but NOT a perfectly vertical bird's-eye view.
+
+The camera is tilted downward at approximately 65–70 degrees, allowing both the top of the inflatable and part of my character's face to remain visible.
+
+Use approximately a 35mm lens.
+
+The composition should feel intimate and luxurious.
+
+The inflatable should fill around 70% of the frame, while the surrounding turquoise water occupies the remaining space.
+
+No pool edges should be visible.
+
+The image should consist almost entirely of the donut float surrounded by crystal-clear water.
+
+Character Pose (COPY EXACTLY)
+
+My character is sitting deep inside the inflatable donut.
+
+The pose must match the reference precisely.
+
+The back rests comfortably against the inflatable.
+One elbow is placed on the edge of the donut.
+One hand supports the side of the head.
+The head leans gently into that hand.
+Eyes are closed.
+A natural relaxed smile is visible.
+The opposite arm rests casually across the inflatable.
+One leg remains inside the donut.
+The other leg is stretched elegantly outside the float.
+The extended foot lightly touches the water, creating subtle ripples.
+The toes point naturally downward.
+The body is completely relaxed, as if peacefully sunbathing.
+
+The pose should feel effortless and candid, not posed.
+
+Composition
+
+The inflatable is perfectly centered.
+
+The extended leg creates a diagonal line toward the bottom of the frame.
+
+The turquoise water surrounds the float on every side.
+
+Sunlight creates beautiful shimmering reflections across the water.
+
+The composition should immediately evoke a luxurious tropical vacation.
+
+Lighting
+
+Use bright summer midday sunlight.
+
+Create:
+
+warm golden skin highlights
+vibrant turquoise water
+realistic reflections
+sparkling water caustics
+soft natural shadows
+luxury vacation color grading
+
+The atmosphere should feel warm, peaceful and premium.
+
+Style
+
+Ultra-photorealistic.
+
+Looks like a real luxury resort photoshoot captured inside a heavily modded FiveM / GTA V server.
+
+NOT CGI.
+
+NOT illustration.
+
+NOT painting.
+
+NOT cartoon.
+
+Negative Prompt
+No extra people.
+No swimmers.
+No pool toys other than the donut.
+No towels.
+No drinks.
+No clouds.
+No rain.
+No sunset.
+No logos.
+No readable text.
+No HUD.
+No UI.
+No watermark.
+No anatomy errors.
+No distorted hands.
+No duplicate limbs.
+
+The final image must faithfully recreate the exact camera angle, pose, framing, and relaxed vacation mood of the reference: a high-angle luxury editorial photograph of my reference character peacefully floating on a giant sprinkled donut inflatable, surrounded only by crystal-clear turquoise water beneath a huge cloudless blue summer sky.
