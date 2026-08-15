@@ -7,7 +7,7 @@ export const debugRoutes = new Elysia({ prefix: '/debug' })
     const auth = await requireUser(request)
     if (isResponse(auth)) return auth
 
-    const key = env.GOOGLE_AI_API_KEY
+    const key = env.GEMINI_API_KEY
     if (!key) return Response.json({ error: 'No API key' }, { status: 500 })
 
     const versions = ['v1beta', 'v1'] as const

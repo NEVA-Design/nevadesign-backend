@@ -23,10 +23,11 @@ export const env = {
   // can't run arbitrary DDL.
   SUPABASE_DB_URL: process.env.SUPABASE_DB_URL ?? '',
 
+  // Clé Gemini — UNIQUE clé IA du produit, ne vit que côté serveur.
+  // Jamais dans le frontend, jamais commitée (voir .env.example).
   GEMINI_API_KEY: process.env.GEMINI_API_KEY ?? '',
   GEMINI_FALLBACK_ENABLED: process.env.GEMINI_FALLBACK_ENABLED ?? 'true',
   GEMINI_FALLBACK_MODEL: process.env.GEMINI_FALLBACK_MODEL ?? 'gemini-3.1-flash-image',
-  GOOGLE_AI_API_KEY: process.env.GOOGLE_AI_API_KEY ?? '',
 
   // Discord OAuth — notre propre app Discord Developer Portal, flux géré
   // entièrement par ce backend (pas de passage par Supabase Auth).

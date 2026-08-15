@@ -1,6 +1,7 @@
 import { Elysia } from 'elysia'
 import { getModuleContract } from '../lib/ai/orchestrator'
-import { geminiVisionJson, geminiImageEdit } from '../lib/ai/gemini'
+import { geminiVisionJson, geminiImageEditRich, type GeminiUsage } from '../lib/ai/gemini'
+import { checkEngineGuards, logGeneration } from '../lib/engine/guards'
 import {
   checkRateLimit,
   jsonError,
@@ -87,7 +88,12 @@ export const auditImageRoutes = new Elysia({ prefix: '/audit-image' })
       const generateImprovedVersion = body.generateImprovedVersion === true
       const brainContext = buildNevaBrainContext('audit')
 
+      const guard = await checkEngineGuards(user.id, generateImprovedVersion ? 1 : 0)
+      if (!guard.ok) return jsonError(guard.code, guard.status, guard.message)
+
+      let visionUsage: GeminiUsage = { tokensIn: 0, tokensOut: 0 }
       const audit = (await geminiVisionJson<AuditReport>({
+        onUsage: (usage) => { visionUsage = usage },
         model: VISION_MODEL,
         imageBase64: validatedSource.image.data,
         mimeType: validatedSource.image.mimeType,
@@ -136,12 +142,30 @@ Return ONLY valid JSON with this shape:
             ? audit.improvedVersionPrompt
             : 'Improve this FiveM promotional visual while preserving the same concept, subject, brand identity, composition intent, colors, logos, and all important details. Make it look professionally edited in Photoshop with stronger hierarchy, cleaner lighting, controlled contrast, subtle depth, better readability, and premium restrained marketing polish.'
 
-        improvedImage = await geminiImageEdit({
+        const improved = await geminiImageEditRich({
           model: IMAGE_MODEL,
           prompt: `${improvedPrompt} Preserve the uploaded visual identity, layout intent, logos, character identity, face, tattoos, accessories, and recognizable elements. Do not redesign from scratch. FiveM / GTA RP promotional artwork, senior designer Photoshop finish. Keep effects subtle and purposeful: no random neon, no excessive glow, no overloaded particles, no plastic HDR, no fake stock-photo realism.`,
           referenceImages: [validatedSource.image],
         })
+        improvedImage = improved.dataUrl
+        void logGeneration({
+          userId: user.id,
+          kind: 'audit_improved',
+          model: IMAGE_MODEL,
+          imagesOut: 1,
+          tokensIn: improved.usage.tokensIn,
+          tokensOut: improved.usage.tokensOut,
+        })
       }
+
+      void logGeneration({
+        userId: user.id,
+        kind: 'audit',
+        model: VISION_MODEL,
+        imagesOut: 0,
+        tokensIn: visionUsage.tokensIn,
+        tokensOut: visionUsage.tokensOut,
+      })
 
       const totalCost = AUDIT_COST + (generateImprovedVersion ? IMPROVED_VERSION_COST : 0)
       const [deduction, watermarkEnabled] = await Promise.all([

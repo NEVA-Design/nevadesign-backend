@@ -1,7 +1,8 @@
 import { Elysia } from 'elysia'
 import { getModuleContract } from '../lib/ai/orchestrator'
 import { getAspectRatioInstruction, type AspectRatioId } from '../lib/ai/aspect-ratios'
-import { geminiImageEdit } from '../lib/ai/gemini'
+import { geminiImageEditRich } from '../lib/ai/gemini'
+import { checkEngineGuards, logGeneration } from '../lib/engine/guards'
 import {
   checkRateLimit,
   hasPromptInjectionRisk,
@@ -134,10 +135,22 @@ export const characterAssetsRoutes = new Elysia({ prefix: '/character-assets' })
         ...safeFields,
       })
 
-      const image = await geminiImageEdit({
+      const guard = await checkEngineGuards(user.id, 1)
+      if (!guard.ok) return jsonError(guard.code, guard.status, guard.message)
+
+      const generated = await geminiImageEditRich({
         model: IMAGE_MODEL,
         prompt,
         referenceImages: [validatedSource.image],
+      })
+      const image = generated.dataUrl
+      void logGeneration({
+        userId: user.id,
+        kind: 'character',
+        model: IMAGE_MODEL,
+        imagesOut: 1,
+        tokensIn: generated.usage.tokensIn,
+        tokensOut: generated.usage.tokensOut,
       })
 
       const [deduction, watermarkEnabled] = await Promise.all([

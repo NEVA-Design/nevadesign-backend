@@ -10,10 +10,14 @@ export const DEFAULT_VISION_MODEL = 'gemini-2.0-flash'
 
 export class GeminiError extends Error {
   status: number
-  constructor(message: string, status: number) {
+  // true quand le modèle a refusé le contenu (safety) — c'est le signal que
+  // le compilateur de prompts utilise pour tenter UNE reformulation adoucie.
+  refusal: boolean
+  constructor(message: string, status: number, refusal = false) {
     super(message)
     this.name = 'GeminiError'
     this.status = status
+    this.refusal = refusal
   }
 }
 
@@ -25,8 +29,27 @@ type GeminiApiResponse = {
     content?: {
       parts?: Array<{ text?: string; inlineData?: { mimeType: string; data: string } }>
     }
+    finishReason?: string
   }>
+  promptFeedback?: { blockReason?: string }
+  usageMetadata?: {
+    promptTokenCount?: number
+    candidatesTokenCount?: number
+    totalTokenCount?: number
+  }
   error?: { code: number; message: string; status?: string }
+}
+
+export type GeminiUsage = {
+  tokensIn: number
+  tokensOut: number
+}
+
+function extractUsage(response: GeminiApiResponse | null): GeminiUsage {
+  return {
+    tokensIn: response?.usageMetadata?.promptTokenCount ?? 0,
+    tokensOut: response?.usageMetadata?.candidatesTokenCount ?? 0,
+  }
 }
 
 function apiKey() {
@@ -63,6 +86,7 @@ export async function geminiText(opts: {
   temperature?: number
   maxOutputTokens?: number
   json?: boolean
+  onUsage?: (usage: GeminiUsage) => void
 }): Promise<string> {
   const body: Record<string, unknown> = {
     contents: [{ role: 'user', parts: [{ text: opts.prompt }] }],
@@ -82,6 +106,7 @@ export async function geminiText(opts: {
     const message = json?.error?.message ?? `Erreur moteur Neva ${res.status}`
     throw new GeminiError(friendlyErrorMessage(res.status, message), res.status)
   }
+  opts.onUsage?.(extractUsage(json))
   return extractText(json)
 }
 
@@ -93,6 +118,7 @@ export async function geminiJson<T>(opts: {
   systemInstruction?: string
   temperature?: number
   maxOutputTokens?: number
+  onUsage?: (usage: GeminiUsage) => void
 }): Promise<T | null> {
   const text = await geminiText({ ...opts, json: true })
   try {
@@ -113,6 +139,7 @@ export async function geminiVisionText(opts: {
   temperature?: number
   maxOutputTokens?: number
   json?: boolean
+  onUsage?: (usage: GeminiUsage) => void
 }): Promise<string> {
   const model = opts.model ?? DEFAULT_VISION_MODEL
   const body: Record<string, unknown> = {
@@ -141,6 +168,7 @@ export async function geminiVisionText(opts: {
     const message = json?.error?.message ?? `Erreur moteur de vision ${res.status}`
     throw new GeminiError(friendlyErrorMessage(res.status, message), res.status)
   }
+  opts.onUsage?.(extractUsage(json))
   return extractText(json)
 }
 
@@ -152,6 +180,7 @@ export async function geminiVisionJson<T>(opts: {
   systemInstruction?: string
   temperature?: number
   maxOutputTokens?: number
+  onUsage?: (usage: GeminiUsage) => void
 }): Promise<T | null> {
   const text = await geminiVisionText({ ...opts, json: true })
   try {
@@ -217,11 +246,22 @@ export async function* geminiStreamText(opts: {
 
 // ─── Image generation / editing (multimodal in, image out) ────────────────────
 
-export async function geminiImageEdit(opts: {
+const REFUSAL_FINISH_REASONS = new Set(['SAFETY', 'IMAGE_SAFETY', 'PROHIBITED_CONTENT', 'BLOCKLIST', 'RECITATION'])
+
+export type GeminiImageResult = {
+  dataUrl: string
+  usage: GeminiUsage
+}
+
+export async function geminiImageEditRich(opts: {
   model: string
   prompt: string
   referenceImages?: Array<{ data: string; mimeType: string }>
-}): Promise<string> {
+  // Config native des modèles image récents : ratio exact et résolution
+  // 1K/2K/4K rendus par le modèle lui-même (pas par recadrage local).
+  // Ne passer que des champs supportés par le modèle ciblé.
+  imageConfig?: { aspectRatio?: string; imageSize?: '1K' | '2K' | '4K' }
+}): Promise<GeminiImageResult> {
   const validReferences = (opts.referenceImages ?? []).filter((img) => img.data && img.mimeType)
   const parts: GeminiPart[] =
     validReferences.length > 0
@@ -231,9 +271,17 @@ export async function geminiImageEdit(opts: {
         ]
       : [{ text: opts.prompt }]
 
+  const generationConfig: Record<string, unknown> = { responseModalities: ['IMAGE'] }
+  if (opts.imageConfig && (opts.imageConfig.aspectRatio || opts.imageConfig.imageSize)) {
+    generationConfig.imageConfig = {
+      ...(opts.imageConfig.aspectRatio ? { aspectRatio: opts.imageConfig.aspectRatio } : {}),
+      ...(opts.imageConfig.imageSize ? { imageSize: opts.imageConfig.imageSize } : {}),
+    }
+  }
+
   const res = await post(opts.model, 'generateContent', {
     contents: [{ role: 'user', parts }],
-    generationConfig: { responseModalities: ['IMAGE'] },
+    generationConfig,
   })
 
   const json = (await res.json().catch(() => null)) as GeminiApiResponse | null
@@ -242,11 +290,31 @@ export async function geminiImageEdit(opts: {
     throw new GeminiError(friendlyErrorMessage(res.status, message), res.status)
   }
 
-  const imagePart = json.candidates?.[0]?.content?.parts?.find((p) => p.inlineData?.data)
+  const usage = extractUsage(json)
+  const candidate = json.candidates?.[0]
+  const imagePart = candidate?.content?.parts?.find((p) => p.inlineData?.data)
   if (!imagePart?.inlineData?.data) {
-    throw new GeminiError("Le moteur image n'a pas retourné de visuel — réessaie avec un prompt plus simple ou une autre référence", 200)
+    const blockReason = json.promptFeedback?.blockReason
+    const finishReason = candidate?.finishReason
+    const refused = Boolean(blockReason) || REFUSAL_FINISH_REASONS.has(finishReason ?? '')
+    throw new GeminiError(
+      refused
+        ? 'Le moteur image a refusé cette scène — reformule-la légèrement (ambiance, objets sensibles) et réessaie'
+        : "Le moteur image n'a pas retourné de visuel — réessaie avec un prompt plus simple ou une autre référence",
+      200,
+      refused
+    )
   }
 
   const mime = imagePart.inlineData.mimeType ?? 'image/png'
-  return `data:${mime};base64,${imagePart.inlineData.data}`
+  return { dataUrl: `data:${mime};base64,${imagePart.inlineData.data}`, usage }
+}
+
+export async function geminiImageEdit(opts: {
+  model: string
+  prompt: string
+  referenceImages?: Array<{ data: string; mimeType: string }>
+}): Promise<string> {
+  const result = await geminiImageEditRich(opts)
+  return result.dataUrl
 }

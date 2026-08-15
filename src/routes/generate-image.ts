@@ -7,7 +7,8 @@ import {
   type AspectRatioId,
 } from '../lib/ai/aspect-ratios'
 import { getModuleContract } from '../lib/ai/orchestrator'
-import { geminiText, geminiJson, geminiImageEdit, geminiVisionText, GeminiError } from '../lib/ai/gemini'
+import { geminiText, geminiJson, geminiImageEditRich, geminiVisionText, GeminiError, type GeminiImageResult } from '../lib/ai/gemini'
+import { checkEngineGuards, logGeneration } from '../lib/engine/guards'
 import {
   checkRateLimit,
   hasPromptInjectionRisk,
@@ -393,7 +394,7 @@ async function generateWithGemini(
   geminiModel: string,
   aspectRatio: AspectRatioId,
   referenceImages: ReferenceImages = [],
-): Promise<string> {
+): Promise<GeminiImageResult> {
   const orientationPrefix = `${getAspectRatioInstruction(aspectRatio)} `
 
   const FLASH_QUALITY_BOOST =
@@ -404,7 +405,7 @@ async function generateWithGemini(
   const qualityPrefix = geminiModel === 'gemini-2.5-flash-image' ? FLASH_QUALITY_BOOST : ''
   const finalPrompt = orientationPrefix + qualityPrefix + prompt
 
-  return geminiImageEdit({ model: geminiModel, prompt: finalPrompt, referenceImages })
+  return geminiImageEditRich({ model: geminiModel, prompt: finalPrompt, referenceImages })
 }
 
 async function generateSingleImage(
@@ -412,7 +413,7 @@ async function generateSingleImage(
   imageModel: ReturnType<typeof getImageModel>,
   aspectRatio: AspectRatioId,
   referenceImages: ReferenceImages = [],
-): Promise<string> {
+): Promise<GeminiImageResult> {
   const fallbackEnabled = env.GEMINI_FALLBACK_ENABLED !== 'false'
   const fallbackModel = env.GEMINI_FALLBACK_MODEL || 'gemini-3.1-flash-image'
 
@@ -475,6 +476,9 @@ export const generateImageRoutes = new Elysia({ prefix: '/generate-image' })
       const renderCount = ([1, 3, 4] as const).includes(rawRenderCount as 1 | 3 | 4)
         ? (rawRenderCount as 1 | 3 | 4)
         : 1
+
+      const guard = await checkEngineGuards(user.id, renderCount)
+      if (!guard.ok) return jsonError(guard.code, guard.status, guard.message)
 
       const safePrompt = sanitizeText(prompt, contract.maxInputChars)
       const safeNegativePrompt = sanitizeText(negativePrompt, 1_500)
@@ -562,6 +566,7 @@ export const generateImageRoutes = new Elysia({ prefix: '/generate-image' })
         const modelUsed = imageModel.name
         const totalCost = generationCost * renderCount
 
+        const generationStartedAt = Date.now()
         const [rawImages, watermarkEnabled] = await Promise.all([
           Promise.all(
             Array.from({ length: renderCount }, () =>
@@ -573,12 +578,23 @@ export const generateImageRoutes = new Elysia({ prefix: '/generate-image' })
         const images = await Promise.all(
           rawImages.map((image) =>
             normalizeGeneratedImage({
-              imageBase64: image,
+              imageBase64: image.dataUrl,
               aspectRatio: safeAspectRatio,
               watermark: watermarkEnabled,
             })
           )
         )
+
+        void logGeneration({
+          userId: user.id,
+          kind: 'design',
+          model: imageModel.geminiModel,
+          resolution,
+          imagesOut: renderCount,
+          tokensIn: rawImages.reduce((sum, image) => sum + image.usage.tokensIn, 0),
+          tokensOut: rawImages.reduce((sum, image) => sum + image.usage.tokensOut, 0),
+          durationMs: Date.now() - generationStartedAt,
+        })
 
         const deduction = await deductCredits(
           supabase,
@@ -612,8 +628,17 @@ export const generateImageRoutes = new Elysia({ prefix: '/generate-image' })
           renderCount,
         })
       } catch (genErr: unknown) {
-        const e = genErr as { status?: number; message?: string; name?: string }
+        const e = genErr as { status?: number; message?: string; name?: string; refusal?: boolean }
         console.error('[generate-image] generation error:', e?.status, e?.message)
+
+        void logGeneration({
+          userId: user.id,
+          kind: 'design',
+          model: imageModel.geminiModel,
+          resolution,
+          imagesOut: 0,
+          refused: e?.refusal === true,
+        })
 
         let userMessage = e?.message ?? 'Erreur inconnue lors de la génération'
         if (e?.name === 'GeminiError') {

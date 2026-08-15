@@ -26,6 +26,7 @@ import { adminNewsletterRoutes } from './routes/admin/newsletter'
 import { adminSecurityAlertsRoutes } from './routes/admin/security-alerts'
 import { adminUsersRoutes } from './routes/admin/users'
 import { adminOverviewRoutes } from './routes/admin/overview'
+import { adminEngineRoutes } from './routes/admin/engine'
 
 const corsOrigins = env.CORS_ORIGIN.split(',').map((origin) => origin.trim()).filter(Boolean)
 
@@ -62,6 +63,7 @@ const app = new Elysia()
   .use(adminSecurityAlertsRoutes)
   .use(adminUsersRoutes)
   .use(adminOverviewRoutes)
+  .use(adminEngineRoutes)
   .listen(env.PORT)
 
 console.log(`nevadesign-backend running at http://${app.server?.hostname}:${app.server?.port}`)

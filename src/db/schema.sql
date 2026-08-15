@@ -390,6 +390,55 @@ INSERT INTO profiles (id, credits, plan)
 SELECT id, 0, 'free' FROM auth.users
 ON CONFLICT (id) DO NOTHING;
 
+-- ── Journal de coût des générations IA (run 5, LOT 0) ───────────────────────
+-- Chaque appel image/vision est loggé : modèle, résolution, tokens, coût
+-- estimé. Sert aussi de compteur pour le plafond quotidien par compte
+-- (somme des images_out du jour). Accès service_role uniquement.
+CREATE TABLE IF NOT EXISTS generation_logs (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  user_id UUID REFERENCES auth.users(id) ON DELETE SET NULL,
+  project_id UUID,
+  asset_id UUID,
+  kind TEXT NOT NULL,
+  model TEXT NOT NULL,
+  resolution TEXT,
+  images_out INTEGER NOT NULL DEFAULT 0,
+  tokens_in INTEGER,
+  tokens_out INTEGER,
+  cost_eur NUMERIC(9, 4),
+  refused BOOLEAN NOT NULL DEFAULT false,
+  retried BOOLEAN NOT NULL DEFAULT false,
+  duration_ms INTEGER,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE INDEX IF NOT EXISTS generation_logs_user_created_idx ON generation_logs(user_id, created_at DESC);
+CREATE INDEX IF NOT EXISTS generation_logs_project_idx ON generation_logs(project_id);
+
+ALTER TABLE generation_logs ENABLE ROW LEVEL SECURITY;
+DROP POLICY IF EXISTS "Service role full access generation logs" ON generation_logs;
+CREATE POLICY "Service role full access generation logs" ON generation_logs FOR ALL TO service_role USING (true) WITH CHECK (true);
+
+-- ── Réglages moteur : kill-switch + plafond, sans redéploiement ─────────────
+-- generations_enabled=false coupe toutes les générations IA immédiatement
+-- (cache mémoire 30 s côté backend). Modifiable via PATCH /admin/engine ou
+-- directement en SQL depuis le dashboard Supabase.
+CREATE TABLE IF NOT EXISTS engine_settings (
+  id TEXT PRIMARY KEY DEFAULT 'global' CHECK (id = 'global'),
+  generations_enabled BOOLEAN NOT NULL DEFAULT true,
+  daily_cap_per_user INTEGER NOT NULL DEFAULT 80,
+  updated_by TEXT,
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+ALTER TABLE engine_settings ENABLE ROW LEVEL SECURITY;
+DROP POLICY IF EXISTS "Service role full access engine settings" ON engine_settings;
+CREATE POLICY "Service role full access engine settings" ON engine_settings FOR ALL TO service_role USING (true) WITH CHECK (true);
+
+INSERT INTO engine_settings (id)
+VALUES ('global')
+ON CONFLICT (id) DO NOTHING;
+
 -- PostgREST met en cache le schéma : on force un rechargement immédiat
 -- pour que les colonnes/tables neuves soient visibles sans attendre.
 NOTIFY pgrst, 'reload schema';
