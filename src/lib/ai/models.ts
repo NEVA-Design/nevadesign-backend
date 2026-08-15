@@ -232,7 +232,7 @@ export const NEVA_MODELS: Record<string, NevaModel> = {
     name: 'Neva Studio',
     badge: 'STUDIO',
     description: 'Direction artistique, stratégie de lancement et briefs premium',
-    geminiModel: 'gemini-2.5-pro',
+    geminiModel: 'gemini-pro-latest',
     maxOutputTokens: 2500,
     temperature: 0.4,
     systemPrompt: `Tu es Neva Pro — le directeur artistique IA de Neva AI, spécialisé FiveM/GTA RP et design premium.
@@ -275,7 +275,7 @@ ${OUTPUT_FORMAT}`,
     name: 'Neva Core',
     badge: 'CORE',
     description: 'Direction créative rapide et idées immédiatement actionnables',
-    geminiModel: 'gemini-2.5-flash',
+    geminiModel: 'gemini-flash-latest',
     maxOutputTokens: 1800,
     temperature: 0.45,
     systemPrompt: `Tu es Neva Flash — l'expert créatif rapide de Neva AI pour FiveM.

@@ -1,0 +1,47 @@
+{
+  "categorie": "banniere_discord",
+  "source": "banniere discord serveur fivem gtarp",
+  "images_totales": 34,
+  "images_analysees": 12,
+  "genere_le": "2026-08-15T15:34:59.997Z",
+  "modele": "gemini-3.5-flash",
+  "guide": {
+    "categorie": "banniere_discord",
+    "composition": [
+      "Use a symmetrical, centered layout with the focal point (text or logo) occupying 50% to 70% of the central canvas.",
+      "For character-driven designs, flank the central text symmetrically with 2 characters occupying 30% of the left and right margins, or place a couple centrally occupying the middle 50%.",
+      "For asymmetrical layouts, use a 35/65 split: a solid color block with text on the left 35%, and a wide-angle scene with a foreground element on the right 65%.",
+      "Frame the composition using blurred foreground elements (e.g., 3D assets, snowflakes, or foliage) to establish depth of field."
+    ],
+    "typographie": [
+      "Place a giant, bold, sans-serif or custom display title centrally behind the main subjects, or use a large monogram (occupying 30% width) on the left that merges into the main text.",
+      "Apply a strict hierarchy: main title in ultra-bold, uppercase, or 3D extruded block style; secondary subtitle (e.g., 'ROLEPLAY') in a smaller, tracked-out, clean sans-serif centered below.",
+      "Integrate text with graphic elements, such as a central icon acting as a vertical word separator, or sharp horizontal slice effects through the lettering."
+    ],
+    "lumiere": [
+      "Implement high-contrast, low-key lighting with a vibrant neon or ambient glow (purple, green, or red) emanating from behind the central text to separate it from dark backgrounds.",
+      "For outdoor scenes, use bright, direct midday or afternoon sunlight with strong rim lighting on the characters' shoulders and hair to create a premium cutout effect."
+    ],
+    "etalonnage": [
+      "Apply high-contrast, saturated color palettes: pair deep, crushed blacks and dark grays (#1A1A1A) with vibrant accents like hot pink (#FF007F), electric green (#00FF66), or cyan (#00D2FF).",
+      "For thematic designs, use a monochromatic wash (deep crimson #8B0000, deep purple #2D1B33, or cyan/teal #005F73) contrasted with stark white text."
+    ],
+    "effets": [
+      "Apply depth-of-field blur to foreground and background elements to create a 3D layer effect.",
+      "Incorporate subtle graphic overlays: topographic vector lines in the corners, fine halftone dot patterns, and light dust or particle textures."
+    ],
+    "logo": [
+      "Integrate the logo directly into the typography as a customized monogram (e.g., 'B' or 'D' on the left) or embed a stylized icon within the central lettering."
+    ],
+    "interdits": [
+      "Avoid harsh, low-resolution cutouts or jagged edges on character models.",
+      "Do not make background characters so dark that they lose all defining detail.",
+      "Avoid abrupt, disjointed transitions between solid color blocks and photographic scenes.",
+      "Do not use generic, unedited stock brushes or low-resolution, sparse particle effects."
+    ],
+    "ratios": [
+      "16:9",
+      "21:5"
+    ]
+  }
+}

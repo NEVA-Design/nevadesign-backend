@@ -1,0 +1,50 @@
+{
+  "categorie": "affiche",
+  "source": "affiche serveur fivem gtarp",
+  "images_totales": 17,
+  "images_analysees": 12,
+  "genere_le": "2026-08-15T15:33:58.860Z",
+  "modele": "gemini-3.5-flash",
+  "guide": {
+    "categorie": "affiche",
+    "composition": [
+      "Use symmetrical framing with a single subject (character or object) occupying 40% to 50% of the center canvas.",
+      "For vertical layouts, divide into thirds: foreground elements in the bottom 30%, subject in the center 40%, background elements in the top 30%.",
+      "For horizontal layouts, use a 15% left-aligned logo/graphic balanced by a 60% wide text block on the right.",
+      "Place giant background text spanning 80% to 100% of the canvas width directly behind the mid-ground subject to create depth layers."
+    ],
+    "typographie": [
+      "Use ultra-bold, condensed sans-serif in all-caps for primary titles, layered behind the subject's limbs or head but in front of the background.",
+      "Apply a two-tier hierarchy: primary title in a bold solid color or gradient, secondary technical details in a thin, wide-spaced sans-serif at the bottom.",
+      "Ensure text interacting with subjects uses a clean vector outline layer in front of the subject and a solid fill layer behind them."
+    ],
+    "lumiere": [
+      "Implement strong, high-contrast rim lighting (white, cyan, or pink) on the subject's shoulders, hair, or outer edges.",
+      "Use vibrant ambient under-glow or corner spotlights (red, purple, or pink) to cast soft volumetric light cones over the scene.",
+      "For outdoor scenes, apply harsh midday sunlight with strong specular highlights on skin and metallic surfaces."
+    ],
+    "etalonnage": [
+      "Apply a high-contrast, desaturated black base paired with a single vibrant accent color family: Deep Crimson (#8B0000), Neon Lime (#DFFF00), or Monochromatic Purple (#4A2E80).",
+      "For summer themes, use a highly saturated warm palette combining rich teals, coral reds (#FF5A5F), and golden hour tones."
+    ],
+    "effets": [
+      "Overlay subtle floating dust particles, soft volumetric fog, and a dark circular vignette to focus attention on the center.",
+      "Integrate technical background elements like fine grid overlays, topographic vector lines, or halftone dot patterns."
+    ],
+    "logo": [
+      "Place a small, stylized server logo in the top-right or bottom-left corner, and a tiny creator watermark centered at the absolute bottom edge."
+    ],
+    "interdits": [
+      "Do not use low-resolution hand-painted or distressed textures on text layers.",
+      "Avoid repeating identical UI buttons or Discord links multiple times in a vertical layout.",
+      "Do not use flat, copy-pasted 2D assets (like cash or bullets) that lack matching 3D lighting and drop shadows.",
+      "Avoid dripping or melting liquid text effects on clean, luxury-themed resort backdrops."
+    ],
+    "ratios": [
+      "16:9",
+      "9:16",
+      "4:3",
+      "4:1"
+    ]
+  }
+}

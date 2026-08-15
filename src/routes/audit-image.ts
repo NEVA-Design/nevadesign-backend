@@ -19,7 +19,7 @@ type ReportLanguage = 'fr' | 'en' | 'es' | 'de' | 'it' | 'pt' | 'ar'
 
 const AUDIT_COST = 1
 const IMPROVED_VERSION_COST = 2
-const VISION_MODEL = 'gemini-2.5-flash'
+const VISION_MODEL = 'gemini-3.5-flash'
 const IMAGE_MODEL = 'gemini-3-pro-image'
 const ASSET_TYPES: AssetType[] = ['poster', 'banner', 'logo', 'landing_page', 'social_media']
 const REPORT_LANGUAGES: Record<ReportLanguage, string> = {
@@ -98,7 +98,8 @@ export const auditImageRoutes = new Elysia({ prefix: '/audit-image' })
         imageBase64: validatedSource.image.data,
         mimeType: validatedSource.image.mimeType,
         temperature: 0.25,
-        maxOutputTokens: 1800,
+        maxOutputTokens: 2300,
+        thinkingBudget: 512,
         systemInstruction: `You are Neva Audit, a senior FiveM creative director. Analyze uploaded visuals for FiveM creators, server owners, marketing teams, and designers.
 
 Use these Neva Brain rules:

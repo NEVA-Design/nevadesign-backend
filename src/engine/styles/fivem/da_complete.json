@@ -1,0 +1,48 @@
+{
+  "categorie": "da_complete",
+  "source": "exemple DA complete fivem",
+  "images_totales": 9,
+  "images_analysees": 9,
+  "genere_le": "2026-08-15T15:36:47.676Z",
+  "modele": "gemini-3.5-flash",
+  "guide": {
+    "categorie": "da_complete",
+    "composition": [
+      "Anchor main characters in the center or left-center, occupying 50% to 60% of the frame width.",
+      "Reserve 30% to 40% of the frame (typically right or top-right) for large-scale 3D titles.",
+      "Layer UI elements, brand assets, and secondary logos exclusively along the bottom 20% margin.",
+      "Use a split-screen or triptych grid layout when presenting brand guidelines, dividing assets 50/50 or 60/40."
+    ],
+    "typographie": [
+      "Place primary titles behind the main character's shoulders or overlapping the lower-middle third to establish depth.",
+      "Combine a bold, chiseled 3D sans-serif or gothic block font with a thin, vibrant script-style overlay.",
+      "Set secondary text (names, URLs) in clean, wide, all-caps sans-serif or gothic blackletter, scaled to under 15% of frame height."
+    ],
+    "lumiere": [
+      "Apply high-contrast, directional rim lighting (white or primary brand color) to outline character silhouettes.",
+      "Use strong under-glow or ambient backlighting from cars, neon signs, or light beams to separate subjects from dark backgrounds.",
+      "Keep facial fill light soft and ambient, maintaining high-contrast shadows."
+    ],
+    "etalonnage": [
+      "Maintain a desaturated, high-contrast base with deep grays, blacks, and desaturated skin tones.",
+      "Inject a single, highly saturated brand accent color: Mint Green (#20E39B/#59EAA0), Gold (#D4AF37), Orange (#FF8C00), or Purple (#8A2BE2)."
+    ],
+    "effets": [
+      "Layer soft ground-level smoke, fog, or dust particles around the characters' waists and car wheels.",
+      "Apply subtle halftone dot patterns, light film grain, and localized horizontal lens flares.",
+      "Incorporate floating 3D metallic elements or light leaks matching the brand accent color."
+    ],
+    "logo": [
+      "Position a circular monogram or stylized vector emblem in the bottom UI bar or as a repeating badge on the right asset panel."
+    ],
+    "interdits": [
+      "Do not place floating props (like cigars or weapons) without realistic hand contact and shadow integration.",
+      "Avoid hard, unblended transitions between indoor foregrounds and outdoor background murals.",
+      "Do not apply uniform rain or scratch textures across the entire frame; mask them to preserve depth-of-field.",
+      "Avoid illegible blackletter fonts over busy, high-contrast backgrounds."
+    ],
+    "ratios": [
+      "16:9"
+    ]
+  }
+}

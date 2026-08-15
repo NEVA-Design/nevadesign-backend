@@ -1,0 +1,105 @@
+{
+  "execute_le": "2026-08-15T15:37:31.511Z",
+  "modele": "gemini-3.5-flash",
+  "mode": "sync (lots de 4 images/appel)",
+  "note_batch": "Volume one-shot ≈ centimes : le mode Batch asynchrone (−50 %) n'apporte que ~la moitié d'un café. Chiffré ci-dessous en sync, prix batch théorique = cout_total_eur × 0,5.",
+  "categories": [
+    {
+      "categorie": "affiche",
+      "images_totales": 17,
+      "analysees": 12,
+      "appels": 4,
+      "tokens_in": 16988,
+      "tokens_out": 3704,
+      "cout_eur": 0.0132,
+      "guide_tokens_approx": 631
+    },
+    {
+      "categorie": "background_logo",
+      "images_totales": 11,
+      "analysees": 11,
+      "appels": 4,
+      "tokens_in": 15291,
+      "tokens_out": 3089,
+      "cout_eur": 0.0113,
+      "guide_tokens_approx": 668
+    },
+    {
+      "categorie": "banniere_discord",
+      "images_totales": 34,
+      "analysees": 12,
+      "appels": 4,
+      "tokens_in": 17042,
+      "tokens_out": 3847,
+      "cout_eur": 0.0136,
+      "guide_tokens_approx": 675
+    },
+    {
+      "categorie": "banniere_fivem",
+      "images_totales": 19,
+      "analysees": 12,
+      "appels": 4,
+      "tokens_in": 16787,
+      "tokens_out": 3449,
+      "cout_eur": 0.0126,
+      "guide_tokens_approx": 568
+    },
+    {
+      "categorie": "banniere_f5",
+      "images_totales": 12,
+      "analysees": 12,
+      "appels": 4,
+      "tokens_in": 16242,
+      "tokens_out": 3470,
+      "cout_eur": 0.0125,
+      "guide_tokens_approx": 623
+    },
+    {
+      "categorie": "personnage",
+      "images_totales": 32,
+      "analysees": 12,
+      "appels": 4,
+      "tokens_in": 16100,
+      "tokens_out": 2949,
+      "cout_eur": 0.0112,
+      "guide_tokens_approx": 646
+    },
+    {
+      "categorie": "da_complete",
+      "images_totales": 9,
+      "analysees": 9,
+      "appels": 4,
+      "tokens_in": 13145,
+      "tokens_out": 3142,
+      "cout_eur": 0.0109,
+      "guide_tokens_approx": 563
+    },
+    {
+      "categorie": "icon",
+      "images_totales": 16,
+      "analysees": 12,
+      "appels": 4,
+      "tokens_in": 15618,
+      "tokens_out": 2287,
+      "cout_eur": 0.0096,
+      "guide_tokens_approx": 425
+    },
+    {
+      "categorie": "logo",
+      "images_totales": 59,
+      "analysees": 12,
+      "appels": 4,
+      "tokens_in": 16190,
+      "tokens_out": 3004,
+      "cout_eur": 0.0114,
+      "guide_tokens_approx": 614
+    }
+  ],
+  "total": {
+    "appels": 36,
+    "tokens_in": 143403,
+    "tokens_out": 28941,
+    "cout_total_eur": 0.1061,
+    "cout_batch_theorique_eur": 0.0531
+  }
+}

@@ -22,6 +22,14 @@ export const MODEL_PRICING: Record<string, ModelPricing> = {
   'gemini-2.0-flash': { textInPerM: 0.1, textOutPerM: 0.4 },
   'gemini-2.5-flash': { textInPerM: 0.3, textOutPerM: 2.5 },
   'gemini-2.5-pro': { textInPerM: 1.25, textOutPerM: 10 },
+  // Génération 3.5+ (estimations classe flash/pro — à recaler sur facture)
+  'gemini-3.5-flash': { textInPerM: 0.3, textOutPerM: 2.5 },
+  'gemini-3.5-flash-lite': { textInPerM: 0.1, textOutPerM: 0.4 },
+  'gemini-3.6-flash': { textInPerM: 0.3, textOutPerM: 2.5 },
+  'gemini-3.7-flash': { textInPerM: 0.3, textOutPerM: 2.5 },
+  'gemini-flash-latest': { textInPerM: 0.3, textOutPerM: 2.5 },
+  'gemini-pro-latest': { textInPerM: 1.25, textOutPerM: 10 },
+  'gemini-3.1-pro-preview': { textInPerM: 2, textOutPerM: 12 },
   'gemini-2.5-flash-image': {
     textInPerM: 0.3,
     textOutPerM: 2.5,

@@ -1,0 +1,50 @@
+{
+  "categorie": "banniere_f5",
+  "source": "banniere menu F5 serveur fivem gtarp",
+  "images_totales": 12,
+  "images_analysees": 12,
+  "genere_le": "2026-08-15T15:35:56.778Z",
+  "modele": "gemini-3.5-flash",
+  "guide": {
+    "categorie": "banniere_f5",
+    "composition": [
+      "Use a strict 4:1 horizontal aspect ratio.",
+      "Apply either a 40/60 split layout (left 40% for emblem, right 60% for logotype separated by a 1px vertical line) or a 30% to 60% centered layout.",
+      "Frame the outer 15% edges symmetrically with dark, silhouetted palm trees, cityscapes, or blurred environmental elements.",
+      "Keep the background elements low-contrast to preserve a clean, empty negative space on the flanks."
+    ],
+    "typographie": [
+      "Use bold, geometric, all-caps sans-serif or stylized cursive script for the primary title, occupying 30% to 50% of the canvas width.",
+      "Apply a secondary subtitle (e.g., 'ROLEPLAY') tracked out widely, positioned directly below the main title at 15% of its font size.",
+      "Apply a metallic silver gradient, a 3D bevel effect, or a solid white fill with a 1px stroke to the primary text.",
+      "Integrate the primary emblem directly into the typography (e.g., replacing a letter or acting as a central divider)."
+    ],
+    "lumiere": [
+      "Cast a strong radial glow or backlighting directly behind the central logo/emblem.",
+      "Apply soft, vibrant ambient light leaks (neon red, green, pink, or blue) emanating from the left and right canvas edges.",
+      "Use subtle rim lighting on the edges of the central vector elements to separate them from the dark background."
+    ],
+    "etalonnage": [
+      "Use a high-contrast, deep black base paired with a single highly saturated neon accent color (#FF0000 red, #00FF00 green, #8A2BE2 purple, or #0088FF blue).",
+      "Maintain a monochromatic, desaturated, and dark color palette for all background elements."
+    ],
+    "effets": [
+      "Mask a clean vector map texture or satin overlay inside the main emblem.",
+      "Apply a heavy background vignette and a soft depth-of-field blur to background silhouettes.",
+      "Add subtle finishing details: fine noise grain, floating embers/dust particles, or a solid 5px colored footer bar."
+    ],
+    "logo": [
+      "Position the primary emblem either centered at 30% width or on the left at 40% width balanced by a horizontal logotype on the right."
+    ],
+    "interdits": [
+      "Do not use default, unintegrated vertical dividing lines that look unpolished.",
+      "Avoid low-resolution background textures, muddy metallic gradients, or highly compressed starfields.",
+      "Do not make background silhouettes so dark that they degrade into compression noise.",
+      "Do not scale subtext or taglines below readable thresholds for low in-game resolutions.",
+      "Avoid placing text elements too close to the upper or lower canvas boundaries."
+    ],
+    "ratios": [
+      "4:1"
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "categorie": "personnage",
+  "source": "charcter design for prompt exemple",
+  "images_totales": 32,
+  "images_analysees": 12,
+  "genere_le": "2026-08-15T15:36:22.405Z",
+  "modele": "gemini-3.5-flash",
+  "guide": {
+    "categorie": "personnage",
+    "composition": [
+      "Subject must occupy 50% to 70% of the frame, centered horizontally.",
+      "Use low-angle perspectives looking up to emphasize character status and scale, or high-angle selfie angles for candid social media framing.",
+      "Avoid flat, eye-level group lineups; use dynamic angles (Dutch tilt or three-quarter profiles) to create depth.",
+      "Maintain a clear separation between the subject and background using a shallow depth of field to blur background elements."
+    ],
+    "typographie": [
+      "Keep text minimal: use a single, small, clean sans-serif brand font centered at the very top edge.",
+      "Text must be high-contrast white with a minimal footprint, occupying less than 5% of the total frame height.",
+      "If watermarks are used, place them in the bottom-left corner at low opacity to avoid distracting from the subject."
+    ],
+    "lumiere": [
+      "Implement three-point lighting: soft front-left key light, subtle rim light to highlight hair/shoulders, and a colored ambient ground glow.",
+      "Avoid flat, front-on ambient lighting; ensure directional shadows exist under the chin, nose, and torso.",
+      "Incorporate high-key studio lighting (ring light/softbox) for close-ups, creating soft shadows and realistic catchlights in eyes/glasses."
+    ],
+    "etalonnage": [
+      "Apply a desaturated, cool-toned color palette (blues, teals, grays) contrasted against warm skin tones.",
+      "Use high-contrast, deep blacks with vibrant, localized neon accents (magenta #FF00FF, pink #FFB6C1, or deep burgundy #800020).",
+      "For outdoor scenes, use warm golden hour tones or muted, film-like desaturated earthy tones with a soft shadow fade."
+    ],
+    "effets": [
+      "Apply a soft depth-of-field blur to the background and a subtle bloom on light sources, metallic jewelry, and neon reflections.",
+      "Add a fine film grain or noise overlay (1-2% intensity) and a subtle vignette to focus attention on the center.",
+      "Incorporate realistic environmental effects like subtle smoke plumes, soft mist/fog overlays, or mild chromatic aberration on outer edges."
+    ],
+    "logo": [
+      "Do not include logos on the character or background unless integrated as a realistic fabric texture on clothing."
+    ],
+    "interdits": [
+      "Avoid flat, unedited game screenshots with zero directional lighting or depth.",
+      "Do not allow low-resolution, stretched, or flat ground and wall textures to be visible in the foreground.",
+      "Avoid stiff, default game-engine hand/finger poses and painted-on hair or facial hair textures.",
+      "Prevent clipping geometry, such as hair intersecting with shoulders or clothing assets floating without contact shadows."
+    ],
+    "ratios": [
+      "9:16",
+      "1:1",
+      "4:5"
+    ]
+  }
+}

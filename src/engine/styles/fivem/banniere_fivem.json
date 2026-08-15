@@ -1,0 +1,51 @@
+{
+  "categorie": "banniere_fivem",
+  "source": "banniere fivem serveur fivem gtarp",
+  "images_totales": 19,
+  "images_analysees": 12,
+  "genere_le": "2026-08-15T15:35:26.305Z",
+  "modele": "gemini-3.5-flash",
+  "guide": {
+    "categorie": "banniere_fivem",
+    "composition": [
+      "Use a 10:1 or 14:1 ultra-wide horizontal strip layout.",
+      "Symmetrical layout: Center 10-20% reserved for logo, flanked by secondary text/links at 30% and 70% marks.",
+      "Asymmetrical layout: Left 30% for character cutout/branding, center 40% for text, right 30% for call-to-action or graphics.",
+      "Frame outer edges with dark, desaturated silhouettes (e.g., palm trees) to create depth."
+    ],
+    "typographie": [
+      "Primary title: Bold, italicized sans-serif in all-caps, sized to 60-70% of the vertical height.",
+      "Secondary links/URLs: Clean, geometric, widely spaced (tracked-out) lowercase sans-serif at 15-20% vertical height.",
+      "Apply high-contrast color-coding (e.g., white base text paired with a single vibrant accent color like mint green or hot pink)."
+    ],
+    "lumiere": [
+      "Low-key ambient lighting with a strong, localized neon under-glow radiating from the bottom-center.",
+      "Soft, diffused backlighting behind the central logo to create a halo separation effect.",
+      "Vignetted edges fading to near-black to draw focus to the center."
+    ],
+    "etalonnage": [
+      "Monochromatic dark base (charcoal, deep navy, or black) paired with one high-saturation accent hue.",
+      "Dominant accent families: Crimson Red (#800000), Hot Pink (#FF69B4), Mint Green (#00FF99), or Deep Purple.",
+      "Low midtone contrast for a cinematic, gritty, or synthwave-inspired atmosphere."
+    ],
+    "effets": [
+      "Subtle background textures: diagonal scanlines, fine dust particles, or a soft grunge overlay.",
+      "Soft depth-of-field blur on background elements (e.g., snowflakes, foliage) to separate layers.",
+      "Soft outer glows on text and interactive UI elements like pill buttons."
+    ],
+    "logo": [
+      "Position logo strictly in the dead center (middle 10-20%) or on the far left (0-30% zone) as a clean monogram."
+    ],
+    "interdits": [
+      "Do not use overly dark, compressed background silhouettes that turn into muddy noise.",
+      "Avoid clashing font styles (e.g., pairing a moody, mature aesthetic with playful, rounded lowercase fonts).",
+      "Do not scale call-to-action button text too small (must remain legible at low resolutions).",
+      "Avoid perfectly mirrored, repetitive background assets on the flanks.",
+      "Do not use highly specific seasonal motifs (like Santa hats) that limit year-round usability."
+    ],
+    "ratios": [
+      "10:1",
+      "14:1"
+    ]
+  }
+}

@@ -32,7 +32,7 @@ const MAX_REFERENCE_IMAGES = 6
 
 // Text reasoning steps (composition planning, prompt building, light clean-up)
 // use a fast Gemini text model — separate from the image generation models.
-const TEXT_MODEL = 'gemini-2.5-flash'
+const TEXT_MODEL = 'gemini-3.5-flash'
 
 const COMPOSITION_ANALYZER = `You are the Neva Composition Engine — an adaptive art director that works with ANY visual style, not just dark luxury FiveM.
 
@@ -249,6 +249,7 @@ async function lightEnhance(userPrompt: string, aspectRatio: AspectRatioId, nega
   const text = await geminiText({
     model: TEXT_MODEL,
     systemInstruction: `You are a quick image prompt cleaner. The user has described an image they want to generate. Clean up the description, fix ambiguities, add basic quality keywords that match the request's style, but do NOT heavily redirect the creative direction. Keep the user's intent intact. Default to a premium restrained FiveM / GTA V promotional finish: clean hierarchy, motivated lighting, readable subject, controlled contrast, no excessive glow, no random neon, no plastic HDR, no generic stock-photo realism. If the user asked for something specific (cartoon, anime, bright colors, funny, etc.) preserve that. Output only the improved prompt in one short paragraph. No labels, no JSON.`,
+    thinkingBudget: 0,
     prompt: `Clean this prompt: "${userPrompt}"${refNote}\n\n${formatNote}${avoidNote}`,
     temperature: 0.4,
     maxOutputTokens: 400,
@@ -272,7 +273,8 @@ async function classifyReferenceImage(
       imageBase64,
       mimeType,
       temperature: 0,
-      maxOutputTokens: 20,
+      maxOutputTokens: 120,
+      thinkingBudget: 0,
       prompt: `Classify how this uploaded image should be used for a FiveM creative generation.
 
 User prompt: "${userPrompt}"
@@ -318,7 +320,7 @@ async function describeReference(
   if (!goal) return ''
 
   try {
-    return await geminiVisionText({ imageBase64, mimeType, prompt: goal, maxOutputTokens: 600, temperature: 0.1 })
+    return await geminiVisionText({ imageBase64, mimeType, prompt: goal, maxOutputTokens: 600, temperature: 0.1, thinkingBudget: 0 })
   } catch (e) {
     console.warn('[describeReference] failed:', (e as Error).message)
     return ''
@@ -348,7 +350,8 @@ async function analyzeComposition(
     systemInstruction: COMPOSITION_ANALYZER,
     prompt: `Analyze this request:\n\n"${userPrompt}"${contextBlock}`,
     temperature: 0.3,
-    maxOutputTokens: 900,
+    maxOutputTokens: 1100,
+    thinkingBudget: 0,
   })
 
   return plan ?? {}
@@ -383,7 +386,8 @@ async function buildFinalPrompt(
     systemInstruction: PROMPT_BUILDER,
     prompt: `MANDATORY IMAGE FORMAT: ${formatLabel}. ${ratio.providerInstruction} The composition, framing, and camera angle MUST match this orientation.\n\nBuild the final image prompt for: "${userPrompt}"${refBlock}\n\nCOMPOSITION PLAN:\n${planLines}${avoidBlock}\n\nOutput only the final prompt.`,
     temperature: 0.5,
-    maxOutputTokens: 950,
+    maxOutputTokens: 1100,
+    thinkingBudget: 0,
   })
 
   return text || userPrompt

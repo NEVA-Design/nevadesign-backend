@@ -13,7 +13,7 @@ async function geminiVision(imageBase64: string, mimeType: string, prompt: strin
   const apiKey = env.GEMINI_API_KEY
   if (!apiKey) throw new Error("Le moteur de vision Neva n'est pas configuré")
 
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=${apiKey}`
   const res = await fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -25,7 +25,7 @@ async function geminiVision(imageBase64: string, mimeType: string, prompt: strin
           { text: prompt },
         ],
       }],
-      generationConfig: { maxOutputTokens: 1400, temperature: 0.1 },
+      generationConfig: { maxOutputTokens: 1400, temperature: 0.1, thinkingConfig: { thinkingBudget: 0 } },
     }),
   })
 

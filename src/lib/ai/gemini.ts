@@ -6,7 +6,11 @@ import { env } from '../../config/env'
 
 const BASE_URL = 'https://generativelanguage.googleapis.com/v1beta'
 
-export const DEFAULT_VISION_MODEL = 'gemini-2.0-flash'
+// NOTE migration 15/08/2026 : les modèles gemini-2.0/2.5 texte sont refusés
+// aux clés récentes (« no longer available to new users »). Tout le backend
+// utilise désormais la génération 3.5+ ; thinkingBudget: 0 est indispensable
+// sur les étapes JSON, sinon le raisonnement consomme maxOutputTokens.
+export const DEFAULT_VISION_MODEL = 'gemini-3.5-flash'
 
 export class GeminiError extends Error {
   status: number
@@ -86,6 +90,7 @@ export async function geminiText(opts: {
   temperature?: number
   maxOutputTokens?: number
   json?: boolean
+  thinkingBudget?: number
   onUsage?: (usage: GeminiUsage) => void
 }): Promise<string> {
   const body: Record<string, unknown> = {
@@ -94,6 +99,7 @@ export async function geminiText(opts: {
       temperature: opts.temperature ?? 0.4,
       maxOutputTokens: opts.maxOutputTokens ?? 1024,
       ...(opts.json ? { responseMimeType: 'application/json' } : {}),
+      ...(opts.thinkingBudget !== undefined ? { thinkingConfig: { thinkingBudget: opts.thinkingBudget } } : {}),
     },
   }
   if (opts.systemInstruction) {
@@ -118,6 +124,7 @@ export async function geminiJson<T>(opts: {
   systemInstruction?: string
   temperature?: number
   maxOutputTokens?: number
+  thinkingBudget?: number
   onUsage?: (usage: GeminiUsage) => void
 }): Promise<T | null> {
   const text = await geminiText({ ...opts, json: true })
@@ -139,6 +146,7 @@ export async function geminiVisionText(opts: {
   temperature?: number
   maxOutputTokens?: number
   json?: boolean
+  thinkingBudget?: number
   onUsage?: (usage: GeminiUsage) => void
 }): Promise<string> {
   const model = opts.model ?? DEFAULT_VISION_MODEL
@@ -156,6 +164,7 @@ export async function geminiVisionText(opts: {
       temperature: opts.temperature ?? 0.1,
       maxOutputTokens: opts.maxOutputTokens ?? 1400,
       ...(opts.json ? { responseMimeType: 'application/json' } : {}),
+      ...(opts.thinkingBudget !== undefined ? { thinkingConfig: { thinkingBudget: opts.thinkingBudget } } : {}),
     },
   }
   if (opts.systemInstruction) {
@@ -180,6 +189,7 @@ export async function geminiVisionJson<T>(opts: {
   systemInstruction?: string
   temperature?: number
   maxOutputTokens?: number
+  thinkingBudget?: number
   onUsage?: (usage: GeminiUsage) => void
 }): Promise<T | null> {
   const text = await geminiVisionText({ ...opts, json: true })
@@ -190,6 +200,42 @@ export async function geminiVisionJson<T>(opts: {
   }
 }
 
+// ─── Multimodal libre (N images + texte -> texte) ──────────────────────────────
+// Utilisé par le pipeline d'entraînement (lots d'images analysées en un appel).
+
+export async function geminiMultimodal(opts: {
+  model: string
+  parts: GeminiPart[]
+  systemInstruction?: string
+  temperature?: number
+  maxOutputTokens?: number
+  json?: boolean
+  thinkingBudget?: number
+  onUsage?: (usage: GeminiUsage) => void
+}): Promise<string> {
+  const body: Record<string, unknown> = {
+    contents: [{ role: 'user', parts: opts.parts }],
+    generationConfig: {
+      temperature: opts.temperature ?? 0.2,
+      maxOutputTokens: opts.maxOutputTokens ?? 2000,
+      ...(opts.json ? { responseMimeType: 'application/json' } : {}),
+      ...(opts.thinkingBudget !== undefined ? { thinkingConfig: { thinkingBudget: opts.thinkingBudget } } : {}),
+    },
+  }
+  if (opts.systemInstruction) {
+    body.systemInstruction = { parts: [{ text: opts.systemInstruction }] }
+  }
+
+  const res = await post(opts.model, 'generateContent', body)
+  const json = (await res.json().catch(() => null)) as GeminiApiResponse | null
+  if (!res.ok || !json) {
+    const message = json?.error?.message ?? `Erreur moteur Neva ${res.status}`
+    throw new GeminiError(friendlyErrorMessage(res.status, message), res.status)
+  }
+  opts.onUsage?.(extractUsage(json))
+  return extractText(json)
+}
+
 // ─── Streaming chat (multi-turn) ────────────────────────────────────────────────
 
 export async function* geminiStreamText(opts: {
@@ -198,12 +244,14 @@ export async function* geminiStreamText(opts: {
   systemInstruction?: string
   temperature?: number
   maxOutputTokens?: number
+  thinkingBudget?: number
 }): AsyncGenerator<string> {
   const body: Record<string, unknown> = {
     contents: opts.contents,
     generationConfig: {
       temperature: opts.temperature ?? 0.4,
       maxOutputTokens: opts.maxOutputTokens ?? 900,
+      ...(opts.thinkingBudget !== undefined ? { thinkingConfig: { thinkingBudget: opts.thinkingBudget } } : {}),
     },
   }
   if (opts.systemInstruction) {

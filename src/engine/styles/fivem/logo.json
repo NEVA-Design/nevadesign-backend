@@ -1,0 +1,52 @@
+{
+  "categorie": "logo",
+  "source": "logo serveur fivem gtarp",
+  "images_totales": 59,
+  "images_analysees": 12,
+  "genere_le": "2026-08-15T15:37:31.510Z",
+  "modele": "gemini-3.5-flash",
+  "guide": {
+    "categorie": "logo",
+    "composition": [
+      "Position the main subject dead-center, occupying 55% to 70% of the 1:1 frame.",
+      "Surround the subject with dark, high-contrast negative space to ensure separation.",
+      "Apply a slight 5 to 15-degree tilt to lettermarks to inject dynamic gaming energy.",
+      "Use precise, symmetrical vector geometry or interlocking shapes for non-lettermark emblems."
+    ],
+    "typographie": [
+      "Use bold, chiseled, or customized sans-serif and serif letterforms with angled cuts or split-block designs.",
+      "Integrate text directly with graphic elements using overlapping layers (e.g., wrapping elements through letter curves).",
+      "Enclose secondary text in custom geometric frames or badges to maintain a unified silhouette.",
+      "Scale text to occupy no more than 75% of the frame width to prevent edge crowding."
+    ],
+    "lumiere": [
+      "Apply dual-source lighting: a cool primary light (blue/cyan) paired with a warm/vibrant rim light (magenta/pink/gold).",
+      "Use top-down directional lighting to create metallic reflections and cast soft drop shadows below.",
+      "Incorporate a soft, atmospheric backlighting halo to separate the central subject from dark backgrounds."
+    ],
+    "etalonnage": [
+      "Use high-contrast palettes: deep blacks (#000000) paired with electric cyan (#00B0FF), hot pink (#FF007F), or emerald green (#004D30).",
+      "Employ monochromatic metallic gradients ranging from deep bronze (#5C3A00) to bright yellow-white highlights.",
+      "Keep background tones desaturated and dark to let highly saturated vector elements pop."
+    ],
+    "effets": [
+      "Add subtle 3D chiseled extrusions, metallic gradient mapping, and sharp vector bevels.",
+      "Apply soft outer glows, subtle corner light leaks, and low-opacity background textures (concrete, paper, or noise).",
+      "Incorporate dynamic elements like floating shards, clean vector sparkles, or soft smoke wisps."
+    ],
+    "logo": [
+      "Center the primary emblem, lettermark, or monogram as the absolute focal point of the canvas.",
+      "Ensure the logo maintains a clean, high-resolution vector-style silhouette that remains legible at small scales."
+    ],
+    "interdits": [
+      "Do not use generic, unedited brush presets for sparkles or light leaks.",
+      "Avoid muddy, overly dark backgrounds that swallow the emblem's silhouette.",
+      "Do not include tiny, secondary icons that lose legibility and scale poorly.",
+      "Avoid disconnected background patterns that clash with the central theme.",
+      "Do not export at low resolutions that cause pixelation on sharp vector bevels."
+    ],
+    "ratios": [
+      "1:1"
+    ]
+  }
+}

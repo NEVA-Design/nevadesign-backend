@@ -1,0 +1,48 @@
+{
+  "categorie": "background_logo",
+  "source": "background pour logo ect",
+  "images_totales": 11,
+  "images_analysees": 11,
+  "genere_le": "2026-08-15T15:34:27.818Z",
+  "modele": "gemini-3.5-flash",
+  "guide": {
+    "categorie": "background_logo",
+    "composition": [
+      "Position the primary subject or focal element to occupy exactly 40% to 60% of the frame, centered or along a strong diagonal.",
+      "Maintain a clear foreground-to-background separation with at least 3 distinct depth planes (e.g., foreground element at 20%, midground subject at 50%, distant background at 30%).",
+      "Use extreme low-angle or high-angle forced perspectives to create dynamic scale contrasts between foreground objects and background architecture."
+    ],
+    "typographie": [
+      "Place clean, sans-serif text layers strictly within the upper 20% or lower 20% of the frame to avoid overlapping the central logo zone.",
+      "Scale text to occupy no more than 15% of the total frame width, ensuring high legibility with pure white (#FFFFFF) or high-contrast fills.",
+      "Align text elements to follow the perspective planes of physical surfaces in the midground for integrated environmental typography."
+    ],
+    "lumiere": [
+      "Implement dual-temperature lighting: pair a warm golden hour key light (3000K) with a cool, desaturated ambient fill or screen glow (6500K).",
+      "Use high-contrast overhead sunlight to cast sharp, defined shadows and create bright rim lighting on the subject's shoulders and hair.",
+      "Incorporate realistic light interactions like water caustics, translucent wave glows, and volumetric dust motes in light beams."
+    ],
+    "etalonnage": [
+      "Apply a highly saturated palette dominated by vibrant turquoise (#00C2D1, #00A8C6) and deep blues (#004BFF), contrasted against warm sandy tones (#D1B894) or terracotta (#C68B6D).",
+      "Maintain a cinematic film curve with low-contrast shadows and creamy, desaturated highlights (#FDFBF7) for historical or retro scenes."
+    ],
+    "effets": [
+      "Apply realistic camera depth of field (bokeh) to heavily blur background elements beyond the central 60% focal zone.",
+      "Add physical texture overlays including water spray, wake foam, CRT static, and subtle glass reflections on foreground screens."
+    ],
+    "logo": [
+      "Reserve the absolute center (a 30% circular zone) as a clean, high-contrast negative space specifically designed to host a logo.",
+      "Ensure background elements behind the logo zone are desaturated or blurred to prevent visual interference with the logo silhouette."
+    ],
+    "interdits": [
+      "Avoid flat, low-detail textures on large foreground surfaces like umbrellas, concrete walls, or vehicle panels.",
+      "Do not use stiff, artificial, or floating character poses that lack realistic contact shadows with the ground or furniture.",
+      "Avoid repeating, tiled texture patterns on background buildings or windows.",
+      "Do not allow low-polygon modeling or jagged anti-aliasing on prominent foreground objects."
+    ],
+    "ratios": [
+      "16:9",
+      "9:16"
+    ]
+  }
+}

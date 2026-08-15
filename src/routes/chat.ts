@@ -149,6 +149,7 @@ export const chatRoutes = new Elysia({ prefix: '/chat' })
               systemInstruction: systemPrompt,
               temperature,
               maxOutputTokens,
+              thinkingBudget: 0,
             })) {
               assistantText += text
               controller.enqueue(encoder.encode(text))
@@ -170,6 +171,7 @@ export const chatRoutes = new Elysia({ prefix: '/chat' })
                 systemInstruction: systemPrompt,
                 temperature,
                 maxOutputTokens: 200,
+                thinkingBudget: 0,
               })) {
                 assistantText += text
                 controller.enqueue(encoder.encode(text))

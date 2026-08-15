@@ -1,0 +1,48 @@
+{
+  "categorie": "icon",
+  "source": "icon",
+  "images_totales": 16,
+  "images_analysees": 12,
+  "genere_le": "2026-08-15T15:37:05.651Z",
+  "modele": "gemini-3.5-flash",
+  "guide": {
+    "categorie": "icon",
+    "composition": [
+      "Symmetrical, centered framing with the subject occupying exactly 55% to 65% of the canvas area.",
+      "Maintain a 1:1 square aspect ratio with balanced negative space surrounding the central icon.",
+      "Incorporate dynamic diagonal elements or silhouettes angled upward-right at approximately 45 degrees to create movement.",
+      "Ensure consistent stroke weights and precise geometric curves to anchor the central shape."
+    ],
+    "typographie": [
+      "No text should be embedded within the generated icon graphic itself.",
+      "External text layers must be placed below the icon, scaled to a maximum of 15% of the canvas height.",
+      "Use high-contrast, clean sans-serif typefaces in pure white (#FFFFFF) to match the icon's visual weight."
+    ],
+    "lumiere": [
+      "Flat, uniform, non-directional digital illumination.",
+      "Zero gradients, zero drop shadows, and zero directional light sources.",
+      "Absolute flat fill across the entire subject shape."
+    ],
+    "etalonnage": [
+      "Pure binary monochrome color palette.",
+      "Dominant background hue: absolute black (#000000).",
+      "Dominant foreground/subject hue: absolute white (#FFFFFF)."
+    ],
+    "effets": [
+      "Sharp, clean vector-like edge rendering with zero anti-aliasing artifacts.",
+      "High-contrast negative space cutouts within solid shapes to define internal details."
+    ],
+    "logo": [
+      "Single, recognizable brand silhouette or simplified vector icon centered perfectly on the canvas."
+    ],
+    "interdits": [
+      "Do not use color gradients, gray tones, or midtones.",
+      "Avoid fuzzy, soft, or pixelated edges on the vector paths.",
+      "Do not include off-center compositions unless balanced by a strong diagonal element.",
+      "Avoid complex, multi-layered shapes that reduce legibility at small sizes."
+    ],
+    "ratios": [
+      "1:1"
+    ]
+  }
+}
