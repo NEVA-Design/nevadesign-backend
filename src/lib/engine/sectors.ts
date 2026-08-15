@@ -24,8 +24,12 @@ Non-negotiable rules:
 - GTA V / FiveM aesthetic: stylized game realism, never a real-life stock photo, never generic 3D render.
 - One dominant focal point, readable silhouette, intentional negative space for later logo and text placement.
 - Motivated lighting only (sun, practicals, neon signs when the scene calls for it) — no random glow.
-- ABSOLUTELY NO TEXT of any kind in the image: no letters, no words, no numbers, no logos, no watermarks, no signage with readable characters, no UI, no HUD. Any panel or sign must be blank or abstract.
-- No extra people beyond those requested. No distorted anatomy, no extra fingers, no malformed limbs.`,
+- No extra people beyond those requested. No distorted anatomy, no extra fingers, no malformed limbs.
+- Never render any watermark, signature, UI or HUD.`,
+    // Depuis le run 5.2, le lettrage (titre, logo) est GÉNÉRÉ dans l'image :
+    // le négatif texte global a quitté ce socle. Il ne survit que sur les
+    // calques secondaires (compiler.ts SECONDARY_NO_TEXT_RULE) et dans le
+    // chemin legacy réservé à l'A/B de /admin/test-moteur.
   },
   youtube: {
     id: 'youtube',
