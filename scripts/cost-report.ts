@@ -84,7 +84,8 @@ const parcours = {
 const oneShots = {
   entrainement: readJson<{ total?: { cout_total_eur: number } }>(resolve(ROOT, 'src/engine/styles/fivem/_training-report.json'))?.total?.cout_total_eur ?? null,
   templates_scenes: readJson<{ cout?: { eur: number } }>(resolve(ROOT, 'src/engine/templates/fivem/scenes.json'))?.cout?.eur ?? null,
-  demos: readJson<{ cout_total_eur: number }>(resolve(RAPPORTS, 'demos/demos-report.json'))?.cout_total_eur ?? null,
+  demos_finales: readJson<{ cout_des_6_finales_eur: number }>(resolve(RAPPORTS, 'demos/demos-report.json'))?.cout_des_6_finales_eur ?? null,
+  demos_iterations: readJson<{ cout_iterations_mise_au_point_eur: number }>(resolve(RAPPORTS, 'demos/demos-report.json'))?.cout_iterations_mise_au_point_eur ?? null,
   banc_refus: readJson<{ cout_test_eur: number }>(resolve(RAPPORTS, 'run5-refus.json'))?.cout_test_eur ?? null,
 }
 
