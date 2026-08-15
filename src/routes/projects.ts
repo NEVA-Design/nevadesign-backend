@@ -3,6 +3,7 @@ import sharp from 'sharp'
 import { requireUser, isResponse } from '../lib/require-auth'
 import { createServiceClient } from '../lib/supabase'
 import { jsonError, sanitizeText, validateUploadedImage } from '../lib/security'
+import { parseStyleAnswers } from '../lib/engine/mapping'
 
 // ── Le modèle « Projet » (run 5, LOT 1) ───────────────────────────────────────
 // Un projet porte la DA complète d'un serveur : nom, secteur, ambiance,
@@ -30,17 +31,21 @@ function isAssetCategory(value: unknown): value is AssetCategory {
 const HEX_COLOR = /^#[0-9a-fA-F]{6}$/
 
 function sanitizeAmbiance(raw: unknown): Record<string, unknown> {
-  const input = (raw ?? {}) as { universe?: unknown; chips?: unknown; references?: unknown }
+  const input = (raw ?? {}) as { universe?: unknown; chips?: unknown; references?: unknown; styleAnswers?: unknown }
   const chips = Array.isArray(input.chips)
     ? input.chips.filter((c): c is string => typeof c === 'string').map((c) => sanitizeText(c, 24)).filter(Boolean).slice(0, 3)
     : []
   const references = Array.isArray(input.references)
     ? input.references.filter((r): r is string => typeof r === 'string' && r.length < 600).slice(0, 3)
     : []
+  // Réponses du wizard v2 (run 5.2) — validées par le mapping ; null si
+  // absentes ou invalides (projets d'avant 5.2 : repli du moteur).
+  const styleAnswers = parseStyleAnswers(input.styleAnswers)
   return {
     universe: sanitizeText(input.universe, 240),
     chips,
     references,
+    ...(styleAnswers ? { styleAnswers } : {}),
   }
 }
 
