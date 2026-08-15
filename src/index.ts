@@ -29,6 +29,7 @@ import { adminOverviewRoutes } from './routes/admin/overview'
 import { adminEngineRoutes } from './routes/admin/engine'
 import { projectRoutes } from './routes/projects'
 import { filesRoutes } from './routes/files'
+import { engineRoutes } from './routes/engine'
 
 const corsOrigins = env.CORS_ORIGIN.split(',').map((origin) => origin.trim()).filter(Boolean)
 
@@ -68,6 +69,7 @@ const app = new Elysia()
   .use(adminEngineRoutes)
   .use(projectRoutes)
   .use(filesRoutes)
+  .use(engineRoutes)
   .listen(env.PORT)
 
 console.log(`nevadesign-backend running at http://${app.server?.hostname}:${app.server?.port}`)
