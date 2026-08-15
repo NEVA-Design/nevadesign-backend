@@ -54,6 +54,37 @@ export const LOGO_AMBIANCE_PROMPTS: Record<LogoAmbiance, string> = {
   propre: 'clean mood — minimal, crisp, flat, optically perfect',
 }
 
+// ── LE MAPPING ambiance → éclairage + matières (run 5.4, LOT 5) — VERSIONNÉ ──
+// L'ambiance du logo PILOTE la section 2 du gabarit maître (éclairage, key
+// light, matières) via l'ADN. Toute évolution se fait ICI et nulle part
+// ailleurs — le tableau est cité au rapport (question → effet dans le prompt).
+export const LOGO_AMBIANCE_DA: Record<LogoAmbiance, { eclairage: string; matieres: string }> = {
+  ete: {
+    eclairage: 'warm golden key light from top-left, sun-kissed speculars, bright bounce',
+    matieres: 'light chrome, wet glass, juicy glossy gradients',
+  },
+  sombre: {
+    eclairage: 'low-key dramatic lighting, hard rim light carving the mark out of black',
+    matieres: 'aged gold on black, gunmetal, smoked glass',
+  },
+  luxe: {
+    eclairage: 'soft studio key with a warm golden rim, controlled speculars',
+    matieres: 'polished gold, black lacquer, marble accents',
+  },
+  neon: {
+    eclairage: 'saturated neon glow with realistic falloff, night-blue ambient',
+    matieres: 'neon tubes, glossy acrylic, chrome accents',
+  },
+  retro: {
+    eclairage: 'warm vintage sunset light, gentle bloom, soft film halation',
+    matieres: 'aged enamel, brushed brass, subtle paper grain',
+  },
+  propre: {
+    eclairage: 'even soft studio light, minimal shadows, optically clean edges',
+    matieres: 'clean vector surfaces, subtle satin finish, zero texture noise',
+  },
+}
+
 // Étape A : le livrable est TOUJOURS le même — la ligne fixe du brief.
 export const LOGO_ETAPE_A_LINE =
   'DELIVERABLE (step A): the mark ALONE on a flat neutral #F2F2F2 cutout background — the real background is a SEPARATE later step (own layer), never rendered here. Relief and glow belong to the logo itself, not to a background.'
@@ -142,7 +173,9 @@ export function renderLogoBrief(opts: {
     answers.sujet
       ? `SUBJECT / THEME (the heart of the concept, given by the user in their own words): "${answers.sujet}". Every concept MUST be built around this theme — never substitute a generic compass, crest or esports badge for it.`
       : 'SUBJECT / THEME: none — the user wants pure lettering craft, no imposed theme.',
-    answers.ambiance ? `LOGO MOOD (distinct from the server universe): ${LOGO_AMBIANCE_PROMPTS[answers.ambiance]}.` : '',
+    answers.ambiance
+      ? `LOGO MOOD (distinct from the server universe): ${LOGO_AMBIANCE_PROMPTS[answers.ambiance]}. This mood DRIVES section 2 of the template — lighting: ${LOGO_AMBIANCE_DA[answers.ambiance].eclairage}; materials: ${LOGO_AMBIANCE_DA[answers.ambiance].matieres}.`
+      : '',
     couleursBriefLine(answers.couleurs, opts.mappingPalette),
     LOGO_ETAPE_A_LINE,
     answers.interdits ? `USER FORBIDS (verbatim, must be respected): "${answers.interdits}".` : '',

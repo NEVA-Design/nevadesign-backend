@@ -24,6 +24,9 @@ export type LogoRendu = 'relief' | 'plat'
 export type LogoConcept = {
   nom: string
   justification: string
+  // LOT 5 : chaque concept CITE les réponses du brief qu'il utilise —
+  // format « "réponse de l'utilisateur" → effet dans le concept »
+  citations: string[]
   rendu: LogoRendu
   prompt: string
 }
@@ -101,7 +104,7 @@ HARD RULES — a concept violating any of these is REJECTED by a structural vali
 - The user's mood drives lighting and materials in section 2.
 
 Answer ONLY with JSON:
-{"concepts": [{"nom": "short concept name (2-6 words, French)", "justification": "one French sentence — why this concept serves this server", "rendu": "relief" | "plat", "prompt": "the full section 0-5 master-template prompt in English (${MIN_PROMPT_WORDS}-${MAX_PROMPT_WORDS} words)"}, …exactly 3…]}`
+{"concepts": [{"nom": "short concept name (2-6 words, French)", "justification": "one French sentence — why this concept serves this server", "citations": ["2-4 French entries proving which brief answers this concept uses, each formatted «réponse utilisateur» → effet — e.g. «été» → soleil rayonnant en 16 rayons, «corail→pêche» → dégradé appliqué au biseau"], "rendu": "relief" | "plat", "prompt": "the full section 0-5 master-template prompt in English (${MIN_PROMPT_WORDS}-${MAX_PROMPT_WORDS} words)"}, …exactly 3…]}`
 
 function wordCount(text: string): number {
   return text.trim().split(/\s+/).filter(Boolean).length
@@ -204,10 +207,19 @@ export function validateGabaritConcepts(raw: unknown, opts: {
     if (sujetWord && !/theme|subject/i.test(prompt) && !prompt.toLowerCase().includes(sujetWord)) {
       errors.push(`${label}: the user subject "${answers.sujet}" is absent from the prompt`)
     }
+    // 9. traçabilité (LOT 5) : le concept cite les réponses du brief utilisées
+    const citations = (Array.isArray(c.citations) ? c.citations : [])
+      .map((x) => String(x).slice(0, 200))
+      .filter(Boolean)
+      .slice(0, 4)
+    if (!citations.length) {
+      errors.push(`${label}: citations missing — each concept must cite the brief answers it uses («réponse» → effet)`)
+    }
 
     concepts.push({
       nom: String(c.nom).slice(0, 80),
       justification: String(c.justification).slice(0, 240),
+      citations,
       rendu,
       prompt,
     })
