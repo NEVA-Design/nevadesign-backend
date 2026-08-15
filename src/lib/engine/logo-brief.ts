@@ -1,11 +1,15 @@
 import { sanitizeText } from '../security'
 
-// ── Le brief logo v3 (run 5.3, LOT 2) ────────────────────────────────────────
-// Le wizard v3 pose ENFIN la question qui manquait : « Ton logo, il raconte
-// quoi ? ». Le sujet/thème, les couleurs libres (picker + dégradé), l'ambiance
-// propre au logo, le fond et les interdits forment le brief exact transmis au
-// directeur artistique (étage 1) — et affiché tel quel dans le récap wizard.
-// Un brief transmis sans le sujet quand l'utilisateur l'a donné = interdit.
+// ── Le brief logo (run 5.3 → 5.4) ────────────────────────────────────────────
+// Le wizard pose les bonnes questions : sujet/thème, forme, ambiance,
+// couleurs libres (picker + dégradé), interdits — le brief exact transmis au
+// directeur artistique (étage 1) et affiché tel quel dans le récap wizard.
+// Run 5.4, LOT 4 : la question « fond » DISPARAÎT de l'étape logo. L'étape A
+// livre toujours le lettrage/emblème seul sur fond #F2F2F2 de détourage — le
+// relief et le glow appartiennent au logo, pas au fond. Le fond réel arrive à
+// l'étape B (écran dédié après validation du master), généré SÉPARÉMENT et
+// composé par calques. Le champ `fond` ne survit que pour lire les
+// wizard_answers des assets d'avant le run 5.4.
 
 export type LogoType = 'lettre' | 'nom' | 'embleme'
 
@@ -29,10 +33,17 @@ export type LogoAnswersV3 = {
   sujet: string
   ambiance: LogoAmbiance | null
   couleurs: LogoCouleurs
+  // LEGACY (assets d'avant le run 5.4) — le wizard ne pose plus la question,
+  // toute nouvelle réponse retombe sur 'transparent' (étape A détourée).
   fond: LogoFond
   // « pas de noir, pas de blason… » — repris mot pour mot dans le brief
   interdits: string
 }
+
+// ── Choix de fond de l'étape B (run 5.4, LOT 4) — APRÈS validation du master ─
+export type LogoFondChoix = 'signature' | 'atmospherique' | 'scene'
+
+export const LOGO_FOND_CHOIX: LogoFondChoix[] = ['signature', 'atmospherique', 'scene']
 
 export const LOGO_AMBIANCE_PROMPTS: Record<LogoAmbiance, string> = {
   ete: 'summer mood — bright, juicy, sun-soaked, saturated warmth',
@@ -43,14 +54,9 @@ export const LOGO_AMBIANCE_PROMPTS: Record<LogoAmbiance, string> = {
   propre: 'clean mood — minimal, crisp, flat, optically perfect',
 }
 
-export const LOGO_FOND_PROMPTS: Record<LogoFond, string> = {
-  transparent:
-    'Background: DELIVERY ON FLAT NEUTRAL BACKGROUND for cutout — the mark itself must be self-contained (it will be delivered as a transparent PNG).',
-  plein:
-    'Background: one solid full-bleed background color that serves the mark — part of the logo, chosen from the brief palette.',
-  degrade_motifs:
-    'Background: full-bleed gradient background decorated with small thematic doodle motifs derived from the logo subject (like the ALYA reference style) — motifs stay subtle, low-contrast, never competing with the mark.',
-}
+// Étape A : le livrable est TOUJOURS le même — la ligne fixe du brief.
+export const LOGO_ETAPE_A_LINE =
+  'DELIVERABLE (step A): the mark ALONE on a flat neutral #F2F2F2 cutout background — the real background is a SEPARATE later step (own layer), never rendered here. Relief and glow belong to the logo itself, not to a background.'
 
 const HEX = /^#[0-9a-fA-F]{6}$/
 
@@ -138,7 +144,7 @@ export function renderLogoBrief(opts: {
       : 'SUBJECT / THEME: none — the user wants pure lettering craft, no imposed theme.',
     answers.ambiance ? `LOGO MOOD (distinct from the server universe): ${LOGO_AMBIANCE_PROMPTS[answers.ambiance]}.` : '',
     couleursBriefLine(answers.couleurs, opts.mappingPalette),
-    LOGO_FOND_PROMPTS[answers.fond],
+    LOGO_ETAPE_A_LINE,
     answers.interdits ? `USER FORBIDS (verbatim, must be respected): "${answers.interdits}".` : '',
   ].filter(Boolean).join('\n')
 }

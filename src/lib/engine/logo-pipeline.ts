@@ -49,7 +49,6 @@ export async function generateLogoProposition(opts: {
     projectName: opts.projectName,
     conceptPrompt: opts.concept.prompt,
     type: opts.answers.type,
-    fond: opts.answers.fond,
   })
 
   let generationTokensIn = 0

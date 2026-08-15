@@ -9,14 +9,17 @@ import {
   CATEGORY_IMAGE_CONFIG,
   compileHeroPromptV2,
   compileInstructPrompt,
+  compileLogoFondPrompt,
   LOGO_BACKGROUND_HEX,
   listSceneTemplates,
   spellOut,
   type EngineCategory,
   type SceneAnswers,
 } from '../lib/engine/compiler'
+import { composeBanniereLogo, composeLogoOnFond } from '../lib/engine/logo-compose'
+import { LOGO_FOND_CHOIX, type LogoFondChoix } from '../lib/engine/logo-brief'
 import { artDirectionForProject } from '../lib/engine/mapping'
-import { getTrainingStatus, requireTraining, TrainingRequiredError } from '../lib/engine/adn'
+import { adnBlockBackground, getTrainingStatus, requireTraining, TrainingRequiredError } from '../lib/engine/adn'
 import {
   ENGINE_MODELS,
   LOGO_THINKING_LEVEL,
@@ -652,6 +655,199 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
       if (training) return training
       if (error instanceof GeminiError) return jsonError('generation_failed', error.status >= 400 ? error.status : 500, error.message)
       console.error('[engine/logo/master]', error)
+      return jsonError('server_error', 500)
+    }
+  })
+
+  // ── Étape B (run 5.4, LOT 4) : les FONDS du logo, générés SANS lui ──────
+  // « Ton logo est prêt. On lui fait une scène ? » — le fond signature
+  // (dégradé + doodles du sujet), atmosphérique (sombre dramatique) ou scène.
+  // Chaque fond généré = 1 retouche du compteur. Le logo n'apparaît JAMAIS
+  // dans la génération : la composition [fond][logo] est locale (ombre douce
+  // + glow de contact), et chaque calque se régénère indépendamment.
+  .post('/logo/fond/proposals', async ({ request }) => {
+    try {
+      const auth = await requireUser(request)
+      if (isResponse(auth)) return auth
+      const { user } = auth
+
+      const rate = checkRateLimit(`engine:${user.id}`, RATE_LIMIT_PER_MINUTE)
+      if (!rate.ok) return jsonError('rate_limited', 429)
+
+      const body = await request.json().catch(() => null) as {
+        projectId?: string
+        assetId?: string
+        choix?: unknown
+        ambianceScene?: unknown
+        count?: unknown
+      } | null
+      const choix = LOGO_FOND_CHOIX.includes(body?.choix as LogoFondChoix) ? (body?.choix as LogoFondChoix) : null
+      if (!body?.projectId || !body.assetId || !choix) {
+        return jsonError('invalid_body', 400, 'Choisis un type de fond (signature, atmosphérique ou scène).')
+      }
+      const count = Math.max(1, Math.min(3, Number(body.count) || 2))
+
+      requireTraining()
+
+      const project = await loadOwnedProject(user.id, body.projectId)
+      if (!project) return jsonError('project_not_found', 404, 'Projet introuvable.')
+      if (!project.logo_master?.url) {
+        return jsonError('logo_required', 409, "Valide d'abord le logo master — l'étape B habille un logo prêt.")
+      }
+      const asset = await loadOwnedAsset(user.id, body.projectId, body.assetId)
+      if (!asset) return jsonError('asset_not_found', 404, 'Création logo introuvable.')
+
+      const guard = await checkEngineGuards(user.id, count)
+      if (!guard.ok) return jsonError(guard.code, guard.status, guard.message)
+
+      const logoRef = await fetchAsReference(project.logo_master.url)
+      if (!logoRef) return jsonError('reference_unreachable', 400, 'Le logo master est introuvable.')
+      const logoPng = Buffer.from(logoRef.data, 'base64')
+
+      const answers = parseLogoAnswersV3(asset.wizard_answers)
+      const { da, energie, modernite } = artDirectionForProject(project)
+      const couleurs =
+        answers?.couleurs.mode === 'degrade' ? answers.couleurs.couleurs
+        : answers?.couleurs.mode === 'unie' ? [answers.couleurs.couleur]
+        : da.palette
+
+      const compiled = compileLogoFondPrompt({
+        da,
+        choix,
+        sujet: answers?.sujet ?? '',
+        couleurs,
+        ambianceScene: sanitizeText(body.ambianceScene, 200) || undefined,
+        energie,
+        modernite,
+        adnFondBlock: adnBlockBackground(),
+      })
+
+      const fonds: Array<{ fondUrl: string; previewUrl: string; choix: LogoFondChoix }> = []
+      let retouchesUsed = asset.retouches_used ?? 0
+      let creditCharged = 0
+      for (let i = 0; i < count; i += 1) {
+        // 1 fond généré = 1 retouche — débitée AVANT la génération du fond
+        const charge = await chargeRetouch(user.id, { id: asset.id, retouches_used: retouchesUsed }, `Fond de logo (${choix}) — ${project.name}`)
+        if ('error' in charge) {
+          if (!fonds.length) return charge.error
+          break
+        }
+        retouchesUsed = charge.used ?? retouchesUsed + 1
+        creditCharged += charge.creditCharged ?? 0
+
+        const generation = await generateWithOcrGate({
+          model: ENGINE_MODELS.scene,
+          prompt: compiled.prompt,
+          referenceImages: compiled.references,
+          imageConfig: { aspectRatio: '1:1', imageSize: '2K' },
+          expectedTexts: [],
+          log: { userId: user.id, projectId: body.projectId, assetId: asset.id, kind: `logo_fond_${choix}`, resolution: '2K' },
+        })
+        const fondPng = Buffer.from(generation.dataUrl.split(',').pop() ?? '', 'base64')
+        const stamp = `${Date.now()}-${i}`
+        const [fondUrl, previewUrl] = await Promise.all([
+          storeBuffer(`${user.id}/${body.projectId}/logo/fonds/fond-${stamp}.png`, fondPng, 'image/png'),
+          composeLogoOnFond({ fondPng, logoPng, width: 1024, height: 1024 }).then((png) =>
+            storeBuffer(`${user.id}/${body.projectId}/logo/fonds/preview-${stamp}.png`, png, 'image/png')
+          ),
+        ])
+        fonds.push({ fondUrl, previewUrl, choix })
+      }
+
+      const service = createServiceClient()
+      await service
+        .from('project_assets')
+        .update({
+          compiled_prompts: [
+            ...(asset.compiled_prompts ?? []),
+            { kind: 'logo_fond', choix, prompt: compiled.prompt, exemplars: compiled.exemplarSlugs, references: compiled.references.length, fonds: fonds.length, at: new Date().toISOString() },
+          ],
+          updated_at: new Date().toISOString(),
+        })
+        .eq('id', asset.id)
+
+      return Response.json({ fonds, retouchesUsed, includedRetouches: INCLUDED_RETOUCHES, creditCharged })
+    } catch (error) {
+      const training = trainingRequiredResponse(error)
+      if (training) return training
+      if (error instanceof GeminiError) return jsonError('generation_failed', error.status >= 400 ? error.status : 500, error.message)
+      console.error('[engine/logo/fond/proposals]', error)
+      return jsonError('server_error', 500)
+    }
+  })
+
+  // ── Étape B — validation d'un fond : déclinaisons automatiques ──────────
+  // Composition 100 % locale (zéro appel API, zéro débit) : PNG alpha (le
+  // master existe déjà) · carré 1:1 logo+fond (avatar Discord) · bannière
+  // 16:9 simple. Stockées au projet (logo_scene).
+  .post('/logo/fond/apply', async ({ request }) => {
+    try {
+      const auth = await requireUser(request)
+      if (isResponse(auth)) return auth
+      const { user } = auth
+
+      const rate = checkRateLimit(`engine:${user.id}`, RATE_LIMIT_PER_MINUTE)
+      if (!rate.ok) return jsonError('rate_limited', 429)
+
+      const body = await request.json().catch(() => null) as {
+        projectId?: string
+        assetId?: string
+        fondUrl?: string
+      } | null
+      if (!body?.projectId || !body.assetId || typeof body.fondUrl !== 'string') {
+        return jsonError('invalid_body', 400)
+      }
+
+      const project = await loadOwnedProject(user.id, body.projectId)
+      if (!project) return jsonError('project_not_found', 404, 'Projet introuvable.')
+      if (!project.logo_master?.url) return jsonError('logo_required', 409, 'Le logo master manque.')
+      const asset = await loadOwnedAsset(user.id, body.projectId, body.assetId)
+      if (!asset) return jsonError('asset_not_found', 404, 'Création logo introuvable.')
+
+      const [fondRef, logoRef] = await Promise.all([
+        fetchAsReference(body.fondUrl),
+        fetchAsReference(project.logo_master.url),
+      ])
+      if (!fondRef || !logoRef) return jsonError('reference_unreachable', 400, 'Fond ou logo master introuvable.')
+      const fondPng = Buffer.from(fondRef.data, 'base64')
+      const logoPng = Buffer.from(logoRef.data, 'base64')
+
+      const [carrePng, bannierePng] = await Promise.all([
+        composeLogoOnFond({ fondPng, logoPng, width: 2048, height: 2048 }),
+        composeBanniereLogo({ fondPng, logoPng }),
+      ])
+
+      const base = `${user.id}/${body.projectId}/logo`
+      const [carreUrl, banniereUrl] = await Promise.all([
+        storeBuffer(`${base}/carre-fond.png`, carrePng, 'image/png'),
+        storeBuffer(`${base}/banniere-fond.png`, bannierePng, 'image/png'),
+      ])
+
+      const service = createServiceClient()
+      const logoScene = {
+        fondUrl: body.fondUrl,
+        carreUrl,
+        banniereUrl,
+        alphaUrl: project.logo_master.url,
+        at: new Date().toISOString(),
+      }
+      await service.from('projects').update({ logo_scene: logoScene, updated_at: new Date().toISOString() }).eq('id', project.id)
+      await service
+        .from('project_assets')
+        .update({
+          exports: [
+            ...(asset.exports ?? []),
+            { url: carreUrl, resolution: '2048×2048', at: new Date().toISOString() },
+            { url: banniereUrl, resolution: '1920×1080', at: new Date().toISOString() },
+          ],
+          updated_at: new Date().toISOString(),
+        })
+        .eq('id', asset.id)
+
+      return Response.json({ logoScene })
+    } catch (error) {
+      if (error instanceof GeminiError) return jsonError('generation_failed', error.status >= 400 ? error.status : 500, error.message)
+      console.error('[engine/logo/fond/apply]', error)
       return jsonError('server_error', 500)
     }
   })

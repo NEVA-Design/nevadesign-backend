@@ -376,22 +376,23 @@ export function compileLogoPromptV2(opts: {
   }
 }
 
-// ── LOGO v3 : habillage technique du prompt de concept (run 5.3, LOT 1) ──────
+// ── LOGO : habillage technique du prompt de concept (run 5.3 → 5.4) ──────────
 // Le prompt créatif vient du directeur artistique (étage 1). Ici on ne
 // touche PAS à l'intention — on ajoute les contraintes machine : épellation
-// forcée + OCR, fond d'atelier quand le livrable est un PNG détouré, format.
+// forcée + OCR, fond d'atelier, format. Run 5.4 (LOT 4) : l'étape A livre
+// TOUJOURS le logo seul sur #F2F2F2 de détourage — le fond réel est un calque
+// séparé généré à l'étape B, jamais dans ce rendu.
 
 export type LogoConceptCompiled = {
   prompt: string
   expectedTexts: string[]
-  background: string | null
+  background: string
 }
 
 export function compileLogoConceptPrompt(opts: {
   projectName: string
   conceptPrompt: string
   type: 'lettre' | 'nom' | 'embleme'
-  fond: 'transparent' | 'plein' | 'degrade_motifs'
 }): LogoConceptCompiled {
   const name = opts.projectName.trim().toUpperCase()
   const expectedTexts: string[] = []
@@ -407,14 +408,6 @@ export function compileLogoConceptPrompt(opts: {
     spellingBlock = 'NO LETTERING: pure pictorial emblem — zero characters of any alphabet anywhere.'
   }
 
-  // Fond transparent = livrable PNG détouré → atelier gris neutre imposé.
-  // Fond plein / dégradé+motifs : le fond fait partie du logo, décrit par le
-  // concept — on n'impose que la propreté des bords.
-  const background = opts.fond === 'transparent' ? LOGO_BACKGROUND_HEX : null
-  const backgroundBlock = background
-    ? `BACKGROUND — CRITICAL FOR CUTOUT: perfectly flat, uniform, seamless light grey ${background} background. No gradient, no vignette, no texture, no shadow on the background, no reflection under the logo.`
-    : 'BACKGROUND: full-bleed as described in the concept above — it IS part of the logo. Edge-to-edge clean rendering, no vignette added on top.'
-
   // LOT 3 (run 5.4) : le bloc ADN chiffré voyage dans CHAQUE génération logo.
   // Le concept du DA le porte déjà en section 0 — la garantie dure est ICI :
   // adnBlockLogo() JETTE si l'entraînement v4 n'est pas installé, donc aucun
@@ -423,11 +416,70 @@ export function compileLogoConceptPrompt(opts: {
     opts.conceptPrompt.trim(),
     `DNA GUARANTEE — the final render must sit inside this measured family:\n${adnBlockLogo()}`,
     spellingBlock,
-    backgroundBlock,
-    `Square 1:1 composition, mark perfectly centered, professional vector-grade edges${background ? ', the mark must not touch the frame edges — keep 12% padding on all sides' : ''}. No watermark, no signature, no UI.`,
+    `BACKGROUND — CRITICAL FOR CUTOUT: perfectly flat, uniform, seamless light grey ${LOGO_BACKGROUND_HEX} background. No gradient, no vignette, no texture, no shadow on the background, no reflection under the logo. The real background comes later as a separate layer — relief and glow belong to the mark itself.`,
+    `Square 1:1 composition, mark perfectly centered, professional vector-grade edges, the mark must not touch the frame edges — keep 12% padding on all sides. No watermark, no signature, no UI.`,
   ].join('\n\n')
 
-  return { prompt, expectedTexts, background }
+  return { prompt, expectedTexts, background: LOGO_BACKGROUND_HEX }
+}
+
+// ── FONDS de l'étape B (run 5.4, LOT 4) — générés SANS le logo ───────────────
+// La bibliothèque de fonds (dossier « background pour logo ect », analysé à
+// 100 % par train-fivem-v4) nourrit le few-shot ; le logo n'apparaît JAMAIS
+// dans la génération — il est composé par calques ensuite, et chaque calque
+// se régénère indépendamment.
+export type LogoFondCompiled = CompiledPromptV2
+
+const FOND_CHOIX_PROMPTS: Record<'signature' | 'atmospherique' | 'scene', (sujet: string) => string> = {
+  signature: (sujet) =>
+    `SIGNATURE BACKGROUND (ALYA family): one full-bleed two-tone gradient decorated with small hand-drawn doodle motifs${sujet ? ` derived from the logo subject "${sujet}" (simplified outlines, 12-20 scattered motifs)` : ' (simple geometric doodles, 12-20 scattered)'} — motifs low-contrast (10-20% opacity shift), evenly scattered, NEVER crowding the center.`,
+  atmospherique: () =>
+    'ATMOSPHERIC BACKGROUND (fractured-gold-R family): dark dramatic full-bleed backdrop — deep vignette-free gradient, volumetric light haze, floating micro-particles/sparks, subtle smoke wisps. Low brightness, high depth.',
+  scene: () =>
+    'SCENE BACKGROUND: a soft-focus environmental scene matching the server mood — depth-of-field strong enough that no object stays sharp, graded toward the palette below.',
+}
+
+export function compileLogoFondPrompt(opts: {
+  da: ArtDirection
+  choix: 'signature' | 'atmospherique' | 'scene'
+  sujet: string
+  couleurs: string[]
+  ambianceScene?: string
+  energie?: number
+  modernite?: number
+  adnFondBlock: string
+}): LogoFondCompiled {
+  const exemplars = pickExemplars({
+    category: 'background_logo',
+    da: opts.da,
+    energie: opts.energie,
+    modernite: opts.modernite,
+    maxPrompts: 2,
+    maxReferences: 2,
+  })
+
+  const couleurs = opts.couleurs.length ? opts.couleurs : opts.da.palette
+  const prompt = [
+    'Premium background designed to HOST a FiveM server logo composed on top later. The logo is NOT in this image.',
+    opts.adnFondBlock,
+    fewShotBlock(exemplars.reversePrompts),
+    FOND_CHOIX_PROMPTS[opts.choix](opts.sujet),
+    opts.choix === 'scene' && opts.ambianceScene ? `SCENE MOOD (user words): ${opts.ambianceScene}.` : '',
+    `COLORS: build strictly around ${couleurs.join(' → ')} plus neutral depth shading.`,
+    'COMPOSITION: the CENTRAL 55% of the frame stays calm and low-contrast — it will receive the logo. Detail lives on the edges.',
+    referencesBlock(exemplars.references.length, 'They define the density, finish and calm-center construction to reach.'),
+    SECONDARY_NO_TEXT_RULE,
+  ].filter(Boolean).join('\n\n')
+
+  return {
+    prompt,
+    aspectRatio: '1:1',
+    category: 'libre',
+    templateId: null,
+    references: exemplars.references,
+    exemplarSlugs: exemplars.slugs,
+    expectedTexts: [],
+  }
 }
 
 // ── Retouche d'un calque héro par instruction courte (run 5.2, LOT 4) ────────

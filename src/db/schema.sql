@@ -406,9 +406,15 @@ CREATE TABLE IF NOT EXISTS projects (
   palette JSONB NOT NULL DEFAULT '[]'::jsonb,
   -- { url, whiteUrl, blackUrl, width, height } — PNG alpha 4K + déclinaisons
   logo_master JSONB,
+  -- étape B (run 5.4) : { fondUrl, carreUrl, banniereUrl, alphaUrl, at } —
+  -- le fond validé + déclinaisons composées (carré 1:1, bannière 16:9)
+  logo_scene JSONB,
   created_at TIMESTAMPTZ DEFAULT NOW(),
   updated_at TIMESTAMPTZ DEFAULT NOW()
 );
+
+-- Migration run 5.4 (bases existantes) :
+ALTER TABLE projects ADD COLUMN IF NOT EXISTS logo_scene JSONB;
 
 CREATE INDEX IF NOT EXISTS projects_user_idx ON projects(user_id, updated_at DESC);
 
