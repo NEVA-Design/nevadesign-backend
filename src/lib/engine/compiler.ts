@@ -239,6 +239,8 @@ export function compileHeroPromptV2(opts: {
 
   const name = project.name.trim().toUpperCase()
   const baseline = (answers.baseline ?? '').trim().toUpperCase()
+  // l'icône (512 px) est un mini-mark sans titre — seule catégorie héro muette
+  const withTitle = category !== 'icon'
 
   const exemplars = pickExemplars({
     category: EXEMPLAR_CATEGORY[category],
@@ -247,13 +249,15 @@ export function compileHeroPromptV2(opts: {
     modernite: opts.modernite,
   })
 
-  const titleBlock = [
-    `TITLE — GENERATED INSIDE THE IMAGE: massive display title reading exactly "${name}" — spelled ${spellOut(name)} — ${da.lettering}, letters partially BEHIND the subjects with some strokes in front (depth interleaving), integrated lighting and reflections, correct spelling only, no other words, no watermark.`,
-    baseline
-      ? `Below the title, a small tracked-out baseline reading exactly "${baseline}" — spelled ${spellOut(baseline)} — clean secondary type, perfectly spelled.`
-      : '',
-    'Triple-check every letter of the title: no missing, doubled, swapped or invented characters.',
-  ].filter(Boolean).join('\n')
+  const titleBlock = withTitle
+    ? [
+        `TITLE — GENERATED INSIDE THE IMAGE: massive display title reading exactly "${name}" — spelled ${spellOut(name)} — ${da.lettering}, letters partially BEHIND the subjects with some strokes in front (depth interleaving), integrated lighting and reflections, correct spelling only, no other words, no watermark.`,
+        baseline
+          ? `Below the title, a small tracked-out baseline reading exactly "${baseline}" — spelled ${spellOut(baseline)} — clean secondary type, perfectly spelled.`
+          : '',
+        'Triple-check every letter of the title: no missing, doubled, swapped or invented characters.',
+      ].filter(Boolean).join('\n')
+    : ''
 
   const strip = category === 'banniere_fivem'
   const formatBlock = strip
@@ -276,8 +280,8 @@ export function compileHeroPromptV2(opts: {
     formatBlock,
   ].filter(Boolean).join('\n\n')
 
-  const expectedTexts = [name]
-  if (baseline) expectedTexts.push(baseline)
+  const expectedTexts = withTitle ? [name] : []
+  if (withTitle && baseline) expectedTexts.push(baseline)
 
   return {
     prompt,

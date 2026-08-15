@@ -10,8 +10,9 @@
  */
 
 import { writeFileSync, mkdirSync } from 'fs'
-import { join, resolve } from 'path'
-import { compileScenePrompt, softenPrompt } from '../src/lib/engine/compiler'
+import { resolve } from 'path'
+import { compileHeroPromptV2, softenPrompt } from '../src/lib/engine/compiler'
+import { fallbackArtDirection } from '../src/lib/engine/mapping'
 import { geminiImageEditRich, GeminiError } from '../src/lib/ai/gemini'
 import { estimateCostEur } from '../src/lib/engine/pricing'
 
@@ -63,8 +64,9 @@ async function run() {
   const rows: Array<Record<string, unknown>> = []
   let images = 0
 
+  const da = fallbackArtDirection(PROJECT.name, PROJECT.palette)
   for (const brief of SENSITIVE_BRIEFS) {
-    const compiled = compileScenePrompt({ project: PROJECT, category: 'affiche', answers: brief })
+    const compiled = compileHeroPromptV2({ project: PROJECT, category: 'affiche', da, answers: brief })
     const first = await attempt(compiled.prompt)
     images += first === 'ok' ? 1 : 0
 

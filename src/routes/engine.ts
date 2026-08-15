@@ -7,51 +7,51 @@ import { checkEngineGuards } from '../lib/engine/guards'
 import { deductCredits, getCredits } from '../lib/credits'
 import {
   CATEGORY_IMAGE_CONFIG,
-  compileLogoPrompt,
-  compileScenePrompt,
+  compileHeroPromptV2,
+  compileInstructPrompt,
+  compileLogoPromptV2,
   listSceneTemplates,
   type EngineCategory,
-  type LogoAnswers,
+  type LogoAnswersV2,
   type SceneAnswers,
 } from '../lib/engine/compiler'
+import { artDirectionForProject } from '../lib/engine/mapping'
 import {
   ENGINE_MODELS,
   fetchAsReference,
-  generateWithSoftRetry,
   storeBuffer,
   storeRender,
 } from '../lib/engine/generation'
+import { generateWithOcrGate } from '../lib/engine/ocr-gate'
 import { cutoutFlatBackground, makeMonochrome } from '../lib/engine/cutout'
 import { makeLayerId, type Layer } from '../lib/engine/layers'
 import { composeAsset, effectFileBuffer, effectsManifest } from '../lib/engine/composite'
 import { GeminiError } from '../lib/ai/gemini'
 
-// ── Le moteur produit (run 5, LOT 3/4) ───────────────────────────────────────
-// Toutes les générations liées aux projets passent ici : propositions de
-// logo, master 4K détouré, calque scène, régénération. Le décompte :
-// 1 création débitée à l'export final (logo master = son export) ;
-// 5 retouches incluses par création, la 6e reprend 1 création.
+// ── Le moteur produit (run 5.2, LOT 3/4) ─────────────────────────────────────
+// Toutes les générations liées aux projets passent ici. Depuis le run 5.2 :
+// le calque héro embarque le TITRE GÉNÉRÉ DANS L'IMAGE (plus aucun calque
+// texte système), chaque appel joint des références d'entraînement, et
+// l'OCR gate rejette en silence tout lettrage mal épelé (max 2 par slot).
+// Le décompte : 1 création débitée à l'export final (logo master = son
+// export) ; 5 retouches incluses par création, la 6e reprend 1 création.
 
 const INCLUDED_RETOUCHES = 5
 const RATE_LIMIT_PER_MINUTE = 10
 
-const LOGO_STYLES = ['chrome', 'graffiti', 'luxe', 'neon', 'cartoon', 'minimal'] as const
 const LOGO_TYPES = ['lettre', 'nom', 'embleme'] as const
 
 function isEngineCategory(value: unknown): value is EngineCategory {
   return typeof value === 'string' && value in CATEGORY_IMAGE_CONFIG
 }
 
-function parseLogoAnswers(raw: unknown): LogoAnswers | null {
-  const input = raw as { type?: unknown; style?: unknown; palette?: unknown } | null
+// v2 : le style ne se demande plus — il se déduit du mapping projet.
+// Le wizard logo ne répond qu'à « Ton logo idéal ? » (lettre/nom/emblème).
+function parseLogoAnswers(raw: unknown): LogoAnswersV2 | null {
+  const input = raw as { type?: unknown } | null
   if (!input) return null
-  const type = LOGO_TYPES.includes(input.type as never) ? (input.type as LogoAnswers['type']) : null
-  const style = LOGO_STYLES.includes(input.style as never) ? (input.style as LogoAnswers['style']) : null
-  const palette = Array.isArray(input.palette)
-    ? input.palette.filter((c): c is string => typeof c === 'string' && /^#[0-9a-fA-F]{6}$/.test(c)).slice(0, 6)
-    : []
-  if (!type || !style) return null
-  return { type, style, palette }
+  const type = LOGO_TYPES.includes(input.type as never) ? (input.type as LogoAnswersV2['type']) : null
+  return type ? { type } : null
 }
 
 function parseSceneAnswers(raw: unknown): SceneAnswers {
@@ -63,6 +63,8 @@ function parseSceneAnswers(raw: unknown): SceneAnswers {
     moment: sanitizeText(input.moment, 160) || undefined,
     props: sanitizeText(input.props, 200) || undefined,
     ambianceScene: sanitizeText(input.ambianceScene, 240) || undefined,
+    baseline: sanitizeText(input.baseline, 80) || undefined,
+    logoInScene: input.logoInScene === true,
   }
 }
 
@@ -109,23 +111,22 @@ async function chargeRetouch(userId: string, asset: { id: string; retouches_used
   return { used, creditCharged }
 }
 
-// Calques par défaut d'une création : scène + logo hérité + textes réels.
+// Pile par défaut d'une création v2 : [héro scène+titre] [logo PNG composé].
+// Le titre vit DANS le héro — plus aucun calque texte système.
 function defaultLayers(opts: {
   category: EngineCategory
   sceneUrl: string
   sceneAspect: number
-  project: { name: string; ambiance?: { chips?: string[] } | null; logo_master?: { url: string } | null }
+  project: { logo_master?: { url: string } | null }
 }): Layer[] {
   const { category, sceneUrl, sceneAspect, project } = opts
-  const chips = project.ambiance?.chips ?? []
   const isStrip = category === 'banniere_fivem'
-  const isPortrait = category === 'affiche'
 
   const layers: Layer[] = [
     {
       id: makeLayerId(),
       type: 'scene',
-      name: 'Scène',
+      name: 'Héro (scène + titre)',
       x: 0.5,
       y: 0.5,
       scale: 1,
@@ -154,83 +155,17 @@ function defaultLayers(opts: {
     })
   }
 
-  layers.push(
-    {
-      id: makeLayerId(),
-      type: 'text',
-      name: 'Titre',
-      text: project.name.toUpperCase(),
-      font: 'archivo-black',
-      weight: 900,
-      sizeRel: isStrip ? 0.52 : isPortrait ? 0.085 : 0.13,
-      x: 0.5,
-      y: isStrip ? 0.5 : 0.44,
-      scale: 1,
-      rotation: 0,
-      opacity: 1,
-      blend: 'normal',
-      color: '#FFFFFF',
-      strokeColor: '#000000',
-      strokeWidth: 0,
-      shadow: { x: 0, y: 4, blur: 18, color: 'rgba(0,0,0,0.55)' },
-      gradient: null,
-      letterSpacing: 0.06,
-      align: 'center',
-      uppercase: true,
-    },
-    ...(chips.length && !isStrip
-      ? [{
-          id: makeLayerId(),
-          type: 'text' as const,
-          name: 'Sous-titre',
-          text: chips.join('  ·  ').toUpperCase(),
-          font: 'oswald',
-          weight: 500,
-          sizeRel: isPortrait ? 0.024 : 0.034,
-          x: 0.5,
-          y: isPortrait ? 0.52 : 0.58,
-          scale: 1,
-          rotation: 0,
-          opacity: 0.92,
-          blend: 'normal' as const,
-          color: '#FFFFFF',
-          strokeColor: '#000000',
-          strokeWidth: 0,
-          shadow: { x: 0, y: 2, blur: 10, color: 'rgba(0,0,0,0.5)' },
-          gradient: null,
-          letterSpacing: 0.32,
-          align: 'center' as const,
-          uppercase: true,
-        }]
-      : []),
-    ...(!isStrip
-      ? [{
-          id: makeLayerId(),
-          type: 'text' as const,
-          name: 'Appel à l’action',
-          text: 'REJOINS-NOUS',
-          font: 'bebas-neue',
-          weight: 400,
-          sizeRel: isPortrait ? 0.03 : 0.045,
-          x: 0.5,
-          y: 0.9,
-          scale: 1,
-          rotation: 0,
-          opacity: 1,
-          blend: 'normal' as const,
-          color: '#FFFFFF',
-          strokeColor: '#000000',
-          strokeWidth: 0,
-          shadow: { x: 0, y: 2, blur: 12, color: 'rgba(0,0,0,0.6)' },
-          gradient: null,
-          letterSpacing: 0.18,
-          align: 'center' as const,
-          uppercase: true,
-        }]
-      : [])
-  )
-
   return layers
+}
+
+// Textes que le héro d'un asset doit afficher — sert aux retouches et au
+// re-rendu d'export pour re-forcer l'épellation et re-passer l'OCR gate.
+function expectedTextsForAsset(project: { name: string }, category: EngineCategory, answers: SceneAnswers): string[] {
+  if (category === 'icon') return []
+  const texts = [project.name.trim().toUpperCase()]
+  const baseline = (answers.baseline ?? '').trim().toUpperCase()
+  if (baseline) texts.push(baseline)
+  return texts
 }
 
 // Résolution d'export plafonnée par le plan (8K Agence = upscale local
@@ -297,7 +232,8 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
       const layers = (asset.layers ?? []) as Layer[]
 
       // Master de scène : itérations en 1K, export re-rendu à la résolution
-      // du plan (référence = rendu 1K, composition conservée).
+      // du plan (référence = rendu 1K, composition conservée, épellation
+      // re-forcée et re-validée par l'OCR gate).
       let sceneOverrideUrl: string | null = null
       const sceneLayer = layers.find((l) => l.type === 'scene' && l.url)
       if (sceneLayer?.url && Math.max(targetWidth, targetHeight) > 1400) {
@@ -306,14 +242,17 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
 
         const reference = await fetchAsReference(sceneLayer.url)
         if (reference) {
+          const category = asset.category as EngineCategory
           const answers = parseSceneAnswers(asset.wizard_answers)
-          const compiled = compileScenePrompt({ project, category: asset.category as EngineCategory, answers })
+          const { da, energie, modernite } = artDirectionForProject(project)
+          const compiled = compileHeroPromptV2({ project, category: category as Exclude<EngineCategory, 'logo'>, da, answers, energie, modernite })
           const imageSize = Math.max(targetWidth, targetHeight) > 2752 ? '4K' : '2K'
-          const master = await generateWithSoftRetry({
+          const master = await generateWithOcrGate({
             model: ENGINE_MODELS.master,
-            prompt: `${compiled.prompt}\n\nEXACT RE-RENDER: the attached reference is the approved 1K render of this scene. Reproduce it IDENTICALLY — same composition, same subject, same lighting, same grading — at maximum sharpness and detail.`,
+            prompt: `${compiled.prompt}\n\nEXACT RE-RENDER: the LAST attached image is the approved 1K render of this exact hero. Reproduce it IDENTICALLY — same composition, same subjects, same title lettering and spelling, same grading — at maximum sharpness and detail.`,
             referenceImages: [reference],
             imageConfig: { aspectRatio: compiled.aspectRatio, imageSize },
+            expectedTexts: expectedTextsForAsset(project, category, answers),
             log: { userId: user.id, projectId: body.projectId, assetId: asset.id, kind: `export_scene_${asset.category}`, resolution: imageSize },
           })
           sceneOverrideUrl = await storeRender(
@@ -377,7 +316,7 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
     })
   })
 
-  // ── Logo : 3 propositions en 1K ─────────────────────────────────────────
+  // ── Logo v2 : 3 propositions en 1K, références jointes, OCR gate ────────
   .post('/logo/proposals', async ({ request }) => {
     try {
       const auth = await requireUser(request)
@@ -442,14 +381,17 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
       }
       if (!asset) return jsonError('asset_create_failed', 500)
 
-      const compiled = compileLogoPrompt({ project, answers })
+      const { da, energie, modernite } = artDirectionForProject(project)
+      const compiled = compileLogoPromptV2({ project, da, answers, energie, modernite })
 
       const generations = await Promise.all(
         Array.from({ length: 3 }, () =>
-          generateWithSoftRetry({
+          generateWithOcrGate({
             model: ENGINE_MODELS.proposal,
             prompt: compiled.prompt,
+            referenceImages: compiled.references,
             imageConfig: { aspectRatio: '1:1', imageSize: '1K' },
+            expectedTexts: compiled.expectedTexts,
             log: { userId: user.id, projectId: body.projectId, assetId: asset.id, kind: 'logo_proposal', resolution: '1K' },
           })
         )
@@ -465,14 +407,17 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
         .from('project_assets')
         .update({
           wizard_answers: answers,
-          compiled_prompts: [...(asset.compiled_prompts ?? []), { kind: 'logo_proposals', prompt: compiled.prompt, at: new Date().toISOString() }],
+          compiled_prompts: [
+            ...(asset.compiled_prompts ?? []),
+            { kind: 'logo_proposals', prompt: compiled.prompt, exemplars: compiled.exemplarSlugs, references: compiled.references.length, at: new Date().toISOString() },
+          ],
           updated_at: new Date().toISOString(),
         })
         .eq('id', asset.id)
 
-      // Héritage : la palette choisie pour le logo devient celle du projet
-      if (answers.palette.length && !(project.palette ?? []).length) {
-        await service.from('projects').update({ palette: answers.palette, updated_at: new Date().toISOString() }).eq('id', project.id)
+      // Héritage : la palette dérivée du mapping devient celle du projet
+      if (da.palette.length && !(project.palette ?? []).length) {
+        await service.from('projects').update({ palette: da.palette, updated_at: new Date().toISOString() }).eq('id', project.id)
       }
 
       return Response.json({
@@ -490,7 +435,7 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
     }
   })
 
-  // ── Logo : master 4K + détourage + déclinaisons ─────────────────────────
+  // ── Logo : master 4K + détourage #F2F2F2 + déclinaisons ─────────────────
   .post('/logo/master', async ({ request }) => {
     try {
       const auth = await requireUser(request)
@@ -526,25 +471,27 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
       const reference = await fetchAsReference(body.chosenUrl)
       if (!reference) return jsonError('reference_unreachable', 400, 'La proposition choisie est introuvable.')
 
-      const answers = parseLogoAnswers(asset.wizard_answers) ?? { type: 'embleme', style: 'minimal', palette: project.palette ?? [] }
-      const compiled = compileLogoPrompt({ project, answers })
+      const answers = parseLogoAnswers(asset.wizard_answers) ?? { type: 'embleme' as const }
+      const { da, energie, modernite } = artDirectionForProject(project)
+      const compiled = compileLogoPromptV2({ project, da, answers, energie, modernite })
 
       const masterPrompt = [
-        'Reproduce the EXACT same logo as the attached reference image — identical design, identical colors, identical proportions. Do not redesign, do not add elements.',
+        'Reproduce the EXACT same logo as the attached reference image — identical design, identical colors, identical proportions, identical spelling. Do not redesign, do not add elements.',
         'Render it at maximum sharpness with vector-grade clean edges.',
-        `Background: perfectly flat, uniform, seamless ${compiled.background === '#FFFFFF' ? 'pure white (#FFFFFF)' : 'pure black (#000000)'}. Nothing else in the frame. The logo must not touch the edges — keep 12% padding.`,
-        'Square 1:1 composition, logo perfectly centered.',
+        `Background: perfectly flat, uniform, seamless light grey ${compiled.background}. Nothing else in the frame. The mark must not touch the edges — keep 12% padding.`,
+        'Square 1:1 composition, mark perfectly centered.',
       ].join('\n')
 
-      const master = await generateWithSoftRetry({
+      const master = await generateWithOcrGate({
         model: ENGINE_MODELS.master,
         prompt: masterPrompt,
         referenceImages: [reference],
         imageConfig: { aspectRatio: '1:1', imageSize: '4K' },
+        expectedTexts: compiled.expectedTexts,
         log: { userId: user.id, projectId: body.projectId, assetId: asset.id, kind: 'logo_master', resolution: '4K' },
       })
 
-      // Détourage local (zéro appel API) + déclinaisons blanc/noir
+      // Détourage local (zéro appel API) + recadrage 8 % + déclinaisons
       const masterBuffer = Buffer.from(master.dataUrl.split(',').pop() ?? '', 'base64')
       const cutout = await cutoutFlatBackground(masterBuffer)
       const [white, black] = await Promise.all([
@@ -585,7 +532,7 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
     }
   })
 
-  // ── Calque scène d'une création ─────────────────────────────────────────
+  // ── Héro v2 d'une création : scène + titre en UNE génération ────────────
   .post('/scene', async ({ request }) => {
     try {
       const auth = await requireUser(request)
@@ -621,14 +568,27 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
       }
 
       const answers = parseSceneAnswers(body.answers)
-      const compiled = compileScenePrompt({ project, category: body.category, answers })
-      const config = CATEGORY_IMAGE_CONFIG[body.category]
+      const { da, energie, modernite } = artDirectionForProject(project)
+      const category = body.category as Exclude<EngineCategory, 'logo'>
+      const compiled = compileHeroPromptV2({ project, category, da, answers, energie, modernite })
+      const config = CATEGORY_IMAGE_CONFIG[category]
 
-      const generation = await generateWithSoftRetry({
+      // Option pré-câblée : logo master intégré à la génération — il voyage
+      // en PREMIÈRE référence (le prompt le désigne ainsi), les références
+      // d'entraînement suivent.
+      const referenceImages = [...compiled.references]
+      if (answers.logoInScene && project.logo_master?.url) {
+        const logoRef = await fetchAsReference(project.logo_master.url)
+        if (logoRef) referenceImages.unshift(logoRef)
+      }
+
+      const generation = await generateWithOcrGate({
         model: ENGINE_MODELS.scene,
         prompt: compiled.prompt,
+        referenceImages,
         imageConfig: { aspectRatio: compiled.aspectRatio, imageSize: '1K' },
-        log: { userId: user.id, projectId: body.projectId, kind: `scene_${body.category}`, resolution: '1K' },
+        expectedTexts: compiled.expectedTexts,
+        log: { userId: user.id, projectId: body.projectId, kind: `scene_${category}`, resolution: '1K' },
       })
 
       const sceneBuffer = Buffer.from(generation.dataUrl.split(',').pop() ?? '', 'base64')
@@ -640,7 +600,7 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
         .insert({
           project_id: body.projectId,
           user_id: user.id,
-          category: body.category,
+          category,
           title: sanitizeText(body.title, 80) || null,
           status: 'draft',
           width: config.canvas.width,
@@ -654,13 +614,13 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
       if (!asset) return jsonError('asset_create_failed', 500)
 
       const sceneUrl = await storeRender(`${user.id}/${body.projectId}/${asset.id}/scene-${Date.now()}.png`, generation.dataUrl)
-      const layers = defaultLayers({ category: body.category, sceneUrl, sceneAspect, project })
+      const layers = defaultLayers({ category, sceneUrl, sceneAspect, project })
 
       const { data: updated } = await service
         .from('project_assets')
         .update({
           layers,
-          compiled_prompts: [{ kind: 'scene', prompt: generation.finalPrompt, retried: generation.retried, at: new Date().toISOString() }],
+          compiled_prompts: [{ kind: 'hero', prompt: generation.finalPrompt, exemplars: compiled.exemplarSlugs, references: referenceImages.length, ocrRejects: generation.ocrRejects, retried: generation.retried, at: new Date().toISOString() }],
           updated_at: new Date().toISOString(),
         })
         .eq('id', asset.id)
@@ -677,7 +637,7 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
     }
   })
 
-  // ── Régénérer le calque scène (retouche) ────────────────────────────────
+  // ── Régénérer le héro (retouche par réponses de wizard) ─────────────────
   .post('/scene/regenerate', async ({ request }) => {
     try {
       const auth = await requireUser(request)
@@ -703,32 +663,36 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
       const guard = await checkEngineGuards(user.id, 1)
       if (!guard.ok) return jsonError(guard.code, guard.status, guard.message)
 
-      const charge = await chargeRetouch(user.id, asset, `Retouche scène — ${project.name}`)
+      const charge = await chargeRetouch(user.id, asset, `Retouche héro — ${project.name}`)
       if ('error' in charge) return charge.error
 
       const previousAnswers = parseSceneAnswers(asset.wizard_answers)
       const newAnswers = { ...previousAnswers, ...parseSceneAnswers(body.answers) }
-      const category = asset.category as EngineCategory
-      const compiled = compileScenePrompt({ project, category, answers: newAnswers })
+      const category = asset.category as Exclude<EngineCategory, 'logo'>
+      const { da, energie, modernite } = artDirectionForProject(project)
+      const compiled = compileHeroPromptV2({ project, category, da, answers: newAnswers, energie, modernite })
 
       const layers = (asset.layers ?? []) as Layer[]
       const sceneLayer = layers.find((l) => l.type === 'scene')
 
+      // keepComposition : SEUL le rendu précédent voyage (le prompt le
+      // désigne sans ambiguïté) ; sinon, les références d'entraînement.
       let prompt = compiled.prompt
-      const referenceImages: Array<{ data: string; mimeType: string }> = []
+      let referenceImages: Array<{ data: string; mimeType: string }> = compiled.references
       if (body.keepComposition && sceneLayer?.url) {
         const reference = await fetchAsReference(sceneLayer.url)
         if (reference) {
-          referenceImages.push(reference)
-          prompt = `${compiled.prompt}\n\nKEEP COMPOSITION: the attached reference is the previous render of this exact scene. Keep the same composition, camera, framing and main subject placement — apply only the changes described above.`
+          referenceImages = [reference]
+          prompt = `${compiled.prompt}\n\nKEEP COMPOSITION: the attached reference is the previous render of this exact hero. Keep the same composition, camera, framing, subject placement and title placement — apply only the changes described above, spelling kept perfect.`
         }
       }
 
-      const generation = await generateWithSoftRetry({
+      const generation = await generateWithOcrGate({
         model: ENGINE_MODELS.scene,
         prompt,
         referenceImages,
         imageConfig: { aspectRatio: compiled.aspectRatio, imageSize: '1K' },
+        expectedTexts: compiled.expectedTexts,
         log: { userId: user.id, projectId: body.projectId, assetId: asset.id, kind: `retouch_${category}`, resolution: '1K' },
       })
 
@@ -737,9 +701,10 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
       const sceneUrl = await storeRender(`${user.id}/${body.projectId}/${asset.id}/scene-${Date.now()}.png`, generation.dataUrl)
 
       const service = createServiceClient()
+      // le masque de gomme est lié au rendu précédent : il saute avec lui
       const newLayers = layers.map((layer) =>
         layer.type === 'scene'
-          ? { ...layer, url: sceneUrl, aspect: meta.width && meta.height ? meta.width / meta.height : layer.aspect }
+          ? { ...layer, url: sceneUrl, maskUrl: undefined, aspect: meta.width && meta.height ? meta.width / meta.height : layer.aspect }
           : layer
       )
       const { data: updated } = await service
@@ -749,7 +714,7 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
           wizard_answers: newAnswers,
           compiled_prompts: [
             ...(asset.compiled_prompts ?? []),
-            { kind: 'retouch', prompt: generation.finalPrompt, keepComposition: Boolean(body.keepComposition), retried: generation.retried, at: new Date().toISOString() },
+            { kind: 'retouch', prompt: generation.finalPrompt, keepComposition: Boolean(body.keepComposition), ocrRejects: generation.ocrRejects, retried: generation.retried, at: new Date().toISOString() },
           ],
           updated_at: new Date().toISOString(),
         })
@@ -769,6 +734,153 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
     } catch (error) {
       if (error instanceof GeminiError) return jsonError('generation_failed', error.status >= 400 ? error.status : 500, error.message)
       console.error('[engine/scene/regenerate]', error)
+      return jsonError('server_error', 500)
+    }
+  })
+
+  // ── Régénérer un calque par instruction courte (run 5.2, LOT 4) ─────────
+  // « passe le titre en chrome », « scène de nuit », « retire le personnage
+  // de gauche » — 1 retouche du compteur, rendu actuel joint, OCR gate.
+  .post('/layer/instruct', async ({ request }) => {
+    try {
+      const auth = await requireUser(request)
+      if (isResponse(auth)) return auth
+      const { user } = auth
+
+      const rate = checkRateLimit(`engine:${user.id}`, RATE_LIMIT_PER_MINUTE)
+      if (!rate.ok) return jsonError('rate_limited', 429)
+
+      const body = await request.json().catch(() => null) as {
+        projectId?: string
+        assetId?: string
+        instruction?: unknown
+      } | null
+      const instruction = sanitizeText(body?.instruction, 240)
+      if (!body?.projectId || !body.assetId || instruction.length < 3) {
+        return jsonError('invalid_body', 400, 'Décris la retouche en quelques mots.')
+      }
+
+      const project = await loadOwnedProject(user.id, body.projectId)
+      if (!project) return jsonError('project_not_found', 404, 'Projet introuvable.')
+      const asset = await loadOwnedAsset(user.id, body.projectId, body.assetId)
+      if (!asset) return jsonError('asset_not_found', 404, 'Création introuvable.')
+
+      const layers = (asset.layers ?? []) as Layer[]
+      const sceneLayer = layers.find((l) => l.type === 'scene' && l.url)
+      if (!sceneLayer?.url) return jsonError('no_scene_layer', 400, 'Cette création n’a pas de calque héro à retoucher.')
+
+      const guard = await checkEngineGuards(user.id, 1)
+      if (!guard.ok) return jsonError(guard.code, guard.status, guard.message)
+
+      const charge = await chargeRetouch(user.id, asset, `Instruction — ${project.name} : ${instruction.slice(0, 60)}`)
+      if ('error' in charge) return charge.error
+
+      const reference = await fetchAsReference(sceneLayer.url)
+      if (!reference) return jsonError('reference_unreachable', 400, 'Le rendu actuel est introuvable.')
+
+      const category = asset.category as EngineCategory
+      const answers = parseSceneAnswers(asset.wizard_answers)
+      const expectedTexts = expectedTextsForAsset(project, category, answers)
+      const compiled = compileInstructPrompt({ project, instruction, expectedTexts })
+
+      const generation = await generateWithOcrGate({
+        model: ENGINE_MODELS.scene,
+        prompt: compiled.prompt,
+        referenceImages: [reference],
+        imageConfig: { aspectRatio: CATEGORY_IMAGE_CONFIG[category].aspectRatio, imageSize: '1K' },
+        expectedTexts: compiled.expectedTexts,
+        log: { userId: user.id, projectId: body.projectId, assetId: asset.id, kind: `instruct_${category}`, resolution: '1K' },
+      })
+
+      const sceneBuffer = Buffer.from(generation.dataUrl.split(',').pop() ?? '', 'base64')
+      const meta = await sharp(sceneBuffer).metadata()
+      const sceneUrl = await storeRender(`${user.id}/${body.projectId}/${asset.id}/scene-${Date.now()}.png`, generation.dataUrl)
+
+      const service = createServiceClient()
+      const newLayers = layers.map((layer) =>
+        layer.type === 'scene'
+          ? { ...layer, url: sceneUrl, maskUrl: undefined, aspect: meta.width && meta.height ? meta.width / meta.height : layer.aspect }
+          : layer
+      )
+      const { data: updated } = await service
+        .from('project_assets')
+        .update({
+          layers: newLayers,
+          compiled_prompts: [
+            ...(asset.compiled_prompts ?? []),
+            { kind: 'instruct', prompt: generation.finalPrompt, instruction, ocrRejects: generation.ocrRejects, retried: generation.retried, at: new Date().toISOString() },
+          ],
+          updated_at: new Date().toISOString(),
+        })
+        .eq('id', asset.id)
+        .select()
+        .single()
+
+      securityLog('engine_instruct', { userId: user.id, assetId: asset.id, used: charge.used ?? 0 })
+
+      return Response.json({
+        asset: updated,
+        retouchesUsed: charge.used,
+        includedRetouches: INCLUDED_RETOUCHES,
+        creditCharged: charge.creditCharged,
+        retried: generation.retried,
+      })
+    } catch (error) {
+      if (error instanceof GeminiError) return jsonError('generation_failed', error.status >= 400 ? error.status : 500, error.message)
+      console.error('[engine/layer/instruct]', error)
+      return jsonError('server_error', 500)
+    }
+  })
+
+  // ── Masque de gomme non destructive (run 5.2, LOT 4) ────────────────────
+  // La gomme de l'éditeur peint un masque alpha côté client ; il est stocké
+  // ici (PNG, résolution du rendu 1K) et appliqué au compositing. Aucune
+  // génération, aucun débit : effacer est gratuit et réversible.
+  .post('/mask', async ({ request }) => {
+    try {
+      const auth = await requireUser(request)
+      if (isResponse(auth)) return auth
+      const { user } = auth
+
+      const rate = checkRateLimit(`engine-mask:${user.id}`, 30)
+      if (!rate.ok) return jsonError('rate_limited', 429)
+
+      const body = await request.json().catch(() => null) as {
+        projectId?: string
+        assetId?: string
+        layerId?: string
+        mask?: string
+      } | null
+      if (!body?.projectId || !body.assetId || !body.layerId || typeof body.mask !== 'string') {
+        return jsonError('invalid_body', 400)
+      }
+      if (!body.mask.startsWith('data:image/png;base64,') || body.mask.length > 3_000_000) {
+        return jsonError('invalid_mask', 400, 'Masque invalide.')
+      }
+
+      const asset = await loadOwnedAsset(user.id, body.projectId, body.assetId)
+      if (!asset) return jsonError('asset_not_found', 404, 'Création introuvable.')
+      const layers = (asset.layers ?? []) as Layer[]
+      if (!layers.some((l) => l.id === body.layerId)) {
+        return jsonError('layer_not_found', 404, 'Calque introuvable.')
+      }
+
+      // Ré-encodage sharp : neutralise tout PNG malicieux et borne la taille
+      const raw = Buffer.from(body.mask.split(',').pop() ?? '', 'base64')
+      const png = await sharp(raw)
+        .resize({ width: 2048, height: 2048, fit: 'inside', withoutEnlargement: true })
+        .png()
+        .toBuffer()
+
+      const url = await storeBuffer(
+        `${user.id}/${body.projectId}/${body.assetId}/mask-${body.layerId}-${Date.now()}.png`,
+        png,
+        'image/png'
+      )
+
+      return Response.json({ maskUrl: url })
+    } catch (error) {
+      console.error('[engine/mask]', error)
       return jsonError('server_error', 500)
     }
   })

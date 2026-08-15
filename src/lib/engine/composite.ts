@@ -1,40 +1,16 @@
 import { readFileSync } from 'fs'
 import { join, resolve } from 'path'
 import sharp, { type OverlayOptions } from 'sharp'
-import satori from 'satori'
-import type { Layer } from './layers'
+import { stripLegacyTextLayers, type Layer } from './layers'
 
-// Compositing serveur (run 5, LOT 5) — l'export rend EXACTEMENT ce que
-// l'éditeur affiche : mêmes calques normalisés, mêmes polices (satori rend
-// le texte en chemins vectoriels — aucune dépendance aux polices système),
-// mêmes blend modes. Le texte n'est JAMAIS généré par l'IA : il est
-// rasterisé ici, à la résolution d'export.
+// Compositing serveur (run 5.2, LOT 4) — l'export rend EXACTEMENT ce que
+// l'éditeur affiche : mêmes calques normalisés, mêmes blend modes (portés
+// par les effets maison), même masque de gomme.
+// Le rendu de texte système (satori + polices) a été SUPPRIMÉ au run 5.2 :
+// le lettrage est généré dans le calque héro par le moteur. Les calques
+// 'text' résiduels d'anciens assets sont filtrés à l'entrée.
 
-const FONTS_DIR = resolve(import.meta.dir, '../../engine/fonts')
 const EFFECTS_DIR = resolve(import.meta.dir, '../../engine/effects')
-
-type SatoriFont = { name: string; data: Buffer; weight: number; style: 'normal' }
-
-let fontsCache: SatoriFont[] | null = null
-function loadFonts(): SatoriFont[] {
-  if (fontsCache) return fontsCache
-  fontsCache = [
-    { name: 'Archivo Black', data: readFileSync(join(FONTS_DIR, 'archivo-black.ttf')), weight: 400, style: 'normal' },
-    { name: 'Bebas Neue', data: readFileSync(join(FONTS_DIR, 'bebas-neue.ttf')), weight: 400, style: 'normal' },
-    { name: 'Anton', data: readFileSync(join(FONTS_DIR, 'anton.ttf')), weight: 400, style: 'normal' },
-    { name: 'Oswald', data: readFileSync(join(FONTS_DIR, 'oswald.ttf')), weight: 500, style: 'normal' },
-    { name: 'Montserrat', data: readFileSync(join(FONTS_DIR, 'montserrat.ttf')), weight: 600, style: 'normal' },
-  ]
-  return fontsCache
-}
-
-const FONT_NAME_BY_ID: Record<string, string> = {
-  'archivo-black': 'Archivo Black',
-  'bebas-neue': 'Bebas Neue',
-  anton: 'Anton',
-  oswald: 'Oswald',
-  montserrat: 'Montserrat',
-}
 
 const BLEND_MAP: Record<string, 'over' | 'screen' | 'multiply' | 'overlay'> = {
   normal: 'over',
@@ -62,73 +38,33 @@ function effectFile(effectId: string): Buffer | null {
   }
 }
 
-// Rend un calque texte en PNG via satori (glyphes vectorisés), puis trim.
-async function renderTextLayer(layer: Layer, canvasWidth: number, canvasHeight: number): Promise<Buffer | null> {
-  const rawText = layer.text ?? ''
-  const text = layer.uppercase ? rawText.toUpperCase() : rawText
-  if (!text.trim()) return null
-
-  const fontSize = Math.max(6, (layer.sizeRel ?? 0.1) * canvasHeight)
-  const fontFamily = FONT_NAME_BY_ID[layer.font ?? 'archivo-black'] ?? 'Archivo Black'
-  const strokeW = layer.strokeWidth ? layer.strokeWidth * fontSize : 0
-
-  const style: Record<string, unknown> = {
-    display: 'flex',
-    fontFamily,
-    fontSize: `${fontSize}px`,
-    fontWeight: layer.weight ?? 700,
-    lineHeight: 1.04,
-    letterSpacing: `${(layer.letterSpacing ?? 0) * fontSize}px`,
-    whiteSpace: 'pre',
-    textAlign: layer.align ?? 'center',
-    color: layer.color ?? '#FFFFFF',
-  }
-  if (layer.gradient) {
-    style.backgroundImage = `linear-gradient(${layer.gradient.angle}deg, ${layer.gradient.from}, ${layer.gradient.to})`
-    style.backgroundClip = 'text'
-    style.color = 'transparent'
-  }
-  if (layer.shadow) {
-    // les offsets d'ombre sont exprimés en px d'éditeur ~1080p : on met à
-    // l'échelle du canvas d'export
-    const scaleFactor = canvasHeight / 1080
-    style.textShadow = `${layer.shadow.x * scaleFactor}px ${layer.shadow.y * scaleFactor}px ${layer.shadow.blur * scaleFactor}px ${layer.shadow.color}`
-  }
-  if (strokeW > 0 && layer.strokeColor) {
-    style.WebkitTextStrokeWidth = `${strokeW}px`
-    style.WebkitTextStrokeColor = layer.strokeColor
-  }
-
-  const lines = text.split('\n').length
-  const boxWidth = Math.ceil(canvasWidth * 2.4)
-  const boxHeight = Math.ceil(fontSize * 1.35 * lines + fontSize)
-
-  const svg = await satori(
-    {
-      type: 'div',
-      props: {
-        style: {
-          width: `${boxWidth}px`,
-          height: `${boxHeight}px`,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        },
-        children: { type: 'div', props: { style, children: text } },
-      },
-    } as never,
-    { width: boxWidth, height: boxHeight, fonts: loadFonts() as never }
-  )
-
-  return sharp(Buffer.from(svg)).png().trim({ threshold: 4 }).toBuffer()
-}
-
 // Multiplie le canal alpha par l'opacité du calque.
 async function applyOpacity(buffer: Buffer, opacity: number): Promise<Buffer> {
   if (opacity >= 0.995) return buffer
   const { data, info } = await sharp(buffer).ensureAlpha().raw().toBuffer({ resolveWithObject: true })
   for (let p = 3; p < data.length; p += 4) {
     data[p] = Math.round(data[p]! * opacity)
+  }
+  return sharp(data, { raw: { width: info.width, height: info.height, channels: 4 } }).png().toBuffer()
+}
+
+// Gomme non destructive : multiplie l'alpha du calque par l'alpha du masque
+// (blanc opaque = visible, transparent = effacé). Le masque est peint dans
+// l'éditeur à la résolution du rendu — on le remet à l'échelle du calque.
+async function applyMask(buffer: Buffer, maskUrl: string): Promise<Buffer> {
+  const maskSource = await fetchBuffer(maskUrl)
+  if (!maskSource) return buffer
+
+  const { data, info } = await sharp(buffer).ensureAlpha().raw().toBuffer({ resolveWithObject: true })
+  const mask = await sharp(maskSource)
+    .resize(info.width, info.height, { fit: 'fill' })
+    .ensureAlpha()
+    .raw()
+    .toBuffer({ resolveWithObject: true })
+
+  for (let p = 0; p < info.width * info.height; p++) {
+    const alphaIdx = p * 4 + 3
+    data[alphaIdx] = Math.round((data[alphaIdx]! * mask.data[alphaIdx]!) / 255)
   }
   return sharp(data, { raw: { width: info.width, height: info.height, channels: 4 } }).png().toBuffer()
 }
@@ -179,7 +115,8 @@ export async function composeAsset(opts: {
   // remplace l'url du calque scène (re-rendu haute résolution à l'export)
   sceneOverrideUrl?: string | null
 }): Promise<Buffer> {
-  const { layers, logoMaster, width, height } = opts
+  const { logoMaster, width, height } = opts
+  const layers = stripLegacyTextLayers(opts.layers)
 
   const composites: OverlayOptions[] = []
 
@@ -187,9 +124,7 @@ export async function composeAsset(opts: {
     if (layer.hidden) continue
 
     let source: Buffer | null = null
-    if (layer.type === 'text') {
-      source = await renderTextLayer(layer, width, height)
-    } else if (layer.type === 'effect' || layer.type === 'grain') {
+    if (layer.type === 'effect' || layer.type === 'grain') {
       source = layer.effectId ? effectFile(layer.effectId) : null
     } else if (layer.type === 'logo') {
       const url =
@@ -206,16 +141,14 @@ export async function composeAsset(opts: {
     if (!source) continue
 
     // Dimensionnement : scale = largeur relative au canvas.
-    // Les textes sortent de satori déjà à l'échelle du canvas — pas de resize.
-    let sized: Buffer
-    if (layer.type === 'text') {
-      sized = source
-    } else {
-      const meta = await sharp(source).metadata()
-      const aspect = layer.aspect ?? (meta.width && meta.height ? meta.width / meta.height : 1)
-      const targetW = Math.max(2, Math.round(layer.scale * width))
-      const targetH = Math.max(2, Math.round(targetW / aspect))
-      sized = await sharp(source).resize(targetW, targetH, { fit: 'fill' }).png().toBuffer()
+    const meta = await sharp(source).metadata()
+    const aspect = layer.aspect ?? (meta.width && meta.height ? meta.width / meta.height : 1)
+    const targetW = Math.max(2, Math.round(layer.scale * width))
+    const targetH = Math.max(2, Math.round(targetW / aspect))
+    let sized: Buffer = await sharp(source).resize(targetW, targetH, { fit: 'fill' }).png().toBuffer()
+
+    if (layer.maskUrl) {
+      sized = await applyMask(sized, layer.maskUrl)
     }
 
     // Rotation autour du centre (le cadre s'agrandit, le centre reste fixe)
@@ -228,9 +161,9 @@ export async function composeAsset(opts: {
 
     sized = await applyOpacity(sized, layer.opacity)
 
-    const meta = await sharp(sized).metadata()
-    const left = Math.round(layer.x * width - (meta.width ?? 0) / 2)
-    const top = Math.round(layer.y * height - (meta.height ?? 0) / 2)
+    const sizedMeta = await sharp(sized).metadata()
+    const left = Math.round(layer.x * width - (sizedMeta.width ?? 0) / 2)
+    const top = Math.round(layer.y * height - (sizedMeta.height ?? 0) / 2)
 
     const clipped = await clipToCanvas(sized, left, top, width, height)
     if (!clipped) continue

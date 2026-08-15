@@ -227,6 +227,20 @@ export function resolveArtDirection(answers: StyleAnswers, projectName: string):
   }
 }
 
+// Point d'entrée des routes : DA + curseurs d'un projet, avec repli propre
+// pour les projets d'avant le run 5.2 (pas de styleAnswers).
+export function artDirectionForProject(project: {
+  name: string
+  palette?: string[] | null
+  ambiance?: { styleAnswers?: unknown } | null
+}): { da: ArtDirection; energie: number; modernite: number } {
+  const answers = parseStyleAnswers(project.ambiance?.styleAnswers)
+  if (answers) {
+    return { da: resolveArtDirection(answers, project.name), energie: answers.energie, modernite: answers.modernite }
+  }
+  return { da: fallbackArtDirection(project.name, project.palette ?? []), energie: 50, modernite: 60 }
+}
+
 // DA de repli pour les projets créés avant le run 5.2 (ambiance en phrase
 // libre, sans styleAnswers) : urbain neutre, énergie médiane.
 export function fallbackArtDirection(projectName: string, palette: string[]): ArtDirection {

@@ -1,130 +1,118 @@
 /*
- * Preuve LOT 3 : 5 prompts compilés d'exemple, écrits dans
- * ../rapports/run5-prompts-compiles.md avec, quand un template du .txt
- * client est utilisé, l'extrait source correspondant en regard.
+ * Preuve run 5.2 : prompts compilés v2 d'exemple, écrits dans
+ * ../rapports/run5.2-prompts-compiles.md. Zéro appel API — compilation pure.
+ *
+ * Montre le few-shot en action : reverse-prompts gabarits + nombre de
+ * références jointes + épellation forcée du titre DANS l'image (plus aucun
+ * negative « no text » sur les chemins héro/logo).
  *
  * Usage : bun run scripts/compile-examples.ts
  */
 
-import { readFileSync, writeFileSync, mkdirSync } from 'fs'
+import { writeFileSync, mkdirSync } from 'fs'
 import { resolve } from 'path'
 import {
-  compileLogoPrompt,
-  compileScenePrompt,
+  compileHeroPromptV2,
+  compileLogoPromptV2,
   getSceneTemplate,
 } from '../src/lib/engine/compiler'
+import { resolveArtDirection } from '../src/lib/engine/mapping'
 
-const PROJECT = {
-  name: 'Les Santos Nights',
+const OUT = resolve(import.meta.dir, '../../rapports/run5.2-prompts-compiles.md')
+
+// Deux projets de démonstration aux directions opposées — la preuve du
+// mapping (LOT 2) : mêmes questions, réponses différentes, DA distinctes.
+const CARTEL_PROJECT = {
+  name: 'REDSIDE',
   sector: 'fivem',
-  ambiance: {
-    universe: 'RP nocturne exigeant — néons discrets, cartel en toile de fond, luxe fatigué de Los Santos',
-    chips: ['Cartel', 'Sombre', 'Néon'],
-    references: [],
-  },
-  palette: ['#0F0F0F', '#E63946', '#D4A017', '#1A1A1A', '#F5F0E8'],
+  ambiance: { styleAnswers: { universe: 'cartel', energie: 85, modernite: 60, couleur: '#E63946' } },
+  palette: [],
+}
+const ETE_PROJECT = {
+  name: 'Vespucci Life',
+  sector: 'fivem',
+  ambiance: { styleAnswers: { universe: 'ete_plage', energie: 25, modernite: 70, couleur: '#118AB2' } },
+  palette: [],
 }
 
-const SOURCE_TXT = resolve(import.meta.dir, '../../entrainement IA fivem/prompt for IA desgin.txt')
-const OUT = resolve(import.meta.dir, '../../rapports/run5-prompts-compiles.md')
-
-function sourceExcerpt(index: number): string {
-  const raw = readFileSync(SOURCE_TXT, 'utf-8')
-  const prompts = raw.split(/^-{20,}\s*$/m).map((p) => p.trim()).filter((p) => p.length > 200)
-  const source = prompts[index - 1] ?? ''
-  return source.slice(0, 1400) + (source.length > 1400 ? '\n[…]' : '')
-}
+const daCartel = resolveArtDirection(
+  { universe: 'cartel', energie: 85, modernite: 60, couleur: '#E63946' },
+  CARTEL_PROJECT.name
+)
+const daEte = resolveArtDirection(
+  { universe: 'ete_plage', energie: 25, modernite: 70, couleur: '#118AB2' },
+  ETE_PROJECT.name
+)
 
 const sections: string[] = [
-  '# RUN 5 — LOT 3 : 5 prompts compilés d’exemple',
+  '# RUN 5.2 — prompts compilés v2 d’exemple',
   '',
-  `Projet de démonstration : **${PROJECT.name}** — « ${PROJECT.ambiance.universe} », chips ${PROJECT.ambiance.chips.join('/')}, palette ${PROJECT.palette.join(' ')}.`,
-  '',
-  'Chaque prompt est assemblé automatiquement : prompt système secteur + guide de style entraîné + DA projet + réponses wizard + template de scène + règle no-text finale. L’utilisateur ne voit jamais ce texte.',
+  'Compilation pure (zéro appel API). Chaque prompt embarque : reverse-prompts gabarits du cluster (few-shot), 3-5 règles du guide v2, la DA issue du mapping, l’épellation forcée du lettrage, et le nombre de références d’entraînement jointes à l’appel.',
   '',
 ]
 
-// 1. Logo nom complet chrome
-const logo = compileLogoPrompt({
-  project: PROJECT,
-  answers: { type: 'nom', style: 'chrome', palette: ['#E63946', '#D4A017', '#0F0F0F'] },
-})
-sections.push('## 1. Logo — nom complet, style chrome', '', '```', logo.prompt, '```', '')
+function pushCase(title: string, prompt: string, references: number, exemplars: string[]) {
+  sections.push(
+    `## ${title}`,
+    '',
+    `Références d’entraînement jointes : **${references}** — exemplaires utilisés : ${exemplars.length ? exemplars.join(', ') : '(entraînement v2 pas encore lancé)'}`,
+    '',
+    '```',
+    prompt,
+    '```',
+    ''
+  )
+}
 
-// 2. Bannière Discord depuis le template « transat piscine » (prompt #1 du .txt)
-const template1 = getSceneTemplate('fivem-summer-lounger-perspective')
-const scene1 = compileScenePrompt({
-  project: PROJECT,
+// 1. Logo REDSIDE — nom complet, direction cartel/agressif/rouge
+const logo = compileLogoPromptV2({ project: CARTEL_PROJECT, da: daCartel, answers: { type: 'nom' }, energie: 85, modernite: 60 })
+pushCase('1. Logo « REDSIDE » — nom complet, mapping Cartel + Agressif + Rouge', logo.prompt, logo.references.length, logo.exemplarSlugs)
+
+// 2. Bannière Discord REDSIDE — titre GÉNÉRÉ dans l'image
+const hero = compileHeroPromptV2({
+  project: CARTEL_PROJECT,
   category: 'banniere_discord',
+  da: daCartel,
   answers: {
-    templateId: template1?.id,
-    lieu: 'rooftop pool of a Vinewood hotel at night, city lights below',
-    moment: 'night, warm practicals and subtle neon spill',
+    lieu: 'rain-slick downtown intersection at night',
+    personnages: 'two rival crew figures facing away from each other',
+    baseline: 'ROLEPLAY',
   },
+  energie: 85,
+  modernite: 60,
 })
-sections.push(
-  '## 2. Bannière Discord — template « Perspective forcée au bord de la piscine » (dérivé du prompt #1 du .txt)',
-  '',
-  '### Source client (extrait)',
-  '```',
-  sourceExcerpt(1),
-  '```',
-  '### Prompt compilé',
-  '```',
-  scene1.prompt,
-  '```',
-  ''
-)
+pushCase('2. Bannière Discord « REDSIDE » — titre + baseline dans l’image (depth interleaving)', hero.prompt, hero.references.length, hero.exemplarSlugs)
 
-// 3. Affiche sans template (construction directe depuis le wizard)
-const scene2 = compileScenePrompt({
-  project: PROJECT,
-  category: 'affiche',
-  answers: {
-    lieu: 'dimly lit private lounge, leather seats, cigar smoke',
-    personnages: 'one seated figure in a tailored suit, face half in shadow',
-    moment: 'low-key warm tungsten light',
-    props: 'stacks of cash on the table, vintage phone',
-  },
+// 3. Même catégorie, mapping opposé : Été + Élégant + Teal
+const heroEte = compileHeroPromptV2({
+  project: ETE_PROJECT,
+  category: 'banniere_discord',
+  da: daEte,
+  answers: { templateId: getSceneTemplate('fivem-beach-cabana-wideangle')?.id },
+  energie: 25,
+  modernite: 70,
 })
-sections.push('## 3. Affiche — questionnaire seul (pas de template)', '', '```', scene2.prompt, '```', '')
+pushCase('3. Bannière Discord « Vespucci Life » — mapping Été + Élégant + Teal (contraste du mapping)', heroEte.prompt, heroEte.references.length, heroEte.exemplarSlugs)
 
-// 4. Bandeau FiveM 17:1 (généré en 21:9, recadré au compositing)
-const scene3 = compileScenePrompt({
-  project: PROJECT,
+// 4. Orthographe piège : L6RYS en logo
+const l6rys = compileLogoPromptV2({
+  project: { ...CARTEL_PROJECT, name: 'L6RYS' },
+  da: resolveArtDirection({ universe: 'rp_urbain', energie: 60, modernite: 80, couleur: '#00D2FF' }, 'L6RYS'),
+  answers: { type: 'nom' },
+})
+pushCase('4. Logo « L6RYS » — épellation forcée L-6-R-Y-S (cas piège orthographe)', l6rys.prompt, l6rys.references.length, l6rys.exemplarSlugs)
+
+// 5. Bandeau FiveM 17:1 — titre dans la bande centrale
+const strip = compileHeroPromptV2({
+  project: CARTEL_PROJECT,
   category: 'banniere_fivem',
-  answers: {
-    lieu: 'Los Santos skyline at dusk seen from the hills',
-    moment: 'blue hour, city lights igniting',
-  },
+  da: daCartel,
+  answers: { lieu: 'Los Santos skyline at dusk from the hills' },
+  energie: 85,
+  modernite: 60,
 })
-sections.push('## 4. Bandeau liste FiveM (3730×216 — généré en 21:9 puis recadré)', '', '```', scene3.prompt, '```', '')
-
-// 5. Wallpaper depuis le template roadtrip (prompt #16 du .txt)
-const template16 = getSceneTemplate('coastal-roadtrip-vehicle-group')
-const scene4 = compileScenePrompt({
-  project: PROJECT,
-  category: 'wallpaper',
-  answers: {
-    templateId: template16?.id,
-    moment: 'golden hour',
-  },
-})
-sections.push(
-  '## 5. Wallpaper — template « Roadtrip en groupe sur route côtière » (dérivé du prompt #16 du .txt)',
-  '',
-  '### Source client (extrait)',
-  '```',
-  sourceExcerpt(16),
-  '```',
-  '### Prompt compilé',
-  '```',
-  scene4.prompt,
-  '```',
-  ''
-)
+pushCase('5. Bandeau liste FiveM (3730×216) — titre confiné à la bande centrale', strip.prompt, strip.references.length, strip.exemplarSlugs)
 
 mkdirSync(resolve(import.meta.dir, '../../rapports'), { recursive: true })
 writeFileSync(OUT, sections.join('\n'))
-console.log(`5 prompts compilés → ${OUT}`)
-console.log(`Tailles: logo ${logo.prompt.length}c, scène1 ${scene1.prompt.length}c, scène2 ${scene2.prompt.length}c, scène3 ${scene3.prompt.length}c, scène4 ${scene4.prompt.length}c`)
+console.log(`Prompts compilés v2 → ${OUT}`)
