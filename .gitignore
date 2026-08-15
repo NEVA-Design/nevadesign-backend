@@ -8,6 +8,8 @@ dist
 
 # mode dev local (store JSON + fichiers générés) — jamais commité
 data/
+backend-dev.log
+backend-dev-err.log
 
 # code coverage
 coverage
