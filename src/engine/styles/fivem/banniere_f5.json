@@ -1,50 +1,141 @@
 {
   "categorie": "banniere_f5",
+  "version": 4,
   "source": "banniere menu F5 serveur fivem gtarp",
   "images_totales": 12,
   "images_analysees": 12,
-  "genere_le": "2026-08-15T15:35:56.778Z",
+  "exemplaires": 12,
+  "genere_le": "2026-08-16T08:28:36.370Z",
   "modele": "gemini-3.5-flash",
+  "adn": {
+    "images": 12,
+    "traits": [
+      {
+        "trait": "dark or gradient atmospheric background",
+        "frequence_pct": 92,
+        "source": "sombre_clair <= 4 ou fond degrade/atmospherique"
+      },
+      {
+        "trait": "visible contour/outline",
+        "frequence_pct": 67,
+        "source": "contour.present"
+      },
+      {
+        "trait": "contour/rim glow",
+        "frequence_pct": 42,
+        "source": "score glow >= 5"
+      },
+      {
+        "trait": "particles / sparkles / stars",
+        "frequence_pct": 25,
+        "source": "effets"
+      },
+      {
+        "trait": "3D relief / bevel / extrusion",
+        "frequence_pct": 0,
+        "source": "score relief_3d >= 6"
+      }
+    ],
+    "scores_moyens": {
+      "relief_3d": 2.7,
+      "glow": 4.3,
+      "saturation": 7.2,
+      "sombre_clair": 2.5,
+      "complexite": 4.1
+    },
+    "frequences": {
+      "relief_3d_pct": 0,
+      "glow_pct": 42,
+      "fond_sombre_pct": 92,
+      "fond_degrade_ou_atmospherique_pct": 67,
+      "contour_pct": 67,
+      "contour_epais_pct": 25,
+      "particules_pct": 25
+    },
+    "matieres": [
+      {
+        "matiere": "neon",
+        "pct": 24
+      },
+      {
+        "matiere": "plastic",
+        "pct": 21
+      },
+      {
+        "matiere": "metal",
+        "pct": 17
+      },
+      {
+        "matiere": "paper",
+        "pct": 10
+      },
+      {
+        "matiere": "vinyl",
+        "pct": 10
+      },
+      {
+        "matiere": "stone",
+        "pct": 7
+      }
+    ],
+    "palette_dominante": [
+      "#FFFFFF",
+      "#000000",
+      "#800C0C",
+      "#4A0404",
+      "#FF0000",
+      "#E080B0"
+    ],
+    "resume_en": "0% show 3D relief/bevel (mean relief 2.7/10), 42% carry contour/rim glow (mean glow 4.3/10), 92% sit on a dark background and 67% on a gradient/atmospheric one, 25% of outlined marks use a thick (usually white) contour, 25% add particles/sparkles. Mean saturation 7.2/10, mean brightness 2.5/10, mean complexity 4.1/10. Dominant materials: neon 24%, plastic 21%, metal 17%, paper 10%. Dominant palette: #FFFFFF, #000000, #800C0C, #4A0404, #FF0000."
+  },
   "guide": {
     "categorie": "banniere_f5",
     "composition": [
-      "Use a strict 4:1 horizontal aspect ratio.",
-      "Apply either a 40/60 split layout (left 40% for emblem, right 60% for logotype separated by a 1px vertical line) or a 30% to 60% centered layout.",
-      "Frame the outer 15% edges symmetrically with dark, silhouetted palm trees, cityscapes, or blurred environmental elements.",
-      "Keep the background elements low-contrast to preserve a clean, empty negative space on the flanks."
+      "Maintain a strict 4:1 to 5:1 horizontal aspect ratio.",
+      "Use a 2-part layout: left-aligned logo mark (30% width) and right-aligned text (70% width), separated by a 1px vertical divider line.",
+      "For centered layouts, place a single symmetrical icon or 2-layer stacked text block exactly in the middle 40% of the canvas.",
+      "Backgrounds must feature dark, desaturated silhouettes (palm trees, city skylines, bridges) occupying the lower 50% of the frame."
     ],
     "typographie": [
-      "Use bold, geometric, all-caps sans-serif or stylized cursive script for the primary title, occupying 30% to 50% of the canvas width.",
-      "Apply a secondary subtitle (e.g., 'ROLEPLAY') tracked out widely, positioned directly below the main title at 15% of its font size.",
-      "Apply a metallic silver gradient, a 3D bevel effect, or a solid white fill with a 1px stroke to the primary text.",
-      "Integrate the primary emblem directly into the typography (e.g., replacing a letter or acting as a central divider)."
+      "Primary text must be bold, geometric, uppercase sans-serif with wide tracking.",
+      "Apply a 3D gel-like extrusion or a metallic silver-to-color gradient split horizontally at 50% height.",
+      "Secondary subtitles must be thin, elegant, and 50% smaller than the main title."
     ],
     "lumiere": [
-      "Cast a strong radial glow or backlighting directly behind the central logo/emblem.",
-      "Apply soft, vibrant ambient light leaks (neon red, green, pink, or blue) emanating from the left and right canvas edges.",
-      "Use subtle rim lighting on the edges of the central vector elements to separate them from the dark background."
+      "Use a central radial spotlight or strong neon backlighting to isolate the main logo.",
+      "Apply a soft ambient glow (pink, red, green, or blue) emanating from the canvas edges or corners.",
+      "Incorporate subtle white rim lighting on the edges of 3D lettering to create depth."
     ],
     "etalonnage": [
-      "Use a high-contrast, deep black base paired with a single highly saturated neon accent color (#FF0000 red, #00FF00 green, #8A2BE2 purple, or #0088FF blue).",
-      "Maintain a monochromatic, desaturated, and dark color palette for all background elements."
+      "Dominant background must be near-black or deep desaturated tones: #000000, #0B111E, #1A0508.",
+      "Accent colors must be high-saturation neon: Red (#FF0000), Green (#00FF33), Purple/Pink (#FF0055, #A832FC).",
+      "Text and foreground highlights must remain pure white (#FFFFFF) for maximum contrast."
     ],
     "effets": [
-      "Mask a clean vector map texture or satin overlay inside the main emblem.",
-      "Apply a heavy background vignette and a soft depth-of-field blur to background silhouettes.",
-      "Add subtle finishing details: fine noise grain, floating embers/dust particles, or a solid 5px colored footer bar."
+      "Apply a heavy dark vignette around the outer 15% of the canvas.",
+      "Overlay a subtle paper grain or photographic noise texture at 5% opacity.",
+      "Incorporate sparse dust particles, light leaks, or blurred white snowflakes/bokeh in the background layer."
     ],
     "logo": [
-      "Position the primary emblem either centered at 30% width or on the left at 40% width balanced by a horizontal logotype on the right."
+      "Integrate geometric monograms, anatomical elements, or celestial shapes framed by a thick neon border.",
+      "Ensure the logo has a strong outer glow matching the dominant accent color."
     ],
     "interdits": [
-      "Do not use default, unintegrated vertical dividing lines that look unpolished.",
-      "Avoid low-resolution background textures, muddy metallic gradients, or highly compressed starfields.",
-      "Do not make background silhouettes so dark that they degrade into compression noise.",
-      "Do not scale subtext or taglines below readable thresholds for low in-game resolutions.",
-      "Avoid placing text elements too close to the upper or lower canvas boundaries."
+      "Do not use bright, fully-saturated background fills without a dark vignette.",
+      "Avoid complex, multi-colored vector illustrations without a unifying color wash.",
+      "Do not use default, un-styled sans-serif fonts without gradients, outlines, or custom cuts.",
+      "Avoid centering text blocks without an accompanying icon or structural framing."
     ],
     "ratios": [
-      "4:1"
+      "4:1",
+      "5:1",
+      "3.5:1"
+    ],
+    "personnages": [
+      "Pose characters with a confident, relaxed, or intimidating attitude: hands holding cash, gesturing, or holding weapons in a low guard.",
+      "Dress characters in premium streetwear (hoodies, denim tube tops, knit vests, graphic tees) layered with heavy chrome/gold jewelry and designer sunglasses.",
+      "Render skin with a clean, semi-realistic 3D game engine finish, showing detailed tattoos and soft-painted textures.",
+      "Frame shots as vertical medium close-ups (waist-up) or dynamic full-body poses next to luxury assets like sports cars or music studio desks."
     ]
   }
 }

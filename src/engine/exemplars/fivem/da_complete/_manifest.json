@@ -1,0 +1,240 @@
+{
+  "categorie": "da_complete",
+  "genere_le": "2026-08-16T08:30:35.928Z",
+  "exemplaires": [
+    {
+      "slug": "dzafegze",
+      "source": "dzafegze.png",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "luxe",
+        "chill"
+      ],
+      "energie": 80,
+      "modernite": 85,
+      "couleurs": [
+        "#12161a",
+        "#2be19f",
+        "#ffffff"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Sharp, futuristic sans-serif with aggressive angles for the main logo, paired with clean geometric sans-serif for UI text.",
+      "scores": {
+        "relief_3d": 6,
+        "glow": 8,
+        "saturation": 7,
+        "sombre_clair": 3,
+        "complexite": 7
+      }
+    },
+    {
+      "slug": "eshsdefsde",
+      "source": "eshsdefsde.png",
+      "priorite": "reverse",
+      "tags": [
+        "cartel",
+        "urbain",
+        "esport"
+      ],
+      "energie": 90,
+      "modernite": 90,
+      "couleurs": [
+        "#141917",
+        "#59eaa0",
+        "#d1dcd6"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Heavy, blocky 3D gothic-style lettering for 'SOUTH' stacked on top of a flowing, neon-green script for 'District'.",
+      "scores": {
+        "relief_3d": 9,
+        "glow": 7,
+        "saturation": 8,
+        "sombre_clair": 4,
+        "complexite": 9
+      }
+    },
+    {
+      "slug": "fgefazaz",
+      "source": "fgefazaz.png",
+      "priorite": "reverse",
+      "tags": [
+        "luxe",
+        "cartel",
+        "sombre"
+      ],
+      "energie": 85,
+      "modernite": 80,
+      "couleurs": [
+        "#110d0f",
+        "#e61c24",
+        "#e2e2e2"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "A large, stylized red chrome 'G' monogram with bullet holes, paired with silver gothic-style 3D lettering for 'Land'.",
+      "scores": {
+        "relief_3d": 8,
+        "glow": 6,
+        "saturation": 8,
+        "sombre_clair": 3,
+        "complexite": 8
+      }
+    },
+    {
+      "slug": "nsdzzfefz",
+      "source": "nsdzzfefz.png",
+      "priorite": "reverse",
+      "tags": [
+        "luxe",
+        "urbain",
+        "chill"
+      ],
+      "energie": 65,
+      "modernite": 80,
+      "couleurs": [
+        "#121212",
+        "#E5B842",
+        "#FFFFFF"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Bold, tall, sans-serif 3D extruded lettering with a metallic gold gradient and a white script 'V' overlay.",
+      "scores": {
+        "relief_3d": 7,
+        "glow": 6,
+        "saturation": 6,
+        "sombre_clair": 4,
+        "complexite": 8
+      }
+    },
+    {
+      "slug": "ntrtgerez",
+      "source": "ntrtgerez.png",
+      "priorite": "reverse",
+      "tags": [
+        "luxe",
+        "sombre",
+        "chill"
+      ],
+      "energie": 55,
+      "modernite": 85,
+      "couleurs": [
+        "#0A0A0A",
+        "#F39C12",
+        "#FFFFFF"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Clean, ultra-bold white sans-serif text 'SUNNY' with a smaller orange rounded button-style text 'HUB' underneath.",
+      "scores": {
+        "relief_3d": 4,
+        "glow": 8,
+        "saturation": 7,
+        "sombre_clair": 3,
+        "complexite": 5
+      }
+    },
+    {
+      "slug": "rtgfd",
+      "source": "rtgfd.png",
+      "priorite": "reverse",
+      "tags": [
+        "ete",
+        "chill",
+        "urbain"
+      ],
+      "energie": 85,
+      "modernite": 90,
+      "couleurs": [
+        "#00A8FF",
+        "#FFFFFF",
+        "#1E272C"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Stylized white script font 'Vizu' overlapping the central 3D logo.",
+      "scores": {
+        "relief_3d": 8,
+        "glow": 5,
+        "saturation": 8,
+        "sombre_clair": 7,
+        "complexite": 7
+      }
+    },
+    {
+      "slug": "rtgzefzedcf",
+      "source": "rtgzefzedcf.png",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "cartel",
+        "luxe"
+      ],
+      "energie": 85,
+      "modernite": 90,
+      "couleurs": [
+        "#0d0f12",
+        "#e51c24",
+        "#ffffff"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Bold, sans-serif block letters with heavy 3D extrusion and metallic textures, layered with red accent subtext.",
+      "scores": {
+        "relief_3d": 7,
+        "glow": 8,
+        "saturation": 6,
+        "sombre_clair": 3,
+        "complexite": 8
+      }
+    },
+    {
+      "slug": "sryhdghefszrgq",
+      "source": "sryhdghefszrgq.png",
+      "priorite": "reverse",
+      "tags": [
+        "ete",
+        "luxe",
+        "chill"
+      ],
+      "energie": 80,
+      "modernite": 95,
+      "couleurs": [
+        "#1a0b2e",
+        "#a855f7",
+        "#38bdf8"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Clean sans-serif typography for UI elements, paired with a sharp, stylized 3D 'V' monogram.",
+      "scores": {
+        "relief_3d": 8,
+        "glow": 9,
+        "saturation": 9,
+        "sombre_clair": 6,
+        "complexite": 7
+      }
+    },
+    {
+      "slug": "tyrehntghezer",
+      "source": "tyrehntghezer.png",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "cartel",
+        "esport"
+      ],
+      "energie": 90,
+      "modernite": 88,
+      "couleurs": [
+        "#ffffff",
+        "#00ff66",
+        "#111111"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Gothic blackletter typography for names, paired with heavy 3D block text for the main logo.",
+      "scores": {
+        "relief_3d": 6,
+        "glow": 7,
+        "saturation": 8,
+        "sombre_clair": 8,
+        "complexite": 6
+      }
+    }
+  ]
+}

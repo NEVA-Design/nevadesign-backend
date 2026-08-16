@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo family, 3D dimensional emblem.
+1. SHAPE — A large, bold, geometric capital letter 'A' centered. Overlaid on the middle is a sleek, stylized dolphin jumping from left to right, its body curved in an arc. The dolphin silhouette cuts across the letter 'A' with clean negative space separating them.
+2. RENDER — Smooth, glossy plastic texture with a gel-like finish on the dolphin. The letter 'A' has a soft white neon glow emitting from behind its edges. No complex textures, clean vector-like 3D rendering.
+3. COLORS — Deep black background, pure white letter 'A', vibrant cyan (#00A8B5) dolphin with subtle highlights.
+4. FORMAT — Square composition, subject occupies 75% of the frame, dark background with soft cyan ambient light in the corners.
+5. KEYWORDS — minimalist, vector 3D, sleek, modern, glowing edges, high contrast, clean design.

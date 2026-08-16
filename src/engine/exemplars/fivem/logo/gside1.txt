@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo family, flat 2D vector emblem.
+1. SHAPE — A minimalist circular icon consisting of two interlocking crescent swooshes that curve around to form a dynamic, swirling loop. The negative space in the center is an abstract eye shape.
+2. RENDER — Flat 2D vector graphic, perfectly clean lines, no gradients, no bevels, no shadows, no glow.
+3. COLORS — Pure white #ffffff emblem on a solid royal blue #0f52ba background.
+4. FORMAT — Square composition, emblem occupies 75% of the width, centered on a clean background.
+5. KEYWORDS — flat vector logo, minimalist emblem, geometric, clean design, corporate gaming icon.

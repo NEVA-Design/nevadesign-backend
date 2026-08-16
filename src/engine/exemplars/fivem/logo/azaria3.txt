@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo family, minimalist flat vector emblem.
+1. SHAPE — A stylized geometric monogram of the letter 'A'. The left leg of the 'A' is replaced by a sharp, minimalist lightning bolt. The right side forms a bold, angled block.
+2. RENDER — Flat 2D vector graphic, solid fills, no gradients on the emblem, clean sharp edges, no 3D bevels.
+3. COLORS — Solid white #ffffff for the main body, soft pastel coral #f08a75 for the lightning bolt, set against a warm brown-orange gradient background #4a2312.
+4. FORMAT — Square composition, emblem centered occupying 50% of the width, framed by dark silhouetted palm trees on the left and right edges.
+5. KEYWORDS — minimalist logo, flat vector, retro sunset, lightning bolt monogram, West Coast vibe, clean design.

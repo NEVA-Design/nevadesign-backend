@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo family, bold mascot-style emblem.
+1. SHAPE — Slanted, bold sans-serif letters 'SN' in white. An angled, thick blue planetary ring orbits around the letters, swooping from bottom-left to top-right, ending in a stylized four-point star sparkle.
+2. RENDER — Glossy vector sticker style, thick dark blue keyline contour, bright white outer stroke, glowing neon blue ring, small star sparkles dotted on the ring.
+3. COLORS — Crisp white #FFFFFF for the letters, vibrant sky blue #3FA9F5 for the ring, deep navy blue #0A0E17 for the background and outer shadows.
+4. FORMAT — Square 1:1 composition, logo centered occupying 80% of the width, dark blue gradient background with a soft white glow in the top-left corner.
+5. KEYWORDS — space theme logo, cosmic emblem, bold lettering, planetary ring, star sparkle, esport mascot style, vibrant vector.

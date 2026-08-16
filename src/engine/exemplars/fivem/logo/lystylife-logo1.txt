@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, minimalist flat vector monogram. 
+1. SHAPE — Symmetrical geometric emblem composed of two mirrored 'L' shapes facing outwards. Each 'L' is constructed from three nested, parallel lines with sharp 90-degree angles, creating a stylized crown or wing silhouette. Clean negative space separates the two halves down the center. 
+2. RENDER — Flat 2D vector graphic with a vibrant red neon outer glow. No 3D extrusion, no bevels. 
+3. COLORS — Pure white core lines with a bright red (#ff4d4d) neon glow, set against a dark, desaturated background. 
+4. FORMAT — Square composition, emblem occupies 65% of the width. Background is a dark, moody, desaturated silhouette of a Los Angeles street with palm trees under a dusky sky. 
+5. KEYWORDS — minimalist monogram, neon vector, clean lines, urban gaming logo, simple geometry.

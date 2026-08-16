@@ -1,52 +1,160 @@
 {
   "categorie": "logo",
+  "version": 4,
   "source": "logo serveur fivem gtarp",
   "images_totales": 59,
-  "images_analysees": 12,
-  "genere_le": "2026-08-15T15:37:31.510Z",
+  "images_analysees": 59,
+  "exemplaires": 59,
+  "genere_le": "2026-08-16T08:34:23.145Z",
   "modele": "gemini-3.5-flash",
+  "adn": {
+    "images": 59,
+    "traits": [
+      {
+        "trait": "dark or gradient atmospheric background",
+        "frequence_pct": 78,
+        "source": "sombre_clair <= 4 ou fond degrade/atmospherique"
+      },
+      {
+        "trait": "contour/rim glow",
+        "frequence_pct": 63,
+        "source": "score glow >= 5"
+      },
+      {
+        "trait": "visible contour/outline",
+        "frequence_pct": 53,
+        "source": "contour.present"
+      },
+      {
+        "trait": "particles / sparkles / stars",
+        "frequence_pct": 24,
+        "source": "effets"
+      },
+      {
+        "trait": "3D relief / bevel / extrusion",
+        "frequence_pct": 22,
+        "source": "score relief_3d >= 6"
+      }
+    ],
+    "scores_moyens": {
+      "relief_3d": 3.5,
+      "glow": 5.2,
+      "saturation": 7.2,
+      "sombre_clair": 3.4,
+      "complexite": 3.9
+    },
+    "frequences": {
+      "relief_3d_pct": 22,
+      "glow_pct": 63,
+      "fond_sombre_pct": 78,
+      "fond_degrade_ou_atmospherique_pct": 76,
+      "contour_pct": 53,
+      "contour_epais_pct": 15,
+      "particules_pct": 24
+    },
+    "matieres": [
+      {
+        "matiere": "neon",
+        "pct": 27
+      },
+      {
+        "matiere": "plastic",
+        "pct": 26
+      },
+      {
+        "matiere": "metal",
+        "pct": 10
+      },
+      {
+        "matiere": "vinyl",
+        "pct": 9
+      },
+      {
+        "matiere": "glass",
+        "pct": 8
+      },
+      {
+        "matiere": "chrome",
+        "pct": 8
+      }
+    ],
+    "lettrages": [
+      {
+        "type": "monogram",
+        "pct": 49
+      },
+      {
+        "type": "custom italic wordmark",
+        "pct": 25
+      },
+      {
+        "type": "script",
+        "pct": 5
+      },
+      {
+        "type": "slab",
+        "pct": 2
+      },
+      {
+        "type": "sans-serif bold",
+        "pct": 2
+      }
+    ],
+    "palette_dominante": [
+      "#FFFFFF",
+      "#000000",
+      "#FFD700",
+      "#1A1A1A",
+      "#111827",
+      "#FF4081"
+    ],
+    "resume_en": "22% show 3D relief/bevel (mean relief 3.5/10), 63% carry contour/rim glow (mean glow 5.2/10), 78% sit on a dark background and 76% on a gradient/atmospheric one, 15% of outlined marks use a thick (usually white) contour, 24% add particles/sparkles. Mean saturation 7.2/10, mean brightness 3.4/10, mean complexity 3.9/10. Dominant materials: neon 27%, plastic 26%, metal 10%, vinyl 9%. Dominant lettering families: monogram 49%, custom italic wordmark 25%, script 5%. Dominant palette: #FFFFFF, #000000, #FFD700, #1A1A1A, #111827."
+  },
   "guide": {
     "categorie": "logo",
     "composition": [
-      "Position the main subject dead-center, occupying 55% to 70% of the 1:1 frame.",
-      "Surround the subject with dark, high-contrast negative space to ensure separation.",
-      "Apply a slight 5 to 15-degree tilt to lettermarks to inject dynamic gaming energy.",
-      "Use precise, symmetrical vector geometry or interlocking shapes for non-lettermark emblems."
+      "Symmetrical 1:1 layout centered on a single bold monogram or a two-tier stacked wordmark.",
+      "Monograms must occupy 60-70% of the canvas area, leaving a 15-20% margin on all sides.",
+      "Two-tier layouts must feature a bold sans-serif top line (70% width) and an overlapping script bottom line (30% width) offset to the bottom-right.",
+      "Angle of italicization or dynamic tilt must be locked between 15 and 25 degrees."
     ],
     "typographie": [
-      "Use bold, chiseled, or customized sans-serif and serif letterforms with angled cuts or split-block designs.",
-      "Integrate text directly with graphic elements using overlapping layers (e.g., wrapping elements through letter curves).",
-      "Enclose secondary text in custom geometric frames or badges to maintain a unified silhouette.",
-      "Scale text to occupy no more than 75% of the frame width to prevent edge crowding."
+      "Monograms: Custom geometric sans-serif with sharp chamfered terminals, 90-degree angles, or lightning-like cuts.",
+      "Wordmarks: Heavy, condensed, bold sans-serif paired with a fluid, continuous, hand-written brush script.",
+      "Lettering must feature a metallic gradient fill or a solid white face with a soft digital glow."
+    ],
+    "grammaire": [
+      "Silhouette Fusion: Integrate thematic icons (palm trees, crescent moons, lightning bolts, handguns) directly into the letter stems or negative space.",
+      "Thick White Outline: Apply a heavy, solid white outer stroke (5-10% of letter width) to separate elements from dark backgrounds.",
+      "Glow Edge: Replace standard strokes with a high-intensity emissive neon edge bloom in cyan, pink, or purple.",
+      "Material Families: Use polished chrome with sharp bevels, matte plastic with satin finishes, or fractured gold/stone textures.",
+      "Atmospheric Backgrounds: Place logos on dark, desaturated urban scenes, misty coastal views, or solid backgrounds with soft corner light leaks."
     ],
     "lumiere": [
-      "Apply dual-source lighting: a cool primary light (blue/cyan) paired with a warm/vibrant rim light (magenta/pink/gold).",
-      "Use top-down directional lighting to create metallic reflections and cast soft drop shadows below.",
-      "Incorporate a soft, atmospheric backlighting halo to separate the central subject from dark backgrounds."
+      "Dual-tone metallic sheen: Cool blue light from the bottom-left paired with warm pink/purple light from the top-right.",
+      "Internal neon glow: Self-illumination radiating from the core or edges of the central emblem.",
+      "Backlit halo: Strong ambient glow casting a soft silhouette effect against dark, textured backgrounds."
     ],
     "etalonnage": [
-      "Use high-contrast palettes: deep blacks (#000000) paired with electric cyan (#00B0FF), hot pink (#FF007F), or emerald green (#004D30).",
-      "Employ monochromatic metallic gradients ranging from deep bronze (#5C3A00) to bright yellow-white highlights.",
-      "Keep background tones desaturated and dark to let highly saturated vector elements pop."
+      "Nocturnal Cyber: Dominant deep blues (#020817, #0A192F) with vibrant cyan (#00E5FF) and purple (#8A2BE2) accents.",
+      "Sunset Chill: Warm orange-to-brown gradients (#4A2312, #F08A75) paired with solid white (#FFFFFF).",
+      "Miami Vice: High-contrast pink (#FF4081), deep purple (#1A0010), and bright white (#FFFFFF)."
     ],
     "effets": [
-      "Add subtle 3D chiseled extrusions, metallic gradient mapping, and sharp vector bevels.",
-      "Apply soft outer glows, subtle corner light leaks, and low-opacity background textures (concrete, paper, or noise).",
-      "Incorporate dynamic elements like floating shards, clean vector sparkles, or soft smoke wisps."
+      "Neon bloom and soft atmospheric haze/smoke.",
+      "Subtle digital noise, grain, or halftone grid overlays.",
+      "Metallic reflections, sharp beveling, and soft drop shadows."
     ],
     "logo": [
-      "Center the primary emblem, lettermark, or monogram as the absolute focal point of the canvas.",
-      "Ensure the logo maintains a clean, high-resolution vector-style silhouette that remains legible at small scales."
+      "Emblems must be integrated as a fused silhouette within the monogram or positioned directly above the central wordmark."
     ],
     "interdits": [
-      "Do not use generic, unedited brush presets for sparkles or light leaks.",
-      "Avoid muddy, overly dark backgrounds that swallow the emblem's silhouette.",
-      "Do not include tiny, secondary icons that lose legibility and scale poorly.",
-      "Avoid disconnected background patterns that clash with the central theme.",
-      "Do not export at low resolutions that cause pixelation on sharp vector bevels."
+      "Avoid flat, unlit 2D shapes without depth, bevels, or glow effects.",
+      "Do not use complex, multi-colored vector doodles that distract from the central emblem.",
+      "Avoid thin, non-emissive outlines that fail to separate the logo from dark backgrounds."
     ],
     "ratios": [
-      "1:1"
+      "1:1 square aspect ratio"
     ]
   }
 }

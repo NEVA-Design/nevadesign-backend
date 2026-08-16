@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo family, flat 2D vector mascot.
+1. SHAPE — A split-face design. The left half is a stylized male face with pink hair, a beard, and thick yellow rectangular glasses. The right half is a stylized pink anatomical heart with white outlines that mirrors the shape of the head. A small white 'F' letter is placed near the center seam.
+2. RENDER — Flat 2D vector art with thick black and white keyline strokes. Matte finish with a subtle vintage paper texture and light dust particles overlay.
+3. COLORS — Hot pink (#E91E63) dominant, bright yellow (#FFEB3B) accents, white outlines, dark moody background.
+4. FORMAT — Square composition, centered mascot occupying 80% of the frame, dark atmospheric background with industrial silhouettes.
+5. KEYWORDS — pop art, street art, vector illustration, high contrast, retro gaming, edgy design.

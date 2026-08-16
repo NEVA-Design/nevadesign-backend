@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, 3D dimensional emblem.
+1. SHAPE — A single, large, sharp-edged 3D octahedron crystal tilted at a 25-degree angle. The crystal has 8 distinct triangular facets meeting at a central point. A thin, crisp white outline traces the outer silhouette.
+2. RENDER — Highly polished translucent blue glass material with realistic internal refraction. Bright white specular highlights glint off the central vertices. Soft internal neon glow radiates from the core. No dark shadows.
+3. COLORS — Dominant electric cyan (#00aaff) and pure white (#ffffff) highlights, over a medium blue gradient.
+4. FORMAT — Square composition, the crystal occupies 70% of the width, centered. The background is a soft blue gradient with tiny floating glass shards and subtle bokeh particles.
+5. KEYWORDS — 3D crystal, glass refraction, neon glow, game emblem, octane render, clean vector style.

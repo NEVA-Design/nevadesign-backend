@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, bold minimalist monogram. 
+1. SHAPE — Large, solid interlocking monogram of the letters 'M' and 'L'. The 'M' features sharp, aggressive angles, with its right vertical stem seamlessly merging into the vertical stem of the 'L', which extends to the right with a thick horizontal base. 
+2. RENDER — Flat 2D shape with a subtle drop shadow and a soft red ambient backlight. Matte texture, no metallic reflections. 
+3. COLORS — Solid crimson red (#e60000) for the monogram, set against a dark charcoal and deep red background. 
+4. FORMAT — Square composition, monogram occupies 75% of the frame. Background is a dark, desaturated aerial view of a Los Angeles cityscape at night. 
+5. KEYWORDS — bold monogram, clean vector, gaming community logo, sharp angles, red and black.

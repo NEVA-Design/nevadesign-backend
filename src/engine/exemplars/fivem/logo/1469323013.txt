@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, futuristic cyber-sports emblem, high-contrast 3D render.
+1. SHAPE — A circular metallic badge featuring an interlocking geometric 'H' monogram. The outer ring is split diagonally into two silver crescent brackets. The central core features a horizontal bar glowing with energy, creating a balanced, symmetrical tech icon.
+2. RENDER — Polished chrome outer elements with sharp bevels and realistic reflections. The inner core glows with an intense cyan neon light, casting a vibrant blue spill onto the metallic surfaces. No cheap gradients, realistic light emission.
+3. COLORS — Metallic silver (#E2E8F0), electric cyan (#38BDF8), deep midnight blue (#0B1A24) background.
+4. FORMAT — Square composition, emblem occupies 65% of the frame, centered over a dark, atmospheric, out-of-focus urban street at night.
+5. KEYWORDS — cyberpunk, gaming logo, metallic, neon glow, octane render, sleek tech.

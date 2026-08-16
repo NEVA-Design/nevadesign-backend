@@ -1,47 +1,139 @@
 {
   "categorie": "banniere_discord",
+  "version": 4,
   "source": "banniere discord serveur fivem gtarp",
   "images_totales": 34,
-  "images_analysees": 12,
-  "genere_le": "2026-08-15T15:34:59.997Z",
+  "images_analysees": 34,
+  "exemplaires": 34,
+  "genere_le": "2026-08-16T08:27:07.988Z",
   "modele": "gemini-3.5-flash",
+  "adn": {
+    "images": 34,
+    "traits": [
+      {
+        "trait": "dark or gradient atmospheric background",
+        "frequence_pct": 68,
+        "source": "sombre_clair <= 4 ou fond degrade/atmospherique"
+      },
+      {
+        "trait": "contour/rim glow",
+        "frequence_pct": 56,
+        "source": "score glow >= 5"
+      },
+      {
+        "trait": "visible contour/outline",
+        "frequence_pct": 53,
+        "source": "contour.present"
+      },
+      {
+        "trait": "particles / sparkles / stars",
+        "frequence_pct": 35,
+        "source": "effets"
+      },
+      {
+        "trait": "3D relief / bevel / extrusion",
+        "frequence_pct": 26,
+        "source": "score relief_3d >= 6"
+      }
+    ],
+    "scores_moyens": {
+      "relief_3d": 4.1,
+      "glow": 4.9,
+      "saturation": 7.1,
+      "sombre_clair": 3.7,
+      "complexite": 5.3
+    },
+    "frequences": {
+      "relief_3d_pct": 26,
+      "glow_pct": 56,
+      "fond_sombre_pct": 68,
+      "fond_degrade_ou_atmospherique_pct": 62,
+      "contour_pct": 53,
+      "contour_epais_pct": 12,
+      "particules_pct": 35
+    },
+    "matieres": [
+      {
+        "matiere": "plastic",
+        "pct": 22
+      },
+      {
+        "matiere": "neon",
+        "pct": 19
+      },
+      {
+        "matiere": "metal",
+        "pct": 9
+      },
+      {
+        "matiere": "fabric",
+        "pct": 8
+      },
+      {
+        "matiere": "vinyl",
+        "pct": 8
+      },
+      {
+        "matiere": "stone",
+        "pct": 7
+      }
+    ],
+    "palette_dominante": [
+      "#FFFFFF",
+      "#FF0000",
+      "#1A1A1A",
+      "#111111",
+      "#FF00FF",
+      "#00A2E8"
+    ],
+    "resume_en": "26% show 3D relief/bevel (mean relief 4.1/10), 56% carry contour/rim glow (mean glow 4.9/10), 68% sit on a dark background and 62% on a gradient/atmospheric one, 12% of outlined marks use a thick (usually white) contour, 35% add particles/sparkles. Mean saturation 7.1/10, mean brightness 3.7/10, mean complexity 5.3/10. Dominant materials: plastic 22%, neon 19%, metal 9%, fabric 8%. Dominant palette: #FFFFFF, #FF0000, #1A1A1A, #111111, #FF00FF."
+  },
   "guide": {
     "categorie": "banniere_discord",
     "composition": [
-      "Use a symmetrical, centered layout with the focal point (text or logo) occupying 50% to 70% of the central canvas.",
-      "For character-driven designs, flank the central text symmetrically with 2 characters occupying 30% of the left and right margins, or place a couple centrally occupying the middle 50%.",
-      "For asymmetrical layouts, use a 35/65 split: a solid color block with text on the left 35%, and a wide-angle scene with a foreground element on the right 65%.",
-      "Frame the composition using blurred foreground elements (e.g., 3D assets, snowflakes, or foliage) to establish depth of field."
+      "Use a 16:9 aspect ratio with a symmetrical or balanced 3-layer depth structure: foreground (floating elements/characters), midground (central text/logo), and background.",
+      "Position 1 to 3 3D characters or a central vector emblem as the focal point, flanked symmetrically by secondary elements (lightning bolts, palm trees, or pillars).",
+      "Layer large-scale typography behind characters or central logos, occupying 60-80% of the horizontal canvas width.",
+      "Maintain a clear horizontal center line for primary text, with optional smaller subtext or social handles aligned in the bottom 15% of the frame."
     ],
     "typographie": [
-      "Place a giant, bold, sans-serif or custom display title centrally behind the main subjects, or use a large monogram (occupying 30% width) on the left that merges into the main text.",
-      "Apply a strict hierarchy: main title in ultra-bold, uppercase, or 3D extruded block style; secondary subtitle (e.g., 'ROLEPLAY') in a smaller, tracked-out, clean sans-serif centered below.",
-      "Integrate text with graphic elements, such as a central icon acting as a vertical word separator, or sharp horizontal slice effects through the lettering."
+      "Use ultra-bold, uppercase, italicized sans-serif or 3D block letters with metallic, gradient (white-to-color), or brushed textures.",
+      "Apply a thick dark outline (when contour is present) or a heavy drop shadow to separate text from complex backgrounds.",
+      "Integrate custom geometric cuts, stencil splits, or custom icons (stars, lightning bolts) directly into the main lettering (e.g., replacing the letter 'A')."
     ],
     "lumiere": [
-      "Implement high-contrast, low-key lighting with a vibrant neon or ambient glow (purple, green, or red) emanating from behind the central text to separate it from dark backgrounds.",
-      "For outdoor scenes, use bright, direct midday or afternoon sunlight with strong rim lighting on the characters' shoulders and hair to create a premium cutout effect."
+      "Implement high-contrast dual-source lighting: a strong primary key light (sunlight or studio white) paired with a vibrant neon rim light (pink, green, or blue).",
+      "Cast a strong radial backlighting glow behind the central logo or text to separate it from dark backgrounds.",
+      "Apply realistic ambient occlusion and drop shadows between overlapping 3D layers."
     ],
     "etalonnage": [
-      "Apply high-contrast, saturated color palettes: pair deep, crushed blacks and dark grays (#1A1A1A) with vibrant accents like hot pink (#FF007F), electric green (#00FF66), or cyan (#00D2FF).",
-      "For thematic designs, use a monochromatic wash (deep crimson #8B0000, deep purple #2D1B33, or cyan/teal #005F73) contrasted with stark white text."
+      "Nocturnal/Cyber: Deep purples (#120A18, #1A002C) and dark blues (#001C30, #051122) contrasted with neon magenta (#FF00FF) or cyan (#00A8E8).",
+      "Summer/Luxury: High-saturation blues (#1CA3EC, #1E88E5) paired with vibrant pinks (#FF6B8B, #FF4DA6) and warm gold/orange accents (#E5C158).",
+      "Aggressive/Esports: Dark charcoal/black (#121212, #1A1A1A) paired with high-intensity red (#FF0000, #C8000A) or toxic green (#76B900)."
     ],
     "effets": [
-      "Apply depth-of-field blur to foreground and background elements to create a 3D layer effect.",
-      "Incorporate subtle graphic overlays: topographic vector lines in the corners, fine halftone dot patterns, and light dust or particle textures."
+      "Apply depth of field blur on extreme foreground elements (floating particles, snowflakes, leaves) and distant backgrounds.",
+      "Overlay subtle digital textures: scanlines, halftone dots, fine film grain, or light dust particles.",
+      "Incorporate volumetric light rays, smoke/fog overlays, and localized neon glows around light sources."
     ],
     "logo": [
-      "Integrate the logo directly into the typography as a customized monogram (e.g., 'B' or 'D' on the left) or embed a stylized icon within the central lettering."
+      "Center a high-contrast geometric emblem or stylized anatomical icon directly behind or integrated with the main text.",
+      "Enclose the logo in a glowing neon geometric frame (triangle, shield, or circle) to anchor the composition."
     ],
     "interdits": [
-      "Avoid harsh, low-resolution cutouts or jagged edges on character models.",
-      "Do not make background characters so dark that they lose all defining detail.",
-      "Avoid abrupt, disjointed transitions between solid color blocks and photographic scenes.",
-      "Do not use generic, unedited stock brushes or low-resolution, sparse particle effects."
+      "Avoid flat, unlit 2D text layered over complex photographic backgrounds without drop shadows or outer glows.",
+      "Do not use low-contrast color schemes that make the central lettering illegible against the background.",
+      "Avoid asymmetrical clutter; do not place heavy character models on one side without a balancing element on the opposite margin."
     ],
     "ratios": [
-      "16:9",
-      "21:5"
+      "16:9 (dominant)",
+      "4:1 (alternative split banner)"
+    ],
+    "personnages": [
+      "Pose characters with a confident, relaxed, or intimidating attitude: hands holding cash, gesturing, or holding weapons in a low guard.",
+      "Dress characters in premium streetwear (hoodies, denim tube tops, knit vests, graphic tees) layered with heavy chrome/gold jewelry and designer sunglasses.",
+      "Render skin with a clean, semi-realistic 3D game engine finish, showing detailed tattoos and soft-painted textures.",
+      "Frame shots as vertical medium close-ups (waist-up) or dynamic full-body poses next to luxury assets like sports cars or music studio desks."
     ]
   }
 }

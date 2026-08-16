@@ -1,0 +1,448 @@
+{
+  "categorie": "affiche",
+  "genere_le": "2026-08-16T08:24:47.256Z",
+  "exemplaires": [
+    {
+      "slug": "2",
+      "source": "2.png",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "cartel",
+        "sombre"
+      ],
+      "energie": 65,
+      "modernite": 85,
+      "couleurs": [
+        "#0d0d0d",
+        "#ff2a2a",
+        "#ffffff"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Massive, ultra-bold, condensed sans-serif text reading 'MAINTENANCE' with a white-to-transparent vertical gradient and thin outline.",
+      "scores": {
+        "relief_3d": 6,
+        "glow": 7,
+        "saturation": 8,
+        "sombre_clair": 2,
+        "complexite": 5
+      }
+    },
+    {
+      "slug": "big-banner-2",
+      "source": "Big Banner 2.png",
+      "priorite": "reverse",
+      "tags": [
+        "ete",
+        "luxe",
+        "chill"
+      ],
+      "energie": 85,
+      "modernite": 75,
+      "couleurs": [
+        "#ffffff",
+        "#ff2222",
+        "#3fa9f5"
+      ],
+      "ratio": "9:16",
+      "typographie_generee": "Distressed, dripping red brush-style font reading 'LA FETE COMMENCE!' at the top.",
+      "scores": {
+        "relief_3d": 5,
+        "glow": 4,
+        "saturation": 9,
+        "sombre_clair": 8,
+        "complexite": 7
+      }
+    },
+    {
+      "slug": "big-banner-3",
+      "source": "Big Banner 3.png",
+      "priorite": "reverse",
+      "tags": [
+        "ete",
+        "chill",
+        "urbain"
+      ],
+      "energie": 80,
+      "modernite": 80,
+      "couleurs": [
+        "#f15a24",
+        "#3fa9f5",
+        "#ffffff"
+      ],
+      "ratio": "9:16",
+      "typographie_generee": "Dripping red brush-style font reading 'REJOIGNEZ LA FETE!' at the top, and clean white sans-serif text inside red pill-shaped banners.",
+      "scores": {
+        "relief_3d": 4,
+        "glow": 2,
+        "saturation": 9,
+        "sombre_clair": 8,
+        "complexite": 6
+      }
+    },
+    {
+      "slug": "big-banner",
+      "source": "Big Banner.png",
+      "priorite": "reverse",
+      "tags": [
+        "cartel",
+        "ete",
+        "luxe"
+      ],
+      "energie": 65,
+      "modernite": 75,
+      "couleurs": [
+        "#E2584E",
+        "#1C2430",
+        "#EAE2D5"
+      ],
+      "ratio": "9:16",
+      "typographie_generee": "Bold, distressed sans-serif with a dripping paint effect, colored in a red-to-orange gradient.",
+      "scores": {
+        "relief_3d": 6,
+        "glow": 2,
+        "saturation": 7,
+        "sombre_clair": 7,
+        "complexite": 8
+      }
+    },
+    {
+      "slug": "boutique",
+      "source": "boutique.png",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "luxe",
+        "sombre"
+      ],
+      "energie": 40,
+      "modernite": 85,
+      "couleurs": [
+        "#120816",
+        "#E1A6F4",
+        "#FFFFFF"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Huge, ultra-condensed sans-serif for 'BOUTIQUE' with a soft purple inner glow; clean, thin geometric sans-serif for secondary text.",
+      "scores": {
+        "relief_3d": 4,
+        "glow": 5,
+        "saturation": 5,
+        "sombre_clair": 2,
+        "complexite": 5
+      }
+    },
+    {
+      "slug": "cvc",
+      "source": "CVC.png",
+      "priorite": "reverse",
+      "tags": [
+        "esport",
+        "sombre",
+        "militaire"
+      ],
+      "energie": 70,
+      "modernite": 90,
+      "couleurs": [
+        "#140919",
+        "#F3A9FC",
+        "#FFFFFF"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Massive, bold, condensed sans-serif background text with a purple-to-pink gradient; futuristic, wide-spaced tech font for UI elements.",
+      "scores": {
+        "relief_3d": 7,
+        "glow": 6,
+        "saturation": 6,
+        "sombre_clair": 3,
+        "complexite": 4
+      }
+    },
+    {
+      "slug": "image",
+      "source": "image.png",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "cartel",
+        "sombre"
+      ],
+      "energie": 75,
+      "modernite": 85,
+      "couleurs": [
+        "#0d0d0d",
+        "#e61c24",
+        "#ffffff"
+      ],
+      "ratio": "4:3",
+      "typographie_generee": "Bold, wide sans-serif for main titles; clean geometric sans-serif for secondary text.",
+      "scores": {
+        "relief_3d": 7,
+        "glow": 4,
+        "saturation": 6,
+        "sombre_clair": 2,
+        "complexite": 7
+      }
+    },
+    {
+      "slug": "kkypn2-1478071535565803572",
+      "source": "kKYPn2.1478071535565803572.png",
+      "priorite": "reverse",
+      "tags": [
+        "luxe",
+        "neutre",
+        "chill"
+      ],
+      "energie": 30,
+      "modernite": 90,
+      "couleurs": [
+        "#0a0a0c",
+        "#e082b5",
+        "#ffffff"
+      ],
+      "ratio": "4:1",
+      "typographie_generee": "Clean, geometric sans-serif in all-caps. 'BOUTIQUE' in white, 'INFORMATIONS' in pink.",
+      "scores": {
+        "relief_3d": 1,
+        "glow": 5,
+        "saturation": 5,
+        "sombre_clair": 1,
+        "complexite": 2
+      }
+    },
+    {
+      "slug": "league",
+      "source": "League.png",
+      "priorite": "reverse",
+      "tags": [
+        "esport",
+        "militaire",
+        "sombre"
+      ],
+      "energie": 65,
+      "modernite": 88,
+      "couleurs": [
+        "#1a0d22",
+        "#dca6f9",
+        "#ffffff"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Ultra-tall, condensed sans-serif for the background title; wide, clean geometric sans-serif for the foreground UI text.",
+      "scores": {
+        "relief_3d": 5,
+        "glow": 6,
+        "saturation": 5,
+        "sombre_clair": 3,
+        "complexite": 5
+      }
+    },
+    {
+      "slug": "majr",
+      "source": "Majr.png",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "chill",
+        "luxe"
+      ],
+      "energie": 65,
+      "modernite": 80,
+      "couleurs": [
+        "#120a18",
+        "#d6a4f9",
+        "#e5cbfd"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Clean, ultra-bold sans-serif with a tall, condensed structure for the main title.",
+      "scores": {
+        "relief_3d": 6,
+        "glow": 5,
+        "saturation": 4,
+        "sombre_clair": 3,
+        "complexite": 5
+      }
+    },
+    {
+      "slug": "meteor-pack-alya-roleplay-1",
+      "source": "meteor-pack-alya-roleplay-1.png",
+      "priorite": "reverse",
+      "tags": [
+        "militaire",
+        "luxe",
+        "sombre"
+      ],
+      "energie": 45,
+      "modernite": 90,
+      "couleurs": [
+        "#0d0f12",
+        "#00b4d8",
+        "#ffffff"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Modern geometric sans-serif with high contrast between white and cyan text.",
+      "scores": {
+        "relief_3d": 3,
+        "glow": 4,
+        "saturation": 6,
+        "sombre_clair": 2,
+        "complexite": 4
+      }
+    },
+    {
+      "slug": "nin3plaz-1537852704284741642",
+      "source": "NIN3PLAZ.1537852704284741642.png",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "esport",
+        "luxe"
+      ],
+      "energie": 70,
+      "modernite": 85,
+      "couleurs": [
+        "#0d0f12",
+        "#00b4d8",
+        "#ffffff"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Bold, clean geometric sans-serif with high contrast between white and cyan words.",
+      "scores": {
+        "relief_3d": 7,
+        "glow": 4,
+        "saturation": 7,
+        "sombre_clair": 3,
+        "complexite": 5
+      }
+    },
+    {
+      "slug": "recrutement",
+      "source": "Recrutement.png",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "sombre",
+        "luxe"
+      ],
+      "energie": 45,
+      "modernite": 80,
+      "couleurs": [
+        "#120a18",
+        "#dfb6ff",
+        "#d4af37"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Ultra-condensed sans-serif with a subtle vertical gradient and soft drop shadow.",
+      "scores": {
+        "relief_3d": 4,
+        "glow": 5,
+        "saturation": 4,
+        "sombre_clair": 2,
+        "complexite": 3
+      }
+    },
+    {
+      "slug": "redemarrage",
+      "source": "REDÉMARRAGE.png",
+      "priorite": "reverse",
+      "tags": [
+        "cartel",
+        "urbain",
+        "luxe"
+      ],
+      "energie": 85,
+      "modernite": 90,
+      "couleurs": [
+        "#0d0f0e",
+        "#d4ff00",
+        "#ffffff"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Distressed, ultra-bold condensed sans-serif in vibrant neon yellow, layered behind the character.",
+      "scores": {
+        "relief_3d": 6,
+        "glow": 8,
+        "saturation": 9,
+        "sombre_clair": 4,
+        "complexite": 7
+      }
+    },
+    {
+      "slug": "reglement",
+      "source": "Reglement.png",
+      "priorite": "reverse",
+      "tags": [
+        "ete",
+        "cartel",
+        "chill"
+      ],
+      "energie": 50,
+      "modernite": 75,
+      "couleurs": [
+        "#5c1d16",
+        "#ffffff",
+        "#d29054"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Bold, condensed white sans-serif with a semi-transparent gradient overlay.",
+      "scores": {
+        "relief_3d": 5,
+        "glow": 3,
+        "saturation": 7,
+        "sombre_clair": 5,
+        "complexite": 6
+      }
+    },
+    {
+      "slug": "rosefa2",
+      "source": "rosefa2.png",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "luxe",
+        "sombre"
+      ],
+      "energie": 45,
+      "modernite": 75,
+      "couleurs": [
+        "#120d16",
+        "#e052a0",
+        "#ffffff"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 4,
+        "glow": 3,
+        "saturation": 6,
+        "sombre_clair": 2,
+        "complexite": 5
+      }
+    },
+    {
+      "slug": "wallpaper",
+      "source": "Wallpaper.png",
+      "priorite": "reverse",
+      "tags": [
+        "ete",
+        "chill",
+        "luxe"
+      ],
+      "energie": 65,
+      "modernite": 80,
+      "couleurs": [
+        "#f38c74",
+        "#e84343",
+        "#ffffff"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 7,
+        "glow": 1,
+        "saturation": 8,
+        "sombre_clair": 8,
+        "complexite": 6
+      }
+    }
+  ]
+}

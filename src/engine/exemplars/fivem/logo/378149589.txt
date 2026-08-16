@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, flat vector wordmark.
+1. SHAPE — Bold, heavy sans-serif lettering spelling 'MELROSE'. The letter 'O' is replaced by a stylized purple rose emblem. A small, elegant script 'RP' is nested at the bottom right of the wordmark. A thick, continuous white outline wraps the entire text block.
+2. RENDER — Flat 2D vector graphic with clean, solid fills. Minimal soft drop shadow behind the lettering to separate it from the background. No 3D bevels or metallic textures.
+3. COLORS — Pure white (#ffffff) for the main letters, deep purple (#800080) for the rose, on a very dark violet (#1a002c) background.
+4. FORMAT — Square composition, text occupies 85% of the width, centered. Background features faint, dark purple topographic lines and matching rose illustrations in the top-right and bottom-left corners.
+5. KEYWORDS — vector logo, flat design, topographic pattern, rose emblem, urban branding, clean outline.

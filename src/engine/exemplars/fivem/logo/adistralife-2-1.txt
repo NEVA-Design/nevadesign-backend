@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, glowing neon emblem.
+1. SHAPE — Two abstract, curved teardrop shapes swirling together. The left shape is larger, white, and curves inward like a hook. The right shape is purple, slender, and curves downward.
+2. RENDER — Intense neon glow effect. The white shape emits a bright white light, and the purple shape emits a vibrant violet bloom. Smooth, rounded edges.
+3. COLORS — Bright white (#FFFFFF), electric purple (#D000FF), set against a dark, desaturated background.
+4. FORMAT — Square composition, emblem centered at 60% width, background is a dark, grainy, black-and-white photo of a retro casino building at night.
+5. KEYWORDS — neon sign, glowing emblem, luxury nightlife, abstract icon, vibrant bloom, dark atmosphere.

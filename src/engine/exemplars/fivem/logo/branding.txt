@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, premium 3D dimensional render.
+1. SHAPE — Two-tier stacked text tilted 15 degrees upward. Top word 'SOUTH' in heavy, blocky, extra-bold sans-serif letters. Bottom word 'District' in a fluid, continuous script font that overlaps the bottom of 'SOUTH' and ends with a long, sharp underline swoosh.
+2. RENDER — Top text has a polished chrome texture with diamond-plate pattern details on the face and a thick white bevel. Bottom text is rendered as a glossy, semi-translucent green glass tube with a vibrant internal neon glow. High-end 3D extrusion.
+3. COLORS — Emerald green (#10B981) and metallic silver (#E5E7EB) on a dark background.
+4. FORMAT — Square composition, logo occupies 80% of the width, centered, dark atmospheric background.
+5. KEYWORDS — 3D render, octane render, neon glow, metallic chrome, game logo, esports style.

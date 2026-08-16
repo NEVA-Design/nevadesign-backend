@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo family, modern gaming community emblem, 2D vector with neon accents.
+1. SHAPE — A large, bold, metallic sans-serif wordmark reading 'ASTYA' centered. Behind it, a thin, sharp triangular play button outline pointing right. Overlapping the bottom of 'ASTYA' is a smaller, glowing purple script wordmark reading 'Roleplay'.
+2. RENDER — Clean vector shapes. The triangle has a vibrant purple neon tube glow. The main text has a subtle silver-to-white metallic gradient. No heavy 3D extrusion.
+3. COLORS — Deep dark purple background #0b071a, electric neon purple glow #5a20df, clean white text #ffffff.
+4. FORMAT — Square composition, central subject occupying 80% of the width, dark atmospheric background with faint floating particles.
+5. KEYWORDS — esports logo, neon glow, vector emblem, gaming community, clean typography, dark theme.

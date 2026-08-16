@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, flat minimalist monogram family.
+1. SHAPE — A single, bold, heavy sans-serif letter 'V' with slightly rounded corners and terminals, perfectly centered.
+2. RENDER — Flat 2D graphic, solid color fills, absolutely no gradients, no shadows, no bevels, clean vector lines.
+3. COLORS — The letter 'V' is solid white #ffffff. The background is vibrant pink #ff4a6b with large, organic, rounded blob shapes in dark red-burgundy #9e314b.
+4. FORMAT — Square composition, the letter 'V' occupies 65% of the height. Abstract patterned background.
+5. KEYWORDS — flat vector, minimalist monogram, bold typography, playful design, solid colors, clean graphic.

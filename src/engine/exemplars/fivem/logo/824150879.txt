@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, modern flat-vector hybrid icon.
+1. SHAPE — A single bold, clean white sans-serif letter 'S' tilted at 5 degrees. Intersecting the center of the 'S' is a vibrant hot pink palm tree silhouette, with its trunk weaving through the letter's negative space.
+2. RENDER — Smooth plastic finish with subtle 3D beveling on the letter 'S'. The palm tree has a strong neon glow effect. No complex textures, clean vector paths.
+3. COLORS — Pure white #FFFFFF for the letter, hot pink #FF007F for the palm tree, set against a dark magenta to black gradient background.
+4. FORMAT — Square composition, central emblem occupying 70% of the width, background features faint dark palm leaf silhouettes.
+5. KEYWORDS — vector logo, Miami style, synthwave aesthetic, clean paths, high contrast, gaming icon.

@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo family, flat minimalist vector design.
+1. SHAPE — A geometric letter 'V' centered. The left diagonal bar is sliced horizontally into 3 equal segments separated by thin black gaps. The right diagonal bar is a solid, continuous block that meets the left bar at a sharp bottom vertex.
+2. RENDER — Smooth matte plastic texture with a subtle inner magenta glow. No heavy 3D extrusion, flat 2D look with a soft drop shadow underneath to separate it from the background.
+3. COLORS — Deep magenta pink #E30B5C gradient to dark burgundy #4A0E17 on a pure black background.
+4. FORMAT — Square composition, the letter 'V' occupies 50% of the width, centered.
+5. KEYWORDS — vector logo, minimalist, clean lines, gaming icon, modern typography, sleek design.

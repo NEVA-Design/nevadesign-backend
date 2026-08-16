@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo family, clean lifestyle wordmark.
+1. SHAPE — A heavy, bold sans-serif wordmark reading 'SLOW' in all caps. Overlapping the bottom right of the 'W' is a delicate, tilted script wordmark reading 'City' with a fine outline.
+2. RENDER — Clean 2D vector typography with a very subtle soft outer glow. The background is a photographic, desaturated coastal scene with mist.
+3. COLORS — Solid white #ffffff for 'SLOW', light sky blue #bce3f2 for 'City', set against a muted blue-grey background #6b8fa6.
+4. FORMAT — Square composition, text centered occupying 75% of the width, background features soft silhouettes of palm trees and tiny birds in flight.
+5. KEYWORDS — clean typography, coastal aesthetic, serene, modern wordmark, lifestyle branding, soft glow.

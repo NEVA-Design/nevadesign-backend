@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, flat vector emblem with modern typography.
+1. SHAPE — A stylized anatomical heart silhouette in the center, dripping at the bottom with 4 distinct liquid drops. In the middle of the heart, a geometric lowercase letter 'd' is embedded with a subtle inner shadow. Below the heart, the word 'DAYCITY' is written in bold, clean sans-serif uppercase letters.
+2. RENDER — Flat vector style with clean lines, subtle drop shadows behind the letter 'd' and the heart to create depth, no complex 3D extrusions.
+3. COLORS — Vibrant purple (#8A2BE2) for the heart and text, set against a dark black and deep purple gradient background.
+4. FORMAT — Square composition, central subject occupying 70% of the width, dark atmospheric background.
+5. KEYWORDS — vector logo, flat design, anatomical heart, dripping, purple neon glow, urban gaming community.

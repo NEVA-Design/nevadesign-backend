@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo family, flat neon wordmark.
+1. SHAPE — Two lines of expressive, hand-painted brush script text. Top line reads 'YOU' in large white strokes. Bottom line reads 'SO' in red strokes, shifted to the right.
+2. RENDER — Flat paint texture with a powerful outer neon glow. The white text glows white, the red text glows intense red. No 3D extrusion.
+3. COLORS — Pure white #FFFFFF, vibrant red #FF0000, against a dark charcoal #1A1A1A background.
+4. FORMAT — Square composition, text occupying 75% of the frame, centered on a heavily blurred dark background.
+5. KEYWORDS — brush lettering, street art, neon glow, graffiti, raw strokes, urban, gta rp, energetic.

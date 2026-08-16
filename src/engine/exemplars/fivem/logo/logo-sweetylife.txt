@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo family, 3D script wordmark style.
+1. SHAPE — Two lines of elegant, flowing script typography. The top line reads 'Sweety' in a large, thick, tubular script. The bottom line reads 'Life' in a smaller, matching script nested underneath.
+2. RENDER — Glossy, smooth plastic 3D pipe render. 'Sweety' has a soft white-to-grey gradient with a subtle inner glow. 'Life' has a vibrant translucent blue neon appearance with a bright outer glow.
+3. COLORS — Deep dark blue background #05182E, electric blue #0099FF neon glow, and clean white #FFFFFF for the main text.
+4. FORMAT — Square composition, text centered occupying 80% of the width, background is a dark, blurred party scene with characters and floating particles.
+5. KEYWORDS — 3D script logo, neon glow, tubular lettering, luxury nightlife, glossy finish, premium gaming community.

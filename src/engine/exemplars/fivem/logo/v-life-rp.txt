@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, flat vector emblem family.
+1. SHAPE — A bold, geometric letter 'V' centered. The left stem has a sharp diagonal negative space slice at a 45-degree angle. The right stem seamlessly merges into a minimalist palm tree silhouette with four curved fronds pointing right.
+2. RENDER — Flat 2D vector graphic with a smooth vertical color gradient. No 3D bevels, no extrusion, no drop shadows, clean sharp edges.
+3. COLORS — Gradient from deep sky blue #5cbbf2 at the top to bright cyan-aquamarine #99f3ff at the bottom.
+4. FORMAT — Square composition, emblem occupies 60% of the width. The background is a dark, desaturated, high-contrast navy blue photographic scene of a street car meet with a tuner car.
+5. KEYWORDS — vector logo, flat design, minimalist, gaming community icon, clean lines, high contrast.

@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo family, dimensional tactical emblem.
+1. SHAPE — A sharp, stylized letter 'W' with flat top cuts and pointed bottom tips, centered. A diagonal chain-link fence shadow overlays the entire composition. A realistic black handgun is visible in the bottom-right corner, angled upwards.
+2. RENDER — Polished gold material on the lettermark with a strong inner glow. Realistic shadows cast by the fence. Dark, scratched carbon fiber background texture.
+3. COLORS — Deep black #0A0A0A background, glowing gold #FFD700 lettermark with warm amber #B8860B accents.
+4. FORMAT — Square composition, central lettermark occupying 45% of width, atmospheric dark background.
+5. KEYWORDS — tactical, gta rp, metallic gold, gun, chain-link shadow, gritty, premium, high contrast.

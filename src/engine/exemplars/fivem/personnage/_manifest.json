@@ -1,0 +1,837 @@
+{
+  "categorie": "personnage",
+  "genere_le": "2026-08-16T08:30:02.025Z",
+  "exemplaires": [
+    {
+      "slug": "04494cc356c6fda48f115ae7624f72dc",
+      "source": "04494cc356c6fda48f115ae7624f72dc.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "sombre",
+        "luxe"
+      ],
+      "energie": 65,
+      "modernite": 85,
+      "couleurs": [
+        "#0b0b0d",
+        "#d921b3",
+        "#a3c2ae"
+      ],
+      "ratio": "9:16",
+      "typographie_generee": "Stylized white bubble-gothic text 'sp5der' integrated onto the hoodie graphic with a pink spiderweb design.",
+      "scores": {
+        "relief_3d": 7,
+        "glow": 6,
+        "saturation": 5,
+        "sombre_clair": 2,
+        "complexite": 6
+      }
+    },
+    {
+      "slug": "153c8659c5a83eeb9dfa0b7bec5f0f84",
+      "source": "153c8659c5a83eeb9dfa0b7bec5f0f84.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "ete",
+        "chill",
+        "cartel"
+      ],
+      "energie": 45,
+      "modernite": 80,
+      "couleurs": [
+        "#e3e7eb",
+        "#4a443f",
+        "#7ca3a1"
+      ],
+      "ratio": "9:16",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 8,
+        "glow": 1,
+        "saturation": 4,
+        "sombre_clair": 7,
+        "complexite": 7
+      }
+    },
+    {
+      "slug": "185995198d621466ad87fd6651792141",
+      "source": "185995198d621466ad87fd6651792141.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "luxe",
+        "urbain",
+        "chill"
+      ],
+      "energie": 50,
+      "modernite": 90,
+      "couleurs": [
+        "#fcfbfa",
+        "#121112",
+        "#e6739f"
+      ],
+      "ratio": "9:16",
+      "typographie_generee": "San-serif pink text 'Don't Fucking Touch Me' inside a heart on the phone case; small pink gothic text 'satan is my sugar daddy' on the tube top.",
+      "scores": {
+        "relief_3d": 6,
+        "glow": 4,
+        "saturation": 4,
+        "sombre_clair": 6,
+        "complexite": 6
+      }
+    },
+    {
+      "slug": "1a3779734075c35485e01544b8e9a3de",
+      "source": "1a3779734075c35485e01544b8e9a3de.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "luxe",
+        "chill"
+      ],
+      "energie": 65,
+      "modernite": 85,
+      "couleurs": [
+        "#FFFFFF",
+        "#1A1A1A",
+        "#FF3399"
+      ],
+      "ratio": "9:16",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 8,
+        "glow": 4,
+        "saturation": 5,
+        "sombre_clair": 7,
+        "complexite": 6
+      }
+    },
+    {
+      "slug": "1e3e71d4a7d837502a5cc9f2e2d3834c",
+      "source": "1e3e71d4a7d837502a5cc9f2e2d3834c.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "cartel",
+        "sombre"
+      ],
+      "energie": 45,
+      "modernite": 75,
+      "couleurs": [
+        "#8A2BE2",
+        "#1C1C1C",
+        "#E0E0E0"
+      ],
+      "ratio": "9:16",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 7,
+        "glow": 2,
+        "saturation": 6,
+        "sombre_clair": 4,
+        "complexite": 5
+      }
+    },
+    {
+      "slug": "23d502553126ae665a6e977d39b9bc7e",
+      "source": "23d502553126ae665a6e977d39b9bc7e.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "cartel",
+        "militaire",
+        "sombre"
+      ],
+      "energie": 30,
+      "modernite": 50,
+      "couleurs": [
+        "#1E1E1E",
+        "#D2B48C",
+        "#8B0000"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 5,
+        "glow": 1,
+        "saturation": 3,
+        "sombre_clair": 4,
+        "complexite": 4
+      }
+    },
+    {
+      "slug": "2f0280e56c763be02b0df41b0cbbd62f",
+      "source": "2f0280e56c763be02b0df41b0cbbd62f.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "chill",
+        "luxe"
+      ],
+      "energie": 45,
+      "modernite": 85,
+      "couleurs": [
+        "#F1A7C4",
+        "#FFFFFF",
+        "#7D828A"
+      ],
+      "ratio": "1:1",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 6,
+        "glow": 2,
+        "saturation": 6,
+        "sombre_clair": 7,
+        "complexite": 5
+      }
+    },
+    {
+      "slug": "3508550dcd3d2ad9828acf3afd681280",
+      "source": "3508550dcd3d2ad9828acf3afd681280.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "luxe",
+        "cartel",
+        "sombre"
+      ],
+      "energie": 30,
+      "modernite": 90,
+      "couleurs": [
+        "#5A1E25",
+        "#FFFFFF",
+        "#111111"
+      ],
+      "ratio": "1:1",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 5,
+        "glow": 3,
+        "saturation": 4,
+        "sombre_clair": 8,
+        "complexite": 4
+      }
+    },
+    {
+      "slug": "360c224bfa8971d3c9a4d1fe94d8b246",
+      "source": "360c224bfa8971d3c9a4d1fe94d8b246.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "chill",
+        "ete"
+      ],
+      "energie": 40,
+      "modernite": 80,
+      "couleurs": [
+        "#7FA9D1",
+        "#2D282A",
+        "#D2D7DF"
+      ],
+      "ratio": "1:1",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 6,
+        "glow": 1,
+        "saturation": 5,
+        "sombre_clair": 6,
+        "complexite": 5
+      }
+    },
+    {
+      "slug": "3ba233128b975c4e14094b858a3021d5",
+      "source": "3ba233128b975c4e14094b858a3021d5.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "luxe",
+        "sombre"
+      ],
+      "energie": 65,
+      "modernite": 85,
+      "couleurs": [
+        "#121212",
+        "#C5A059",
+        "#D32F2F"
+      ],
+      "ratio": "9:16",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 6,
+        "glow": 3,
+        "saturation": 5,
+        "sombre_clair": 2,
+        "complexite": 6
+      }
+    },
+    {
+      "slug": "49babe42c57cc4f51f8f58b39315cb87",
+      "source": "49babe42c57cc4f51f8f58b39315cb87.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "chill",
+        "cartel"
+      ],
+      "energie": 70,
+      "modernite": 90,
+      "couleurs": [
+        "#1E56C1",
+        "#D9D9D9",
+        "#C13B3B"
+      ],
+      "ratio": "9:16",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 5,
+        "glow": 1,
+        "saturation": 7,
+        "sombre_clair": 6,
+        "complexite": 8
+      }
+    },
+    {
+      "slug": "4a72336834438f19c729c375600a5f1b",
+      "source": "4a72336834438f19c729c375600a5f1b.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "militaire",
+        "sombre",
+        "neutre"
+      ],
+      "energie": 40,
+      "modernite": 60,
+      "couleurs": [
+        "#1A1B1E",
+        "#9E2A2B",
+        "#E6C280"
+      ],
+      "ratio": "4:5",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 7,
+        "glow": 1,
+        "saturation": 4,
+        "sombre_clair": 4,
+        "complexite": 5
+      }
+    },
+    {
+      "slug": "4ff1c79760a96e4126b2d08c3309b5c7",
+      "source": "4ff1c79760a96e4126b2d08c3309b5c7.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "chill"
+      ],
+      "energie": 45,
+      "modernite": 85,
+      "couleurs": [
+        "#E5E5E5",
+        "#111111",
+        "#FF9900"
+      ],
+      "ratio": "2:3",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 6,
+        "glow": 2,
+        "saturation": 5,
+        "sombre_clair": 7,
+        "complexite": 6
+      }
+    },
+    {
+      "slug": "55e91b43aaab9bfd15a61c343ecdfa1d",
+      "source": "55e91b43aaab9bfd15a61c343ecdfa1d.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "chill",
+        "luxe"
+      ],
+      "energie": 30,
+      "modernite": 75,
+      "couleurs": [
+        "#FFFFFF",
+        "#1A1A1A",
+        "#E03C3C"
+      ],
+      "ratio": "1:1",
+      "typographie_generee": "Clean, sans-serif brand text 'TOMMY HILFIGER EST. 1985' printed horizontally across the chest.",
+      "scores": {
+        "relief_3d": 5,
+        "glow": 1,
+        "saturation": 4,
+        "sombre_clair": 8,
+        "complexite": 4
+      }
+    },
+    {
+      "slug": "576465440cbd590b5a671b9b1db6d4e4",
+      "source": "576465440cbd590b5a671b9b1db6d4e4.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "sombre",
+        "cartel"
+      ],
+      "energie": 50,
+      "modernite": 80,
+      "couleurs": [
+        "#2C302E",
+        "#FFFFFF",
+        "#D13434"
+      ],
+      "ratio": "9:16",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 7,
+        "glow": 3,
+        "saturation": 3,
+        "sombre_clair": 3,
+        "complexite": 7
+      }
+    },
+    {
+      "slug": "5bd24d28f6058a413dc1c059a045e907",
+      "source": "5bd24d28f6058a413dc1c059a045e907.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "luxe",
+        "sombre"
+      ],
+      "energie": 45,
+      "modernite": 85,
+      "couleurs": [
+        "#111625",
+        "#1b1b1f",
+        "#c92a3b"
+      ],
+      "ratio": "4:3",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 5,
+        "glow": 3,
+        "saturation": 4,
+        "sombre_clair": 2,
+        "complexite": 6
+      }
+    },
+    {
+      "slug": "666d5b9080415724c124e7fa12d7116e",
+      "source": "666d5b9080415724c124e7fa12d7116e.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "sombre",
+        "retro"
+      ],
+      "energie": 60,
+      "modernite": 80,
+      "couleurs": [
+        "#121214",
+        "#dcdcdc",
+        "#8a1c24"
+      ],
+      "ratio": "9:16",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 6,
+        "glow": 2,
+        "saturation": 3,
+        "sombre_clair": 3,
+        "complexite": 7
+      }
+    },
+    {
+      "slug": "774d2791d7a6f7d98e2c711c272c4c6b",
+      "source": "774d2791d7a6f7d98e2c711c272c4c6b.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "luxe",
+        "ete"
+      ],
+      "energie": 75,
+      "modernite": 90,
+      "couleurs": [
+        "#8cb9df",
+        "#1c1d21",
+        "#e2d6cd"
+      ],
+      "ratio": "1:1",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 6,
+        "glow": 1,
+        "saturation": 5,
+        "sombre_clair": 7,
+        "complexite": 5
+      }
+    },
+    {
+      "slug": "892a91c465c9e49422757dd954f90bdd",
+      "source": "892a91c465c9e49422757dd954f90bdd.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "chill",
+        "luxe"
+      ],
+      "energie": 45,
+      "modernite": 85,
+      "couleurs": [
+        "#1a1c23",
+        "#7cb2e8",
+        "#e5c158"
+      ],
+      "ratio": "9:16",
+      "typographie_generee": "The word 'SMOOKY' is rendered in a stylized, glowing white sans-serif font with star sparkles at the top center.",
+      "scores": {
+        "relief_3d": 7,
+        "glow": 4,
+        "saturation": 5,
+        "sombre_clair": 3,
+        "complexite": 8
+      }
+    },
+    {
+      "slug": "8c4ba89279a19fc368e92b0f12bd32f6",
+      "source": "8c4ba89279a19fc368e92b0f12bd32f6.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "ete",
+        "neutre"
+      ],
+      "energie": 30,
+      "modernite": 70,
+      "couleurs": [
+        "#3b6b9c",
+        "#f4f3ef",
+        "#1c1b19"
+      ],
+      "ratio": "4:5",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 5,
+        "glow": 2,
+        "saturation": 6,
+        "sombre_clair": 7,
+        "complexite": 3
+      }
+    },
+    {
+      "slug": "9f0098655a260841bb3905318f1169d0",
+      "source": "9f0098655a260841bb3905318f1169d0.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "cartel",
+        "sombre"
+      ],
+      "energie": 75,
+      "modernite": 90,
+      "couleurs": [
+        "#0d0d0d",
+        "#ffffff",
+        "#d4af37"
+      ],
+      "ratio": "9:16",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 8,
+        "glow": 3,
+        "saturation": 4,
+        "sombre_clair": 2,
+        "complexite": 9
+      }
+    },
+    {
+      "slug": "a3634909e513632ed48d1464859f8de1",
+      "source": "a3634909e513632ed48d1464859f8de1.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "chill",
+        "retro"
+      ],
+      "energie": 40,
+      "modernite": 75,
+      "couleurs": [
+        "#D0D3D4",
+        "#1A1A1A",
+        "#A93226"
+      ],
+      "ratio": "1:1",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 4,
+        "glow": 1,
+        "saturation": 3,
+        "sombre_clair": 6,
+        "complexite": 4
+      }
+    },
+    {
+      "slug": "aa02977d216f7bb5c32b1ad21d4a5976",
+      "source": "aa02977d216f7bb5c32b1ad21d4a5976.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "militaire",
+        "luxe",
+        "ete"
+      ],
+      "energie": 65,
+      "modernite": 85,
+      "couleurs": [
+        "#1C1D1F",
+        "#85C1E9",
+        "#F2F3F4"
+      ],
+      "ratio": "1:1",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 6,
+        "glow": 2,
+        "saturation": 5,
+        "sombre_clair": 7,
+        "complexite": 6
+      }
+    },
+    {
+      "slug": "b9dde65eb7b28d1d44ce317ce04fe31a",
+      "source": "b9dde65eb7b28d1d44ce317ce04fe31a.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "cartel",
+        "sombre"
+      ],
+      "energie": 75,
+      "modernite": 90,
+      "couleurs": [
+        "#111111",
+        "#5D6D7E",
+        "#EAECEE"
+      ],
+      "ratio": "9:16",
+      "typographie_generee": "Distressed, aggressive gothic-style sans-serif text reading 'TRAPSTAR' on the t-shirt",
+      "scores": {
+        "relief_3d": 7,
+        "glow": 3,
+        "saturation": 2,
+        "sombre_clair": 3,
+        "complexite": 8
+      }
+    },
+    {
+      "slug": "c97cda14a18e56ecb5c2fb373fbddc8b",
+      "source": "c97cda14a18e56ecb5c2fb373fbddc8b.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "militaire",
+        "sombre"
+      ],
+      "energie": 40,
+      "modernite": 75,
+      "couleurs": [
+        "#111111",
+        "#607D50",
+        "#E0E0E0"
+      ],
+      "ratio": "1:1",
+      "typographie_generee": "Clean sans-serif white text reading 'POLÍCIA CIVIL' on the chest, sharp and flat.",
+      "scores": {
+        "relief_3d": 4,
+        "glow": 1,
+        "saturation": 3,
+        "sombre_clair": 4,
+        "complexite": 3
+      }
+    },
+    {
+      "slug": "d1fe748d5cfa086444ac295325478f8c",
+      "source": "d1fe748d5cfa086444ac295325478f8c.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "cartel",
+        "sombre"
+      ],
+      "energie": 30,
+      "modernite": 80,
+      "couleurs": [
+        "#0A0A0A",
+        "#8A9EA7",
+        "#D1D5DB"
+      ],
+      "ratio": "9:16",
+      "typographie_generee": "Stylized graphic tee typography reading 'GLOGANG' in a bubbly, outlined cartoon font.",
+      "scores": {
+        "relief_3d": 3,
+        "glow": 1,
+        "saturation": 2,
+        "sombre_clair": 1,
+        "complexite": 6
+      }
+    },
+    {
+      "slug": "dc7ca5181aa6f3bba733e2686f2ee717",
+      "source": "dc7ca5181aa6f3bba733e2686f2ee717.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "luxe",
+        "chill"
+      ],
+      "energie": 50,
+      "modernite": 85,
+      "couleurs": [
+        "#1A1A1A",
+        "#D4A373",
+        "#FFFFFF"
+      ],
+      "ratio": "9:16",
+      "typographie_generee": "Faded orange logo text on the white paper cup.",
+      "scores": {
+        "relief_3d": 5,
+        "glow": 2,
+        "saturation": 5,
+        "sombre_clair": 5,
+        "complexite": 5
+      }
+    },
+    {
+      "slug": "e1b801fae92f216dc8143b130766d161",
+      "source": "e1b801fae92f216dc8143b130766d161.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "luxe",
+        "ete"
+      ],
+      "energie": 45,
+      "modernite": 80,
+      "couleurs": [
+        "#E5D3C5",
+        "#4A6FA5",
+        "#8B5A2B"
+      ],
+      "ratio": "3:4",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 7,
+        "glow": 2,
+        "saturation": 5,
+        "sombre_clair": 7,
+        "complexite": 6
+      }
+    },
+    {
+      "slug": "e8f8a4f1c2cb6dc92101a1d186033a55",
+      "source": "e8f8a4f1c2cb6dc92101a1d186033a55.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "cartel",
+        "sombre"
+      ],
+      "energie": 60,
+      "modernite": 75,
+      "couleurs": [
+        "#1C1C1C",
+        "#D4AF37",
+        "#8A9EA7"
+      ],
+      "ratio": "9:16",
+      "typographie_generee": "Distorted sans-serif bold white text on the black t-shirt reading 'EASY MONEY BABY'.",
+      "scores": {
+        "relief_3d": 6,
+        "glow": 1,
+        "saturation": 4,
+        "sombre_clair": 4,
+        "complexite": 7
+      }
+    },
+    {
+      "slug": "fa49f02a0ed0c1a5097fe75b7db05c87",
+      "source": "fa49f02a0ed0c1a5097fe75b7db05c87.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "cartel",
+        "sombre"
+      ],
+      "energie": 70,
+      "modernite": 85,
+      "couleurs": [
+        "#121212",
+        "#F1C40F",
+        "#E74C3C"
+      ],
+      "ratio": "3:4",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 8,
+        "glow": 1,
+        "saturation": 6,
+        "sombre_clair": 3,
+        "complexite": 9
+      }
+    },
+    {
+      "slug": "fe0a77b548ad661cf6591fce1f9e3277",
+      "source": "fe0a77b548ad661cf6591fce1f9e3277.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "chill",
+        "luxe"
+      ],
+      "energie": 45,
+      "modernite": 85,
+      "couleurs": [
+        "#121214",
+        "#00FF66",
+        "#0088FF"
+      ],
+      "ratio": "9:16",
+      "typographie_generee": "The word 'SMOOKY' is rendered in a futuristic, metallic, glowing sans-serif font at the top center.",
+      "scores": {
+        "relief_3d": 8,
+        "glow": 6,
+        "saturation": 5,
+        "sombre_clair": 3,
+        "complexite": 8
+      }
+    },
+    {
+      "slug": "fec7f3ffb761ea0f3dfe6929f527011b",
+      "source": "fec7f3ffb761ea0f3dfe6929f527011b.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "cartel",
+        "sombre"
+      ],
+      "energie": 75,
+      "modernite": 70,
+      "couleurs": [
+        "#1C1C1C",
+        "#D11A2A",
+        "#E5D3B3"
+      ],
+      "ratio": "9:16",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 7,
+        "glow": 2,
+        "saturation": 6,
+        "sombre_clair": 4,
+        "complexite": 9
+      }
+    }
+  ]
+}

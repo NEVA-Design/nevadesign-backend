@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo family, flat vector emblem style.
+1. SHAPE — A stylized watermelon slice crescent shape. The outer rind is a smooth white curve. The inner flesh is replaced by the custom interlocking bubbly letters 'Fruitz' in white, fitting perfectly within the curved silhouette.
+2. RENDER — Clean 2D vector graphic, flat design with a very subtle white-to-light-grey gradient on the letters to give a soft satin feel. No heavy 3D extrusion, no harsh bevels.
+3. COLORS — Dominant background gradient from vibrant hot pink #E34A6F at the top to warm peach-orange #F7B267 at the bottom. The central emblem is solid white #FFFFFF.
+4. FORMAT — Square composition, central emblem occupying 65% of the width, background features faint, elegant topographic contour lines.
+5. KEYWORDS — minimalist vector logo, smooth curves, summer vibe, clean typography, flat design, high-end branding.

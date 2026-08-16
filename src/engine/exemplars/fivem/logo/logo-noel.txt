@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, seasonal winter mascot emblem.
+1. SHAPE — A stylized, sharp letter 'D' with a crescent-shaped red outer curve and a silver inner section. A classic red and white Santa Claus hat is tilted and draped over the top right corner of the letter.
+2. RENDER — Clean vector mascot style with a thick black keyline and a bold outer white stroke. Subtle gradients on the silver and red surfaces for depth.
+3. COLORS — Festive red (#E60000), clean white (#FFFFFF), and metallic silver (#D1D5DB).
+4. FORMAT — Square composition, central emblem occupies 70% of the frame, set against a bright red background decorated with blurred, out-of-focus white snowflakes.
+5. KEYWORDS — Christmas gaming logo, winter edition, vector mascot, holiday emblem, clean stroke.

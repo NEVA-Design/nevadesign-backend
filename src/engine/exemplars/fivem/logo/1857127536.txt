@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, dimensional gaming monogram.
+1. SHAPE — A single stylized letter 'R' with sharp, jagged stone-like cuts. The top right terminal curves into a sharp claw. The bottom right leg is split, exposing a sharp, glowing purple triangular crystal core.
+2. RENDER — Matte white stone texture with realistic cracks and weathering. The internal crystal core emits a strong purple neon glow. Soft ambient lighting from the front, with a subtle purple rim light on the edges. No photorealism, clean vector-like 3D render.
+3. COLORS — Deep purple (#120224) background, bright white (#FFFFFF) letter face, vibrant violet (#7B1FA2) glow.
+4. FORMAT — Square composition, the letter 'R' occupies 70% of the width, centered on a dark, smoky, atmospheric background.
+5. KEYWORDS — gaming logo, esports mascot, stone texture, neon glow, sharp edges, vector 3D, atmospheric.

@@ -1,0 +1,500 @@
+{
+  "categorie": "banniere_fivem",
+  "genere_le": "2026-08-16T08:27:58.881Z",
+  "exemplaires": [
+    {
+      "slug": "03tt32b",
+      "source": "03tt32b.png",
+      "priorite": "reverse",
+      "tags": [
+        "esport",
+        "sombre",
+        "urbain"
+      ],
+      "energie": 75,
+      "modernite": 80,
+      "couleurs": [
+        "#0a0a0a",
+        "#8b0000",
+        "#ffffff"
+      ],
+      "ratio": "10:1",
+      "typographie_generee": "Bold, italicized sans-serif typography with clean cuts and a metallic texture on the central 'VELOCITY' text.",
+      "scores": {
+        "relief_3d": 4,
+        "glow": 3,
+        "saturation": 5,
+        "sombre_clair": 1,
+        "complexite": 3
+      }
+    },
+    {
+      "slug": "1782285025639-o3jz4a-meteor-banner-alya-",
+      "source": "1782285025639-o3jz4a-meteor-banner-alya-main_13.png",
+      "priorite": "reverse",
+      "tags": [
+        "ete",
+        "chill",
+        "luxe"
+      ],
+      "energie": 90,
+      "modernite": 85,
+      "couleurs": [
+        "#008080",
+        "#ffffff",
+        "#ff4500"
+      ],
+      "ratio": "10:1",
+      "typographie_generee": "Bold, blocky sans-serif typography inside white and teal rectangular banners.",
+      "scores": {
+        "relief_3d": 6,
+        "glow": 2,
+        "saturation": 9,
+        "sombre_clair": 8,
+        "complexite": 7
+      }
+    },
+    {
+      "slug": "20260303-112517-a4b4b67e",
+      "source": "20260303_112517_a4b4b67e.png",
+      "priorite": "reverse",
+      "tags": [
+        "sombre",
+        "chill",
+        "neutre"
+      ],
+      "energie": 40,
+      "modernite": 90,
+      "couleurs": [
+        "#0d0514",
+        "#da70d6",
+        "#ffffff"
+      ],
+      "ratio": "10:1",
+      "typographie_generee": "Clean, modern sans-serif typography in white and soft pink.",
+      "scores": {
+        "relief_3d": 2,
+        "glow": 6,
+        "saturation": 4,
+        "sombre_clair": 1,
+        "complexite": 2
+      }
+    },
+    {
+      "slug": "20260812-014948-f2e6d677",
+      "source": "20260812_014948_f2e6d677.png",
+      "priorite": "reverse",
+      "tags": [
+        "sombre",
+        "chill",
+        "luxe"
+      ],
+      "energie": 40,
+      "modernite": 85,
+      "couleurs": [
+        "#0a0a0c",
+        "#e03a8a",
+        "#ffffff"
+      ],
+      "ratio": "10:1",
+      "typographie_generee": "Clean sans-serif typography with mixed weights, featuring a combination of bold uppercase headers and lowercase rounded body text.",
+      "scores": {
+        "relief_3d": 1,
+        "glow": 4,
+        "saturation": 6,
+        "sombre_clair": 1,
+        "complexite": 3
+      }
+    },
+    {
+      "slug": "banner-fivem-noel",
+      "source": "Banner fivem noel.png",
+      "priorite": "reverse",
+      "tags": [
+        "noel",
+        "urbain",
+        "esport"
+      ],
+      "energie": 80,
+      "modernite": 75,
+      "couleurs": [
+        "#e60000",
+        "#ffffff",
+        "#231f20"
+      ],
+      "ratio": "10:1",
+      "typographie_generee": "Bold, italicized sans-serif display font with a thick black outline and a white fill, paired with clean, spaced-out lowercase sans-serif subtext.",
+      "scores": {
+        "relief_3d": 3,
+        "glow": 1,
+        "saturation": 9,
+        "sombre_clair": 7,
+        "complexite": 4
+      }
+    },
+    {
+      "slug": "banniere-five-m",
+      "source": "banniere-Five-M.png",
+      "priorite": "reverse",
+      "tags": [
+        "ete",
+        "chill",
+        "sombre"
+      ],
+      "energie": 50,
+      "modernite": 80,
+      "couleurs": [
+        "#120c17",
+        "#d91c8c",
+        "#ffffff"
+      ],
+      "ratio": "10:1",
+      "typographie_generee": "Bold, clean sans-serif typeface in solid white, with a stylized neon pink palm tree graphic replacing the center of the word.",
+      "scores": {
+        "relief_3d": 2,
+        "glow": 5,
+        "saturation": 7,
+        "sombre_clair": 2,
+        "complexite": 4
+      }
+    },
+    {
+      "slug": "bannierefinish",
+      "source": "bannierefinish.png",
+      "priorite": "reverse",
+      "tags": [
+        "sombre",
+        "urbain",
+        "luxe"
+      ],
+      "energie": 45,
+      "modernite": 80,
+      "couleurs": [
+        "#0d0214",
+        "#8a2be2",
+        "#ffffff"
+      ],
+      "ratio": "10:1",
+      "typographie_generee": "Clean, bold, italicized sans-serif typography with high legibility.",
+      "scores": {
+        "relief_3d": 2,
+        "glow": 6,
+        "saturation": 5,
+        "sombre_clair": 2,
+        "complexite": 3
+      }
+    },
+    {
+      "slug": "banniere-fivem",
+      "source": "bannière FiveM.png",
+      "priorite": "reverse",
+      "tags": [
+        "cartel",
+        "ete",
+        "neutre"
+      ],
+      "energie": 55,
+      "modernite": 75,
+      "couleurs": [
+        "#660000",
+        "#ffffff",
+        "#1a0000"
+      ],
+      "ratio": "10:1",
+      "typographie_generee": "Bold, solid sans-serif with integrated rectangular badges and angled label overlays.",
+      "scores": {
+        "relief_3d": 3,
+        "glow": 4,
+        "saturation": 7,
+        "sombre_clair": 3,
+        "complexite": 4
+      }
+    },
+    {
+      "slug": "fivemlist-banner",
+      "source": "Fivemlist Banner.png",
+      "priorite": "reverse",
+      "tags": [
+        "ete",
+        "chill",
+        "urbain"
+      ],
+      "energie": 90,
+      "modernite": 85,
+      "couleurs": [
+        "#ff3b5c",
+        "#ffffff",
+        "#3b82f6"
+      ],
+      "ratio": "10:1",
+      "typographie_generee": "Heavy, rounded, stylized sans-serif with custom cutouts in the letterforms.",
+      "scores": {
+        "relief_3d": 4,
+        "glow": 5,
+        "saturation": 9,
+        "sombre_clair": 8,
+        "complexite": 8
+      }
+    },
+    {
+      "slug": "fivemlist-banner-9",
+      "source": "Fivemlist_Banner.png",
+      "priorite": "reverse",
+      "tags": [
+        "sombre",
+        "urbain",
+        "esport"
+      ],
+      "energie": 75,
+      "modernite": 85,
+      "couleurs": [
+        "#0d0d0d",
+        "#e51c23",
+        "#ffffff"
+      ],
+      "ratio": "10:1",
+      "typographie_generee": "Clean sans-serif for body text, aggressive brush script for the central logo overlay, and wide geometric sans-serif for headers.",
+      "scores": {
+        "relief_3d": 4,
+        "glow": 7,
+        "saturation": 8,
+        "sombre_clair": 1,
+        "complexite": 5
+      }
+    },
+    {
+      "slug": "fivem-details",
+      "source": "fivem_details.png",
+      "priorite": "reverse",
+      "tags": [
+        "chill",
+        "neutre",
+        "luxe"
+      ],
+      "energie": 50,
+      "modernite": 80,
+      "couleurs": [
+        "#0a0f1d",
+        "#1e90ff",
+        "#ffffff"
+      ],
+      "ratio": "10:1",
+      "typographie_generee": "Bold, clean geometric sans-serif for main titles and medium sans-serif for social handles.",
+      "scores": {
+        "relief_3d": 3,
+        "glow": 6,
+        "saturation": 7,
+        "sombre_clair": 2,
+        "complexite": 4
+      }
+    },
+    {
+      "slug": "fw-summer-ba",
+      "source": "fw_summer_ba.png",
+      "priorite": "reverse",
+      "tags": [
+        "ete",
+        "urbain",
+        "cartel"
+      ],
+      "energie": 90,
+      "modernite": 90,
+      "couleurs": [
+        "#ffffff",
+        "#00cc44",
+        "#1a1a1a"
+      ],
+      "ratio": "10:1",
+      "typographie_generee": "Heavy, bold sans-serif with integrated lightning bolt icon for the main logo; italicized green sans-serif for secondary text.",
+      "scores": {
+        "relief_3d": 2,
+        "glow": 5,
+        "saturation": 9,
+        "sombre_clair": 8,
+        "complexite": 7
+      }
+    },
+    {
+      "slug": "gritjt",
+      "source": "gritjt.png",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "esport",
+        "sombre"
+      ],
+      "energie": 85,
+      "modernite": 90,
+      "couleurs": [
+        "#050c1a",
+        "#007eff",
+        "#ffffff"
+      ],
+      "ratio": "10:1",
+      "typographie_generee": "Clean sans-serif with bold weights for handles, integrated with social icons",
+      "scores": {
+        "relief_3d": 7,
+        "glow": 8,
+        "saturation": 6,
+        "sombre_clair": 1,
+        "complexite": 6
+      }
+    },
+    {
+      "slug": "legacyworld-banner-1865x108",
+      "source": "legacyworld_banner_1865x108.png",
+      "priorite": "reverse",
+      "tags": [
+        "luxe",
+        "chill",
+        "neutre"
+      ],
+      "energie": 40,
+      "modernite": 95,
+      "couleurs": [
+        "#03140e",
+        "#1ed760",
+        "#ffffff"
+      ],
+      "ratio": "10:1",
+      "typographie_generee": "Bold sans-serif for main title, clean medium sans-serif for subtitles and links",
+      "scores": {
+        "relief_3d": 2,
+        "glow": 5,
+        "saturation": 7,
+        "sombre_clair": 2,
+        "complexite": 3
+      }
+    },
+    {
+      "slug": "ll3vdv",
+      "source": "ll3vdv.png",
+      "priorite": "reverse",
+      "tags": [
+        "luxe",
+        "ete",
+        "urbain"
+      ],
+      "energie": 60,
+      "modernite": 85,
+      "couleurs": [
+        "#ffffff",
+        "#c5a880",
+        "#1a1a1a"
+      ],
+      "ratio": "10:1",
+      "typographie_generee": "Elegant gold serif and sans-serif typography centered on the banner",
+      "scores": {
+        "relief_3d": 4,
+        "glow": 6,
+        "saturation": 3,
+        "sombre_clair": 9,
+        "complexite": 7
+      }
+    },
+    {
+      "slug": "nevada-fa7",
+      "source": "nevada-fa7.png",
+      "priorite": "reverse",
+      "tags": [
+        "sombre",
+        "urbain",
+        "retro"
+      ],
+      "energie": 45,
+      "modernite": 70,
+      "couleurs": [
+        "#4a0e17",
+        "#ffffff",
+        "#ff3344"
+      ],
+      "ratio": "10:1",
+      "typographie_generee": "Tall, condensed sans-serif with sharp corners, clean white fill, and a thin red outer stroke frame.",
+      "scores": {
+        "relief_3d": 2,
+        "glow": 4,
+        "saturation": 5,
+        "sombre_clair": 2,
+        "complexite": 4
+      }
+    },
+    {
+      "slug": "onelife-banner",
+      "source": "onelife-banner.png",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "esport",
+        "chill"
+      ],
+      "energie": 75,
+      "modernite": 85,
+      "couleurs": [
+        "#001a33",
+        "#00a2ff",
+        "#ffffff"
+      ],
+      "ratio": "10:1",
+      "typographie_generee": "Bold, condensed sans-serif in all-caps, clean white fill with a subtle drop shadow.",
+      "scores": {
+        "relief_3d": 4,
+        "glow": 7,
+        "saturation": 8,
+        "sombre_clair": 3,
+        "complexite": 3
+      }
+    },
+    {
+      "slug": "pnl-rp-v2-3",
+      "source": "PNL-RP-V2-3.png",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "chill",
+        "sombre"
+      ],
+      "energie": 50,
+      "modernite": 80,
+      "couleurs": [
+        "#2b1b24",
+        "#ff3366",
+        "#ffffff"
+      ],
+      "ratio": "10:1",
+      "typographie_generee": "Geometric, bold sans-serif in all-caps, clean white fill with a soft pink outer neon glow.",
+      "scores": {
+        "relief_3d": 1,
+        "glow": 5,
+        "saturation": 4,
+        "sombre_clair": 2,
+        "complexite": 4
+      }
+    },
+    {
+      "slug": "q7gm",
+      "source": "q7gm.png",
+      "priorite": "reverse",
+      "tags": [
+        "luxe",
+        "sombre",
+        "chill"
+      ],
+      "energie": 40,
+      "modernite": 85,
+      "couleurs": [
+        "#1a0d1a",
+        "#ff80bf",
+        "#ffffff"
+      ],
+      "ratio": "10:1",
+      "typographie_generee": "Bold, clean sans-serif typeface. 'LUNARIS' in all-caps with a custom crescent moon graphic replacing the curve of the 'L'. Secondary text in a standard geometric sans-serif.",
+      "scores": {
+        "relief_3d": 1,
+        "glow": 4,
+        "saturation": 5,
+        "sombre_clair": 2,
+        "complexite": 3
+      }
+    }
+  ]
+}

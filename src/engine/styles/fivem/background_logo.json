@@ -1,44 +1,138 @@
 {
   "categorie": "background_logo",
+  "version": 4,
   "source": "background pour logo ect",
   "images_totales": 11,
   "images_analysees": 11,
-  "genere_le": "2026-08-15T15:34:27.818Z",
+  "exemplaires": 11,
+  "genere_le": "2026-08-16T08:25:27.333Z",
   "modele": "gemini-3.5-flash",
+  "adn": {
+    "images": 11,
+    "traits": [
+      {
+        "trait": "3D relief / bevel / extrusion",
+        "frequence_pct": 100,
+        "source": "score relief_3d >= 6"
+      },
+      {
+        "trait": "contour/rim glow",
+        "frequence_pct": 9,
+        "source": "score glow >= 5"
+      },
+      {
+        "trait": "dark or gradient atmospheric background",
+        "frequence_pct": 9,
+        "source": "sombre_clair <= 4 ou fond degrade/atmospherique"
+      },
+      {
+        "trait": "particles / sparkles / stars",
+        "frequence_pct": 9,
+        "source": "effets"
+      },
+      {
+        "trait": "visible contour/outline",
+        "frequence_pct": 0,
+        "source": "contour.present"
+      }
+    ],
+    "scores_moyens": {
+      "relief_3d": 7.4,
+      "glow": 2.1,
+      "saturation": 6.4,
+      "sombre_clair": 6.9,
+      "complexite": 7
+    },
+    "frequences": {
+      "relief_3d_pct": 100,
+      "glow_pct": 9,
+      "fond_sombre_pct": 9,
+      "fond_degrade_ou_atmospherique_pct": 0,
+      "contour_pct": 0,
+      "contour_epais_pct": 0,
+      "particules_pct": 9
+    },
+    "matieres": [
+      {
+        "matiere": "fabric",
+        "pct": 21
+      },
+      {
+        "matiere": "plastic",
+        "pct": 18
+      },
+      {
+        "matiere": "water",
+        "pct": 13
+      },
+      {
+        "matiere": "glass",
+        "pct": 13
+      },
+      {
+        "matiere": "stone",
+        "pct": 10
+      },
+      {
+        "matiere": "metal",
+        "pct": 8
+      }
+    ],
+    "taxonomie": [
+      {
+        "type": "scene",
+        "pct": 100
+      }
+    ],
+    "palette_dominante": [
+      "#FFFFFF",
+      "#19C3D4",
+      "#0072FF",
+      "#0088FF",
+      "#4A4A4A",
+      "#D2B48C"
+    ],
+    "resume_en": "100% show 3D relief/bevel (mean relief 7.4/10), 9% carry contour/rim glow (mean glow 2.1/10), 9% sit on a dark background and 0% on a gradient/atmospheric one, 0% of outlined marks use a thick (usually white) contour, 9% add particles/sparkles. Mean saturation 6.4/10, mean brightness 6.9/10, mean complexity 7/10. Dominant materials: fabric 21%, plastic 18%, water 13%, glass 13%. Background taxonomy: scene 100%. Dominant palette: #FFFFFF, #19C3D4, #0072FF, #0088FF, #4A4A4A."
+  },
   "guide": {
     "categorie": "background_logo",
     "composition": [
-      "Position the primary subject or focal element to occupy exactly 40% to 60% of the frame, centered or along a strong diagonal.",
-      "Maintain a clear foreground-to-background separation with at least 3 distinct depth planes (e.g., foreground element at 20%, midground subject at 50%, distant background at 30%).",
-      "Use extreme low-angle or high-angle forced perspectives to create dynamic scale contrasts between foreground objects and background architecture."
+      "Symmetrical or split-level framing with key subjects occupying the lower 50% of the canvas.",
+      "Central vertical axis must remain clear in the upper 50% to host the primary logo overlay.",
+      "Use extreme low-angle or forced perspective to create a dramatic sense of scale and depth.",
+      "Incorporate strong horizontal or diagonal dividing lines (e.g., waterlines, steps, dashboards) at the 33% or 50% mark."
     ],
     "typographie": [
-      "Place clean, sans-serif text layers strictly within the upper 20% or lower 20% of the frame to avoid overlapping the central logo zone.",
-      "Scale text to occupy no more than 15% of the total frame width, ensuring high legibility with pure white (#FFFFFF) or high-contrast fills.",
-      "Align text elements to follow the perspective planes of physical surfaces in the midground for integrated environmental typography."
+      "Integrate text directly into 3D models (e.g., on hulls, boards) rather than floating overlays.",
+      "Use bold, high-contrast sans-serif block lettering.",
+      "Match text perspective and lighting to the physical surface it is mapped onto."
+    ],
+    "taxonomie_fonds": [
+      "scene: Detailed photographic or 3D-rendered environments (villas, coastal cities, retro rooms) with a clear, low-contrast sky or wall zone in the upper third for logo placement."
     ],
     "lumiere": [
-      "Implement dual-temperature lighting: pair a warm golden hour key light (3000K) with a cool, desaturated ambient fill or screen glow (6500K).",
-      "Use high-contrast overhead sunlight to cast sharp, defined shadows and create bright rim lighting on the subject's shoulders and hair.",
-      "Incorporate realistic light interactions like water caustics, translucent wave glows, and volumetric dust motes in light beams."
+      "Bright, direct midday sunlight casting sharp, high-contrast shadows directly beneath objects.",
+      "Warm golden hour side-lighting (from left or right) creating soft rim lights and long shadows.",
+      "Underwater light rays and surface caustics filtering down from the top edge."
     ],
     "etalonnage": [
-      "Apply a highly saturated palette dominated by vibrant turquoise (#00C2D1, #00A8C6) and deep blues (#004BFF), contrasted against warm sandy tones (#D1B894) or terracotta (#C68B6D).",
-      "Maintain a cinematic film curve with low-contrast shadows and creamy, desaturated highlights (#FDFBF7) for historical or retro scenes."
+      "Vibrant, high-saturation blues and turquoises (#00B0FF, #1E88E5, #19C3D4) dominating water and sky scenes.",
+      "Warm, earthy neutrals (#D99E6C, #E5CBB1, #8C583C) for urban stone, brick, and retro interiors.",
+      "Clean, high-value whites and light grays (#FFFFFF, #EAECEE) to maintain a luxurious, bright feel."
     ],
     "effets": [
-      "Apply realistic camera depth of field (bokeh) to heavily blur background elements beyond the central 60% focal zone.",
-      "Add physical texture overlays including water spray, wake foam, CRT static, and subtle glass reflections on foreground screens."
+      "Realistic water caustics, splashes, foam, and motion-blurred wakes.",
+      "Depth of field with sharp foreground elements and softly blurred backgrounds.",
+      "Subtle atmospheric haze, lens bloom, and warm light leaks."
     ],
     "logo": [
-      "Reserve the absolute center (a 30% circular zone) as a clean, high-contrast negative space specifically designed to host a logo.",
-      "Ensure background elements behind the logo zone are desaturated or blurred to prevent visual interference with the logo silhouette."
+      "Position the logo centrally in the upper half of the frame, overlaying low-complexity zones like clear skies or flat walls.",
+      "Ensure high contrast against the background using drop shadows or clean negative space."
     ],
     "interdits": [
-      "Avoid flat, low-detail textures on large foreground surfaces like umbrellas, concrete walls, or vehicle panels.",
-      "Do not use stiff, artificial, or floating character poses that lack realistic contact shadows with the ground or furniture.",
-      "Avoid repeating, tiled texture patterns on background buildings or windows.",
-      "Do not allow low-polygon modeling or jagged anti-aliasing on prominent foreground objects."
+      "Avoid flat, low-contrast lighting that eliminates 3D depth.",
+      "Do not clutter the upper-central zone where the logo must sit.",
+      "Avoid oversaturated, unnatural neon color palettes that break the premium, realistic mood."
     ],
     "ratios": [
       "16:9",

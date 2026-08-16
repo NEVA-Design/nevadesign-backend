@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, flat vector decal style.
+1. SHAPE — A stylized, forward-leaning letter 'G' split horizontally. The top half is light blue, the bottom half is white. A cartoon-style 8-pointed starburst bubble overlaps the upper right corner.
+2. RENDER — Flat vector design with clean, rounded corners. A subtle dark blue drop shadow separates the starburst from the main letter.
+3. COLORS — Sky blue (#52B2F2), solid white (#FFFFFF), and dark navy blue (#1A2B4C) for shadows.
+4. FORMAT — Square composition, emblem occupies 75% of the width, set against a blue-monochrome urban street background with power lines and a subtle grid pattern.
+5. KEYWORDS — urban decal, vector icon, street brand, flat design, clean lines, retro gaming.

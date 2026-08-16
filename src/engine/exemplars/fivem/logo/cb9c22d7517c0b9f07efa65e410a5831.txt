@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, glowing neon mascot.
+1. SHAPE — A stylized cupcake. The bottom cup is a simple trapezoid with four vertical ridges. The top frosting is a thick, three-tiered swirl with a small cherry on a stem at the very peak.
+2. RENDER — Neon sign style. The frosting glows with a soft, intense pink and purple light. The cup glows with a warm golden-orange light. Thick dark outlines define the shapes, surrounded by a heavy atmospheric glow bloom.
+3. COLORS — Hot pink (#F472B6), warm gold (#F59E0B), and deep purple-black (#1E1B4B).
+4. FORMAT — Square composition, cupcake centered occupying 75% of the height, background is a dark, blurry Miami-style street at night with palm trees.
+5. KEYWORDS — neon sign, cupcake logo, retro synthwave, glowing vector, night club vibe.

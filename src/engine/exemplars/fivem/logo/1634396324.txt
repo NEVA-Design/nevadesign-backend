@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo family, 3D dimensional monogram.
+1. SHAPE — A bold, geometric letter 'V' rotated slightly to the left. Deep 3D extrusion extending backwards and down. Sharp chiseled edges, flat front face, with a horizontal cut-out groove near the bottom tip.
+2. RENDER — Polished metallic chrome finish, sharp bevels reflecting light, high-end 3D render, subtle metallic grain, no cartoon outlines.
+3. COLORS — Dual-tone gradient; cool cyan-blue #7A96FF illuminating the left side, warm lavender-purple #D1A3FF illuminating the right face, dark background #121214.
+4. FORMAT — Square 1:1 composition, 3D letter centered occupying 70% of the canvas, dark atmospheric background with faint colored mist.
+5. KEYWORDS — 3D monogram, metallic letter V, futuristic cyber aesthetic, chiseled metal, dual lighting, premium gaming icon.

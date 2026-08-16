@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, glowing vector emblem.
+1. SHAPE — Abstract monogram letter 'R' split diagonally into two sharp, aggressive pieces. Left piece is a sharp, wing-like shape in silver. Right piece forms the loop and tail of the 'R' with sharp, lightning-like edges in gold.
+2. RENDER — Flat vector style with smooth gradients, enhanced by an extremely bright, soft white and gold outer glow that makes the emblem pop. Subtle metallic sheen on the surfaces.
+3. COLORS — Bright gold (#FBBF24), clean white (#FFFFFF), and deep black (#000000).
+4. FORMAT — Square composition, emblem centered occupying 70% of the frame, dark background with golden dust particles and faint palm silhouettes.
+5. KEYWORDS — vector logo, esports mascot, glowing emblem, gold and silver, luxury gaming.

@@ -1,0 +1,150 @@
+{
+  "execute_le": "2026-08-16T08:34:23.146Z",
+  "version": 4,
+  "modele": "gemini-3.5-flash",
+  "mode": "sync (lots de 3 images/appel, repli image par image sur échec)",
+  "note_batch": "Le mode Batch asynchrone (−50 %) reste documenté, pas câblé : prix batch théorique = cout_total_eur × 0,5.",
+  "inventaire": {
+    "fichiers_totaux": 212,
+    "images_a_analyser": 209,
+    "recettes_humaines": 16
+  },
+  "couverture": [
+    {
+      "categorie": "affiche",
+      "analysees": "17/17"
+    },
+    {
+      "categorie": "background_logo",
+      "analysees": "11/11"
+    },
+    {
+      "categorie": "banniere_discord",
+      "analysees": "34/34"
+    },
+    {
+      "categorie": "banniere_fivem",
+      "analysees": "19/19"
+    },
+    {
+      "categorie": "banniere_f5",
+      "analysees": "12/12"
+    },
+    {
+      "categorie": "personnage",
+      "analysees": "32/32"
+    },
+    {
+      "categorie": "da_complete",
+      "analysees": "9/9"
+    },
+    {
+      "categorie": "icon",
+      "analysees": "16/16"
+    },
+    {
+      "categorie": "logo",
+      "analysees": "59/59"
+    }
+  ],
+  "echecs_residuels": [],
+  "categories": [
+    {
+      "categorie": "affiche",
+      "images_totales": 17,
+      "analysees": 17,
+      "exemplaires": 17,
+      "appels": 7,
+      "tokens_in": 27347,
+      "tokens_out": 8551,
+      "cout_eur": 0.0272
+    },
+    {
+      "categorie": "background_logo",
+      "images_totales": 11,
+      "analysees": 11,
+      "exemplaires": 11,
+      "appels": 5,
+      "tokens_in": 17921,
+      "tokens_out": 6039,
+      "cout_eur": 0.0188
+    },
+    {
+      "categorie": "banniere_discord",
+      "images_totales": 34,
+      "analysees": 34,
+      "exemplaires": 34,
+      "appels": 13,
+      "tokens_in": 54411,
+      "tokens_out": 17077,
+      "cout_eur": 0.0543
+    },
+    {
+      "categorie": "banniere_fivem",
+      "images_totales": 19,
+      "analysees": 19,
+      "exemplaires": 19,
+      "appels": 8,
+      "tokens_in": 30811,
+      "tokens_out": 9876,
+      "cout_eur": 0.0312
+    },
+    {
+      "categorie": "banniere_f5",
+      "images_totales": 12,
+      "analysees": 12,
+      "exemplaires": 12,
+      "appels": 5,
+      "tokens_in": 18431,
+      "tokens_out": 6102,
+      "cout_eur": 0.0191
+    },
+    {
+      "categorie": "personnage",
+      "images_totales": 32,
+      "analysees": 32,
+      "exemplaires": 32,
+      "appels": 12,
+      "tokens_in": 50567,
+      "tokens_out": 15424,
+      "cout_eur": 0.0494
+    },
+    {
+      "categorie": "da_complete",
+      "images_totales": 9,
+      "analysees": 9,
+      "exemplaires": 9,
+      "appels": 4,
+      "tokens_in": 14445,
+      "tokens_out": 5032,
+      "cout_eur": 0.0156
+    },
+    {
+      "categorie": "icon",
+      "images_totales": 16,
+      "analysees": 16,
+      "exemplaires": 16,
+      "appels": 7,
+      "tokens_in": 25254,
+      "tokens_out": 6900,
+      "cout_eur": 0.0228
+    },
+    {
+      "categorie": "logo",
+      "images_totales": 59,
+      "analysees": 59,
+      "exemplaires": 59,
+      "appels": 21,
+      "tokens_in": 96992,
+      "tokens_out": 34641,
+      "cout_eur": 0.1064
+    }
+  ],
+  "total": {
+    "appels": 82,
+    "tokens_in": 336179,
+    "tokens_out": 109642,
+    "cout_total_eur": 0.345,
+    "cout_batch_theorique_eur": 0.1725
+  }
+}

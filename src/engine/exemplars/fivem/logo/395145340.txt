@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, flat-dimensional geometric emblem.
+1. SHAPE — Symmetrical crown emblem made of interlocking sharp geometric bands. The bands form a stylized 'W' shape at the bottom and a central peak, creating a 5-pointed crown silhouette.
+2. RENDER — Semi-matte metallic finish with sharp, clean bevels. The top facets are a bright mint green, transitioning to a dark forest green on the lower facets to create depth. Subtle outer green glow. No complex textures, clean vector style.
+3. COLORS — Solid black (#000000) background, mint green (#52D69B) highlights, dark forest green (#114B32) shadows.
+4. FORMAT — Square composition, emblem centered, occupying 80% of the width, on a solid black background.
+5. KEYWORDS — geometric crown, esports logo, vector bevel, mint green, metallic, sharp lines, minimalist gaming.

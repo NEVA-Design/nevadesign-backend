@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, flat vector emblem with soft dimensional glow.
+1. SHAPE — A stylized, minimalist rose flower icon. Symmetrical design with 5 curved, overlapping petals wrapping around a central spiral core. Clean negative space lines separating the petals.
+2. RENDER — Smooth satin vinyl finish with a soft neon pink glow radiating from the edges. Subtle inner shadows to create depth without full 3D extrusion.
+3. COLORS — Hot pink (#FF4081) and magenta petals, set against a deep burgundy and black (#2D001E) background.
+4. FORMAT — Square composition, the rose emblem is centered and occupies 65% of the frame. Background is a dark, atmospheric gradient with faint, out-of-focus organic shadows.
+5. KEYWORDS — minimalist rose logo, vector icon, neon glow, dark luxury, elegant gaming emblem, clean lines.

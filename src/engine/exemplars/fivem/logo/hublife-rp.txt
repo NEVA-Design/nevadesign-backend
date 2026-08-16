@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, flat vector monogram style.
+1. SHAPE — A sharp geometric monogram of the letters 'HL' with chamfered 45-degree corner cuts. A single minimalist cyan palm tree silhouette is nested on the right side, overlapping the letter 'L'.
+2. RENDER — Flat 2D vector graphic with a subtle inner gradient. No 3D extrusion, no heavy bevels. Soft neon glow radiating from the edges.
+3. COLORS — Vibrant pink-to-magenta vertical gradient (#E02494 to #FF52A2) on the letters, electric cyan (#00E5FF) on the palm tree.
+4. FORMAT — Square composition, logo occupies 60% of the width, set against a dark textured charcoal background with faint, desaturated palm tree silhouettes.
+5. KEYWORDS — synthwave, vector logo, Miami vice aesthetic, clean paths, gaming community icon.

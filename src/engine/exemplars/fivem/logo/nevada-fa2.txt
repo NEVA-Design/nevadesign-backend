@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, retro-modern chrome wordmark. 
+1. SHAPE — Bold, ultra-condensed sans-serif lettering reading 'NEVADA'. The letters have rounded top corners and flat bases. A small hand icon showing a peace sign is positioned in the center, overlapping the letter 'V'. A thin, stylized rectangular frame with open corners surrounds the text. 
+2. RENDER — Polished chrome finish with a sharp horizontal reflection line across the middle of the letters. Thick white outer stroke and a vibrant pink neon drop shadow. 
+3. COLORS — Chrome silver and white letters, hot pink (#ff0055) accents and glow, dark magenta background. 
+4. FORMAT — Square composition, wordmark occupies 80% of the width. Background is a dark, textured scene with palm tree silhouettes and a pink light leak on the left edge. 
+5. KEYWORDS — chrome text effect, retro gaming logo, GTA style, hot pink glow, condensed typography.

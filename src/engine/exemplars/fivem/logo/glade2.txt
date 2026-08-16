@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, minimalist geometric monogram.
+1. SHAPE — An angular, heavy-weight monogram combining a white outer 'C' shape with sharp 45-degree chamfered corners, and a solid purple 'J' shape nested perfectly in the bottom right negative space.
+2. RENDER — Flat vector style with a subtle dark keyline border around the shapes and a soft drop shadow to separate it from the background.
+3. COLORS — Solid white (#FFFFFF), vibrant purple (#8A2BE2), on a near-black textured background (#120F17).
+4. FORMAT — Square composition, monogram centered and occupying 60% of the canvas width.
+5. KEYWORDS — geometric monogram, CJ logo, esports gaming icon, minimalist vector, sharp angles, dark background.

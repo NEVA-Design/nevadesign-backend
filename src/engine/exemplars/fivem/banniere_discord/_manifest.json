@@ -1,0 +1,890 @@
+{
+  "categorie": "banniere_discord",
+  "genere_le": "2026-08-16T08:27:00.316Z",
+  "exemplaires": [
+    {
+      "slug": "1ac89893eac67e361031f6e5fc51cff5",
+      "source": "1ac89893eac67e361031f6e5fc51cff5.webp",
+      "priorite": "reverse",
+      "tags": [
+        "ete",
+        "luxe",
+        "chill"
+      ],
+      "energie": 75,
+      "modernite": 85,
+      "couleurs": [
+        "#1CA3EC",
+        "#FF6B8B",
+        "#39FF14"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Bold, sans-serif, uppercase 3D block letters with a white-to-green gradient fill.",
+      "scores": {
+        "relief_3d": 8,
+        "glow": 4,
+        "saturation": 8,
+        "sombre_clair": 8,
+        "complexite": 7
+      }
+    },
+    {
+      "slug": "56cbfe9c6c72bb956795ea90b151dd7f",
+      "source": "56cbfe9c6c72bb956795ea90b151dd7f.webp",
+      "priorite": "reverse",
+      "tags": [
+        "sombre",
+        "urbain",
+        "retro"
+      ],
+      "energie": 40,
+      "modernite": 70,
+      "couleurs": [
+        "#120A18",
+        "#D896FF",
+        "#4A154B"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Bold, stylized futuristic sans-serif with horizontal scanline textures and sharp geometric framing elements.",
+      "scores": {
+        "relief_3d": 5,
+        "glow": 7,
+        "saturation": 5,
+        "sombre_clair": 2,
+        "complexite": 4
+      }
+    },
+    {
+      "slug": "978a3bb621349b3e323aaa997131e114",
+      "source": "978a3bb621349b3e323aaa997131e114.png",
+      "priorite": "reverse",
+      "tags": [
+        "militaire",
+        "esport",
+        "urbain"
+      ],
+      "energie": 80,
+      "modernite": 80,
+      "couleurs": [
+        "#76B900",
+        "#FFFFFF",
+        "#1E1E1E"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Clean, rounded sans-serif white text split by a sharp yellow-green lightning bolt icon in the center.",
+      "scores": {
+        "relief_3d": 3,
+        "glow": 5,
+        "saturation": 7,
+        "sombre_clair": 5,
+        "complexite": 6
+      }
+    },
+    {
+      "slug": "a7d63e3eaa6e77e8ae858c21adeaf994",
+      "source": "a7d63e3eaa6e77e8ae858c21adeaf994.webp",
+      "priorite": "reverse",
+      "tags": [
+        "luxe",
+        "ete",
+        "chill"
+      ],
+      "energie": 75,
+      "modernite": 80,
+      "couleurs": [
+        "#FF4DA6",
+        "#FFFFFF",
+        "#E5C158"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Massive, bold, italicized sans-serif 3D block letters with a pink brushed metal texture, paired with a white script font overlay reading 'fa'.",
+      "scores": {
+        "relief_3d": 8,
+        "glow": 3,
+        "saturation": 8,
+        "sombre_clair": 7,
+        "complexite": 7
+      }
+    },
+    {
+      "slug": "ascent-rp1",
+      "source": "ascent-rp1.webp",
+      "priorite": "reverse",
+      "tags": [
+        "esport",
+        "sombre",
+        "neutre"
+      ],
+      "energie": 65,
+      "modernite": 85,
+      "couleurs": [
+        "#1A1A1A",
+        "#E63956",
+        "#FFFFFF"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Clean, modern sans-serif typography. The 'A' is replaced by a custom triangular mountain peak icon with a pink arrow wrapping around it.",
+      "scores": {
+        "relief_3d": 5,
+        "glow": 4,
+        "saturation": 6,
+        "sombre_clair": 2,
+        "complexite": 5
+      }
+    },
+    {
+      "slug": "a-7d0d63f0113177e11e5346b70b7b2796",
+      "source": "a_7d0d63f0113177e11e5346b70b7b2796.png",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "sombre",
+        "cartel"
+      ],
+      "energie": 80,
+      "modernite": 75,
+      "couleurs": [
+        "#001C30",
+        "#00A8E8",
+        "#FFFFFF"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Heavy, italicized sans-serif display font in solid white, with a custom blue blast/starburst icon integrated into the letter 'A'.",
+      "scores": {
+        "relief_3d": 4,
+        "glow": 6,
+        "saturation": 7,
+        "sombre_clair": 3,
+        "complexite": 6
+      }
+    },
+    {
+      "slug": "background-1",
+      "source": "background_1.png",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "chill",
+        "luxe"
+      ],
+      "energie": 65,
+      "modernite": 80,
+      "couleurs": [
+        "#0b1623",
+        "#ffffff",
+        "#0088ff"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Custom hand-drawn script with smooth, rounded 3D bevels and a glossy finish.",
+      "scores": {
+        "relief_3d": 4,
+        "glow": 6,
+        "saturation": 7,
+        "sombre_clair": 2,
+        "complexite": 5
+      }
+    },
+    {
+      "slug": "banner-discord-noel",
+      "source": "banner discord noel.png",
+      "priorite": "reverse",
+      "tags": [
+        "noel",
+        "esport",
+        "neutre"
+      ],
+      "energie": 85,
+      "modernite": 75,
+      "couleurs": [
+        "#ff0000",
+        "#ffffff",
+        "#d11a2a"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Bold, italicized sans-serif with sharp angles, metallic silver-to-white gradient fill, and a thick dark outline.",
+      "scores": {
+        "relief_3d": 5,
+        "glow": 3,
+        "saturation": 9,
+        "sombre_clair": 8,
+        "complexite": 6
+      }
+    },
+    {
+      "slug": "banniere-discord",
+      "source": "bannière discord.png",
+      "priorite": "reverse",
+      "tags": [
+        "ete",
+        "luxe",
+        "urbain"
+      ],
+      "energie": 70,
+      "modernite": 85,
+      "couleurs": [
+        "#800c0c",
+        "#ffffff",
+        "#4a0404"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Chiseled, ultra-bold sans-serif with a sharp, custom-designed 'A' incorporating a star cutout and a metallic bevel.",
+      "scores": {
+        "relief_3d": 6,
+        "glow": 2,
+        "saturation": 8,
+        "sombre_clair": 3,
+        "complexite": 4
+      }
+    },
+    {
+      "slug": "black-world2",
+      "source": "black-world2.png",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "luxe",
+        "sombre"
+      ],
+      "energie": 60,
+      "modernite": 85,
+      "couleurs": [
+        "#0b131a",
+        "#ffffff",
+        "#29c5ff"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Bold, italicized sans-serif with custom geometric cuts on the 'B' monogram.",
+      "scores": {
+        "relief_3d": 2,
+        "glow": 4,
+        "saturation": 5,
+        "sombre_clair": 2,
+        "complexite": 4
+      }
+    },
+    {
+      "slug": "d16dbbfb94dc0580ee6bb13fce769b72",
+      "source": "d16dbbfb94dc0580ee6bb13fce769b72.webp",
+      "priorite": "reverse",
+      "tags": [
+        "esport",
+        "sombre",
+        "militaire"
+      ],
+      "energie": 90,
+      "modernite": 80,
+      "couleurs": [
+        "#120102",
+        "#ffffff",
+        "#c8000a"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Custom aggressive typeface with jagged, claw-like serifs and metallic gradients.",
+      "scores": {
+        "relief_3d": 4,
+        "glow": 6,
+        "saturation": 8,
+        "sombre_clair": 3,
+        "complexite": 5
+      }
+    },
+    {
+      "slug": "daycity2",
+      "source": "daycity2.png",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "sombre",
+        "chill"
+      ],
+      "energie": 70,
+      "modernite": 75,
+      "couleurs": [
+        "#1a0033",
+        "#a300ff",
+        "#ffffff"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Clean, modern sans-serif in all-caps, colored in bright purple.",
+      "scores": {
+        "relief_3d": 1,
+        "glow": 7,
+        "saturation": 9,
+        "sombre_clair": 3,
+        "complexite": 6
+      }
+    },
+    {
+      "slug": "discord-banner",
+      "source": "Discord Banner.png",
+      "priorite": "reverse",
+      "tags": [
+        "ete",
+        "luxe",
+        "urbain"
+      ],
+      "energie": 90,
+      "modernite": 85,
+      "couleurs": [
+        "#1E88E5",
+        "#FF7043",
+        "#FFFFFF"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Giant sans-serif block letters with a warm orange-to-pink vertical gradient, outlined in thin white.",
+      "scores": {
+        "relief_3d": 8,
+        "glow": 4,
+        "saturation": 9,
+        "sombre_clair": 8,
+        "complexite": 8
+      }
+    },
+    {
+      "slug": "evolution1",
+      "source": "evolution1.png",
+      "priorite": "reverse",
+      "tags": [
+        "sombre",
+        "neutre",
+        "urbain"
+      ],
+      "energie": 30,
+      "modernite": 75,
+      "couleurs": [
+        "#111111",
+        "#E0E0E0",
+        "#C5A000"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Clean, bold sans-serif white text reading 'BIENVENUE SUR' with a smaller subtext 'LE DISCORD OFFICIEL'.",
+      "scores": {
+        "relief_3d": 1,
+        "glow": 2,
+        "saturation": 2,
+        "sombre_clair": 2,
+        "complexite": 3
+      }
+    },
+    {
+      "slug": "f32a9a33b3c0f4755848765e990d1146",
+      "source": "f32a9a33b3c0f4755848765e990d1146.webp",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "luxe",
+        "chill"
+      ],
+      "energie": 70,
+      "modernite": 80,
+      "couleurs": [
+        "#1A1A1A",
+        "#FF4081",
+        "#FFFFFF"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Italicized, bold white sans-serif text with a pink banner below containing a URL.",
+      "scores": {
+        "relief_3d": 6,
+        "glow": 7,
+        "saturation": 6,
+        "sombre_clair": 6,
+        "complexite": 7
+      }
+    },
+    {
+      "slug": "fegzrzefef",
+      "source": "fegzrzefef.png",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "luxe",
+        "sombre"
+      ],
+      "energie": 85,
+      "modernite": 90,
+      "couleurs": [
+        "#00FF88",
+        "#111111",
+        "#FFFFFF"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Heavy, blocky 3D sans-serif text 'SOUTH' with a metallic texture, paired with a flowing, neon-green script font 'District' overlapping it.",
+      "scores": {
+        "relief_3d": 8,
+        "glow": 9,
+        "saturation": 8,
+        "sombre_clair": 3,
+        "complexite": 8
+      }
+    },
+    {
+      "slug": "five-freeroam2",
+      "source": "five-freeroam2.PNG",
+      "priorite": "reverse",
+      "tags": [
+        "retro",
+        "ete",
+        "urbain"
+      ],
+      "energie": 75,
+      "modernite": 50,
+      "couleurs": [
+        "#00A2FF",
+        "#FFFFFF",
+        "#332211"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Bold, blue sans-serif 'FIVE' with a white outline, layered over a white brush script 'Freeroam' with a dark drop shadow.",
+      "scores": {
+        "relief_3d": 4,
+        "glow": 2,
+        "saturation": 7,
+        "sombre_clair": 7,
+        "complexite": 7
+      }
+    },
+    {
+      "slug": "gside2",
+      "source": "gside2.png",
+      "priorite": "reverse",
+      "tags": [
+        "neutre",
+        "urbain",
+        "esport"
+      ],
+      "energie": 50,
+      "modernite": 80,
+      "couleurs": [
+        "#1A365D",
+        "#FFFFFF",
+        "#2B6CB0"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Gigantic, ultra-bold white sans-serif text 'BIENVENUE' with the character layered behind the middle letters, and smaller bold text 'GSIDE' centered below.",
+      "scores": {
+        "relief_3d": 2,
+        "glow": 3,
+        "saturation": 4,
+        "sombre_clair": 4,
+        "complexite": 4
+      }
+    },
+    {
+      "slug": "gta-santos-rp2",
+      "source": "gta-santos-rp2.png",
+      "priorite": "reverse",
+      "tags": [
+        "retro",
+        "chill",
+        "urbain"
+      ],
+      "energie": 45,
+      "modernite": 75,
+      "couleurs": [
+        "#2d1130",
+        "#ff00ff",
+        "#ffffff"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Bold geometric sans-serif for 'GTA' and fluid brush script for 'Santos'",
+      "scores": {
+        "relief_3d": 2,
+        "glow": 4,
+        "saturation": 6,
+        "sombre_clair": 2,
+        "complexite": 3
+      }
+    },
+    {
+      "slug": "i6d74vm",
+      "source": "I6d74vM.png",
+      "priorite": "reverse",
+      "tags": [
+        "cartel",
+        "urbain",
+        "sombre"
+      ],
+      "energie": 85,
+      "modernite": 80,
+      "couleurs": [
+        "#000000",
+        "#ff0000",
+        "#ffffff"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Heavy, blocky sans-serif font with sharp edges",
+      "scores": {
+        "relief_3d": 3,
+        "glow": 8,
+        "saturation": 9,
+        "sombre_clair": 1,
+        "complexite": 4
+      }
+    },
+    {
+      "slug": "image",
+      "source": "image.png",
+      "priorite": "reverse",
+      "tags": [
+        "cartel",
+        "urbain",
+        "luxe"
+      ],
+      "energie": 60,
+      "modernite": 85,
+      "couleurs": [
+        "#1a0b2e",
+        "#c58eff",
+        "#ffffff"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Handwritten brush script for 'KARMA Developments'",
+      "scores": {
+        "relief_3d": 5,
+        "glow": 6,
+        "saturation": 7,
+        "sombre_clair": 4,
+        "complexite": 7
+      }
+    },
+    {
+      "slug": "imageaaaaa",
+      "source": "imageaaaaa.png",
+      "priorite": "reverse",
+      "tags": [
+        "ete",
+        "urbain",
+        "chill"
+      ],
+      "energie": 75,
+      "modernite": 85,
+      "couleurs": [
+        "#00A2E8",
+        "#FFFFFF",
+        "#2C2C2C"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "White brush script font with a subtle dark drop shadow, placed centrally over the couch.",
+      "scores": {
+        "relief_3d": 8,
+        "glow": 5,
+        "saturation": 8,
+        "sombre_clair": 7,
+        "complexite": 9
+      }
+    },
+    {
+      "slug": "meteor-banner-alya-main-1",
+      "source": "meteor-banner-alya-main-1.png",
+      "priorite": "reverse",
+      "tags": [
+        "ete",
+        "chill",
+        "neutre"
+      ],
+      "energie": 80,
+      "modernite": 75,
+      "couleurs": [
+        "#008080",
+        "#FFFFFF",
+        "#FF4500"
+      ],
+      "ratio": "4:1",
+      "typographie_generee": "Bold sans-serif typography. 'BIENVENUE' in white on a teal ribbon, 'DISCORD' in teal on a white ribbon.",
+      "scores": {
+        "relief_3d": 3,
+        "glow": 2,
+        "saturation": 9,
+        "sombre_clair": 6,
+        "complexite": 6
+      }
+    },
+    {
+      "slug": "onelife-banner2",
+      "source": "onelife-banner2.png",
+      "priorite": "reverse",
+      "tags": [
+        "sombre",
+        "esport",
+        "urbain"
+      ],
+      "energie": 60,
+      "modernite": 80,
+      "couleurs": [
+        "#00A2E8",
+        "#051122",
+        "#FFFFFF"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Bold, white, slightly arched sans-serif font with a thick black outline, positioned directly over the heart logo.",
+      "scores": {
+        "relief_3d": 4,
+        "glow": 7,
+        "saturation": 7,
+        "sombre_clair": 2,
+        "complexite": 3
+      }
+    },
+    {
+      "slug": "pnl-rp-v2-2",
+      "source": "PNL-RP-V2-2.png",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "chill",
+        "retro"
+      ],
+      "energie": 65,
+      "modernite": 80,
+      "couleurs": [
+        "#e91e63",
+        "#ffffff",
+        "#1a0010"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Clean, bold, geometric sans-serif uppercase text reading 'ROLEPLAY' split by the central logo, with smaller 'BIENVENUE SUR PNL RP' text above.",
+      "scores": {
+        "relief_3d": 1,
+        "glow": 4,
+        "saturation": 7,
+        "sombre_clair": 2,
+        "complexite": 4
+      }
+    },
+    {
+      "slug": "rosefa1",
+      "source": "rosefa1.png",
+      "priorite": "reverse",
+      "tags": [
+        "luxe",
+        "neutre",
+        "retro"
+      ],
+      "energie": 40,
+      "modernite": 85,
+      "couleurs": [
+        "#110d12",
+        "#f1a7c4",
+        "#ffffff"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Small, clean, wide-spaced sans-serif text at the bottom reading 'BIENVENUE SUR LE LIVE DE ROSE FREE-ACCÈS'.",
+      "scores": {
+        "relief_3d": 3,
+        "glow": 6,
+        "saturation": 4,
+        "sombre_clair": 1,
+        "complexite": 3
+      }
+    },
+    {
+      "slug": "sasasasasasa",
+      "source": "sasasasasasa.png",
+      "priorite": "reverse",
+      "tags": [
+        "cartel",
+        "sombre",
+        "militaire"
+      ],
+      "energie": 90,
+      "modernite": 75,
+      "couleurs": [
+        "#0d0d0d",
+        "#ff0000",
+        "#ffffff"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Heavy gothic blackletter typography reading 'opium' in deep red with a 3D bevel, and clean sans-serif 'CLOTHING' text below.",
+      "scores": {
+        "relief_3d": 8,
+        "glow": 7,
+        "saturation": 8,
+        "sombre_clair": 2,
+        "complexite": 8
+      }
+    },
+    {
+      "slug": "senesty1",
+      "source": "senesty1.png",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "sombre",
+        "chill"
+      ],
+      "energie": 65,
+      "modernite": 80,
+      "couleurs": [
+        "#1a002c",
+        "#ff00ff",
+        "#ffffff"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Bold, expressive brush script for the main title, paired with a clean, widely-spaced sans-serif for the subtext.",
+      "scores": {
+        "relief_3d": 3,
+        "glow": 6,
+        "saturation": 7,
+        "sombre_clair": 2,
+        "complexite": 4
+      }
+    },
+    {
+      "slug": "senesty2",
+      "source": "senesty2.png",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "sombre",
+        "neutre"
+      ],
+      "energie": 50,
+      "modernite": 85,
+      "couleurs": [
+        "#120020",
+        "#e600ff",
+        "#ffffff"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Clean, heavy, geometric sans-serif for the main title, paired with a smaller sans-serif for the subtext and buttons.",
+      "scores": {
+        "relief_3d": 1,
+        "glow": 5,
+        "saturation": 6,
+        "sombre_clair": 1,
+        "complexite": 5
+      }
+    },
+    {
+      "slug": "valesiarp2",
+      "source": "valesiarp2.png",
+      "priorite": "reverse",
+      "tags": [
+        "ete",
+        "chill",
+        "retro"
+      ],
+      "energie": 80,
+      "modernite": 75,
+      "couleurs": [
+        "#ff5e7e",
+        "#7c253b",
+        "#ffcc00"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Bold, italicized, futuristic sans-serif with rounded corners for the main title, paired with a small, spaced sans-serif for the subtext.",
+      "scores": {
+        "relief_3d": 2,
+        "glow": 1,
+        "saturation": 8,
+        "sombre_clair": 6,
+        "complexite": 4
+      }
+    },
+    {
+      "slug": "velocity-rouge1",
+      "source": "velocity-rouge1.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "luxe",
+        "chill",
+        "neutre"
+      ],
+      "energie": 65,
+      "modernite": 90,
+      "couleurs": [
+        "#1A0B12",
+        "#FFFFFF",
+        "#E6005C"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Custom geometric sans-serif with sharp angular cuts on the letters 'V', 'O', and 'Y'. Small clean sans-serif for the subtitle.",
+      "scores": {
+        "relief_3d": 1,
+        "glow": 2,
+        "saturation": 7,
+        "sombre_clair": 2,
+        "complexite": 3
+      }
+    },
+    {
+      "slug": "youso2",
+      "source": "youso2.png",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "cartel",
+        "sombre"
+      ],
+      "energie": 85,
+      "modernite": 75,
+      "couleurs": [
+        "#121212",
+        "#FFFFFF",
+        "#FF0000"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Expressive, hand-painted Japanese-style brush calligraphy for the main logo. Bold, clean, modern sans-serif for the URL.",
+      "scores": {
+        "relief_3d": 3,
+        "glow": 8,
+        "saturation": 8,
+        "sombre_clair": 1,
+        "complexite": 4
+      }
+    },
+    {
+      "slug": "youso3",
+      "source": "youso3.png",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "esport",
+        "sombre"
+      ],
+      "energie": 70,
+      "modernite": 80,
+      "couleurs": [
+        "#121212",
+        "#FFFFFF",
+        "#FF0000"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Small central hand-painted brush calligraphy logo. Flanking text in ultra-bold, wide, modern sans-serif.",
+      "scores": {
+        "relief_3d": 2,
+        "glow": 6,
+        "saturation": 8,
+        "sombre_clair": 1,
+        "complexite": 5
+      }
+    },
+    {
+      "slug": "zefffzefezfzefezfze",
+      "source": "zefffzefezfzefezfze.png",
+      "priorite": "reverse",
+      "tags": [
+        "ete",
+        "luxe",
+        "chill"
+      ],
+      "energie": 85,
+      "modernite": 90,
+      "couleurs": [
+        "#10B981",
+        "#EC4899",
+        "#3B82F6"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Bold, sans-serif, slightly italicized 3D block letters with a white-to-green gradient fill.",
+      "scores": {
+        "relief_3d": 7,
+        "glow": 5,
+        "saturation": 8,
+        "sombre_clair": 8,
+        "complexite": 7
+      }
+    }
+  ]
+}

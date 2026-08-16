@@ -1,0 +1,303 @@
+{
+  "categorie": "background_logo",
+  "genere_le": "2026-08-16T08:25:23.379Z",
+  "exemplaires": [
+    {
+      "slug": "generated-image-august-06-2026-5-17am",
+      "source": "Generated Image August 06, 2026 - 5_17AM.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "ete",
+        "luxe",
+        "chill"
+      ],
+      "energie": 40,
+      "modernite": 85,
+      "couleurs": [
+        "#19C3D4",
+        "#FFFFFF",
+        "#0072FF"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 6,
+        "glow": 2,
+        "saturation": 8,
+        "sombre_clair": 8,
+        "complexite": 4
+      },
+      "fond_type": "scene"
+    },
+    {
+      "slug": "generated-image-august-11-2026-9-17am",
+      "source": "Generated Image August 11, 2026 - 9_17AM.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "ete",
+        "luxe",
+        "urbain"
+      ],
+      "energie": 50,
+      "modernite": 90,
+      "couleurs": [
+        "#0088FF",
+        "#FFFFFF",
+        "#4A4A4A"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 8,
+        "glow": 1,
+        "saturation": 9,
+        "sombre_clair": 8,
+        "complexite": 7
+      },
+      "fond_type": "scene"
+    },
+    {
+      "slug": "generated-image-july-05-2026-10-07pm",
+      "source": "Generated Image July 05, 2026 - 10_07PM.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "chill",
+        "luxe"
+      ],
+      "energie": 45,
+      "modernite": 95,
+      "couleurs": [
+        "#D2B48C",
+        "#2C3E50",
+        "#FFFFFF"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 7,
+        "glow": 3,
+        "saturation": 5,
+        "sombre_clair": 6,
+        "complexite": 6
+      },
+      "fond_type": "scene"
+    },
+    {
+      "slug": "generated-image-july-10-2026-2-01am",
+      "source": "Generated Image July 10, 2026 - 2_01AM.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "luxe",
+        "ete",
+        "chill"
+      ],
+      "energie": 40,
+      "modernite": 85,
+      "couleurs": [
+        "#1E88E5",
+        "#F5F5F5",
+        "#D4AF37"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 7,
+        "glow": 2,
+        "saturation": 6,
+        "sombre_clair": 7,
+        "complexite": 8
+      },
+      "fond_type": "scene"
+    },
+    {
+      "slug": "generated-image-july-10-2026-2-28am",
+      "source": "Generated Image July 10, 2026 - 2_28AM.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "luxe",
+        "ete",
+        "urbain"
+      ],
+      "energie": 75,
+      "modernite": 80,
+      "couleurs": [
+        "#0288D1",
+        "#FFFFFF",
+        "#212121"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 6,
+        "glow": 1,
+        "saturation": 5,
+        "sombre_clair": 8,
+        "complexite": 7
+      },
+      "fond_type": "scene"
+    },
+    {
+      "slug": "generated-image-july-11-2026-2-15am",
+      "source": "Generated Image July 11, 2026 - 2_15AM.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "ete",
+        "cartel",
+        "urbain"
+      ],
+      "energie": 95,
+      "modernite": 90,
+      "couleurs": [
+        "#00B0FF",
+        "#006064",
+        "#CFD8DC"
+      ],
+      "ratio": "16:9",
+      "typographie_generee": "Bold, sans-serif block text 'ZEKE' on the jet ski and 'MALIK' on the surfboard, integrated into the 3D models.",
+      "scores": {
+        "relief_3d": 8,
+        "glow": 3,
+        "saturation": 8,
+        "sombre_clair": 6,
+        "complexite": 9
+      },
+      "fond_type": "scene"
+    },
+    {
+      "slug": "generated-image-july-19-2026-4-56am-1",
+      "source": "Generated Image July 19, 2026 - 4_56AM (1).jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "ete",
+        "neutre"
+      ],
+      "energie": 45,
+      "modernite": 60,
+      "couleurs": [
+        "#E5CBB1",
+        "#4A6B5D",
+        "#D97D5B"
+      ],
+      "ratio": "9:16",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 8,
+        "glow": 1,
+        "saturation": 6,
+        "sombre_clair": 8,
+        "complexite": 9
+      },
+      "fond_type": "scene"
+    },
+    {
+      "slug": "generated-image-july-21-2026-12-09am",
+      "source": "Generated Image July 21, 2026 - 12_09AM.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "retro",
+        "chill",
+        "urbain"
+      ],
+      "energie": 50,
+      "modernite": 70,
+      "couleurs": [
+        "#1C1A19",
+        "#D99E6C",
+        "#73523F"
+      ],
+      "ratio": "9:16",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 7,
+        "glow": 5,
+        "saturation": 5,
+        "sombre_clair": 4,
+        "complexite": 8
+      },
+      "fond_type": "scene"
+    },
+    {
+      "slug": "generated-image-july-23-2026-11-48pm",
+      "source": "Generated Image July 23, 2026 - 11_48PM.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "luxe",
+        "ete",
+        "neutre"
+      ],
+      "energie": 85,
+      "modernite": 90,
+      "couleurs": [
+        "#FFFFFF",
+        "#1A5276",
+        "#EAECEE"
+      ],
+      "ratio": "9:16",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 9,
+        "glow": 2,
+        "saturation": 6,
+        "sombre_clair": 8,
+        "complexite": 5
+      },
+      "fond_type": "scene"
+    },
+    {
+      "slug": "generated-image-july-23-2026-7-52pm",
+      "source": "Generated Image July 23, 2026 - 7_52PM.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "luxe",
+        "ete",
+        "neutre"
+      ],
+      "energie": 40,
+      "modernite": 75,
+      "couleurs": [
+        "#3B73C4",
+        "#EAE5D9",
+        "#8FA9C4"
+      ],
+      "ratio": "9:16",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 8,
+        "glow": 1,
+        "saturation": 5,
+        "sombre_clair": 8,
+        "complexite": 6
+      },
+      "fond_type": "scene"
+    },
+    {
+      "slug": "generated-image-july-24-2026-4-55am",
+      "source": "Generated Image July 24, 2026 - 4_55AM.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "cartel",
+        "chill"
+      ],
+      "energie": 65,
+      "modernite": 85,
+      "couleurs": [
+        "#1E46C3",
+        "#3D3D3D",
+        "#8C583C"
+      ],
+      "ratio": "9:16",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 7,
+        "glow": 2,
+        "saturation": 7,
+        "sombre_clair": 5,
+        "complexite": 8
+      },
+      "fond_type": "scene"
+    }
+  ]
+}

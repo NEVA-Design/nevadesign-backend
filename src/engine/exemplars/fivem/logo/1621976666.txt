@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo family, flat vector emblem with soft glow.
+1. SHAPE — Symmetrical stylized tulip flower icon. A central white outline forming a shield-like tulip cup with a deep 'V' dip. Above it, a single pink pointed petal chevron. Below, a horizontal curved pink petal base supporting the cup. Clean negative space.
+2. RENDER — Flat 2D vector style, matte plastic finish, soft neon pink glow emanating from the pink elements, no heavy bevels, no 3D extrusion.
+3. COLORS — Pure white #FFFFFF for the main cup, soft pastel pink #E297C1 for the accent petals, set against a solid dark charcoal #0D0D0D background.
+4. FORMAT — Square 1:1 composition, emblem centered occupying 65% of the canvas width, subtle pink light leaks in the corners.
+5. KEYWORDS — minimalist logo, vector icon, tulip emblem, clean lines, soft glow, dark mode, premium gaming logo.

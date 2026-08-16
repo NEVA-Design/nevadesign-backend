@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, flat 2D vector mascot wordmark.
+1. SHAPE — Bold serif lettering spelling 'ALYA'. Two stylized white dolphin silhouettes frame the text: one dolphin leaps over the top left, and another curves under the bottom right, creating a circular flow. The dolphin tails merge smoothly with the letterforms.
+2. RENDER — Flat, solid white 2D vector silhouette. No gradients, shadows, or 3D effects on the main logo mark. Sharp, clean edges.
+3. COLORS — Solid white (#ffffff) logo mark over a vibrant teal gradient (#008080 to #004d4d) background.
+4. FORMAT — Square composition, the logo occupies 75% of the width. The background is filled with faint, thin-line white doodles of vegetables, fruits, and healthy food items.
+5. KEYWORDS — flat vector, dolphin mascot, organic branding, teal gradient, doodle background, clean silhouette.

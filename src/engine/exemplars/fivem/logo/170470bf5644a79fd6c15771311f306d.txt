@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, West Coast lifestyle wordmark, vibrant nocturnal render.
+1. SHAPE — Stacked bold sans-serif typography reading 'DAY' on the top line and 'SIDE' on the bottom line. The letters are slightly italicized and tightly tracked. A clean white silhouette of a palm tree rises from behind the letter 'A' in 'DAY'.
+2. RENDER — The top word 'DAY' has a clean white-to-grey horizontal split gradient. The bottom word 'SIDE' glows with an intense, radioactive green neon light from below. Smooth matte plastic finish with a strong bottom-up glow effect.
+3. COLORS — Electric green (#22C55E), pure white (#FFFFFF), dark charcoal grey (#111827) background.
+4. FORMAT — Square composition, text block occupies 75% of the width, centered over a dark, desaturated, foggy city skyline at night.
+5. KEYWORDS — GTA RP, palm tree logo, neon green, bold typography, street culture, coastal vibe.

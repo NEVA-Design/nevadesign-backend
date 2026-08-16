@@ -1,45 +1,99 @@
 {
   "categorie": "icon",
+  "version": 4,
   "source": "icon",
   "images_totales": 16,
-  "images_analysees": 12,
-  "genere_le": "2026-08-15T15:37:05.651Z",
+  "images_analysees": 16,
+  "exemplaires": 16,
+  "genere_le": "2026-08-16T08:31:16.896Z",
   "modele": "gemini-3.5-flash",
+  "adn": {
+    "images": 16,
+    "traits": [
+      {
+        "trait": "dark or gradient atmospheric background",
+        "frequence_pct": 100,
+        "source": "sombre_clair <= 4 ou fond degrade/atmospherique"
+      },
+      {
+        "trait": "contour/rim glow",
+        "frequence_pct": 0,
+        "source": "score glow >= 5"
+      },
+      {
+        "trait": "3D relief / bevel / extrusion",
+        "frequence_pct": 0,
+        "source": "score relief_3d >= 6"
+      },
+      {
+        "trait": "visible contour/outline",
+        "frequence_pct": 0,
+        "source": "contour.present"
+      },
+      {
+        "trait": "particles / sparkles / stars",
+        "frequence_pct": 0,
+        "source": "effets"
+      }
+    ],
+    "scores_moyens": {
+      "relief_3d": 0.4,
+      "glow": 0,
+      "saturation": 0,
+      "sombre_clair": 1.8,
+      "complexite": 1.6
+    },
+    "frequences": {
+      "relief_3d_pct": 0,
+      "glow_pct": 0,
+      "fond_sombre_pct": 100,
+      "fond_degrade_ou_atmospherique_pct": 0,
+      "contour_pct": 0,
+      "contour_epais_pct": 0,
+      "particules_pct": 0
+    },
+    "matieres": [],
+    "lettrages": [],
+    "palette_dominante": [
+      "#000000",
+      "#FFFFFF"
+    ],
+    "resume_en": "0% show 3D relief/bevel (mean relief 0.4/10), 0% carry contour/rim glow (mean glow 0/10), 100% sit on a dark background and 0% on a gradient/atmospheric one, 0% of outlined marks use a thick (usually white) contour, 0% add particles/sparkles. Mean saturation 0/10, mean brightness 1.8/10, mean complexity 1.6/10. Dominant materials: none measured. Dominant palette: #000000, #FFFFFF."
+  },
   "guide": {
     "categorie": "icon",
     "composition": [
-      "Symmetrical, centered framing with the subject occupying exactly 55% to 65% of the canvas area.",
-      "Maintain a 1:1 square aspect ratio with balanced negative space surrounding the central icon.",
-      "Incorporate dynamic diagonal elements or silhouettes angled upward-right at approximately 45 degrees to create movement.",
-      "Ensure consistent stroke weights and precise geometric curves to anchor the central shape."
+      "Centered 1:1 ratio silhouette or geometric emblem occupying 50% to 70% of the canvas area.",
+      "Strictly symmetrical or dynamic 45-degree angled orientations.",
+      "High-contrast negative space cutouts within solid circular or rounded square frames.",
+      "Thick, uniform stroke weights and clean vector paths with no fine details."
     ],
     "typographie": [
-      "No text should be embedded within the generated icon graphic itself.",
-      "External text layers must be placed below the icon, scaled to a maximum of 15% of the canvas height.",
-      "Use high-contrast, clean sans-serif typefaces in pure white (#FFFFFF) to match the icon's visual weight."
+      "No external text or typography allowed outside the central emblem.",
+      "Single-letter integrations must be stylized as negative space cutouts within a solid geometric shape.",
+      "Letterforms must use thick, uniform geometric curves and sharp straight cuts."
     ],
     "lumiere": [
-      "Flat, uniform, non-directional digital illumination.",
-      "Zero gradients, zero drop shadows, and zero directional light sources.",
-      "Absolute flat fill across the entire subject shape."
+      "100% flat 2D illumination with zero gradients, shadows, or highlights.",
+      "Pure emissive white values against absolute black to maximize contrast.",
+      "No simulated light sources or directional shading."
     ],
     "etalonnage": [
-      "Pure binary monochrome color palette.",
-      "Dominant background hue: absolute black (#000000).",
-      "Dominant foreground/subject hue: absolute white (#FFFFFF)."
+      "Strictly binary color palette: Pure White (#FFFFFF) and Pitch Black (#000000).",
+      "Zero saturation, zero midtones, and zero grayscale transitions."
     ],
     "effets": [
-      "Sharp, clean vector-like edge rendering with zero anti-aliasing artifacts.",
-      "High-contrast negative space cutouts within solid shapes to define internal details."
+      "Clean, razor-sharp vector edges with no blur, glow, or anti-aliasing artifacts.",
+      "Optional flat 2D perspective extrusion shadow to simulate blocky 3D depth."
     ],
     "logo": [
-      "Single, recognizable brand silhouette or simplified vector icon centered perfectly on the canvas."
+      "Emblem must function as a standalone, self-contained icon centered on a square canvas."
     ],
     "interdits": [
-      "Do not use color gradients, gray tones, or midtones.",
-      "Avoid fuzzy, soft, or pixelated edges on the vector paths.",
-      "Do not include off-center compositions unless balanced by a strong diagonal element.",
-      "Avoid complex, multi-layered shapes that reduce legibility at small sizes."
+      "Do not use gradients, drop shadows, or outer glows.",
+      "Avoid thin lines, complex textures, or intricate organic details.",
+      "No multi-colored elements or off-black/off-white hues.",
+      "Never include external text, labels, or decorative borders."
     ],
     "ratios": [
       "1:1"

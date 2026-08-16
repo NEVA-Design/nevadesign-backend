@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo family, minimalist flat vector emblem with neon glow.
+1. SHAPE — A symmetrical geometric monogram combining a stylized letter 'A' with a circular arc. The 'A' is formed by thick, sharp-angled lines. A small white chevron sits directly above the apex of the arc. The emblem occupies 60% of the width.
+2. RENDER — Flat 2D vector style with a soft red neon glow emanating from the red lines. The top chevron is solid white. No 3D extrusion, no bevels.
+3. COLORS — Deep crimson red #e33e5a and pure white #ffffff on a dark background.
+4. FORMAT — Square composition, centered subject. The background is a dark, out-of-focus urban interior with red atmospheric lighting.
+5. KEYWORDS — minimalist, vector, neon glow, clean lines, gaming logo, sleek, modern.

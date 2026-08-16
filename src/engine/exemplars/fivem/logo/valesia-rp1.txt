@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, flat minimalist emblem family.
+1. SHAPE — Abstract fluid monogram resembling a stylized wave or 'S'. Two interlocking curved strokes with smooth, rounded ends. The upper stroke is larger and swoops to the right; the lower stroke curves back to the left.
+2. RENDER — Flat 2D vector art with solid color fills. No bevels, no textures, clean vector curves.
+3. COLORS — Upper stroke is solid pure white #ffffff. Lower stroke is vibrant neon green #39ff39.
+4. FORMAT — Square composition, emblem occupies 55% of the width. Background is a dark, desaturated, moody night scene of a wet asphalt street reflecting a retro 'CASINO' neon sign and palm trees.
+5. KEYWORDS — minimalist emblem, fluid geometry, gaming community logo, high contrast, clean vector.

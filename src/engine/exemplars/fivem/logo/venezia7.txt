@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo family, dynamic abstract emblem.
+1. SHAPE — A stylized letter 'V'. The left leg is a sharp, solid, angled rectangular slab. The right leg is an organic, fluid splash shape resembling molten liquid or fire, creating a high-contrast asymmetrical silhouette.
+2. RENDER — Semi-translucent glossy material with a bright neon orange rim light tracing the outer contours. Subtle 3D depth with soft internal reflections.
+3. COLORS — Vibrant neon orange #FF7F00 and warm amber #FFB366 on a dark, smoky black background.
+4. FORMAT — Square composition, emblem occupies 45% of the frame, centered with a warm bottom glow.
+5. KEYWORDS — abstract logo, liquid splash, glowing edges, high contrast, energetic, gaming mascot.

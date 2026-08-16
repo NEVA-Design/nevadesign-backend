@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, dimensional wordmark with emblem.
+1. SHAPE — Bold, blocky sans-serif lettering spelling 'MOON'. The text is framed by sharp, angular brackets on the top and bottom. Three stylized circular moon icons with crater details are aligned horizontally above the double 'O'.
+2. RENDER — Brushed metallic texture with a soft pinkish-white finish. Sharp, clean bevels on the letters. A soft, warm purple glow radiates from behind the entire logo, creating a halo effect. Faint dust and particle effects in the air.
+3. COLORS — Dark purple (#1C0D21) background, pale pinkish-white (#E8C5E9) letters, muted violet (#6B3B6E) glow.
+4. FORMAT — Square composition, logo centered, occupying 75% of the width, on a dark textured background.
+5. KEYWORDS — cosmic wordmark, moon logo, gaming typography, purple glow, metallic bevel, dust particles, retro-modern.

@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM roleplay server logo, minimalist gaming mascot.
+1. SHAPE — A custom geometric letter 'R' where the upper loop is cleverly shaped as a sleek semi-automatic pistol silhouette pointing to the right, with the trigger guard forming the inner counter space.
+2. RENDER — Flat vector style with a bright cyan inner glow. Sharp edges, clean lines, no gradients on the main shape, high-tech neon appearance.
+3. COLORS — Electric cyan #55FFFF for the main emblem, deep navy blue #000B14 for the background.
+4. FORMAT — Square composition, emblem centered occupying 75% of the frame, background contains very faint dark blue city skyscraper silhouettes.
+5. KEYWORDS — minimalist weapon logo, esports icon, clean vector, gaming community, high contrast.

@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo family, electric neon emblem.
+1. SHAPE — A stylized letter 'W' composed of four organic, curved blade-like shapes pointing upwards. The shapes are grouped in two pairs, mimicking stylized flames or leaves with sharp tips.
+2. RENDER — Flat vector shapes with a vibrant, bright blue neon outline that glows intensely. The interior of the shapes has a soft, semi-translucent blue gradient.
+3. COLORS — Electric blue #0080FF and cyan #00FFFF outlines on a deep navy blue #001A33 background.
+4. FORMAT — Square composition, the 'W' emblem occupies 60% of the width, centered.
+5. KEYWORDS — neon sign logo, electric blue glow, minimalist vector, futuristic, gaming emblem, clean lines.

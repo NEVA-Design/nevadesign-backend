@@ -1,45 +1,129 @@
 {
   "categorie": "da_complete",
+  "version": 4,
   "source": "exemple DA complete fivem",
   "images_totales": 9,
   "images_analysees": 9,
-  "genere_le": "2026-08-15T15:36:47.676Z",
+  "exemplaires": 9,
+  "genere_le": "2026-08-16T08:30:39.963Z",
   "modele": "gemini-3.5-flash",
+  "adn": {
+    "images": 9,
+    "traits": [
+      {
+        "trait": "contour/rim glow",
+        "frequence_pct": 100,
+        "source": "score glow >= 5"
+      },
+      {
+        "trait": "3D relief / bevel / extrusion",
+        "frequence_pct": 89,
+        "source": "score relief_3d >= 6"
+      },
+      {
+        "trait": "dark or gradient atmospheric background",
+        "frequence_pct": 67,
+        "source": "sombre_clair <= 4 ou fond degrade/atmospherique"
+      },
+      {
+        "trait": "visible contour/outline",
+        "frequence_pct": 67,
+        "source": "contour.present"
+      },
+      {
+        "trait": "particles / sparkles / stars",
+        "frequence_pct": 33,
+        "source": "effets"
+      }
+    ],
+    "scores_moyens": {
+      "relief_3d": 7,
+      "glow": 7.1,
+      "saturation": 7.4,
+      "sombre_clair": 4.6,
+      "complexite": 7.2
+    },
+    "frequences": {
+      "relief_3d_pct": 89,
+      "glow_pct": 100,
+      "fond_sombre_pct": 67,
+      "fond_degrade_ou_atmospherique_pct": 33,
+      "contour_pct": 67,
+      "contour_epais_pct": 22,
+      "particules_pct": 33
+    },
+    "matieres": [
+      {
+        "matiere": "glass",
+        "pct": 17
+      },
+      {
+        "matiere": "fabric",
+        "pct": 17
+      },
+      {
+        "matiere": "plastic",
+        "pct": 14
+      },
+      {
+        "matiere": "chrome",
+        "pct": 14
+      },
+      {
+        "matiere": "neon",
+        "pct": 11
+      },
+      {
+        "matiere": "metal",
+        "pct": 8
+      }
+    ],
+    "palette_dominante": [
+      "#FFFFFF",
+      "#12161A",
+      "#2BE19F",
+      "#141917",
+      "#59EAA0",
+      "#D1DCD6"
+    ],
+    "resume_en": "89% show 3D relief/bevel (mean relief 7/10), 100% carry contour/rim glow (mean glow 7.1/10), 67% sit on a dark background and 33% on a gradient/atmospheric one, 22% of outlined marks use a thick (usually white) contour, 33% add particles/sparkles. Mean saturation 7.4/10, mean brightness 4.6/10, mean complexity 7.2/10. Dominant materials: glass 17%, fabric 17%, plastic 14%, chrome 14%. Dominant palette: #FFFFFF, #12161A, #2BE19F, #141917, #59EAA0."
+  },
   "guide": {
     "categorie": "da_complete",
     "composition": [
-      "Anchor main characters in the center or left-center, occupying 50% to 60% of the frame width.",
-      "Reserve 30% to 40% of the frame (typically right or top-right) for large-scale 3D titles.",
-      "Layer UI elements, brand assets, and secondary logos exclusively along the bottom 20% margin.",
-      "Use a split-screen or triptych grid layout when presenting brand guidelines, dividing assets 50/50 or 60/40."
+      "Rule 1: Use a 3-panel grid or asymmetrical split with characters occupying 40-50% of the canvas (typically left or center).",
+      "Rule 2: Anchor the bottom 15-20% of the frame with horizontal UI banners, rounded profile badges, or social media handles.",
+      "Rule 3: Position a massive 3D monogram or logo on the opposite side of the main character to balance the composition.",
+      "Rule 4: Frame characters with luxury sports cars or architectural elements in the mid-ground to establish high-status context."
     ],
     "typographie": [
-      "Place primary titles behind the main character's shoulders or overlapping the lower-middle third to establish depth.",
-      "Combine a bold, chiseled 3D sans-serif or gothic block font with a thin, vibrant script-style overlay.",
-      "Set secondary text (names, URLs) in clean, wide, all-caps sans-serif or gothic blackletter, scaled to under 15% of frame height."
+      "Rule 1: Stack heavy, blocky 3D gothic or sans-serif lettering with deep extrusion behind a flowing, vibrant script overlay.",
+      "Rule 2: Apply high-gloss metallic textures (chrome, gold, silver) to 3D text, matching the primary accent color.",
+      "Rule 3: Use clean, ultra-bold geometric sans-serif fonts for UI elements and secondary text to maintain readability."
     ],
     "lumiere": [
-      "Apply high-contrast, directional rim lighting (white or primary brand color) to outline character silhouettes.",
-      "Use strong under-glow or ambient backlighting from cars, neon signs, or light beams to separate subjects from dark backgrounds.",
-      "Keep facial fill light soft and ambient, maintaining high-contrast shadows."
+      "Rule 1: Apply intense, high-contrast neon rim lighting (green, red, or orange) outlining character silhouettes.",
+      "Rule 2: Mix warm overhead streetlights or sunset glows with cold, metallic reflections on 3D surfaces.",
+      "Rule 3: Use dramatic key lighting from the side to create deep shadows and high-status cinematic mood."
     ],
     "etalonnage": [
-      "Maintain a desaturated, high-contrast base with deep grays, blacks, and desaturated skin tones.",
-      "Inject a single, highly saturated brand accent color: Mint Green (#20E39B/#59EAA0), Gold (#D4AF37), Orange (#FF8C00), or Purple (#8A2BE2)."
+      "Rule 1: Dominant dark base of deep charcoal or black (#0A0A0A to #141917) occupying 60% of the canvas.",
+      "Rule 2: High-saturation neon accents in emerald green (#2BE19F / #00FF66), crimson red (#E61C24), or warm gold (#E5B842).",
+      "Rule 3: Clean white or silver (#FFFFFF / #D1DCD6) for high-contrast text and UI elements."
     ],
     "effets": [
-      "Layer soft ground-level smoke, fog, or dust particles around the characters' waists and car wheels.",
-      "Apply subtle halftone dot patterns, light film grain, and localized horizontal lens flares.",
-      "Incorporate floating 3D metallic elements or light leaks matching the brand accent color."
+      "Rule 1: Layer atmospheric smoke, light leaks, and subtle film grain over the entire composition.",
+      "Rule 2: Apply halftone dot patterns and sharp geometric vector overlays to bridge 3D renders with 2D graphic design.",
+      "Rule 3: Add realistic lens flares, wet street reflections, and subtle motion blur on floating elements."
     ],
     "logo": [
-      "Position a circular monogram or stylized vector emblem in the bottom UI bar or as a repeating badge on the right asset panel."
+      "Rule 1: Integrate the logo as a physical 3D object in the scene, featuring bullet holes, metallic textures, or neon outlines."
     ],
     "interdits": [
-      "Do not place floating props (like cigars or weapons) without realistic hand contact and shadow integration.",
-      "Avoid hard, unblended transitions between indoor foregrounds and outdoor background murals.",
-      "Do not apply uniform rain or scratch textures across the entire frame; mask them to preserve depth-of-field.",
-      "Avoid illegible blackletter fonts over busy, high-contrast backgrounds."
+      "Avoid flat 2D text without extrusion or metallic shading.",
+      "Do not use low-contrast, washed-out backgrounds; keep darks deep and atmospheric.",
+      "Avoid symmetrical, centered layouts without a strong balancing element on the sides.",
+      "Do not omit the signature neon rim lighting on character silhouettes."
     ],
     "ratios": [
       "16:9"

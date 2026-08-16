@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo family, flat graphic with glow.
+1. SHAPE — Two-tier text layout. The top word 'ADVERSITY' is in a bold, condensed, slightly arched sans-serif font. The bottom word 'Life' is in a fluid, elegant brush script that overlaps the bottom edge of the main text.
+2. RENDER — Clean vector shapes with a soft outer neon glow. The script text has a subtle gradient fill. No heavy 3D extrusion.
+3. COLORS — Top text is solid stark white (#FFFFFF). Bottom script text is a bright cyan-blue gradient (#00A2FF). Background is deep navy blue (#0A192F).
+4. FORMAT — Square composition, text centered occupying 80% of the width. Background is a dark, atmospheric, blurred city skyline at night.
+5. KEYWORDS — urban roleplay logo, clean typography, neon glow, city night, high contrast.

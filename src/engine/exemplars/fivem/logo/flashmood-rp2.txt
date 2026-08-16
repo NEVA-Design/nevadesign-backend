@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, energetic tropical wordmark.
+1. SHAPE — Two lines of bold, rounded sans-serif text reading 'FLASH' on top and 'MOOD' below. A sharp, vertical lightning bolt symbol in lime green cuts through the center of the text, overlapping the letters.
+2. RENDER — Clean graphic design with a soft outer glow on the white text and lightning bolt, overlayed with a subtle film grain texture.
+3. COLORS — Pure white (#FFFFFF) for the text, vibrant lime green (#ADFF2F) for the lightning bolt, dark jungle green (#1A330E) for the background.
+4. FORMAT — Square composition, text occupying 80% of the width, framed by blurred palm leaves.
+5. KEYWORDS — tropical gaming logo, lightning bolt, jungle background, palm leaves, glowing text, energetic vibe.

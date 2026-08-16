@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo family, dimensional 3D render.
+1. SHAPE — Three bold, blocky letters 'ADV' tilted forward at 15 degrees. The letter 'A' has a realistic red and white Santa hat perched on its top-left corner. The letters have a deep, solid 3D extrusion extending downwards.
+2. RENDER — Smooth glossy plastic material with clean surface reflections. No metallic textures. The letters have a thick, double-layered blue outer stroke.
+3. COLORS — Vibrant vertical gradient on the letter faces from bright yellow (#FFD700) at the top, transitioning to orange, and ending in hot pink (#FF3366) at the bottom. Extrusion is deep blue.
+4. FORMAT — Square composition, logo occupies 75% of the width, centered. Background is a saturated blue tropical scene with palm leaves and soft falling snow flakes.
+5. KEYWORDS — 3D lettermark, game logo, holiday edition, vibrant gradients, smooth render, vector style.

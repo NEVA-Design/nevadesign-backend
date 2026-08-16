@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo family, premium 3D dimensional emblem.
+1. SHAPE — A sharp, geometric lightning bolt with a 3D bevel. The bolt has a central ridge dividing it into two main reflective facets, tilted at a 15-degree angle.
+2. RENDER — Transparent green glass material with realistic refraction, glossy finish, and tiny water droplets scattered on the surface. Internal neon green glow.
+3. COLORS — Vibrant lime green #00e65a, deep forest green #004d1a, and sky blue #87ceeb.
+4. FORMAT — Square composition, lightning bolt occupies 65% of the width, set against a bright tropical city background with palm trees and clouds.
+5. KEYWORDS — 3D glass render, lightning bolt, water droplets, tropical city, gaming emblem, high-end design.

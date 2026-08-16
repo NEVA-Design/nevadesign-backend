@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo family, flat vector monogram.
+1. SHAPE — A stylized, blocky letter 'B' with sharp, geometric cuts. A horizontal bar extends from the left side. The bottom right curve of the 'B' is colored in bright cyan, while the rest is solid white. The emblem occupies 60% of the width.
+2. RENDER — Flat 2D vector style with clean edges. A very subtle ambient glow from the cyan segment. No 3D extrusion.
+3. COLORS — Pure white #ffffff, bright cyan #00d2ff, and dark navy #050b14.
+4. FORMAT — Square composition, centered subject. The background is a dark night cityscape with blurred skyscrapers and blue lights.
+5. KEYWORDS — vector, flat design, geometric, cyberpunk, futuristic, urban, bold monogram.

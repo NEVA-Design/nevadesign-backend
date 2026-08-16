@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, minimalist luxury monogram family, flat-dimensional render.
+1. SHAPE — A single stylized geometric letter 'R' centered. The letter is constructed from sharp, angular bands of equal thickness. A prominent diagonal bar cuts through the middle. The bottom legs of the 'R' terminate in sharp, downward-pointing triangular tips. Negative space forms a clean rectangular pocket in the upper half.
+2. RENDER — Matte brushed pale gold material with a very subtle 3D bevel edge. No high-gloss reflections, no intense glows. Soft, diffused ambient lighting casting a faint, realistic drop shadow onto the background.
+3. COLORS — Pale gold (#C5A880) for the monogram, set against a warm off-white (#F4F1EA) background.
+4. FORMAT — Square composition, the emblem occupies 50% of the canvas width, centered on a solid, lightly textured plaster wall background.
+5. KEYWORDS — minimalist, vector-like, elegant, architectural, clean design, high-end branding.

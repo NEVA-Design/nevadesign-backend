@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, high-impact gaming community emblem.
+1. SHAPE — Two sharp, overlapping triangles pointing right, filled with a detailed black-and-white city street map. Bold, heavy sans-serif text 'NEXT' in white spans the center, with 'LAND' in smaller white letters nested below the 'XT'.
+2. RENDER — High-contrast 2D render with intense red neon tube outlines around the triangles. Strong drop shadows separate the text from the background.
+3. COLORS — Pure white (#FFFFFF) text, bright neon red (#FF0000) glow, dark grey map texture.
+4. FORMAT — Square composition, central emblem occupies 80% of the frame, set against a dark red vignette background with faint palm tree silhouettes.
+5. KEYWORDS — GTA RP logo, urban gaming, neon glow, street map, bold typography, esports style.

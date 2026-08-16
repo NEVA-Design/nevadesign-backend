@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, flat vector emblem with 3D depth.
+1. SHAPE — A bold, sharp capital letter 'V' with jagged, lightning-bolt cutouts on its outer edges. Overlaid in the center is a solid red silhouette of a crocodile facing left, its tail curving upward.
+2. RENDER — Matte white texture on the letter 'V' with subtle inner shadows. The red crocodile has a clean, solid finish. A soft red ambient glow emanates from behind the entire emblem.
+3. COLORS — Pure white (#FFFFFF) for the letter, deep crimson red (#C8102E) for the crocodile, set against a pitch-black background.
+4. FORMAT — Square composition, the emblem occupies 70% of the width, centered, with a dark red gradient mist at the bottom.
+5. KEYWORDS — vector logo, esports mascot, sharp edges, gaming emblem, clean contrast, dark atmosphere.

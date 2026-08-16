@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo family, beveled emblem.
+1. SHAPE — A sharp, geometric monogram of the letter 'A'. The left leg of the 'A' is replaced by a stylized, jagged lightning bolt that terminates in an upward-pointing arrow at the peak.
+2. RENDER — Textured brushed metal with a subtle inner bevel. The lightning bolt element has a smooth, semi-glossy finish. The entire emblem has a thin dark keyline border.
+3. COLORS — The main body of the 'A' is silver-white (#E5E5E5) with a concrete-like texture. The lightning bolt is a vibrant hot pink (#FF2A6D). Background is dark charcoal (#121212).
+4. FORMAT — Square composition, emblem centered occupying 65% of the frame. Background features faint diagonal lines, heavy grain, and pink ambient glows in the corners.
+5. KEYWORDS — esports gaming logo, metallic monogram, lightning bolt, sharp geometry, gritty texture.

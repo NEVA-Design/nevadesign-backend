@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo family, 3D metallic emblem style.
+1. SHAPE — A large, thick, rounded monogram letter 'S' in the center. On the right side, a sharp, perfectly proportioned 5-pointed star overlaps the letter 'S'.
+2. RENDER — Polished brushed chrome texture on the 'S' with a distinct beveled edge. The star has a vibrant cyan metallic finish with a dark inner bevel. Strong cyan neon glow radiating from the bottom.
+3. COLORS — Deep teal and black background, bright cyan #00D2FF neon accents, and platinum silver #D2DCE5 for the main letter.
+4. FORMAT — Square composition, emblem occupying 70% of the width, set against a dark, desaturated background of a luxury G-Wagon SUV with characters.
+5. KEYWORDS — 3D gaming logo, metallic chrome, neon cyan glow, luxury roleplay, esport emblem, sharp details.

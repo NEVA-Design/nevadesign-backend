@@ -1,51 +1,133 @@
 {
   "categorie": "banniere_fivem",
+  "version": 4,
   "source": "banniere fivem serveur fivem gtarp",
   "images_totales": 19,
-  "images_analysees": 12,
-  "genere_le": "2026-08-15T15:35:26.305Z",
+  "images_analysees": 19,
+  "exemplaires": 19,
+  "genere_le": "2026-08-16T08:28:02.890Z",
   "modele": "gemini-3.5-flash",
+  "adn": {
+    "images": 19,
+    "traits": [
+      {
+        "trait": "dark or gradient atmospheric background",
+        "frequence_pct": 84,
+        "source": "sombre_clair <= 4 ou fond degrade/atmospherique"
+      },
+      {
+        "trait": "contour/rim glow",
+        "frequence_pct": 63,
+        "source": "score glow >= 5"
+      },
+      {
+        "trait": "particles / sparkles / stars",
+        "frequence_pct": 42,
+        "source": "effets"
+      },
+      {
+        "trait": "visible contour/outline",
+        "frequence_pct": 32,
+        "source": "contour.present"
+      },
+      {
+        "trait": "3D relief / bevel / extrusion",
+        "frequence_pct": 11,
+        "source": "score relief_3d >= 6"
+      }
+    ],
+    "scores_moyens": {
+      "relief_3d": 3,
+      "glow": 4.9,
+      "saturation": 6.5,
+      "sombre_clair": 3.4,
+      "complexite": 4.4
+    },
+    "frequences": {
+      "relief_3d_pct": 11,
+      "glow_pct": 63,
+      "fond_sombre_pct": 74,
+      "fond_degrade_ou_atmospherique_pct": 84,
+      "contour_pct": 32,
+      "contour_epais_pct": 16,
+      "particules_pct": 42
+    },
+    "matieres": [
+      {
+        "matiere": "neon",
+        "pct": 28
+      },
+      {
+        "matiere": "plastic",
+        "pct": 25
+      },
+      {
+        "matiere": "metal",
+        "pct": 9
+      },
+      {
+        "matiere": "glass",
+        "pct": 9
+      },
+      {
+        "matiere": "vinyl",
+        "pct": 8
+      },
+      {
+        "matiere": "stone",
+        "pct": 6
+      }
+    ],
+    "palette_dominante": [
+      "#FFFFFF",
+      "#1A1A1A",
+      "#0A0A0A",
+      "#8B0000",
+      "#008080",
+      "#FF4500"
+    ],
+    "resume_en": "11% show 3D relief/bevel (mean relief 3/10), 63% carry contour/rim glow (mean glow 4.9/10), 74% sit on a dark background and 84% on a gradient/atmospheric one, 16% of outlined marks use a thick (usually white) contour, 42% add particles/sparkles. Mean saturation 6.5/10, mean brightness 3.4/10, mean complexity 4.4/10. Dominant materials: neon 28%, plastic 25%, metal 9%, glass 9%. Dominant palette: #FFFFFF, #1A1A1A, #0A0A0A, #8B0000, #008080."
+  },
   "guide": {
     "categorie": "banniere_fivem",
     "composition": [
-      "Use a 10:1 or 14:1 ultra-wide horizontal strip layout.",
-      "Symmetrical layout: Center 10-20% reserved for logo, flanked by secondary text/links at 30% and 70% marks.",
-      "Asymmetrical layout: Left 30% for character cutout/branding, center 40% for text, right 30% for call-to-action or graphics.",
-      "Frame outer edges with dark, desaturated silhouettes (e.g., palm trees) to create depth."
+      "Strict 10:1 aspect ratio horizontal strip.",
+      "Symmetrical tri-partite layout: central focal logo (15-20% width) flanked by left and right text blocks.",
+      "Optional asymmetrical collage: 3D character cutout on the left (30% width), central logo, and call-to-action on the right.",
+      "Keep elements vertically centered with a minimum 10% top/bottom safety margin."
     ],
     "typographie": [
-      "Primary title: Bold, italicized sans-serif in all-caps, sized to 60-70% of the vertical height.",
-      "Secondary links/URLs: Clean, geometric, widely spaced (tracked-out) lowercase sans-serif at 15-20% vertical height.",
-      "Apply high-contrast color-coding (e.g., white base text paired with a single vibrant accent color like mint green or hot pink)."
+      "Primary title: Bold, italicized, geometric sans-serif in all-caps with a clean white fill.",
+      "Secondary text: Medium weight, spaced-out sans-serif, 40% smaller than the primary title.",
+      "Custom letterform cutouts or integrated vector icons (e.g., crescent moon, palm tree, lightning bolt) inside the main title."
     ],
     "lumiere": [
-      "Low-key ambient lighting with a strong, localized neon under-glow radiating from the bottom-center.",
-      "Soft, diffused backlighting behind the central logo to create a halo separation effect.",
-      "Vignetted edges fading to near-black to draw focus to the center."
+      "Low-key ambient lighting with a dark vignette focusing light on the center.",
+      "Intense neon backlighting or underglow (magenta, cyan, or red) casting a rim light on central elements.",
+      "High-contrast studio lighting with strong rim highlights on character cutouts."
     ],
     "etalonnage": [
-      "Monochromatic dark base (charcoal, deep navy, or black) paired with one high-saturation accent hue.",
-      "Dominant accent families: Crimson Red (#800000), Hot Pink (#FF69B4), Mint Green (#00FF99), or Deep Purple.",
-      "Low midtone contrast for a cinematic, gritty, or synthwave-inspired atmosphere."
+      "Nocturnal/Dark: Deep blacks (#0a0a0a, #0d0214) paired with vibrant neon accents (#8b0000, #8a2be2, #e03a8a).",
+      "Summer/Vibrant: High-saturation teal (#008080), pink (#ff3b5c), or green (#00cc44) paired with pure white (#ffffff).",
+      "Luxury: Warm golden hour tones (#c5a880) paired with high-exposure white mist."
     ],
     "effets": [
-      "Subtle background textures: diagonal scanlines, fine dust particles, or a soft grunge overlay.",
-      "Soft depth-of-field blur on background elements (e.g., snowflakes, foliage) to separate layers.",
-      "Soft outer glows on text and interactive UI elements like pill buttons."
+      "Soft bokeh particles, light leaks, and subtle smoke/fog overlays.",
+      "Faint background patterns: geometric grids, scanlines, or desaturated palm tree silhouettes.",
+      "Drop shadows or thin outer strokes on text to separate it from textured backgrounds."
     ],
     "logo": [
-      "Position logo strictly in the dead center (middle 10-20%) or on the far left (0-30% zone) as a clean monogram."
+      "Centralized circular or monogram emblem with a metallic chrome, gold, or neon plastic texture.",
+      "Flanked by thin vertical separator lines or enclosed in a thin rectangular frame."
     ],
     "interdits": [
-      "Do not use overly dark, compressed background silhouettes that turn into muddy noise.",
-      "Avoid clashing font styles (e.g., pairing a moody, mature aesthetic with playful, rounded lowercase fonts).",
-      "Do not scale call-to-action button text too small (must remain legible at low resolutions).",
-      "Avoid perfectly mirrored, repetitive background assets on the flanks.",
-      "Do not use highly specific seasonal motifs (like Santa hats) that limit year-round usability."
+      "Avoid centered text without a clear visual anchor or logo.",
+      "Do not use low-contrast text-to-background pairings; always use drop shadows or outer strokes if legibility is compromised.",
+      "Avoid complex, multi-colored gradients on body text; keep secondary typography solid white or a single neon accent color.",
+      "Do not clutter the center; keep a clear hierarchy between the main logo and flanking social handles."
     ],
     "ratios": [
-      "10:1",
-      "14:1"
+      "10:1"
     ]
   }
 }

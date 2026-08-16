@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, glowing monogram emblem.
+1. SHAPE — A bold, solid white block letter 'L' in a heavy sans-serif font. Overlaid on top of the 'L' is a large, sleek crescent moon curving downwards, creating a unified monogram icon.
+2. RENDER — The letter 'L' has a clean matte white finish. The crescent moon is a high-intensity emissive neon pink element, casting a strong glow and pink light reflections onto the letter and the background.
+3. COLORS — Hot neon pink (#FF4081), solid white (#FFFFFF), and a dark charcoal grey (#1A1A1A) background.
+4. FORMAT — Square composition, the monogram is centered and occupies 55% of the width. The background is a dark, misty night landscape with rocky hills illuminated by the pink neon light.
+5. KEYWORDS — neon monogram, letter L logo, crescent moon, synthwave aesthetic, glowing gaming icon, dark background, emissive light.

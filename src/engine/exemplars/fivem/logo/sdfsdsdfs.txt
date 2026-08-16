@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo family, 3D esports emblem.
+1. SHAPE — A stylized anatomical heart divided into clean geometric segments. Overlaid across the center is the bold, uppercase text 'NEVERLIFE' in a tall, condensed sans-serif typeface, slightly warped in an upward arch.
+2. RENDER — Smooth plastic material with a soft 3D bevel. The heart has a vibrant blue inner glow and soft outer shadow. The text is solid white with a subtle blue drop shadow effect.
+3. COLORS — Deep electric blue (#0066FF) for the heart, crisp white (#FFFFFF) for the lettering, set against a pure black background.
+4. FORMAT — Square composition, centered emblem occupying 85% of the width, clean solid black background.
+5. KEYWORDS — esports logo, gaming emblem, bold typography, glowing heart, clean vector 3D, high contrast.

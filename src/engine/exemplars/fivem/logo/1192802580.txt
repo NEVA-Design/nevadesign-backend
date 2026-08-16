@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server luxury emblem, 3D render family.
+1. SHAPE — A symmetrical five-pointed royal crown, slightly curved, with circular cutouts at the base of each point and small spheres on the tips.
+2. RENDER — Highly polished 3D gold chrome material, realistic reflections, deep bevels, and a soft drop shadow underneath to separate it from the background.
+3. COLORS — Rich gold gradients from bright yellow-gold #FFD700 to deep bronze-gold #B8860B.
+4. FORMAT — Square composition, crown centered occupying 80% of the width, background is a warm yellow gradient with a faint, low-opacity city skyline silhouette at the bottom.
+5. KEYWORDS — 3D gold crown, luxury gaming logo, metallic reflection, premium emblem, clean render.

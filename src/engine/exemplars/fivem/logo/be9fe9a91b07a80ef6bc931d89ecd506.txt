@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo family, glowing minimalist emblem.
+1. SHAPE — A perfect circle with a diagonal slice removed from the bottom right, creating a stylized 'C' shape. The main body is white, while the sliced segment is filled with a solid blue color. The emblem occupies 65% of the width.
+2. RENDER — Glowing neon sign style with a strong internal white glow from the main 'C' body, casting a soft blue ambient light on the right. Subtle 3D depth.
+3. COLORS — Pure white #ffffff, vibrant blue #0a46c4, and deep navy blue #020817.
+4. FORMAT — Square composition, centered subject. The background is a dark blue night cityscape with a silhouette of a helicopter.
+5. KEYWORDS — neon sign, glowing, minimalist, high-tech, corporate, clean, nocturnal.

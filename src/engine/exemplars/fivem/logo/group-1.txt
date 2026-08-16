@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo family, premium 3D dimensional emblem.
+1. SHAPE — A stylized letter 'L' integrated with a palm tree. The vertical stem of the 'L' acts as the trunk, while 7 sharp, angular palm fronds fan out at the top. The base of the 'L' swoops to the right with a sharp, pointed tip.
+2. RENDER — Glossy 3D plastic and chrome material with sharp bevels. Strong pink and purple neon glow along the edges, with bright specular glints on the corners. No flat 2D elements.
+3. COLORS — Deep purple #1a0b2e background, vibrant pink #ff5e97 and violet #a04ef6 gradient on the emblem.
+4. FORMAT — Square composition, emblem occupies 70% of the width, centered on a dark tropical background with faint palm silhouettes.
+5. KEYWORDS — synthwave, vaporwave, 3D render, neon glow, metallic bevels, tropical gaming logo.

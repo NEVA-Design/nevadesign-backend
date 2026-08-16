@@ -1,0 +1,318 @@
+{
+  "categorie": "banniere_f5",
+  "genere_le": "2026-08-16T08:28:32.500Z",
+  "exemplaires": [
+    {
+      "slug": "1no3a3f",
+      "source": "1nO3A3f.png",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "cartel",
+        "luxe"
+      ],
+      "energie": 85,
+      "modernite": 80,
+      "couleurs": [
+        "#000000",
+        "#FF0000",
+        "#FFFFFF"
+      ],
+      "ratio": "4:1",
+      "typographie_generee": "Bold, sans-serif, geometric uppercase letters with sharp cuts.",
+      "scores": {
+        "relief_3d": 3,
+        "glow": 8,
+        "saturation": 9,
+        "sombre_clair": 2,
+        "complexite": 5
+      }
+    },
+    {
+      "slug": "7a627edf39239f3a97340cc13ea42020",
+      "source": "7a627edf39239f3a97340cc13ea42020.webp",
+      "priorite": "reverse",
+      "tags": [
+        "luxe",
+        "chill",
+        "neutre"
+      ],
+      "energie": 30,
+      "modernite": 90,
+      "couleurs": [
+        "#000000",
+        "#E080B0",
+        "#FFFFFF"
+      ],
+      "ratio": "3.5:1",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 1,
+        "glow": 4,
+        "saturation": 4,
+        "sombre_clair": 1,
+        "complexite": 2
+      }
+    },
+    {
+      "slug": "banner-f5-noel",
+      "source": "Banner f5 noel.png",
+      "priorite": "reverse",
+      "tags": [
+        "noel",
+        "urbain",
+        "chill"
+      ],
+      "energie": 70,
+      "modernite": 65,
+      "couleurs": [
+        "#E50000",
+        "#FFFFFF",
+        "#C0C0C0"
+      ],
+      "ratio": "4:1",
+      "typographie_generee": "Bold, metallic sans-serif with sharp angles and a white-to-silver gradient.",
+      "scores": {
+        "relief_3d": 4,
+        "glow": 2,
+        "saturation": 10,
+        "sombre_clair": 7,
+        "complexite": 6
+      }
+    },
+    {
+      "slug": "banniere-f5",
+      "source": "Banniere_F5.png",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "chill",
+        "luxe"
+      ],
+      "energie": 45,
+      "modernite": 80,
+      "couleurs": [
+        "#0b1a30",
+        "#ffffff",
+        "#0088ff"
+      ],
+      "ratio": "5:1",
+      "typographie_generee": "Custom cursive script with a 3D gel-like extrusion and soft drop shadow.",
+      "scores": {
+        "relief_3d": 4,
+        "glow": 6,
+        "saturation": 5,
+        "sombre_clair": 2,
+        "complexite": 3
+      }
+    },
+    {
+      "slug": "bff1331efaebab2fc2b067e688fc17cc",
+      "source": "bff1331efaebab2fc2b067e688fc17cc.png",
+      "priorite": "reverse",
+      "tags": [
+        "cartel",
+        "urbain",
+        "esport"
+      ],
+      "energie": 85,
+      "modernite": 85,
+      "couleurs": [
+        "#000000",
+        "#00ff33",
+        "#ffffff"
+      ],
+      "ratio": "5:1",
+      "typographie_generee": "Bold, blocky sans-serif with a metallic silver top half and solid green bottom half.",
+      "scores": {
+        "relief_3d": 5,
+        "glow": 8,
+        "saturation": 9,
+        "sombre_clair": 1,
+        "complexite": 5
+      }
+    },
+    {
+      "slug": "daycity3",
+      "source": "daycity3.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "retro",
+        "chill",
+        "ete"
+      ],
+      "energie": 30,
+      "modernite": 75,
+      "couleurs": [
+        "#1a0f2e",
+        "#a832fc",
+        "#ffffff"
+      ],
+      "ratio": "5:1",
+      "typographie_generee": "Clean, flat sans-serif in white and purple.",
+      "scores": {
+        "relief_3d": 1,
+        "glow": 5,
+        "saturation": 6,
+        "sombre_clair": 2,
+        "complexite": 4
+      }
+    },
+    {
+      "slug": "eocauk-1511354670118080744",
+      "source": "EOCAuK.1511354670118080744.png",
+      "priorite": "reverse",
+      "tags": [
+        "esport",
+        "retro",
+        "neutre"
+      ],
+      "energie": 75,
+      "modernite": 80,
+      "couleurs": [
+        "#0b111e",
+        "#3ca6f5",
+        "#ffffff"
+      ],
+      "ratio": "4:1",
+      "typographie_generee": "Bold, italicized, custom sans-serif with rounded corners and sharp terminals.",
+      "scores": {
+        "relief_3d": 2,
+        "glow": 4,
+        "saturation": 7,
+        "sombre_clair": 2,
+        "complexite": 4
+      }
+    },
+    {
+      "slug": "f5-1",
+      "source": "F5 1.png",
+      "priorite": "reverse",
+      "tags": [
+        "cartel",
+        "luxe",
+        "ete"
+      ],
+      "energie": 60,
+      "modernite": 85,
+      "couleurs": [
+        "#800c0c",
+        "#ffffff",
+        "#4a0404"
+      ],
+      "ratio": "4:1",
+      "typographie_generee": "Clean, geometric sans-serif for 'STRA' and a thin, elegant sans-serif for the subtitle.",
+      "scores": {
+        "relief_3d": 3,
+        "glow": 2,
+        "saturation": 8,
+        "sombre_clair": 3,
+        "complexite": 5
+      }
+    },
+    {
+      "slug": "f5-2",
+      "source": "F5 2.png",
+      "priorite": "reverse",
+      "tags": [
+        "cartel",
+        "luxe",
+        "ete"
+      ],
+      "energie": 50,
+      "modernite": 85,
+      "couleurs": [
+        "#800c0c",
+        "#ffffff",
+        "#4a0404"
+      ],
+      "ratio": "4:1",
+      "typographie_generee": "none",
+      "scores": {
+        "relief_3d": 3,
+        "glow": 2,
+        "saturation": 8,
+        "sombre_clair": 3,
+        "complexite": 3
+      }
+    },
+    {
+      "slug": "glade1",
+      "source": "glade1.png",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "luxe",
+        "chill"
+      ],
+      "energie": 40,
+      "modernite": 85,
+      "couleurs": [
+        "#1d1128",
+        "#a020f0",
+        "#ffffff"
+      ],
+      "ratio": "4:1",
+      "typographie_generee": "Bold, geometric sans-serif uppercase typography with wide tracking.",
+      "scores": {
+        "relief_3d": 2,
+        "glow": 1,
+        "saturation": 5,
+        "sombre_clair": 2,
+        "complexite": 3
+      }
+    },
+    {
+      "slug": "nevada-fa5",
+      "source": "nevada-fa5.jpg",
+      "priorite": "reverse",
+      "tags": [
+        "cartel",
+        "urbain",
+        "sombre"
+      ],
+      "energie": 75,
+      "modernite": 70,
+      "couleurs": [
+        "#1a0508",
+        "#e50914",
+        "#ffffff"
+      ],
+      "ratio": "4:1",
+      "typographie_generee": "Ultra-condensed, tall sans-serif with rounded outer corners and sharp inner cuts.",
+      "scores": {
+        "relief_3d": 3,
+        "glow": 4,
+        "saturation": 7,
+        "sombre_clair": 2,
+        "complexite": 4
+      }
+    },
+    {
+      "slug": "pnl-rp-v2-1",
+      "source": "PNL-RP-V2-1.png",
+      "priorite": "reverse",
+      "tags": [
+        "urbain",
+        "chill",
+        "retro"
+      ],
+      "energie": 65,
+      "modernite": 80,
+      "couleurs": [
+        "#200512",
+        "#ff0055",
+        "#ffffff"
+      ],
+      "ratio": "4:1",
+      "typographie_generee": "Heavy, geometric sans-serif uppercase typography.",
+      "scores": {
+        "relief_3d": 1,
+        "glow": 5,
+        "saturation": 8,
+        "sombre_clair": 3,
+        "complexite": 5
+      }
+    }
+  ]
+}
