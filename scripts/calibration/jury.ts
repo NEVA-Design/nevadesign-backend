@@ -15,7 +15,7 @@
 
 import { geminiMultimodal, type GeminiPart } from '../../src/lib/ai/gemini'
 import { sampleGoldStratified, toCorpusEncoding, type CorpusImage } from './corpus'
-import { setBudgetLabel } from './budget4'
+import { setBudgetLabel } from './budget5'
 
 export const JURY_MODEL = 'gemini-3.5-flash'
 // v2 : échelle ANCRÉE après calibrage de l'instrument (2 vrais logos corpus

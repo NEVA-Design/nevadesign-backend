@@ -14,8 +14,8 @@ import { generateWithOcrGate } from '../../lib/engine/ocr-gate'
 import { estimateCostEur } from '../../lib/engine/pricing'
 import { parseLogoAnswersV3, renderLogoBrief, type LogoAnswersV3 } from '../../lib/engine/logo-brief'
 import { directLogoConcepts, type LogoConcept } from '../../lib/engine/logo-director'
-import { generateLogoProposition } from '../../lib/engine/logo-pipeline'
-import { pickExemplars } from '../../lib/engine/exemplars'
+import { generateLogoIntegral } from '../../lib/engine/logo-integral'
+import { pickExemplars, pickExemplarsEtiquetes, styleQueryForMatiere } from '../../lib/engine/exemplars'
 import { cutoutFlatBackground } from '../../lib/engine/cutout'
 import { composeBanniereLogo, composeLogoOnFond } from '../../lib/engine/logo-compose'
 import { UNIVERSE_LABELS } from '../../lib/engine/mapping'
@@ -485,9 +485,11 @@ export const adminTestEngineRoutes = new Elysia({ prefix: '/admin/test-moteur' }
           return Response.json({ error: 'Lance d’abord l’étage 1 (les 3 gabarits du DA) — la génération exécute exactement ces prompts.' }, { status: 409 })
         }
         const { da, energie, modernite } = daFor(ctx.project)
-        // Run 5.8 : fond = sélection cluster ; marque = 3 réfs de la même
-        // famille de rendu que le concept, lettrage privilégié.
+        // Run 5.10 : rendu INTÉGRAL — références étiquetées de la famille du
+        // concept ; la sélection calques (fond + marque) ne sert plus que de
+        // plan de secours orthographe.
         const exemplarsFond = pickExemplars({ category: 'logo', da, energie, modernite, maxPrompts: 0, maxReferences: 3 })
+        const styleQuery = styleQueryForMatiere(ctx.brief.matiere)
         const concepts = stored.concepts.slice(0, variant.count)
 
         const propositions = []
@@ -504,17 +506,31 @@ export const adminTestEngineRoutes = new Elysia({ prefix: '/admin/test-moteur' }
             famille: concept.famille,
             prefereLettrage: true,
           })
-          const prop = await generateLogoProposition({
+          const etiquetees = pickExemplarsEtiquetes({
+            category: 'logo',
+            da,
+            energie,
+            modernite,
+            famille: concept.famille,
+            traitements: styleQuery.traitements,
+            matiereMotsCles: styleQuery.matiereMotsCles,
+            max: 3,
+          })
+          const prop = await generateLogoIntegral({
             projectName: ctx.project.name,
             answers: ctx.brief,
             concept,
-            references: { fond: exemplarsFond.references, marque: exemplarsMarque.references },
+            references: etiquetees,
+            fallbackReferences: { fond: exemplarsFond.references, marque: exemplarsMarque.references },
             resolution: '2K',
             log: { userId: adminUserId, kind: `admin_test_${testCase.id}_${variant.id}_${i + 1}` },
           })
           propositions.push({
             dataUrl: prop.dataUrl,
             concept: prop.concept,
+            mode: prop.mode,
+            promptIntegral: prop.promptIntegral,
+            referencesEtiquetees: prop.referencesEtiquetees,
             ocrRejects: prop.ocrRejects,
             conceptOk: prop.conceptOk,
             adnOk: prop.adnOk,
@@ -523,8 +539,8 @@ export const adminTestEngineRoutes = new Elysia({ prefix: '/admin/test-moteur' }
             scores: prop.scores,
             defauts: prop.defauts,
             regenere: prop.regenere,
-            modeLockup: prop.modeLockup,
-            fallbackLettrageLocal: prop.fallbackLettrageLocal,
+            modeLockup: prop.fallback?.modeLockup ?? false,
+            fallbackLettrageLocal: prop.fallback?.fallbackLettrageLocal ?? false,
           })
           generationEur += prop.cout.generationEur
           relectureEur += prop.cout.relectureEur

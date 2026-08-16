@@ -1,28 +1,27 @@
 import { geminiJson, type GeminiUsage } from '../ai/gemini'
 import { ENGINE_MODELS, LOGO_THINKING_LEVEL } from './generation'
-import { pickExemplars, pickExemplarNotes } from './exemplars'
+import { pickExemplarNotes } from './exemplars'
 import { renderLogoBrief, LOGO_AMBIANCE_TAG, type LogoAnswersV3 } from './logo-brief'
 import { adnBlockLogo, fondsBlockLogo, famillesRenduLogo } from './adn'
 import { logGeneration } from './guards'
 import { UNIVERSE_LABELS, type ArtDirection } from './mapping'
-import { validateCalquesRecette, type LogoCalquesRecette } from './logo-stack'
+import { validateCalquesRecette, detecteFrancais, demandeInterdite, spellOut, type LogoCalquesRecette } from './logo-stack'
 import { loadFonts, psdBornes } from './lettrage'
 import type { ProjectLike } from './compiler'
 
-// ── Étage 1 : le directeur artistique logo (run 5.3 → 5.6) ───────────────────
-// Run 5.4, LOT 2 : chaque concept sort EXACTEMENT dans l'anatomie du GABARIT
-// MAÎTRE — sections numérotées, forme décomposée avec des CHIFFRES, style
-// de rendu explicite avec ses interdits, hex du brief tels quels + règle de
-// contraste 64 px, format avec occupation en %, mots-clés techniques finaux.
-// Le bloc ADN chiffré (section 0, mesuré sur le corpus par train-fivem-v4)
-// ouvre chaque concept — jamais optionnel. Un validateur STRUCTUREL rejette
-// tout concept hors gabarit avant le moindre envoi à l'étage 2.
-// Run 5.6 : la règle « >= 2 relief sur 3 » du 5.4 est ABROGÉE (elle a produit
-// le faux optimum candy gloss du 5.5). À la place : les 3 concepts viennent
-// des 3 FAMILLES DE RENDU mesurées du corpus (clé familles_rendu de
-// logo.json — plat premium 46 %, semi-flat biseauté 32 %, dimensionnelle
-// 22 %), et chaque concept porte la section 2bis LE FOND (doctrine client :
-// jamais vide, couches à 8-20 % d'opacité, « on les voit presque pas »).
+// ── Étage 1 : le directeur artistique logo (run 5.3 → 5.10) ──────────────────
+// Run 5.10 — PIVOT RENDU INTÉGRAL, prouvé par le test plafond du 5.9
+// (_plafond-run59/) : le transfert minimal (3 phrases + références HQ
+// étiquetées) a produit les deux meilleurs FRUITZ du projet, largement
+// au-dessus de tout ce que le pipeline en couches a jamais sorti, pendant que
+// le prompt pipeline avec les MÊMES références donnait un rendu propre mais
+// stérile. Conclusion opérateur : moins de prompt = plus de qualité quand les
+// références portent le style. Le DA produit donc désormais, par concept, UN
+// PROMPT MINIMAL (30-120 mots, plafond DUR au validateur) calqué sur le
+// format gagnant du plafond — le gabarit maître en sections 0-5 ne pilote
+// plus la génération (il survit ci-dessous comme DOCUMENTATION de la
+// doctrine mesurée). La recette calques reste produite : c'est le plan de
+// secours orthographe et la machinerie de l'étape B.
 
 export type LogoRendu = 'relief' | 'plat'
 
@@ -41,11 +40,11 @@ export type LogoConcept = {
   // (dimensionnelle → relief, sinon plat) pour la critique de production.
   famille: LogoFamilleRendu
   rendu: LogoRendu
+  // Run 5.10 : LE PROMPT MINIMAL INTÉGRAL (30-120 mots, anglais) — le prompt
+  // de génération complet, exécuté tel quel avec les références étiquetées.
   prompt: string
-  // Run 5.7 : la RECETTE DE CALQUES exécutable — lettrage typographié
-  // (police du catalogue embarqué, effets bornés par la distribution PSD),
-  // emblème à générer seul, fond section 2bis. C'est elle que le pipeline
-  // superposé exécute ; le prompt gabarit reste la référence créative.
+  // Run 5.7 : la RECETTE DE CALQUES exécutable — conservée comme PLAN DE
+  // SECOURS orthographe (lettrage typographié local) et pour l'étape B.
   calques: LogoCalquesRecette
 }
 
@@ -57,12 +56,19 @@ export type LogoDirectorResult = {
   reliefLeve: boolean
 }
 
-const MIN_PROMPT_WORDS = 180
-const MAX_PROMPT_WORDS = 520
+// Run 5.10 : bornes du prompt minimal — le plafond de 120 mots est DUR, le
+// validateur rejette au-delà (preuve plafond : la densité du format gagnant).
+export const MIN_PROMPT_INTEGRAL_MOTS = 30
+export const MAX_PROMPT_INTEGRAL_MOTS = 120
 
-// ── LE GABARIT MAÎTRE — le format de sortie obligatoire du DA ────────────────
-// C'est la structure des deux prompts qui marchent fournis par le client,
-// remasterisée avec les slots brief/ADN. Cité intégralement au rapport.
+// ── LE GABARIT MAÎTRE — DOCUMENTATION SEULEMENT depuis le run 5.10 ───────────
+// C'était le format de sortie obligatoire du DA (runs 5.4 → 5.9). Le test
+// plafond a prouvé que cette anatomie en sections dilue la qualité que les
+// références portent déjà : il ne pilote PLUS la génération. Il reste exporté
+// comme mémoire de la doctrine mesurée (ADN chiffré, familles de rendu,
+// section 2bis du fond, material law) — les lois qu'il énonce survivent en
+// code dans le validateur (demandeInterdite, detecteFrancais, derive_de) et
+// dans les détecteurs éliminatoires du critic/jury.
 export const GABARIT_MAITRE = `0. CONTEXTE — FiveM/GTA RP server logo, in the exact family of the training corpus:
    {measured DNA traits of the category, with their percentages}. Family forbids: never flat
    corporate branding, never an app icon, never a sticker/clipart, never a cute food-brand
@@ -137,58 +143,50 @@ export const GABARIT_MAITRE = `0. CONTEXTE — FiveM/GTA RP server logo, in the 
 
 const DIRECTOR_SYSTEM = `You are the senior brand designer of a premium FiveM/GTA RP studio. Your quality references: the ALYA badge (gradient background + thematic doodles), the Fruitz wordmark (custom lettering fused with a fruit slice), the fractured gold R monogram, the FLASH MOOD chrome wordmark. You design at that level — never at the level of generic esports crests, compasses, shields, or flat app icons.
 
-You will receive: a logo brief, the MEASURED DNA of the reference corpus (real percentages), and exemplary recipes. Answer with THREE DISTINCT CONCEPTS — three different creative intentions, NOT three variations of one idea. Each concept explores a different construction language.
+You will receive: a logo brief, the MEASURED DNA of the reference corpus, and notes describing the reference images that will be attached to the generation call. Answer with THREE DISTINCT CONCEPTS — three different creative intentions, NOT three variations of one idea — one per render family.
 
-Each concept's "prompt" is the COMPLETE generation prompt an image model will execute, written EXACTLY in this master template anatomy (numbered sections 0-5, English):
+INTEGRAL RENDER (run 5.10, proven by a controlled ceiling test): the image model produces its best work from a SHORT prompt plus 3-4 high-quality LABELED reference images. One image call renders the COMPLETE logo — custom lettering, fused emblem, materials, lighting and worked dark background composed TOGETHER in one image. Each concept's "prompt" is that single MINIMAL prompt, executed verbatim.
 
-${GABARIT_MAITRE}
+THE MINIMAL PROMPT — 5-6 sentences, ${MIN_PROMPT_INTEGRAL_MOTS}-${MAX_PROMPT_INTEGRAL_MOTS} words TOTAL. The validator REJECTS any prompt above ${MAX_PROMPT_INTEGRAL_MOTS} words: the ceiling test proved that less prompt means more quality when the references carry the style. In order:
+1. The opening, modeled on the winning transfer: Design a premium logo for a FiveM/GTA RP server named "{NAME}", spelled {N-A-M-E}, at the same production quality as the attached reference logos.
+2. The emblem idea AND its fusion into the lettering — which letter it replaces, crosses or slices (one sentence).
+3. The typographic treatment (one sentence, concrete positive vocabulary: deep matte extrusion, polished chrome edge bevels, satin layered fills, sharp angular cuts…).
+4. The palette with the EXACT brief hex codes.
+5. The backdrop mood in ONE sentence — a deep dark atmospheric background, subject-derived motifs or texture sensed at low opacity, never competing with the mark.
+6. The critical negatives line, closing with the exact-reading lock: The word must read exactly "{NAME}" with perfectly formed letters — no other words, no outline around the whole lockup, no uniform candy gloss, no watermark.
+
+WORKED EXAMPLE — the ceiling-test winner (52 words; match this density):
+Design a premium logo for a FiveM/GTA RP server named "FRUITZ", spelled F-R-U-I-T-Z, at the same production quality as the attached reference logos. Custom display lettering fused with a citrus slice emblem, chrome or satin materials, on a dark atmospheric background. The word must read exactly "FRUITZ" with perfectly formed letters.
+Your prompts add the palette hexes, the precise emblem fusion and the negatives line — and stay under ${MAX_PROMPT_INTEGRAL_MOTS} words.
 
 HARD RULES — a concept violating any of these is REJECTED by a structural validator:
-- Section 0 opens with the DNA block provided below (keep its numbers) and the family forbids. If the brief asks for lettering, state the exact word and its letter-by-letter spelling.
-- Section 1 contains AT LEAST 3 numeric values (counts, %, angles) describing the construction.
-- Section 2bis (LE FOND) is MANDATORY: the backdrop is NEVER empty — name its family (thematic motif / contextual micro-scene / graphic texture / combination), list its precise content, give an opacity FIGURE of 8-20% per layer, describe the base's color nuances (directional gradient, vignette, glow) and the layer's desaturation. A plain gradient with a light spot and nothing else is a REJECTED concept.
-- Section 3 carries the brief's hex codes UNCHANGED, and states the 64 px contrast decision.
-- Section 4 imposes the corpus presentation backdrop of section 2bis and the 60-70% width occupation — the flat cutout version is derived later from the validated master, and the fully custom background is still a separate later step.
-- Section 5 is one final keyword line (>= 5 technical keywords) matching the chosen render family.
-- Exactly 3 concepts covering THREE DISTINCT render families — one "famille" each among plat_premium / semi_flat_biseau / dimensionnelle (the measured corpus clusters provided below). If the brief explicitly forbids relief/3D, replace dimensionnelle by a second concept in one of the flat families (families still pairwise distinct where possible).
-- MATERIAL LAW everywhere: satin/matte fills with light grain; gloss only as ONE controlled specular accent per element; uniform candy-gloss/gel coating is forbidden.
-- If the brief has a SUBJECT/THEME, every concept is built around it — including the backdrop of section 2bis (motifs/scene derived from the subject). A compass/crest instead is a failure.
-- The brief's forbidden list is repeated in section 2's forbids.
-- The user's mood drives lighting and materials in section 2, and the backdrop's scene/motif choice in section 2bis.
-- The mark is ONE FUSED PIECE: lettering and emblem are designed together (the emblem replaces, crosses or slices a letter). Never describe a separate emblem perched above plain text.
-- LANGUAGE LAW (run 5.9): every "description" field in calques (lockup, embleme, fond) is written in ENGLISH — these strings are sent VERBATIM to the image model, which misreads French (a French "feuille de palmier" once rendered as a wheat ear). Only "nom", "justification" and "citations" stay French.
-- STICKER LAW (run 5.9): NEVER ask for an outline, border or contour around the WHOLE lockup — outlines hug EACH letterform's own silhouette. NEVER ask for a uniform candy/gel/gloss coating. The validator rejects any description carrying these.
-- SUBJECT LAW (run 5.9): when the brief has a subject, "calques.lockup.derive_de" and "calques.embleme.derive_de" each carry ONE VERBATIM WORD copied from the brief subject — the emblem derives strictly from it (checked in code; a wheat ear on a summer-fruit brief is structurally impossible).
+- The prompt is written ENTIRELY in English — it is sent verbatim to the image model, which misreads French (a French "feuille de palmier" once rendered as a wheat ear).
+- If the brief asks for lettering: the exact word "{NAME}" AND its letter-by-letter spelling {N-A-M-E} appear in the prompt, plus the closing lock "must read exactly". An emblem-only brief states "no text, no lettering" instead.
+- The brief's hex codes appear UNCHANGED in the prompt.
+- ONE sentence describes the deep dark worked backdrop (the word "background" or "backdrop" must appear).
+- The negatives line carries at least two "no …" clauses.
+- STICKER LAW: NEVER ask for an outline, border or contour around the WHOLE lockup — outlines hug EACH letterform's own silhouette. NEVER ask for a uniform candy/gel/gloss coating — fills are satin/matte with at most ONE controlled specular accent per element. The validator rejects any prompt or description carrying these.
+- If the brief has a SUBJECT/THEME, every concept is built around it — the emblem AND the backdrop motifs derive from it. A compass/crest instead is a failure.
+- Exactly 3 concepts covering THREE DISTINCT render families — one "famille" each among plat_premium / semi_flat_biseau / dimensionnelle (the measured corpus clusters provided below). If the brief explicitly forbids relief/3D, replace dimensionnelle by a second concept in one of the flat families.
+- Each concept cites the brief answers it uses (citations).
 
-RUN 5.8 — FUSED LOCKUP EXECUTION: when the brief asks for lettering, the mark is generated as ONE FUSED LOCKUP — emblem and custom lettering drawn together in a single image, like every reference of the corpus (letters sliced by the emblem, custom cuts, chrome, extrusions). Besides the master-template prompt, every concept ships an executable "calques" recipe:
-- "calques.lockup" (MANDATORY when the brief asks for lettering): the fused lockup described as ONE piece, in concrete POSITIVE vocabulary — WHICH letter carries or is crossed by the emblem, WHERE the cuts pass, and above all the TYPOGRAPHIC TREATMENT: polished chrome bevels, deep matte extrusion, layered strokes, sharp angular cuts, letters sliced by the emblem — that register. 80+ chars, this description is what the image model executes. Optional "echelle" 0.5-0.8 (share of canvas width).
-- "calques.lettrage" (when the brief asks for lettering): the FALLBACK recipe, still complete — the EXACT text, a "police" from the embedded font catalogue provided below (the real display fonts of the decomposed PSDs), fill ("couleur" hex OR "gradient" with 2-6 stops+locations), optional "contour"/"glow"/"ombre" whose pixel values MUST sit inside the measured PSD distribution provided below — values outside it are rejected by the validator. It renders server-side with the real font if the fused lockup fails its spelling gate.
+CALQUES RECIPE — unchanged contract, now the SPELLING FALLBACK and the step-B machinery (never the default path): besides the minimal prompt, every concept ships an executable "calques" recipe:
+- "calques.lockup" (MANDATORY when the brief asks for lettering): the fused lockup described as ONE piece, in concrete POSITIVE ENGLISH vocabulary — WHICH letter carries or is crossed by the emblem, WHERE the cuts pass, the TYPOGRAPHIC TREATMENT (polished chrome bevels, deep matte extrusion, layered strokes, sharp angular cuts, letters sliced by the emblem). 80+ chars. Optional "echelle" 0.5-0.8.
+- "calques.lettrage" (when the brief asks for lettering): the FALLBACK recipe, complete — the EXACT text, a "police" from the embedded font catalogue provided below, fill ("couleur" hex OR "gradient" with 2-6 stops+locations), optional "contour"/"glow"/"ombre" whose pixel values MUST sit inside the measured PSD distribution provided below. It renders server-side with the real font if the integral render fails its spelling gate.
 - "calques.embleme": the pictorial emblem ALONE (subject-derived symbol, zero letters) — used by the fallback path and emblem-only briefs. "echelle" 0.3-0.75.
-- "calques.fond": famille motif / scene / texture / combinaison + the precise content, consistent with section 2bis.
-- "calques.disposition": "fusion" (emblem and lettering interlock — the corpus default), "pile" (emblem above, lettering below), "lettrage_seul", "embleme_seul".
+- "calques.fond": famille motif / scene / texture / combinaison + the precise content in English.
+- "calques.disposition": "fusion" (the corpus default), "pile", "lettrage_seul", "embleme_seul".
+- LANGUAGE LAW: every "description" field in calques is written in ENGLISH — these strings are sent VERBATIM to the image model. Only "nom", "justification" and "citations" stay French.
+- SUBJECT LAW: when the brief has a subject, "calques.lockup.derive_de" and "calques.embleme.derive_de" each carry ONE VERBATIM WORD copied from the brief subject — the emblem derives strictly from it (checked in code).
 
 Answer ONLY with JSON:
-{"concepts": [{"nom": "short concept name (2-6 words, French)", "justification": "one French sentence — why this concept serves this server", "citations": ["2-4 French entries proving which brief answers this concept uses, each formatted «réponse utilisateur» → effet — e.g. «été» → soleil rayonnant en 16 rayons, «corail→pêche» → dégradé appliqué au biseau"], "famille": "plat_premium" | "semi_flat_biseau" | "dimensionnelle", "prompt": "the full section 0-5 master-template prompt (with 2bis) in English (${MIN_PROMPT_WORDS}-${MAX_PROMPT_WORDS} words)", "calques": {"disposition": "fusion" | "pile" | "lettrage_seul" | "embleme_seul", "lockup": {"description": "ENGLISH ONLY — the fused lockup as ONE piece: which letter carries the emblem, where the cuts pass, the typographic treatment (concrete positive vocabulary; never an outline around the whole lockup, never a uniform candy coat)", "echelle": 0.5-0.8, "derive_de": "one verbatim word copied from the brief subject that the emblem derives from"} | null, "lettrage": {"texte": "...", "police": "font family from the catalogue", "couleur": "#…" | null, "gradient": {"stops": [{"color": "#…", "location": 0..1}, …], "angle": 90} | null, "contour": {"taillePx": n, "couleur": "#…", "position": "outside"|"inside"} | null, "glow": {"taillePx": n, "couleur": "#…", "opacite": 0..1} | null, "ombre": {"taillePx": n, "distancePx": n, "opacite": 0..1} | null, "tracking": n | null}, "embleme": {"description": "the emblem alone, English, no letters", "echelle": 0.3-0.75, "derive_de": "one verbatim word copied from the brief subject"} | null, "fond": {"famille": "motif"|"scene"|"texture"|"combinaison", "description": "precise backdrop content, English"}}}, …exactly 3…]}`
+{"concepts": [{"nom": "short concept name (2-6 words, French)", "justification": "one French sentence — why this concept serves this server", "citations": ["2-4 French entries proving which brief answers this concept uses, each formatted «réponse utilisateur» → effet"], "famille": "plat_premium" | "semi_flat_biseau" | "dimensionnelle", "prompt": "the MINIMAL INTEGRAL prompt (${MIN_PROMPT_INTEGRAL_MOTS}-${MAX_PROMPT_INTEGRAL_MOTS} words, English, the 6-sentence format above)", "calques": {"disposition": "fusion" | "pile" | "lettrage_seul" | "embleme_seul", "lockup": {"description": "ENGLISH ONLY — the fused lockup as ONE piece", "echelle": 0.5-0.8, "derive_de": "one verbatim word copied from the brief subject"} | null, "lettrage": {"texte": "...", "police": "font family from the catalogue", "couleur": "#…" | null, "gradient": {"stops": [{"color": "#…", "location": 0..1}, …], "angle": 90} | null, "contour": {"taillePx": n, "couleur": "#…", "position": "outside"|"inside"} | null, "glow": {"taillePx": n, "couleur": "#…", "opacite": 0..1} | null, "ombre": {"taillePx": n, "distancePx": n, "opacite": 0..1} | null, "tracking": n | null}, "embleme": {"description": "the emblem alone, English, no letters", "echelle": 0.3-0.75, "derive_de": "one verbatim word copied from the brief subject"} | null, "fond": {"famille": "motif"|"scene"|"texture"|"combinaison", "description": "precise backdrop content, English"}}}, …exactly 3…]}`
 
 function wordCount(text: string): number {
   return text.trim().split(/\s+/).filter(Boolean).length
 }
 
-// Tranche d'une section numérotée du gabarit (de « n. » à « n+1. »).
-function sectionSlice(prompt: string, n: number): string {
-  const start = prompt.search(new RegExp(`(^|\\n)\\s*${n}\\.`))
-  if (start < 0) return ''
-  const rest = prompt.slice(start + 1)
-  const next = rest.search(new RegExp(`(^|\\n)\\s*${n + 1}\\.`))
-  return next < 0 ? prompt.slice(start) : prompt.slice(start, start + 1 + next)
-}
-
-// Compte les valeurs chiffrées d'un texte (les « 3D »/« 2K » ne comptent pas).
-function numericCount(text: string): number {
-  return (text.replace(/\b\d+\s?[dDkK]\b/g, '').match(/\d+(?:[.,]\d+)?\s?%?/g) ?? []).length
-}
-
-// Hex exacts attendus dans la section 3 — ceux du brief, tels quels.
+// Hex exacts attendus dans le prompt — ceux du brief, tels quels.
 function briefHexes(answers: LogoAnswersV3, mappingPalette: string[]): string[] {
   if (answers.couleurs.mode === 'unie') return [answers.couleurs.couleur]
   if (answers.couleurs.mode === 'degrade') return answers.couleurs.couleurs
@@ -201,13 +199,16 @@ export function flatOverrideRequested(answers: LogoAnswersV3): boolean {
   return /\b(pas|sans|no|zero|zéro)\s+(de\s+|d')?(relief|3\s?d|biseau|volume|extrusion)/i.test(answers.interdits)
 }
 
-// ── LE VALIDATEUR STRUCTUREL (LOT 2) — rien ne part à l'étage 2 sans lui ─────
-export function validateGabaritConcepts(raw: unknown, opts: {
+// ── LE VALIDATEUR DU PROMPT MINIMAL (run 5.10) — rien ne part sans lui ───────
+// Chaque message d'erreur CITE ce qui manque ou ce qui déborde et dit la
+// reformulation attendue — à la 2e tentative le DA reçoit ces erreurs, un
+// message actionnable évite qu'il répète la même faute (piège vécu au 5.9).
+export function validateConceptsIntegraux(raw: unknown, opts: {
   answers: LogoAnswersV3
   projectName: string
   mappingPalette: string[]
   flatAutorise: boolean
-  // calibration 5.6 : famille de fond imposée — le validateur exige la preuve
+  // calibration : famille de fond imposée — vérifiée sur la recette calques
   fondImpose?: 'motif' | 'scene' | 'texture'
 }): { concepts: LogoConcept[] } | { errors: string[] } {
   const parsed = raw as { concepts?: unknown } | null
@@ -216,7 +217,12 @@ export function validateGabaritConcepts(raw: unknown, opts: {
 
   const { answers } = opts
   const hexes = briefHexes(answers, opts.mappingPalette)
-  const sujetWord = answers.sujet.split(/[,\s]+/)[0]?.toLowerCase() ?? ''
+  const sujetMots = answers.sujet
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .split(/[,\s]+/)
+    .filter((m) => m.length >= 3)
   const errors: string[] = []
   const concepts: LogoConcept[] = []
 
@@ -227,8 +233,6 @@ export function validateGabaritConcepts(raw: unknown, opts: {
       errors.push(`${label}: missing nom/justification/prompt`)
       return
     }
-    // Run 5.6 : la famille de rendu est obligatoire ; `rendu` en est DÉRIVÉ
-    // (dimensionnelle → relief pour la critique de production, sinon plat).
     const famille = (LOGO_FAMILLES_RENDU as readonly string[]).includes(String(c.famille))
       ? (c.famille as LogoFamilleRendu)
       : null
@@ -236,103 +240,67 @@ export function validateGabaritConcepts(raw: unknown, opts: {
       errors.push(`${label}: "famille" must be one of ${LOGO_FAMILLES_RENDU.join(' / ')}`)
       return
     }
-    // Brief « sans relief » explicite : la famille dimensionnelle est exclue.
     if (opts.flatAutorise && famille === 'dimensionnelle') {
       errors.push(`${label}: the brief explicitly forbids relief — famille dimensionnelle not allowed`)
     }
     const rendu: LogoRendu = famille === 'dimensionnelle' ? 'relief' : 'plat'
     const prompt = String(c.prompt)
+    const promptLower = prompt.toLowerCase()
 
+    // 1. le plafond DUR de mots — la preuve du test plafond fait loi
     const words = wordCount(prompt)
-    if (words < MIN_PROMPT_WORDS - 20 || words > MAX_PROMPT_WORDS + 80) {
-      errors.push(`${label}: prompt is ${words} words (target ${MIN_PROMPT_WORDS}-${MAX_PROMPT_WORDS})`)
+    if (words > MAX_PROMPT_INTEGRAL_MOTS) {
+      errors.push(`${label}: prompt is ${words} words — the HARD ceiling is ${MAX_PROMPT_INTEGRAL_MOTS} (ceiling test: less prompt = more quality when the references carry the style). Cut it to the 6-sentence minimal format`)
+    } else if (words < MIN_PROMPT_INTEGRAL_MOTS) {
+      errors.push(`${label}: prompt is only ${words} words (minimum ${MIN_PROMPT_INTEGRAL_MOTS}) — the 6-sentence format needs the emblem fusion, treatment, hexes, backdrop and negatives`)
     }
-    // 1. les 6 sections du gabarit, dans l'ordre
-    for (let s = 0; s <= 5; s += 1) {
-      if (!sectionSlice(prompt, s)) errors.push(`${label}: section ${s}. missing from the master template`)
+    // 2. anglais uniquement — le prompt part verbatim au modèle image
+    if (detecteFrancais(prompt)) {
+      errors.push(`${label}: prompt must be written ENTIRELY in English (French words/accents detected) — it is sent verbatim to the image model`)
     }
-    // 2. section 0 : interdits de famille (la ligne anti-icône d'appli)
-    if (!/app icon/i.test(sectionSlice(prompt, 0))) {
-      errors.push(`${label}: section 0 must carry the family forbids (never an app icon…)`)
-    }
-    // 3. lettrage : le mot exact du brief présent
-    if (answers.type !== 'embleme') {
-      const expected = answers.type === 'nom'
-        ? opts.projectName.trim().toUpperCase()
-        : (opts.projectName.trim()[0] ?? 'N').toUpperCase()
-      if (answers.type === 'nom' && !prompt.toUpperCase().includes(expected)) {
-        errors.push(`${label}: the exact word "${expected}" is absent`)
+    // 3. interdits sticker/candy — mêmes regex que les recettes (négations neutralisées)
+    const interdit = demandeInterdite(prompt)
+    if (interdit) errors.push(`${label}: prompt ${interdit}`)
+    // 4. le mot exact + l'épellation + le verrou de lecture
+    if (answers.type === 'nom') {
+      const motAttendu = opts.projectName.trim().toUpperCase()
+      if (!prompt.toUpperCase().includes(motAttendu)) {
+        errors.push(`${label}: the exact word "${motAttendu}" is absent from the prompt`)
       }
+      if (!prompt.toUpperCase().includes(spellOut(motAttendu))) {
+        errors.push(`${label}: the letter-by-letter spelling "${spellOut(motAttendu)}" is absent — the opening sentence must carry « spelled ${spellOut(motAttendu)} »`)
+      }
+      if (!/reads?\s+exactly/i.test(prompt)) {
+        errors.push(`${label}: the exact-reading lock is absent — close with « The word must read exactly "${motAttendu}" with perfectly formed letters »`)
+      }
+    } else if (answers.type === 'lettre') {
+      const lettre = (opts.projectName.trim()[0] ?? 'N').toUpperCase()
+      if (!prompt.toUpperCase().includes(`"${lettre}"`)) {
+        errors.push(`${label}: the monogram letter "${lettre}" (quoted) is absent from the prompt`)
+      }
+    } else if (!/no\s+(text|lettering|words)/i.test(prompt)) {
+      errors.push(`${label}: emblem-only brief — the prompt must state "no text, no lettering"`)
     }
-    // 4. section 1 : au moins 3 valeurs chiffrées
-    const s1 = sectionSlice(prompt, 1)
-    if (numericCount(s1.replace(/^\s*1\./, '')) < 3) {
-      errors.push(`${label}: section 1 needs at least 3 numeric values (counts, %, angles)`)
-    }
-    // 5. section 3 : les hex du brief tels quels
-    const s3 = sectionSlice(prompt, 3).toUpperCase()
+    // 5. les hex du brief tels quels
     for (const hex of hexes) {
-      if (!s3.includes(hex.toUpperCase())) errors.push(`${label}: section 3 must contain the exact hex ${hex}`)
-    }
-    // 6. section 2bis (run 5.6) : LE FOND — jamais vide, opacités chiffrées
-    const s2bisStart = prompt.search(/(^|\n)\s*2\s?bis\./i)
-    const s2bis = s2bisStart < 0
-      ? ''
-      : (() => {
-          const rest = prompt.slice(s2bisStart)
-          const next = rest.slice(1).search(/(^|\n)\s*3\./)
-          return next < 0 ? rest : rest.slice(0, next + 1)
-        })()
-    if (!s2bis) {
-      errors.push(`${label}: section 2bis. (LE FOND) missing — the backdrop specification is mandatory`)
-    } else {
-      // Opacités chiffrées : l'écho verbatim de la consigne « 8-20% » ne
-      // compte pas — on le retire AVANT d'extraire les pourcentages, puis on
-      // exige au moins une opacité DE COUCHE dans la fourchette 5-25.
-      const sansEcho = s2bis.replace(/8\s?[-–—]\s?20\s?%/g, '')
-      const pcts = [...sansEcho.matchAll(/(\d{1,2})\s?%/g)].map((m) => Number(m[1]))
-      if (!pcts.some((v) => v >= 5 && v <= 25)) {
-        errors.push(`${label}: section 2bis must cite each backdrop layer's opacity as its own figure in the 8-20% range (echoing "8-20%" is not a per-layer figure)`)
-      }
-      if (!/motif|scene|scène|texture|halftone|topo|skyline|palm|silhouette|foliage|doodle/i.test(s2bis)) {
-        errors.push(`${label}: section 2bis must name the backdrop family and its content (motif / micro-scene / graphic texture)`)
-      }
-      // Fond vide interdit — en neutralisant d'abord les NÉGATIONS légitimes
-      // (« NEVER EMPTY » du header 2bis, « no readable text » de la discipline).
-      const sansNegations = s2bis
-        .replace(/never\s+empty/gi, '')
-        .replace(/no\s+readable\s+text/gi, '')
-      if (/\b(empty|plain background|no scenery, no objects|no patterns|pure atmosphere)\b/i.test(sansNegations)) {
-        errors.push(`${label}: section 2bis describes an EMPTY backdrop — forbidden (run 5.6: the fond is part of the logo)`)
-      }
-      // Variable d'expérience : quand la calibration impose une famille de
-      // fond, la section 2bis doit prouver qu'elle l'utilise — sinon la
-      // cellule d'expérience mesurerait une autre famille en silence.
-      if (opts.fondImpose) {
-        const preuves: Record<'motif' | 'scene' | 'texture', RegExp> = {
-          motif: /motif|doodle|pattern|repeated/i,
-          scene: /scene|scène|skyline|palm|silhouette|foliage|figure|building|city/i,
-          texture: /halftone|topo|grain|arc|particle|streak|texture/i,
-        }
-        if (!preuves[opts.fondImpose].test(s2bis)) {
-          errors.push(`${label}: section 2bis must use the IMPOSED backdrop family "${opts.fondImpose}" (calibration constraint) — no evidence found`)
-        }
+      if (!prompt.toUpperCase().includes(hex.toUpperCase())) {
+        errors.push(`${label}: the exact hex ${hex} is absent from the prompt`)
       }
     }
-    // 7. section 4 : présentation corpus + occupation chiffrée
-    const s4 = sectionSlice(prompt, 4)
-    if (!/backdrop|2bis/i.test(s4)) errors.push(`${label}: section 4 must impose the section 2bis worked backdrop`)
-    if (!/\d{2}\s?(-|–|to)?\s?\d{0,2}\s?%/.test(s4)) errors.push(`${label}: section 4 must state the width occupation in %`)
-    // 7. section 5 : la ligne de mots-clés finaux
-    const s5 = sectionSlice(prompt, 5)
-    if ((s5.match(/,/g) ?? []).length < 4) {
-      errors.push(`${label}: section 5 must end with a keyword line (>= 5 comma-separated technical keywords)`)
+    // 6. la phrase de fond
+    if (!/background|backdrop/i.test(prompt)) {
+      errors.push(`${label}: the backdrop sentence is absent — one sentence must describe the deep dark worked background`)
+    }
+    // 7. la ligne de négatifs critiques (>= 2 clauses « no … »)
+    const negatifs = prompt.match(/\bno\s+[a-z]/gi) ?? []
+    if (negatifs.length < 2) {
+      errors.push(`${label}: the critical negatives line is missing or too thin (${negatifs.length} "no …" clause) — e.g. « no other words, no outline around the whole lockup, no uniform candy gloss, no watermark »`)
     }
     // 8. thème présent quand le brief en donne un
-    if (sujetWord && !/theme|subject/i.test(prompt) && !prompt.toLowerCase().includes(sujetWord)) {
-      errors.push(`${label}: the user subject "${answers.sujet}" is absent from the prompt`)
+    if (sujetMots.length && !/theme|subject/i.test(prompt) && !sujetMots.some((m) => promptLower.includes(m))) {
+      errors.push(`${label}: the user subject "${answers.sujet}" is absent from the prompt — the emblem and backdrop derive from it`)
     }
-    // 9. traçabilité (LOT 5) : le concept cite les réponses du brief utilisées
+    // 9. traçabilité : le concept cite les réponses du brief utilisées
     const citations = (Array.isArray(c.citations) ? c.citations : [])
       .map((x) => String(x).slice(0, 200))
       .filter(Boolean)
@@ -341,8 +309,7 @@ export function validateGabaritConcepts(raw: unknown, opts: {
       errors.push(`${label}: citations missing — each concept must cite the brief answers it uses («réponse» → effet)`)
     }
 
-    // 10. Run 5.7 : la recette de calques exécutable — police du catalogue,
-    // effets DANS la distribution PSD, texte exact. Sans elle, pas de concept.
+    // 10. la recette calques (fallback orthographe + étape B) — inchangée
     const attenduTexte =
       answers.type === 'nom'
         ? opts.projectName.trim().toUpperCase()
@@ -358,6 +325,10 @@ export function validateGabaritConcepts(raw: unknown, opts: {
       errors.push(`${label}: brief is embleme-only — calques.disposition must be "embleme_seul"`)
       return
     }
+    // 11. calibration : famille de fond imposée — vérifiée sur la recette
+    if (opts.fondImpose && calquesVerdict.recette.fond.famille !== opts.fondImpose && calquesVerdict.recette.fond.famille !== 'combinaison') {
+      errors.push(`${label}: calques.fond.famille is "${calquesVerdict.recette.fond.famille}" but the calibration imposes "${opts.fondImpose}"`)
+    }
 
     concepts.push({
       nom: String(c.nom).slice(0, 80),
@@ -370,10 +341,8 @@ export function validateGabaritConcepts(raw: unknown, opts: {
     })
   })
 
-  // 10. Run 5.6 — DIVERSITÉ : la règle « >= 2 relief » du 5.4 est ABROGÉE
-  // (faux optimum candy gloss du 5.5). À la place : les 3 concepts couvrent
-  // 3 familles de rendu DISTINCTES (2 distinctes minimum quand le brief
-  // interdit le relief et prive le trio de la famille dimensionnelle).
+  // 12. DIVERSITÉ (run 5.6) : 3 familles de rendu distinctes (2 minimum quand
+  // le brief interdit le relief et prive le trio de la famille dimensionnelle).
   if (concepts.length === 3) {
     const distinct = new Set(concepts.map((c) => c.famille)).size
     const requis = opts.flatAutorise ? 2 : 3
@@ -391,8 +360,8 @@ export async function directLogoConcepts(opts: {
   answers: LogoAnswersV3
   energie?: number
   modernite?: number
-  // Run 5.6 (calibration) : famille de FOND imposée à la section 2bis des
-  // 3 concepts — une variable d'expérience, jamais utilisée en production.
+  // Run 5.6 (calibration) : famille de FOND imposée — une variable
+  // d'expérience, jamais utilisée en production.
   fondImpose?: 'motif' | 'scene' | 'texture'
   log: { userId: string; projectId?: string | null; assetId?: string | null }
 }): Promise<LogoDirectorResult> {
@@ -406,19 +375,16 @@ export async function directLogoConcepts(opts: {
     universeLabel: UNIVERSE_LABELS[da.universe],
   })
 
-  // 3-5 recettes exemplaires : recettes humaines du dossier d'abord (boost
-  // dans scoreEntry), reverse-prompts logo ensuite. Run 5.4 : jette
-  // TrainingRequiredError si l'entraînement n'est pas installé — le DA ne
-  // travaille plus jamais sans few-shot.
-  // Run 5.5 (wizard v4) : l'AMBIANCE du logo pilote la sélection — son tag
-  // rejoint les clusterTags du projet dans le score des exemplaires.
+  // Run 5.10 : les reverse-prompts gabarit ne nourrissent PLUS le DA (leur
+  // densité tirait vers les prompts longs que le plafond a disqualifiés). Le
+  // style voyage désormais par les références étiquetées jointes à la
+  // génération — le DA reçoit leurs NOTES pour savoir à quoi elles ressemblent.
   const daLogo = answers.ambiance
     ? { ...da, clusterTags: [...new Set([...da.clusterTags, LOGO_AMBIANCE_TAG[answers.ambiance]])] }
     : da
-  const exemplars = pickExemplars({ category: 'logo', da: daLogo, energie: opts.energie, modernite: opts.modernite, maxPrompts: 5, maxReferences: 0 })
   const notes = pickExemplarNotes({ category: 'logo', da: daLogo, energie: opts.energie, modernite: opts.modernite, max: 4 })
 
-  // Le brief « sans relief » explicite lève la règle des 2 relief — loggé.
+  // Le brief « sans relief » explicite exclut la famille dimensionnelle — loggé.
   const flatAutorise = flatOverrideRequested(answers)
   if (flatAutorise) {
     void logGeneration({
@@ -434,13 +400,11 @@ export async function directLogoConcepts(opts: {
 
   // Le bloc ADN chiffré ouvre l'appel — jamais optionnel (jette sans v4).
   const adn = adnBlockLogo()
-  // Run 5.6 : les fonds mesurés (LOT 1) et les familles de rendu voyagent
-  // dans CHAQUE appel DA — la section 2bis et la diversité s'appuient dessus.
   const fondsBlock = fondsBlockLogo()
   const familles = famillesRenduLogo()
 
   // Run 5.7 : le catalogue de polices embarquées et la distribution d'effets
-  // PSD voyagent dans CHAQUE appel — la recette calques se choisit dedans.
+  // PSD voyagent dans CHAQUE appel — la recette calques (fallback) se choisit dedans.
   const fonts = loadFonts()
   const bornes = psdBornes()
   const catalogueBlock = [
@@ -455,19 +419,19 @@ export async function directLogoConcepts(opts: {
     `- bevel: median ${bornes.bevel.median}px (max ${bornes.bevel.max}) — bevel is RARE in the corpus`
 
   const fondImposeLine = opts.fondImpose
-    ? `CALIBRATION CONSTRAINT — BACKDROP FAMILY IMPOSED: section 2bis of EVERY concept uses the ${
+    ? `CALIBRATION CONSTRAINT — BACKDROP FAMILY IMPOSED: the backdrop sentence of EVERY prompt and calques.fond use the ${
         opts.fondImpose === 'motif'
           ? 'thematic motif family (repeated subtle motifs derived from the subject)'
           : opts.fondImpose === 'scene'
             ? 'contextual micro-scene family (palm/city skyline silhouettes, foliage, distant figures)'
             : 'graphic texture family (halftone, topographic lines, arcs, grain, particles)'
-      } — still at 8-20% visibility, desaturated.`
+      } — sensed at low opacity, desaturated.`
     : ''
 
   const prompt = [
     'LOGO BRIEF (from the client wizard — verbatim user words included):',
     brief,
-    `CATEGORY DNA — measured on the full training corpus, this is the section 0 base of every concept:\n${adn}`,
+    `CATEGORY DNA — measured on the full training corpus (context for your creative choices, NOT text to copy into the minimal prompts):\n${adn}`,
     fondsBlock,
     `RENDER FAMILIES — measured corpus clusters, one concept per family:\n${familles.resume_en}`,
     catalogueBlock,
@@ -476,13 +440,10 @@ export async function directLogoConcepts(opts: {
     flatAutorise
       ? 'RELIEF FORBIDDEN BY BRIEF: the user explicitly forbids relief/3D — no dimensionnelle concept; cover the two flat families instead.'
       : '',
-    exemplars.reversePrompts.length
-      ? `EXEMPLARY RECIPES (proven prompts from the reference set, written in the same master-template anatomy — match their density and finish level, never their subjects):\n${exemplars.reversePrompts.map((p, i) => `RECIPE ${i + 1}: ${p}`).join('\n')}`
-      : '',
     notes.length
-      ? `CLUSTER REFERENCE NOTES (these reference images will be attached to the generation call): \n${notes.map((n) => `- ${n}`).join('\n')}`
+      ? `CLUSTER REFERENCE NOTES (labeled reference images like these will be attached to the generation call — they carry the style, your prompt stays minimal): \n${notes.map((n) => `- ${n}`).join('\n')}`
       : '',
-    'Now think, then deliver the 3 distinct master-template concepts as specified.',
+    'Now think, then deliver the 3 distinct minimal-prompt concepts as specified.',
   ].filter(Boolean).join('\n\n')
 
   let usage: GeminiUsage = { tokensIn: 0, tokensOut: 0 }
@@ -500,15 +461,15 @@ export async function directLogoConcepts(opts: {
       systemInstruction: DIRECTOR_SYSTEM,
       temperature: 0.7,
       // Run 5.5 : 6000 tronquait le JSON ~1 fois sur 3 (le thinking high
-      // mange une part du budget de sortie) → « exactly 3 concepts required ».
-      // Run 5.9 : 9000 tronquait à nouveau (gabarit enrichi : lois de langue/
-      // sticker/sujet + champs derive_de) → 14000.
+      // mange une part du budget de sortie). Run 5.9 : 9000 tronquait à
+      // nouveau → 14000. Les prompts 5.10 sont courts mais les recettes
+      // calques et le thinking restent — on ne redescend pas.
       maxOutputTokens: 14000,
       thinkingLevel: LOGO_THINKING_LEVEL,
       onUsage: track,
     })
 
-    const verdict = validateGabaritConcepts(raw, {
+    const verdict = validateConceptsIntegraux(raw, {
       answers,
       projectName: project.name,
       mappingPalette: da.palette,
@@ -543,5 +504,5 @@ export async function directLogoConcepts(opts: {
     retried: true,
     durationMs: Date.now() - startedAt,
   })
-  throw new Error(`Le directeur artistique n'a pas produit 3 concepts au gabarit maître (${lastErrors.slice(0, 6).join('; ')}) — relance la génération.`)
+  throw new Error(`Le directeur artistique n'a pas produit 3 concepts au format minimal intégral (${lastErrors.slice(0, 6).join('; ')}) — relance la génération.`)
 }

@@ -22,15 +22,21 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs'
 import { join } from 'path'
 import { artDirectionForProject } from '../../src/lib/engine/mapping'
-import { directLogoConcepts, type LogoConcept, type LogoFamilleRendu } from '../../src/lib/engine/logo-director'
-import { pickExemplars, styleQueryForMatiere } from '../../src/lib/engine/exemplars'
+import { directLogoConcepts, MAX_PROMPT_INTEGRAL_MOTS, type LogoConcept, type LogoFamilleRendu } from '../../src/lib/engine/logo-director'
+import { pickExemplars, pickExemplarsEtiquetes, styleQueryForMatiere } from '../../src/lib/engine/exemplars'
 import { generateLogoProposition } from '../../src/lib/engine/logo-pipeline'
+import { generateLogoIntegral } from '../../src/lib/engine/logo-integral'
 import { type ConceptVerdict } from '../../src/lib/engine/logo-critic'
 import { requireTraining } from '../../src/lib/engine/adn'
-import { CALIBRATION_DIR, setBudgetLabel } from './budget4'
+import { CALIBRATION_DIR, setBudgetLabel } from './budget5'
 import type { CalibrationBrief } from './briefs'
 
-const CALIBRATION_USER = 'calibration-run5.7'
+const CALIBRATION_USER = 'calibration-run5.10'
+
+// Marqueur de format du cache de concepts INTÉGRAL — le piège du 5.9 (« cache
+// concepts jamais re-validé ») ne doit pas revenir : un cache d'un autre
+// gabarit est refusé net, jamais exécuté en silence.
+const CONCEPTS_FORMAT_INTEGRAL = 'integral-510'
 
 // ── Le registre des blocs d'hypothèse — une variable = un bloc versionné ─────
 export const EXTRA_BLOCKS: Record<string, { version: string; text: string }> = {
@@ -74,6 +80,9 @@ export type RunOptions = {
   fondImpose?: FondImpose
   extra?: string
   criticRegen: boolean
+  /** run 5.10 : true (défaut) = rendu INTÉGRAL (1 appel image, prompt minimal
+   *  du DA + réfs étiquetées) ; false = pipeline calques 5.9 (comparaison) */
+  integral?: boolean
   /** run 5.9 : false = lockup libre 5.8 (variante de comparaison) */
   lockupBase?: boolean
   conceptIndex?: number
@@ -82,16 +91,20 @@ export type RunOptions = {
 
 export type CandidateResult = {
   png: Buffer
-  // run 5.7 : les calques de la pile — la déclinaison alpha est GRATUITE
-  alphaPng: Buffer
+  /** run 5.10 : NULL en mode intégral — l'alpha est dérivé à la sélection
+   *  (isolation + détourage décontaminé), plus jamais par calques */
+  alphaPng: Buffer | null
   fondPng: Buffer | null
-  // run 5.8 : le lockup fusionné détouré (chemin nominal quand lettrage)
   lockupPng: Buffer | null
   emblemePng: Buffer | null
   prompt: string
   concept: LogoConcept
   conceptIndex: number
   conceptSource: 'cache' | 'fresh'
+  /** run 5.10 : 'integral' | 'fallback_calques' | 'calques' (mode --calques) */
+  mode: 'integral' | 'fallback_calques' | 'calques'
+  promptIntegral: string | null
+  promptRegen: string | null
   ocrRejects: number
   critic: ConceptVerdict
   regenere: boolean
@@ -104,8 +117,8 @@ export type CandidateResult = {
   extraVersion: string | null
 }
 
-function conceptsCachePath(briefId: string, fondImpose?: FondImpose): string {
-  return join(CALIBRATION_DIR, `concepts-${briefId}${fondImpose ? `-${fondImpose}` : ''}.json`)
+function conceptsCachePath(briefId: string, fondImpose: FondImpose | undefined, integral: boolean): string {
+  return join(CALIBRATION_DIR, `concepts-${briefId}${integral ? '-integral' : ''}${fondImpose ? `-${fondImpose}` : ''}.json`)
 }
 
 function dataUrlToPng(dataUrl: string): Buffer {
@@ -127,26 +140,37 @@ export async function generateCandidate(opts: RunOptions): Promise<CandidateResu
   if (opts.extra && !extra) throw new Error(`bloc extra inconnu : ${opts.extra} (registre : ${Object.keys(EXTRA_BLOCKS).join(', ') || 'vide'})`)
 
   // ── Concepts du DA : cache par brief+fond pour isoler les variables aval ──
+  // Run 5.10 : le cache intégral vit dans SON fichier (concepts-…-integral)
+  // avec un marqueur de format — un cache d'un autre gabarit est refusé net.
+  const integral = opts.integral ?? true
   let concepts: LogoConcept[]
   let conceptSource: 'cache' | 'fresh'
-  const cachePath = conceptsCachePath(brief.id, opts.fondImpose)
+  const cachePath = conceptsCachePath(brief.id, opts.fondImpose, integral)
   if (!opts.freshConcepts && existsSync(cachePath)) {
-    concepts = (JSON.parse(readFileSync(cachePath, 'utf-8')) as { concepts: LogoConcept[] }).concepts
+    const cacheRaw = JSON.parse(readFileSync(cachePath, 'utf-8')) as { format?: string; concepts: LogoConcept[] }
+    concepts = cacheRaw.concepts
     conceptSource = 'cache'
-    // Un cache au format 5.5 (concepts sans famille, donc sans section 2bis)
-    // partirait en génération payante condamnée d'avance (jury plafonné à 6).
-    // On refuse QUEL QUE SOIT le mode de sélection.
-    if (concepts.some((c) => !c.famille)) {
-      throw new Error(`cache ${cachePath} au format 5.5 (concepts sans famille/2bis) — relance avec --fresh-concepts (gabarit 5.6)`)
+    if (integral) {
+      if (cacheRaw.format !== CONCEPTS_FORMAT_INTEGRAL) {
+        throw new Error(`cache ${cachePath} sans marqueur ${CONCEPTS_FORMAT_INTEGRAL} — relance avec --fresh-concepts (pivot 5.10)`)
+      }
+      const trop = concepts.find((c) => c.prompt.trim().split(/\s+/).length > MAX_PROMPT_INTEGRAL_MOTS)
+      if (trop) {
+        throw new Error(`cache ${cachePath} : le concept « ${trop.nom} » dépasse ${MAX_PROMPT_INTEGRAL_MOTS} mots — cache d'avant le plafond dur, relance avec --fresh-concepts`)
+      }
     }
-    // Run 5.7 : un cache sans recette de calques est inutilisable par le
-    // pipeline superposé — même refus dur.
+    // Un cache au format 5.5 (concepts sans famille) partirait en génération
+    // payante condamnée d'avance. On refuse QUEL QUE SOIT le mode.
+    if (concepts.some((c) => !c.famille)) {
+      throw new Error(`cache ${cachePath} au format 5.5 (concepts sans famille) — relance avec --fresh-concepts`)
+    }
+    // Run 5.7 : un cache sans recette de calques est inutilisable (fallback).
     if (concepts.some((c) => !c.calques)) {
-      throw new Error(`cache ${cachePath} au format 5.6 (concepts sans recette calques) — relance avec --fresh-concepts (gabarit 5.7)`)
+      throw new Error(`cache ${cachePath} au format 5.6 (concepts sans recette calques) — relance avec --fresh-concepts`)
     }
     // Run 5.8 : un brief avec lettrage exige la recette lockup fusionné.
     if (brief.answers.type !== 'embleme' && concepts.some((c) => !c.calques.lockup)) {
-      throw new Error(`cache ${cachePath} au format 5.7 (concepts sans calques.lockup) — relance avec --fresh-concepts (gabarit 5.8)`)
+      throw new Error(`cache ${cachePath} au format 5.7 (concepts sans calques.lockup) — relance avec --fresh-concepts`)
     }
   } else {
     const direction = await directLogoConcepts({
@@ -160,7 +184,14 @@ export async function generateCandidate(opts: RunOptions): Promise<CandidateResu
     })
     concepts = direction.concepts
     conceptSource = 'fresh'
-    writeFileSync(cachePath, JSON.stringify({ genere_le: new Date().toISOString(), brief: brief.id, fondImpose: opts.fondImpose ?? null, concepts }, null, 2))
+    writeFileSync(
+      cachePath,
+      JSON.stringify(
+        { format: integral ? CONCEPTS_FORMAT_INTEGRAL : undefined, genere_le: new Date().toISOString(), brief: brief.id, fondImpose: opts.fondImpose ?? null, concepts },
+        null,
+        2
+      )
+    )
   }
 
   // Sélection du concept : par FAMILLE de rendu (5.6) > index explicite > 1er.
@@ -197,9 +228,60 @@ export async function generateCandidate(opts: RunOptions): Promise<CandidateResu
     matiereMotsCles: styleQuery.matiereMotsCles,
   })
 
-  // ── Run 5.8 : le candidat sort du pipeline de production — fond seul +
-  // LOCKUP FUSIONNÉ (emblème + lettrage ensemble, OCR liste blanche, fallback
-  // silencieux emblème + lettrage local) + assemblage sharp.
+  // ── Run 5.10 : le candidat sort du chemin de PRODUCTION ────────────────────
+  // intégral (défaut) : UN appel image — prompt minimal du DA + 3 réfs HQ
+  // étiquetées, porte OCR glyphe, critique éliminatoire, une régénération
+  // intégrale max, fallback calques si l'orthographe casse.
+  if (integral) {
+    const etiquetees = pickExemplarsEtiquetes({
+      category: 'logo',
+      da,
+      energie,
+      modernite,
+      famille: concept.famille,
+      traitements: styleQuery.traitements,
+      matiereMotsCles: styleQuery.matiereMotsCles,
+      max: 3,
+    })
+    const proposition = await generateLogoIntegral({
+      projectName: brief.project.name,
+      answers: brief.answers,
+      concept,
+      references: etiquetees,
+      fallbackReferences: { fond: exemplarsFond.references, marque: exemplarsMarque.references },
+      resolution: opts.resolution,
+      extraBlock: extra?.text,
+      criticRegen: opts.criticRegen,
+      log: { ...log, kind: `calibration_${opts.label}` },
+    })
+    const fb = proposition.fallback
+    return {
+      png: dataUrlToPng(proposition.dataUrl),
+      alphaPng: fb ? dataUrlToPng(fb.layers.alphaDataUrl) : null,
+      fondPng: fb?.layers.fondDataUrl ? dataUrlToPng(fb.layers.fondDataUrl) : null,
+      lockupPng: fb?.layers.lockupDataUrl ? dataUrlToPng(fb.layers.lockupDataUrl) : null,
+      emblemePng: fb?.layers.emblemeDataUrl ? dataUrlToPng(fb.layers.emblemeDataUrl) : null,
+      prompt: concept.prompt,
+      concept,
+      conceptIndex,
+      conceptSource,
+      mode: proposition.mode,
+      promptIntegral: proposition.promptIntegral,
+      promptRegen: proposition.promptRegen,
+      ocrRejects: proposition.ocrRejects,
+      critic: proposition.verdict,
+      regenere: proposition.regenere,
+      calqueRegenere: fb?.calqueRegenere ?? null,
+      modeLockup: fb?.modeLockup ?? false,
+      lockupBaseUtilisee: fb?.lockupBaseUtilisee ?? false,
+      fallbackLettrageLocal: fb?.fallbackLettrageLocal ?? false,
+      promptsCalques: fb?.promptsCalques ?? {},
+      referencesSlugs: proposition.referencesEtiquetees,
+      extraVersion: extra?.version ?? null,
+    }
+  }
+
+  // --calques : le pipeline superposé 5.9, gardé comme variante de comparaison.
   const proposition = await generateLogoProposition({
     projectName: brief.project.name,
     answers: brief.answers,
@@ -222,6 +304,9 @@ export async function generateCandidate(opts: RunOptions): Promise<CandidateResu
     concept,
     conceptIndex,
     conceptSource,
+    mode: 'calques',
+    promptIntegral: null,
+    promptRegen: null,
     ocrRejects: proposition.ocrRejects,
     critic: proposition.verdict,
     regenere: proposition.regenere,

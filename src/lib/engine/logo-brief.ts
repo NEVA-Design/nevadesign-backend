@@ -157,7 +157,7 @@ export const LOGO_AMBIANCE_DA: Record<LogoAmbiance, { eclairage: string; matiere
 // Run 5.6 : présentation corpus TRAVAILLÉE (le « empty and calm » du 5.5 est
 // la cause racine du verdict client — voir calibration-log-2.md, LOT 1).
 export const LOGO_ETAPE_A_LINE =
-  'DELIVERABLE (step A): the mark presented on its natural corpus backdrop — deep dark nuanced base (directional gradient, vignette, controlled glow behind the mark) carrying the barely-visible worked layer specified in section 2bis (thematic motif, contextual micro-scene or graphic texture at 8-20% visibility). The flat cutout (alpha) version is DERIVED from the validated master in a second pass, and the fully custom background is still a SEPARATE later step (own layer).'
+  'DELIVERABLE (step A): ONE INTEGRAL IMAGE — the complete logo composed WITH its natural corpus backdrop in a single render: deep dark nuanced base (directional gradient, vignette, controlled glow behind the mark) carrying a barely-visible worked layer (thematic motif, contextual micro-scene or graphic texture, sensed at low opacity). The flat cutout (alpha) version is DERIVED from the chosen render in a second isolation pass, and the fully custom background is still a SEPARATE later step (own layer).'
 
 const HEX = /^#[0-9a-fA-F]{6}$/
 

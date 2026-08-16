@@ -102,7 +102,7 @@ export function calqueCible(defauts: string[], opts?: { lockupMode?: boolean }):
 }
 
 // Run 5.9 : la décision de régénération est une FONCTION PURE, testée par
-// scripts/test-regen-ciblee.ts — le run 5.8 a prouvé qu'un filet non testé
+// scripts/test-regen-integrale.ts — le run 5.8 a prouvé qu'un filet non testé
 // peut être éteint sans que personne ne le voie (criticRegen jamais passé
 // par la calibration + regex piégée par « motif »).
 export function decideRegen(
@@ -391,7 +391,7 @@ export async function generateLogoProposition(opts: {
   }
 }
 
-function paletteOf(concept: LogoConcept, answers: LogoAnswersV3): string[] {
+export function paletteOf(concept: LogoConcept, answers: LogoAnswersV3): string[] {
   if (answers.couleurs.mode === 'degrade') return answers.couleurs.couleurs
   if (answers.couleurs.mode === 'unie') return [answers.couleurs.couleur]
   // studio : les couleurs de la recette (gradient du lettrage) sinon neutres

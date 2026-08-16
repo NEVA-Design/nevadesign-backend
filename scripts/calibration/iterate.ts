@@ -29,7 +29,7 @@ import {
   CHECKPOINT_EUR,
   STOP_SANS_CONVERGENCE_EUR,
   CALIBRATION_DIR,
-} from './budget4'
+} from './budget5'
 import { BRIEFS } from './briefs'
 import { generateCandidate, DERIVE_ALPHA_VERSION, type FondImpose } from './generate'
 import type { LogoFamilleRendu } from '../../src/lib/engine/logo-director'
@@ -45,9 +45,9 @@ import sharp from 'sharp'
 // cible, jamais contre la moyenne. FIXE pour la comparabilité inter-itérations.
 export const JURY_REFS = ['logo', '4409091d08b9cb1da6aa3c72b0e1e0b4', 'branding', 'logo2', 'logo-sweetylife', 'c837de5b0bc55867b68557dc928c6c6c', 'flashmood-rp2', 'nin3plaz-1460350845051863082']
 
-// Run 5.9 : journal 4 — les logs 5.5 (calibration-log.md), 5.6 (-2) et
-// 5.7-5.8 (-3) restent intacts pour l'historique.
-const JOURNAL_PATH = resolve(import.meta.dir, '../../../calibration-log-4.md')
+// Run 5.10 : journal 5 (pivot rendu intégral) — les logs 5.5 → 5.9 (-4)
+// restent intacts pour l'historique.
+const JOURNAL_PATH = resolve(import.meta.dir, '../../../calibration-log-5.md')
 
 type Args = Record<string, string | boolean>
 function parseArgs(): Args {
@@ -78,11 +78,11 @@ function ensureJournal() {
   writeFileSync(
     JOURNAL_PATH,
     [
-      '# Calibration Run 5.7 — journal (session 3, pipeline par calques superposés)',
+      '# Calibration Run 5.10 — journal (session 5, PIVOT RENDU INTÉGRAL)',
       '',
-      `**Coût cumulé : 0.0000 € / plafond ${CAP_EUR.toFixed(2)} €** (garde dure : \`nevadesign-backend/scripts/calibration/budget.ts\` — refus avant envoi, grand livre \`captures/calibration/budget-ledger-3.json\`)`,
+      `**Coût cumulé : 0.0000 € / plafond ${CAP_EUR.toFixed(2)} €** (garde dure : \`nevadesign-backend/scripts/calibration/budget5.ts\` — refus avant envoi, grand livre \`captures/calibration/budget-ledger-5.json\`)`,
       '',
-      'Préalable LOT 4 : clone test `logo_gtanew` RÉUSSI (captures/calibration/clone-gtanew/, 0,4164 €). Candidats produits par le pipeline calques (fond IA + emblème IA détouré + lettrage typographié local).',
+      'Pivot prouvé par le test plafond 5.9 (_plafond-run59/) : une proposition = UN appel image intégral (prompt minimal du DA ≤ 120 mots + 3 réfs HQ étiquetées) — la barre à égaler est les deux transferts minimaux du plafond. Le pipeline calques ne sert plus que de plan de secours orthographe (--calques pour le rejouer en comparaison).',
       '',
       `Checkpoint obligatoire à ${CHECKPOINT_EUR.toFixed(2)} € · stop volontaire à ${STOP_SANS_CONVERGENCE_EUR.toFixed(2)} € sans convergence.`,
       `Jury : ${JURY_MODEL}, prompts ${JURY_PROMPT_VERSION}. Panel fixe : ${JURY_REFS.join(', ')}.`,
@@ -165,6 +165,9 @@ async function main() {
       ? (args.fond as FondImpose)
       : undefined
     if (args.fond && !fondImpose) throw new Error(`fond inconnu : ${args.fond} (motif | scene | texture)`)
+    // Run 5.10 : le rendu INTÉGRAL est le mode par défaut, comme en prod.
+    // --calques rejoue le pipeline superposé 5.9 en variante de comparaison.
+    const integral = !args['calques']
     const result = await generateCandidate({
       brief,
       label,
@@ -172,6 +175,7 @@ async function main() {
       famille,
       fondImpose,
       extra: typeof args.extra === 'string' ? args.extra : undefined,
+      integral,
       // Run 5.9 : la régénération ciblée est ACTIVE PAR DÉFAUT, comme en prod.
       // Le run 5.8 la laissait éteinte (flag --critic-regen jamais passé) : le
       // journal vantait un filet qui ne tournait pas. --no-critic-regen pour
@@ -184,26 +188,31 @@ async function main() {
       freshConcepts: Boolean(args['fresh-concepts']),
     })
     candidatePng = result.png
-    // Run 5.8 : les calques de la pile sont archivés avec le candidat —
-    // l'alpha sert à la dérivation gratuite, fond/lockup/emblème au
-    // diagnostic, les prompts calques réels au rejeu.
-    writeFileSync(join(dir, 'candidate-alpha.png'), result.alphaPng)
+    // Les calques ne sont archivés que s'ils existent (mode --calques ou
+    // fallback orthographe) — le rendu intégral est UNE image.
+    if (result.alphaPng) writeFileSync(join(dir, 'candidate-alpha.png'), result.alphaPng)
     if (result.fondPng) writeFileSync(join(dir, 'calque-fond.png'), result.fondPng)
     if (result.lockupPng) writeFileSync(join(dir, 'calque-lockup.png'), result.lockupPng)
     if (result.emblemePng) writeFileSync(join(dir, 'calque-embleme.png'), result.emblemePng)
     writeFileSync(join(dir, 'prompt.txt'), result.prompt)
-    writeFileSync(join(dir, 'prompts-calques.json'), JSON.stringify(result.promptsCalques, null, 2))
+    if (result.promptIntegral) writeFileSync(join(dir, 'prompt-integral.txt'), result.promptIntegral)
+    if (result.promptRegen) writeFileSync(join(dir, 'prompt-regen.txt'), result.promptRegen)
+    if (Object.keys(result.promptsCalques).length) {
+      writeFileSync(join(dir, 'prompts-calques.json'), JSON.stringify(result.promptsCalques, null, 2))
+    }
     writeFileSync(
       join(dir, 'pipeline.json'),
       JSON.stringify(
         {
           brief: briefId,
           resolution,
+          mode: result.mode,
           famille: famille ?? null,
           fondImpose: fondImpose ?? null,
           extra: result.extraVersion,
           concept: { index: result.conceptIndex, nom: result.concept.nom, famille: result.concept.famille, rendu: result.concept.rendu, source: result.conceptSource },
           referencesJointes: result.referencesSlugs,
+          promptIntegral: result.promptIntegral,
           ocrRejects: result.ocrRejects,
           modeLockup: result.modeLockup,
           lockupBaseUtilisee: result.lockupBaseUtilisee,
@@ -218,8 +227,10 @@ async function main() {
       )
     )
     contexteLines = [
-      `Brief : **${briefId}** · famille : **${result.concept.famille}** · fond imposé : **${fondImpose ?? 'libre (DA)'}**${result.extraVersion ? ` · extra : ${result.extraVersion}` : ''} · résolution ${resolution} · concept #${result.conceptIndex} « ${result.concept.nom} » (${result.conceptSource}) · réfs jointes : ${result.referencesSlugs.join(', ')}`,
-      `Marque : **${result.modeLockup ? 'lockup fusionné IA' : result.fallbackLettrageLocal ? 'FALLBACK lettrage local (orthographe lockup 3× KO)' : 'emblème + lettrage local'}** · OCR : ${result.ocrRejects} rejet(s) · critique production : ok=${result.critic.ok} (fond=${result.critic.fondOk}, adn=${result.critic.adnOk}, relief ${result.critic.scores.relief}, glow ${result.critic.scores.glow})${result.regenere ? ` · régénéré 1× (${result.calqueRegenere})` : ''}`,
+      `Brief : **${briefId}** · mode : **${result.mode}** · famille : **${result.concept.famille}** · fond imposé : **${fondImpose ?? 'libre (DA)'}**${result.extraVersion ? ` · extra : ${result.extraVersion}` : ''} · résolution ${resolution} · concept #${result.conceptIndex} « ${result.concept.nom} » (${result.conceptSource}) · réfs jointes : ${result.referencesSlugs.join(', ')}`,
+      result.mode === 'integral'
+        ? `Rendu : **INTÉGRAL** (1 appel, prompt minimal ${result.promptIntegral?.trim().split(/\s+/).length ?? '?'} mots) · OCR glyphe : ${result.ocrRejects} rejet(s) · critique production : ok=${result.critic.ok} (fond=${result.critic.fondOk}, adn=${result.critic.adnOk}, premium ${result.critic.scores.premium})${result.regenere ? ' · **régénération intégrale déclenchée 1×**' : ''}`
+        : `Marque : **${result.modeLockup ? 'lockup fusionné IA' : result.fallbackLettrageLocal ? 'FALLBACK lettrage local (orthographe lockup 3× KO)' : 'emblème + lettrage local'}** · OCR : ${result.ocrRejects} rejet(s) · critique production : ok=${result.critic.ok} (fond=${result.critic.fondOk}, adn=${result.critic.adnOk}, relief ${result.critic.scores.relief}, glow ${result.critic.scores.glow})${result.regenere ? ` · régénéré 1× (${result.calqueRegenere})` : ''}`,
     ]
   }
 

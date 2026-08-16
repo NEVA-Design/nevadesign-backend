@@ -27,9 +27,11 @@ import {
 import { generateWithOcrGate } from '../lib/engine/ocr-gate'
 import { parseLogoAnswersV3, LOGO_AMBIANCE_TAG } from '../lib/engine/logo-brief'
 import { directLogoConcepts, type LogoConcept } from '../lib/engine/logo-director'
-import { generateLogoProposition, type LogoProposition } from '../lib/engine/logo-pipeline'
+import { paletteOf } from '../lib/engine/logo-pipeline'
+import { generateLogoIntegral, type LogoPropositionIntegrale } from '../lib/engine/logo-integral'
+import { composeAlphaLocale, isolateLogoRender, poseSurCanevasCarre } from '../lib/engine/logo-isolate'
 import { assembleLogo, declineMonochrome } from '../lib/engine/logo-stack'
-import { pickExemplars, styleQueryForMatiere } from '../lib/engine/exemplars'
+import { pickExemplars, pickExemplarsEtiquetes, styleQueryForMatiere } from '../lib/engine/exemplars'
 import { estimateCostEur } from '../lib/engine/pricing'
 import { makeLayerId, type Layer } from '../lib/engine/layers'
 import { composeAsset, effectFileBuffer, effectsManifest } from '../lib/engine/composite'
@@ -468,23 +470,49 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
         return sel
       }
 
-      // ÉTAGES 2 + 3 — un concept = une proposition, relue avant affichage.
-      // allSettled : un concept qui échoue (OCR à bout, refus) ne coule pas
-      // les deux autres.
+      // Run 5.10 : les références ÉTIQUETÉES du rendu intégral — 3 images HQ
+      // de la famille du concept, au plus près du style demandé, chacune
+      // décrite par son étiquette (le format gagnant du test plafond).
+      const etiqueteesParFamille = new Map<string, ReturnType<typeof pickExemplarsEtiquetes>>()
+      const etiqueteesPourFamille = (famille: LogoConcept['famille']) => {
+        let sel = etiqueteesParFamille.get(famille)
+        if (!sel) {
+          sel = pickExemplarsEtiquetes({
+            category: 'logo',
+            da: daLogo,
+            energie,
+            modernite,
+            famille,
+            traitements: styleQuery.traitements,
+            matiereMotsCles: styleQuery.matiereMotsCles,
+            max: 3,
+          })
+          etiqueteesParFamille.set(famille, sel)
+        }
+        return sel
+      }
+
+      // ÉTAGES 2 + 3 (run 5.10) — un concept = UN APPEL INTÉGRAL (marque,
+      // lumière et fond composés ensemble par le modèle, comme les réussites
+      // du test plafond), porte OCR glyphe par glyphe, critique éliminatoire,
+      // une régénération intégrale max. Le pipeline calques ne sert plus que
+      // de plan de secours orthographe. allSettled : un concept qui échoue
+      // ne coule pas les deux autres.
       const settled = await Promise.allSettled(
         direction.concepts.map((concept, i) =>
-          generateLogoProposition({
+          generateLogoIntegral({
             projectName: project.name,
             answers,
             concept,
-            references: { fond: fondRefs, marque: marquePourFamille(concept.famille).references },
+            references: etiqueteesPourFamille(concept.famille),
+            fallbackReferences: { fond: fondRefs, marque: marquePourFamille(concept.famille).references },
             resolution: '2K',
             log: { userId: user.id, projectId: body.projectId, assetId: asset.id, kind: `logo_proposal_${i + 1}` },
           })
         )
       )
       const propositions = settled
-        .filter((s): s is PromiseFulfilledResult<LogoProposition> => s.status === 'fulfilled')
+        .filter((s): s is PromiseFulfilledResult<LogoPropositionIntegrale> => s.status === 'fulfilled')
         .map((s) => s.value)
       if (!propositions.length) {
         const firstError = settled.find((s): s is PromiseRejectedResult => s.status === 'rejected')
@@ -492,23 +520,26 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
         return jsonError('generation_failed', 502, reason?.message ?? 'Aucune proposition n’a passé la relecture — relance la génération.')
       }
 
-      // Run 5.7 : les CALQUES de chaque proposition sont stockés avec elle —
-      // le master 4K sera un ré-assemblage local (zéro appel API), et chaque
-      // calque reste régénérable/ajustable indépendamment.
+      // Run 5.10 : le rendu intégral est UNE image — l'alpha et les
+      // déclinaisons seront dérivés à la SÉLECTION (isolation + détourage
+      // décontaminé, /logo/master), une fois sur trois. Les calques ne sont
+      // stockés que pour les propositions passées par le fallback.
       const stamp = Date.now()
       const stored = await Promise.all(
         propositions.map(async (prop, i) => {
           const base = `${user.id}/${body.projectId}/logo/proposition-${stamp}-${i}`
+          const fallbackLayers = prop.fallback?.layers ?? null
           const [url, alphaUrl, fondUrl, lockupUrl, emblemeUrl] = await Promise.all([
             storeRender(`${base}.png`, prop.dataUrl),
-            storeRender(`${base}-alpha.png`, prop.layers.alphaDataUrl),
-            prop.layers.fondDataUrl ? storeRender(`${base}-fond.png`, prop.layers.fondDataUrl) : Promise.resolve(null),
-            prop.layers.lockupDataUrl ? storeRender(`${base}-lockup.png`, prop.layers.lockupDataUrl) : Promise.resolve(null),
-            prop.layers.emblemeDataUrl ? storeRender(`${base}-embleme.png`, prop.layers.emblemeDataUrl) : Promise.resolve(null),
+            fallbackLayers ? storeRender(`${base}-alpha.png`, fallbackLayers.alphaDataUrl) : Promise.resolve(null),
+            fallbackLayers?.fondDataUrl ? storeRender(`${base}-fond.png`, fallbackLayers.fondDataUrl) : Promise.resolve(null),
+            fallbackLayers?.lockupDataUrl ? storeRender(`${base}-lockup.png`, fallbackLayers.lockupDataUrl) : Promise.resolve(null),
+            fallbackLayers?.emblemeDataUrl ? storeRender(`${base}-embleme.png`, fallbackLayers.emblemeDataUrl) : Promise.resolve(null),
           ])
           return {
             url,
-            layers: { alphaUrl, fondUrl, lockupUrl, emblemeUrl },
+            mode: prop.mode,
+            layers: fallbackLayers ? { alphaUrl, fondUrl, lockupUrl, emblemeUrl } : null,
             concept: prop.concept,
             famille: prop.concept.famille,
             ocrRejects: prop.ocrRejects,
@@ -519,12 +550,14 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
             scores: prop.scores,
             defauts: prop.defauts,
             regenere: prop.regenere,
-            calqueRegenere: prop.calqueRegenere,
-            modeLockup: prop.modeLockup,
-            fallbackLettrageLocal: prop.fallbackLettrageLocal,
-            // run 5.8 (chantier 5) : les prompts calques RÉELLEMENT envoyés à
-            // l'API — un rendu raté se rejoue désormais à l'identique.
-            promptsCalques: prop.promptsCalques,
+            modeLockup: prop.fallback?.modeLockup ?? false,
+            fallbackLettrageLocal: prop.fallback?.fallbackLettrageLocal ?? false,
+            // run 5.10 : le prompt intégral RÉELLEMENT envoyé (et celui de la
+            // régénération) — un rendu se rejoue à l'identique.
+            promptIntegral: prop.promptIntegral,
+            promptRegen: prop.promptRegen,
+            referencesEtiquetees: prop.referencesEtiquetees,
+            promptsCalques: prop.fallback?.promptsCalques ?? null,
           }
         })
       )
@@ -544,18 +577,23 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
             {
               kind: 'logo_concepts',
               concepts: direction.concepts,
-              // run 5.7 : url → calques, pour le ré-assemblage 4K local du master
-              // run 5.8 : + les prompts calques réellement envoyés (rejouables)
+              // run 5.10 : mode intégral + prompts réellement envoyés (rejouables) ;
+              // layers non-null uniquement pour les propositions fallback calques
               propositions: stored.map((p) => ({
                 url: p.url,
+                mode: p.mode,
                 layers: p.layers,
                 concept: p.concept,
                 modeLockup: p.modeLockup,
                 fallbackLettrageLocal: p.fallbackLettrageLocal,
+                promptIntegral: p.promptIntegral,
+                promptRegen: p.promptRegen,
+                referencesEtiquetees: p.referencesEtiquetees,
                 promptsCalques: p.promptsCalques,
               })),
               references: fondRefs.length,
               exemplars: exemplarsFond.slugs,
+              exemplarsEtiquetees: Object.fromEntries([...etiqueteesParFamille.entries()].map(([f, s]) => [f, s.map((r) => r.slug)])),
               exemplarsMarque: Object.fromEntries([...marqueParFamille.entries()].map(([f, s]) => [f, s.slugs])),
               coutParEtage,
               at: new Date().toISOString(),
@@ -630,17 +668,20 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
 
       const answers = parseLogoAnswersV3(asset.wizard_answers) ?? parseLogoAnswersV3({ type: 'embleme' })!
 
-      // ── Run 5.7 : le master 4K est un RÉ-ASSEMBLAGE LOCAL des calques ──────
-      // stockés avec la proposition — ZÉRO appel API. Le lettrage est re-rendu
-      // net à l'échelle 4K (vraie police), le fond et l'emblème sont upscalés.
-      // La reproduction monolithique 4K « Reproduce the EXACT same logo » est
-      // SUPPRIMÉE (elle réveillait le prior « gaming logo 2015 »).
+      // ── Run 5.10 : deux chemins selon la proposition choisie ───────────────
+      // INTÉGRAL (défaut) : le master AVEC fond est le rendu choisi lui-même ;
+      // l'alpha est dérivé par UN appel d'édition d'isolation (re-rendu exact
+      // sur fond plat — la repro pure du plafond prouve que le modèle préserve
+      // un design existant) + détourage DÉCONTAMINÉ (fini la frange blanche).
+      // Deux échecs d'isolation → base typographique locale composée comme
+      // aujourd'hui. CALQUES (fallback orthographe) : ré-assemblage local 4K
+      // inchangé (run 5.7), zéro appel API.
       type StoredLayers = { alphaUrl: string | null; fondUrl: string | null; lockupUrl?: string | null; emblemeUrl: string | null }
       const conceptEntries = ((asset.compiled_prompts ?? []) as Array<{
         kind?: string
-        propositions?: Array<{ url: string; layers: StoredLayers; concept: LogoConcept }>
+        propositions?: Array<{ url: string; mode?: string; layers: StoredLayers | null; concept: LogoConcept }>
       }>).filter((e) => e.kind === 'logo_concepts')
-      let chosen: { layers: StoredLayers; concept: LogoConcept } | null = null
+      let chosen: { mode?: string; layers: StoredLayers | null; concept: LogoConcept } | null = null
       for (const entry of [...conceptEntries].reverse()) {
         const hit = (entry.propositions ?? []).find((p) => p.url === body.chosenUrl)
         if (hit) {
@@ -652,38 +693,88 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
         return jsonError(
           'proposition_layers_missing',
           409,
-          'Cette proposition date d’avant le pipeline par calques (run 5.7) — relance « 3 propositions » pour obtenir des propositions ré-assemblables.'
+          'Cette proposition date d’avant le pipeline par calques (run 5.7) — relance « 3 propositions » pour obtenir des propositions finalisables.'
         )
       }
 
-      const fetchLayer = async (url: string | null): Promise<Buffer | null> => {
-        if (!url) return null
-        const ref = await fetchAsReference(url)
-        return ref ? Buffer.from(ref.data, 'base64') : null
-      }
-      const [fondPng, lockupPng, emblemePng] = await Promise.all([
-        fetchLayer(chosen.layers.fondUrl),
-        fetchLayer(chosen.layers.lockupUrl ?? null),
-        fetchLayer(chosen.layers.emblemeUrl),
-      ])
-
       const cutoutNeeded = answers.fond === 'transparent'
-      const stack = await assembleLogo({
-        fondPng: cutoutNeeded ? undefined : fondPng ?? undefined,
-        lockupPng: lockupPng ?? undefined,
-        emblemePng: emblemePng ?? undefined,
-        recette: chosen.concept.calques,
-        taille: 4096,
-      })
+      let masterPng: Buffer
+      let masterWidth = 4096
+      let masterHeight = 4096
+      let alphaPng: Buffer
+      let assemblage: string
 
-      // Déclinaisons : dérivées du couple lettrage+emblème SANS le fond —
-      // le détourage est trivial par construction (plus de flood-fill).
-      const masterPng: Buffer = cutoutNeeded ? stack.alpha : stack.master
-      const masterWidth = stack.width
-      const masterHeight = stack.height
+      if (chosen.mode === 'integral' || !chosen.layers) {
+        const renderRef = await fetchAsReference(body.chosenUrl)
+        if (!renderRef) return jsonError('reference_unreachable', 400, 'Le rendu choisi est introuvable.')
+        const renderBuffer = Buffer.from(renderRef.data, 'base64')
+        const motAttendu =
+          answers.type === 'nom'
+            ? project.name.trim().toUpperCase()
+            : answers.type === 'lettre'
+              ? (project.name.trim()[0] ?? 'N').toUpperCase()
+              : null
+        const isolation = await isolateLogoRender({
+          renderDataUrl: `data:${renderRef.mimeType};base64,${renderRef.data}`,
+          expectedWord: motAttendu,
+          expectedOptional: answers.type === 'lettre',
+          resolution: '4K',
+          log: { userId: user.id, projectId: body.projectId, assetId: asset.id, kind: 'logo_master' },
+        })
+        const echelle = chosen.concept.calques.lockup?.echelle ?? 0.66
+        if (isolation.ok) {
+          alphaPng = await poseSurCanevasCarre(isolation.cutout.png, 4096, echelle)
+          assemblage = `isolation_integral_run510 (${isolation.tentatives} tentative${isolation.tentatives > 1 ? 's' : ''})`
+        } else {
+          const local = await composeAlphaLocale({
+            recette: chosen.concept.calques,
+            famille: chosen.concept.famille,
+            palette: paletteOf(chosen.concept, answers),
+            taille: 4096,
+            log: { userId: user.id, projectId: body.projectId, assetId: asset.id, kind: 'logo_master' },
+          })
+          alphaPng = local.alphaPng
+          assemblage = `isolation_echec_fallback_base_typo (${isolation.raison})`
+        }
+        if (cutoutNeeded) {
+          masterPng = alphaPng
+        } else {
+          masterPng = renderBuffer
+          const meta = await sharp(renderBuffer).metadata()
+          masterWidth = meta.width ?? 2048
+          masterHeight = meta.height ?? 2048
+        }
+      } else {
+        // chemin calques : ré-assemblage local 4K (run 5.7) — le lettrage est
+        // re-rendu net à l'échelle 4K (vraie police), fond/emblème upscalés.
+        const fetchLayer = async (url: string | null): Promise<Buffer | null> => {
+          if (!url) return null
+          const ref = await fetchAsReference(url)
+          return ref ? Buffer.from(ref.data, 'base64') : null
+        }
+        const [fondPng, lockupPng, emblemePng] = await Promise.all([
+          fetchLayer(chosen.layers.fondUrl),
+          fetchLayer(chosen.layers.lockupUrl ?? null),
+          fetchLayer(chosen.layers.emblemeUrl),
+        ])
+        const stack = await assembleLogo({
+          fondPng: cutoutNeeded ? undefined : fondPng ?? undefined,
+          lockupPng: lockupPng ?? undefined,
+          emblemePng: emblemePng ?? undefined,
+          recette: chosen.concept.calques,
+          taille: 4096,
+        })
+        masterPng = cutoutNeeded ? stack.alpha : stack.master
+        alphaPng = stack.alpha
+        masterWidth = stack.width
+        masterHeight = stack.height
+        assemblage = 'local_4k_calques_run57'
+      }
+
+      // Déclinaisons monochromes : dérivées de l'alpha, coût zéro.
       const [white, black] = await Promise.all([
-        declineMonochrome(stack.alpha, 'white'),
-        declineMonochrome(stack.alpha, 'black'),
+        declineMonochrome(alphaPng, 'white'),
+        declineMonochrome(alphaPng, 'black'),
       ])
 
       const base = `${user.id}/${body.projectId}/logo`
@@ -708,7 +799,7 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
           exports: [...(asset.exports ?? []), { url, resolution: '4K', at: new Date().toISOString() }],
           compiled_prompts: [
             ...(asset.compiled_prompts ?? []),
-            { kind: 'logo_master', assemblage: 'local_4k_calques_run57', chosenUrl: body.chosenUrl, at: new Date().toISOString() },
+            { kind: 'logo_master', assemblage, chosenUrl: body.chosenUrl, at: new Date().toISOString() },
           ],
           updated_at: new Date().toISOString(),
         })
