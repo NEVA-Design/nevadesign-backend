@@ -57,6 +57,10 @@ export async function generateWithSoftRetry(opts: {
   referenceImages?: Array<{ data: string; mimeType: string }>
   imageConfig?: { aspectRatio?: string; imageSize?: '1K' | '2K' | '4K' }
   thinkingLevel?: ThinkingLevel
+  // Run 5.9 : images avant le texte, étiquetées (test plafond chantier 0 :
+  // adhérence aux références nettement meilleure dans cet ordre)
+  referencesFirst?: boolean
+  referenceLabels?: string[]
   log: EngineGenerationLog
 }): Promise<EngineGenerationResult> {
   const startedAt = Date.now()
@@ -76,6 +80,8 @@ export async function generateWithSoftRetry(opts: {
       referenceImages: opts.referenceImages,
       imageConfig: opts.imageConfig,
       thinkingLevel: opts.thinkingLevel,
+      referencesFirst: opts.referencesFirst,
+      referenceLabels: opts.referenceLabels,
     })
     void logGeneration({
       ...baseLog,
@@ -99,6 +105,8 @@ export async function generateWithSoftRetry(opts: {
         referenceImages: opts.referenceImages,
         imageConfig: opts.imageConfig,
         thinkingLevel: opts.thinkingLevel,
+        referencesFirst: opts.referencesFirst,
+        referenceLabels: opts.referenceLabels,
       })
       void logGeneration({
         ...baseLog,

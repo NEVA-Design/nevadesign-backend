@@ -10,9 +10,7 @@ import {
   compileHeroPromptV2,
   compileInstructPrompt,
   compileLogoFondPrompt,
-  LOGO_BACKGROUND_HEX,
   listSceneTemplates,
-  spellOut,
   type EngineCategory,
   type SceneAnswers,
 } from '../lib/engine/compiler'
@@ -22,18 +20,17 @@ import { artDirectionForProject } from '../lib/engine/mapping'
 import { adnBlockBackground, getTrainingStatus, requireTraining, TrainingRequiredError } from '../lib/engine/adn'
 import {
   ENGINE_MODELS,
-  LOGO_THINKING_LEVEL,
   fetchAsReference,
   storeBuffer,
   storeRender,
 } from '../lib/engine/generation'
 import { generateWithOcrGate } from '../lib/engine/ocr-gate'
-import { parseLogoAnswersV3 } from '../lib/engine/logo-brief'
-import { directLogoConcepts } from '../lib/engine/logo-director'
+import { parseLogoAnswersV3, LOGO_AMBIANCE_TAG } from '../lib/engine/logo-brief'
+import { directLogoConcepts, type LogoConcept } from '../lib/engine/logo-director'
 import { generateLogoProposition, type LogoProposition } from '../lib/engine/logo-pipeline'
-import { pickExemplars } from '../lib/engine/exemplars'
+import { assembleLogo, declineMonochrome } from '../lib/engine/logo-stack'
+import { pickExemplars, styleQueryForMatiere } from '../lib/engine/exemplars'
 import { estimateCostEur } from '../lib/engine/pricing'
-import { cutoutFlatBackground, makeMonochrome } from '../lib/engine/cutout'
 import { makeLayerId, type Layer } from '../lib/engine/layers'
 import { composeAsset, effectFileBuffer, effectsManifest } from '../lib/engine/composite'
 import { GeminiError } from '../lib/ai/gemini'
@@ -371,8 +368,8 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
         return jsonError('logo_already_set', 409, 'Le logo master est en place — il se compose, il ne se régénère pas.')
       }
 
-      // 3 propositions + jusqu'à 3 régénérations ciblées possibles
-      const guard = await checkEngineGuards(user.id, 3)
+      // Run 5.7 : 3 propositions × (fond + emblème) + régénérations ciblées
+      const guard = await checkEngineGuards(user.id, 6)
       if (!guard.ok) return jsonError(guard.code, guard.status, guard.message)
 
       const service = createServiceClient()
@@ -432,12 +429,43 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
 
       // Références jointes à CHAQUE génération : cluster du mapping d'abord,
       // puis les références uploadées par l'utilisateur (3 max au total).
-      const exemplars = pickExemplars({ category: 'logo', da, energie, modernite, maxPrompts: 0, maxReferences: 2 })
-      const references = [...exemplars.references]
-      const userRefs = ((project.ambiance?.references ?? []) as string[]).slice(0, 3 - references.length)
+      // Run 5.5 (wizard v4) : le tag d'ambiance du logo pilote la sélection.
+      // Run 5.8 (chantier 2) : la MARQUE (lockup/emblème) reçoit 3 références
+      // de la MÊME famille de rendu que son concept, lettrage travaillé
+      // privilégié — sinon le transfert de style est faible. Le fond garde la
+      // sélection cluster + les références utilisateur.
+      const daLogo = answers.ambiance
+        ? { ...da, clusterTags: [...new Set([...da.clusterTags, LOGO_AMBIANCE_TAG[answers.ambiance]])] }
+        : da
+      const exemplarsFond = pickExemplars({ category: 'logo', da: daLogo, energie, modernite, maxPrompts: 0, maxReferences: 2 })
+      const fondRefs = [...exemplarsFond.references]
+      const userRefs = ((project.ambiance?.references ?? []) as string[]).slice(0, 3 - fondRefs.length)
       for (const url of userRefs) {
         const ref = await fetchAsReference(url)
-        if (ref) references.push(ref)
+        if (ref) fondRefs.push(ref)
+      }
+      // Run 5.9 (chantier 1) : la matière demandée au wizard pilote aussi la
+      // sélection — les références jointes exécutent le traitement demandé.
+      const styleQuery = styleQueryForMatiere(answers.matiere)
+      const marqueParFamille = new Map<string, ReturnType<typeof pickExemplars>>()
+      const marquePourFamille = (famille: LogoConcept['famille']) => {
+        let sel = marqueParFamille.get(famille)
+        if (!sel) {
+          sel = pickExemplars({
+            category: 'logo',
+            da: daLogo,
+            energie,
+            modernite,
+            maxPrompts: 0,
+            maxReferences: 3,
+            famille,
+            prefereLettrage: true,
+            traitements: styleQuery.traitements,
+            matiereMotsCles: styleQuery.matiereMotsCles,
+          })
+          marqueParFamille.set(famille, sel)
+        }
+        return sel
       }
 
       // ÉTAGES 2 + 3 — un concept = une proposition, relue avant affichage.
@@ -449,7 +477,7 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
             projectName: project.name,
             answers,
             concept,
-            references,
+            references: { fond: fondRefs, marque: marquePourFamille(concept.famille).references },
             resolution: '2K',
             log: { userId: user.id, projectId: body.projectId, assetId: asset.id, kind: `logo_proposal_${i + 1}` },
           })
@@ -464,19 +492,41 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
         return jsonError('generation_failed', 502, reason?.message ?? 'Aucune proposition n’a passé la relecture — relance la génération.')
       }
 
+      // Run 5.7 : les CALQUES de chaque proposition sont stockés avec elle —
+      // le master 4K sera un ré-assemblage local (zéro appel API), et chaque
+      // calque reste régénérable/ajustable indépendamment.
+      const stamp = Date.now()
       const stored = await Promise.all(
-        propositions.map(async (prop, i) => ({
-          url: await storeRender(`${user.id}/${body.projectId}/logo/proposition-${Date.now()}-${i}.png`, prop.dataUrl),
-          concept: prop.concept,
-          ocrRejects: prop.ocrRejects,
-          conceptOk: prop.conceptOk,
-          adnOk: prop.adnOk,
-          serveurLogo: prop.serveurLogo,
-          lisible64: prop.lisible64,
-          scores: prop.scores,
-          defauts: prop.defauts,
-          regenere: prop.regenere,
-        }))
+        propositions.map(async (prop, i) => {
+          const base = `${user.id}/${body.projectId}/logo/proposition-${stamp}-${i}`
+          const [url, alphaUrl, fondUrl, lockupUrl, emblemeUrl] = await Promise.all([
+            storeRender(`${base}.png`, prop.dataUrl),
+            storeRender(`${base}-alpha.png`, prop.layers.alphaDataUrl),
+            prop.layers.fondDataUrl ? storeRender(`${base}-fond.png`, prop.layers.fondDataUrl) : Promise.resolve(null),
+            prop.layers.lockupDataUrl ? storeRender(`${base}-lockup.png`, prop.layers.lockupDataUrl) : Promise.resolve(null),
+            prop.layers.emblemeDataUrl ? storeRender(`${base}-embleme.png`, prop.layers.emblemeDataUrl) : Promise.resolve(null),
+          ])
+          return {
+            url,
+            layers: { alphaUrl, fondUrl, lockupUrl, emblemeUrl },
+            concept: prop.concept,
+            famille: prop.concept.famille,
+            ocrRejects: prop.ocrRejects,
+            conceptOk: prop.conceptOk,
+            adnOk: prop.adnOk,
+            serveurLogo: prop.serveurLogo,
+            lisible64: prop.lisible64,
+            scores: prop.scores,
+            defauts: prop.defauts,
+            regenere: prop.regenere,
+            calqueRegenere: prop.calqueRegenere,
+            modeLockup: prop.modeLockup,
+            fallbackLettrageLocal: prop.fallbackLettrageLocal,
+            // run 5.8 (chantier 5) : les prompts calques RÉELLEMENT envoyés à
+            // l'API — un rendu raté se rejoue désormais à l'identique.
+            promptsCalques: prop.promptsCalques,
+          }
+        })
       )
 
       const coutParEtage = {
@@ -494,8 +544,19 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
             {
               kind: 'logo_concepts',
               concepts: direction.concepts,
-              references: references.length,
-              exemplars: exemplars.slugs,
+              // run 5.7 : url → calques, pour le ré-assemblage 4K local du master
+              // run 5.8 : + les prompts calques réellement envoyés (rejouables)
+              propositions: stored.map((p) => ({
+                url: p.url,
+                layers: p.layers,
+                concept: p.concept,
+                modeLockup: p.modeLockup,
+                fallbackLettrageLocal: p.fallbackLettrageLocal,
+                promptsCalques: p.promptsCalques,
+              })),
+              references: fondRefs.length,
+              exemplars: exemplarsFond.slugs,
+              exemplarsMarque: Object.fromEntries([...marqueParFamille.entries()].map(([f, s]) => [f, s.slugs])),
               coutParEtage,
               at: new Date().toISOString(),
             },
@@ -567,62 +628,63 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
         return jsonError('insufficient_credits', 402, 'Plus de création disponible pour finaliser le logo. Recharge dans Abonnement.')
       }
 
-      const reference = await fetchAsReference(body.chosenUrl)
-      if (!reference) return jsonError('reference_unreachable', 400, 'La proposition choisie est introuvable.')
-
       const answers = parseLogoAnswersV3(asset.wizard_answers) ?? parseLogoAnswersV3({ type: 'embleme' })!
-      const name = project.name.trim().toUpperCase()
-      const expectedTexts =
-        answers.type === 'nom' ? [name] : answers.type === 'lettre' ? [(name[0] ?? 'N').toUpperCase()] : []
 
-      // Fond transparent = master détouré → atelier gris imposé au re-rendu.
-      // Fond plein / dégradé+motifs : le fond FAIT PARTIE du logo, on le
-      // reproduit tel quel et on ne détoure pas.
+      // ── Run 5.7 : le master 4K est un RÉ-ASSEMBLAGE LOCAL des calques ──────
+      // stockés avec la proposition — ZÉRO appel API. Le lettrage est re-rendu
+      // net à l'échelle 4K (vraie police), le fond et l'emblème sont upscalés.
+      // La reproduction monolithique 4K « Reproduce the EXACT same logo » est
+      // SUPPRIMÉE (elle réveillait le prior « gaming logo 2015 »).
+      type StoredLayers = { alphaUrl: string | null; fondUrl: string | null; lockupUrl?: string | null; emblemeUrl: string | null }
+      const conceptEntries = ((asset.compiled_prompts ?? []) as Array<{
+        kind?: string
+        propositions?: Array<{ url: string; layers: StoredLayers; concept: LogoConcept }>
+      }>).filter((e) => e.kind === 'logo_concepts')
+      let chosen: { layers: StoredLayers; concept: LogoConcept } | null = null
+      for (const entry of [...conceptEntries].reverse()) {
+        const hit = (entry.propositions ?? []).find((p) => p.url === body.chosenUrl)
+        if (hit) {
+          chosen = hit
+          break
+        }
+      }
+      if (!chosen?.concept?.calques) {
+        return jsonError(
+          'proposition_layers_missing',
+          409,
+          'Cette proposition date d’avant le pipeline par calques (run 5.7) — relance « 3 propositions » pour obtenir des propositions ré-assemblables.'
+        )
+      }
+
+      const fetchLayer = async (url: string | null): Promise<Buffer | null> => {
+        if (!url) return null
+        const ref = await fetchAsReference(url)
+        return ref ? Buffer.from(ref.data, 'base64') : null
+      }
+      const [fondPng, lockupPng, emblemePng] = await Promise.all([
+        fetchLayer(chosen.layers.fondUrl),
+        fetchLayer(chosen.layers.lockupUrl ?? null),
+        fetchLayer(chosen.layers.emblemeUrl),
+      ])
+
       const cutoutNeeded = answers.fond === 'transparent'
-      const masterPrompt = [
-        'Reproduce the EXACT same logo as the attached reference image — identical design, identical colors, identical proportions, identical spelling. Do not redesign, do not add elements.',
-        'Render it at maximum sharpness with vector-grade clean edges.',
-        cutoutNeeded
-          ? `Background: perfectly flat, uniform, seamless light grey ${LOGO_BACKGROUND_HEX}. Nothing else in the frame. The mark must not touch the edges — keep 12% padding.`
-          : 'Background: reproduce the reference background identically, full-bleed — it is part of the logo.',
-        'Square 1:1 composition, mark perfectly centered.',
-        expectedTexts.length
-          ? `The lettering still reads exactly "${expectedTexts[0]}" — spelled ${spellOut(expectedTexts[0]!)} — perfect spelling.`
-          : '',
-      ].filter(Boolean).join('\n')
-
-      const master = await generateWithOcrGate({
-        model: ENGINE_MODELS.master,
-        prompt: masterPrompt,
-        referenceImages: [reference],
-        imageConfig: { aspectRatio: '1:1', imageSize: '4K' },
-        thinkingLevel: LOGO_THINKING_LEVEL,
-        expectedTexts,
-        log: { userId: user.id, projectId: body.projectId, assetId: asset.id, kind: 'logo_master', resolution: '4K' },
+      const stack = await assembleLogo({
+        fondPng: cutoutNeeded ? undefined : fondPng ?? undefined,
+        lockupPng: lockupPng ?? undefined,
+        emblemePng: emblemePng ?? undefined,
+        recette: chosen.concept.calques,
+        taille: 4096,
       })
 
-      // Détourage local (zéro appel API) + déclinaisons — seulement quand le
-      // livrable est un PNG transparent ; sinon le master reste plein cadre.
-      const masterBuffer = Buffer.from(master.dataUrl.split(',').pop() ?? '', 'base64')
-      let masterPng: Buffer = masterBuffer
-      let masterWidth = 4096
-      let masterHeight = 4096
-      let white: Buffer = masterBuffer
-      let black: Buffer = masterBuffer
-      if (cutoutNeeded) {
-        const cutout = await cutoutFlatBackground(masterBuffer)
-        masterPng = cutout.png
-        masterWidth = cutout.width
-        masterHeight = cutout.height
-        ;[white, black] = await Promise.all([
-          makeMonochrome(cutout.png, 'white'),
-          makeMonochrome(cutout.png, 'black'),
-        ])
-      } else {
-        const meta = await sharp(masterBuffer).metadata()
-        masterWidth = meta.width ?? 4096
-        masterHeight = meta.height ?? 4096
-      }
+      // Déclinaisons : dérivées du couple lettrage+emblème SANS le fond —
+      // le détourage est trivial par construction (plus de flood-fill).
+      const masterPng: Buffer = cutoutNeeded ? stack.alpha : stack.master
+      const masterWidth = stack.width
+      const masterHeight = stack.height
+      const [white, black] = await Promise.all([
+        declineMonochrome(stack.alpha, 'white'),
+        declineMonochrome(stack.alpha, 'black'),
+      ])
 
       const base = `${user.id}/${body.projectId}/logo`
       const [url, whiteUrl, blackUrl] = await Promise.all([
@@ -644,7 +706,10 @@ export const engineRoutes = new Elysia({ prefix: '/engine' })
           status: 'exported',
           preview_url: url,
           exports: [...(asset.exports ?? []), { url, resolution: '4K', at: new Date().toISOString() }],
-          compiled_prompts: [...(asset.compiled_prompts ?? []), { kind: 'logo_master', prompt: masterPrompt, at: new Date().toISOString() }],
+          compiled_prompts: [
+            ...(asset.compiled_prompts ?? []),
+            { kind: 'logo_master', assemblage: 'local_4k_calques_run57', chosenUrl: body.chosenUrl, at: new Date().toISOString() },
+          ],
           updated_at: new Date().toISOString(),
         })
         .eq('id', asset.id)

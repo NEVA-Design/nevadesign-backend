@@ -4,7 +4,6 @@ import {
   compileHeroPromptV2,
   compileInstructPrompt,
   compileLogoFondPrompt,
-  compileLogoPromptV2,
   compileScenePromptLegacy,
   type CompiledPromptV2,
   type ProjectLike,
@@ -41,7 +40,7 @@ import { adnBlockBackground, getTrainingStatus, TrainingRequiredError } from '..
 // SEULE exception au « zéro logo sur flash » : la variante A/B « ancien
 // chemin » ci-dessous, qui documente précisément ce qu'on a quitté.
 // Aucune route produit n'y touche.
-const LEGACY_FLASH_LOGO_AB = 'gemini-3.1-flash-image'
+// Run 5.7 : LEGACY_FLASH_LOGO_AB supprimé avec l'A/B logo monolithique.
 
 const REDSIDE_ANSWERS: StyleAnswers = { universe: 'cartel', energie: 85, modernite: 60, couleur: '#E63946' }
 const ETE_ANSWERS: StyleAnswers = { universe: 'ete_plage', energie: 25, modernite: 70, couleur: '#118AB2' }
@@ -214,8 +213,10 @@ function buildCases(): TestCase[] {
   const daL6rys = resolveArtDirection({ universe: 'rp_urbain', energie: 60, modernite: 80, couleur: '#00D2FF' }, L6RYS.name)
   const daFruitz = resolveArtDirection(FRUITZ_ANSWERS, FRUITZ.name)
 
-  // A/B flash sans DA (ancien, run 5.2) vs pro+DA+gabarit (nouveau) — MÊME brief
-  const fruitzOldPath = compileLogoPromptV2({ project: FRUITZ, da: daFruitz, answers: { type: 'nom' }, energie: 45, modernite: 75 })
+  // Run 5.7 : l'A/B « ancien chemin monolithique vs nouveau » est retiré —
+  // compileLogoPromptV2 est supprimée du code (interdit : aucune génération
+  // « logo entier » où que ce soit). daFruitz reste utilisé par les cas v3.
+  void daFruitz
 
   // Cas héro conservés du run 5.2
   const banV1 = compileScenePromptLegacy({ project: REDSIDE, category: 'banniere_discord', answers: REDSIDE_SCENE })
@@ -253,38 +254,6 @@ function buildCases(): TestCase[] {
       brief: FRUITZ_BRIEF,
       generationLabel: 'Étages 2+3 — générer les 3 propositions (pro 2K + relecture ADN)',
     }),
-    {
-      id: 'ab_flash_da',
-      titre: 'A/B — flash sans DA (ancien) vs pro+gabarit+ADN (nouveau), même brief Fruitz',
-      attendu:
-        'Ancien (run 5.2) : flash 1K, prompt compilé sans sujet, ~2 s sans réflexion. Nouveau : le concept 1 du gabarit maître exécuté par le pro 2K avec thinking + ADN + relecture. Le nouveau chemin doit montrer relief, glow et thème fruit — l’ancien documente ce qui ne va plus.',
-      variants: [
-        {
-          id: 'ancien',
-          label: 'Ancien chemin — flash sans DA (run 5.2)',
-          pipeline: 'v1',
-          kind: 'logo',
-          model: LEGACY_FLASH_LOGO_AB,
-          count: 1,
-          prompt: fruitzOldPath.prompt,
-          referencesJointes: 0,
-          ocrAttendus: fruitzOldPath.expectedTexts,
-          aspectRatio: '1:1',
-        },
-        {
-          id: 'nouveau',
-          label: 'Nouveau chemin — concept 1 du gabarit sur pro 2K (lancer d’abord l’étage 1 du cas Fruitz)',
-          pipeline: 'logo_v3_generation',
-          kind: 'logo',
-          model: ENGINE_MODELS.logoImage,
-          count: 1,
-          prompt: '(le prompt = concept 1 de l’étage 1 du cas Fruitz)',
-          referencesJointes: 0,
-          ocrAttendus: ['FRUITZ'],
-          aspectRatio: '1:1',
-        },
-      ],
-    },
     logoV3Case({
       id: 'theme_animal',
       titre: 'Thème animal — « dauphin, océan » pour Azure Bay',
@@ -516,18 +485,30 @@ export const adminTestEngineRoutes = new Elysia({ prefix: '/admin/test-moteur' }
           return Response.json({ error: 'Lance d’abord l’étage 1 (les 3 gabarits du DA) — la génération exécute exactement ces prompts.' }, { status: 409 })
         }
         const { da, energie, modernite } = daFor(ctx.project)
-        const exemplars = pickExemplars({ category: 'logo', da, energie, modernite, maxPrompts: 0, maxReferences: 3 })
+        // Run 5.8 : fond = sélection cluster ; marque = 3 réfs de la même
+        // famille de rendu que le concept, lettrage privilégié.
+        const exemplarsFond = pickExemplars({ category: 'logo', da, energie, modernite, maxPrompts: 0, maxReferences: 3 })
         const concepts = stored.concepts.slice(0, variant.count)
 
         const propositions = []
         let generationEur = 0
         let relectureEur = 0
         for (const [i, concept] of concepts.entries()) {
+          const exemplarsMarque = pickExemplars({
+            category: 'logo',
+            da,
+            energie,
+            modernite,
+            maxPrompts: 0,
+            maxReferences: 3,
+            famille: concept.famille,
+            prefereLettrage: true,
+          })
           const prop = await generateLogoProposition({
             projectName: ctx.project.name,
             answers: ctx.brief,
             concept,
-            references: exemplars.references,
+            references: { fond: exemplarsFond.references, marque: exemplarsMarque.references },
             resolution: '2K',
             log: { userId: adminUserId, kind: `admin_test_${testCase.id}_${variant.id}_${i + 1}` },
           })
@@ -542,6 +523,8 @@ export const adminTestEngineRoutes = new Elysia({ prefix: '/admin/test-moteur' }
             scores: prop.scores,
             defauts: prop.defauts,
             regenere: prop.regenere,
+            modeLockup: prop.modeLockup,
+            fallbackLettrageLocal: prop.fallbackLettrageLocal,
           })
           generationEur += prop.cout.generationEur
           relectureEur += prop.cout.relectureEur

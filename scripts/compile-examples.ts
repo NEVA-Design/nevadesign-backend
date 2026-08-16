@@ -13,7 +13,6 @@ import { writeFileSync, mkdirSync } from 'fs'
 import { resolve } from 'path'
 import {
   compileHeroPromptV2,
-  compileLogoPromptV2,
   getSceneTemplate,
 } from '../src/lib/engine/compiler'
 import { resolveArtDirection } from '../src/lib/engine/mapping'
@@ -64,9 +63,9 @@ function pushCase(title: string, prompt: string, references: number, exemplars: 
   )
 }
 
-// 1. Logo REDSIDE — nom complet, direction cartel/agressif/rouge
-const logo = compileLogoPromptV2({ project: CARTEL_PROJECT, da: daCartel, answers: { type: 'nom' }, energie: 85, modernite: 60 })
-pushCase('1. Logo « REDSIDE » — nom complet, mapping Cartel + Agressif + Rouge', logo.prompt, logo.references.length, logo.exemplarSlugs)
+// 1. (run 5.7) Les exemples logo monolithiques sont supprimés avec
+// compileLogoPromptV2 — le pipeline logo passe par les calques superposés
+// (logo-stack.ts), dont les prompts se prévisualisent via /admin/test-moteur.
 
 // 2. Bannière Discord REDSIDE — titre GÉNÉRÉ dans l'image
 const hero = compileHeroPromptV2({
@@ -94,13 +93,9 @@ const heroEte = compileHeroPromptV2({
 })
 pushCase('3. Bannière Discord « Vespucci Life » — mapping Été + Élégant + Teal (contraste du mapping)', heroEte.prompt, heroEte.references.length, heroEte.exemplarSlugs)
 
-// 4. Orthographe piège : L6RYS en logo
-const l6rys = compileLogoPromptV2({
-  project: { ...CARTEL_PROJECT, name: 'L6RYS' },
-  da: resolveArtDirection({ universe: 'rp_urbain', energie: 60, modernite: 80, couleur: '#00D2FF' }, 'L6RYS'),
-  answers: { type: 'nom' },
-})
-pushCase('4. Logo « L6RYS » — épellation forcée L-6-R-Y-S (cas piège orthographe)', l6rys.prompt, l6rys.references.length, l6rys.exemplarSlugs)
+// 4. (run 5.7) Le cas orthographe piège logo (L6RYS) n'a plus d'objet : le
+// lettrage est typographié côté serveur — l'orthographe est parfaite par
+// construction, plus aucune génération de lettrage par le modèle image.
 
 // 5. Bandeau FiveM 17:1 — titre dans la bande centrale
 const strip = compileHeroPromptV2({

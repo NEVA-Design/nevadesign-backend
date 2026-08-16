@@ -1,0 +1,5180 @@
+{
+  "generatedAt": "2026-08-16T13:51:59.154Z",
+  "modele": "gemini-3.5-flash",
+  "psds": [
+    {
+      "psd": "6mbanner.psd",
+      "dir": "6mbanner",
+      "pile": [
+        {
+          "id": 0,
+          "name": "Groupe 1",
+          "kind": "group",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Scène de fond sombre avec des étoiles et des lueurs vertes.",
+          "couleurs": [
+            "#000000",
+            "#00ff00"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 1,
+          "name": "Calque 0",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Rectangle blanc uni servant de base ou de masque.",
+          "couleurs": [
+            "#ffffff",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 2,
+          "name": "6Mlogo",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "absent",
+          "description": "Logo hexagonal vert et blanc avec un design géométrique.",
+          "couleurs": [
+            "#39ff14",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 3,
+          "name": "6Mlogo copie",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Version floutée et lumineuse du logo hexagonal vert.",
+          "couleurs": [
+            "#39ff14",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 5,
+          "name": "Calque 18",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Vignettage sombre avec un centre plus clair et texturé.",
+          "couleurs": [
+            "#000000",
+            "#333333"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 6,
+          "name": "Calque 13",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Texture de lignes diagonales sombres et transparentes.",
+          "couleurs": [
+            "#000000",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 7,
+          "name": "Calque 2 copie 2",
+          "kind": "layer",
+          "role": "mascotte",
+          "lettrage_nature": "absent",
+          "description": "Homme en costume blanc debout avec ombre portée.",
+          "couleurs": [
+            "#ffffff",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 8,
+          "name": "Calque 11",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Formes géométriques 3D grises inclinées.",
+          "couleurs": [
+            "#2b2b2b",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 9,
+          "name": "Calque 11 copie",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Copie sombre de formes géométriques 3D inclinées.",
+          "couleurs": [
+            "#1a1a1a",
+            "#0d0d0d"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 10,
+          "name": "Calque 12",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Structure architecturale moderne 3D sur fond blanc incliné.",
+          "couleurs": [
+            "#ffffff",
+            "#7f8c8d"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 11,
+          "name": "Calque 12 copie",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Structure architecturale moderne avec effet d'ombre douce.",
+          "couleurs": [
+            "#ffffff",
+            "#2c3e50"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 12,
+          "name": "6Mlogo",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "absent",
+          "description": "Logo hexagonal vert et blanc net.",
+          "couleurs": [
+            "#39ff14",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 13,
+          "name": "Calque 5",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Ombre noire circulaire floue au centre.",
+          "couleurs": [
+            "#000000",
+            "#111111"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 14,
+          "name": "Calque 1",
+          "kind": "layer",
+          "role": "mascotte",
+          "lettrage_nature": "absent",
+          "description": "Homme en costume blanc debout sans ombre portée.",
+          "couleurs": [
+            "#ffffff",
+            "#dcdde1"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 15,
+          "name": "Calque 3",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Deux petites ombres floues horizontales.",
+          "couleurs": [
+            "#000000",
+            "#222222"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 16,
+          "name": "Calque 2 copie",
+          "kind": "layer",
+          "role": "mascotte",
+          "lettrage_nature": "absent",
+          "description": "Homme en costume blanc incliné sur plan quadrillé.",
+          "couleurs": [
+            "#ffffff",
+            "#333333"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 17,
+          "name": "Rectangle 1",
+          "kind": "layer",
+          "role": "badge_forme",
+          "lettrage_nature": "absent",
+          "description": "Bouton rectangulaire arrondi de couleur jaune doré.",
+          "couleurs": [
+            "#f1c40f",
+            "#f39c12"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 18,
+          "name": "Rectangle 1 copie",
+          "kind": "layer",
+          "role": "badge_forme",
+          "lettrage_nature": "absent",
+          "description": "Copie du bouton rectangulaire arrondi jaune doré.",
+          "couleurs": [
+            "#f1c40f",
+            "#f39c12"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 19,
+          "name": "Calque 2",
+          "kind": "layer",
+          "role": "mascotte",
+          "lettrage_nature": "absent",
+          "description": "Homme en costume blanc avec ombre portée marquée.",
+          "couleurs": [
+            "#ffffff",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 20,
+          "name": "Calque 2 copie 3",
+          "kind": "layer",
+          "role": "mascotte",
+          "lettrage_nature": "absent",
+          "description": "Homme en costume blanc avec ombre portée douce.",
+          "couleurs": [
+            "#ffffff",
+            "#111111"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 21,
+          "name": "Calque 4",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Halo lumineux vert flou et circulaire.",
+          "couleurs": [
+            "#2ecc71",
+            "#a3e4d7"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 22,
+          "name": "Calque 6",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Éléments de fond sombres avec silhouette masquée.",
+          "couleurs": [
+            "#000000",
+            "#1c1c1c"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 23,
+          "name": "Une",
+          "kind": "text",
+          "role": "lettrage",
+          "lettrage_nature": "typographie",
+          "description": "Texte vertical noir 'Une' en police grasse.",
+          "couleurs": [
+            "#000000",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 24,
+          "name": "Calque 7",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Texture de fumée ou de nuages gris clair.",
+          "couleurs": [
+            "#ffffff",
+            "#7f8c8d"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 25,
+          "name": "Calque 8",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Particules blanches éparses et poussière lumineuse",
+          "couleurs": [
+            "#ffffff",
+            "#808080"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 26,
+          "name": "Longueur",
+          "kind": "text",
+          "role": "lettrage",
+          "lettrage_nature": "typographie",
+          "description": "Texte 'Longueur' en police sans-serif noire",
+          "couleurs": [
+            "#000000",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 27,
+          "name": "6Mlogo",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "absent",
+          "description": "Logo hexagonal stylisé vert et blanc",
+          "couleurs": [
+            "#4ade80",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 28,
+          "name": "D’avance",
+          "kind": "text",
+          "role": "lettrage",
+          "lettrage_nature": "typographie",
+          "description": "Texte 'D'avance' en police sans-serif noire",
+          "couleurs": [
+            "#000000",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 29,
+          "name": "D’avance",
+          "kind": "text",
+          "role": "lettrage",
+          "lettrage_nature": "typographie",
+          "description": "Texte 'D'avance' noir avec contour blanc",
+          "couleurs": [
+            "#000000",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 30,
+          "name": "Lancement",
+          "kind": "layer",
+          "role": "ui_texte_secondaire",
+          "lettrage_nature": "typographie",
+          "description": "Texte 'A chaque Lancement' blanc sur fond vert",
+          "couleurs": [
+            "#4ade80",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 31,
+          "name": "Lancement copie",
+          "kind": "layer",
+          "role": "badge_forme",
+          "lettrage_nature": "typographie",
+          "description": "Bandeau vert oblique avec texte 'A chaque Lancement'",
+          "couleurs": [
+            "#4ade80",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 32,
+          "name": "Fond 1",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Arrière-plan sombre et flou de ville",
+          "couleurs": [
+            "#1a1a1a",
+            "#2d2d2d"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 33,
+          "name": "Calque 14",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Halos lumineux verts flous",
+          "couleurs": [
+            "#4ade80",
+            "#22c55e"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 34,
+          "name": "Calque 15",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Vignettage et ombres noires douces",
+          "couleurs": [
+            "#000000",
+            "#111111"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 35,
+          "name": "Calque 6 copie",
+          "kind": "layer",
+          "role": "mascotte",
+          "lettrage_nature": "absent",
+          "description": "Personnage GTA en chemise blanche et lunettes",
+          "couleurs": [
+            "#ffffff",
+            "#d1a884"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 36,
+          "name": "Calque 9",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Grand éclat lumineux blanc avec rayons",
+          "couleurs": [
+            "#ffffff",
+            "#e2e8f0"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 37,
+          "name": "Calque 10",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Éclat lumineux blanc doux",
+          "couleurs": [
+            "#ffffff",
+            "#cbd5e1"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 38,
+          "name": "Calque 16",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Ligne verticale verte translucide",
+          "couleurs": [
+            "#22c55e",
+            "#15803d"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 39,
+          "name": "Calque 17",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Fond étoilé noir avec effet de vitesse",
+          "couleurs": [
+            "#000000",
+            "#1e293b"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 40,
+          "name": "Calque 19",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Grille de particules lumineuses rouges",
+          "couleurs": [
+            "#ef4444",
+            "#f87171"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 41,
+          "name": "Calque 20",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Faisceau lumineux horizontal vert",
+          "couleurs": [
+            "#22c55e",
+            "#4ade80"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 42,
+          "name": "Calque 22",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Petits éclats lumineux verts horizontaux",
+          "couleurs": [
+            "#22c55e",
+            "#16a34a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 44,
+          "name": "Groupe 2",
+          "kind": "group",
+          "role": "autre",
+          "lettrage_nature": "typographie",
+          "description": "Composition finale complète de la bannière",
+          "couleurs": [
+            "#22c55e",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 45,
+          "name": "Calque 23",
+          "kind": "layer",
+          "role": "autre",
+          "lettrage_nature": "typographie",
+          "description": "Bannière complète avec légères variations",
+          "couleurs": [
+            "#22c55e",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 46,
+          "name": "Calque 24",
+          "kind": "layer",
+          "role": "autre",
+          "lettrage_nature": "typographie",
+          "description": "Bannière avec masque d'écrêtage sur le texte",
+          "couleurs": [
+            "#22c55e",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 47,
+          "name": "Calque 25",
+          "kind": "layer",
+          "role": "autre",
+          "lettrage_nature": "absent",
+          "description": "Masque de découpe noir et blanc",
+          "couleurs": [
+            "#000000",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 48,
+          "name": "Calque 26",
+          "kind": "layer",
+          "role": "autre",
+          "lettrage_nature": "typographie",
+          "description": "Version alternative de la bannière finalisée",
+          "couleurs": [
+            "#22c55e",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        }
+      ]
+    },
+    {
+      "psd": "6mlogo.psd",
+      "dir": "6mlogo",
+      "pile": [
+        {
+          "id": 0,
+          "name": "Groupe 2",
+          "kind": "group",
+          "role": "embleme",
+          "lettrage_nature": "absent",
+          "description": "Logo complet assemblé avec hexagone et chevrons verts",
+          "couleurs": [
+            "#000000",
+            "#80ff80"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 1,
+          "name": "Groupe 3",
+          "kind": "group",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Double chevron vert translucide pointant vers le bas",
+          "couleurs": [
+            "#408040",
+            "#204020"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 2,
+          "name": "Groupe 1",
+          "kind": "group",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Grille technique blanche avec papier déchiré sur le côté",
+          "couleurs": [
+            "#ffffff",
+            "#cccccc"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 3,
+          "name": "Calque 0",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Carré blanc uni servant de base ou de masque",
+          "couleurs": [
+            "#ffffff",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 4,
+          "name": "Calque 3",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Lueur verte verticale diffuse sur le côté droit",
+          "couleurs": [
+            "#408060",
+            "#204030"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 5,
+          "name": "Calque 20",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Grille blanche avec ombre noire circulaire floue",
+          "couleurs": [
+            "#ffffff",
+            "#202020"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 6,
+          "name": "Calque 18",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Bords texturés blancs grunge verticaux",
+          "couleurs": [
+            "#ffffff",
+            "#dddddd"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 7,
+          "name": "Calque 19",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Éclaboussures et textures grunge blanches éparses",
+          "couleurs": [
+            "#ffffff",
+            "#cccccc"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 8,
+          "name": "Calque 11",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Dégradé vert et noir diagonal doux",
+          "couleurs": [
+            "#408060",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 9,
+          "name": "Calque 4",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Bandes de chevrons blancs futuristes sur les côtés",
+          "couleurs": [
+            "#ffffff",
+            "#aaaaaa"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 10,
+          "name": "JE M’APPELLE STAN",
+          "kind": "text",
+          "role": "ui_texte_secondaire",
+          "lettrage_nature": "typographie",
+          "description": "Texte noir 'JE M'APPELLE STAN' en police sans-serif",
+          "couleurs": [
+            "#000000",
+            "#111111"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 11,
+          "name": "Calque 1",
+          "kind": "layer",
+          "role": "lettrage",
+          "lettrage_nature": "custom_dessine",
+          "description": "Logo stylisé '6M' vert et blanc sur fond noir",
+          "couleurs": [
+            "#000000",
+            "#40c060"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 12,
+          "name": "Calque 2",
+          "kind": "layer",
+          "role": "lettrage",
+          "lettrage_nature": "custom_dessine",
+          "description": "Logo '6M' vert et blanc isolé sans fond",
+          "couleurs": [
+            "#40c060",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 13,
+          "name": "Calque 5",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Halo lumineux vert horizontal très flou",
+          "couleurs": [
+            "#40ff80",
+            "#208040"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 15,
+          "name": "Calque 9",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Motif de lignes verticales marron avec découpe centrale",
+          "couleurs": [
+            "#4e3629",
+            "#1a110b"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 16,
+          "name": "Calque 10",
+          "kind": "layer",
+          "role": "lettrage",
+          "lettrage_nature": "custom_dessine",
+          "description": "Logo '6M' avec lueur verte sur fond texturé sombre",
+          "couleurs": [
+            "#000000",
+            "#40ff80"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 17,
+          "name": "Calque 2 copie",
+          "kind": "layer",
+          "role": "lettrage",
+          "lettrage_nature": "custom_dessine",
+          "description": "Logo '6M' vert et blanc de taille moyenne",
+          "couleurs": [
+            "#40c060",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 18,
+          "name": "Calque 2 copie 2",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "custom_dessine",
+          "description": "Chiffre '6' stylisé vert clair géométrique",
+          "couleurs": [
+            "#80ff80",
+            "#40c060"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 19,
+          "name": "Calque 13",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Texture de métal brossé vert foncé et noir",
+          "couleurs": [
+            "#0a1a10",
+            "#152e20"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 20,
+          "name": "Calque 6",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Deux points lumineux verts flous d'intensités différentes",
+          "couleurs": [
+            "#40ff80",
+            "#208040"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 22,
+          "name": "Calque 8",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Halo lumineux blanc ovale et diffus",
+          "couleurs": [
+            "#ffffff",
+            "#888888"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 23,
+          "name": "Calque 12",
+          "kind": "layer",
+          "role": "lettrage",
+          "lettrage_nature": "custom_dessine",
+          "description": "Logo '6M' avec dégradé vert et lueur inférieure",
+          "couleurs": [
+            "#000000",
+            "#40ff80"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 24,
+          "name": "Calque 14",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Chevron vert vif en perspective pointant vers le bas",
+          "couleurs": [
+            "#80ff80",
+            "#40c060"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 25,
+          "name": "Calque 14 copie 4",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Chevron vert vif identique décalé vers la droite",
+          "couleurs": [
+            "#80ff80",
+            "#40c060"
+          ],
+          "modele": "gemini-3.5-flash"
+        }
+      ]
+    },
+    {
+      "psd": "banner.psd",
+      "dir": "banner",
+      "pile": [
+        {
+          "id": 0,
+          "name": "Arrière-plan",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Rectangle blanc uni servant de base de travail.",
+          "couleurs": [
+            "#ffffff",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 1,
+          "name": "Groupe 2",
+          "kind": "group",
+          "role": "autre",
+          "lettrage_nature": "absent",
+          "description": "Groupe contenant le fond de plage et deux rectangles colorés.",
+          "couleurs": [
+            "#ffb5f5",
+            "#ffcc66"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 2,
+          "name": "Calque 1",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Scène de plage ensoleillée avec deux hommes sur des transats.",
+          "couleurs": [
+            "#4ba3e3",
+            "#e2d2b9"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 3,
+          "name": "GridwithLights",
+          "kind": "group",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Groupe d'effets de grille sombre avec des particules lumineuses.",
+          "couleurs": [
+            "#1a1a1a",
+            "#d4af37"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 4,
+          "name": "GridwithLights",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Grille technique sombre avec de légères étincelles dorées.",
+          "couleurs": [
+            "#151515",
+            "#cca43b"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 6,
+          "name": "Calque 5",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Vignettage noir flou pour assombrir les bords de l'image.",
+          "couleurs": [
+            "#000000",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 7,
+          "name": "DotsWithBlackWhite(UseScreen)",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Texture de vagues ou de fumée noire et blanche stylisée.",
+          "couleurs": [
+            "#111111",
+            "#444444"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 8,
+          "name": "Calque 4",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Lueurs colorées d'ambiance, rose à gauche et dorée à droite.",
+          "couleurs": [
+            "#e0338f",
+            "#d1b475"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 10,
+          "name": "Particle",
+          "kind": "group",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Groupe d'effets de fumée grise et de particules d'étincelles.",
+          "couleurs": [
+            "#777777",
+            "#e5a93c"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 11,
+          "name": "Particle",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Nuage de fumée grise centrale avec des étincelles dorées.",
+          "couleurs": [
+            "#888888",
+            "#f0b849"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 13,
+          "name": "gtanew",
+          "kind": "layer",
+          "role": "lettrage",
+          "lettrage_nature": "custom_dessine",
+          "description": "Logo GTA NEW rose et blanc avec bordures stylisées.",
+          "couleurs": [
+            "#ff94f3",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 14,
+          "name": "Calque 3",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Trois points lumineux flous de couleur rose néon.",
+          "couleurs": [
+            "#f279db",
+            "#e04ec3"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 15,
+          "name": "Calque 1 copie",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Copie du fond de plage avec les personnages sur transat.",
+          "couleurs": [
+            "#4ba3e3",
+            "#e2d2b9"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 16,
+          "name": "Fond 1",
+          "kind": "layer",
+          "role": "badge_forme",
+          "lettrage_nature": "absent",
+          "description": "Grand rectangle rose uni servant de masque ou de fond.",
+          "couleurs": [
+            "#ffb5f5",
+            "#ffb5f5"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 17,
+          "name": "Fond 2",
+          "kind": "layer",
+          "role": "badge_forme",
+          "lettrage_nature": "absent",
+          "description": "Grand rectangle orange pastel uni pour la composition.",
+          "couleurs": [
+            "#ffcc66",
+            "#ffcc66"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 21,
+          "name": "Calque 6",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Halo lumineux circulaire flou de couleur orange chaud.",
+          "couleurs": [
+            "#e89d4f",
+            "#c4762b"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 27,
+          "name": "Calque 7",
+          "kind": "layer",
+          "role": "autre",
+          "lettrage_nature": "custom_dessine",
+          "description": "Aperçu final de la bannière assemblée avec tous les calques.",
+          "couleurs": [
+            "#4ba3e3",
+            "#ff94f3"
+          ],
+          "modele": "gemini-3.5-flash"
+        }
+      ]
+    },
+    {
+      "psd": "bannerdsc.psd",
+      "dir": "bannerdsc",
+      "pile": [
+        {
+          "id": 0,
+          "name": "Arrière-plan",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Rectangle blanc uni opaque",
+          "couleurs": [
+            "#ffffff",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 1,
+          "name": "Groupe 1",
+          "kind": "group",
+          "role": "autre",
+          "lettrage_nature": "typographie",
+          "description": "Aperçu miniature de la bannière finale assemblée",
+          "couleurs": [
+            "#1a1a1a",
+            "#d4af37"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 2,
+          "name": "Calque 1",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Scène de jeu GTA V avec voiture et personnages",
+          "couleurs": [
+            "#2b3a67",
+            "#e29578"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 3,
+          "name": "Calque 11",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Bandeau de fumée noire horizontale en bas",
+          "couleurs": [
+            "#000000",
+            "#111111"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 4,
+          "name": "Calque 6",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Fond abstrait flou doré et lumineux",
+          "couleurs": [
+            "#d4af37",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 5,
+          "name": "Calque 7",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Lumière dorée verticale sur le côté gauche",
+          "couleurs": [
+            "#d4af37",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 6,
+          "name": "Calque 18",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Taches de peinture noire floues",
+          "couleurs": [
+            "#000000",
+            "#111111"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 7,
+          "name": "Calque 5",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Grille de perspective 3D filaire blanche",
+          "couleurs": [
+            "#ffffff",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 8,
+          "name": "Calque 12",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Faisceaux de lumière blanche descendants",
+          "couleurs": [
+            "#ffffff",
+            "#888888"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 9,
+          "name": "Calque 2",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Éclaboussures de peinture verticales noires et dorées",
+          "couleurs": [
+            "#000000",
+            "#d4af37"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 10,
+          "name": "Calque 2 copie",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Éclaboussures de peinture horizontales noires et dorées",
+          "couleurs": [
+            "#000000",
+            "#d4af37"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 11,
+          "name": "Calque 3",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Halo lumineux blanc avec rayons fins",
+          "couleurs": [
+            "#ffffff",
+            "#aaaaaa"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 12,
+          "name": "Calque 3 copie",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Deux petits éclats lumineux blancs",
+          "couleurs": [
+            "#ffffff",
+            "#888888"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 13,
+          "name": "Calque 9",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Ombre noire douce dans le coin inférieur gauche",
+          "couleurs": [
+            "#000000",
+            "#111111"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 14,
+          "name": "Calque 8",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Fins reflets lumineux dorés croisés",
+          "couleurs": [
+            "#d4af37",
+            "#888888"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 15,
+          "name": "Calque 1 copie",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Copie de la scène GTA V avec voiture",
+          "couleurs": [
+            "#2b3a67",
+            "#e29578"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 16,
+          "name": "Forme 1 copie",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "custom_dessine",
+          "description": "Logo stylisé avec les lettres GV imbriquées dorées",
+          "couleurs": [
+            "#d4af37",
+            "#b8860b"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 17,
+          "name": "Calque 14",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Texture de lignes verticales grises et noires",
+          "couleurs": [
+            "#1a1a1a",
+            "#555555"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 18,
+          "name": "Golden",
+          "kind": "text",
+          "role": "lettrage",
+          "lettrage_nature": "typographie",
+          "description": "Texte 'Golden' écrit en police cursive dorée",
+          "couleurs": [
+            "#d4af37",
+            "#ffdf7a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 19,
+          "name": "V",
+          "kind": "text",
+          "role": "lettrage",
+          "lettrage_nature": "typographie",
+          "description": "Grande lettre 'V' majuscule dorée",
+          "couleurs": [
+            "#d4af37",
+            "#ffdf7a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 20,
+          "name": "Calque 4",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Halo lumineux circulaire flou doré",
+          "couleurs": [
+            "#d4af37",
+            "#ffdf7a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 21,
+          "name": "Calque 10",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Éclat lumineux en étoile dorée à multiples rayons",
+          "couleurs": [
+            "#d4af37",
+            "#ffdf7a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 22,
+          "name": "Calque 13",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Deux petits reflets horizontaux blancs étirés",
+          "couleurs": [
+            "#ffffff",
+            "#cccccc"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 24,
+          "name": "Groupe 2",
+          "kind": "group",
+          "role": "autre",
+          "lettrage_nature": "absent",
+          "description": "Miniature d'un véhicule de chantier jaune",
+          "couleurs": [
+            "#d4af37",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 25,
+          "name": "Calque 15",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Scène complète avec personnages, voiture de sport et logo GV doré",
+          "couleurs": [
+            "#f1c40f",
+            "#34495e"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 26,
+          "name": "Calque 16",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Scène de fond avec masquage progressif et logo GV doré",
+          "couleurs": [
+            "#f1c40f",
+            "#2c3e50"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 27,
+          "name": "Calque 17",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Texture de grille métallique blanche avec dégradé linéaire",
+          "couleurs": [
+            "#ffffff",
+            "#a0a0a0"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 28,
+          "name": "Golden V",
+          "kind": "layer",
+          "role": "lettrage",
+          "lettrage_nature": "typographie",
+          "description": "Texte 'Golden V' blanc avec effet de dégradé et d'ombre",
+          "couleurs": [
+            "#ffffff",
+            "#dcdde1"
+          ],
+          "modele": "gemini-3.5-flash"
+        }
+      ]
+    },
+    {
+      "psd": "bannerpsd.psd",
+      "dir": "bannerpsd",
+      "pile": [
+        {
+          "id": 0,
+          "name": "Arrière-plan",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Rectangle blanc uni servant de base d'arrière-plan.",
+          "couleurs": [
+            "#ffffff",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 1,
+          "name": "Groupe 1",
+          "kind": "group",
+          "role": "autre",
+          "lettrage_nature": "absent",
+          "description": "Groupe d'éléments superposés avec logo bleu et textures.",
+          "couleurs": [
+            "#ffffff",
+            "#64b5f6"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 2,
+          "name": "Calque 1",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Carré blanc uni.",
+          "couleurs": [
+            "#ffffff",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 3,
+          "name": "Calque 2",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "absent",
+          "description": "Dessin au trait noir d'un volcan en éruption.",
+          "couleurs": [
+            "#ffffff",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 4,
+          "name": "Calque 3",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Effet de ciel étoilé ou de vitesse dans l'espace.",
+          "couleurs": [
+            "#000000",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 5,
+          "name": "logovulcain",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "absent",
+          "description": "Logo d'ailes stylisées bleues en forme de V.",
+          "couleurs": [
+            "#80d8ff",
+            "#0091ea"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 7,
+          "name": "Calque 4",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "absent",
+          "description": "Dessin au trait noir d'une coulée de lave.",
+          "couleurs": [
+            "#ffffff",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 8,
+          "name": "Calque 5",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "absent",
+          "description": "Dessin de volcan incliné avec un point noir.",
+          "couleurs": [
+            "#ffffff",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 9,
+          "name": "Calque 6",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Faisceau lumineux bleu translucide en diagonale.",
+          "couleurs": [
+            "#90caf9",
+            "#1565c0"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 10,
+          "name": "Calque 7",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Carré blanc incliné avec texture de papier.",
+          "couleurs": [
+            "#ffffff",
+            "#e0e0e0"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 11,
+          "name": "Calque 8",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Carré blanc incliné avec ombre douce sur le bord.",
+          "couleurs": [
+            "#ffffff",
+            "#cccccc"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 12,
+          "name": "Calque 9",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Lueur bleue diffuse horizontale.",
+          "couleurs": [
+            "#4fc3f7",
+            "#0288d1"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 13,
+          "name": "Calque 10",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Texture de roche volcanique rougeoyante entre deux bandes blanches.",
+          "couleurs": [
+            "#ffffff",
+            "#bf360c"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 14,
+          "name": "Calque 11",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Bande de lave inclinée entourée de blanc.",
+          "couleurs": [
+            "#ffffff",
+            "#d84315"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 15,
+          "name": "Calque 12",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Deux yeux bleus lumineux stylisés.",
+          "couleurs": [
+            "#80d8ff",
+            "#0091ea"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 16,
+          "name": "Calque 13",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Aura ou ombre noire circulaire diffuse.",
+          "couleurs": [
+            "#000000",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 17,
+          "name": "Calque 16",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Halo lumineux bleu vertical et diffus.",
+          "couleurs": [
+            "#4fc3f7",
+            "#0288d1"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 18,
+          "name": "Calque 17",
+          "kind": "layer",
+          "role": "mascotte",
+          "lettrage_nature": "absent",
+          "description": "Homme tatoué torse nu avec casquette et logo bleu.",
+          "couleurs": [
+            "#d7ccc8",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 19,
+          "name": "Calque 20",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Grille de perspective blanche déformée.",
+          "couleurs": [
+            "#ffffff",
+            "#e0e0e0"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 21,
+          "name": "Groupe 2",
+          "kind": "group",
+          "role": "autre",
+          "lettrage_nature": "absent",
+          "description": "Carré bleu uni avec un élément blanc masqué.",
+          "couleurs": [
+            "#64b5f6",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 22,
+          "name": "Calque 18",
+          "kind": "layer",
+          "role": "mascotte",
+          "lettrage_nature": "absent",
+          "description": "Homme noir avec lunettes de soleil et t-shirt blanc.",
+          "couleurs": [
+            "#ffffff",
+            "#3e2723"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 23,
+          "name": "Fond 1",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Carré bleu ciel uni.",
+          "couleurs": [
+            "#64b5f6",
+            "#64b5f6"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 27,
+          "name": "Calque 15",
+          "kind": "layer",
+          "role": "mascotte",
+          "lettrage_nature": "absent",
+          "description": "Personnage masculin en combinaison bleue moulante.",
+          "couleurs": [
+            "#1565c0",
+            "#3e2723"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 29,
+          "name": "Ligne 1",
+          "kind": "layer",
+          "role": "lettrage",
+          "lettrage_nature": "custom_dessine",
+          "description": "Logo Vulcain bleu avec ailes et texte secondaire.",
+          "couleurs": [
+            "#80d8ff",
+            "#0091ea"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 30,
+          "name": "Calque 21",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Halo lumineux bleu flou et diffus au centre",
+          "couleurs": [
+            "#4fa8ff",
+            "#1a5bb5"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 31,
+          "name": "Calque 25",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Groupe de plusieurs points lumineux blancs flous",
+          "couleurs": [
+            "#ffffff",
+            "#d0d0d0"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 32,
+          "name": "Calque 23",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Ombre noire douce et diffuse dans le coin inférieur gauche",
+          "couleurs": [
+            "#000000",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 33,
+          "name": "Calque 22",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Grille 3D déformée blanche avec un trou noir circulaire",
+          "couleurs": [
+            "#ffffff",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 34,
+          "name": "Calque 24",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Lueur blanche verticale diffuse sur le bord gauche",
+          "couleurs": [
+            "#ffffff",
+            "#808080"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 35,
+          "name": "Calque 28",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Dégradé de lumière blanche en coin inférieur gauche",
+          "couleurs": [
+            "#ffffff",
+            "#a0a0a0"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 36,
+          "name": "Calque 29",
+          "kind": "layer",
+          "role": "autre",
+          "lettrage_nature": "typographie",
+          "description": "Bannière Vulcain avec personnage masculin à lunettes de soleil",
+          "couleurs": [
+            "#0b1623",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 37,
+          "name": "butterfly copy",
+          "kind": "layer",
+          "role": "autre",
+          "lettrage_nature": "typographie",
+          "description": "Bannière Hazerp montrant trois personnages devant une voiture",
+          "couleurs": [
+            "#dfcbb5",
+            "#1c1c1c"
+          ],
+          "modele": "gemini-3.5-flash"
+        }
+      ]
+    },
+    {
+      "psd": "banner_vibefa.psd",
+      "dir": "banner_vibefa",
+      "pile": [
+        {
+          "id": 0,
+          "name": "Arrière-plan",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Rectangle blanc uni servant de base d'arrière-plan.",
+          "couleurs": [
+            "#ffffff",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 2,
+          "name": "Groupe 2",
+          "kind": "group",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Composition de scènes de plage avec feuillage tropical.",
+          "couleurs": [
+            "#000000",
+            "#4a6b40"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 3,
+          "name": "Calque 1",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Scène de piscine ensoleillée avec personnages et palmiers.",
+          "couleurs": [
+            "#3b5c78",
+            "#d97e52"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 4,
+          "name": "Beach'Graph",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Vignettage sombre et texture de grain de film.",
+          "couleurs": [
+            "#000000",
+            "#222222"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 5,
+          "name": "Calque 5",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Texture de grain subtile et assombrissement des bords.",
+          "couleurs": [
+            "#000000",
+            "#111111"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 6,
+          "name": "Calque 9",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Ombres de persiennes projetant des bandes de lumière blanche.",
+          "couleurs": [
+            "#ffffff",
+            "#888888"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 7,
+          "name": "Calque 23",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Dégradé noir doux sur le côté gauche.",
+          "couleurs": [
+            "#000000",
+            "#111111"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 8,
+          "name": "Calque 6",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Forme géométrique texturée vert menthe avec motif de grille.",
+          "couleurs": [
+            "#a3e2c9",
+            "#7cbfa5"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 9,
+          "name": "Calque 7",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Deuxième forme géométrique texturée vert menthe inclinée.",
+          "couleurs": [
+            "#a3e2c9",
+            "#7cbfa5"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 10,
+          "name": "VIBE",
+          "kind": "layer",
+          "role": "lettrage",
+          "lettrage_nature": "typographie",
+          "description": "Texte 'VIBE' avec dégradé orange et jaune.",
+          "couleurs": [
+            "#f39c12",
+            "#e74c3c"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 11,
+          "name": "VIBE",
+          "kind": "layer",
+          "role": "lettrage",
+          "lettrage_nature": "typographie",
+          "description": "Texte 'VIBE' dupliqué avec dégradé orange et jaune.",
+          "couleurs": [
+            "#f39c12",
+            "#e74c3c"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 12,
+          "name": "Calque 1 copie",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Scène de piscine ensoleillée identique au calque 3.",
+          "couleurs": [
+            "#3b5c78",
+            "#d97e52"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 15,
+          "name": "VIBE",
+          "kind": "text",
+          "role": "lettrage",
+          "lettrage_nature": "typographie",
+          "description": "Texte 'VIBE' en blanc uni, police sans-serif grasse.",
+          "couleurs": [
+            "#ffffff",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 16,
+          "name": "FA",
+          "kind": "text",
+          "role": "lettrage",
+          "lettrage_nature": "typographie",
+          "description": "Texte 'FA' en blanc uni, police sans-serif grasse.",
+          "couleurs": [
+            "#ffffff",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 17,
+          "name": "Groupe 1",
+          "kind": "group",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Petit rectangle orange superposé à un billet de banque.",
+          "couleurs": [
+            "#ff9f43",
+            "#85bb65"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 18,
+          "name": "Calque 15",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Billet de 100 dollars flottant et courbé.",
+          "couleurs": [
+            "#85bb65",
+            "#d4af37"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 19,
+          "name": "Fond 1",
+          "kind": "layer",
+          "role": "badge_forme",
+          "lettrage_nature": "absent",
+          "description": "Grand rectangle orange uni servant de fond de bloc.",
+          "couleurs": [
+            "#ff9f43",
+            "#ff9f43"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 21,
+          "name": "Groupe 1",
+          "kind": "group",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Composition miniature d'un rectangle orange et billet de banque.",
+          "couleurs": [
+            "#ff9f43",
+            "#85bb65"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 22,
+          "name": "Calque 16",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Billet de 100 dollars flottant avec effet de perspective.",
+          "couleurs": [
+            "#85bb65",
+            "#d4af37"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 23,
+          "name": "Fond 1",
+          "kind": "layer",
+          "role": "badge_forme",
+          "lettrage_nature": "absent",
+          "description": "Carré orange uni servant de conteneur de couleur.",
+          "couleurs": [
+            "#ff9f43",
+            "#ff9f43"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 25,
+          "name": "Calque 17",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Billet de 100 dollars flou simulant le mouvement.",
+          "couleurs": [
+            "#85bb65",
+            "#a5d6a7"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 26,
+          "name": "SUMMER SEASON",
+          "kind": "text",
+          "role": "ui_texte_secondaire",
+          "lettrage_nature": "typographie",
+          "description": "Texte secondaire 'SUMMER SEASON' en blanc, espacé.",
+          "couleurs": [
+            "#ffffff",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 27,
+          "name": "Calque 8",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Plusieurs points lumineux blancs flous (glows).",
+          "couleurs": [
+            "#ffffff",
+            "#dddddd"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 28,
+          "name": "Calque 10",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Lueur blanche diffuse dans le coin supérieur gauche.",
+          "couleurs": [
+            "#ffffff",
+            "#eeeeee"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 29,
+          "name": "Beach'Graph",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Deux rectangles noirs inclinés superposés",
+          "couleurs": [
+            "#000000",
+            "#050505"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 30,
+          "name": "Calque 18",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Lueurs jaunes diffuses sur les bords",
+          "couleurs": [
+            "#f5c050",
+            "#e09030"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 31,
+          "name": "Calque 2",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Halo lumineux orange et jaune sur le côté gauche",
+          "couleurs": [
+            "#d08040",
+            "#f0b050"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 32,
+          "name": "Calque 3",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Lueur orange douce dans le coin supérieur droit",
+          "couleurs": [
+            "#e09050",
+            "#c07030"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 33,
+          "name": "Calque 4",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "absent",
+          "description": "Coupe de glace avec chantilly, chocolat et framboises",
+          "couleurs": [
+            "#ffffff",
+            "#8b1e3f"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 34,
+          "name": "Fond en dégradé 1",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Dégradé linéaire du noir vers le transparent",
+          "couleurs": [
+            "#000000",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 35,
+          "name": "Calque 11",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Feuilles de palmier vertes inclinées vers la gauche",
+          "couleurs": [
+            "#8cb851",
+            "#5c8031"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 36,
+          "name": "Calque 12",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Feuilles de palmier vertes denses et floues",
+          "couleurs": [
+            "#4a6b27",
+            "#7fa844"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 37,
+          "name": "Calque 13",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Feuilles de palmier pendantes sur le côté droit",
+          "couleurs": [
+            "#7ca33d",
+            "#4e6e24"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 38,
+          "name": "Calque 14",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Feuilles de palmier vertes disposées en angle",
+          "couleurs": [
+            "#8cb851",
+            "#5c8031"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 39,
+          "name": "Rectangle 1",
+          "kind": "layer",
+          "role": "badge_forme",
+          "lettrage_nature": "absent",
+          "description": "Bandeau horizontal noir uni",
+          "couleurs": [
+            "#000000",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 40,
+          "name": "DISCORD.GG/VIBEFA",
+          "kind": "text",
+          "role": "ui_texte_secondaire",
+          "lettrage_nature": "typographie",
+          "description": "Texte blanc DISCORD.GG/VIBEFA en majuscules",
+          "couleurs": [
+            "#ffffff",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 41,
+          "name": "Calque 20",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "typographie",
+          "description": "Bannière estivale complète avec personnages et texte VIBE",
+          "couleurs": [
+            "#f39c12",
+            "#3498db"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 42,
+          "name": "Calque 19",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "typographie",
+          "description": "Bannière estivale complète identique à la précédente",
+          "couleurs": [
+            "#f39c12",
+            "#3498db"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 43,
+          "name": "Groupe 3",
+          "kind": "group",
+          "role": "autre",
+          "lettrage_nature": "absent",
+          "description": "Groupe contenant un rectangle jaune et une glace",
+          "couleurs": [
+            "#f5b041",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 44,
+          "name": "Calque 21",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "absent",
+          "description": "Cône de glace avec boules colorées pastel",
+          "couleurs": [
+            "#d5a6bd",
+            "#a2c4c9"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 45,
+          "name": "Fond 2",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Grand rectangle jaune uni vertical",
+          "couleurs": [
+            "#f5b041",
+            "#f5b041"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 47,
+          "name": "Groupe 3",
+          "kind": "group",
+          "role": "autre",
+          "lettrage_nature": "absent",
+          "description": "Icône de dossier jaune de groupe Photoshop",
+          "couleurs": [
+            "#f5b041",
+            "#f5b041"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 48,
+          "name": "Calque 22",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "absent",
+          "description": "Cône de glace coloré incliné vers la gauche",
+          "couleurs": [
+            "#d5a6bd",
+            "#a2c4c9"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 49,
+          "name": "Fond 2",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Grand rectangle jaune uni horizontal",
+          "couleurs": [
+            "#f5b041",
+            "#f5b041"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 51,
+          "name": "Calque 24",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "typographie",
+          "description": "Bannière estivale complète avec personnages et texte VIBE",
+          "couleurs": [
+            "#f39c12",
+            "#3498db"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 52,
+          "name": "Rectangle 2",
+          "kind": "layer",
+          "role": "badge_forme",
+          "lettrage_nature": "absent",
+          "description": "Bandeau horizontal noir uni",
+          "couleurs": [
+            "#000000",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 53,
+          "name": "Calque 25",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "typographie",
+          "description": "Bannière estivale avec zone centrale assombrie",
+          "couleurs": [
+            "#5a5a5a",
+            "#f39c12"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 54,
+          "name": "Calque 27",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "typographie",
+          "description": "Bannière estivale complète avec personnages et texte VIBE",
+          "couleurs": [
+            "#f39c12",
+            "#3498db"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 55,
+          "name": "Calque 28",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "absent",
+          "description": "Logo en forme de V stylisé orange et rouge avec palmier blanc",
+          "couleurs": [
+            "#f15a24",
+            "#fbb03b"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 56,
+          "name": "Calque 29",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "absent",
+          "description": "Logo en forme de V stylisé orange et rouge avec palmier blanc",
+          "couleurs": [
+            "#f15a24",
+            "#fbb03b"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 57,
+          "name": "Calque 26",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "typographie",
+          "description": "Scène d'été avec personnages au bord d'une piscine et texte VIBE",
+          "couleurs": [
+            "#fbb03b",
+            "#221f1f"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 58,
+          "name": "Rectangle 3",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Ligne horizontale noire épaisse",
+          "couleurs": [
+            "#000000",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        }
+      ]
+    },
+    {
+      "psd": "branding_stan.psd",
+      "dir": "branding_stan",
+      "pile": [
+        {
+          "id": 0,
+          "name": "Calque 0",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Rectangle blanc uni servant de base ou de masque",
+          "couleurs": [
+            "#ffffff",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 1,
+          "name": "Groupe 4",
+          "kind": "group",
+          "role": "autre",
+          "lettrage_nature": "absent",
+          "description": "Miniature de la composition globale sur fond d'écran",
+          "couleurs": [
+            "#1a2b3c",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 2,
+          "name": "Calque 1",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Scène de tournage GTA V avec caméras et voitures",
+          "couleurs": [
+            "#2c2d31",
+            "#8c8d91"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 3,
+          "name": "Calque 1 copie 2",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Copie de la scène de tournage GTA V",
+          "couleurs": [
+            "#2c2d31",
+            "#8c8d91"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 4,
+          "name": "Calque 11",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Éclat lumineux bleu flou et texturé",
+          "couleurs": [
+            "#aed8f2",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 6,
+          "name": "Calque 6",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Texture de lignes diagonales bleues dynamiques",
+          "couleurs": [
+            "#0088ff",
+            "#55b3ff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 8,
+          "name": "Calque 13",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "absent",
+          "description": "Gros glaçon stylisé et détaillé en gros plan",
+          "couleurs": [
+            "#bce3f9",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 13,
+          "name": "Calque 3",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Halo lumineux bleu doux et diffus",
+          "couleurs": [
+            "#7ec2f6",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 14,
+          "name": "Groupe 3",
+          "kind": "layer",
+          "role": "ui_texte_secondaire",
+          "lettrage_nature": "typographie",
+          "description": "Slogan 'Arrête de Chercher Des Joueurs ATTIRE LES !'",
+          "couleurs": [
+            "#ffffff",
+            "#2b82c9"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 15,
+          "name": "Calque 1 copie",
+          "kind": "layer",
+          "role": "mascotte",
+          "lettrage_nature": "absent",
+          "description": "Silhouette bleue du personnage central",
+          "couleurs": [
+            "#4a86e8",
+            "#3a6cb0"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 16,
+          "name": "Calque 23",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Texture métallique striée grise et blanche",
+          "couleurs": [
+            "#e0e0e0",
+            "#999999"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 17,
+          "name": "Calque 1 copie 3",
+          "kind": "layer",
+          "role": "mascotte",
+          "lettrage_nature": "absent",
+          "description": "Personnage GTA V détouré faisant un signe",
+          "couleurs": [
+            "#1c1d21",
+            "#e2e2e2"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 19,
+          "name": "Fond 1",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Fond bleu clair uni",
+          "couleurs": [
+            "#8ec5fc",
+            "#8ec5fc"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 23,
+          "name": "Calque 15",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Halo lumineux blanc diffus et circulaire",
+          "couleurs": [
+            "#ffffff",
+            "#dddddd"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 24,
+          "name": ".",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Vignettage sombre avec de légères particules",
+          "couleurs": [
+            "#000000",
+            "#111111"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 25,
+          "name": "Calque 12",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Effet de vitesse ou d'énergie glacée diagonale",
+          "couleurs": [
+            "#cce6ff",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 26,
+          "name": "Calque 14",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Dégradé de lumière blanche dans le coin inférieur gauche",
+          "couleurs": [
+            "#ffffff",
+            "#aaaaaa"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 27,
+          "name": " Studio",
+          "kind": "text",
+          "role": "lettrage",
+          "lettrage_nature": "typographie",
+          "description": "Texte 'Studio' en police sans-serif blanche",
+          "couleurs": [
+            "#ffffff",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 28,
+          "name": "Calque 10",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "absent",
+          "description": "Petit glaçon réaliste isolé",
+          "couleurs": [
+            "#d0e8f7",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 29,
+          "name": "abstract-black-white-small-grid-box-pattern-with-grain-texture-background",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Vignettage noir texturé sur les bords",
+          "couleurs": [
+            "#000000",
+            "#0a0a0a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 30,
+          "name": "Calque 16",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Motif de lignes ondulées noires sur fond blanc",
+          "couleurs": [
+            "#ffffff",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 31,
+          "name": "Calque 17",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Vignette floue sombre sur fond de lignes horizontales",
+          "couleurs": [
+            "#111111",
+            "#cccccc"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 32,
+          "name": "Ice Studio",
+          "kind": "layer",
+          "role": "lettrage",
+          "lettrage_nature": "custom_dessine",
+          "description": "Signature manuscrite blanche 'Ice Studio' en diagonale",
+          "couleurs": [
+            "#ffffff",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 33,
+          "name": "Groupe 7",
+          "kind": "group",
+          "role": "autre",
+          "lettrage_nature": "typographie",
+          "description": "Composition finale complète avec personnage, texte et fond",
+          "couleurs": [
+            "#0055a5",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 34,
+          "name": "Calque 26",
+          "kind": "layer",
+          "role": "mascotte",
+          "lettrage_nature": "typographie",
+          "description": "Personnage masqué avec texte 3D bleu et lueur bleue en arrière-plan.",
+          "couleurs": [
+            "#0088ff",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 35,
+          "name": "Calque 27",
+          "kind": "layer",
+          "role": "mascotte",
+          "lettrage_nature": "typographie",
+          "description": "Personnage masqué avec texte 3D bleu et lueur bleue.",
+          "couleurs": [
+            "#0088ff",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 36,
+          "name": "Calque 30",
+          "kind": "layer",
+          "role": "mascotte",
+          "lettrage_nature": "typographie",
+          "description": "Personnage masqué avec texte 3D bleu et lueur bleue.",
+          "couleurs": [
+            "#0088ff",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 37,
+          "name": "Calque 31",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Lueur bleue diffuse en diagonale.",
+          "couleurs": [
+            "#3a85ff",
+            "#1d4b9e"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 38,
+          "name": "Calque 28",
+          "kind": "layer",
+          "role": "mascotte",
+          "lettrage_nature": "typographie",
+          "description": "Personnage masqué avec texte 3D bleu et lueur bleue pixelisée.",
+          "couleurs": [
+            "#0088ff",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 39,
+          "name": "Calque 29",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "typographie",
+          "description": "Scène de tournage extérieure avec voiture de sport jaune et hélicoptère.",
+          "couleurs": [
+            "#f1c40f",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 40,
+          "name": "Calque 25",
+          "kind": "layer",
+          "role": "mascotte",
+          "lettrage_nature": "typographie",
+          "description": "Personnage masqué avec texte 3D bleu et lueur bleue.",
+          "couleurs": [
+            "#0088ff",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 53,
+          "name": "Calque 24",
+          "kind": "layer",
+          "role": "mascotte",
+          "lettrage_nature": "typographie",
+          "description": "Personnage masqué avec texte 3D bleu et lueur bleue.",
+          "couleurs": [
+            "#0088ff",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 54,
+          "name": "sd",
+          "kind": "text",
+          "role": "lettrage",
+          "lettrage_nature": "custom_dessine",
+          "description": "Signature manuscrite blanche stylisée 'sd'.",
+          "couleurs": [
+            "#ffffff",
+            "#e0e0e0"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 55,
+          "name": "Groupe 5",
+          "kind": "group",
+          "role": "mascotte",
+          "lettrage_nature": "typographie",
+          "description": "Personnage masqué avec texte 3D bleu sans lueur d'arrière-plan.",
+          "couleurs": [
+            "#0088ff",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 56,
+          "name": "Calque 18",
+          "kind": "layer",
+          "role": "mascotte",
+          "lettrage_nature": "typographie",
+          "description": "Silhouette de personnage masqué avec texte 3D bleu pixelisé.",
+          "couleurs": [
+            "#0088ff",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 57,
+          "name": "Calque 20",
+          "kind": "layer",
+          "role": "mascotte",
+          "lettrage_nature": "typographie",
+          "description": "Personnage masqué avec texte 3D bleu et lueur rose.",
+          "couleurs": [
+            "#ff007f",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 58,
+          "name": "Calque 21",
+          "kind": "layer",
+          "role": "mascotte",
+          "lettrage_nature": "typographie",
+          "description": "Personnage masqué avec texte 3D bleu et lueur rose.",
+          "couleurs": [
+            "#ff007f",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 63,
+          "name": "Texture",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Lignes topographiques blanches fines sur fond transparent.",
+          "couleurs": [
+            "#ffffff",
+            "#808080"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 65,
+          "name": "Calque 19",
+          "kind": "layer",
+          "role": "mascotte",
+          "lettrage_nature": "typographie",
+          "description": "Personnage masqué avec texte 3D bleu et lueur rose.",
+          "couleurs": [
+            "#ff007f",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        }
+      ]
+    },
+    {
+      "psd": "ggg.psd",
+      "dir": "ggg",
+      "pile": [
+        {
+          "id": 0,
+          "name": "Calque 1",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "typographie",
+          "description": "Bannière complète assemblée avec personnages et textes",
+          "couleurs": [
+            "#8c52ff",
+            "#00ffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 1,
+          "name": "Groupe 6",
+          "kind": "group",
+          "role": "fond",
+          "lettrage_nature": "typographie",
+          "description": "Composition de fond avec personnage et lueurs bleues",
+          "couleurs": [
+            "#00d2ff",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 2,
+          "name": "Calque 2",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Ligne horizontale noire fine",
+          "couleurs": [
+            "#000000",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 3,
+          "name": "Calque 5",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Arrière-plan de plage avec lueur bleue centrale",
+          "couleurs": [
+            "#00d2ff",
+            "#333333"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 4,
+          "name": "Calque 6",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Arrière-plan de plage en noir et blanc",
+          "couleurs": [
+            "#1a1a1a",
+            "#808080"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 5,
+          "name": "Groupe 4",
+          "kind": "group",
+          "role": "lettrage",
+          "lettrage_nature": "typographie",
+          "description": "Texte Roleplay Immersif blanc et bleu avec palmier",
+          "couleurs": [
+            "#ffffff",
+            "#00d2ff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 6,
+          "name": "Roleplay  Immersif",
+          "kind": "layer",
+          "role": "lettrage",
+          "lettrage_nature": "typographie",
+          "description": "Texte Roleplay Immersif blanc et bleu",
+          "couleurs": [
+            "#ffffff",
+            "#00d2ff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 7,
+          "name": "Roleplay  Immersif copie",
+          "kind": "layer",
+          "role": "lettrage",
+          "lettrage_nature": "typographie",
+          "description": "Texte Roleplay Immersif blanc et bleu identique",
+          "couleurs": [
+            "#ffffff",
+            "#00d2ff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 9,
+          "name": "sq_1806",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Silhouette noire de feuilles de palmier",
+          "couleurs": [
+            "#000000",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 10,
+          "name": "perso",
+          "kind": "group",
+          "role": "mascotte",
+          "lettrage_nature": "absent",
+          "description": "Personnage GTA faisant un signe de la main",
+          "couleurs": [
+            "#ffffff",
+            "#d2b48c"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 11,
+          "name": "Calque 3 copie",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Petite vignette de la plage avec personnage",
+          "couleurs": [
+            "#87ceeb",
+            "#d2b48c"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 12,
+          "name": "Fond 2",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Rectangle bleu uni pour le fond",
+          "couleurs": [
+            "#80d8ff",
+            "#80d8ff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 15,
+          "name": "Calque 8",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Points lumineux bleus et blancs flous",
+          "couleurs": [
+            "#00e5ff",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 16,
+          "name": "Calque 9",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Grille de perspective transparente",
+          "couleurs": [
+            "#ffffff",
+            "#808080"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 17,
+          "name": "discord.gg/sunity ",
+          "kind": "layer",
+          "role": "ui_texte_secondaire",
+          "lettrage_nature": "typographie",
+          "description": "Badge Discord bleu avec texte d'invitation",
+          "couleurs": [
+            "#8ab4f8",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 18,
+          "name": "Rectangle 1",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Bandeau dégradé rose et rouge",
+          "couleurs": [
+            "#ff5252",
+            "#ff4081"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 19,
+          "name": "sunity.tebex.io ",
+          "kind": "text",
+          "role": "ui_texte_secondaire",
+          "lettrage_nature": "typographie",
+          "description": "Texte d'adresse de site web sunity.tebex.io",
+          "couleurs": [
+            "#ffffff",
+            "#00e5ff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 20,
+          "name": "Groupe 5",
+          "kind": "group",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Halo lumineux blanc diffus",
+          "couleurs": [
+            "#ffffff",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 21,
+          "name": "Calque 10",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Grand éclat lumineux blanc circulaire",
+          "couleurs": [
+            "#ffffff",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 22,
+          "name": "discord.gg/sunity  copie",
+          "kind": "layer",
+          "role": "ui_texte_secondaire",
+          "lettrage_nature": "typographie",
+          "description": "Badge d'invitation Discord bleu clair",
+          "couleurs": [
+            "#8ab4f8",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 23,
+          "name": "Groupe 3",
+          "kind": "group",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Petite vignette floue d'un personnage",
+          "couleurs": [
+            "#1a1a1a",
+            "#808080"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 24,
+          "name": "Calque 7",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Bande lumineuse bleue horizontale floue",
+          "couleurs": [
+            "#00e5ff",
+            "#00b0ff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 25,
+          "name": "abstract-black-white-small-grid-box-pattern-with-grain-texture-background",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Grille de perspective noire dégradée",
+          "couleurs": [
+            "#000000",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 26,
+          "name": "Groupe 2",
+          "kind": "group",
+          "role": "ui_texte_secondaire",
+          "lettrage_nature": "typographie",
+          "description": "Petit texte Sunity avec lueur blanche",
+          "couleurs": [
+            "#00e5ff",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 27,
+          "name": "Sunity copie",
+          "kind": "text",
+          "role": "lettrage",
+          "lettrage_nature": "typographie",
+          "description": "Texte 'Sunity' bleu clair sans empattement.",
+          "couleurs": [
+            "#29b6f6",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 28,
+          "name": "Calque 3",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Halo lumineux blanc flou avec ombre noire.",
+          "couleurs": [
+            "#ffffff",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 29,
+          "name": "Calque 4",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Halo lumineux bleu cyan diffus.",
+          "couleurs": [
+            "#4fc3f7",
+            "#00bcd4"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 30,
+          "name": "Sunity",
+          "kind": "text",
+          "role": "lettrage",
+          "lettrage_nature": "typographie",
+          "description": "Texte 'Sunity' bleu clair identique au 27.",
+          "couleurs": [
+            "#29b6f6",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 31,
+          "name": "Calque 11",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Halo lumineux blanc circulaire très doux.",
+          "couleurs": [
+            "#ffffff",
+            "#e0e0e0"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 32,
+          "name": "Calque 13",
+          "kind": "layer",
+          "role": "ui_texte_secondaire",
+          "lettrage_nature": "typographie",
+          "description": "Bandeau horizontal avec logos et texte d'URL.",
+          "couleurs": [
+            "#00bcd4",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 33,
+          "name": ".",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Fond noir uni avec de légères poussières.",
+          "couleurs": [
+            "#000000",
+            "#111111"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 34,
+          "name": "Object",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "absent",
+          "description": "Fusil d'assaut AK-47 réaliste.",
+          "couleurs": [
+            "#8d6e63",
+            "#37474f"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 35,
+          "name": "Calque 14",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Lumières de gyrophare horizontales bleue et rouge.",
+          "couleurs": [
+            "#00e5ff",
+            "#ff1744"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 36,
+          "name": "photo - no background",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "absent",
+          "description": "Voiture de sport noire vue de trois-quarts arrière.",
+          "couleurs": [
+            "#000000",
+            "#212121"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 37,
+          "name": "Calque 15",
+          "kind": "layer",
+          "role": "ui_texte_secondaire",
+          "lettrage_nature": "typographie",
+          "description": "Bandeau horizontal promotionnel identique au 32.",
+          "couleurs": [
+            "#00bcd4",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 38,
+          "name": "Calque 16",
+          "kind": "layer",
+          "role": "ui_texte_secondaire",
+          "lettrage_nature": "typographie",
+          "description": "Bandeau horizontal promotionnel identique au 32.",
+          "couleurs": [
+            "#00bcd4",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 39,
+          "name": "Calque 17",
+          "kind": "layer",
+          "role": "ui_texte_secondaire",
+          "lettrage_nature": "typographie",
+          "description": "Bandeau horizontal promotionnel identique au 32.",
+          "couleurs": [
+            "#00bcd4",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 40,
+          "name": "Calque 18",
+          "kind": "layer",
+          "role": "ui_texte_secondaire",
+          "lettrage_nature": "typographie",
+          "description": "Bandeau horizontal promotionnel identique au 32.",
+          "couleurs": [
+            "#00bcd4",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 41,
+          "name": "Calque 19",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Trame de demi-teintes blanche avec découpe centrale.",
+          "couleurs": [
+            "#ffffff",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 42,
+          "name": "INVITRET",
+          "kind": "text",
+          "role": "lettrage",
+          "lettrage_nature": "typographie",
+          "description": "Texte 'INVITRET' blanc en police pixel.",
+          "couleurs": [
+            "#ffffff",
+            "#e0e0e0"
+          ],
+          "modele": "gemini-3.5-flash"
+        }
+      ]
+    },
+    {
+      "psd": "logo.psd",
+      "dir": "logo",
+      "pile": [
+        {
+          "id": 0,
+          "name": "Arrière-plan",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Fond blanc uni",
+          "couleurs": [
+            "#ffffff",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 1,
+          "name": "Groupe 1",
+          "kind": "group",
+          "role": "autre",
+          "lettrage_nature": "custom_dessine",
+          "description": "Groupe de calques avec logo violet et fond sombre",
+          "couleurs": [
+            "#a876e2",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 2,
+          "name": "Calque 6",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Photo de rue de New York au crépuscule",
+          "couleurs": [
+            "#e0829b",
+            "#2c2c44"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 3,
+          "name": "Calque 7",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Photo de rue sombre avec taxi jaune",
+          "couleurs": [
+            "#f5c443",
+            "#1c1c1c"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 4,
+          "name": "Calque 8",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Photo de ville de nuit très sombre",
+          "couleurs": [
+            "#0a0a0a",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 6,
+          "name": "Calque 9",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Lueur violette dans le coin supérieur droit",
+          "couleurs": [
+            "#9b5de5",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 7,
+          "name": "Calque 10",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Fond dégradé blanc et violet",
+          "couleurs": [
+            "#ffffff",
+            "#d1b3ff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 8,
+          "name": "Calque 13",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Halo lumineux violet diffus",
+          "couleurs": [
+            "#a855f7",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 9,
+          "name": "Calque 12",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Drapeau américain stylisé incliné",
+          "couleurs": [
+            "#ffffff",
+            "#d9383a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 11,
+          "name": "Calque 1",
+          "kind": "layer",
+          "role": "mascotte",
+          "lettrage_nature": "custom_dessine",
+          "description": "Logo TBN noir et blanc avec Statue de la Liberté",
+          "couleurs": [
+            "#ffffff",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 12,
+          "name": "Calque 15",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Halo lumineux violet horizontal",
+          "couleurs": [
+            "#a855f7",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 13,
+          "name": "Calque 17",
+          "kind": "layer",
+          "role": "mascotte",
+          "lettrage_nature": "custom_dessine",
+          "description": "Logo TBN violet avec Statue de la Liberté",
+          "couleurs": [
+            "#a855f7",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 14,
+          "name": "Calque 4",
+          "kind": "layer",
+          "role": "mascotte",
+          "lettrage_nature": "custom_dessine",
+          "description": "Logo TBN violet détouré",
+          "couleurs": [
+            "#a855f7",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 15,
+          "name": "Calque 14",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Halo lumineux violet circulaire",
+          "couleurs": [
+            "#a855f7",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 16,
+          "name": "Calque 5",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Texture de vagues dorées métalliques",
+          "couleurs": [
+            "#b8975a",
+            "#3a2e1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 17,
+          "name": "Calque 16",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Petit halo lumineux violet flou",
+          "couleurs": [
+            "#c084fc",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 18,
+          "name": "Calque 19",
+          "kind": "layer",
+          "role": "autre",
+          "lettrage_nature": "custom_dessine",
+          "description": "Composition finale du logo sur fond violet",
+          "couleurs": [
+            "#a855f7",
+            "#120b1e"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 19,
+          "name": "Calque 20",
+          "kind": "layer",
+          "role": "autre",
+          "lettrage_nature": "custom_dessine",
+          "description": "Composition finale avec centre transparent",
+          "couleurs": [
+            "#a855f7",
+            "#120b1e"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 20,
+          "name": "Calque 21",
+          "kind": "layer",
+          "role": "autre",
+          "lettrage_nature": "absent",
+          "description": "Fond violet avec silhouette de ville et centre transparent",
+          "couleurs": [
+            "#a855f7",
+            "#120b1e"
+          ],
+          "modele": "gemini-3.5-flash"
+        }
+      ]
+    },
+    {
+      "psd": "logo_gtanew.psd",
+      "dir": "logo_gtanew",
+      "pile": [
+        {
+          "id": 0,
+          "name": "Groupe 1",
+          "kind": "group",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Trois halos lumineux flous de couleur rose néon.",
+          "couleurs": [
+            "#ff66cc",
+            "#ff99dd"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 1,
+          "name": "Groupe 2",
+          "kind": "group",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Cadre sombre texturé avec un carré blanc central lumineux.",
+          "couleurs": [
+            "#ffffff",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 2,
+          "name": "Calque 0",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Carré blanc uni servant de base ou de masque.",
+          "couleurs": [
+            "#ffffff",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 3,
+          "name": "Katman 3",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Lueur bleue diffuse sur le bord inférieur.",
+          "couleurs": [
+            "#3a86c8",
+            "#1d4266"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 5,
+          "name": "GridwithLights",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Texture sombre avec grille fine et particules dorées.",
+          "couleurs": [
+            "#151515",
+            "#d4af37"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 7,
+          "name": "DetailedPalmTreeWithLights",
+          "kind": "group",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Deux silhouettes de palmiers noirs stylisés.",
+          "couleurs": [
+            "#111111",
+            "#222222"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 8,
+          "name": "Color Fill 2 copy",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Silhouette de palmier noir penché vers la gauche.",
+          "couleurs": [
+            "#111111",
+            "#222222"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 9,
+          "name": "Color Fill 2",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Silhouette de palmier noir penché vers la droite.",
+          "couleurs": [
+            "#111111",
+            "#222222"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 10,
+          "name": "GTA",
+          "kind": "text",
+          "role": "lettrage",
+          "lettrage_nature": "typographie",
+          "description": "Texte 'GTA' rose avec contour noir épais.",
+          "couleurs": [
+            "#fca4f0",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 11,
+          "name": "Calque 2",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Trois points lumineux roses flous alignés horizontalement.",
+          "couleurs": [
+            "#ff77dd",
+            "#ff99ee"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 12,
+          "name": "Rectangle 1",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Rectangle rose brillant avec dégradé métallique diagonal.",
+          "couleurs": [
+            "#ff66cc",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 13,
+          "name": "Calque 3",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Halo lumineux circulaire orange et jaune chaud.",
+          "couleurs": [
+            "#e5a93c",
+            "#f3d082"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 14,
+          "name": "NEW",
+          "kind": "text",
+          "role": "ui_texte_secondaire",
+          "lettrage_nature": "typographie",
+          "description": "Texte 'NEW' blanc en police grasse et inclinée.",
+          "couleurs": [
+            "#ffffff",
+            "#dddddd"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 15,
+          "name": "Groupe 3",
+          "kind": "group",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Lueur bleue diffuse sur fond transparent.",
+          "couleurs": [
+            "#4a90e2",
+            "#1b4f72"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 16,
+          "name": "Katman 3 copie",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Lueur bleue douce et diffuse.",
+          "couleurs": [
+            "#4a90e2",
+            "#2c3e50"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 18,
+          "name": "Calque 9",
+          "kind": "layer",
+          "role": "badge_forme",
+          "lettrage_nature": "typographie",
+          "description": "Bandeau dégradé rose-orange contenant le texte 'NEW'.",
+          "couleurs": [
+            "#ff5e62",
+            "#ff9966"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 19,
+          "name": "Calque 8",
+          "kind": "layer",
+          "role": "lettrage",
+          "lettrage_nature": "typographie",
+          "description": "Texte 'GTA' rose avec extrusion 3D noire.",
+          "couleurs": [
+            "#fca4f0",
+            "#111111"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 20,
+          "name": "Calque 7",
+          "kind": "layer",
+          "role": "lettrage",
+          "lettrage_nature": "typographie",
+          "description": "Logo complet 'GTA NEW' assemblé avec effets.",
+          "couleurs": [
+            "#fca4f0",
+            "#ff5e62"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 21,
+          "name": "Calque 6",
+          "kind": "layer",
+          "role": "lettrage",
+          "lettrage_nature": "typographie",
+          "description": "Logo 'GTA NEW' avec bandeau dégradé orange.",
+          "couleurs": [
+            "#fca4f0",
+            "#ff9966"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 22,
+          "name": "Calque 5",
+          "kind": "layer",
+          "role": "lettrage",
+          "lettrage_nature": "typographie",
+          "description": "Texte 'GTA' rose avec ombre portée noire.",
+          "couleurs": [
+            "#fca4f0",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 23,
+          "name": "Calque 4",
+          "kind": "layer",
+          "role": "lettrage",
+          "lettrage_nature": "typographie",
+          "description": "Version réduite du logo 'GTA NEW'.",
+          "couleurs": [
+            "#fca4f0",
+            "#ff5e62"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 24,
+          "name": "Calque 1",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "typographie",
+          "description": "Logo final intégré sur fond sombre avec palmiers.",
+          "couleurs": [
+            "#fca4f0",
+            "#1a0f2e"
+          ],
+          "modele": "gemini-3.5-flash"
+        }
+      ]
+    },
+    {
+      "psd": "logo_stan.psd",
+      "dir": "logo_stan",
+      "pile": [
+        {
+          "id": 0,
+          "name": "Groupe 1",
+          "kind": "group",
+          "role": "autre",
+          "lettrage_nature": "custom_dessine",
+          "description": "Miniature du logo GV doré complet avec effets de lumière.",
+          "couleurs": [
+            "#e5b842",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 1,
+          "name": "Groupe 2",
+          "kind": "group",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Fond sombre texturé avec un cadre lumineux central.",
+          "couleurs": [
+            "#ffffff",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 2,
+          "name": "Calque 0",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Carré blanc uni servant de base ou de masque.",
+          "couleurs": [
+            "#ffffff",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 3,
+          "name": "Calque 16",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Grille de perspective blanche en diagonale.",
+          "couleurs": [
+            "#ffffff",
+            "#808080"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 4,
+          "name": "Calque 21",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Éclaboussures et traces de peinture dorée sur les bords.",
+          "couleurs": [
+            "#f1be3e",
+            "#d49a28"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 5,
+          "name": "Calque 10",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Lueur dorée diffuse sur le bord gauche.",
+          "couleurs": [
+            "#f3c34d",
+            "#a67c2e"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 6,
+          "name": "Calque 11",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Motif géométrique de cercles entrelacés dorés.",
+          "couleurs": [
+            "#ffffff",
+            "#e2b343"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 7,
+          "name": "Calque 12",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Fond noir avec particules dorées et flou bokeh.",
+          "couleurs": [
+            "#1a1a1a",
+            "#d49a28"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 9,
+          "name": "Calque 2",
+          "kind": "layer",
+          "role": "lettrage",
+          "lettrage_nature": "custom_dessine",
+          "description": "Logo GV en relief métallique doré 3D.",
+          "couleurs": [
+            "#f1be3e",
+            "#8c621c"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 10,
+          "name": "Calque 3",
+          "kind": "layer",
+          "role": "lettrage",
+          "lettrage_nature": "custom_dessine",
+          "description": "Logo GV doré 3D sur fond noir uni.",
+          "couleurs": [
+            "#f1be3e",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 11,
+          "name": "Calque 19",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Petites éclaboussures de peinture dorée éparses.",
+          "couleurs": [
+            "#f1be3e",
+            "#d49a28"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 13,
+          "name": "Calque 4",
+          "kind": "layer",
+          "role": "lettrage",
+          "lettrage_nature": "custom_dessine",
+          "description": "Logo GV blanc avec éclaboussures dorées sur le côté.",
+          "couleurs": [
+            "#ffffff",
+            "#f1be3e"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 14,
+          "name": "Calque 18",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Fines lignes lumineuses et reflets dorés horizontaux.",
+          "couleurs": [
+            "#f3c34d",
+            "#a67c2e"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 15,
+          "name": "Forme 1 copie",
+          "kind": "layer",
+          "role": "lettrage",
+          "lettrage_nature": "custom_dessine",
+          "description": "Logo GV plat de couleur dorée unie.",
+          "couleurs": [
+            "#e5b842",
+            "#e5b842"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 16,
+          "name": "Calque 5",
+          "kind": "layer",
+          "role": "badge_forme",
+          "lettrage_nature": "absent",
+          "description": "Bandeau horizontal doré avec texture perforée.",
+          "couleurs": [
+            "#f1be3e",
+            "#a67c2e"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 17,
+          "name": "Calque 8",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Rayon de lumière doré diagonal.",
+          "couleurs": [
+            "#f3c34d",
+            "#a67c2e"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 18,
+          "name": "Calque 7",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Deux éclats lumineux (lens flare) dorés horizontaux.",
+          "couleurs": [
+            "#f3c34d",
+            "#a67c2e"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 19,
+          "name": "Calque 9",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Halo lumineux doré diffus et circulaire.",
+          "couleurs": [
+            "#f3c34d",
+            "#a67c2e"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 20,
+          "name": "Calque 14",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Faisceau lumineux doré diagonal et pointu.",
+          "couleurs": [
+            "#f3c34d",
+            "#a67c2e"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 21,
+          "name": "Calque 13",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Lueur blanche diffuse sur le bord inférieur.",
+          "couleurs": [
+            "#ffffff",
+            "#808080"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 22,
+          "name": "Calque 1",
+          "kind": "layer",
+          "role": "lettrage",
+          "lettrage_nature": "custom_dessine",
+          "description": "Logo GV doré 3D centré sur fond noir.",
+          "couleurs": [
+            "#f1be3e",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 23,
+          "name": "Calque 15",
+          "kind": "layer",
+          "role": "ui_texte_secondaire",
+          "lettrage_nature": "typographie",
+          "description": "Infographie d'instructions avec texte et icônes bleues.",
+          "couleurs": [
+            "#ffffff",
+            "#117a8b"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 24,
+          "name": "Calque 22",
+          "kind": "layer",
+          "role": "autre",
+          "lettrage_nature": "custom_dessine",
+          "description": "Composition finale du logo GV doré avec tous les effets.",
+          "couleurs": [
+            "#f1be3e",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        }
+      ]
+    },
+    {
+      "psd": "losssgo.psd",
+      "dir": "losssgo",
+      "pile": [
+        {
+          "id": 0,
+          "name": "Groupe 1",
+          "kind": "group",
+          "role": "autre",
+          "lettrage_nature": "absent",
+          "description": "Groupe complet combinant le logo, les palmiers et les effets bleus.",
+          "couleurs": [
+            "#7ec8f8",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 1,
+          "name": "Groupe 2",
+          "kind": "group",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Composition d'arrière-plan avec paysage de plage nocturne et filtres bleus.",
+          "couleurs": [
+            "#122b3d",
+            "#6cbbf2"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 2,
+          "name": "Calque 0",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Carré blanc uni servant de base ou de masque.",
+          "couleurs": [
+            "#ffffff",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 3,
+          "name": "Calque 8",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Illustration d'une plage de nuit avec palmiers et van éclairé.",
+          "couleurs": [
+            "#10212d",
+            "#4a738c"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 4,
+          "name": "Calque 13",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Silhouette d'une volée d'oiseaux blancs en plein vol.",
+          "couleurs": [
+            "#ffffff",
+            "#d9e8f0"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 5,
+          "name": "Calque 14",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Faisceau de lumière bleue incurvé et particules lumineuses.",
+          "couleurs": [
+            "#89d4f7",
+            "#4fa3d1"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 6,
+          "name": "Calque 15",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Texture de bruit ou de particules sombres très subtile.",
+          "couleurs": [
+            "#111111",
+            "#222222"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 8,
+          "name": "Calque 11",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Filtre rectangulaire bleu translucide pour l'ambiance générale.",
+          "couleurs": [
+            "#7ec8f8",
+            "#4fa3d1"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 10,
+          "name": "Calque 12",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Texture de fissures ou d'éclairs sombres sur fond noir.",
+          "couleurs": [
+            "#000000",
+            "#2b2b2b"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 11,
+          "name": "Calque 9",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Halo lumineux bleu doux et diffus.",
+          "couleurs": [
+            "#89d4f7",
+            "#3a82b8"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 12,
+          "name": "Calque 2",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Dégradé de lumière bleue en diagonale.",
+          "couleurs": [
+            "#6cbbf2",
+            "#1a4b6e"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 13,
+          "name": "Calque 6",
+          "kind": "layer",
+          "role": "lettrage",
+          "lettrage_nature": "custom_dessine",
+          "description": "Chiffre 5 stylisé en glace bleue avec une étoile.",
+          "couleurs": [
+            "#4fa3d1",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 14,
+          "name": "Calque 1",
+          "kind": "layer",
+          "role": "lettrage",
+          "lettrage_nature": "custom_dessine",
+          "description": "Chiffre 5 stylisé bleu avec contour lumineux.",
+          "couleurs": [
+            "#4fa3d1",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 16,
+          "name": "Calque 7",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Lueur bleue horizontale floue.",
+          "couleurs": [
+            "#6cbbf2",
+            "#3a82b8"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 17,
+          "name": "Calque 3",
+          "kind": "layer",
+          "role": "lettrage",
+          "lettrage_nature": "custom_dessine",
+          "description": "Chiffre 5 bleu incliné avec une étoile intégrée.",
+          "couleurs": [
+            "#4fa3d1",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 18,
+          "name": "Calque 4",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Trame de demi-teintes ou motif de points gris.",
+          "couleurs": [
+            "#888888",
+            "#aaaaaa"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 19,
+          "name": "Calque 23",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "absent",
+          "description": "Silhouette blanche de palmiers formant un logo en S.",
+          "couleurs": [
+            "#ffffff",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 21,
+          "name": "Calque 5",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Texture de grille de points fins dans le coin supérieur.",
+          "couleurs": [
+            "#888888",
+            "#cccccc"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 22,
+          "name": "Calque 10",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "absent",
+          "description": "Silhouette de palmiers en forme de S de couleur bleue.",
+          "couleurs": [
+            "#6cbbf2",
+            "#1a4b6e"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 23,
+          "name": "Calque 28",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Éclairs électriques bleus fins et ramifiés.",
+          "couleurs": [
+            "#89d4f7",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 25,
+          "name": "Calque 26",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Formes lumineuses bleues floues et abstraites.",
+          "couleurs": [
+            "#6cbbf2",
+            "#3a82b8"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 27,
+          "name": "Calque 18",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Éclat lumineux bleu en forme d'étoile scintillante.",
+          "couleurs": [
+            "#89d4f7",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 28,
+          "name": "Calque 19",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Nuage de petites particules ou d'étoiles scintillantes.",
+          "couleurs": [
+            "#ffffff",
+            "#888888"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 29,
+          "name": "Calque 20",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Cadre grunge ou bordure givrée blanche.",
+          "couleurs": [
+            "#ffffff",
+            "#d9e8f0"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 30,
+          "name": "Calque 21",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Deux lueurs bleues diffuses et douces sur fond transparent.",
+          "couleurs": [
+            "#80d0f0",
+            "#40a0d0"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 33,
+          "name": "Calque 27",
+          "kind": "layer",
+          "role": "accent_deco",
+          "lettrage_nature": "absent",
+          "description": "Fissures ou éclairs bleutés stylisés s'étendant sur la surface.",
+          "couleurs": [
+            "#b0d8f0",
+            "#5080a0"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 35,
+          "name": "Calque 34",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "absent",
+          "description": "Logo 'S' avec palmiers noirs sur fond bleu dégradé.",
+          "couleurs": [
+            "#001020",
+            "#80e0ff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 36,
+          "name": "Calque 36",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "absent",
+          "description": "Logo 'S' avec palmiers noirs et fond bleu texturé.",
+          "couleurs": [
+            "#001020",
+            "#80e0ff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 37,
+          "name": "Calque 35",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Halo lumineux blanc circulaire et diffus au centre.",
+          "couleurs": [
+            "#ffffff",
+            "#cccccc"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 39,
+          "name": "Calque 31",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "absent",
+          "description": "Logo 'S' lumineux avec palmiers sur fond très sombre.",
+          "couleurs": [
+            "#000510",
+            "#80e0ff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 40,
+          "name": "Calque 32",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "absent",
+          "description": "Logo 'S' lumineux avec palmiers sur fond bleu nuit.",
+          "couleurs": [
+            "#000510",
+            "#80e0ff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 41,
+          "name": "Calque 33",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "absent",
+          "description": "Logo 'S' lumineux avec palmiers sur fond bleu nuit texturé.",
+          "couleurs": [
+            "#000510",
+            "#80e0ff"
+          ],
+          "modele": "gemini-3.5-flash"
+        }
+      ]
+    },
+    {
+      "psd": "vulcainlogo.psd",
+      "dir": "vulcainlogo",
+      "pile": [
+        {
+          "id": 0,
+          "name": "Groupe 1",
+          "kind": "group",
+          "role": "autre",
+          "lettrage_nature": "absent",
+          "description": "Groupe de calques combinant texture blanche, ombre noire et lueur bleue",
+          "couleurs": [
+            "#ffffff",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 1,
+          "name": "Calque 0",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Carré blanc uni servant de fond ou de masque",
+          "couleurs": [
+            "#ffffff",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 2,
+          "name": "Calque 7",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "absent",
+          "description": "Dessin au trait noir d'un volcan en éruption sur fond blanc",
+          "couleurs": [
+            "#ffffff",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 3,
+          "name": "Calque 10",
+          "kind": "layer",
+          "role": "fond",
+          "lettrage_nature": "absent",
+          "description": "Effet de vitesse ou d'étoiles filantes blanches sur fond noir",
+          "couleurs": [
+            "#000000",
+            "#ffffff"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 4,
+          "name": "Calque 8",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "absent",
+          "description": "Dessin au trait noir d'une coulée de lave sur fond blanc",
+          "couleurs": [
+            "#ffffff",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 5,
+          "name": "Calque 9",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "absent",
+          "description": "Dessin au trait noir d'un volcan incliné sur fond blanc",
+          "couleurs": [
+            "#ffffff",
+            "#000000"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 6,
+          "name": "Calque 2",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Lueur bleue diffuse formant un dégradé d'angle",
+          "couleurs": [
+            "#73b2e6",
+            "#1c4b75"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 7,
+          "name": "Calque 13",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Rectangle blanc texturé avec un grain de papier fin",
+          "couleurs": [
+            "#ffffff",
+            "#e0e0e0"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 8,
+          "name": "Calque 14",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Rectangle blanc texturé avec un bord estompé",
+          "couleurs": [
+            "#ffffff",
+            "#dcdcdc"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 9,
+          "name": "Calque 3",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Lueur bleue linéaire diffuse en haut de l'image",
+          "couleurs": [
+            "#7bbbe8",
+            "#24537d"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 10,
+          "name": "Calque 5",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Texture de roche volcanique rouge encadrée de blanc dégradé",
+          "couleurs": [
+            "#ffffff",
+            "#7a2416"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 11,
+          "name": "Calque 6",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Bande de texture rocheuse rouge inclinée avec bords blancs flous",
+          "couleurs": [
+            "#ffffff",
+            "#7a2416"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 12,
+          "name": "Calque 11",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Deux points lumineux bleus flous évoquant des yeux",
+          "couleurs": [
+            "#6cb0e8",
+            "#1a4872"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 13,
+          "name": "Calque 15",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Ombre noire circulaire très diffuse au centre",
+          "couleurs": [
+            "#000000",
+            "#1a1a1a"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 15,
+          "name": "Calque 1",
+          "kind": "layer",
+          "role": "embleme",
+          "lettrage_nature": "absent",
+          "description": "Logo en forme de V ailé bleu métallique stylisé",
+          "couleurs": [
+            "#5ca9e6",
+            "#1b4c77"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 16,
+          "name": "Calque 12",
+          "kind": "layer",
+          "role": "texture",
+          "lettrage_nature": "absent",
+          "description": "Rectangle vertical blanc avec texture de grain fin",
+          "couleurs": [
+            "#ffffff",
+            "#e5e5e5"
+          ],
+          "modele": "gemini-3.5-flash"
+        },
+        {
+          "id": 17,
+          "name": "Calque 4",
+          "kind": "layer",
+          "role": "effet_lumiere",
+          "lettrage_nature": "absent",
+          "description": "Halo lumineux blanc circulaire et très diffus",
+          "couleurs": [
+            "#ffffff",
+            "#b0b0b0"
+          ],
+          "modele": "gemini-3.5-flash"
+        }
+      ]
+    }
+  ]
+}

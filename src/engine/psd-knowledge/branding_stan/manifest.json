@@ -1,0 +1,2968 @@
+{
+  "psd": "branding_stan.psd",
+  "decomposedAt": "2026-08-16T13:42:07.986Z",
+  "width": 1980,
+  "height": 1080,
+  "bitsPerChannel": 8,
+  "colorMode": 3,
+  "composite": "composite.png",
+  "stats": {
+    "layers": 59,
+    "groups": 7,
+    "text": 2,
+    "pngs": 39,
+    "masks": 24,
+    "totalNodes": 66
+  },
+  "missingFeatures": [],
+  "tree": [
+    {
+      "id": 0,
+      "path": "Calque 0",
+      "name": "Calque 0",
+      "kind": "layer",
+      "zIndex": 0,
+      "bounds": {
+        "left": 0,
+        "top": 0,
+        "right": 1980,
+        "bottom": 1080
+      },
+      "opacity": 1,
+      "blendMode": "normal",
+      "hidden": false,
+      "clipping": false,
+      "png": "layers/L000_Calque 0.png",
+      "vision": {
+        "role": "fond",
+        "lettrage_nature": "absent",
+        "description": "Rectangle blanc uni servant de base ou de masque",
+        "couleurs": [
+          "#ffffff",
+          "#ffffff"
+        ],
+        "modele": "gemini-3.5-flash"
+      }
+    },
+    {
+      "id": 1,
+      "path": "Groupe 4",
+      "name": "Groupe 4",
+      "kind": "group",
+      "zIndex": 1,
+      "bounds": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "opacity": 1,
+      "blendMode": "pass through",
+      "hidden": false,
+      "clipping": false,
+      "children": [
+        {
+          "id": 2,
+          "path": "Groupe 4/Calque 1",
+          "name": "Calque 1",
+          "kind": "layer",
+          "zIndex": 0,
+          "bounds": {
+            "left": 0,
+            "top": 0,
+            "right": 2093,
+            "bottom": 1168
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": true,
+          "clipping": false,
+          "png": "layers/L002_Calque 1.png",
+          "vision": {
+            "role": "fond",
+            "lettrage_nature": "absent",
+            "description": "Scène de tournage GTA V avec caméras et voitures",
+            "couleurs": [
+              "#2c2d31",
+              "#8c8d91"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 3,
+          "path": "Groupe 4/Calque 1 copie 2",
+          "name": "Calque 1 copie 2",
+          "kind": "layer",
+          "zIndex": 1,
+          "bounds": {
+            "left": 0,
+            "top": 0,
+            "right": 2093,
+            "bottom": 1168
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": false,
+          "png": "layers/L003_Calque 1 copie 2.png",
+          "vision": {
+            "role": "fond",
+            "lettrage_nature": "absent",
+            "description": "Copie de la scène de tournage GTA V",
+            "couleurs": [
+              "#2c2d31",
+              "#8c8d91"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 4,
+          "path": "Groupe 4/Calque 11",
+          "name": "Calque 11",
+          "kind": "layer",
+          "zIndex": 2,
+          "bounds": {
+            "left": 1425,
+            "top": 162,
+            "right": 1545,
+            "bottom": 261
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": false,
+          "png": "layers/L004_Calque 11.png",
+          "vision": {
+            "role": "effet_lumiere",
+            "lettrage_nature": "absent",
+            "description": "Éclat lumineux bleu flou et texturé",
+            "couleurs": [
+              "#aed8f2",
+              "#ffffff"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 5,
+          "path": "Groupe 4/Mélangeur de couches 1",
+          "name": "Mélangeur de couches 1",
+          "kind": "adjustment",
+          "zIndex": 3,
+          "bounds": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": true,
+          "clipping": false,
+          "adjustment": {
+            "type": "channel mixer",
+            "monochrome": false,
+            "red": {
+              "red": 33,
+              "green": -33,
+              "blue": 95,
+              "constant": 0
+            },
+            "green": {
+              "red": 0,
+              "green": 100,
+              "blue": 0,
+              "constant": 0
+            },
+            "blue": {
+              "red": 0,
+              "green": 0,
+              "blue": 100,
+              "constant": 0
+            },
+            "gray": {
+              "red": 0,
+              "green": 0,
+              "blue": 0,
+              "constant": 0
+            }
+          },
+          "mask": {
+            "bounds": {
+              "left": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "disabled": false,
+            "defaultColor": 255
+          }
+        },
+        {
+          "id": 6,
+          "path": "Groupe 4/Calque 6",
+          "name": "Calque 6",
+          "kind": "layer",
+          "zIndex": 4,
+          "bounds": {
+            "left": 0,
+            "top": 0,
+            "right": 4936,
+            "bottom": 3319
+          },
+          "opacity": 1,
+          "blendMode": "hard light",
+          "hidden": true,
+          "clipping": false,
+          "png": "layers/L006_Calque 6.png",
+          "vision": {
+            "role": "fond",
+            "lettrage_nature": "absent",
+            "description": "Texture de lignes diagonales bleues dynamiques",
+            "couleurs": [
+              "#0088ff",
+              "#55b3ff"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 7,
+          "path": "Groupe 4/Courbes 1",
+          "name": "Courbes 1",
+          "kind": "adjustment",
+          "zIndex": 5,
+          "bounds": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": false,
+          "adjustment": {
+            "type": "curves",
+            "rgb": [
+              {
+                "input": 24,
+                "output": 0
+              },
+              {
+                "input": 255,
+                "output": 255
+              }
+            ]
+          },
+          "mask": {
+            "bounds": {
+              "left": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "disabled": false,
+            "defaultColor": 255
+          }
+        },
+        {
+          "id": 8,
+          "path": "Groupe 4/Calque 13",
+          "name": "Calque 13",
+          "kind": "layer",
+          "zIndex": 6,
+          "bounds": {
+            "left": -115,
+            "top": 794,
+            "right": 362,
+            "bottom": 1223
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": false,
+          "png": "layers/L008_Calque 13.png",
+          "vision": {
+            "role": "embleme",
+            "lettrage_nature": "absent",
+            "description": "Gros glaçon stylisé et détaillé en gros plan",
+            "couleurs": [
+              "#bce3f9",
+              "#ffffff"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 9,
+          "path": "Groupe 4/Exposition 3",
+          "name": "Exposition 3",
+          "kind": "adjustment",
+          "zIndex": 7,
+          "bounds": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": true,
+          "adjustment": {
+            "type": "exposure",
+            "exposure": -2.4700000286102295,
+            "offset": 0,
+            "gamma": 1
+          },
+          "mask": {
+            "bounds": {
+              "left": 0,
+              "top": 442,
+              "right": 785,
+              "bottom": 1080
+            },
+            "disabled": false,
+            "defaultColor": 0,
+            "png": "layers/L009_mask_Exposition 3.png"
+          }
+        },
+        {
+          "id": 10,
+          "path": "Groupe 4/Exposition 2",
+          "name": "Exposition 2",
+          "kind": "adjustment",
+          "zIndex": 8,
+          "bounds": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": false,
+          "adjustment": {
+            "type": "exposure",
+            "exposure": -1.9800000190734863,
+            "offset": 0,
+            "gamma": 1
+          },
+          "mask": {
+            "bounds": {
+              "left": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "disabled": false,
+            "defaultColor": 255
+          }
+        },
+        {
+          "id": 11,
+          "path": "Groupe 4/Teinte/Saturation 1",
+          "name": "Teinte/Saturation 1",
+          "kind": "adjustment",
+          "zIndex": 9,
+          "bounds": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": false,
+          "adjustment": {
+            "type": "hue/saturation",
+            "master": {
+              "a": 0,
+              "b": -11,
+              "c": 25,
+              "d": 0,
+              "hue": 0,
+              "saturation": 0,
+              "lightness": -86
+            },
+            "reds": {
+              "a": 315,
+              "b": 345,
+              "c": 15,
+              "d": 45,
+              "hue": 0,
+              "saturation": 0,
+              "lightness": 0
+            },
+            "yellows": {
+              "a": 15,
+              "b": 45,
+              "c": 75,
+              "d": 105,
+              "hue": 0,
+              "saturation": 0,
+              "lightness": 0
+            },
+            "greens": {
+              "a": 75,
+              "b": 105,
+              "c": 135,
+              "d": 165,
+              "hue": 0,
+              "saturation": 0,
+              "lightness": 0
+            },
+            "cyans": {
+              "a": 135,
+              "b": 165,
+              "c": 195,
+              "d": 225,
+              "hue": 0,
+              "saturation": 0,
+              "lightness": 0
+            },
+            "blues": {
+              "a": 195,
+              "b": 225,
+              "c": 255,
+              "d": 285,
+              "hue": 0,
+              "saturation": 0,
+              "lightness": 0
+            },
+            "magentas": {
+              "a": 255,
+              "b": 285,
+              "c": 315,
+              "d": 345,
+              "hue": 0,
+              "saturation": 0,
+              "lightness": 0
+            }
+          },
+          "mask": {
+            "bounds": {
+              "left": 0,
+              "top": 0,
+              "right": 1980,
+              "bottom": 1080
+            },
+            "disabled": false,
+            "defaultColor": 0,
+            "png": "layers/L011_mask_Teinte_Saturation 1.png"
+          }
+        },
+        {
+          "id": 12,
+          "path": "Groupe 4/Calque 2",
+          "name": "Calque 2",
+          "kind": "layer",
+          "zIndex": 10,
+          "bounds": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": true,
+          "clipping": false
+        },
+        {
+          "id": 13,
+          "path": "Groupe 4/Calque 3",
+          "name": "Calque 3",
+          "kind": "layer",
+          "zIndex": 11,
+          "bounds": {
+            "left": 224,
+            "top": 34,
+            "right": 1842,
+            "bottom": 1080
+          },
+          "opacity": 0.6392156862745098,
+          "blendMode": "screen",
+          "hidden": true,
+          "clipping": false,
+          "png": "layers/L013_Calque 3.png",
+          "vision": {
+            "role": "effet_lumiere",
+            "lettrage_nature": "absent",
+            "description": "Halo lumineux bleu doux et diffus",
+            "couleurs": [
+              "#7ec2f6",
+              "#ffffff"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 14,
+          "path": "Groupe 4/Groupe 3",
+          "name": "Groupe 3",
+          "kind": "layer",
+          "zIndex": 12,
+          "bounds": {
+            "left": -32,
+            "top": 292,
+            "right": 1004,
+            "bottom": 879
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": false,
+          "smartObject": true,
+          "png": "layers/L014_Groupe 3.png",
+          "vision": {
+            "role": "ui_texte_secondaire",
+            "lettrage_nature": "typographie",
+            "description": "Slogan 'Arrête de Chercher Des Joueurs ATTIRE LES !'",
+            "couleurs": [
+              "#ffffff",
+              "#2b82c9"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 15,
+          "path": "Groupe 4/Calque 1 copie",
+          "name": "Calque 1 copie",
+          "kind": "layer",
+          "zIndex": 13,
+          "bounds": {
+            "left": 532,
+            "top": 82,
+            "right": 1668,
+            "bottom": 1082
+          },
+          "opacity": 0.9882352941176471,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": false,
+          "smartObject": true,
+          "png": "layers/L015_Calque 1 copie.png",
+          "vision": {
+            "role": "mascotte",
+            "lettrage_nature": "absent",
+            "description": "Silhouette bleue du personnage central",
+            "couleurs": [
+              "#4a86e8",
+              "#3a6cb0"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 16,
+          "path": "Groupe 4/Calque 23",
+          "name": "Calque 23",
+          "kind": "layer",
+          "zIndex": 14,
+          "bounds": {
+            "left": 134,
+            "top": 82,
+            "right": 1846,
+            "bottom": 1223
+          },
+          "opacity": 0.7607843137254902,
+          "blendMode": "color burn",
+          "hidden": false,
+          "clipping": true,
+          "png": "layers/L016_Calque 23.png",
+          "vision": {
+            "role": "texture",
+            "lettrage_nature": "absent",
+            "description": "Texture métallique striée grise et blanche",
+            "couleurs": [
+              "#e0e0e0",
+              "#999999"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 17,
+          "path": "Groupe 4/Calque 1 copie 3",
+          "name": "Calque 1 copie 3",
+          "kind": "layer",
+          "zIndex": 15,
+          "bounds": {
+            "left": 0,
+            "top": 0,
+            "right": 2093,
+            "bottom": 1168
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": false,
+          "effects": {
+            "scale": 1,
+            "dropShadow": [
+              {
+                "enabled": false,
+                "present": false,
+                "showInDialog": true,
+                "blendMode": "multiply",
+                "color": "#000000",
+                "opacity": 0.26,
+                "useGlobalLight": true,
+                "angle": 90,
+                "distance": {
+                  "value": 12,
+                  "units": "Pixels"
+                },
+                "choke": {
+                  "value": 18,
+                  "units": "Pixels"
+                },
+                "size": {
+                  "value": 38,
+                  "units": "Pixels"
+                },
+                "noise": 0,
+                "antialiased": false,
+                "contour": {
+                  "name": "Linéaire",
+                  "curve": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 255,
+                      "y": 255
+                    }
+                  ]
+                },
+                "layerConceals": true
+              }
+            ],
+            "innerShadow": [
+              {
+                "enabled": false,
+                "present": false,
+                "showInDialog": true,
+                "blendMode": "multiply",
+                "color": "#000000",
+                "opacity": 0.85,
+                "useGlobalLight": true,
+                "angle": 90,
+                "distance": {
+                  "value": 7,
+                  "units": "Pixels"
+                },
+                "choke": {
+                  "value": 0,
+                  "units": "Pixels"
+                },
+                "size": {
+                  "value": 27,
+                  "units": "Pixels"
+                },
+                "noise": 0,
+                "antialiased": false,
+                "contour": {
+                  "name": "Linéaire",
+                  "curve": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 255,
+                      "y": 255
+                    }
+                  ]
+                }
+              }
+            ],
+            "outerGlow": {
+              "enabled": false,
+              "present": false,
+              "showInDialog": true,
+              "blendMode": "screen",
+              "color": {
+                "fr": 1.0000028610229492,
+                "fg": 0.9999988675117493,
+                "fb": 1.000003457069397
+              },
+              "opacity": 0.13,
+              "technique": "softer",
+              "choke": {
+                "value": 0,
+                "units": "Pixels"
+              },
+              "size": {
+                "value": 7,
+                "units": "Pixels"
+              },
+              "noise": 0,
+              "jitter": 0,
+              "antialiased": false,
+              "contour": {
+                "name": "Linéaire",
+                "curve": [
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 255,
+                    "y": 255
+                  }
+                ]
+              },
+              "range": 0.5
+            },
+            "innerGlow": {
+              "enabled": false,
+              "present": false,
+              "showInDialog": true,
+              "blendMode": "normal",
+              "color": {
+                "fr": 1.0000028610229492,
+                "fg": 0.9999988675117493,
+                "fb": 1.000003457069397
+              },
+              "opacity": 0.93,
+              "technique": "softer",
+              "choke": {
+                "value": 15,
+                "units": "Pixels"
+              },
+              "size": {
+                "value": 8,
+                "units": "Pixels"
+              },
+              "noise": 0.21,
+              "jitter": 0,
+              "antialiased": false,
+              "contour": {
+                "name": "Linéaire",
+                "curve": [
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 255,
+                    "y": 255
+                  }
+                ]
+              },
+              "range": 0.5,
+              "source": "edge"
+            },
+            "bevel": {
+              "enabled": true,
+              "present": true,
+              "showInDialog": true,
+              "highlightBlendMode": "screen",
+              "highlightColor": {
+                "fr": 1.0000028610229492,
+                "fg": 0.9999988675117493,
+                "fb": 1.000003457069397
+              },
+              "highlightOpacity": 0,
+              "shadowBlendMode": "multiply",
+              "shadowColor": "#000000",
+              "shadowOpacity": 0.79,
+              "technique": "smooth",
+              "style": "inner bevel",
+              "useGlobalLight": true,
+              "angle": 93,
+              "altitude": 0,
+              "strength": 10,
+              "size": {
+                "value": 0,
+                "units": "Pixels"
+              },
+              "direction": "up",
+              "contour": {
+                "name": "Linéaire",
+                "curve": [
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 255,
+                    "y": 255
+                  }
+                ]
+              },
+              "antialiasGloss": false,
+              "soften": {
+                "value": 1,
+                "units": "Pixels"
+              },
+              "useShape": false,
+              "useTexture": false
+            },
+            "solidFill": [
+              {
+                "enabled": false,
+                "present": false,
+                "showInDialog": true,
+                "blendMode": "normal",
+                "color": "#ffffff",
+                "opacity": 1
+              }
+            ],
+            "gradientOverlay": [
+              {
+                "enabled": false,
+                "present": false,
+                "showInDialog": true,
+                "blendMode": "normal",
+                "opacity": 1,
+                "gradient": {
+                  "type": "solid",
+                  "name": "Personnalisé",
+                  "smoothness": 1,
+                  "colorStops": [
+                    {
+                      "color": "#193055",
+                      "location": 0,
+                      "midpoint": 0.5
+                    },
+                    {
+                      "color": "#4572ba",
+                      "location": 0.430419921875,
+                      "midpoint": 0.5
+                    },
+                    {
+                      "color": "#6c9ff1",
+                      "location": 0.55419921875,
+                      "midpoint": 0.5
+                    },
+                    {
+                      "color": "#002053",
+                      "location": 1,
+                      "midpoint": 0.5
+                    }
+                  ],
+                  "opacityStops": [
+                    {
+                      "opacity": 1,
+                      "location": 0,
+                      "midpoint": 0.5
+                    },
+                    {
+                      "opacity": 1,
+                      "location": 1,
+                      "midpoint": 0.5
+                    }
+                  ]
+                },
+                "angle": 88,
+                "type": "linear",
+                "reverse": false,
+                "dither": false,
+                "interpolationMethod": "perceptual",
+                "align": true,
+                "scale": 1.5,
+                "offset": {
+                  "x": 0,
+                  "y": 0
+                }
+              }
+            ],
+            "satin": {
+              "enabled": false,
+              "present": false,
+              "showInDialog": true,
+              "blendMode": "multiply",
+              "color": {
+                "fr": 1.0000028610229492,
+                "fg": 0.9999988675117493,
+                "fb": 1.000003457069397
+              },
+              "antialiased": true,
+              "invert": true,
+              "opacity": 0.5,
+              "angle": 90,
+              "distance": {
+                "value": 50,
+                "units": "Pixels"
+              },
+              "size": {
+                "value": 60,
+                "units": "Pixels"
+              },
+              "contour": {
+                "name": "Linéaire",
+                "curve": [
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 255,
+                    "y": 255
+                  }
+                ]
+              }
+            },
+            "stroke": [
+              {
+                "enabled": false,
+                "position": "inside",
+                "fillType": "color",
+                "blendMode": "normal",
+                "opacity": 1,
+                "size": {
+                  "value": 9,
+                  "units": "Pixels"
+                },
+                "present": false,
+                "showInDialog": true,
+                "overprint": false,
+                "color": "#ffffff"
+              },
+              {
+                "enabled": false,
+                "position": "outside",
+                "fillType": "color",
+                "blendMode": "normal",
+                "opacity": 1,
+                "size": {
+                  "value": 4,
+                  "units": "Pixels"
+                },
+                "present": false,
+                "showInDialog": true,
+                "overprint": false,
+                "color": "#ffffff"
+              }
+            ]
+          },
+          "mask": {
+            "bounds": {
+              "left": 408,
+              "top": 80,
+              "right": 1544,
+              "bottom": 1080
+            },
+            "disabled": false,
+            "defaultColor": 0,
+            "png": "layers/L017_mask_Calque 1 copie 3.png"
+          },
+          "png": "layers/L017_Calque 1 copie 3.png",
+          "vision": {
+            "role": "mascotte",
+            "lettrage_nature": "absent",
+            "description": "Personnage GTA V détouré faisant un signe",
+            "couleurs": [
+              "#1c1d21",
+              "#e2e2e2"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 18,
+          "path": "Groupe 4/Courbes 2",
+          "name": "Courbes 2",
+          "kind": "adjustment",
+          "zIndex": 16,
+          "bounds": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": true,
+          "adjustment": {
+            "type": "curves",
+            "rgb": [
+              {
+                "input": 20,
+                "output": 0
+              },
+              {
+                "input": 203,
+                "output": 255
+              }
+            ]
+          },
+          "mask": {
+            "bounds": {
+              "left": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "disabled": false,
+            "defaultColor": 255
+          }
+        },
+        {
+          "id": 19,
+          "path": "Groupe 4/Fond 1",
+          "name": "Fond 1",
+          "kind": "layer",
+          "zIndex": 17,
+          "bounds": {
+            "left": 662,
+            "top": 351,
+            "right": 1528,
+            "bottom": 842
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": true,
+          "mask": {
+            "bounds": {
+              "left": 662,
+              "top": 351,
+              "right": 1528,
+              "bottom": 842
+            },
+            "disabled": false,
+            "defaultColor": 0,
+            "png": "layers/L019_mask_Fond 1.png"
+          },
+          "png": "layers/L019_Fond 1.png",
+          "vision": {
+            "role": "fond",
+            "lettrage_nature": "absent",
+            "description": "Fond bleu clair uni",
+            "couleurs": [
+              "#8ec5fc",
+              "#8ec5fc"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 20,
+          "path": "Groupe 4/Teinte/Saturation 2",
+          "name": "Teinte/Saturation 2",
+          "kind": "adjustment",
+          "zIndex": 18,
+          "bounds": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": true,
+          "adjustment": {
+            "type": "hue/saturation",
+            "master": {
+              "a": 0,
+              "b": 30,
+              "c": 25,
+              "d": 0,
+              "hue": 0,
+              "saturation": 4,
+              "lightness": -60
+            },
+            "reds": {
+              "a": 315,
+              "b": 345,
+              "c": 15,
+              "d": 45,
+              "hue": 0,
+              "saturation": 0,
+              "lightness": 0
+            },
+            "yellows": {
+              "a": 15,
+              "b": 45,
+              "c": 75,
+              "d": 105,
+              "hue": 0,
+              "saturation": 0,
+              "lightness": 0
+            },
+            "greens": {
+              "a": 75,
+              "b": 105,
+              "c": 135,
+              "d": 165,
+              "hue": 0,
+              "saturation": 0,
+              "lightness": 0
+            },
+            "cyans": {
+              "a": 135,
+              "b": 165,
+              "c": 195,
+              "d": 225,
+              "hue": 0,
+              "saturation": 0,
+              "lightness": 0
+            },
+            "blues": {
+              "a": 195,
+              "b": 225,
+              "c": 255,
+              "d": 285,
+              "hue": 0,
+              "saturation": 0,
+              "lightness": 0
+            },
+            "magentas": {
+              "a": 255,
+              "b": 285,
+              "c": 315,
+              "d": 345,
+              "hue": 0,
+              "saturation": 0,
+              "lightness": 0
+            }
+          },
+          "mask": {
+            "bounds": {
+              "left": 850,
+              "top": 0,
+              "right": 1329,
+              "bottom": 530
+            },
+            "disabled": false,
+            "defaultColor": 0,
+            "png": "layers/L020_mask_Teinte_Saturation 2.png"
+          }
+        },
+        {
+          "id": 21,
+          "path": "Groupe 4/Vibrance 1",
+          "name": "Vibrance 1",
+          "kind": "adjustment",
+          "zIndex": 19,
+          "bounds": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": true,
+          "adjustment": {
+            "type": "vibrance",
+            "vibrance": 14,
+            "saturation": 10
+          },
+          "mask": {
+            "bounds": {
+              "left": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "disabled": false,
+            "defaultColor": 255
+          }
+        },
+        {
+          "id": 22,
+          "path": "Groupe 4/Exposition 1",
+          "name": "Exposition 1",
+          "kind": "adjustment",
+          "zIndex": 20,
+          "bounds": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": true,
+          "adjustment": {
+            "type": "exposure",
+            "exposure": 2.369999885559082,
+            "offset": 0,
+            "gamma": 1
+          },
+          "mask": {
+            "bounds": {
+              "left": 542,
+              "top": 0,
+              "right": 1830,
+              "bottom": 1080
+            },
+            "disabled": false,
+            "defaultColor": 0,
+            "png": "layers/L022_mask_Exposition 1.png"
+          }
+        },
+        {
+          "id": 23,
+          "path": "Groupe 4/Calque 15",
+          "name": "Calque 15",
+          "kind": "layer",
+          "zIndex": 21,
+          "bounds": {
+            "left": 1415,
+            "top": 102,
+            "right": 1581,
+            "bottom": 268
+          },
+          "opacity": 0.7490196078431373,
+          "blendMode": "screen",
+          "hidden": false,
+          "clipping": false,
+          "png": "layers/L023_Calque 15.png",
+          "vision": {
+            "role": "effet_lumiere",
+            "lettrage_nature": "absent",
+            "description": "Halo lumineux blanc diffus et circulaire",
+            "couleurs": [
+              "#ffffff",
+              "#dddddd"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 24,
+          "path": "Groupe 4/.",
+          "name": ".",
+          "kind": "layer",
+          "zIndex": 22,
+          "bounds": {
+            "left": -15,
+            "top": -16,
+            "right": 1995,
+            "bottom": 1114
+          },
+          "opacity": 0.3215686274509804,
+          "blendMode": "lighten",
+          "hidden": false,
+          "clipping": false,
+          "png": "layers/L024_..png",
+          "vision": {
+            "role": "effet_lumiere",
+            "lettrage_nature": "absent",
+            "description": "Vignettage sombre avec de légères particules",
+            "couleurs": [
+              "#000000",
+              "#111111"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 25,
+          "path": "Groupe 4/Calque 12",
+          "name": "Calque 12",
+          "kind": "layer",
+          "zIndex": 23,
+          "bounds": {
+            "left": -139,
+            "top": 848,
+            "right": 269,
+            "bottom": 1226
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": true,
+          "clipping": false,
+          "png": "layers/L025_Calque 12.png",
+          "vision": {
+            "role": "effet_lumiere",
+            "lettrage_nature": "absent",
+            "description": "Effet de vitesse ou d'énergie glacée diagonale",
+            "couleurs": [
+              "#cce6ff",
+              "#ffffff"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 26,
+          "path": "Groupe 4/Calque 14",
+          "name": "Calque 14",
+          "kind": "layer",
+          "zIndex": 24,
+          "bounds": {
+            "left": 0,
+            "top": 781,
+            "right": 338,
+            "bottom": 1080
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": true,
+          "clipping": false,
+          "png": "layers/L026_Calque 14.png",
+          "vision": {
+            "role": "effet_lumiere",
+            "lettrage_nature": "absent",
+            "description": "Dégradé de lumière blanche dans le coin inférieur gauche",
+            "couleurs": [
+              "#ffffff",
+              "#aaaaaa"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 27,
+          "path": "Groupe 4/ Studio",
+          "name": " Studio",
+          "kind": "text",
+          "zIndex": 25,
+          "bounds": {
+            "left": 98,
+            "top": 32,
+            "right": 207,
+            "bottom": 86
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": false,
+          "text": {
+            "text": " Studio",
+            "font": "FONTSPRINGDEMO-MoldeCompressed-BoldReverseRegular",
+            "fontSize": 75,
+            "tracking": 0,
+            "fauxBold": false,
+            "fauxItalic": false,
+            "fontCaps": 0,
+            "fillColor": "#ffffff",
+            "strokeColor": "#000000",
+            "orientation": "horizontal",
+            "transform": [
+              1,
+              0,
+              0,
+              1,
+              88.99633303508685,
+              85.33055471078876
+            ]
+          },
+          "png": "layers/T027_Studio.png",
+          "vision": {
+            "role": "lettrage",
+            "lettrage_nature": "typographie",
+            "description": "Texte 'Studio' en police sans-serif blanche",
+            "couleurs": [
+              "#ffffff",
+              "#ffffff"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 28,
+          "path": "Groupe 4/Calque 10",
+          "name": "Calque 10",
+          "kind": "layer",
+          "zIndex": 26,
+          "bounds": {
+            "left": 14,
+            "top": 23,
+            "right": 88,
+            "bottom": 96
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": false,
+          "png": "layers/L028_Calque 10.png",
+          "vision": {
+            "role": "embleme",
+            "lettrage_nature": "absent",
+            "description": "Petit glaçon réaliste isolé",
+            "couleurs": [
+              "#d0e8f7",
+              "#ffffff"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 29,
+          "path": "Groupe 4/abstract-black-white-small-grid-box-pattern-with-grain-texture-background",
+          "name": "abstract-black-white-small-grid-box-pattern-with-grain-texture-background",
+          "kind": "layer",
+          "zIndex": 27,
+          "bounds": {
+            "left": -59,
+            "top": -16,
+            "right": 2039,
+            "bottom": 1165
+          },
+          "opacity": 1,
+          "blendMode": "lighter color",
+          "hidden": false,
+          "clipping": false,
+          "png": "layers/L029_abstract-black-white-small-grid-box-pattern-with-grain-textu.png",
+          "vision": {
+            "role": "effet_lumiere",
+            "lettrage_nature": "absent",
+            "description": "Vignettage noir texturé sur les bords",
+            "couleurs": [
+              "#000000",
+              "#0a0a0a"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 30,
+          "path": "Groupe 4/Calque 16",
+          "name": "Calque 16",
+          "kind": "layer",
+          "zIndex": 28,
+          "bounds": {
+            "left": 0,
+            "top": -71,
+            "right": 1980,
+            "bottom": 1248
+          },
+          "opacity": 1,
+          "blendMode": "divide",
+          "hidden": true,
+          "clipping": false,
+          "png": "layers/L030_Calque 16.png",
+          "vision": {
+            "role": "texture",
+            "lettrage_nature": "absent",
+            "description": "Motif de lignes ondulées noires sur fond blanc",
+            "couleurs": [
+              "#ffffff",
+              "#000000"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 31,
+          "path": "Groupe 4/Calque 17",
+          "name": "Calque 17",
+          "kind": "layer",
+          "zIndex": 29,
+          "bounds": {
+            "left": -8,
+            "top": -201,
+            "right": 2016,
+            "bottom": 1248
+          },
+          "opacity": 0.2,
+          "blendMode": "soft light",
+          "hidden": false,
+          "clipping": false,
+          "png": "layers/L031_Calque 17.png",
+          "vision": {
+            "role": "effet_lumiere",
+            "lettrage_nature": "absent",
+            "description": "Vignette floue sombre sur fond de lignes horizontales",
+            "couleurs": [
+              "#111111",
+              "#cccccc"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 32,
+          "path": "Groupe 4/Ice Studio",
+          "name": "Ice Studio",
+          "kind": "layer",
+          "zIndex": 30,
+          "bounds": {
+            "left": 1194,
+            "top": 413,
+            "right": 1379,
+            "bottom": 525
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": false,
+          "png": "layers/L032_Ice Studio.png",
+          "vision": {
+            "role": "lettrage",
+            "lettrage_nature": "custom_dessine",
+            "description": "Signature manuscrite blanche 'Ice Studio' en diagonale",
+            "couleurs": [
+              "#ffffff",
+              "#ffffff"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        }
+      ],
+      "png": "layers/G001_Groupe 4.png",
+      "pngNote": "composite naïf source-over (modes de fusion exotiques non simulés)",
+      "vision": {
+        "role": "autre",
+        "lettrage_nature": "absent",
+        "description": "Miniature de la composition globale sur fond d'écran",
+        "couleurs": [
+          "#1a2b3c",
+          "#ffffff"
+        ],
+        "modele": "gemini-3.5-flash"
+      }
+    },
+    {
+      "id": 33,
+      "path": "Groupe 7",
+      "name": "Groupe 7",
+      "kind": "group",
+      "zIndex": 2,
+      "bounds": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "opacity": 1,
+      "blendMode": "pass through",
+      "hidden": false,
+      "clipping": false,
+      "children": [
+        {
+          "id": 34,
+          "path": "Groupe 7/Calque 26",
+          "name": "Calque 26",
+          "kind": "layer",
+          "zIndex": 0,
+          "bounds": {
+            "left": 0,
+            "top": 0,
+            "right": 1980,
+            "bottom": 1080
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": false,
+          "png": "layers/L034_Calque 26.png",
+          "vision": {
+            "role": "mascotte",
+            "lettrage_nature": "typographie",
+            "description": "Personnage masqué avec texte 3D bleu et lueur bleue en arrière-plan.",
+            "couleurs": [
+              "#0088ff",
+              "#1a1a1a"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 35,
+          "path": "Groupe 7/Calque 27",
+          "name": "Calque 27",
+          "kind": "layer",
+          "zIndex": 1,
+          "bounds": {
+            "left": 0,
+            "top": 0,
+            "right": 1980,
+            "bottom": 1080
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": false,
+          "png": "layers/L035_Calque 27.png",
+          "vision": {
+            "role": "mascotte",
+            "lettrage_nature": "typographie",
+            "description": "Personnage masqué avec texte 3D bleu et lueur bleue.",
+            "couleurs": [
+              "#0088ff",
+              "#1a1a1a"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 36,
+          "path": "Groupe 7/Calque 30",
+          "name": "Calque 30",
+          "kind": "layer",
+          "zIndex": 2,
+          "bounds": {
+            "left": 0,
+            "top": 0,
+            "right": 1980,
+            "bottom": 1080
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": false,
+          "png": "layers/L036_Calque 30.png",
+          "vision": {
+            "role": "mascotte",
+            "lettrage_nature": "typographie",
+            "description": "Personnage masqué avec texte 3D bleu et lueur bleue.",
+            "couleurs": [
+              "#0088ff",
+              "#1a1a1a"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 37,
+          "path": "Groupe 7/Calque 31",
+          "name": "Calque 31",
+          "kind": "layer",
+          "zIndex": 3,
+          "bounds": {
+            "left": 4,
+            "top": 694,
+            "right": 441,
+            "bottom": 1080
+          },
+          "opacity": 0.43137254901960786,
+          "blendMode": "screen",
+          "hidden": false,
+          "clipping": false,
+          "png": "layers/L037_Calque 31.png",
+          "vision": {
+            "role": "effet_lumiere",
+            "lettrage_nature": "absent",
+            "description": "Lueur bleue diffuse en diagonale.",
+            "couleurs": [
+              "#3a85ff",
+              "#1d4b9e"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 38,
+          "path": "Groupe 7/Calque 28",
+          "name": "Calque 28",
+          "kind": "layer",
+          "zIndex": 4,
+          "bounds": {
+            "left": 0,
+            "top": 0,
+            "right": 1980,
+            "bottom": 1080
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": true,
+          "clipping": false,
+          "png": "layers/L038_Calque 28.png",
+          "vision": {
+            "role": "mascotte",
+            "lettrage_nature": "typographie",
+            "description": "Personnage masqué avec texte 3D bleu et lueur bleue pixelisée.",
+            "couleurs": [
+              "#0088ff",
+              "#1a1a1a"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 39,
+          "path": "Groupe 7/Calque 29",
+          "name": "Calque 29",
+          "kind": "layer",
+          "zIndex": 5,
+          "bounds": {
+            "left": -15,
+            "top": -243,
+            "right": 1995,
+            "bottom": 1365
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": true,
+          "clipping": false,
+          "png": "layers/L039_Calque 29.png",
+          "vision": {
+            "role": "fond",
+            "lettrage_nature": "typographie",
+            "description": "Scène de tournage extérieure avec voiture de sport jaune et hélicoptère.",
+            "couleurs": [
+              "#f1c40f",
+              "#1a1a1a"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 40,
+          "path": "Groupe 7/Calque 25",
+          "name": "Calque 25",
+          "kind": "layer",
+          "zIndex": 6,
+          "bounds": {
+            "left": 0,
+            "top": 0,
+            "right": 1980,
+            "bottom": 1080
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": true,
+          "clipping": false,
+          "png": "layers/L040_Calque 25.png",
+          "vision": {
+            "role": "mascotte",
+            "lettrage_nature": "typographie",
+            "description": "Personnage masqué avec texte 3D bleu et lueur bleue.",
+            "couleurs": [
+              "#0088ff",
+              "#1a1a1a"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 41,
+          "path": "Groupe 7/2",
+          "name": "2",
+          "kind": "group",
+          "zIndex": 7,
+          "bounds": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "opacity": 1,
+          "blendMode": "pass through",
+          "hidden": true,
+          "clipping": false,
+          "children": [
+            {
+              "id": 42,
+              "path": "Groupe 7/2/cc",
+              "name": "cc",
+              "kind": "adjustment",
+              "zIndex": 0,
+              "bounds": {
+                "left": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0
+              },
+              "opacity": 1,
+              "blendMode": "normal",
+              "hidden": false,
+              "clipping": false,
+              "adjustment": {
+                "type": "curves",
+                "rgb": [
+                  {
+                    "input": 0,
+                    "output": 0
+                  },
+                  {
+                    "input": 91,
+                    "output": 73
+                  },
+                  {
+                    "input": 219,
+                    "output": 175
+                  },
+                  {
+                    "input": 255,
+                    "output": 255
+                  }
+                ]
+              },
+              "mask": {
+                "bounds": {
+                  "left": 0,
+                  "top": 0,
+                  "right": 0,
+                  "bottom": 0
+                },
+                "disabled": false,
+                "defaultColor": 255
+              }
+            },
+            {
+              "id": 43,
+              "path": "Groupe 7/2/cc",
+              "name": "cc",
+              "kind": "adjustment",
+              "zIndex": 1,
+              "bounds": {
+                "left": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0
+              },
+              "opacity": 1,
+              "blendMode": "normal",
+              "hidden": false,
+              "clipping": false,
+              "adjustment": {
+                "type": "exposure",
+                "exposure": 0.5,
+                "offset": -0.00430000014603138,
+                "gamma": 1
+              },
+              "mask": {
+                "bounds": {
+                  "left": 0,
+                  "top": 0,
+                  "right": 0,
+                  "bottom": 0
+                },
+                "disabled": false,
+                "defaultColor": 255
+              }
+            },
+            {
+              "id": 44,
+              "path": "Groupe 7/2/cc",
+              "name": "cc",
+              "kind": "adjustment",
+              "zIndex": 2,
+              "bounds": {
+                "left": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0
+              },
+              "opacity": 1,
+              "blendMode": "normal",
+              "hidden": false,
+              "clipping": false,
+              "adjustment": {
+                "type": "photo filter",
+                "color": {
+                  "l": 0.61,
+                  "a": -0.4609375,
+                  "b": -0.9296875
+                },
+                "density": 0.05,
+                "preserveLuminosity": true
+              },
+              "mask": {
+                "bounds": {
+                  "left": 0,
+                  "top": 0,
+                  "right": 0,
+                  "bottom": 0
+                },
+                "disabled": false,
+                "defaultColor": 255
+              }
+            },
+            {
+              "id": 45,
+              "path": "Groupe 7/2/cc",
+              "name": "cc",
+              "kind": "adjustment",
+              "zIndex": 3,
+              "bounds": {
+                "left": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0
+              },
+              "opacity": 1,
+              "blendMode": "normal",
+              "hidden": false,
+              "clipping": false,
+              "adjustment": {
+                "type": "vibrance",
+                "vibrance": 45,
+                "saturation": 9
+              },
+              "mask": {
+                "bounds": {
+                  "left": 0,
+                  "top": 0,
+                  "right": 0,
+                  "bottom": 0
+                },
+                "disabled": false,
+                "defaultColor": 255
+              }
+            },
+            {
+              "id": 46,
+              "path": "Groupe 7/2/cc",
+              "name": "cc",
+              "kind": "adjustment",
+              "zIndex": 4,
+              "bounds": {
+                "left": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0
+              },
+              "opacity": 1,
+              "blendMode": "normal",
+              "hidden": false,
+              "clipping": false,
+              "adjustment": {
+                "type": "levels",
+                "rgb": {
+                  "shadowInput": 0,
+                  "highlightInput": 255,
+                  "shadowOutput": 0,
+                  "highlightOutput": 255,
+                  "midtoneInput": 1.14
+                },
+                "red": {
+                  "shadowInput": 0,
+                  "highlightInput": 255,
+                  "shadowOutput": 0,
+                  "highlightOutput": 255,
+                  "midtoneInput": 1
+                },
+                "green": {
+                  "shadowInput": 0,
+                  "highlightInput": 255,
+                  "shadowOutput": 0,
+                  "highlightOutput": 255,
+                  "midtoneInput": 1
+                },
+                "blue": {
+                  "shadowInput": 0,
+                  "highlightInput": 255,
+                  "shadowOutput": 0,
+                  "highlightOutput": 255,
+                  "midtoneInput": 1
+                }
+              },
+              "mask": {
+                "bounds": {
+                  "left": 0,
+                  "top": 0,
+                  "right": 0,
+                  "bottom": 0
+                },
+                "disabled": false,
+                "defaultColor": 255
+              }
+            },
+            {
+              "id": 47,
+              "path": "Groupe 7/2/cc",
+              "name": "cc",
+              "kind": "adjustment",
+              "zIndex": 5,
+              "bounds": {
+                "left": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0
+              },
+              "opacity": 1,
+              "blendMode": "normal",
+              "hidden": false,
+              "clipping": false,
+              "adjustment": {
+                "type": "exposure",
+                "exposure": 0.2800000011920929,
+                "offset": 0,
+                "gamma": 1
+              },
+              "mask": {
+                "bounds": {
+                  "left": 0,
+                  "top": 0,
+                  "right": 0,
+                  "bottom": 0
+                },
+                "disabled": false,
+                "defaultColor": 255
+              }
+            }
+          ]
+        },
+        {
+          "id": 48,
+          "path": "Groupe 7/1",
+          "name": "1",
+          "kind": "group",
+          "zIndex": 8,
+          "bounds": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "opacity": 1,
+          "blendMode": "pass through",
+          "hidden": true,
+          "clipping": false,
+          "children": [
+            {
+              "id": 49,
+              "path": "Groupe 7/1/cc",
+              "name": "cc",
+              "kind": "adjustment",
+              "zIndex": 0,
+              "bounds": {
+                "left": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0
+              },
+              "opacity": 1,
+              "blendMode": "normal",
+              "hidden": false,
+              "clipping": false,
+              "adjustment": {
+                "type": "curves",
+                "rgb": [
+                  {
+                    "input": 0,
+                    "output": 0
+                  },
+                  {
+                    "input": 88,
+                    "output": 79
+                  },
+                  {
+                    "input": 174,
+                    "output": 186
+                  },
+                  {
+                    "input": 255,
+                    "output": 255
+                  }
+                ],
+                "red": [
+                  {
+                    "input": 0,
+                    "output": 0
+                  },
+                  {
+                    "input": 166,
+                    "output": 159
+                  },
+                  {
+                    "input": 255,
+                    "output": 255
+                  }
+                ],
+                "blue": [
+                  {
+                    "input": 0,
+                    "output": 0
+                  },
+                  {
+                    "input": 163,
+                    "output": 170
+                  },
+                  {
+                    "input": 255,
+                    "output": 255
+                  }
+                ]
+              },
+              "mask": {
+                "bounds": {
+                  "left": 0,
+                  "top": 0,
+                  "right": 0,
+                  "bottom": 0
+                },
+                "disabled": false,
+                "defaultColor": 255
+              }
+            },
+            {
+              "id": 50,
+              "path": "Groupe 7/1/cc",
+              "name": "cc",
+              "kind": "adjustment",
+              "zIndex": 1,
+              "bounds": {
+                "left": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0
+              },
+              "opacity": 1,
+              "blendMode": "normal",
+              "hidden": false,
+              "clipping": false,
+              "adjustment": {
+                "type": "vibrance",
+                "vibrance": 9
+              },
+              "mask": {
+                "bounds": {
+                  "left": 0,
+                  "top": 0,
+                  "right": 0,
+                  "bottom": 0
+                },
+                "disabled": false,
+                "defaultColor": 255
+              }
+            },
+            {
+              "id": 51,
+              "path": "Groupe 7/1/cc",
+              "name": "cc",
+              "kind": "adjustment",
+              "zIndex": 2,
+              "bounds": {
+                "left": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0
+              },
+              "opacity": 1,
+              "blendMode": "normal",
+              "hidden": false,
+              "clipping": false,
+              "adjustment": {
+                "type": "color balance",
+                "shadows": {
+                  "cyanRed": 0,
+                  "magentaGreen": 0,
+                  "yellowBlue": 0
+                },
+                "midtones": {
+                  "cyanRed": 0,
+                  "magentaGreen": 0,
+                  "yellowBlue": 10
+                },
+                "highlights": {
+                  "cyanRed": 0,
+                  "magentaGreen": 0,
+                  "yellowBlue": 0
+                },
+                "preserveLuminosity": true
+              },
+              "mask": {
+                "bounds": {
+                  "left": 0,
+                  "top": 0,
+                  "right": 0,
+                  "bottom": 0
+                },
+                "disabled": false,
+                "defaultColor": 255
+              }
+            }
+          ]
+        },
+        {
+          "id": 52,
+          "path": "Groupe 7/Groupe 6",
+          "name": "Groupe 6",
+          "kind": "group",
+          "zIndex": 9,
+          "bounds": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "opacity": 1,
+          "blendMode": "pass through",
+          "hidden": true,
+          "clipping": false,
+          "children": [
+            {
+              "id": 53,
+              "path": "Groupe 7/Groupe 6/Calque 24",
+              "name": "Calque 24",
+              "kind": "layer",
+              "zIndex": 0,
+              "bounds": {
+                "left": 0,
+                "top": 0,
+                "right": 1980,
+                "bottom": 1080
+              },
+              "opacity": 1,
+              "blendMode": "normal",
+              "hidden": true,
+              "clipping": false,
+              "png": "layers/L053_Calque 24.png",
+              "vision": {
+                "role": "mascotte",
+                "lettrage_nature": "typographie",
+                "description": "Personnage masqué avec texte 3D bleu et lueur bleue.",
+                "couleurs": [
+                  "#0088ff",
+                  "#1a1a1a"
+                ],
+                "modele": "gemini-3.5-flash"
+              }
+            },
+            {
+              "id": 54,
+              "path": "Groupe 7/Groupe 6/sd",
+              "name": "sd",
+              "kind": "text",
+              "zIndex": 1,
+              "bounds": {
+                "left": 895,
+                "top": 452,
+                "right": 1085,
+                "bottom": 580
+              },
+              "opacity": 1,
+              "blendMode": "normal",
+              "hidden": true,
+              "clipping": false,
+              "text": {
+                "text": "sd",
+                "font": "Blacksword",
+                "fontSize": 50,
+                "tracking": 0,
+                "fauxBold": false,
+                "fauxItalic": false,
+                "fontCaps": 0,
+                "fillColor": "#ffffff",
+                "strokeColor": "#000000",
+                "orientation": "horizontal",
+                "transform": [
+                  3.390975054710891,
+                  0,
+                  0,
+                  3.3909750547108923,
+                  903.4150485764081,
+                  576.7498784272523
+                ]
+              },
+              "png": "layers/T054_sd.png",
+              "vision": {
+                "role": "lettrage",
+                "lettrage_nature": "custom_dessine",
+                "description": "Signature manuscrite blanche stylisée 'sd'.",
+                "couleurs": [
+                  "#ffffff",
+                  "#e0e0e0"
+                ],
+                "modele": "gemini-3.5-flash"
+              }
+            },
+            {
+              "id": 55,
+              "path": "Groupe 7/Groupe 6/Groupe 5",
+              "name": "Groupe 5",
+              "kind": "group",
+              "zIndex": 2,
+              "bounds": {
+                "left": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0
+              },
+              "opacity": 1,
+              "blendMode": "pass through",
+              "hidden": true,
+              "clipping": false,
+              "children": [
+                {
+                  "id": 56,
+                  "path": "Groupe 7/Groupe 6/Groupe 5/Calque 18",
+                  "name": "Calque 18",
+                  "kind": "layer",
+                  "zIndex": 0,
+                  "bounds": {
+                    "left": 0,
+                    "top": 0,
+                    "right": 1980,
+                    "bottom": 1080
+                  },
+                  "opacity": 1,
+                  "blendMode": "normal",
+                  "hidden": false,
+                  "clipping": false,
+                  "png": "layers/L056_Calque 18.png",
+                  "vision": {
+                    "role": "mascotte",
+                    "lettrage_nature": "typographie",
+                    "description": "Silhouette de personnage masqué avec texte 3D bleu pixelisé.",
+                    "couleurs": [
+                      "#0088ff",
+                      "#1a1a1a"
+                    ],
+                    "modele": "gemini-3.5-flash"
+                  }
+                },
+                {
+                  "id": 57,
+                  "path": "Groupe 7/Groupe 6/Groupe 5/Calque 20",
+                  "name": "Calque 20",
+                  "kind": "layer",
+                  "zIndex": 1,
+                  "bounds": {
+                    "left": 0,
+                    "top": 0,
+                    "right": 1980,
+                    "bottom": 1080
+                  },
+                  "opacity": 1,
+                  "blendMode": "normal",
+                  "hidden": false,
+                  "clipping": false,
+                  "png": "layers/L057_Calque 20.png",
+                  "vision": {
+                    "role": "mascotte",
+                    "lettrage_nature": "typographie",
+                    "description": "Personnage masqué avec texte 3D bleu et lueur rose.",
+                    "couleurs": [
+                      "#ff007f",
+                      "#1a1a1a"
+                    ],
+                    "modele": "gemini-3.5-flash"
+                  }
+                },
+                {
+                  "id": 58,
+                  "path": "Groupe 7/Groupe 6/Groupe 5/Calque 21",
+                  "name": "Calque 21",
+                  "kind": "layer",
+                  "zIndex": 2,
+                  "bounds": {
+                    "left": 0,
+                    "top": 0,
+                    "right": 1980,
+                    "bottom": 1080
+                  },
+                  "opacity": 1,
+                  "blendMode": "normal",
+                  "hidden": false,
+                  "clipping": false,
+                  "png": "layers/L058_Calque 21.png",
+                  "vision": {
+                    "role": "mascotte",
+                    "lettrage_nature": "typographie",
+                    "description": "Personnage masqué avec texte 3D bleu et lueur rose.",
+                    "couleurs": [
+                      "#ff007f",
+                      "#1a1a1a"
+                    ],
+                    "modele": "gemini-3.5-flash"
+                  }
+                }
+              ],
+              "png": "layers/G055_Groupe 5.png",
+              "pngNote": "composite naïf source-over (modes de fusion exotiques non simulés)",
+              "vision": {
+                "role": "mascotte",
+                "lettrage_nature": "typographie",
+                "description": "Personnage masqué avec texte 3D bleu sans lueur d'arrière-plan.",
+                "couleurs": [
+                  "#0088ff",
+                  "#1a1a1a"
+                ],
+                "modele": "gemini-3.5-flash"
+              }
+            },
+            {
+              "id": 59,
+              "path": "Groupe 7/Groupe 6/1",
+              "name": "1",
+              "kind": "group",
+              "zIndex": 3,
+              "bounds": {
+                "left": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0
+              },
+              "opacity": 1,
+              "blendMode": "pass through",
+              "hidden": true,
+              "clipping": false,
+              "children": [
+                {
+                  "id": 60,
+                  "path": "Groupe 7/Groupe 6/1/cc",
+                  "name": "cc",
+                  "kind": "adjustment",
+                  "zIndex": 0,
+                  "bounds": {
+                    "left": 0,
+                    "top": 0,
+                    "right": 0,
+                    "bottom": 0
+                  },
+                  "opacity": 1,
+                  "blendMode": "normal",
+                  "hidden": false,
+                  "clipping": false,
+                  "adjustment": {
+                    "type": "curves",
+                    "rgb": [
+                      {
+                        "input": 0,
+                        "output": 0
+                      },
+                      {
+                        "input": 90,
+                        "output": 96
+                      },
+                      {
+                        "input": 191,
+                        "output": 170
+                      },
+                      {
+                        "input": 255,
+                        "output": 255
+                      }
+                    ],
+                    "red": [
+                      {
+                        "input": 0,
+                        "output": 0
+                      },
+                      {
+                        "input": 166,
+                        "output": 159
+                      },
+                      {
+                        "input": 255,
+                        "output": 255
+                      }
+                    ],
+                    "blue": [
+                      {
+                        "input": 0,
+                        "output": 0
+                      },
+                      {
+                        "input": 163,
+                        "output": 170
+                      },
+                      {
+                        "input": 255,
+                        "output": 255
+                      }
+                    ]
+                  },
+                  "mask": {
+                    "bounds": {
+                      "left": 0,
+                      "top": 0,
+                      "right": 0,
+                      "bottom": 0
+                    },
+                    "disabled": false,
+                    "defaultColor": 255
+                  }
+                },
+                {
+                  "id": 61,
+                  "path": "Groupe 7/Groupe 6/1/cc",
+                  "name": "cc",
+                  "kind": "adjustment",
+                  "zIndex": 1,
+                  "bounds": {
+                    "left": 0,
+                    "top": 0,
+                    "right": 0,
+                    "bottom": 0
+                  },
+                  "opacity": 1,
+                  "blendMode": "normal",
+                  "hidden": false,
+                  "clipping": false,
+                  "adjustment": {
+                    "type": "vibrance",
+                    "vibrance": 9
+                  },
+                  "mask": {
+                    "bounds": {
+                      "left": 0,
+                      "top": 0,
+                      "right": 0,
+                      "bottom": 0
+                    },
+                    "disabled": false,
+                    "defaultColor": 255
+                  }
+                },
+                {
+                  "id": 62,
+                  "path": "Groupe 7/Groupe 6/1/cc",
+                  "name": "cc",
+                  "kind": "adjustment",
+                  "zIndex": 2,
+                  "bounds": {
+                    "left": 0,
+                    "top": 0,
+                    "right": 0,
+                    "bottom": 0
+                  },
+                  "opacity": 1,
+                  "blendMode": "normal",
+                  "hidden": true,
+                  "clipping": false,
+                  "adjustment": {
+                    "type": "color balance",
+                    "shadows": {
+                      "cyanRed": 0,
+                      "magentaGreen": 0,
+                      "yellowBlue": 0
+                    },
+                    "midtones": {
+                      "cyanRed": 0,
+                      "magentaGreen": 0,
+                      "yellowBlue": 10
+                    },
+                    "highlights": {
+                      "cyanRed": 0,
+                      "magentaGreen": 0,
+                      "yellowBlue": 0
+                    },
+                    "preserveLuminosity": true
+                  },
+                  "mask": {
+                    "bounds": {
+                      "left": 0,
+                      "top": 0,
+                      "right": 0,
+                      "bottom": 0
+                    },
+                    "disabled": false,
+                    "defaultColor": 255
+                  }
+                }
+              ]
+            },
+            {
+              "id": 63,
+              "path": "Groupe 7/Groupe 6/Texture",
+              "name": "Texture",
+              "kind": "layer",
+              "zIndex": 4,
+              "bounds": {
+                "left": -18,
+                "top": 303,
+                "right": 1030,
+                "bottom": 812
+              },
+              "opacity": 0.6901960784313725,
+              "blendMode": "overlay",
+              "hidden": true,
+              "clipping": false,
+              "effects": {
+                "scale": 1,
+                "dropShadow": [
+                  {
+                    "enabled": false,
+                    "present": false,
+                    "showInDialog": true,
+                    "blendMode": "normal",
+                    "color": {
+                      "fr": -0.036832358688116074,
+                      "fg": 0.08435175567865372,
+                      "fb": 0.3494376242160797
+                    },
+                    "opacity": 0.8,
+                    "useGlobalLight": true,
+                    "angle": 90,
+                    "distance": {
+                      "value": 7,
+                      "units": "Pixels"
+                    },
+                    "choke": {
+                      "value": 5,
+                      "units": "Pixels"
+                    },
+                    "size": {
+                      "value": 26,
+                      "units": "Pixels"
+                    },
+                    "noise": 0,
+                    "antialiased": false,
+                    "contour": {
+                      "name": "Linear",
+                      "curve": [
+                        {
+                          "x": 0,
+                          "y": 0
+                        },
+                        {
+                          "x": 255,
+                          "y": 255
+                        }
+                      ]
+                    },
+                    "layerConceals": true
+                  }
+                ],
+                "innerShadow": [
+                  {
+                    "enabled": false,
+                    "present": false,
+                    "showInDialog": true,
+                    "blendMode": "multiply",
+                    "color": {
+                      "fr": -3.7551546938630054e-7,
+                      "fg": 0.0000010768211495815194,
+                      "fb": 3.800608965320862e-7
+                    },
+                    "opacity": 0.35,
+                    "useGlobalLight": true,
+                    "angle": 90,
+                    "distance": {
+                      "value": 71,
+                      "units": "Pixels"
+                    },
+                    "choke": {
+                      "value": 0,
+                      "units": "Pixels"
+                    },
+                    "size": {
+                      "value": 138,
+                      "units": "Pixels"
+                    },
+                    "noise": 0,
+                    "antialiased": false,
+                    "contour": {
+                      "name": "Linear",
+                      "curve": [
+                        {
+                          "x": 0,
+                          "y": 0
+                        },
+                        {
+                          "x": 255,
+                          "y": 255
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "outerGlow": {
+                  "enabled": false,
+                  "present": false,
+                  "showInDialog": true,
+                  "blendMode": "screen",
+                  "color": "#ffffff",
+                  "opacity": 0.35,
+                  "technique": "softer",
+                  "choke": {
+                    "value": 0,
+                    "units": "Pixels"
+                  },
+                  "size": {
+                    "value": 138,
+                    "units": "Pixels"
+                  },
+                  "noise": 0,
+                  "jitter": 0,
+                  "antialiased": false,
+                  "contour": {
+                    "name": "Linear",
+                    "curve": [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 255,
+                        "y": 255
+                      }
+                    ]
+                  },
+                  "range": 0.5
+                },
+                "innerGlow": {
+                  "enabled": false,
+                  "present": false,
+                  "showInDialog": true,
+                  "blendMode": "screen",
+                  "color": "#ffffff",
+                  "opacity": 0.35,
+                  "technique": "softer",
+                  "choke": {
+                    "value": 0,
+                    "units": "Pixels"
+                  },
+                  "size": {
+                    "value": 138,
+                    "units": "Pixels"
+                  },
+                  "noise": 0,
+                  "jitter": 0,
+                  "antialiased": false,
+                  "contour": {
+                    "name": "Linear",
+                    "curve": [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 255,
+                        "y": 255
+                      }
+                    ]
+                  },
+                  "range": 0.5,
+                  "source": "edge"
+                },
+                "bevel": {
+                  "enabled": false,
+                  "present": false,
+                  "showInDialog": true,
+                  "highlightBlendMode": "multiply",
+                  "highlightColor": "#ffffff",
+                  "highlightOpacity": 0.43,
+                  "shadowBlendMode": "multiply",
+                  "shadowColor": {
+                    "fr": -3.7551546938630054e-7,
+                    "fg": 0.0000010768211495815194,
+                    "fb": 3.800608965320862e-7
+                  },
+                  "shadowOpacity": 0.5,
+                  "technique": "smooth",
+                  "style": "inner bevel",
+                  "useGlobalLight": true,
+                  "angle": 90,
+                  "altitude": 30,
+                  "strength": 2.2,
+                  "size": {
+                    "value": 4,
+                    "units": "Pixels"
+                  },
+                  "direction": "down",
+                  "contour": {
+                    "name": "Linear",
+                    "curve": [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 255,
+                        "y": 255
+                      }
+                    ]
+                  },
+                  "antialiasGloss": false,
+                  "soften": {
+                    "value": 0,
+                    "units": "Pixels"
+                  },
+                  "useShape": false,
+                  "useTexture": false
+                },
+                "solidFill": [
+                  {
+                    "enabled": true,
+                    "present": true,
+                    "showInDialog": true,
+                    "blendMode": "normal",
+                    "color": "#ffffff",
+                    "opacity": 1
+                  }
+                ],
+                "gradientOverlay": [
+                  {
+                    "enabled": false,
+                    "present": false,
+                    "showInDialog": true,
+                    "blendMode": "multiply",
+                    "opacity": 1,
+                    "gradient": {
+                      "type": "solid",
+                      "name": "Blue_10",
+                      "smoothness": 1,
+                      "colorStops": [
+                        {
+                          "color": "#a9a8ce",
+                          "location": 0,
+                          "midpoint": 0.5
+                        },
+                        {
+                          "color": "#8a8abd",
+                          "location": 1,
+                          "midpoint": 0.5
+                        }
+                      ],
+                      "opacityStops": [
+                        {
+                          "opacity": 1,
+                          "location": 0,
+                          "midpoint": 0.5
+                        },
+                        {
+                          "opacity": 1,
+                          "location": 1,
+                          "midpoint": 0.5
+                        }
+                      ]
+                    },
+                    "angle": 95,
+                    "type": "linear",
+                    "reverse": false,
+                    "dither": false,
+                    "interpolationMethod": "classic",
+                    "align": true,
+                    "scale": 1.5,
+                    "offset": {
+                      "x": 0.06585540443808159,
+                      "y": 0.5654506437768241
+                    }
+                  }
+                ],
+                "satin": {
+                  "enabled": false,
+                  "present": false,
+                  "showInDialog": true,
+                  "blendMode": "multiply",
+                  "color": {
+                    "fr": -3.7551546938630054e-7,
+                    "fg": 0.0000010768211495815194,
+                    "fb": 3.800608965320862e-7
+                  },
+                  "antialiased": true,
+                  "invert": true,
+                  "opacity": 0.5,
+                  "angle": 90,
+                  "distance": {
+                    "value": 250,
+                    "units": "Pixels"
+                  },
+                  "size": {
+                    "value": 250,
+                    "units": "Pixels"
+                  },
+                  "contour": {
+                    "name": "Linear",
+                    "curve": [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 255,
+                        "y": 255
+                      }
+                    ]
+                  }
+                },
+                "stroke": [
+                  {
+                    "enabled": false,
+                    "position": "inside",
+                    "fillType": "color",
+                    "blendMode": "normal",
+                    "opacity": 0.23,
+                    "size": {
+                      "value": 4,
+                      "units": "Pixels"
+                    },
+                    "present": false,
+                    "showInDialog": true,
+                    "overprint": false,
+                    "color": "#181818"
+                  }
+                ]
+              },
+              "mask": {
+                "bounds": {
+                  "left": 894,
+                  "top": 2322,
+                  "right": 2179,
+                  "bottom": 5047
+                },
+                "disabled": false,
+                "defaultColor": 255,
+                "png": "layers/L063_mask_Texture.png"
+              },
+              "png": "layers/L063_Texture.png",
+              "vision": {
+                "role": "texture",
+                "lettrage_nature": "absent",
+                "description": "Lignes topographiques blanches fines sur fond transparent.",
+                "couleurs": [
+                  "#ffffff",
+                  "#808080"
+                ],
+                "modele": "gemini-3.5-flash"
+              }
+            },
+            {
+              "id": 64,
+              "path": "Groupe 7/Groupe 6/Calque 22",
+              "name": "Calque 22",
+              "kind": "layer",
+              "zIndex": 5,
+              "bounds": {
+                "left": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0
+              },
+              "opacity": 1,
+              "blendMode": "normal",
+              "hidden": true,
+              "clipping": false
+            },
+            {
+              "id": 65,
+              "path": "Groupe 7/Groupe 6/Calque 19",
+              "name": "Calque 19",
+              "kind": "layer",
+              "zIndex": 6,
+              "bounds": {
+                "left": 0,
+                "top": 0,
+                "right": 1980,
+                "bottom": 1080
+              },
+              "opacity": 1,
+              "blendMode": "normal",
+              "hidden": true,
+              "clipping": false,
+              "png": "layers/L065_Calque 19.png",
+              "vision": {
+                "role": "mascotte",
+                "lettrage_nature": "typographie",
+                "description": "Personnage masqué avec texte 3D bleu et lueur rose.",
+                "couleurs": [
+                  "#ff007f",
+                  "#1a1a1a"
+                ],
+                "modele": "gemini-3.5-flash"
+              }
+            }
+          ]
+        }
+      ],
+      "png": "layers/G033_Groupe 7.png",
+      "pngNote": "composite naïf source-over (modes de fusion exotiques non simulés)",
+      "vision": {
+        "role": "autre",
+        "lettrage_nature": "typographie",
+        "description": "Composition finale complète avec personnage, texte et fond",
+        "couleurs": [
+          "#0055a5",
+          "#ffffff"
+        ],
+        "modele": "gemini-3.5-flash"
+      }
+    }
+  ]
+}

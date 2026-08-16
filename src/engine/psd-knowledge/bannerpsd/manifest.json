@@ -1,0 +1,1970 @@
+{
+  "psd": "bannerpsd.psd",
+  "decomposedAt": "2026-08-16T13:41:56.711Z",
+  "width": 1980,
+  "height": 1080,
+  "bitsPerChannel": 8,
+  "colorMode": 3,
+  "composite": "composite.png",
+  "stats": {
+    "layers": 36,
+    "groups": 2,
+    "text": 0,
+    "pngs": 32,
+    "masks": 3,
+    "totalNodes": 38
+  },
+  "missingFeatures": [],
+  "tree": [
+    {
+      "id": 0,
+      "path": "Arrière-plan",
+      "name": "Arrière-plan",
+      "kind": "layer",
+      "zIndex": 0,
+      "bounds": {
+        "left": 0,
+        "top": 0,
+        "right": 1980,
+        "bottom": 1080
+      },
+      "opacity": 1,
+      "blendMode": "normal",
+      "hidden": false,
+      "clipping": false,
+      "png": "layers/L000_Arrière-plan.png",
+      "vision": {
+        "role": "fond",
+        "lettrage_nature": "absent",
+        "description": "Rectangle blanc uni servant de base d'arrière-plan.",
+        "couleurs": [
+          "#ffffff",
+          "#ffffff"
+        ],
+        "modele": "gemini-3.5-flash"
+      }
+    },
+    {
+      "id": 1,
+      "path": "Groupe 1",
+      "name": "Groupe 1",
+      "kind": "group",
+      "zIndex": 1,
+      "bounds": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "opacity": 1,
+      "blendMode": "pass through",
+      "hidden": false,
+      "clipping": false,
+      "children": [
+        {
+          "id": 2,
+          "path": "Groupe 1/Calque 1",
+          "name": "Calque 1",
+          "kind": "layer",
+          "zIndex": 0,
+          "bounds": {
+            "left": -776,
+            "top": -1051,
+            "right": 2507,
+            "bottom": 2235
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": false,
+          "effects": {
+            "scale": 1.3333333333333335,
+            "dropShadow": [
+              {
+                "enabled": false,
+                "present": false,
+                "showInDialog": true,
+                "blendMode": "normal",
+                "color": {
+                  "fr": -0.07344149798154831,
+                  "fg": -0.07372178137302399,
+                  "fb": -0.05425117537379265
+                },
+                "opacity": 0.49,
+                "useGlobalLight": false,
+                "angle": -171,
+                "distance": {
+                  "value": 31,
+                  "units": "Pixels"
+                },
+                "choke": {
+                  "value": 5,
+                  "units": "Pixels"
+                },
+                "size": {
+                  "value": 65,
+                  "units": "Pixels"
+                },
+                "noise": 0,
+                "antialiased": false,
+                "contour": {
+                  "name": "Linear",
+                  "curve": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 255,
+                      "y": 255
+                    }
+                  ]
+                },
+                "layerConceals": true
+              }
+            ],
+            "innerShadow": [
+              {
+                "enabled": false,
+                "present": false,
+                "showInDialog": true,
+                "blendMode": "multiply",
+                "color": {
+                  "fr": -0.07344149798154831,
+                  "fg": -0.07372178137302399,
+                  "fb": -0.05425117537379265
+                },
+                "opacity": 0.2,
+                "useGlobalLight": true,
+                "angle": 90,
+                "distance": {
+                  "value": 0,
+                  "units": "Pixels"
+                },
+                "choke": {
+                  "value": 1,
+                  "units": "Pixels"
+                },
+                "size": {
+                  "value": 9,
+                  "units": "Pixels"
+                },
+                "noise": 0,
+                "antialiased": false,
+                "contour": {
+                  "name": "Linear",
+                  "curve": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 255,
+                      "y": 255
+                    }
+                  ]
+                }
+              }
+            ],
+            "outerGlow": {
+              "enabled": false,
+              "present": false,
+              "showInDialog": true,
+              "blendMode": "normal",
+              "color": "#ffffff",
+              "opacity": 1,
+              "technique": "softer",
+              "choke": {
+                "value": 0,
+                "units": "Pixels"
+              },
+              "size": {
+                "value": 250,
+                "units": "Pixels"
+              },
+              "noise": 0,
+              "jitter": 0.39,
+              "antialiased": false,
+              "contour": {
+                "name": "Cone",
+                "curve": [
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 129,
+                    "y": 255
+                  },
+                  {
+                    "x": 255,
+                    "y": 0
+                  }
+                ]
+              },
+              "range": 0.05
+            },
+            "innerGlow": {
+              "enabled": false,
+              "present": false,
+              "showInDialog": true,
+              "blendMode": "normal",
+              "color": {
+                "fr": 1.0000027418136597,
+                "fg": 0.9999986886978149,
+                "fb": 1.000003695487976
+              },
+              "opacity": 1,
+              "technique": "softer",
+              "choke": {
+                "value": 6,
+                "units": "Pixels"
+              },
+              "size": {
+                "value": 5,
+                "units": "Pixels"
+              },
+              "noise": 0,
+              "jitter": 1,
+              "antialiased": false,
+              "contour": {
+                "name": "$$$/Contours/Defaults/CoveDeep=Cove - Deep",
+                "curve": [
+                  {
+                    "x": 0,
+                    "y": 65
+                  },
+                  {
+                    "x": 95,
+                    "y": 74
+                  },
+                  {
+                    "x": 151,
+                    "y": 115
+                  },
+                  {
+                    "x": 178,
+                    "y": 178
+                  },
+                  {
+                    "x": 192,
+                    "y": 255
+                  }
+                ]
+              },
+              "range": 0.11,
+              "source": "edge"
+            },
+            "bevel": {
+              "enabled": false,
+              "present": false,
+              "showInDialog": true,
+              "highlightBlendMode": "normal",
+              "highlightColor": {
+                "fr": 1.0000027418136597,
+                "fg": 0.9999986886978149,
+                "fb": 1.000003695487976
+              },
+              "highlightOpacity": 0.48,
+              "shadowBlendMode": "multiply",
+              "shadowColor": {
+                "fr": -0.07344149798154831,
+                "fg": -0.07372178137302399,
+                "fb": -0.05425117537379265
+              },
+              "shadowOpacity": 0.9,
+              "technique": "smooth",
+              "style": "inner bevel",
+              "useGlobalLight": false,
+              "angle": 91,
+              "altitude": 0,
+              "strength": 2.72,
+              "size": {
+                "value": 24,
+                "units": "Pixels"
+              },
+              "direction": "up",
+              "contour": {
+                "name": "Linéaire",
+                "curve": [
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 255,
+                    "y": 255
+                  }
+                ]
+              },
+              "antialiasGloss": false,
+              "soften": {
+                "value": 7,
+                "units": "Pixels"
+              },
+              "useShape": false,
+              "useTexture": false
+            },
+            "solidFill": [
+              {
+                "enabled": true,
+                "present": true,
+                "showInDialog": true,
+                "blendMode": "normal",
+                "color": "#090909",
+                "opacity": 1
+              }
+            ],
+            "gradientOverlay": [
+              {
+                "enabled": false,
+                "present": false,
+                "showInDialog": true,
+                "blendMode": "normal",
+                "opacity": 1,
+                "gradient": {
+                  "type": "solid",
+                  "name": "Personnalisé",
+                  "smoothness": 1,
+                  "colorStops": [
+                    {
+                      "color": "#ffffff",
+                      "location": 0,
+                      "midpoint": 0.5
+                    },
+                    {
+                      "color": "#000000",
+                      "location": 0,
+                      "midpoint": 0.5
+                    },
+                    {
+                      "color": "#000000",
+                      "location": 0,
+                      "midpoint": 0.5
+                    },
+                    {
+                      "color": "#ffffff",
+                      "location": 0,
+                      "midpoint": 0.5
+                    },
+                    {
+                      "color": "#ffffff",
+                      "location": 0,
+                      "midpoint": 0.5
+                    },
+                    {
+                      "color": "#ffde00",
+                      "location": 0,
+                      "midpoint": 0.5
+                    },
+                    {
+                      "color": "#00848e",
+                      "location": 0,
+                      "midpoint": 0.5
+                    },
+                    {
+                      "color": "#024e80",
+                      "location": 0.297607421875,
+                      "midpoint": 0.5
+                    },
+                    {
+                      "color": "#8ad0ff",
+                      "location": 0.5830078125,
+                      "midpoint": 0.5
+                    },
+                    {
+                      "color": "#003b62",
+                      "location": 0.9921875,
+                      "midpoint": 0.55
+                    }
+                  ],
+                  "opacityStops": [
+                    {
+                      "opacity": 1,
+                      "location": 0,
+                      "midpoint": 0.5
+                    },
+                    {
+                      "opacity": 1,
+                      "location": 1,
+                      "midpoint": 0.5
+                    }
+                  ]
+                },
+                "angle": 121,
+                "type": "linear",
+                "reverse": false,
+                "dither": false,
+                "interpolationMethod": "classic",
+                "align": true,
+                "scale": 1.5,
+                "offset": {
+                  "x": 0.11315336303874951,
+                  "y": -0.042057596199294896
+                }
+              }
+            ],
+            "satin": {
+              "enabled": false,
+              "present": false,
+              "showInDialog": true,
+              "blendMode": "color dodge",
+              "color": "#ffffff",
+              "antialiased": true,
+              "invert": false,
+              "opacity": 0.41,
+              "angle": 71,
+              "distance": {
+                "value": 7,
+                "units": "Pixels"
+              },
+              "size": {
+                "value": 76,
+                "units": "Pixels"
+              },
+              "contour": {
+                "name": "$$$/Contours/Defaults/Ring=Ring",
+                "curve": [
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 32,
+                    "y": 110
+                  },
+                  {
+                    "x": 64,
+                    "y": 237
+                  },
+                  {
+                    "x": 96,
+                    "y": 239
+                  },
+                  {
+                    "x": 128,
+                    "y": 138
+                  },
+                  {
+                    "x": 159,
+                    "y": 32
+                  },
+                  {
+                    "x": 191,
+                    "y": 6
+                  },
+                  {
+                    "x": 223,
+                    "y": 99
+                  },
+                  {
+                    "x": 255,
+                    "y": 255
+                  }
+                ]
+              }
+            },
+            "stroke": [
+              {
+                "enabled": false,
+                "position": "outside",
+                "fillType": "gradient",
+                "blendMode": "normal",
+                "opacity": 1,
+                "size": {
+                  "value": 1,
+                  "units": "Pixels"
+                },
+                "present": false,
+                "showInDialog": true,
+                "overprint": false,
+                "color": "#ffffff",
+                "gradient": {
+                  "type": "solid",
+                  "name": "Personnalisé",
+                  "smoothness": 1,
+                  "colorStops": [
+                    {
+                      "color": "#ee4186",
+                      "location": 0,
+                      "midpoint": 0.5
+                    },
+                    {
+                      "color": "#bc0344",
+                      "location": 1,
+                      "midpoint": 0.5
+                    }
+                  ],
+                  "opacityStops": [
+                    {
+                      "opacity": 0.996078431372549,
+                      "location": 0,
+                      "midpoint": 0.5
+                    },
+                    {
+                      "opacity": 1,
+                      "location": 1,
+                      "midpoint": 0.5
+                    }
+                  ],
+                  "style": "linear",
+                  "dither": false,
+                  "interpolationMethod": "smooth",
+                  "reverse": false,
+                  "angle": 90,
+                  "scale": 1,
+                  "align": true,
+                  "offset": {
+                    "x": 0,
+                    "y": 0
+                  }
+                }
+              }
+            ]
+          },
+          "png": "layers/L002_Calque 1.png",
+          "vision": {
+            "role": "fond",
+            "lettrage_nature": "absent",
+            "description": "Carré blanc uni.",
+            "couleurs": [
+              "#ffffff",
+              "#ffffff"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 3,
+          "path": "Groupe 1/Calque 2",
+          "name": "Calque 2",
+          "kind": "layer",
+          "zIndex": 1,
+          "bounds": {
+            "left": 924,
+            "top": 110,
+            "right": 2507,
+            "bottom": 1695
+          },
+          "opacity": 0.03137254901960784,
+          "blendMode": "divide",
+          "hidden": false,
+          "clipping": false,
+          "png": "layers/L003_Calque 2.png",
+          "vision": {
+            "role": "embleme",
+            "lettrage_nature": "absent",
+            "description": "Dessin au trait noir d'un volcan en éruption.",
+            "couleurs": [
+              "#ffffff",
+              "#000000"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 4,
+          "path": "Groupe 1/Calque 3",
+          "name": "Calque 3",
+          "kind": "layer",
+          "zIndex": 2,
+          "bounds": {
+            "left": -343,
+            "top": 54,
+            "right": 1663,
+            "bottom": 1181
+          },
+          "opacity": 0.8588235294117647,
+          "blendMode": "soft light",
+          "hidden": true,
+          "clipping": false,
+          "png": "layers/L004_Calque 3.png",
+          "vision": {
+            "role": "texture",
+            "lettrage_nature": "absent",
+            "description": "Effet de ciel étoilé ou de vitesse dans l'espace.",
+            "couleurs": [
+              "#000000",
+              "#ffffff"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 5,
+          "path": "Groupe 1/logovulcain",
+          "name": "logovulcain",
+          "kind": "layer",
+          "zIndex": 3,
+          "bounds": {
+            "left": 973,
+            "top": 171,
+            "right": 2270,
+            "bottom": 1198
+          },
+          "opacity": 0.21176470588235294,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": false,
+          "smartObject": true,
+          "png": "layers/L005_logovulcain.png",
+          "vision": {
+            "role": "embleme",
+            "lettrage_nature": "absent",
+            "description": "Logo d'ailes stylisées bleues en forme de V.",
+            "couleurs": [
+              "#80d8ff",
+              "#0091ea"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 6,
+          "path": "Groupe 1/Calque 27",
+          "name": "Calque 27",
+          "kind": "layer",
+          "zIndex": 4,
+          "bounds": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": false
+        },
+        {
+          "id": 7,
+          "path": "Groupe 1/Calque 4",
+          "name": "Calque 4",
+          "kind": "layer",
+          "zIndex": 5,
+          "bounds": {
+            "left": 347,
+            "top": -721,
+            "right": 2009,
+            "bottom": 941
+          },
+          "opacity": 0.09019607843137255,
+          "blendMode": "divide",
+          "hidden": false,
+          "clipping": false,
+          "png": "layers/L007_Calque 4.png",
+          "vision": {
+            "role": "embleme",
+            "lettrage_nature": "absent",
+            "description": "Dessin au trait noir d'une coulée de lave.",
+            "couleurs": [
+              "#ffffff",
+              "#000000"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 8,
+          "path": "Groupe 1/Calque 5",
+          "name": "Calque 5",
+          "kind": "layer",
+          "zIndex": 6,
+          "bounds": {
+            "left": -823,
+            "top": 196,
+            "right": 1010,
+            "bottom": 2029
+          },
+          "opacity": 0.09019607843137255,
+          "blendMode": "divide",
+          "hidden": false,
+          "clipping": false,
+          "png": "layers/L008_Calque 5.png",
+          "vision": {
+            "role": "embleme",
+            "lettrage_nature": "absent",
+            "description": "Dessin de volcan incliné avec un point noir.",
+            "couleurs": [
+              "#ffffff",
+              "#000000"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 9,
+          "path": "Groupe 1/Calque 6",
+          "name": "Calque 6",
+          "kind": "layer",
+          "zIndex": 7,
+          "bounds": {
+            "left": -170,
+            "top": -413,
+            "right": 2149,
+            "bottom": 1688
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": false,
+          "png": "layers/L009_Calque 6.png",
+          "vision": {
+            "role": "effet_lumiere",
+            "lettrage_nature": "absent",
+            "description": "Faisceau lumineux bleu translucide en diagonale.",
+            "couleurs": [
+              "#90caf9",
+              "#1565c0"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 10,
+          "path": "Groupe 1/Calque 7",
+          "name": "Calque 7",
+          "kind": "layer",
+          "zIndex": 8,
+          "bounds": {
+            "left": -366,
+            "top": 485,
+            "right": 832,
+            "bottom": 1628
+          },
+          "opacity": 1,
+          "blendMode": "divide",
+          "hidden": false,
+          "clipping": false,
+          "png": "layers/L010_Calque 7.png",
+          "vision": {
+            "role": "texture",
+            "lettrage_nature": "absent",
+            "description": "Carré blanc incliné avec texture de papier.",
+            "couleurs": [
+              "#ffffff",
+              "#e0e0e0"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 11,
+          "path": "Groupe 1/Calque 8",
+          "name": "Calque 8",
+          "kind": "layer",
+          "zIndex": 9,
+          "bounds": {
+            "left": 534,
+            "top": -608,
+            "right": 1810,
+            "bottom": 621
+          },
+          "opacity": 1,
+          "blendMode": "divide",
+          "hidden": false,
+          "clipping": false,
+          "png": "layers/L011_Calque 8.png",
+          "vision": {
+            "role": "texture",
+            "lettrage_nature": "absent",
+            "description": "Carré blanc incliné avec ombre douce sur le bord.",
+            "couleurs": [
+              "#ffffff",
+              "#cccccc"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 12,
+          "path": "Groupe 1/Calque 9",
+          "name": "Calque 9",
+          "kind": "layer",
+          "zIndex": 10,
+          "bounds": {
+            "left": 132,
+            "top": 35,
+            "right": 1188,
+            "bottom": 1100
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": true,
+          "clipping": false,
+          "png": "layers/L012_Calque 9.png",
+          "vision": {
+            "role": "effet_lumiere",
+            "lettrage_nature": "absent",
+            "description": "Lueur bleue diffuse horizontale.",
+            "couleurs": [
+              "#4fc3f7",
+              "#0288d1"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 13,
+          "path": "Groupe 1/Calque 10",
+          "name": "Calque 10",
+          "kind": "layer",
+          "zIndex": 11,
+          "bounds": {
+            "left": 148,
+            "top": -372,
+            "right": 1515,
+            "bottom": 1104
+          },
+          "opacity": 0.4117647058823529,
+          "blendMode": "divide",
+          "hidden": true,
+          "clipping": false,
+          "png": "layers/L013_Calque 10.png",
+          "vision": {
+            "role": "texture",
+            "lettrage_nature": "absent",
+            "description": "Texture de roche volcanique rougeoyante entre deux bandes blanches.",
+            "couleurs": [
+              "#ffffff",
+              "#bf360c"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 14,
+          "path": "Groupe 1/Calque 11",
+          "name": "Calque 11",
+          "kind": "layer",
+          "zIndex": 12,
+          "bounds": {
+            "left": -218,
+            "top": -31,
+            "right": 1348,
+            "bottom": 1906
+          },
+          "opacity": 0.27058823529411763,
+          "blendMode": "divide",
+          "hidden": true,
+          "clipping": false,
+          "png": "layers/L014_Calque 11.png",
+          "vision": {
+            "role": "texture",
+            "lettrage_nature": "absent",
+            "description": "Bande de lave inclinée entourée de blanc.",
+            "couleurs": [
+              "#ffffff",
+              "#d84315"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 15,
+          "path": "Groupe 1/Calque 12",
+          "name": "Calque 12",
+          "kind": "layer",
+          "zIndex": 13,
+          "bounds": {
+            "left": 307,
+            "top": 226,
+            "right": 1143,
+            "bottom": 745
+          },
+          "opacity": 1,
+          "blendMode": "lighter color",
+          "hidden": true,
+          "clipping": false,
+          "png": "layers/L015_Calque 12.png",
+          "vision": {
+            "role": "effet_lumiere",
+            "lettrage_nature": "absent",
+            "description": "Deux yeux bleus lumineux stylisés.",
+            "couleurs": [
+              "#80d8ff",
+              "#0091ea"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 16,
+          "path": "Groupe 1/Calque 13",
+          "name": "Calque 13",
+          "kind": "layer",
+          "zIndex": 14,
+          "bounds": {
+            "left": 148,
+            "top": 80,
+            "right": 1171,
+            "bottom": 1104
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": true,
+          "clipping": false,
+          "png": "layers/L016_Calque 13.png",
+          "vision": {
+            "role": "effet_lumiere",
+            "lettrage_nature": "absent",
+            "description": "Aura ou ombre noire circulaire diffuse.",
+            "couleurs": [
+              "#000000",
+              "#000000"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 17,
+          "path": "Groupe 1/Calque 16",
+          "name": "Calque 16",
+          "kind": "layer",
+          "zIndex": 15,
+          "bounds": {
+            "left": 790,
+            "top": 49,
+            "right": 2606,
+            "bottom": 1328
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": false,
+          "png": "layers/L017_Calque 16.png",
+          "vision": {
+            "role": "effet_lumiere",
+            "lettrage_nature": "absent",
+            "description": "Halo lumineux bleu vertical et diffus.",
+            "couleurs": [
+              "#4fc3f7",
+              "#0288d1"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 18,
+          "path": "Groupe 1/Calque 17",
+          "name": "Calque 17",
+          "kind": "layer",
+          "zIndex": 16,
+          "bounds": {
+            "left": 0,
+            "top": 73,
+            "right": 1300,
+            "bottom": 1307
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": true,
+          "clipping": false,
+          "png": "layers/L018_Calque 17.png",
+          "vision": {
+            "role": "mascotte",
+            "lettrage_nature": "absent",
+            "description": "Homme tatoué torse nu avec casquette et logo bleu.",
+            "couleurs": [
+              "#d7ccc8",
+              "#000000"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 19,
+          "path": "Groupe 1/Calque 20",
+          "name": "Calque 20",
+          "kind": "layer",
+          "zIndex": 17,
+          "bounds": {
+            "left": 194,
+            "top": 227,
+            "right": 1208,
+            "bottom": 994
+          },
+          "opacity": 1,
+          "blendMode": "divide",
+          "hidden": false,
+          "clipping": false,
+          "png": "layers/L019_Calque 20.png",
+          "vision": {
+            "role": "texture",
+            "lettrage_nature": "absent",
+            "description": "Grille de perspective blanche déformée.",
+            "couleurs": [
+              "#ffffff",
+              "#e0e0e0"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 20,
+          "path": "Groupe 1/Calque 19",
+          "name": "Calque 19",
+          "kind": "layer",
+          "zIndex": 18,
+          "bounds": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": false
+        },
+        {
+          "id": 21,
+          "path": "Groupe 1/Groupe 2",
+          "name": "Groupe 2",
+          "kind": "group",
+          "zIndex": 19,
+          "bounds": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "opacity": 1,
+          "blendMode": "pass through",
+          "hidden": false,
+          "clipping": false,
+          "children": [
+            {
+              "id": 22,
+              "path": "Groupe 1/Groupe 2/Calque 18",
+              "name": "Calque 18",
+              "kind": "layer",
+              "zIndex": 0,
+              "bounds": {
+                "left": 924,
+                "top": 69,
+                "right": 2153,
+                "bottom": 1109
+              },
+              "opacity": 1,
+              "blendMode": "normal",
+              "hidden": false,
+              "clipping": false,
+              "smartObject": true,
+              "png": "layers/L022_Calque 18.png",
+              "vision": {
+                "role": "mascotte",
+                "lettrage_nature": "absent",
+                "description": "Homme noir avec lunettes de soleil et t-shirt blanc.",
+                "couleurs": [
+                  "#ffffff",
+                  "#3e2723"
+                ],
+                "modele": "gemini-3.5-flash"
+              }
+            },
+            {
+              "id": 23,
+              "path": "Groupe 1/Groupe 2/Fond 1",
+              "name": "Fond 1",
+              "kind": "layer",
+              "zIndex": 1,
+              "bounds": {
+                "left": 663,
+                "top": 0,
+                "right": 1980,
+                "bottom": 1080
+              },
+              "opacity": 1,
+              "blendMode": "linear dodge",
+              "hidden": false,
+              "clipping": true,
+              "mask": {
+                "bounds": {
+                  "left": 663,
+                  "top": 0,
+                  "right": 1980,
+                  "bottom": 1080
+                },
+                "disabled": false,
+                "defaultColor": 0,
+                "png": "layers/L023_mask_Fond 1.png"
+              },
+              "png": "layers/L023_Fond 1.png",
+              "vision": {
+                "role": "fond",
+                "lettrage_nature": "absent",
+                "description": "Carré bleu ciel uni.",
+                "couleurs": [
+                  "#64b5f6",
+                  "#64b5f6"
+                ],
+                "modele": "gemini-3.5-flash"
+              }
+            },
+            {
+              "id": 24,
+              "path": "Groupe 1/Groupe 2/Calque 26",
+              "name": "Calque 26",
+              "kind": "layer",
+              "zIndex": 2,
+              "bounds": {
+                "left": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0
+              },
+              "opacity": 1,
+              "blendMode": "normal",
+              "hidden": false,
+              "clipping": true
+            },
+            {
+              "id": 25,
+              "path": "Groupe 1/Groupe 2/Courbes 1",
+              "name": "Courbes 1",
+              "kind": "adjustment",
+              "zIndex": 3,
+              "bounds": {
+                "left": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0
+              },
+              "opacity": 1,
+              "blendMode": "normal",
+              "hidden": false,
+              "clipping": true,
+              "adjustment": {
+                "type": "curves",
+                "rgb": [
+                  {
+                    "input": 12,
+                    "output": 0
+                  },
+                  {
+                    "input": 206,
+                    "output": 255
+                  }
+                ]
+              },
+              "mask": {
+                "bounds": {
+                  "left": 0,
+                  "top": 0,
+                  "right": 0,
+                  "bottom": 0
+                },
+                "disabled": false,
+                "defaultColor": 255
+              }
+            },
+            {
+              "id": 26,
+              "path": "Groupe 1/Groupe 2/Exposition 1",
+              "name": "Exposition 1",
+              "kind": "adjustment",
+              "zIndex": 4,
+              "bounds": {
+                "left": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0
+              },
+              "opacity": 1,
+              "blendMode": "normal",
+              "hidden": false,
+              "clipping": true,
+              "adjustment": {
+                "type": "exposure",
+                "exposure": 1.3799999952316284,
+                "offset": 0,
+                "gamma": 1
+              },
+              "mask": {
+                "bounds": {
+                  "left": 471,
+                  "top": 0,
+                  "right": 1980,
+                  "bottom": 1080
+                },
+                "disabled": false,
+                "defaultColor": 0,
+                "png": "layers/L026_mask_Exposition 1.png"
+              }
+            }
+          ],
+          "png": "layers/G021_Groupe 2.png",
+          "pngNote": "composite naïf source-over (modes de fusion exotiques non simulés)",
+          "vision": {
+            "role": "autre",
+            "lettrage_nature": "absent",
+            "description": "Carré bleu uni avec un élément blanc masqué.",
+            "couleurs": [
+              "#64b5f6",
+              "#ffffff"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 27,
+          "path": "Groupe 1/Calque 15",
+          "name": "Calque 15",
+          "kind": "layer",
+          "zIndex": 20,
+          "bounds": {
+            "left": 24,
+            "top": 0,
+            "right": 990,
+            "bottom": 2510
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": true,
+          "clipping": false,
+          "png": "layers/L027_Calque 15.png",
+          "vision": {
+            "role": "mascotte",
+            "lettrage_nature": "absent",
+            "description": "Personnage masculin en combinaison bleue moulante.",
+            "couleurs": [
+              "#1565c0",
+              "#3e2723"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 28,
+          "path": "Groupe 1/Calque 14",
+          "name": "Calque 14",
+          "kind": "layer",
+          "zIndex": 21,
+          "bounds": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": false
+        },
+        {
+          "id": 29,
+          "path": "Groupe 1/Ligne 1",
+          "name": "Ligne 1",
+          "kind": "layer",
+          "zIndex": 22,
+          "bounds": {
+            "left": 128,
+            "top": 210,
+            "right": 1057,
+            "bottom": 805
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": false,
+          "smartObject": true,
+          "effects": {
+            "scale": 1.3333333333333335,
+            "dropShadow": [
+              {
+                "enabled": true,
+                "present": true,
+                "showInDialog": true,
+                "blendMode": "normal",
+                "color": {
+                  "fr": -0.07344149798154831,
+                  "fg": -0.07372178137302399,
+                  "fb": -0.05425117537379265
+                },
+                "opacity": 0.49,
+                "useGlobalLight": false,
+                "angle": -171,
+                "distance": {
+                  "value": 41,
+                  "units": "Pixels"
+                },
+                "choke": {
+                  "value": 5,
+                  "units": "Pixels"
+                },
+                "size": {
+                  "value": 87,
+                  "units": "Pixels"
+                },
+                "noise": 0,
+                "antialiased": false,
+                "contour": {
+                  "name": "Linear",
+                  "curve": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 255,
+                      "y": 255
+                    }
+                  ]
+                },
+                "layerConceals": true
+              }
+            ],
+            "innerShadow": [
+              {
+                "enabled": false,
+                "present": false,
+                "showInDialog": true,
+                "blendMode": "multiply",
+                "color": {
+                  "fr": -0.07344149798154831,
+                  "fg": -0.07372178137302399,
+                  "fb": -0.05425117537379265
+                },
+                "opacity": 0.49,
+                "useGlobalLight": true,
+                "angle": 90,
+                "distance": {
+                  "value": 15,
+                  "units": "Pixels"
+                },
+                "choke": {
+                  "value": 1,
+                  "units": "Pixels"
+                },
+                "size": {
+                  "value": 12,
+                  "units": "Pixels"
+                },
+                "noise": 0,
+                "antialiased": false,
+                "contour": {
+                  "name": "Linear",
+                  "curve": [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 255,
+                      "y": 255
+                    }
+                  ]
+                }
+              }
+            ],
+            "outerGlow": {
+              "enabled": false,
+              "present": false,
+              "showInDialog": true,
+              "blendMode": "normal",
+              "color": "#ffffff",
+              "opacity": 1,
+              "technique": "softer",
+              "choke": {
+                "value": 0,
+                "units": "Pixels"
+              },
+              "size": {
+                "value": 250,
+                "units": "Pixels"
+              },
+              "noise": 0,
+              "jitter": 0.39,
+              "antialiased": false,
+              "contour": {
+                "name": "Cone",
+                "curve": [
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 129,
+                    "y": 255
+                  },
+                  {
+                    "x": 255,
+                    "y": 0
+                  }
+                ]
+              },
+              "range": 0.05
+            },
+            "innerGlow": {
+              "enabled": false,
+              "present": false,
+              "showInDialog": true,
+              "blendMode": "normal",
+              "color": {
+                "fr": 1.0000027418136597,
+                "fg": 0.9999986886978149,
+                "fb": 1.000003695487976
+              },
+              "opacity": 1,
+              "technique": "softer",
+              "choke": {
+                "value": 6,
+                "units": "Pixels"
+              },
+              "size": {
+                "value": 7,
+                "units": "Pixels"
+              },
+              "noise": 0,
+              "jitter": 1,
+              "antialiased": false,
+              "contour": {
+                "name": "$$$/Contours/Defaults/CoveDeep=Cove - Deep",
+                "curve": [
+                  {
+                    "x": 0,
+                    "y": 65
+                  },
+                  {
+                    "x": 95,
+                    "y": 74
+                  },
+                  {
+                    "x": 151,
+                    "y": 115
+                  },
+                  {
+                    "x": 178,
+                    "y": 178
+                  },
+                  {
+                    "x": 192,
+                    "y": 255
+                  }
+                ]
+              },
+              "range": 0.11,
+              "source": "edge"
+            },
+            "bevel": {
+              "enabled": false,
+              "present": false,
+              "showInDialog": true,
+              "highlightBlendMode": "normal",
+              "highlightColor": {
+                "fr": 1.0000027418136597,
+                "fg": 0.9999986886978149,
+                "fb": 1.000003695487976
+              },
+              "highlightOpacity": 0.48,
+              "shadowBlendMode": "multiply",
+              "shadowColor": {
+                "fr": -0.07344149798154831,
+                "fg": -0.07372178137302399,
+                "fb": -0.05425117537379265
+              },
+              "shadowOpacity": 0.9,
+              "technique": "smooth",
+              "style": "inner bevel",
+              "useGlobalLight": false,
+              "angle": 91,
+              "altitude": 0,
+              "strength": 2.72,
+              "size": {
+                "value": 32,
+                "units": "Pixels"
+              },
+              "direction": "up",
+              "contour": {
+                "name": "Linéaire",
+                "curve": [
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 255,
+                    "y": 255
+                  }
+                ]
+              },
+              "antialiasGloss": false,
+              "soften": {
+                "value": 9,
+                "units": "Pixels"
+              },
+              "useShape": false,
+              "useTexture": false
+            },
+            "solidFill": [
+              {
+                "enabled": false,
+                "present": false,
+                "showInDialog": true,
+                "blendMode": "normal",
+                "color": "#ffffff",
+                "opacity": 1
+              }
+            ],
+            "gradientOverlay": [
+              {
+                "enabled": false,
+                "present": false,
+                "showInDialog": true,
+                "blendMode": "normal",
+                "opacity": 1,
+                "gradient": {
+                  "type": "solid",
+                  "name": "Personnalisé",
+                  "smoothness": 1,
+                  "colorStops": [
+                    {
+                      "color": "#ffffff",
+                      "location": 0,
+                      "midpoint": 0.5
+                    },
+                    {
+                      "color": "#000000",
+                      "location": 0,
+                      "midpoint": 0.5
+                    },
+                    {
+                      "color": "#000000",
+                      "location": 0,
+                      "midpoint": 0.5
+                    },
+                    {
+                      "color": "#ffffff",
+                      "location": 0,
+                      "midpoint": 0.5
+                    },
+                    {
+                      "color": "#ffffff",
+                      "location": 0,
+                      "midpoint": 0.5
+                    },
+                    {
+                      "color": "#ffde00",
+                      "location": 0,
+                      "midpoint": 0.5
+                    },
+                    {
+                      "color": "#00848e",
+                      "location": 0,
+                      "midpoint": 0.5
+                    },
+                    {
+                      "color": "#024e80",
+                      "location": 0.297607421875,
+                      "midpoint": 0.5
+                    },
+                    {
+                      "color": "#8ad0ff",
+                      "location": 0.5830078125,
+                      "midpoint": 0.5
+                    },
+                    {
+                      "color": "#003b62",
+                      "location": 0.9921875,
+                      "midpoint": 0.55
+                    }
+                  ],
+                  "opacityStops": [
+                    {
+                      "opacity": 1,
+                      "location": 0,
+                      "midpoint": 0.5
+                    },
+                    {
+                      "opacity": 1,
+                      "location": 1,
+                      "midpoint": 0.5
+                    }
+                  ]
+                },
+                "angle": 121,
+                "type": "linear",
+                "reverse": false,
+                "dither": false,
+                "interpolationMethod": "classic",
+                "align": true,
+                "scale": 1.5,
+                "offset": {
+                  "x": 0.11315336303874951,
+                  "y": -0.042057596199294896
+                }
+              }
+            ],
+            "satin": {
+              "enabled": false,
+              "present": false,
+              "showInDialog": true,
+              "blendMode": "color dodge",
+              "color": "#ffffff",
+              "antialiased": true,
+              "invert": false,
+              "opacity": 0.41,
+              "angle": 71,
+              "distance": {
+                "value": 9,
+                "units": "Pixels"
+              },
+              "size": {
+                "value": 101,
+                "units": "Pixels"
+              },
+              "contour": {
+                "name": "$$$/Contours/Defaults/Ring=Ring",
+                "curve": [
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 32,
+                    "y": 110
+                  },
+                  {
+                    "x": 64,
+                    "y": 237
+                  },
+                  {
+                    "x": 96,
+                    "y": 239
+                  },
+                  {
+                    "x": 128,
+                    "y": 138
+                  },
+                  {
+                    "x": 159,
+                    "y": 32
+                  },
+                  {
+                    "x": 191,
+                    "y": 6
+                  },
+                  {
+                    "x": 223,
+                    "y": 99
+                  },
+                  {
+                    "x": 255,
+                    "y": 255
+                  }
+                ]
+              }
+            },
+            "stroke": [
+              {
+                "enabled": false,
+                "position": "outside",
+                "fillType": "gradient",
+                "blendMode": "normal",
+                "opacity": 1,
+                "size": {
+                  "value": 1,
+                  "units": "Pixels"
+                },
+                "present": false,
+                "showInDialog": true,
+                "overprint": false,
+                "color": "#ffffff",
+                "gradient": {
+                  "type": "solid",
+                  "name": "Personnalisé",
+                  "smoothness": 1,
+                  "colorStops": [
+                    {
+                      "color": "#ee4186",
+                      "location": 0,
+                      "midpoint": 0.5
+                    },
+                    {
+                      "color": "#bc0344",
+                      "location": 1,
+                      "midpoint": 0.5
+                    }
+                  ],
+                  "opacityStops": [
+                    {
+                      "opacity": 0.996078431372549,
+                      "location": 0,
+                      "midpoint": 0.5
+                    },
+                    {
+                      "opacity": 1,
+                      "location": 1,
+                      "midpoint": 0.5
+                    }
+                  ],
+                  "style": "linear",
+                  "dither": false,
+                  "interpolationMethod": "smooth",
+                  "reverse": false,
+                  "angle": 90,
+                  "scale": 1,
+                  "align": true,
+                  "offset": {
+                    "x": 0,
+                    "y": 0
+                  }
+                }
+              }
+            ]
+          },
+          "png": "layers/L029_Ligne 1.png",
+          "vision": {
+            "role": "lettrage",
+            "lettrage_nature": "custom_dessine",
+            "description": "Logo Vulcain bleu avec ailes et texte secondaire.",
+            "couleurs": [
+              "#80d8ff",
+              "#0091ea"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 30,
+          "path": "Groupe 1/Calque 21",
+          "name": "Calque 21",
+          "kind": "layer",
+          "zIndex": 23,
+          "bounds": {
+            "left": 111,
+            "top": 153,
+            "right": 1343,
+            "bottom": 1080
+          },
+          "opacity": 1,
+          "blendMode": "color dodge",
+          "hidden": false,
+          "clipping": true,
+          "png": "layers/L030_Calque 21.png",
+          "vision": {
+            "role": "effet_lumiere",
+            "lettrage_nature": "absent",
+            "description": "Halo lumineux bleu flou et diffus au centre",
+            "couleurs": [
+              "#4fa8ff",
+              "#1a5bb5"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 31,
+          "path": "Groupe 1/Calque 25",
+          "name": "Calque 25",
+          "kind": "layer",
+          "zIndex": 24,
+          "bounds": {
+            "left": 463,
+            "top": 421,
+            "right": 1201,
+            "bottom": 912
+          },
+          "opacity": 1,
+          "blendMode": "soft light",
+          "hidden": false,
+          "clipping": false,
+          "png": "layers/L031_Calque 25.png",
+          "vision": {
+            "role": "effet_lumiere",
+            "lettrage_nature": "absent",
+            "description": "Groupe de plusieurs points lumineux blancs flous",
+            "couleurs": [
+              "#ffffff",
+              "#d0d0d0"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 32,
+          "path": "Groupe 1/Calque 23",
+          "name": "Calque 23",
+          "kind": "layer",
+          "zIndex": 25,
+          "bounds": {
+            "left": 0,
+            "top": 1,
+            "right": 1034,
+            "bottom": 1080
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": false,
+          "png": "layers/L032_Calque 23.png",
+          "vision": {
+            "role": "fond",
+            "lettrage_nature": "absent",
+            "description": "Ombre noire douce et diffuse dans le coin inférieur gauche",
+            "couleurs": [
+              "#000000",
+              "#1a1a1a"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 33,
+          "path": "Groupe 1/Calque 22",
+          "name": "Calque 22",
+          "kind": "layer",
+          "zIndex": 26,
+          "bounds": {
+            "left": -700,
+            "top": -271,
+            "right": 1170,
+            "bottom": 1682
+          },
+          "opacity": 0.43137254901960786,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": true,
+          "png": "layers/L033_Calque 22.png",
+          "vision": {
+            "role": "texture",
+            "lettrage_nature": "absent",
+            "description": "Grille 3D déformée blanche avec un trou noir circulaire",
+            "couleurs": [
+              "#ffffff",
+              "#000000"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 34,
+          "path": "Groupe 1/Calque 24",
+          "name": "Calque 24",
+          "kind": "layer",
+          "zIndex": 27,
+          "bounds": {
+            "left": 0,
+            "top": 0,
+            "right": 279,
+            "bottom": 1080
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": false,
+          "png": "layers/L034_Calque 24.png",
+          "vision": {
+            "role": "effet_lumiere",
+            "lettrage_nature": "absent",
+            "description": "Lueur blanche verticale diffuse sur le bord gauche",
+            "couleurs": [
+              "#ffffff",
+              "#808080"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        },
+        {
+          "id": 35,
+          "path": "Groupe 1/Calque 28",
+          "name": "Calque 28",
+          "kind": "layer",
+          "zIndex": 28,
+          "bounds": {
+            "left": 0,
+            "top": 299,
+            "right": 922,
+            "bottom": 1080
+          },
+          "opacity": 1,
+          "blendMode": "normal",
+          "hidden": false,
+          "clipping": false,
+          "png": "layers/L035_Calque 28.png",
+          "vision": {
+            "role": "effet_lumiere",
+            "lettrage_nature": "absent",
+            "description": "Dégradé de lumière blanche en coin inférieur gauche",
+            "couleurs": [
+              "#ffffff",
+              "#a0a0a0"
+            ],
+            "modele": "gemini-3.5-flash"
+          }
+        }
+      ],
+      "png": "layers/G001_Groupe 1.png",
+      "pngNote": "composite naïf source-over (modes de fusion exotiques non simulés)",
+      "vision": {
+        "role": "autre",
+        "lettrage_nature": "absent",
+        "description": "Groupe d'éléments superposés avec logo bleu et textures.",
+        "couleurs": [
+          "#ffffff",
+          "#64b5f6"
+        ],
+        "modele": "gemini-3.5-flash"
+      }
+    },
+    {
+      "id": 36,
+      "path": "Calque 29",
+      "name": "Calque 29",
+      "kind": "layer",
+      "zIndex": 2,
+      "bounds": {
+        "left": 0,
+        "top": 0,
+        "right": 1980,
+        "bottom": 1080
+      },
+      "opacity": 1,
+      "blendMode": "normal",
+      "hidden": true,
+      "clipping": false,
+      "smartObject": true,
+      "png": "layers/L036_Calque 29.png",
+      "vision": {
+        "role": "autre",
+        "lettrage_nature": "typographie",
+        "description": "Bannière Vulcain avec personnage masculin à lunettes de soleil",
+        "couleurs": [
+          "#0b1623",
+          "#ffffff"
+        ],
+        "modele": "gemini-3.5-flash"
+      }
+    },
+    {
+      "id": 37,
+      "path": "butterfly copy",
+      "name": "butterfly copy",
+      "kind": "layer",
+      "zIndex": 3,
+      "bounds": {
+        "left": 30,
+        "top": 0,
+        "right": 1950,
+        "bottom": 1080
+      },
+      "opacity": 1,
+      "blendMode": "normal",
+      "hidden": true,
+      "clipping": false,
+      "smartObject": true,
+      "png": "layers/L037_butterfly copy.png",
+      "vision": {
+        "role": "autre",
+        "lettrage_nature": "typographie",
+        "description": "Bannière Hazerp montrant trois personnages devant une voiture",
+        "couleurs": [
+          "#dfcbb5",
+          "#1c1c1c"
+        ],
+        "modele": "gemini-3.5-flash"
+      }
+    }
+  ]
+}

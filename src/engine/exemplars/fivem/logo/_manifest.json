@@ -1,1891 +1,2717 @@
 {
-  "categorie": "logo",
-  "genere_le": "2026-08-16T08:34:16.104Z",
-  "exemplaires": [
-    {
-      "slug": "1621976666",
-      "source": "-1621976666.png",
-      "priorite": "reverse",
-      "tags": [
-        "luxe",
-        "chill",
-        "neutre"
-      ],
-      "energie": 30,
-      "modernite": 85,
-      "couleurs": [
-        "#000000",
-        "#FFFFFF",
-        "#E297C1"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 1,
-        "glow": 4,
-        "saturation": 4,
-        "sombre_clair": 2,
-        "complexite": 2
-      },
-      "construction": "Symmetrical tulip-like emblem. Central white shield/tulip outline with a stylized 'M' or 'V' shape inside. Topped with a pink chevron petal, anchored by a curved pink horizontal base petal.",
-      "lettrage": {
-        "type": "none",
-        "integration_embleme": "none",
-        "traitement_contour": "none"
-      }
+ "categorie": "logo",
+ "genere_le": "2026-08-16T08:34:16.104Z",
+ "exemplaires": [
+  {
+   "slug": "1621976666",
+   "source": "-1621976666.png",
+   "priorite": "reverse",
+   "tags": [
+    "luxe",
+    "chill",
+    "neutre"
+   ],
+   "energie": 30,
+   "modernite": 85,
+   "couleurs": [
+    "#000000",
+    "#FFFFFF",
+    "#E297C1"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 1,
+    "glow": 4,
+    "saturation": 4,
+    "sombre_clair": 2,
+    "complexite": 2
+   },
+   "construction": "Symmetrical tulip-like emblem. Central white shield/tulip outline with a stylized 'M' or 'V' shape inside. Topped with a pink chevron petal, anchored by a curved pink horizontal base petal.",
+   "lettrage": {
+    "type": "none",
+    "integration_embleme": "none",
+    "traitement_contour": "none"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": false,
+   "resolution_native": 96,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "flat_outline",
+    "matiere": "flat white and pink",
+    "embleme": {
+     "present": true,
+     "type": "tulip"
     },
-    {
-      "slug": "1634396324",
-      "source": "-1634396324.png",
-      "priorite": "reverse",
-      "tags": [
-        "luxe",
-        "retro",
-        "esport"
-      ],
-      "energie": 65,
-      "modernite": 90,
-      "couleurs": [
-        "#121214",
-        "#7A96FF",
-        "#D1A3FF"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "3D extruded geometric sans-serif letter 'V'",
-      "scores": {
-        "relief_3d": 9,
-        "glow": 5,
-        "saturation": 6,
-        "sombre_clair": 3,
-        "complexite": 3
-      },
-      "construction": "Monogram letter 'V' extruded in 3D. Sharp geometric facets, angled cuts on the top terminals, and a horizontal groove near the bottom point.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "none"
-      }
+    "ambiance": "luxury",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "1634396324",
+   "source": "-1634396324.png",
+   "priorite": "reverse",
+   "tags": [
+    "luxe",
+    "retro",
+    "esport"
+   ],
+   "energie": 65,
+   "modernite": 90,
+   "couleurs": [
+    "#121214",
+    "#7A96FF",
+    "#D1A3FF"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "3D extruded geometric sans-serif letter 'V'",
+   "scores": {
+    "relief_3d": 9,
+    "glow": 5,
+    "saturation": 6,
+    "sombre_clair": 3,
+    "complexite": 3
+   },
+   "construction": "Monogram letter 'V' extruded in 3D. Sharp geometric facets, angled cuts on the top terminals, and a horizontal groove near the bottom point.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "none"
+   },
+   "famille": "dimensionnelle",
+   "lettrage_riche": true,
+   "resolution_native": 96,
+   "style": {
+    "famille": "dimensionnelle",
+    "traitement_lettrage": "extrusion_3d",
+    "matiere": "matte purple 3D",
+    "embleme": {
+     "present": false,
+     "type": null
     },
-    {
-      "slug": "1810325591",
-      "source": "-1810325591.png",
-      "priorite": "reverse",
-      "tags": [
-        "retro",
-        "esport",
-        "urbain"
-      ],
-      "energie": 85,
-      "modernite": 75,
-      "couleurs": [
-        "#0A0E17",
-        "#3FA9F5",
-        "#FFFFFF"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "Bold, italicized, rounded sans-serif letters 'SN'",
-      "scores": {
-        "relief_3d": 3,
-        "glow": 6,
-        "saturation": 8,
-        "sombre_clair": 4,
-        "complexite": 5
-      },
-      "construction": "Bold italic letters 'SN' enclosed by an angled, orbiting planetary ring. The ring terminates in a sharp star/sparkle shape at the top right.",
-      "lettrage": {
-        "type": "custom italic wordmark",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "thick white outline"
-      }
+    "ambiance": "esport",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "1810325591",
+   "source": "-1810325591.png",
+   "priorite": "reverse",
+   "tags": [
+    "retro",
+    "esport",
+    "urbain"
+   ],
+   "energie": 85,
+   "modernite": 75,
+   "couleurs": [
+    "#0A0E17",
+    "#3FA9F5",
+    "#FFFFFF"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "Bold, italicized, rounded sans-serif letters 'SN'",
+   "scores": {
+    "relief_3d": 3,
+    "glow": 6,
+    "saturation": 8,
+    "sombre_clair": 4,
+    "complexite": 5
+   },
+   "construction": "Bold italic letters 'SN' enclosed by an angled, orbiting planetary ring. The ring terminates in a sharp star/sparkle shape at the top right.",
+   "lettrage": {
+    "type": "custom italic wordmark",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "thick white outline"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 96,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "flat_outline",
+    "matiere": "flat white and blue",
+    "embleme": {
+     "present": true,
+     "type": "swoosh with stars"
     },
-    {
-      "slug": "1857127536",
-      "source": "-1857127536.png",
-      "priorite": "reverse",
-      "tags": [
-        "sombre",
-        "urbain",
-        "esport"
-      ],
-      "energie": 75,
-      "modernite": 80,
-      "couleurs": [
-        "#120224",
-        "#FFFFFF",
-        "#7B1FA2"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 6,
-        "glow": 7,
-        "saturation": 6,
-        "sombre_clair": 2,
-        "complexite": 4
-      },
-      "construction": "Single stylized letter 'R' with aggressive, jagged cuts and a sharp, claw-like terminal on the top right. The bottom right leg is split, revealing a glowing purple triangular core.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "glow edge"
-      }
+    "ambiance": "esport",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "1857127536",
+   "source": "-1857127536.png",
+   "priorite": "reverse",
+   "tags": [
+    "sombre",
+    "urbain",
+    "esport"
+   ],
+   "energie": 75,
+   "modernite": 80,
+   "couleurs": [
+    "#120224",
+    "#FFFFFF",
+    "#7B1FA2"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 6,
+    "glow": 7,
+    "saturation": 6,
+    "sombre_clair": 2,
+    "complexite": 4
+   },
+   "construction": "Single stylized letter 'R' with aggressive, jagged cuts and a sharp, claw-like terminal on the top right. The bottom right leg is split, revealing a glowing purple triangular core.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "glow edge"
+   },
+   "famille": "semi_flat_biseau",
+   "lettrage_riche": true,
+   "resolution_native": 96,
+   "style": {
+    "famille": "semi_flat_biseau",
+    "traitement_lettrage": "flat_outline",
+    "matiere": "distressed white flat",
+    "embleme": {
+     "present": false,
+     "type": null
     },
-    {
-      "slug": "395145340",
-      "source": "-395145340.png",
-      "priorite": "reverse",
-      "tags": [
-        "luxe",
-        "esport",
-        "neutre"
-      ],
-      "energie": 70,
-      "modernite": 90,
-      "couleurs": [
-        "#000000",
-        "#52D69B",
-        "#114B32"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 5,
-        "glow": 4,
-        "saturation": 7,
-        "sombre_clair": 3,
-        "complexite": 5
-      },
-      "construction": "Symmetrical crown-like emblem constructed from interlocking, sharp geometric bands forming the letters 'W' and 'M' or a stylized crown with five points.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "none"
-      }
+    "ambiance": "dark",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "395145340",
+   "source": "-395145340.png",
+   "priorite": "reverse",
+   "tags": [
+    "luxe",
+    "esport",
+    "neutre"
+   ],
+   "energie": 70,
+   "modernite": 90,
+   "couleurs": [
+    "#000000",
+    "#52D69B",
+    "#114B32"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 5,
+    "glow": 4,
+    "saturation": 7,
+    "sombre_clair": 3,
+    "complexite": 5
+   },
+   "construction": "Symmetrical crown-like emblem constructed from interlocking, sharp geometric bands forming the letters 'W' and 'M' or a stylized crown with five points.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "none"
+   },
+   "famille": "semi_flat_biseau",
+   "lettrage_riche": true,
+   "resolution_native": 96,
+   "style": {
+    "famille": "semi_flat_biseau",
+    "traitement_lettrage": "flat_outline",
+    "matiere": "metallic green gradient",
+    "embleme": {
+     "present": true,
+     "type": "crown"
     },
-    {
-      "slug": "495498982",
-      "source": "-495498982.png",
-      "priorite": "reverse",
-      "tags": [
-        "chill",
-        "retro",
-        "urbain"
-      ],
-      "energie": 60,
-      "modernite": 75,
-      "couleurs": [
-        "#1C0D21",
-        "#E8C5E9",
-        "#6B3B6E"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "Bold, sans-serif, slightly flared custom wordmark reading 'MOON' with a stylized bracket frame.",
-      "scores": {
-        "relief_3d": 4,
-        "glow": 5,
-        "saturation": 4,
-        "sombre_clair": 3,
-        "complexite": 6
-      },
-      "construction": "Bold, blocky wordmark 'MOON' enclosed in a stylized, angular bracket frame. Three circular, cratered moon emblems sit directly above the central letters.",
-      "lettrage": {
-        "type": "custom italic wordmark",
-        "integration_embleme": "above",
-        "traitement_contour": "thick white outline"
-      }
+    "ambiance": "esport",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "495498982",
+   "source": "-495498982.png",
+   "priorite": "reverse",
+   "tags": [
+    "chill",
+    "retro",
+    "urbain"
+   ],
+   "energie": 60,
+   "modernite": 75,
+   "couleurs": [
+    "#1C0D21",
+    "#E8C5E9",
+    "#6B3B6E"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "Bold, sans-serif, slightly flared custom wordmark reading 'MOON' with a stylized bracket frame.",
+   "scores": {
+    "relief_3d": 4,
+    "glow": 5,
+    "saturation": 4,
+    "sombre_clair": 3,
+    "complexite": 6
+   },
+   "construction": "Bold, blocky wordmark 'MOON' enclosed in a stylized, angular bracket frame. Three circular, cratered moon emblems sit directly above the central letters.",
+   "lettrage": {
+    "type": "custom italic wordmark",
+    "integration_embleme": "above",
+    "traitement_contour": "thick white outline"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 96,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "flat_outline",
+    "matiere": "flat white and purple",
+    "embleme": {
+     "present": true,
+     "type": "moon phases"
     },
-    {
-      "slug": "824150879",
-      "source": "-824150879.png",
-      "priorite": "reverse",
-      "tags": [
-        "ete",
-        "chill",
-        "retro"
-      ],
-      "energie": 65,
-      "modernite": 75,
-      "couleurs": [
-        "#FFFFFF",
-        "#FF007F",
-        "#1A0010"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "Single letter 'S' with rounded terminals and smooth curves.",
-      "scores": {
-        "relief_3d": 4,
-        "glow": 6,
-        "saturation": 8,
-        "sombre_clair": 3,
-        "complexite": 3
-      },
-      "construction": "A single bold sans-serif letter 'S' tilted slightly, intersected vertically by a stylized palm tree silhouette positioned in the center.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "none"
-      }
+    "ambiance": "esport",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "824150879",
+   "source": "-824150879.png",
+   "priorite": "reverse",
+   "tags": [
+    "ete",
+    "chill",
+    "retro"
+   ],
+   "energie": 65,
+   "modernite": 75,
+   "couleurs": [
+    "#FFFFFF",
+    "#FF007F",
+    "#1A0010"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "Single letter 'S' with rounded terminals and smooth curves.",
+   "scores": {
+    "relief_3d": 4,
+    "glow": 6,
+    "saturation": 8,
+    "sombre_clair": 3,
+    "complexite": 3
+   },
+   "construction": "A single bold sans-serif letter 'S' tilted slightly, intersected vertically by a stylized palm tree silhouette positioned in the center.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "none"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 96,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "flat_outline",
+    "matiere": "matte flat",
+    "embleme": {
+     "present": true,
+     "type": "palm tree"
     },
-    {
-      "slug": "829535537",
-      "source": "-829535537.png",
-      "priorite": "reverse",
-      "tags": [
-        "urbain",
-        "cartel",
-        "esport"
-      ],
-      "energie": 85,
-      "modernite": 80,
-      "couleurs": [
-        "#55FFFF",
-        "#002244",
-        "#000B14"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "Custom geometric letter 'R' integrated with a gun shape.",
-      "scores": {
-        "relief_3d": 2,
-        "glow": 7,
-        "saturation": 9,
-        "sombre_clair": 2,
-        "complexite": 4
-      },
-      "construction": "A stylized letter 'R' where the top loop is shaped like the silhouette of a semi-automatic pistol pointing right.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "none"
-      }
+    "ambiance": "tropical",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "829535537",
+   "source": "-829535537.png",
+   "priorite": "reverse",
+   "tags": [
+    "urbain",
+    "cartel",
+    "esport"
+   ],
+   "energie": 85,
+   "modernite": 80,
+   "couleurs": [
+    "#55FFFF",
+    "#002244",
+    "#000B14"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "Custom geometric letter 'R' integrated with a gun shape.",
+   "scores": {
+    "relief_3d": 2,
+    "glow": 7,
+    "saturation": 9,
+    "sombre_clair": 2,
+    "complexite": 4
+   },
+   "construction": "A stylized letter 'R' where the top loop is shaped like the silhouette of a semi-automatic pistol pointing right.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "none"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 96,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "flat_outline",
+    "matiere": "matte flat",
+    "embleme": {
+     "present": true,
+     "type": "gun"
     },
-    {
-      "slug": "1192802580",
-      "source": "1192802580.png",
-      "priorite": "reverse",
-      "tags": [
-        "luxe",
-        "urbain",
-        "neutre"
-      ],
-      "energie": 60,
-      "modernite": 70,
-      "couleurs": [
-        "#FFD700",
-        "#B8860B",
-        "#FFF8DC"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 8,
-        "glow": 4,
-        "saturation": 8,
-        "sombre_clair": 7,
-        "complexite": 5
-      },
-      "construction": "A classic 5-pointed crown with circular tips, curved base, rendered with realistic metallic volume.",
-      "lettrage": {
-        "type": "none",
-        "integration_embleme": "none",
-        "traitement_contour": "none"
-      }
+    "ambiance": "urban",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "1192802580",
+   "source": "1192802580.png",
+   "priorite": "reverse",
+   "tags": [
+    "luxe",
+    "urbain",
+    "neutre"
+   ],
+   "energie": 60,
+   "modernite": 70,
+   "couleurs": [
+    "#FFD700",
+    "#B8860B",
+    "#FFF8DC"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 8,
+    "glow": 4,
+    "saturation": 8,
+    "sombre_clair": 7,
+    "complexite": 5
+   },
+   "construction": "A classic 5-pointed crown with circular tips, curved base, rendered with realistic metallic volume.",
+   "lettrage": {
+    "type": "none",
+    "integration_embleme": "none",
+    "traitement_contour": "none"
+   },
+   "famille": "dimensionnelle",
+   "lettrage_riche": false,
+   "resolution_native": 96,
+   "style": {
+    "famille": "dimensionnelle",
+    "traitement_lettrage": "or",
+    "matiere": "gold",
+    "embleme": {
+     "present": true,
+     "type": "crown"
     },
-    {
-      "slug": "1379356077",
-      "source": "1379356077.png",
-      "priorite": "reverse",
-      "tags": [
-        "luxe",
-        "neutre"
-      ],
-      "energie": 30,
-      "modernite": 85,
-      "couleurs": [
-        "#F4F1EA",
-        "#C5A880",
-        "#A3875F"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 3,
-        "glow": 0,
-        "saturation": 3,
-        "sombre_clair": 9,
-        "complexite": 2
-      },
-      "construction": "Monogram 'R' with sharp, angular geometry. Features a central diagonal bar crossing from bottom-left to top-right, with two pointed downward-facing legs at the base.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "none"
-      }
+    "ambiance": "luxury",
+    "fond_sombre": false
+   }
+  },
+  {
+   "slug": "1379356077",
+   "source": "1379356077.png",
+   "priorite": "reverse",
+   "tags": [
+    "luxe",
+    "neutre"
+   ],
+   "energie": 30,
+   "modernite": 85,
+   "couleurs": [
+    "#F4F1EA",
+    "#C5A880",
+    "#A3875F"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 3,
+    "glow": 0,
+    "saturation": 3,
+    "sombre_clair": 9,
+    "complexite": 2
+   },
+   "construction": "Monogram 'R' with sharp, angular geometry. Features a central diagonal bar crossing from bottom-left to top-right, with two pointed downward-facing legs at the base.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "none"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 96,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "flat_outline",
+    "matiere": "matte flat",
+    "embleme": {
+     "present": false,
+     "type": null
     },
-    {
-      "slug": "1469323013",
-      "source": "1469323013.png",
-      "priorite": "reverse",
-      "tags": [
-        "urbain",
-        "esport",
-        "sombre"
-      ],
-      "energie": 80,
-      "modernite": 90,
-      "couleurs": [
-        "#0B1A24",
-        "#38BDF8",
-        "#E2E8F0"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 6,
-        "glow": 8,
-        "saturation": 7,
-        "sombre_clair": 2,
-        "complexite": 5
-      },
-      "construction": "Circular emblem containing a stylized letter 'H' or interlocking 'S' shapes. Symmetrical diagonal cuts split the outer ring into two curved brackets enclosing a central horizontal bar.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "glow edge"
-      }
+    "ambiance": "other",
+    "fond_sombre": false
+   }
+  },
+  {
+   "slug": "1469323013",
+   "source": "1469323013.png",
+   "priorite": "reverse",
+   "tags": [
+    "urbain",
+    "esport",
+    "sombre"
+   ],
+   "energie": 80,
+   "modernite": 90,
+   "couleurs": [
+    "#0B1A24",
+    "#38BDF8",
+    "#E2E8F0"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 6,
+    "glow": 8,
+    "saturation": 7,
+    "sombre_clair": 2,
+    "complexite": 5
+   },
+   "construction": "Circular emblem containing a stylized letter 'H' or interlocking 'S' shapes. Symmetrical diagonal cuts split the outer ring into two curved brackets enclosing a central horizontal bar.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "glow edge"
+   },
+   "famille": "semi_flat_biseau",
+   "lettrage_riche": true,
+   "resolution_native": 96,
+   "style": {
+    "famille": "semi_flat_biseau",
+    "traitement_lettrage": "chrome",
+    "matiere": "brushed chrome",
+    "embleme": {
+     "present": false,
+     "type": null
     },
-    {
-      "slug": "170470bf5644a79fd6c15771311f306d",
-      "source": "170470bf5644a79fd6c15771311f306d.png",
-      "priorite": "reverse",
-      "tags": [
-        "ete",
-        "urbain",
-        "chill"
-      ],
-      "energie": 75,
-      "modernite": 75,
-      "couleurs": [
-        "#111827",
-        "#22C55E",
-        "#FFFFFF"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "DAY SIDE",
-      "scores": {
-        "relief_3d": 4,
-        "glow": 7,
-        "saturation": 8,
-        "sombre_clair": 3,
-        "complexite": 4
-      },
-      "construction": "Two-tiered stacked text 'DAY SIDE' in a bold, sans-serif font. A white palm tree silhouette is integrated behind the letter 'A' in 'DAY'.",
-      "lettrage": {
-        "type": "custom italic wordmark",
-        "integration_embleme": "above",
-        "traitement_contour": "none"
-      }
+    "ambiance": "urban",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "170470bf5644a79fd6c15771311f306d",
+   "source": "170470bf5644a79fd6c15771311f306d.png",
+   "priorite": "reverse",
+   "tags": [
+    "ete",
+    "urbain",
+    "chill"
+   ],
+   "energie": 75,
+   "modernite": 75,
+   "couleurs": [
+    "#111827",
+    "#22C55E",
+    "#FFFFFF"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "DAY SIDE",
+   "scores": {
+    "relief_3d": 4,
+    "glow": 7,
+    "saturation": 8,
+    "sombre_clair": 3,
+    "complexite": 4
+   },
+   "construction": "Two-tiered stacked text 'DAY SIDE' in a bold, sans-serif font. A white palm tree silhouette is integrated behind the letter 'A' in 'DAY'.",
+   "lettrage": {
+    "type": "custom italic wordmark",
+    "integration_embleme": "above",
+    "traitement_contour": "none"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 128,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "flat_outline",
+    "matiere": "matte flat",
+    "embleme": {
+     "present": true,
+     "type": "palm tree"
     },
-    {
-      "slug": "1884730584",
-      "source": "1884730584.png",
-      "priorite": "reverse",
-      "tags": [
-        "luxe",
-        "chill",
-        "neutre"
-      ],
-      "energie": 75,
-      "modernite": 85,
-      "couleurs": [
-        "#00aaff",
-        "#ffffff",
-        "#0055aa"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 8,
-        "glow": 7,
-        "saturation": 8,
-        "sombre_clair": 8,
-        "complexite": 3
-      },
-      "construction": "A single 3D octahedron crystal tilted at 25 degrees, with sharp facets and a thin white outer stroke.",
-      "lettrage": {
-        "type": "none",
-        "integration_embleme": "none",
-        "traitement_contour": "none"
-      }
+    "ambiance": "tropical",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "1884730584",
+   "source": "1884730584.png",
+   "priorite": "reverse",
+   "tags": [
+    "luxe",
+    "chill",
+    "neutre"
+   ],
+   "energie": 75,
+   "modernite": 85,
+   "couleurs": [
+    "#00aaff",
+    "#ffffff",
+    "#0055aa"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 8,
+    "glow": 7,
+    "saturation": 8,
+    "sombre_clair": 8,
+    "complexite": 3
+   },
+   "construction": "A single 3D octahedron crystal tilted at 25 degrees, with sharp facets and a thin white outer stroke.",
+   "lettrage": {
+    "type": "none",
+    "integration_embleme": "none",
+    "traitement_contour": "none"
+   },
+   "famille": "dimensionnelle",
+   "lettrage_riche": false,
+   "resolution_native": 96,
+   "style": {
+    "famille": "dimensionnelle",
+    "traitement_lettrage": "aucun",
+    "matiere": "glossy crystal",
+    "embleme": {
+     "present": true,
+     "type": "crystal"
     },
-    {
-      "slug": "378149589",
-      "source": "378149589.png",
-      "priorite": "reverse",
-      "tags": [
-        "urbain",
-        "luxe",
-        "sombre"
-      ],
-      "energie": 50,
-      "modernite": 75,
-      "couleurs": [
-        "#1a002c",
-        "#ffffff",
-        "#800080"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "MELROSE RP in bold, heavy sans-serif with a script 'RP' nested on the bottom right.",
-      "scores": {
-        "relief_3d": 2,
-        "glow": 3,
-        "saturation": 7,
-        "sombre_clair": 2,
-        "complexite": 5
-      },
-      "construction": "Bold horizontal sans-serif lettering with a stylized rose replacing the letter 'O', framed by corner rose illustrations.",
-      "lettrage": {
-        "type": "custom italic wordmark",
-        "integration_embleme": "inside a letter",
-        "traitement_contour": "thick white outline"
-      }
+    "ambiance": "other",
+    "fond_sombre": false
+   }
+  },
+  {
+   "slug": "378149589",
+   "source": "378149589.png",
+   "priorite": "reverse",
+   "tags": [
+    "urbain",
+    "luxe",
+    "sombre"
+   ],
+   "energie": 50,
+   "modernite": 75,
+   "couleurs": [
+    "#1a002c",
+    "#ffffff",
+    "#800080"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "MELROSE RP in bold, heavy sans-serif with a script 'RP' nested on the bottom right.",
+   "scores": {
+    "relief_3d": 2,
+    "glow": 3,
+    "saturation": 7,
+    "sombre_clair": 2,
+    "complexite": 5
+   },
+   "construction": "Bold horizontal sans-serif lettering with a stylized rose replacing the letter 'O', framed by corner rose illustrations.",
+   "lettrage": {
+    "type": "custom italic wordmark",
+    "integration_embleme": "inside a letter",
+    "traitement_contour": "thick white outline"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 96,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "flat_outline",
+    "matiere": "matte flat",
+    "embleme": {
+     "present": true,
+     "type": "rose"
     },
-    {
-      "slug": "4409091d08b9cb1da6aa3c72b0e1e0b4",
-      "source": "4409091d08b9cb1da6aa3c72b0e1e0b4.webp",
-      "priorite": "reverse",
-      "tags": [
-        "chill",
-        "ete",
-        "neutre"
-      ],
-      "energie": 60,
-      "modernite": 70,
-      "couleurs": [
-        "#008080",
-        "#ffffff",
-        "#004d4d"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "ALYA in a bold, customized serif font with sharp terminals.",
-      "scores": {
-        "relief_3d": 0,
-        "glow": 1,
-        "saturation": 6,
-        "sombre_clair": 5,
-        "complexite": 6
-      },
-      "construction": "Symmetrical serif lettering framed by two curved dolphin silhouettes forming a circular motion.",
-      "lettrage": {
-        "type": "slab",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "none"
-      }
+    "ambiance": "dark",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "4409091d08b9cb1da6aa3c72b0e1e0b4",
+   "source": "4409091d08b9cb1da6aa3c72b0e1e0b4.webp",
+   "priorite": "reverse",
+   "tags": [
+    "chill",
+    "ete",
+    "neutre"
+   ],
+   "energie": 60,
+   "modernite": 70,
+   "couleurs": [
+    "#008080",
+    "#ffffff",
+    "#004d4d"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "ALYA in a bold, customized serif font with sharp terminals.",
+   "scores": {
+    "relief_3d": 0,
+    "glow": 1,
+    "saturation": 6,
+    "sombre_clair": 5,
+    "complexite": 6
+   },
+   "construction": "Symmetrical serif lettering framed by two curved dolphin silhouettes forming a circular motion.",
+   "lettrage": {
+    "type": "slab",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "none"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 1024,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "flat_outline",
+    "matiere": "matte flat",
+    "embleme": {
+     "present": true,
+     "type": "dolphin"
     },
-    {
-      "slug": "615072940",
-      "source": "615072940.png",
-      "priorite": "reverse",
-      "tags": [
-        "ete",
-        "chill",
-        "urbain"
-      ],
-      "energie": 85,
-      "modernite": 80,
-      "couleurs": [
-        "#00E676",
-        "#00B0FF",
-        "#FFFFFF"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 8,
-        "glow": 4,
-        "saturation": 8,
-        "sombre_clair": 8,
-        "complexite": 4
-      },
-      "construction": "A single 3D extruded lightning bolt tilted at a 15-degree angle, centered, with sharp geometric edges and a thick depth profile.",
-      "lettrage": {
-        "type": "none",
-        "integration_embleme": "none",
-        "traitement_contour": "none"
-      }
+    "ambiance": "tropical",
+    "fond_sombre": false
+   }
+  },
+  {
+   "slug": "615072940",
+   "source": "615072940.png",
+   "priorite": "reverse",
+   "tags": [
+    "ete",
+    "chill",
+    "urbain"
+   ],
+   "energie": 85,
+   "modernite": 80,
+   "couleurs": [
+    "#00E676",
+    "#00B0FF",
+    "#FFFFFF"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 8,
+    "glow": 4,
+    "saturation": 8,
+    "sombre_clair": 8,
+    "complexite": 4
+   },
+   "construction": "A single 3D extruded lightning bolt tilted at a 15-degree angle, centered, with sharp geometric edges and a thick depth profile.",
+   "lettrage": {
+    "type": "none",
+    "integration_embleme": "none",
+    "traitement_contour": "none"
+   },
+   "famille": "dimensionnelle",
+   "lettrage_riche": false,
+   "resolution_native": 96,
+   "style": {
+    "famille": "dimensionnelle",
+    "traitement_lettrage": "aucun",
+    "matiere": "glossy green material",
+    "embleme": {
+     "present": true,
+     "type": "lightning bolt"
     },
-    {
-      "slug": "653651492",
-      "source": "653651492.png",
-      "priorite": "reverse",
-      "tags": [
-        "luxe",
-        "sombre",
-        "cartel"
-      ],
-      "energie": 40,
-      "modernite": 75,
-      "couleurs": [
-        "#FF4081",
-        "#2D001E",
-        "#FFFFFF"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 2,
-        "glow": 6,
-        "saturation": 7,
-        "sombre_clair": 2,
-        "complexite": 3
-      },
-      "construction": "Symmetrical stylized rose emblem composed of 5 overlapping curved petal shapes forming a central spiral.",
-      "lettrage": {
-        "type": "none",
-        "integration_embleme": "none",
-        "traitement_contour": "none"
-      }
+    "ambiance": "tropical",
+    "fond_sombre": false
+   }
+  },
+  {
+   "slug": "653651492",
+   "source": "653651492.png",
+   "priorite": "reverse",
+   "tags": [
+    "luxe",
+    "sombre",
+    "cartel"
+   ],
+   "energie": 40,
+   "modernite": 75,
+   "couleurs": [
+    "#FF4081",
+    "#2D001E",
+    "#FFFFFF"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 2,
+    "glow": 6,
+    "saturation": 7,
+    "sombre_clair": 2,
+    "complexite": 3
+   },
+   "construction": "Symmetrical stylized rose emblem composed of 5 overlapping curved petal shapes forming a central spiral.",
+   "lettrage": {
+    "type": "none",
+    "integration_embleme": "none",
+    "traitement_contour": "none"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": false,
+   "resolution_native": 96,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "aucun",
+    "matiere": "matte flat",
+    "embleme": {
+     "present": true,
+     "type": "rose"
     },
-    {
-      "slug": "695970082",
-      "source": "695970082.png",
-      "priorite": "reverse",
-      "tags": [
-        "retro",
-        "sombre",
-        "chill"
-      ],
-      "energie": 60,
-      "modernite": 85,
-      "couleurs": [
-        "#FF4081",
-        "#FFFFFF",
-        "#1A1A1A"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "A solid, sans-serif block letter 'L' with sharp 90-degree angles.",
-      "scores": {
-        "relief_3d": 3,
-        "glow": 8,
-        "saturation": 8,
-        "sombre_clair": 3,
-        "complexite": 4
-      },
-      "construction": "A bold, blocky capital letter 'L' intersected and overlaid by a large, crescent moon shape curving from the top-right to the bottom-left.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "glow edge"
-      }
+    "ambiance": "dark",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "695970082",
+   "source": "695970082.png",
+   "priorite": "reverse",
+   "tags": [
+    "retro",
+    "sombre",
+    "chill"
+   ],
+   "energie": 60,
+   "modernite": 85,
+   "couleurs": [
+    "#FF4081",
+    "#FFFFFF",
+    "#1A1A1A"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "A solid, sans-serif block letter 'L' with sharp 90-degree angles.",
+   "scores": {
+    "relief_3d": 3,
+    "glow": 8,
+    "saturation": 8,
+    "sombre_clair": 3,
+    "complexite": 4
+   },
+   "construction": "A bold, blocky capital letter 'L' intersected and overlaid by a large, crescent moon shape curving from the top-right to the bottom-left.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "glow edge"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 96,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "flat_outline",
+    "matiere": "matte flat",
+    "embleme": {
+     "present": true,
+     "type": "crescent moon"
     },
-    {
-      "slug": "726700208",
-      "source": "726700208.png",
-      "priorite": "reverse",
-      "tags": [
-        "urbain",
-        "cartel",
-        "esport"
-      ],
-      "energie": 85,
-      "modernite": 75,
-      "couleurs": [
-        "#000000",
-        "#FFFFFF",
-        "#C8102E"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 2,
-        "glow": 4,
-        "saturation": 8,
-        "sombre_clair": 2,
-        "complexite": 4
-      },
-      "construction": "A large, stylized capital letter 'V' with jagged, lightning-like cuts on its outer edges, overlaid with a silhouette of a crocodile facing left.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "above",
-        "traitement_contour": "none"
-      }
+    "ambiance": "dark",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "726700208",
+   "source": "726700208.png",
+   "priorite": "reverse",
+   "tags": [
+    "urbain",
+    "cartel",
+    "esport"
+   ],
+   "energie": 85,
+   "modernite": 75,
+   "couleurs": [
+    "#000000",
+    "#FFFFFF",
+    "#C8102E"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 2,
+    "glow": 4,
+    "saturation": 8,
+    "sombre_clair": 2,
+    "complexite": 4
+   },
+   "construction": "A large, stylized capital letter 'V' with jagged, lightning-like cuts on its outer edges, overlaid with a silhouette of a crocodile facing left.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "above",
+    "traitement_contour": "none"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 96,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "flat_outline",
+    "matiere": "matte flat",
+    "embleme": {
+     "present": true,
+     "type": "alligator"
     },
-    {
-      "slug": "8616bdc4c1d2274c2586ee2488c34667",
-      "source": "8616bdc4c1d2274c2586ee2488c34667.webp",
-      "priorite": "reverse",
-      "tags": [
-        "urbain",
-        "retro",
-        "chill"
-      ],
-      "energie": 65,
-      "modernite": 80,
-      "couleurs": [
-        "#1A2B4C",
-        "#52B2F2",
-        "#FFFFFF"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 1,
-        "glow": 2,
-        "saturation": 7,
-        "sombre_clair": 4,
-        "complexite": 5
-      },
-      "construction": "A stylized, italicized letter 'G' or 'D' split horizontally into blue and white halves, with a multi-pointed starburst emblem overlapping the top right corner.",
-      "lettrage": {
-        "type": "custom italic wordmark",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "none"
-      }
+    "ambiance": "dark",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "8616bdc4c1d2274c2586ee2488c34667",
+   "source": "8616bdc4c1d2274c2586ee2488c34667.webp",
+   "priorite": "reverse",
+   "tags": [
+    "urbain",
+    "retro",
+    "chill"
+   ],
+   "energie": 65,
+   "modernite": 80,
+   "couleurs": [
+    "#1A2B4C",
+    "#52B2F2",
+    "#FFFFFF"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 1,
+    "glow": 2,
+    "saturation": 7,
+    "sombre_clair": 4,
+    "complexite": 5
+   },
+   "construction": "A stylized, italicized letter 'G' or 'D' split horizontally into blue and white halves, with a multi-pointed starburst emblem overlapping the top right corner.",
+   "lettrage": {
+    "type": "custom italic wordmark",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "none"
+   },
+   "famille": "semi_flat_biseau",
+   "lettrage_riche": true,
+   "resolution_native": 394,
+   "style": {
+    "famille": "semi_flat_biseau",
+    "traitement_lettrage": "flat_outline",
+    "matiere": "matte flat",
+    "embleme": {
+     "present": true,
+     "type": "starburst"
     },
-    {
-      "slug": "adistralife-2-1",
-      "source": "adistralife-2(1).jpg",
-      "priorite": "reverse",
-      "tags": [
-        "luxe",
-        "sombre",
-        "cartel"
-      ],
-      "energie": 70,
-      "modernite": 90,
-      "couleurs": [
-        "#120A1A",
-        "#FFFFFF",
-        "#D000FF"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 3,
-        "glow": 8,
-        "saturation": 8,
-        "sombre_clair": 2,
-        "complexite": 3
-      },
-      "construction": "Two interlocking, organic teardrop/flame shapes forming an abstract 'S' or '6' shape, with one white element and one purple element.",
-      "lettrage": {
-        "type": "none",
-        "integration_embleme": "none",
-        "traitement_contour": "none"
-      }
+    "ambiance": "urban",
+    "fond_sombre": false
+   }
+  },
+  {
+   "slug": "adistralife-2-1",
+   "source": "adistralife-2(1).jpg",
+   "priorite": "reverse",
+   "tags": [
+    "luxe",
+    "sombre",
+    "cartel"
+   ],
+   "energie": 70,
+   "modernite": 90,
+   "couleurs": [
+    "#120A1A",
+    "#FFFFFF",
+    "#D000FF"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 3,
+    "glow": 8,
+    "saturation": 8,
+    "sombre_clair": 2,
+    "complexite": 3
+   },
+   "construction": "Two interlocking, organic teardrop/flame shapes forming an abstract 'S' or '6' shape, with one white element and one purple element.",
+   "lettrage": {
+    "type": "none",
+    "integration_embleme": "none",
+    "traitement_contour": "none"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": false,
+   "resolution_native": 350,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "neon",
+    "matiere": "glowing neon",
+    "embleme": {
+     "present": true,
+     "type": "abstract shape"
     },
-    {
-      "slug": "adversitylife",
-      "source": "adversitylife.png",
-      "priorite": "reverse",
-      "tags": [
-        "ete",
-        "noel",
-        "chill"
-      ],
-      "energie": 85,
-      "modernite": 75,
-      "couleurs": [
-        "#FFD700",
-        "#FF3366",
-        "#0088FF"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "Bold, blocky sans-serif with custom cuts and a heavy 3D extrusion.",
-      "scores": {
-        "relief_3d": 8,
-        "glow": 4,
-        "saturation": 9,
-        "sombre_clair": 7,
-        "complexite": 6
-      },
-      "construction": "Three thick, stylized 3D letters 'ADV' with a heavy forward tilt. The letter 'A' is topped with a red and white Santa hat. The letters feature deep, blocky 3D extrusion pointing downwards and left.",
-      "lettrage": {
-        "type": "custom italic wordmark",
-        "integration_embleme": "above",
-        "traitement_contour": "thick blue outline"
-      }
+    "ambiance": "urban",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "adversitylife",
+   "source": "adversitylife.png",
+   "priorite": "reverse",
+   "tags": [
+    "ete",
+    "noel",
+    "chill"
+   ],
+   "energie": 85,
+   "modernite": 75,
+   "couleurs": [
+    "#FFD700",
+    "#FF3366",
+    "#0088FF"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "Bold, blocky sans-serif with custom cuts and a heavy 3D extrusion.",
+   "scores": {
+    "relief_3d": 8,
+    "glow": 4,
+    "saturation": 9,
+    "sombre_clair": 7,
+    "complexite": 6
+   },
+   "construction": "Three thick, stylized 3D letters 'ADV' with a heavy forward tilt. The letter 'A' is topped with a red and white Santa hat. The letters feature deep, blocky 3D extrusion pointing downwards and left.",
+   "lettrage": {
+    "type": "custom italic wordmark",
+    "integration_embleme": "above",
+    "traitement_contour": "thick blue outline"
+   },
+   "famille": "dimensionnelle",
+   "lettrage_riche": true,
+   "resolution_native": 2000,
+   "style": {
+    "famille": "dimensionnelle",
+    "traitement_lettrage": "extrusion_3d",
+    "matiere": "glossy plastic",
+    "embleme": {
+     "present": true,
+     "type": "santa hat"
     },
-    {
-      "slug": "adversitylife1",
-      "source": "adversitylife1.png",
-      "priorite": "reverse",
-      "tags": [
-        "urbain",
-        "sombre",
-        "luxe"
-      ],
-      "energie": 60,
-      "modernite": 80,
-      "couleurs": [
-        "#FFFFFF",
-        "#00A2FF",
-        "#0A192F"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "Clean, high-contrast sans-serif paired with a smooth brush script.",
-      "scores": {
-        "relief_3d": 2,
-        "glow": 6,
-        "saturation": 6,
-        "sombre_clair": 3,
-        "complexite": 4
-      },
-      "construction": "Two-tier text layout. Top tier is a bold, slightly arched sans-serif word 'ADVERSITY'. Bottom tier is a flowing script word 'Life' overlapping the center-bottom of the main word.",
-      "lettrage": {
-        "type": "script",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "none"
-      }
+    "ambiance": "festive",
+    "fond_sombre": false
+   }
+  },
+  {
+   "slug": "adversitylife1",
+   "source": "adversitylife1.png",
+   "priorite": "reverse",
+   "tags": [
+    "urbain",
+    "sombre",
+    "luxe"
+   ],
+   "energie": 60,
+   "modernite": 80,
+   "couleurs": [
+    "#FFFFFF",
+    "#00A2FF",
+    "#0A192F"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "Clean, high-contrast sans-serif paired with a smooth brush script.",
+   "scores": {
+    "relief_3d": 2,
+    "glow": 6,
+    "saturation": 6,
+    "sombre_clair": 3,
+    "complexite": 4
+   },
+   "construction": "Two-tier text layout. Top tier is a bold, slightly arched sans-serif word 'ADVERSITY'. Bottom tier is a flowing script word 'Life' overlapping the center-bottom of the main word.",
+   "lettrage": {
+    "type": "script",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "none"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 400,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "flat_outline",
+    "matiere": "matte flat",
+    "embleme": {
+     "present": false,
+     "type": null
     },
-    {
-      "slug": "ascent-rp2",
-      "source": "ascent-rp2.webp",
-      "priorite": "reverse",
-      "tags": [
-        "esport",
-        "sombre",
-        "urbain"
-      ],
-      "energie": 80,
-      "modernite": 90,
-      "couleurs": [
-        "#E5E5E5",
-        "#FF2A6D",
-        "#121212"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 5,
-        "glow": 5,
-        "saturation": 7,
-        "sombre_clair": 2,
-        "complexite": 5
-      },
-      "construction": "A sharp, stylized letter 'A' integrated with a rising lightning bolt/arrow on its left leg. The letter has a metallic, textured surface with a distinct bevel.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "dark keyline"
-      }
+    "ambiance": "urban",
+    "fond_sombre": false
+   }
+  },
+  {
+   "slug": "ascent-rp2",
+   "source": "ascent-rp2.webp",
+   "priorite": "reverse",
+   "tags": [
+    "esport",
+    "sombre",
+    "urbain"
+   ],
+   "energie": 80,
+   "modernite": 90,
+   "couleurs": [
+    "#E5E5E5",
+    "#FF2A6D",
+    "#121212"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 5,
+    "glow": 5,
+    "saturation": 7,
+    "sombre_clair": 2,
+    "complexite": 5
+   },
+   "construction": "A sharp, stylized letter 'A' integrated with a rising lightning bolt/arrow on its left leg. The letter has a metallic, textured surface with a distinct bevel.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "dark keyline"
+   },
+   "famille": "semi_flat_biseau",
+   "lettrage_riche": true,
+   "resolution_native": 435,
+   "style": {
+    "famille": "semi_flat_biseau",
+    "traitement_lettrage": "flat_outline",
+    "matiere": "brushed metal",
+    "embleme": {
+     "present": true,
+     "type": "arrow"
     },
-    {
-      "slug": "astya-rp",
-      "source": "astya-rp.png",
-      "priorite": "reverse",
-      "tags": [
-        "urbain",
-        "esport",
-        "sombre"
-      ],
-      "energie": 75,
-      "modernite": 85,
-      "couleurs": [
-        "#0b071a",
-        "#5a20df",
-        "#ffffff"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "Bold, geometric sans-serif for 'ASTYA' with a metallic gradient; fluid, glowing script for 'Roleplay'.",
-      "scores": {
-        "relief_3d": 3,
-        "glow": 8,
-        "saturation": 7,
-        "sombre_clair": 2,
-        "complexite": 4
-      },
-      "construction": "A large, bold sans-serif wordmark 'ASTYA' layered over a thin, neon-style triangular play button outline pointing right. A smaller script wordmark 'Roleplay' is layered directly over the bottom center of the main text.",
-      "lettrage": {
-        "type": "custom italic wordmark",
-        "integration_embleme": "above",
-        "traitement_contour": "glow edge"
-      }
+    "ambiance": "esport",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "astya-rp",
+   "source": "astya-rp.png",
+   "priorite": "reverse",
+   "tags": [
+    "urbain",
+    "esport",
+    "sombre"
+   ],
+   "energie": 75,
+   "modernite": 85,
+   "couleurs": [
+    "#0b071a",
+    "#5a20df",
+    "#ffffff"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "Bold, geometric sans-serif for 'ASTYA' with a metallic gradient; fluid, glowing script for 'Roleplay'.",
+   "scores": {
+    "relief_3d": 3,
+    "glow": 8,
+    "saturation": 7,
+    "sombre_clair": 2,
+    "complexite": 4
+   },
+   "construction": "A large, bold sans-serif wordmark 'ASTYA' layered over a thin, neon-style triangular play button outline pointing right. A smaller script wordmark 'Roleplay' is layered directly over the bottom center of the main text.",
+   "lettrage": {
+    "type": "custom italic wordmark",
+    "integration_embleme": "above",
+    "traitement_contour": "glow edge"
+   },
+   "famille": "semi_flat_biseau",
+   "lettrage_riche": true,
+   "resolution_native": 96,
+   "style": {
+    "famille": "semi_flat_biseau",
+    "traitement_lettrage": "autre",
+    "matiere": "matte white gradient",
+    "embleme": {
+     "present": true,
+     "type": "triangle"
     },
-    {
-      "slug": "azaria3",
-      "source": "azaria3.png",
-      "priorite": "reverse",
-      "tags": [
-        "retro",
-        "chill",
-        "ete"
-      ],
-      "energie": 60,
-      "modernite": 80,
-      "couleurs": [
-        "#4a2312",
-        "#ffffff",
-        "#f08a75"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 1,
-        "glow": 1,
-        "saturation": 6,
-        "sombre_clair": 4,
-        "complexite": 3
-      },
-      "construction": "A minimalist monogram combining a stylized letter 'A' with a lightning bolt integrated into its left leg, set against a warm sunset backdrop with palm tree silhouettes.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "none"
-      }
+    "ambiance": "esport",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "azaria3",
+   "source": "azaria3.png",
+   "priorite": "reverse",
+   "tags": [
+    "retro",
+    "chill",
+    "ete"
+   ],
+   "energie": 60,
+   "modernite": 80,
+   "couleurs": [
+    "#4a2312",
+    "#ffffff",
+    "#f08a75"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 1,
+    "glow": 1,
+    "saturation": 6,
+    "sombre_clair": 4,
+    "complexite": 3
+   },
+   "construction": "A minimalist monogram combining a stylized letter 'A' with a lightning bolt integrated into its left leg, set against a warm sunset backdrop with palm tree silhouettes.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "none"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 96,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "aucun",
+    "matiere": "flat white orange",
+    "embleme": {
+     "present": true,
+     "type": "lightning bolt letter"
     },
-    {
-      "slug": "a-1d358430c2472342f1db6df08843bcc6",
-      "source": "a_1d358430c2472342f1db6df08843bcc6.png",
-      "priorite": "reverse",
-      "tags": [
-        "chill",
-        "luxe",
-        "ete"
-      ],
-      "energie": 45,
-      "modernite": 85,
-      "couleurs": [
-        "#6b8fa6",
-        "#ffffff",
-        "#bce3f2"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "Heavy, geometric sans-serif for 'SLOW'; light, flowing script with a thin outline for 'City'.",
-      "scores": {
-        "relief_3d": 2,
-        "glow": 3,
-        "saturation": 4,
-        "sombre_clair": 6,
-        "complexite": 4
-      },
-      "construction": "A bold, clean sans-serif wordmark 'SLOW' with a smaller, elegant script wordmark 'City' overlapping the bottom right corner, set against a misty coastal background.",
-      "lettrage": {
-        "type": "custom italic wordmark",
-        "integration_embleme": "none",
-        "traitement_contour": "glow edge"
-      }
+    "ambiance": "summer",
+    "fond_sombre": false
+   }
+  },
+  {
+   "slug": "a-1d358430c2472342f1db6df08843bcc6",
+   "source": "a_1d358430c2472342f1db6df08843bcc6.png",
+   "priorite": "reverse",
+   "tags": [
+    "chill",
+    "luxe",
+    "ete"
+   ],
+   "energie": 45,
+   "modernite": 85,
+   "couleurs": [
+    "#6b8fa6",
+    "#ffffff",
+    "#bce3f2"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "Heavy, geometric sans-serif for 'SLOW'; light, flowing script with a thin outline for 'City'.",
+   "scores": {
+    "relief_3d": 2,
+    "glow": 3,
+    "saturation": 4,
+    "sombre_clair": 6,
+    "complexite": 4
+   },
+   "construction": "A bold, clean sans-serif wordmark 'SLOW' with a smaller, elegant script wordmark 'City' overlapping the bottom right corner, set against a misty coastal background.",
+   "lettrage": {
+    "type": "custom italic wordmark",
+    "integration_embleme": "none",
+    "traitement_contour": "glow edge"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 128,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "flat_outline",
+    "matiere": "flat white",
+    "embleme": {
+     "present": false,
+     "type": null
     },
-    {
-      "slug": "a-936f1f94ca64d562c32967f8049a52be",
-      "source": "a_936f1f94ca64d562c32967f8049a52be.webp",
-      "priorite": "reverse",
-      "tags": [
-        "urbain",
-        "sombre",
-        "chill"
-      ],
-      "energie": 45,
-      "modernite": 80,
-      "couleurs": [
-        "#120509",
-        "#e33e5a",
-        "#ffffff"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 2,
-        "glow": 6,
-        "saturation": 7,
-        "sombre_clair": 2,
-        "complexite": 3
-      },
-      "construction": "Symmetrical geometric monogram combining a stylized letter 'A' with a circular arc. The 'A' is formed by thick, sharp-angled lines. A small white chevron sits directly above the apex of the arc.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "none"
-      }
+    "ambiance": "summer",
+    "fond_sombre": false
+   }
+  },
+  {
+   "slug": "a-936f1f94ca64d562c32967f8049a52be",
+   "source": "a_936f1f94ca64d562c32967f8049a52be.webp",
+   "priorite": "reverse",
+   "tags": [
+    "urbain",
+    "sombre",
+    "chill"
+   ],
+   "energie": 45,
+   "modernite": 80,
+   "couleurs": [
+    "#120509",
+    "#e33e5a",
+    "#ffffff"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 2,
+    "glow": 6,
+    "saturation": 7,
+    "sombre_clair": 2,
+    "complexite": 3
+   },
+   "construction": "Symmetrical geometric monogram combining a stylized letter 'A' with a circular arc. The 'A' is formed by thick, sharp-angled lines. A small white chevron sits directly above the apex of the arc.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "none"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 128,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "aucun",
+    "matiere": "flat red white",
+    "embleme": {
+     "present": true,
+     "type": "abstract letter A"
     },
-    {
-      "slug": "be9fe9a91b07a80ef6bc931d89ecd506",
-      "source": "be9fe9a91b07a80ef6bc931d89ecd506.png",
-      "priorite": "reverse",
-      "tags": [
-        "luxe",
-        "sombre",
-        "urbain"
-      ],
-      "energie": 60,
-      "modernite": 90,
-      "couleurs": [
-        "#020817",
-        "#ffffff",
-        "#0a46c4"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 3,
-        "glow": 8,
-        "saturation": 8,
-        "sombre_clair": 3,
-        "complexite": 2
-      },
-      "construction": "A perfect circle with a diagonal slice removed from the bottom right, creating a stylized 'C' shape. The main body is white, while the sliced segment is filled with a solid blue color.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "none"
-      }
+    "ambiance": "dark",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "be9fe9a91b07a80ef6bc931d89ecd506",
+   "source": "be9fe9a91b07a80ef6bc931d89ecd506.png",
+   "priorite": "reverse",
+   "tags": [
+    "luxe",
+    "sombre",
+    "urbain"
+   ],
+   "energie": 60,
+   "modernite": 90,
+   "couleurs": [
+    "#020817",
+    "#ffffff",
+    "#0a46c4"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 3,
+    "glow": 8,
+    "saturation": 8,
+    "sombre_clair": 3,
+    "complexite": 2
+   },
+   "construction": "A perfect circle with a diagonal slice removed from the bottom right, creating a stylized 'C' shape. The main body is white, while the sliced segment is filled with a solid blue color.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "none"
+   },
+   "famille": "semi_flat_biseau",
+   "lettrage_riche": true,
+   "resolution_native": 256,
+   "style": {
+    "famille": "semi_flat_biseau",
+    "traitement_lettrage": "aucun",
+    "matiere": "matte white blue",
+    "embleme": {
+     "present": true,
+     "type": "letter C"
     },
-    {
-      "slug": "black-world1",
-      "source": "black-world1.png",
-      "priorite": "reverse",
-      "tags": [
-        "urbain",
-        "sombre",
-        "esport"
-      ],
-      "energie": 70,
-      "modernite": 85,
-      "couleurs": [
-        "#050b14",
-        "#ffffff",
-        "#00d2ff"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 1,
-        "glow": 3,
-        "saturation": 7,
-        "sombre_clair": 2,
-        "complexite": 3
-      },
-      "construction": "A stylized, blocky letter 'B' with sharp, geometric cuts. A horizontal bar extends from the left side. The bottom right curve of the 'B' is colored in bright cyan, while the rest is solid white.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "none"
-      }
+    "ambiance": "urban",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "black-world1",
+   "source": "black-world1.png",
+   "priorite": "reverse",
+   "tags": [
+    "urbain",
+    "sombre",
+    "esport"
+   ],
+   "energie": 70,
+   "modernite": 85,
+   "couleurs": [
+    "#050b14",
+    "#ffffff",
+    "#00d2ff"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 1,
+    "glow": 3,
+    "saturation": 7,
+    "sombre_clair": 2,
+    "complexite": 3
+   },
+   "construction": "A stylized, blocky letter 'B' with sharp, geometric cuts. A horizontal bar extends from the left side. The bottom right curve of the 'B' is colored in bright cyan, while the rest is solid white.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "none"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 1024,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "aucun",
+    "matiere": "flat white blue",
+    "embleme": {
+     "present": true,
+     "type": "letter B"
     },
-    {
-      "slug": "branding",
-      "source": "Branding.png",
-      "priorite": "reverse",
-      "tags": [
-        "urbain",
-        "luxe",
-        "esport"
-      ],
-      "energie": 85,
-      "modernite": 90,
-      "couleurs": [
-        "#10B981",
-        "#FFFFFF",
-        "#111827"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "Two distinct styles: a heavy, blocky, futuristic sans-serif for 'SOUTH' and a fluid, continuous neon-like script for 'District'.",
-      "scores": {
-        "relief_3d": 8,
-        "glow": 7,
-        "saturation": 8,
-        "sombre_clair": 3,
-        "complexite": 6
-      },
-      "construction": "Two-tier stacked typographic layout. Top tier features bold, blocky sans-serif letters with a 15-degree upward slant. Bottom tier features a fluid, script-style wordmark overlapping the top tier, underlined by a dynamic swoosh.",
-      "lettrage": {
-        "type": "custom italic wordmark",
-        "integration_embleme": "none",
-        "traitement_contour": "glow edge"
-      }
+    "ambiance": "urban",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "branding",
+   "source": "Branding.png",
+   "priorite": "reverse",
+   "tags": [
+    "urbain",
+    "luxe",
+    "esport"
+   ],
+   "energie": 85,
+   "modernite": 90,
+   "couleurs": [
+    "#10B981",
+    "#FFFFFF",
+    "#111827"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "Two distinct styles: a heavy, blocky, futuristic sans-serif for 'SOUTH' and a fluid, continuous neon-like script for 'District'.",
+   "scores": {
+    "relief_3d": 8,
+    "glow": 7,
+    "saturation": 8,
+    "sombre_clair": 3,
+    "complexite": 6
+   },
+   "construction": "Two-tier stacked typographic layout. Top tier features bold, blocky sans-serif letters with a 15-degree upward slant. Bottom tier features a fluid, script-style wordmark overlapping the top tier, underlined by a dynamic swoosh.",
+   "lettrage": {
+    "type": "custom italic wordmark",
+    "integration_embleme": "none",
+    "traitement_contour": "glow edge"
+   },
+   "famille": "dimensionnelle",
+   "lettrage_riche": true,
+   "resolution_native": 689,
+   "style": {
+    "famille": "dimensionnelle",
+    "traitement_lettrage": "extrusion_3d",
+    "matiere": "glossy plastic chrome",
+    "embleme": {
+     "present": false,
+     "type": null
     },
-    {
-      "slug": "c837de5b0bc55867b68557dc928c6c6c",
-      "source": "c837de5b0bc55867b68557dc928c6c6c.webp",
-      "priorite": "reverse",
-      "tags": [
-        "luxe",
-        "cartel",
-        "sombre"
-      ],
-      "energie": 90,
-      "modernite": 95,
-      "couleurs": [
-        "#FBBF24",
-        "#FFFFFF",
-        "#000000"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 3,
-        "glow": 9,
-        "saturation": 7,
-        "sombre_clair": 2,
-        "complexite": 4
-      },
-      "construction": "Dynamic, abstract monogram 'R' split diagonally into two sharp, interlocking segments. The left segment resembles a stylized wing or blade, while the right segment forms the main loop and leg of the 'R'.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "glow edge"
-      }
+    "ambiance": "urban",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "c837de5b0bc55867b68557dc928c6c6c",
+   "source": "c837de5b0bc55867b68557dc928c6c6c.webp",
+   "priorite": "reverse",
+   "tags": [
+    "luxe",
+    "cartel",
+    "sombre"
+   ],
+   "energie": 90,
+   "modernite": 95,
+   "couleurs": [
+    "#FBBF24",
+    "#FFFFFF",
+    "#000000"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 3,
+    "glow": 9,
+    "saturation": 7,
+    "sombre_clair": 2,
+    "complexite": 4
+   },
+   "construction": "Dynamic, abstract monogram 'R' split diagonally into two sharp, interlocking segments. The left segment resembles a stylized wing or blade, while the right segment forms the main loop and leg of the 'R'.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "glow edge"
+   },
+   "famille": "semi_flat_biseau",
+   "lettrage_riche": true,
+   "resolution_native": 1024,
+   "style": {
+    "famille": "semi_flat_biseau",
+    "traitement_lettrage": "aucun",
+    "matiere": "glowing metallic gradient",
+    "embleme": {
+     "present": true,
+     "type": "letter R"
     },
-    {
-      "slug": "cb9c22d7517c0b9f07efa65e410a5831",
-      "source": "cb9c22d7517c0b9f07efa65e410a5831.webp",
-      "priorite": "reverse",
-      "tags": [
-        "chill",
-        "retro",
-        "ete"
-      ],
-      "energie": 70,
-      "modernite": 75,
-      "couleurs": [
-        "#F472B6",
-        "#F59E0B",
-        "#1E1B4B"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 2,
-        "glow": 9,
-        "saturation": 8,
-        "sombre_clair": 3,
-        "complexite": 3
-      },
-      "construction": "Stylized cupcake icon. The base is a trapezoidal cup with vertical ridges, and the top is a thick, swirling mound of frosting topped with a single cherry.",
-      "lettrage": {
-        "type": "none",
-        "integration_embleme": "none",
-        "traitement_contour": "none"
-      }
+    "ambiance": "esport",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "cb9c22d7517c0b9f07efa65e410a5831",
+   "source": "cb9c22d7517c0b9f07efa65e410a5831.webp",
+   "priorite": "reverse",
+   "tags": [
+    "chill",
+    "retro",
+    "ete"
+   ],
+   "energie": 70,
+   "modernite": 75,
+   "couleurs": [
+    "#F472B6",
+    "#F59E0B",
+    "#1E1B4B"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 2,
+    "glow": 9,
+    "saturation": 8,
+    "sombre_clair": 3,
+    "complexite": 3
+   },
+   "construction": "Stylized cupcake icon. The base is a trapezoidal cup with vertical ridges, and the top is a thick, swirling mound of frosting topped with a single cherry.",
+   "lettrage": {
+    "type": "none",
+    "integration_embleme": "none",
+    "traitement_contour": "none"
+   },
+   "famille": "semi_flat_biseau",
+   "lettrage_riche": false,
+   "resolution_native": 400,
+   "style": {
+    "famille": "semi_flat_biseau",
+    "traitement_lettrage": "aucun",
+    "matiere": "glowing neon frosting",
+    "embleme": {
+     "present": true,
+     "type": "cupcake"
     },
-    {
-      "slug": "daycity1",
-      "source": "daycity1.png",
-      "priorite": "reverse",
-      "tags": [
-        "sombre",
-        "urbain",
-        "cartel"
-      ],
-      "energie": 60,
-      "modernite": 80,
-      "couleurs": [
-        "#8A2BE2",
-        "#000000",
-        "#A020F0"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "Sans-serif bold uppercase 'DAYCITY' with a subtle purple gradient fill.",
-      "scores": {
-        "relief_3d": 3,
-        "glow": 5,
-        "saturation": 8,
-        "sombre_clair": 2,
-        "complexite": 4
-      },
-      "construction": "Anatomical heart silhouette centered, dripping at the bottom with 4 distinct liquid drops. A stylized lowercase 'd' lettermark is embedded in the center of the heart. Clean vector lines with subtle inner shadows.",
-      "lettrage": {
-        "type": "custom italic wordmark",
-        "integration_embleme": "above",
-        "traitement_contour": "none"
-      }
+    "ambiance": "festive",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "daycity1",
+   "source": "daycity1.png",
+   "priorite": "reverse",
+   "tags": [
+    "sombre",
+    "urbain",
+    "cartel"
+   ],
+   "energie": 60,
+   "modernite": 80,
+   "couleurs": [
+    "#8A2BE2",
+    "#000000",
+    "#A020F0"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "Sans-serif bold uppercase 'DAYCITY' with a subtle purple gradient fill.",
+   "scores": {
+    "relief_3d": 3,
+    "glow": 5,
+    "saturation": 8,
+    "sombre_clair": 2,
+    "complexite": 4
+   },
+   "construction": "Anatomical heart silhouette centered, dripping at the bottom with 4 distinct liquid drops. A stylized lowercase 'd' lettermark is embedded in the center of the heart. Clean vector lines with subtle inner shadows.",
+   "lettrage": {
+    "type": "custom italic wordmark",
+    "integration_embleme": "above",
+    "traitement_contour": "none"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 670,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "flat_outline",
+    "matiere": "flat purple silhouette",
+    "embleme": {
+     "present": true,
+     "type": "anatomical heart"
     },
-    {
-      "slug": "flashmood-rp2",
-      "source": "flashmood-rp2.png",
-      "priorite": "reverse",
-      "tags": [
-        "ete",
-        "chill",
-        "urbain"
-      ],
-      "energie": 85,
-      "modernite": 75,
-      "couleurs": [
-        "#ADFF2F",
-        "#FFFFFF",
-        "#1A330E"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "Bold, rounded sans-serif uppercase letters 'FLASH' on the top line and 'MOOD' on the bottom line.",
-      "scores": {
-        "relief_3d": 1,
-        "glow": 6,
-        "saturation": 7,
-        "sombre_clair": 5,
-        "complexite": 3
-      },
-      "construction": "Two-line bold sans-serif text 'FLASH MOOD' with a bright yellow-green lightning bolt symbol integrated vertically in the center, replacing the 'A' and 'O' alignment space.",
-      "lettrage": {
-        "type": "sans-serif bold",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "none"
-      }
+    "ambiance": "dark",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "flashmood-rp2",
+   "source": "flashmood-rp2.png",
+   "priorite": "reverse",
+   "tags": [
+    "ete",
+    "chill",
+    "urbain"
+   ],
+   "energie": 85,
+   "modernite": 75,
+   "couleurs": [
+    "#ADFF2F",
+    "#FFFFFF",
+    "#1A330E"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "Bold, rounded sans-serif uppercase letters 'FLASH' on the top line and 'MOOD' on the bottom line.",
+   "scores": {
+    "relief_3d": 1,
+    "glow": 6,
+    "saturation": 7,
+    "sombre_clair": 5,
+    "complexite": 3
+   },
+   "construction": "Two-line bold sans-serif text 'FLASH MOOD' with a bright yellow-green lightning bolt symbol integrated vertically in the center, replacing the 'A' and 'O' alignment space.",
+   "lettrage": {
+    "type": "sans-serif bold",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "none"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 512,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "flat_outline",
+    "matiere": "flat white green",
+    "embleme": {
+     "present": true,
+     "type": "lightning bolt"
     },
-    {
-      "slug": "glade2",
-      "source": "glade2.png",
-      "priorite": "reverse",
-      "tags": [
-        "esport",
-        "luxe",
-        "sombre"
-      ],
-      "energie": 50,
-      "modernite": 90,
-      "couleurs": [
-        "#FFFFFF",
-        "#8A2BE2",
-        "#120F17"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 2,
-        "glow": 1,
-        "saturation": 5,
-        "sombre_clair": 1,
-        "complexite": 2
-      },
-      "construction": "Geometric monogram combining the letters 'C' and 'J'. The 'C' is a thick, white, angular outer frame, while the 'J' is a solid purple block nested inside the lower right corner.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "none"
-      }
+    "ambiance": "tropical",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "glade2",
+   "source": "glade2.png",
+   "priorite": "reverse",
+   "tags": [
+    "esport",
+    "luxe",
+    "sombre"
+   ],
+   "energie": 50,
+   "modernite": 90,
+   "couleurs": [
+    "#FFFFFF",
+    "#8A2BE2",
+    "#120F17"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 2,
+    "glow": 1,
+    "saturation": 5,
+    "sombre_clair": 1,
+    "complexite": 2
+   },
+   "construction": "Geometric monogram combining the letters 'C' and 'J'. The 'C' is a thick, white, angular outer frame, while the 'J' is a solid purple block nested inside the lower right corner.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "none"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 96,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "aucun",
+    "matiere": "flat white purple",
+    "embleme": {
+     "present": true,
+     "type": "abstract shape"
     },
-    {
-      "slug": "group-1",
-      "source": "Group_1.png",
-      "priorite": "reverse",
-      "tags": [
-        "ete",
-        "chill",
-        "luxe"
-      ],
-      "energie": 75,
-      "modernite": 85,
-      "couleurs": [
-        "#1a0b2e",
-        "#ff5e97",
-        "#a04ef6"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 8,
-        "glow": 7,
-        "saturation": 8,
-        "sombre_clair": 3,
-        "complexite": 5
-      },
-      "construction": "A stylized letter 'L' fused with a palm tree. The trunk forms the vertical stem of the 'L', while the palm fronds fan out at the top. Sharp, angular cuts define the fronds and the base of the letter.",
-      "lettrage": {
-        "type": "custom italic wordmark",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "none"
-      }
+    "ambiance": "esport",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "group-1",
+   "source": "Group_1.png",
+   "priorite": "reverse",
+   "tags": [
+    "ete",
+    "chill",
+    "luxe"
+   ],
+   "energie": 75,
+   "modernite": 85,
+   "couleurs": [
+    "#1a0b2e",
+    "#ff5e97",
+    "#a04ef6"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 8,
+    "glow": 7,
+    "saturation": 8,
+    "sombre_clair": 3,
+    "complexite": 5
+   },
+   "construction": "A stylized letter 'L' fused with a palm tree. The trunk forms the vertical stem of the 'L', while the palm fronds fan out at the top. Sharp, angular cuts define the fronds and the base of the letter.",
+   "lettrage": {
+    "type": "custom italic wordmark",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "none"
+   },
+   "famille": "semi_flat_biseau",
+   "lettrage_riche": true,
+   "resolution_native": 689,
+   "style": {
+    "famille": "semi_flat_biseau",
+    "traitement_lettrage": "aucun",
+    "matiere": "glossy metallic gradient",
+    "embleme": {
+     "present": true,
+     "type": "palm tree"
     },
-    {
-      "slug": "group-1a",
-      "source": "Group_1a.png",
-      "priorite": "reverse",
-      "tags": [
-        "ete",
-        "urbain",
-        "luxe"
-      ],
-      "energie": 90,
-      "modernite": 90,
-      "couleurs": [
-        "#00e65a",
-        "#004d1a",
-        "#87ceeb"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 9,
-        "glow": 5,
-        "saturation": 9,
-        "sombre_clair": 8,
-        "complexite": 6
-      },
-      "construction": "A sharp, angular lightning bolt with a 3D extruded depth. The bolt is tilted slightly to the right, featuring clean geometric facets and water droplets on its surface.",
-      "lettrage": {
-        "type": "none",
-        "integration_embleme": "none",
-        "traitement_contour": "none"
-      }
+    "ambiance": "tropical",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "group-1a",
+   "source": "Group_1a.png",
+   "priorite": "reverse",
+   "tags": [
+    "ete",
+    "urbain",
+    "luxe"
+   ],
+   "energie": 90,
+   "modernite": 90,
+   "couleurs": [
+    "#00e65a",
+    "#004d1a",
+    "#87ceeb"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 9,
+    "glow": 5,
+    "saturation": 9,
+    "sombre_clair": 8,
+    "complexite": 6
+   },
+   "construction": "A sharp, angular lightning bolt with a 3D extruded depth. The bolt is tilted slightly to the right, featuring clean geometric facets and water droplets on its surface.",
+   "lettrage": {
+    "type": "none",
+    "integration_embleme": "none",
+    "traitement_contour": "none"
+   },
+   "famille": "dimensionnelle",
+   "lettrage_riche": false,
+   "resolution_native": 689,
+   "style": {
+    "famille": "dimensionnelle",
+    "traitement_lettrage": "aucun",
+    "matiere": "glossy green metal",
+    "embleme": {
+     "present": true,
+     "type": "lightning bolt"
     },
-    {
-      "slug": "gside1",
-      "source": "gside1.png",
-      "priorite": "reverse",
-      "tags": [
-        "neutre",
-        "esport"
-      ],
-      "energie": 50,
-      "modernite": 75,
-      "couleurs": [
-        "#0f52ba",
-        "#ffffff",
-        "#0f52ba"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 0,
-        "glow": 0,
-        "saturation": 7,
-        "sombre_clair": 5,
-        "complexite": 2
-      },
-      "construction": "A minimalist, circular emblem composed of two interlocking, curved crescent shapes that form a dynamic, swirling loop with a central negative space.",
-      "lettrage": {
-        "type": "none",
-        "integration_embleme": "none",
-        "traitement_contour": "none"
-      }
+    "ambiance": "summer",
+    "fond_sombre": false
+   }
+  },
+  {
+   "slug": "gside1",
+   "source": "gside1.png",
+   "priorite": "reverse",
+   "tags": [
+    "neutre",
+    "esport"
+   ],
+   "energie": 50,
+   "modernite": 75,
+   "couleurs": [
+    "#0f52ba",
+    "#ffffff",
+    "#0f52ba"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 0,
+    "glow": 0,
+    "saturation": 7,
+    "sombre_clair": 5,
+    "complexite": 2
+   },
+   "construction": "A minimalist, circular emblem composed of two interlocking, curved crescent shapes that form a dynamic, swirling loop with a central negative space.",
+   "lettrage": {
+    "type": "none",
+    "integration_embleme": "none",
+    "traitement_contour": "none"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": false,
+   "resolution_native": 256,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "aucun",
+    "matiere": "flat white",
+    "embleme": {
+     "present": true,
+     "type": "abstract swirl"
     },
-    {
-      "slug": "hublife-rp",
-      "source": "HubLife-rp.png",
-      "priorite": "reverse",
-      "tags": [
-        "retro",
-        "chill",
-        "ete"
-      ],
-      "energie": 65,
-      "modernite": 75,
-      "couleurs": [
-        "#E02494",
-        "#00E5FF",
-        "#1A1C23"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "Custom geometric 'HL' monogram with sharp chamfered terminals.",
-      "scores": {
-        "relief_3d": 2,
-        "glow": 6,
-        "saturation": 8,
-        "sombre_clair": 2,
-        "complexite": 3
-      },
-      "construction": "Monogram 'HL' with sharp, angular, geometric cuts. A single stylized cyan palm tree is nested in the negative space on the right side.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "inside a letter",
-        "traitement_contour": "none"
-      }
+    "ambiance": "other",
+    "fond_sombre": false
+   }
+  },
+  {
+   "slug": "hublife-rp",
+   "source": "HubLife-rp.png",
+   "priorite": "reverse",
+   "tags": [
+    "retro",
+    "chill",
+    "ete"
+   ],
+   "energie": 65,
+   "modernite": 75,
+   "couleurs": [
+    "#E02494",
+    "#00E5FF",
+    "#1A1C23"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "Custom geometric 'HL' monogram with sharp chamfered terminals.",
+   "scores": {
+    "relief_3d": 2,
+    "glow": 6,
+    "saturation": 8,
+    "sombre_clair": 2,
+    "complexite": 3
+   },
+   "construction": "Monogram 'HL' with sharp, angular, geometric cuts. A single stylized cyan palm tree is nested in the negative space on the right side.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "inside a letter",
+    "traitement_contour": "none"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 96,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "flat_outline",
+    "matiere": "flat gradient",
+    "embleme": {
+     "present": true,
+     "type": "palm tree"
     },
-    {
-      "slug": "lakhpar",
-      "source": "lAKHpAr.png",
-      "priorite": "reverse",
-      "tags": [
-        "urbain",
-        "cartel",
-        "luxe"
-      ],
-      "energie": 90,
-      "modernite": 85,
-      "couleurs": [
-        "#FF0000",
-        "#FFFFFF",
-        "#0D0D0D"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "Bold, heavy sans-serif uppercase letters with 'LAND' nested smaller on the bottom right.",
-      "scores": {
-        "relief_3d": 4,
-        "glow": 8,
-        "saturation": 9,
-        "sombre_clair": 3,
-        "complexite": 5
-      },
-      "construction": "Two overlapping, rotated triangles forming a dynamic arrow shape, filled with a street map texture. Bold sans-serif text layered over the center.",
-      "lettrage": {
-        "type": "custom italic wordmark",
-        "integration_embleme": "above",
-        "traitement_contour": "none"
-      }
+    "ambiance": "tropical",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "lakhpar",
+   "source": "lAKHpAr.png",
+   "priorite": "reverse",
+   "tags": [
+    "urbain",
+    "cartel",
+    "luxe"
+   ],
+   "energie": 90,
+   "modernite": 85,
+   "couleurs": [
+    "#FF0000",
+    "#FFFFFF",
+    "#0D0D0D"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "Bold, heavy sans-serif uppercase letters with 'LAND' nested smaller on the bottom right.",
+   "scores": {
+    "relief_3d": 4,
+    "glow": 8,
+    "saturation": 9,
+    "sombre_clair": 3,
+    "complexite": 5
+   },
+   "construction": "Two overlapping, rotated triangles forming a dynamic arrow shape, filled with a street map texture. Bold sans-serif text layered over the center.",
+   "lettrage": {
+    "type": "custom italic wordmark",
+    "integration_embleme": "above",
+    "traitement_contour": "none"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 800,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "flat_outline",
+    "matiere": "flat white",
+    "embleme": {
+     "present": true,
+     "type": "map triangle"
     },
-    {
-      "slug": "logo-noel",
-      "source": "logo noel.png",
-      "priorite": "reverse",
-      "tags": [
-        "noel",
-        "chill",
-        "esport"
-      ],
-      "energie": 70,
-      "modernite": 70,
-      "couleurs": [
-        "#E60000",
-        "#FFFFFF",
-        "#D1D5DB"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "Custom stylized 'D' with sharp crescent inner cuts and a silver-to-white gradient face.",
-      "scores": {
-        "relief_3d": 3,
-        "glow": 2,
-        "saturation": 9,
-        "sombre_clair": 5,
-        "complexite": 4
-      },
-      "construction": "Stylized letter 'D' with sharp, crescent-like curves. A red Santa hat is draped over the top-right corner of the letter.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "thick white outline"
-      }
+    "ambiance": "urban",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "logo-noel",
+   "source": "logo noel.png",
+   "priorite": "reverse",
+   "tags": [
+    "noel",
+    "chill",
+    "esport"
+   ],
+   "energie": 70,
+   "modernite": 70,
+   "couleurs": [
+    "#E60000",
+    "#FFFFFF",
+    "#D1D5DB"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "Custom stylized 'D' with sharp crescent inner cuts and a silver-to-white gradient face.",
+   "scores": {
+    "relief_3d": 3,
+    "glow": 2,
+    "saturation": 9,
+    "sombre_clair": 5,
+    "complexite": 4
+   },
+   "construction": "Stylized letter 'D' with sharp, crescent-like curves. A red Santa hat is draped over the top-right corner of the letter.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "thick white outline"
+   },
+   "famille": "semi_flat_biseau",
+   "lettrage_riche": true,
+   "resolution_native": 800,
+   "style": {
+    "famille": "semi_flat_biseau",
+    "traitement_lettrage": "flat_outline",
+    "matiere": "matte flat",
+    "embleme": {
+     "present": true,
+     "type": "santa hat"
     },
-    {
-      "slug": "logo",
-      "source": "Logo.png",
-      "priorite": "reverse",
-      "tags": [
-        "ete",
-        "chill",
-        "neutre"
-      ],
-      "energie": 65,
-      "modernite": 80,
-      "couleurs": [
-        "#E34A6F",
-        "#F7B267",
-        "#FFFFFF"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "Custom bubbly, interlocking sans-serif letters forming the word 'Fruitz' inside a crescent shape.",
-      "scores": {
-        "relief_3d": 2,
-        "glow": 1,
-        "saturation": 8,
-        "sombre_clair": 7,
-        "complexite": 4
-      },
-      "construction": "A stylized, curved watermelon slice shape containing custom integrated lettering. The outer rind forms a smooth crescent base, while the inner flesh is replaced by the word 'Fruitz' in a bubbly, interlocking layout.",
-      "lettrage": {
-        "type": "custom italic wordmark",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "none"
-      }
+    "ambiance": "festive",
+    "fond_sombre": false
+   }
+  },
+  {
+   "slug": "logo",
+   "source": "Logo.png",
+   "priorite": "reverse",
+   "tags": [
+    "ete",
+    "chill",
+    "neutre"
+   ],
+   "energie": 65,
+   "modernite": 80,
+   "couleurs": [
+    "#E34A6F",
+    "#F7B267",
+    "#FFFFFF"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "Custom bubbly, interlocking sans-serif letters forming the word 'Fruitz' inside a crescent shape.",
+   "scores": {
+    "relief_3d": 2,
+    "glow": 1,
+    "saturation": 8,
+    "sombre_clair": 7,
+    "complexite": 4
+   },
+   "construction": "A stylized, curved watermelon slice shape containing custom integrated lettering. The outer rind forms a smooth crescent base, while the inner flesh is replaced by the word 'Fruitz' in a bubbly, interlocking layout.",
+   "lettrage": {
+    "type": "custom italic wordmark",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "none"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 1219,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "autre",
+    "matiere": "matte flat",
+    "embleme": {
+     "present": true,
+     "type": "citrus slice"
     },
-    {
-      "slug": "logo2",
-      "source": "logo2.png",
-      "priorite": "reverse",
-      "tags": [
-        "urbain",
-        "luxe",
-        "sombre"
-      ],
-      "energie": 85,
-      "modernite": 90,
-      "couleurs": [
-        "#0B2B35",
-        "#00D2FF",
-        "#D2DCE5"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "A heavy, bold, sans-serif monogram 'S' with rounded corners and a metallic bevel.",
-      "scores": {
-        "relief_3d": 7,
-        "glow": 8,
-        "saturation": 7,
-        "sombre_clair": 3,
-        "complexite": 6
-      },
-      "construction": "A bold, thick, rounded letter 'S' overlapping with a sharp, 5-pointed star on its right side. The letter has a heavy, metallic bevel.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "glow edge"
-      }
+    "ambiance": "tropical",
+    "fond_sombre": false
+   }
+  },
+  {
+   "slug": "logo2",
+   "source": "logo2.png",
+   "priorite": "reverse",
+   "tags": [
+    "urbain",
+    "luxe",
+    "sombre"
+   ],
+   "energie": 85,
+   "modernite": 90,
+   "couleurs": [
+    "#0B2B35",
+    "#00D2FF",
+    "#D2DCE5"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "A heavy, bold, sans-serif monogram 'S' with rounded corners and a metallic bevel.",
+   "scores": {
+    "relief_3d": 7,
+    "glow": 8,
+    "saturation": 7,
+    "sombre_clair": 3,
+    "complexite": 6
+   },
+   "construction": "A bold, thick, rounded letter 'S' overlapping with a sharp, 5-pointed star on its right side. The letter has a heavy, metallic bevel.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "glow edge"
+   },
+   "famille": "semi_flat_biseau",
+   "lettrage_riche": true,
+   "resolution_native": 1500,
+   "style": {
+    "famille": "semi_flat_biseau",
+    "traitement_lettrage": "autre",
+    "matiere": "brushed chrome",
+    "embleme": {
+     "present": true,
+     "type": "star"
     },
-    {
-      "slug": "logo-sweetylife",
-      "source": "Logo_SweetyLife.png",
-      "priorite": "reverse",
-      "tags": [
-        "chill",
-        "luxe",
-        "sombre"
-      ],
-      "energie": 70,
-      "modernite": 85,
-      "couleurs": [
-        "#05182E",
-        "#0099FF",
-        "#FFFFFF"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "Fluid, hand-written script with a thick, tubular 3D extrusion.",
-      "scores": {
-        "relief_3d": 6,
-        "glow": 7,
-        "saturation": 6,
-        "sombre_clair": 2,
-        "complexite": 5
-      },
-      "construction": "Two-tier script lettering. The top word 'Sweety' is larger, in a thick, 3D-piped white script. The bottom word 'Life' is smaller, in a matching blue neon script.",
-      "lettrage": {
-        "type": "script",
-        "integration_embleme": "none",
-        "traitement_contour": "none"
-      }
+    "ambiance": "urban",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "logo-sweetylife",
+   "source": "Logo_SweetyLife.png",
+   "priorite": "reverse",
+   "tags": [
+    "chill",
+    "luxe",
+    "sombre"
+   ],
+   "energie": 70,
+   "modernite": 85,
+   "couleurs": [
+    "#05182E",
+    "#0099FF",
+    "#FFFFFF"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "Fluid, hand-written script with a thick, tubular 3D extrusion.",
+   "scores": {
+    "relief_3d": 6,
+    "glow": 7,
+    "saturation": 6,
+    "sombre_clair": 2,
+    "complexite": 5
+   },
+   "construction": "Two-tier script lettering. The top word 'Sweety' is larger, in a thick, 3D-piped white script. The bottom word 'Life' is smaller, in a matching blue neon script.",
+   "lettrage": {
+    "type": "script",
+    "integration_embleme": "none",
+    "traitement_contour": "none"
+   },
+   "famille": "semi_flat_biseau",
+   "lettrage_riche": true,
+   "resolution_native": 2000,
+   "style": {
+    "famille": "semi_flat_biseau",
+    "traitement_lettrage": "script",
+    "matiere": "glossy plastic",
+    "embleme": {
+     "present": false,
+     "type": null
     },
-    {
-      "slug": "lystylife-logo1",
-      "source": "lystylife-logo1.png",
-      "priorite": "reverse",
-      "tags": [
-        "urbain",
-        "chill",
-        "retro"
-      ],
-      "energie": 45,
-      "modernite": 85,
-      "couleurs": [
-        "#1a1a1a",
-        "#ff4d4d",
-        "#ffffff"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 1,
-        "glow": 7,
-        "saturation": 6,
-        "sombre_clair": 2,
-        "complexite": 3
-      },
-      "construction": "Symmetrical geometric monogram composed of two mirrored 'L' shapes. Each side features three nested, parallel angular lines forming a sharp, stylized wing or crown structure with 90-degree bends.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "glow edge"
-      }
+    "ambiance": "festive",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "lystylife-logo1",
+   "source": "lystylife-logo1.png",
+   "priorite": "reverse",
+   "tags": [
+    "urbain",
+    "chill",
+    "retro"
+   ],
+   "energie": 45,
+   "modernite": 85,
+   "couleurs": [
+    "#1a1a1a",
+    "#ff4d4d",
+    "#ffffff"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 1,
+    "glow": 7,
+    "saturation": 6,
+    "sombre_clair": 2,
+    "complexite": 3
+   },
+   "construction": "Symmetrical geometric monogram composed of two mirrored 'L' shapes. Each side features three nested, parallel angular lines forming a sharp, stylized wing or crown structure with 90-degree bends.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "glow edge"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 500,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "flat_outline",
+    "matiere": "matte flat",
+    "embleme": {
+     "present": false,
+     "type": null
     },
-    {
-      "slug": "mylight1",
-      "source": "mylight1.png",
-      "priorite": "reverse",
-      "tags": [
-        "cartel",
-        "luxe",
-        "sombre"
-      ],
-      "energie": 60,
-      "modernite": 75,
-      "couleurs": [
-        "#110d0d",
-        "#e60000",
-        "#800000"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 2,
-        "glow": 5,
-        "saturation": 8,
-        "sombre_clair": 2,
-        "complexite": 2
-      },
-      "construction": "Interlocking monogram of letters 'M' and 'L'. The 'M' is stylized with sharp, angular cuts, and its right leg extends directly into the horizontal base of the 'L'.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "none"
-      }
+    "ambiance": "urban",
+    "fond_sombre": false
+   }
+  },
+  {
+   "slug": "mylight1",
+   "source": "mylight1.png",
+   "priorite": "reverse",
+   "tags": [
+    "cartel",
+    "luxe",
+    "sombre"
+   ],
+   "energie": 60,
+   "modernite": 75,
+   "couleurs": [
+    "#110d0d",
+    "#e60000",
+    "#800000"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 2,
+    "glow": 5,
+    "saturation": 8,
+    "sombre_clair": 2,
+    "complexite": 2
+   },
+   "construction": "Interlocking monogram of letters 'M' and 'L'. The 'M' is stylized with sharp, angular cuts, and its right leg extends directly into the horizontal base of the 'L'.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "none"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 768,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "autre",
+    "matiere": "matte flat",
+    "embleme": {
+     "present": false,
+     "type": null
     },
-    {
-      "slug": "nevada-fa2",
-      "source": "nevada-fa2.png",
-      "priorite": "reverse",
-      "tags": [
-        "ete",
-        "retro",
-        "urbain"
-      ],
-      "energie": 80,
-      "modernite": 70,
-      "couleurs": [
-        "#1a000d",
-        "#ffffff",
-        "#ff0055"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "Bold, ultra-condensed sans-serif with rounded outer corners and sharp inner cuts. Subtitle 'FREE ACCESS' in small, spaced-out sans-serif below.",
-      "scores": {
-        "relief_3d": 4,
-        "glow": 6,
-        "saturation": 7,
-        "sombre_clair": 3,
-        "complexite": 5
-      },
-      "construction": "Bold, condensed sans-serif wordmark reading 'NEVADA'. A small hand icon showing a peace/victory sign is placed in the center, overlapping the letter 'V'. The entire text is framed by a thin, stylized border.",
-      "lettrage": {
-        "type": "custom italic wordmark",
-        "integration_embleme": "above",
-        "traitement_contour": "thick white outline"
-      }
+    "ambiance": "urban",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "nevada-fa2",
+   "source": "nevada-fa2.png",
+   "priorite": "reverse",
+   "tags": [
+    "ete",
+    "retro",
+    "urbain"
+   ],
+   "energie": 80,
+   "modernite": 70,
+   "couleurs": [
+    "#1a000d",
+    "#ffffff",
+    "#ff0055"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "Bold, ultra-condensed sans-serif with rounded outer corners and sharp inner cuts. Subtitle 'FREE ACCESS' in small, spaced-out sans-serif below.",
+   "scores": {
+    "relief_3d": 4,
+    "glow": 6,
+    "saturation": 7,
+    "sombre_clair": 3,
+    "complexite": 5
+   },
+   "construction": "Bold, condensed sans-serif wordmark reading 'NEVADA'. A small hand icon showing a peace/victory sign is placed in the center, overlapping the letter 'V'. The entire text is framed by a thin, stylized border.",
+   "lettrage": {
+    "type": "custom italic wordmark",
+    "integration_embleme": "above",
+    "traitement_contour": "thick white outline"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 300,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "chrome",
+    "matiere": "brushed chrome",
+    "embleme": {
+     "present": true,
+     "type": "peace sign"
     },
-    {
-      "slug": "nin3plaz-1460350845051863082",
-      "source": "NIN3PLAZ.1460350845051863082.png",
-      "priorite": "reverse",
-      "tags": [
-        "chill",
-        "luxe",
-        "neutre"
-      ],
-      "energie": 60,
-      "modernite": 85,
-      "couleurs": [
-        "#000000",
-        "#FFFFFF",
-        "#00A8B5"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "A single stylized capital letter 'A' with a clean, geometric sans-serif structure.",
-      "scores": {
-        "relief_3d": 6,
-        "glow": 7,
-        "saturation": 8,
-        "sombre_clair": 2,
-        "complexite": 3
-      },
-      "construction": "A large, bold, sans-serif letter 'A' centered, overlaid with a stylized, leaping dolphin silhouette curved across the horizontal bar of the letter.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "above",
-        "traitement_contour": "glow edge"
-      }
+    "ambiance": "urban",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "nin3plaz-1460350845051863082",
+   "source": "NIN3PLAZ.1460350845051863082.png",
+   "priorite": "reverse",
+   "tags": [
+    "chill",
+    "luxe",
+    "neutre"
+   ],
+   "energie": 60,
+   "modernite": 85,
+   "couleurs": [
+    "#000000",
+    "#FFFFFF",
+    "#00A8B5"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "A single stylized capital letter 'A' with a clean, geometric sans-serif structure.",
+   "scores": {
+    "relief_3d": 6,
+    "glow": 7,
+    "saturation": 8,
+    "sombre_clair": 2,
+    "complexite": 3
+   },
+   "construction": "A large, bold, sans-serif letter 'A' centered, overlaid with a stylized, leaping dolphin silhouette curved across the horizontal bar of the letter.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "above",
+    "traitement_contour": "glow edge"
+   },
+   "famille": "semi_flat_biseau",
+   "lettrage_riche": true,
+   "resolution_native": 2048,
+   "style": {
+    "famille": "semi_flat_biseau",
+    "traitement_lettrage": "autre",
+    "matiere": "matte flat glow",
+    "embleme": {
+     "present": true,
+     "type": "dolphin"
     },
-    {
-      "slug": "pnl-rp-v2-4",
-      "source": "PNL-RP-V2-4.png",
-      "priorite": "reverse",
-      "tags": [
-        "urbain",
-        "retro",
-        "chill"
-      ],
-      "energie": 70,
-      "modernite": 75,
-      "couleurs": [
-        "#E91E63",
-        "#FFEB3B",
-        "#1A1A1A"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 1,
-        "glow": 2,
-        "saturation": 9,
-        "sombre_clair": 3,
-        "complexite": 6
-      },
-      "construction": "A split-face portrait divided vertically: the left side shows a stylized man with glasses and a beard, the right side shows an anatomical heart shape mimicking the head's contour.",
-      "lettrage": {
-        "type": "none",
-        "integration_embleme": "none",
-        "traitement_contour": "none"
-      }
+    "ambiance": "dark",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "pnl-rp-v2-4",
+   "source": "PNL-RP-V2-4.png",
+   "priorite": "reverse",
+   "tags": [
+    "urbain",
+    "retro",
+    "chill"
+   ],
+   "energie": 70,
+   "modernite": 75,
+   "couleurs": [
+    "#E91E63",
+    "#FFEB3B",
+    "#1A1A1A"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 1,
+    "glow": 2,
+    "saturation": 9,
+    "sombre_clair": 3,
+    "complexite": 6
+   },
+   "construction": "A split-face portrait divided vertically: the left side shows a stylized man with glasses and a beard, the right side shows an anatomical heart shape mimicking the head's contour.",
+   "lettrage": {
+    "type": "none",
+    "integration_embleme": "none",
+    "traitement_contour": "none"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": false,
+   "resolution_native": 1000,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "aucun",
+    "matiere": "flat vector illustration",
+    "embleme": {
+     "present": true,
+     "type": "face/heart"
     },
-    {
-      "slug": "sdfsdsdfs",
-      "source": "sdfsdsdfs.png",
-      "priorite": "reverse",
-      "tags": [
-        "esport",
-        "sombre",
-        "urbain"
-      ],
-      "energie": 80,
-      "modernite": 80,
-      "couleurs": [
-        "#000000",
-        "#0066FF",
-        "#FFFFFF"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "The word 'NEVERLIFE' in a tall, condensed, bold sans-serif font, slightly arched upward.",
-      "scores": {
-        "relief_3d": 5,
-        "glow": 6,
-        "saturation": 8,
-        "sombre_clair": 2,
-        "complexite": 4
-      },
-      "construction": "An anatomical heart icon centered, overlaid with a bold, arched sans-serif wordmark reading 'NEVERLIFE' across the middle.",
-      "lettrage": {
-        "type": "custom italic wordmark",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "glow edge"
-      }
+    "ambiance": "urban",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "sdfsdsdfs",
+   "source": "sdfsdsdfs.png",
+   "priorite": "reverse",
+   "tags": [
+    "esport",
+    "sombre",
+    "urbain"
+   ],
+   "energie": 80,
+   "modernite": 80,
+   "couleurs": [
+    "#000000",
+    "#0066FF",
+    "#FFFFFF"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "The word 'NEVERLIFE' in a tall, condensed, bold sans-serif font, slightly arched upward.",
+   "scores": {
+    "relief_3d": 5,
+    "glow": 6,
+    "saturation": 8,
+    "sombre_clair": 2,
+    "complexite": 4
+   },
+   "construction": "An anatomical heart icon centered, overlaid with a bold, arched sans-serif wordmark reading 'NEVERLIFE' across the middle.",
+   "lettrage": {
+    "type": "custom italic wordmark",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "glow edge"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 467,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "flat_outline",
+    "matiere": "flat matte vector",
+    "embleme": {
+     "present": true,
+     "type": "heart"
     },
-    {
-      "slug": "v-life-rp",
-      "source": "v-life-rp.png",
-      "priorite": "reverse",
-      "tags": [
-        "urbain",
-        "ete",
-        "chill"
-      ],
-      "energie": 60,
-      "modernite": 85,
-      "couleurs": [
-        "#5cbbf2",
-        "#99f3ff",
-        "#0a1c28"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 1,
-        "glow": 2,
-        "saturation": 6,
-        "sombre_clair": 3,
-        "complexite": 3
-      },
-      "construction": "A bold, stylized letter 'V' with a diagonal slice cutting through the left stem. A minimalist palm tree silhouette with 4 distinct fronds is integrated into the right stem.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "none"
-      }
+    "ambiance": "other",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "v-life-rp",
+   "source": "v-life-rp.png",
+   "priorite": "reverse",
+   "tags": [
+    "urbain",
+    "ete",
+    "chill"
+   ],
+   "energie": 60,
+   "modernite": 85,
+   "couleurs": [
+    "#5cbbf2",
+    "#99f3ff",
+    "#0a1c28"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 1,
+    "glow": 2,
+    "saturation": 6,
+    "sombre_clair": 3,
+    "complexite": 3
+   },
+   "construction": "A bold, stylized letter 'V' with a diagonal slice cutting through the left stem. A minimalist palm tree silhouette with 4 distinct fronds is integrated into the right stem.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "none"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 512,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "autre",
+    "matiere": "flat matte vector",
+    "embleme": {
+     "present": true,
+     "type": "palm tree"
     },
-    {
-      "slug": "valesia-rp1",
-      "source": "valesia-rp1.png",
-      "priorite": "reverse",
-      "tags": [
-        "luxe",
-        "sombre",
-        "retro"
-      ],
-      "energie": 65,
-      "modernite": 90,
-      "couleurs": [
-        "#ffffff",
-        "#39ff39",
-        "#081008"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 1,
-        "glow": 4,
-        "saturation": 7,
-        "sombre_clair": 2,
-        "complexite": 3
-      },
-      "construction": "Abstract fluid monogram forming a stylized 'S' or wave shape, composed of two interlocking organic strokes with rounded terminals.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "none"
-      }
+    "ambiance": "urban",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "valesia-rp1",
+   "source": "valesia-rp1.png",
+   "priorite": "reverse",
+   "tags": [
+    "luxe",
+    "sombre",
+    "retro"
+   ],
+   "energie": 65,
+   "modernite": 90,
+   "couleurs": [
+    "#ffffff",
+    "#39ff39",
+    "#081008"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 1,
+    "glow": 4,
+    "saturation": 7,
+    "sombre_clair": 2,
+    "complexite": 3
+   },
+   "construction": "Abstract fluid monogram forming a stylized 'S' or wave shape, composed of two interlocking organic strokes with rounded terminals.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "none"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 512,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "aucun",
+    "matiere": "flat matte vector",
+    "embleme": {
+     "present": true,
+     "type": "abstract shape"
     },
-    {
-      "slug": "valesiarp1",
-      "source": "valesiarp1.png",
-      "priorite": "reverse",
-      "tags": [
-        "chill",
-        "neutre"
-      ],
-      "energie": 50,
-      "modernite": 75,
-      "couleurs": [
-        "#ffffff",
-        "#ff4a6b",
-        "#9e314b"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 0,
-        "glow": 0,
-        "saturation": 8,
-        "sombre_clair": 6,
-        "complexite": 2
-      },
-      "construction": "A bold, chunky sans-serif letter 'V' with rounded corners, centered on a patterned background.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "none",
-        "traitement_contour": "none"
-      }
+    "ambiance": "urban",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "valesiarp1",
+   "source": "valesiarp1.png",
+   "priorite": "reverse",
+   "tags": [
+    "chill",
+    "neutre"
+   ],
+   "energie": 50,
+   "modernite": 75,
+   "couleurs": [
+    "#ffffff",
+    "#ff4a6b",
+    "#9e314b"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 0,
+    "glow": 0,
+    "saturation": 8,
+    "sombre_clair": 6,
+    "complexite": 2
+   },
+   "construction": "A bold, chunky sans-serif letter 'V' with rounded corners, centered on a patterned background.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "none",
+    "traitement_contour": "none"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 96,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "autre",
+    "matiere": "flat matte vector",
+    "embleme": {
+     "present": false,
+     "type": null
     },
-    {
-      "slug": "velocity-rouge2",
-      "source": "velocity-rouge2.jpg",
-      "priorite": "reverse",
-      "tags": [
-        "luxe",
-        "sombre",
-        "retro"
-      ],
-      "energie": 40,
-      "modernite": 90,
-      "couleurs": [
-        "#000000",
-        "#E30B5C",
-        "#4A0E17"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 2,
-        "glow": 4,
-        "saturation": 8,
-        "sombre_clair": 1,
-        "complexite": 2
-      },
-      "construction": "A stylized letter 'V' split into segments. The left diagonal stem is divided horizontally into three distinct blocks with thin negative space gaps. The right diagonal stem is a single solid block overlapping the left stem at the base.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "none"
-      }
+    "ambiance": "other",
+    "fond_sombre": false
+   }
+  },
+  {
+   "slug": "velocity-rouge2",
+   "source": "velocity-rouge2.jpg",
+   "priorite": "reverse",
+   "tags": [
+    "luxe",
+    "sombre",
+    "retro"
+   ],
+   "energie": 40,
+   "modernite": 90,
+   "couleurs": [
+    "#000000",
+    "#E30B5C",
+    "#4A0E17"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 2,
+    "glow": 4,
+    "saturation": 8,
+    "sombre_clair": 1,
+    "complexite": 2
+   },
+   "construction": "A stylized letter 'V' split into segments. The left diagonal stem is divided horizontally into three distinct blocks with thin negative space gaps. The right diagonal stem is a single solid block overlapping the left stem at the base.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "none"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 512,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "autre",
+    "matiere": "matte flat gradient",
+    "embleme": {
+     "present": false,
+     "type": null
     },
-    {
-      "slug": "venezia7",
-      "source": "venezia7.png",
-      "priorite": "reverse",
-      "tags": [
-        "urbain",
-        "sombre",
-        "chill"
-      ],
-      "energie": 80,
-      "modernite": 85,
-      "couleurs": [
-        "#0D0500",
-        "#FF7F00",
-        "#FFB366"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 4,
-        "glow": 7,
-        "saturation": 9,
-        "sombre_clair": 2,
-        "complexite": 4
-      },
-      "construction": "A stylized letter 'V' where the left stem is a clean, sharp geometric slab, and the right stem is an organic, fluid, liquid-like splash shape.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "glow edge"
-      }
+    "ambiance": "dark",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "venezia7",
+   "source": "venezia7.png",
+   "priorite": "reverse",
+   "tags": [
+    "urbain",
+    "sombre",
+    "chill"
+   ],
+   "energie": 80,
+   "modernite": 85,
+   "couleurs": [
+    "#0D0500",
+    "#FF7F00",
+    "#FFB366"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 4,
+    "glow": 7,
+    "saturation": 9,
+    "sombre_clair": 2,
+    "complexite": 4
+   },
+   "construction": "A stylized letter 'V' where the left stem is a clean, sharp geometric slab, and the right stem is an organic, fluid, liquid-like splash shape.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "glow edge"
+   },
+   "famille": "semi_flat_biseau",
+   "lettrage_riche": true,
+   "resolution_native": 513,
+   "style": {
+    "famille": "semi_flat_biseau",
+    "traitement_lettrage": "autre",
+    "matiere": "matte orange glow",
+    "embleme": {
+     "present": false,
+     "type": null
     },
-    {
-      "slug": "wavy-city-rp",
-      "source": "wavy-city-rp.png",
-      "priorite": "reverse",
-      "tags": [
-        "esport",
-        "retro",
-        "chill"
-      ],
-      "energie": 65,
-      "modernite": 90,
-      "couleurs": [
-        "#001A33",
-        "#0080FF",
-        "#00FFFF"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "none",
-      "scores": {
-        "relief_3d": 1,
-        "glow": 8,
-        "saturation": 8,
-        "sombre_clair": 3,
-        "complexite": 3
-      },
-      "construction": "A stylized letter 'W' formed by four organic, leaf-like or flame-like curved shapes pointing upwards, arranged in two symmetrical pairs.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "glow edge"
-      }
+    "ambiance": "dark",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "wavy-city-rp",
+   "source": "wavy-city-rp.png",
+   "priorite": "reverse",
+   "tags": [
+    "esport",
+    "retro",
+    "chill"
+   ],
+   "energie": 65,
+   "modernite": 90,
+   "couleurs": [
+    "#001A33",
+    "#0080FF",
+    "#00FFFF"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 1,
+    "glow": 8,
+    "saturation": 8,
+    "sombre_clair": 3,
+    "complexite": 3
+   },
+   "construction": "A stylized letter 'W' formed by four organic, leaf-like or flame-like curved shapes pointing upwards, arranged in two symmetrical pairs.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "glow edge"
+   },
+   "famille": "semi_flat_biseau",
+   "lettrage_riche": true,
+   "resolution_native": 256,
+   "style": {
+    "famille": "semi_flat_biseau",
+    "traitement_lettrage": "flat_outline",
+    "matiere": "blue glowing outline",
+    "embleme": {
+     "present": false,
+     "type": null
     },
-    {
-      "slug": "welllogo",
-      "source": "welllogo.png",
-      "priorite": "reverse",
-      "tags": [
-        "urbain",
-        "cartel",
-        "luxe"
-      ],
-      "energie": 75,
-      "modernite": 85,
-      "couleurs": [
-        "#121212",
-        "#FFD700",
-        "#8B6508"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "Single stylized 'W' lettermark with sharp, aggressive terminals.",
-      "scores": {
-        "relief_3d": 4,
-        "glow": 8,
-        "saturation": 6,
-        "sombre_clair": 2,
-        "complexite": 5
-      },
-      "construction": "Central sharp 'W' lettermark with flat top cuts and pointed bottom tips. Overlaid with a diagonal chain-link fence shadow pattern. A handgun silhouette frames the bottom-right corner.",
-      "lettrage": {
-        "type": "monogram",
-        "integration_embleme": "fused in silhouette",
-        "traitement_contour": "glow edge"
-      }
+    "ambiance": "urban",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "welllogo",
+   "source": "welllogo.png",
+   "priorite": "reverse",
+   "tags": [
+    "urbain",
+    "cartel",
+    "luxe"
+   ],
+   "energie": 75,
+   "modernite": 85,
+   "couleurs": [
+    "#121212",
+    "#FFD700",
+    "#8B6508"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "Single stylized 'W' lettermark with sharp, aggressive terminals.",
+   "scores": {
+    "relief_3d": 4,
+    "glow": 8,
+    "saturation": 6,
+    "sombre_clair": 2,
+    "complexite": 5
+   },
+   "construction": "Central sharp 'W' lettermark with flat top cuts and pointed bottom tips. Overlaid with a diagonal chain-link fence shadow pattern. A handgun silhouette frames the bottom-right corner.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "glow edge"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 1024,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "or",
+    "matiere": "glowing gold metal",
+    "embleme": {
+     "present": true,
+     "type": "gun"
     },
-    {
-      "slug": "youso1",
-      "source": "youso1.png",
-      "priorite": "reverse",
-      "tags": [
-        "urbain",
-        "chill",
-        "retro"
-      ],
-      "energie": 90,
-      "modernite": 80,
-      "couleurs": [
-        "#0D0D0D",
-        "#FFFFFF",
-        "#FF0000"
-      ],
-      "ratio": "1:1",
-      "typographie_generee": "Hand-drawn brush calligraphy with rough, textured edges.",
-      "scores": {
-        "relief_3d": 2,
-        "glow": 9,
-        "saturation": 8,
-        "sombre_clair": 3,
-        "complexite": 3
-      },
-      "construction": "Two-tier brush script text. 'YOU' in white on the top line, 'SO' in red on the bottom line, offset to the right. Dynamic, hand-painted brush strokes.",
-      "lettrage": {
-        "type": "script",
-        "integration_embleme": "none",
-        "traitement_contour": "glow edge"
-      }
-    }
-  ]
+    "ambiance": "urban",
+    "fond_sombre": true
+   }
+  },
+  {
+   "slug": "youso1",
+   "source": "youso1.png",
+   "priorite": "reverse",
+   "tags": [
+    "urbain",
+    "chill",
+    "retro"
+   ],
+   "energie": 90,
+   "modernite": 80,
+   "couleurs": [
+    "#0D0D0D",
+    "#FFFFFF",
+    "#FF0000"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "Hand-drawn brush calligraphy with rough, textured edges.",
+   "scores": {
+    "relief_3d": 2,
+    "glow": 9,
+    "saturation": 8,
+    "sombre_clair": 3,
+    "complexite": 3
+   },
+   "construction": "Two-tier brush script text. 'YOU' in white on the top line, 'SO' in red on the bottom line, offset to the right. Dynamic, hand-painted brush strokes.",
+   "lettrage": {
+    "type": "script",
+    "integration_embleme": "none",
+    "traitement_contour": "glow edge"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 500,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "script",
+    "matiere": "glowing brush strokes",
+    "embleme": {
+     "present": false,
+     "type": null
+    },
+    "ambiance": "urban",
+    "fond_sombre": true
+   }
+  }
+ ]
 }

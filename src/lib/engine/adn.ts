@@ -48,12 +48,37 @@ export type AdnCategorie = {
   resume_en: string
 }
 
+// ── Run 5.6, LOT 1 — les clés `fonds` et `familles_rendu` de logo.json ──────
+// Mesurées par scripts/calibration/analyze-fonds.ts : la doctrine client
+// (« le fond n'est jamais vide ») chiffrée sur les 59 logos, et les clusters
+// de familles de rendu qui remplacent la règle abrogée « >= 2 relief ».
+export type FondsSynthese = {
+  images: number
+  fonds_non_vides_pct: number
+  familles: Record<string, number>
+  texture_presente_pct: number
+  scene_presente_pct: number
+  combinaison_texture_scene_pct: number
+  opacite_moyenne_texture_pct: number
+  opacite_moyenne_scene_pct: number
+  opacite_p10_p90_pct: [number, number]
+  resume_en: string
+}
+
+export type FamillesRendu = {
+  source: string
+  familles: Array<{ famille: string; pct: number; glow_pct: number; description: string }>
+  resume_en: string
+}
+
 type GuideV4 = {
   categorie: string
   version?: number
   images_totales?: number
   images_analysees?: number
   adn?: AdnCategorie
+  fonds?: FondsSynthese
+  familles_rendu?: FamillesRendu
   guide?: Record<string, unknown>
 }
 
@@ -169,4 +194,33 @@ export function adnBlockLogo(): string {
 export function adnBlockBackground(): string {
   const adn = adnFor('background_logo')
   return `BACKGROUND DNA (measured on the ${adn.images}-image background library): ${adn.resume_en}`
+}
+
+// ── Run 5.6 — les fonds mesurés du corpus logo (section 2bis du gabarit) ─────
+// Jamais optionnel : un concept logo sans doctrine de fond est le bug qui a
+// produit les « fonds bleu nuit vides » rejetés par le client au run 5.5.
+export function fondsSyntheseLogo(): FondsSynthese {
+  const guide = readGuide('logo')
+  if (!guide?.fonds) {
+    throw new TrainingRequiredError('clé fonds absente de logo.json — lance `bun run scripts/calibration/analyze-fonds.ts`')
+  }
+  return guide.fonds
+}
+
+export function famillesRenduLogo(): FamillesRendu {
+  const guide = readGuide('logo')
+  if (!guide?.familles_rendu) {
+    throw new TrainingRequiredError('clé familles_rendu absente de logo.json — lance `bun run scripts/calibration/analyze-fonds.ts`')
+  }
+  return guide.familles_rendu
+}
+
+// Le bloc FONDS injecté dans l'appel DA : la mesure corpus + la cible cliente
+// (l'extrémité discrète de la fourchette — « on les voit presque pas »).
+export function fondsBlockLogo(): string {
+  const fonds = fondsSyntheseLogo()
+  return [
+    `BACKGROUND DNA — measured on the same ${fonds.images} corpus logos: ${fonds.resume_en}`,
+    'TARGET for generated marks: the DISCREET end of the measured range — every backdrop layer at 8-20% visibility. The backdrop is sensed, never watched.',
+  ].join('\n')
 }

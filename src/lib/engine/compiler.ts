@@ -297,131 +297,52 @@ export function compileHeroPromptV2(opts: {
 
 // ── LOGO v2 (run 5.2, LOT 3) ─────────────────────────────────────────────────
 
-export type LogoAnswersV2 = {
-  type: 'lettre' | 'nom' | 'embleme'
-}
-
 // Fond d'atelier imposé par le run 5.2 : gris neutre clair, jamais pur, pour
 // un détourage flood-fill fiable quel que soit le logo (même blanc ou noir).
+// Run 5.7 : ne sert plus qu'au calque EMBLÈME du pipeline superposé.
 export const LOGO_BACKGROUND_HEX = '#F2F2F2'
 
-const CONSTRUCTION_PROMPTS: Record<LogoConstruction, string> = {
-  embleme_lettre:
-    'Construction: lettered emblem — the initial letter fused inside a strong emblem shape (shield, crest, geometric badge), letter and symbol reading as ONE mark.',
-  lettrage_silhouette:
-    'Construction: the full lettering fused INTO a recognizable silhouette or scene element — strokes flowing through the shape, negative space doing real work.',
-  esport_italique:
-    'Construction: esports-style italic wordmark — forward-leaning custom letterforms, sharp spurs and cuts, tight interlocking, built for jerseys and banners.',
-  badge:
-    'Construction: self-contained badge — a balanced enclosed composition with a strong central symbol, clean contour, reading perfectly at small sizes.',
-}
+// ═════════════════════════════════════════════════════════════════════════════
+// Run 5.7 : compileLogoPromptV2 (monolithique « un logo entier », run 5.2) est
+// SUPPRIMÉE — la génération monolithique déclenchait le prior « gaming logo
+// 2015 » du modèle quel que soit le prompt. Le pipeline logo passe par les
+// calques superposés (logo-stack.ts) : fond seul + emblème seul + lettrage
+// typographié local. Voir rapports/run57-arbitrage-lettrage.md.
+// ═════════════════════════════════════════════════════════════════════════════
 
-export function compileLogoPromptV2(opts: {
-  project: ProjectLike
-  da: ArtDirection
-  answers: LogoAnswersV2
-  energie?: number
-  modernite?: number
-}): CompiledPromptV2 & { background: string } {
-  const { project, da, answers } = opts
-  const name = project.name.trim().toUpperCase()
-
-  const exemplars = pickExemplars({
-    category: 'logo',
-    da,
-    energie: opts.energie,
-    modernite: opts.modernite,
-  })
-
-  let letteringRule: string
-  let construction: LogoConstruction
-  const expectedTexts: string[] = []
-  if (answers.type === 'embleme') {
-    construction = da.logoConstruction.embleme
-    letteringRule = 'Type: pure pictorial emblem — a symbol only, zero lettering, zero characters of any alphabet.'
-  } else if (answers.type === 'lettre') {
-    construction = da.logoConstruction.lettre
-    const letter = (name[0] ?? 'N').toUpperCase()
-    letteringRule = `Type: single-letter monogram built around the exact letter "${letter}", custom lettering, drawn once, no other words.`
-    expectedTexts.push(letter)
-  } else {
-    construction = da.logoConstruction.nom
-    letteringRule = `Type: full wordmark of the exact word "${name}", spelled ${spellOut(name)}, custom lettering, no other words. Triple-check every letter: no missing, doubled, swapped or invented characters.`
-    expectedTexts.push(name)
-  }
-
-  const prompt = [
-    'Premium FiveM/GTA RP server logo, presented as one clean centered mark.',
-    fewShotBlock(exemplars.reversePrompts),
-    guideLines('logo', ['composition', 'effets', 'interdits'], 5),
-    letteringRule,
-    CONSTRUCTION_PROMPTS[construction],
-    `Lettering treatment: ${da.lettering}.`,
-    `Materials: ${da.matieres}. Grading: ${da.etalonnage}.`,
-    `Colors: strictly this palette — ${da.palette.join(', ')} — plus neutral shading. Every stroke keeps a crisp contrasted edge against the background.`,
-    referencesBlock(exemplars.references.length, 'They define the construction quality, edge crispness and finishing level to reach.'),
-    `BACKGROUND — CRITICAL FOR CUTOUT: perfectly flat, uniform, seamless light grey ${LOGO_BACKGROUND_HEX} background. No gradient, no vignette, no texture, no shadow on the background, no reflection under the logo. The mark must not touch the frame edges — keep 12% padding on all sides.`,
-    'Square 1:1 composition, mark perfectly centered, professional vector-grade edges.',
-  ].filter(Boolean).join('\n\n')
-
-  return {
-    prompt,
-    aspectRatio: '1:1',
-    category: 'logo',
-    templateId: null,
-    references: exemplars.references,
-    exemplarSlugs: exemplars.slugs,
-    expectedTexts,
-    background: LOGO_BACKGROUND_HEX,
-  }
-}
-
-// ── LOGO : habillage technique du prompt de concept (run 5.3 → 5.4) ──────────
+// ── LOGO : habillage technique du prompt de concept (run 5.3 → 5.5) ──────────
 // Le prompt créatif vient du directeur artistique (étage 1). Ici on ne
 // touche PAS à l'intention — on ajoute les contraintes machine : épellation
-// forcée + OCR, fond d'atelier, format. Run 5.4 (LOT 4) : l'étape A livre
-// TOUJOURS le logo seul sur #F2F2F2 de détourage — le fond réel est un calque
-// séparé généré à l'étape B, jamais dans ce rendu.
+// forcée + OCR, présentation, langue de rendu, références, format.
+// Run 5.5 (calibration) : l'étape A rend le logo DANS SA PRÉSENTATION
+// NATURELLE (fond sombre atmosphérique + glow, comme le corpus : 78 % de
+// fonds sombres, 76 % atmosphériques) — générer sur #F2F2F2 clair faisait
+// retomber le modèle sur l'icône plate (FiveM-ness 5/10 → 9/10 mesuré,
+// captures/calibration/iter0 vs iter4). La version alpha détourée est
+// DÉRIVÉE du master validé en seconde passe (/logo/master), jamais rendue ici.
 
-export type LogoConceptCompiled = {
-  prompt: string
-  expectedTexts: string[]
-  background: string
-}
+// Run 5.8 (chantier 3) : les blocs H1-H7 du run 5.5/5.6 (PRESENTATION,
+// RENDER LANGUAGE, LETTERING INTEGRITY) sont SUPPRIMÉS des prompts image —
+// leurs pourcentages de corpus étaient du bruit pour un modèle d'image et
+// leurs interdits verbeux plantaient les concepts qu'ils interdisaient (les
+// emblèmes sortaient candy-gloss malgré le FORBIDDEN). Leur doctrine survit
+// EN POSITIF dans les prompts calques de logo-stack.ts : la material law
+// (« satin and matte fills with subtle grain, a single controlled specular
+// accent per element ») vit dans FAMILLE_FINISH, la présentation corpus dans
+// compileFondCalquePrompt, l'intégrité du lettrage dans compileLockupPrompt.
 
-export function compileLogoConceptPrompt(opts: {
-  projectName: string
-  conceptPrompt: string
-  type: 'lettre' | 'nom' | 'embleme'
-}): LogoConceptCompiled {
-  const name = opts.projectName.trim().toUpperCase()
-  const expectedTexts: string[] = []
-  let spellingBlock = ''
-  if (opts.type === 'nom') {
-    spellingBlock = `SPELLING — NON NEGOTIABLE: the wordmark reads exactly "${name}", spelled ${spellOut(name)}. Triple-check every letter: no missing, doubled, swapped or invented characters. No other words anywhere.`
-    expectedTexts.push(name)
-  } else if (opts.type === 'lettre') {
-    const letter = (name[0] ?? 'N').toUpperCase()
-    spellingBlock = `SPELLING — NON NEGOTIABLE: the ONLY character in the mark is the capital letter "${letter}", drawn once. No other letters, no words.`
-    expectedTexts.push(letter)
-  } else {
-    spellingBlock = 'NO LETTERING: pure pictorial emblem — zero characters of any alphabet anywhere.'
-  }
+// H3 (validée iter4 : aveugle 0/3) — les références jointes reçoivent enfin
+// leur consigne : copier l'EMPREINTE de production, jamais les sujets.
+// Run 5.8 (chantier 2) : les références sont désormais de la MÊME famille de
+// rendu que le concept — la consigne vise le transfert de finition et de
+// traitement du lettrage, jamais la copie des formes ou des mots.
+export const LOGO_REFERENCES_BLOCK =
+  'ATTACHED REFERENCES: the attached images are real logos from the target family. Match the finish, the materials and the lettering treatment quality of the attached reference logos, then create a completely new original design with the requested word — do not copy their shapes or their words.'
 
-  // LOT 3 (run 5.4) : le bloc ADN chiffré voyage dans CHAQUE génération logo.
-  // Le concept du DA le porte déjà en section 0 — la garantie dure est ICI :
-  // adnBlockLogo() JETTE si l'entraînement v4 n'est pas installé, donc aucun
-  // appel logo ne part jamais sans ADN.
-  const prompt = [
-    opts.conceptPrompt.trim(),
-    `DNA GUARANTEE — the final render must sit inside this measured family:\n${adnBlockLogo()}`,
-    spellingBlock,
-    `BACKGROUND — CRITICAL FOR CUTOUT: perfectly flat, uniform, seamless light grey ${LOGO_BACKGROUND_HEX} background. No gradient, no vignette, no texture, no shadow on the background, no reflection under the logo. The real background comes later as a separate layer — relief and glow belong to the mark itself.`,
-    `Square 1:1 composition, mark perfectly centered, professional vector-grade edges, the mark must not touch the frame edges — keep 12% padding on all sides. No watermark, no signature, no UI.`,
-  ].join('\n\n')
-
-  return { prompt, expectedTexts, background: LOGO_BACKGROUND_HEX }
-}
+// Run 5.7 : compileLogoConceptPrompt (exécution monolithique d'un concept —
+// le dernier chemin « un logo entier ») est SUPPRIMÉE. Les blocs H1-H7
+// ci-dessus restent exportés : les prompts PAR CALQUE de logo-stack.ts les
+// réutilisent (présentation → calque fond, langue de rendu → calque emblème).
 
 // ── FONDS de l'étape B (run 5.4, LOT 4) — générés SANS le logo ───────────────
 // La bibliothèque de fonds (dossier « background pour logo ect », analysé à
@@ -583,69 +504,10 @@ export function compileScenePromptLegacy(opts: {
   return { prompt, aspectRatio: config.aspectRatio, category, templateId: template?.id ?? null }
 }
 
-export type LegacyLogoAnswers = {
-  type: 'lettre' | 'nom' | 'embleme'
-  style: 'chrome' | 'graffiti' | 'luxe' | 'neon' | 'cartoon' | 'minimal'
-  palette: string[]
-}
-
-const LEGACY_LOGO_STYLE_PROMPTS: Record<LegacyLogoAnswers['style'], string> = {
-  chrome: 'liquid chrome / polished metal lettering style, hard specular highlights, beveled edges, slight top-down gradient, subtle dark outline for separation',
-  graffiti: 'bold graffiti / urban sticker style, thick clean outlines, aggressive dynamic shapes, spray-paint energy kept crisp (no drips over the letterforms)',
-  luxe: 'luxury monogram style, thin elegant strokes with strong contrast, gold-foil or metallic accent, refined serif or geometric details, generous spacing',
-  neon: 'neon sign style, glowing tube outlines with realistic falloff, dark backing shapes for readability, one or two neon hues maximum',
-  cartoon: 'bold cartoon mascot style, thick outlines, exaggerated 3D depth, vibrant cel shading, playful but professional finish',
-  minimal: 'minimal flat vector style, geometric construction, perfect optical balance, one accent color maximum, no gradients, no texture',
-}
-
-function legacyAverageLuminance(palette: string[]): number {
-  if (!palette.length) return 0
-  const values = palette.map((hex) => {
-    const r = parseInt(hex.slice(1, 3), 16)
-    const g = parseInt(hex.slice(3, 5), 16)
-    const b = parseInt(hex.slice(5, 7), 16)
-    return 0.299 * r + 0.587 * g + 0.114 * b
-  })
-  return values.reduce((a, b) => a + b, 0) / values.length
-}
-
-export function compileLogoPromptLegacy(opts: {
-  project: ProjectLike
-  answers: LegacyLogoAnswers
-}): CompiledPrompt & { background: '#FFFFFF' | '#000000' } {
-  const { project, answers } = opts
-  const background = legacyAverageLuminance(answers.palette) < 150 ? '#FFFFFF' : '#000000'
-
-  let letteringRule: string
-  if (answers.type === 'embleme') {
-    letteringRule =
-      'Type: pure EMBLEM — a symbol only. STRICTLY NO letters, no words, no monogram, no characters of any alphabet anywhere.'
-  } else if (answers.type === 'lettre') {
-    const letter = (project.name.trim()[0] ?? 'N').toUpperCase()
-    letteringRule = `Type: single-letter monogram. The ONLY character allowed in the whole image is the capital letter "${letter}". Render it once, perfectly drawn. No other letters, no words.`
-  } else {
-    const name = project.name.trim().toUpperCase()
-    letteringRule = `Type: full wordmark. The ONLY text allowed is the server name "${name}" — exact spelling, letter by letter: ${spellOut(name)}. Double-check every letter; no missing, doubled or invented characters. No other text anywhere.`
-  }
-
-  const paletteLine = answers.palette.length
-    ? `Colors: strictly use this palette — ${answers.palette.join(', ')}. No colors outside it (plus neutral shading).`
-    : ''
-
-  const prompt = [
-    `Premium esports/FiveM server logo, presented as a clean centered mark.`,
-    legacyGuideBlock('logo'),
-    legacyProjectBlock(project),
-    letteringRule,
-    `Style: ${LEGACY_LOGO_STYLE_PROMPTS[answers.style]}.`,
-    paletteLine,
-    `BACKGROUND — CRITICAL FOR CUTOUT: perfectly flat, uniform, seamless ${background === '#FFFFFF' ? 'pure white (#FFFFFF)' : 'pure black (#000000)'} background. No gradient, no vignette, no texture, no shadow cast on the background, no reflection under the logo. The logo must not touch the frame edges — keep 12% padding on all sides.`,
-    `Square 1:1 composition, logo perfectly centered, professional vector-grade edges.`,
-    answers.type === 'embleme' ? SECONDARY_NO_TEXT_RULE : 'No text other than specified above. No watermark, no signature, no UI.',
-  ].filter(Boolean).join('\n\n')
-
-  return { prompt, aspectRatio: '1:1', category: 'logo', templateId: null, background }
-}
+// Run 5.7 : compileLogoPromptLegacy (v1, « Premium esports/FiveM server
+// logo » en un appel) est SUPPRIMÉE avec ses styles chrome/graffiti — c'était
+// la signature esport 2015 en toutes lettres. Aucun chemin logo monolithique
+// ne subsiste dans le code.
 
 // ── Reformulation adoucie (gestion des refus) ────────────────────────────────
 // Sur refus safety du modèle : UNE seule reformulation automatique, loggée.

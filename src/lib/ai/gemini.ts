@@ -225,6 +225,9 @@ export async function geminiMultimodal(opts: {
   maxOutputTokens?: number
   json?: boolean
   thinkingBudget?: number
+  // Gemini 3.x : niveau de raisonnement (exclusif de thinkingBudget) — run 5.9,
+  // passe d'étiquetage vision en raisonnement haut sur le corpus.
+  thinkingLevel?: ThinkingLevel
   onUsage?: (usage: GeminiUsage) => void
 }): Promise<string> {
   const body: Record<string, unknown> = {
@@ -233,7 +236,11 @@ export async function geminiMultimodal(opts: {
       temperature: opts.temperature ?? 0.2,
       maxOutputTokens: opts.maxOutputTokens ?? 2000,
       ...(opts.json ? { responseMimeType: 'application/json' } : {}),
-      ...(opts.thinkingBudget !== undefined ? { thinkingConfig: { thinkingBudget: opts.thinkingBudget } } : {}),
+      ...(opts.thinkingLevel
+        ? { thinkingConfig: { thinkingLevel: opts.thinkingLevel } }
+        : opts.thinkingBudget !== undefined
+          ? { thinkingConfig: { thinkingBudget: opts.thinkingBudget } }
+          : {}),
     },
   }
   if (opts.systemInstruction) {
@@ -326,15 +333,30 @@ export async function geminiImageEditRich(opts: {
   // Gemini 3 image : niveau de raisonnement avant rendu (run 5.3 — le logo
   // se génère toujours avec thinking, jamais coupé)
   thinkingLevel?: ThinkingLevel
+  // Run 5.9 : les références passent AVANT le texte, chacune précédée d'une
+  // étiquette courte — l'adhérence aux références s'est montrée faible avec
+  // le bloc texte en tête (test plafond du chantier 0).
+  referencesFirst?: boolean
+  referenceLabels?: string[]
 }): Promise<GeminiImageResult> {
   const validReferences = (opts.referenceImages ?? []).filter((img) => img.data && img.mimeType)
-  const parts: GeminiPart[] =
-    validReferences.length > 0
-      ? [
-          { text: `${opts.prompt}\n\nUse all attached uploaded images as references as described in the prompt above. Treat them together; do not ignore later references.` },
-          ...validReferences.map((img) => ({ inlineData: { mimeType: img.mimeType, data: img.data } })),
-        ]
-      : [{ text: opts.prompt }]
+  let parts: GeminiPart[]
+  if (!validReferences.length) {
+    parts = [{ text: opts.prompt }]
+  } else if (opts.referencesFirst) {
+    parts = [
+      ...validReferences.flatMap((img, i): GeminiPart[] => [
+        { text: opts.referenceLabels?.[i] ?? `REFERENCE ${i + 1} — a real logo from the target family:` },
+        { inlineData: { mimeType: img.mimeType, data: img.data } },
+      ]),
+      { text: opts.prompt },
+    ]
+  } else {
+    parts = [
+      { text: `${opts.prompt}\n\nUse all attached uploaded images as references as described in the prompt above. Treat them together; do not ignore later references.` },
+      ...validReferences.map((img) => ({ inlineData: { mimeType: img.mimeType, data: img.data } })),
+    ]
+  }
 
   const generationConfig: Record<string, unknown> = { responseModalities: ['IMAGE'] }
   if (opts.imageConfig && (opts.imageConfig.aspectRatio || opts.imageConfig.imageSize)) {

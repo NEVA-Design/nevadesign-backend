@@ -1,0 +1,1585 @@
+{
+  "generatedAt": "2026-08-16T13:44:50.063Z",
+  "root": "C:\\Users\\Gaming PC-4\\Desktop\\Neva AI project\\nevadesign-backend\\src\\engine\\psd-knowledge",
+  "psdCount": 13,
+  "totals": {
+    "layers": 449,
+    "groups": 43,
+    "text": 19,
+    "masks": 89,
+    "adjustments": 49,
+    "smartObjects": 31,
+    "partialOpacity": 94
+  },
+  "arbitrage": {
+    "note": "LOT 2 : (a) calques texte vs (b) lettrage raster/vecteur — chiffres bruts, la vision tranchera les cas raster",
+    "psdAvecCalquesTexte": 7,
+    "psdSansCalquesTexte": 6,
+    "totalCalquesTexte": 19
+  },
+  "perPsd": [
+    {
+      "psd": "6mbanner.psd",
+      "dir": "6mbanner",
+      "width": 1980,
+      "height": 1080,
+      "stats": {
+        "layers": 47,
+        "groups": 2,
+        "text": 4,
+        "pngs": 47,
+        "masks": 13,
+        "totalNodes": 49
+      },
+      "textLayers": 4,
+      "rasterLayers": 42,
+      "vectorMasks": 2,
+      "textLayerNames": [
+        "Une",
+        "Longueur",
+        "D’avance",
+        "D’avance"
+      ]
+    },
+    {
+      "psd": "6mlogo.psd",
+      "dir": "6mlogo",
+      "width": 1024,
+      "height": 1024,
+      "stats": {
+        "layers": 44,
+        "groups": 3,
+        "text": 1,
+        "pngs": 44,
+        "masks": 5,
+        "totalNodes": 47
+      },
+      "textLayers": 1,
+      "rasterLayers": 43,
+      "vectorMasks": 0,
+      "textLayerNames": [
+        "JE M’APPELLE STAN"
+      ]
+    },
+    {
+      "psd": "banner.psd",
+      "dir": "banner",
+      "width": 1980,
+      "height": 1080,
+      "stats": {
+        "layers": 24,
+        "groups": 4,
+        "text": 0,
+        "pngs": 17,
+        "masks": 12,
+        "totalNodes": 28
+      },
+      "textLayers": 0,
+      "rasterLayers": 15,
+      "vectorMasks": 0,
+      "textLayerNames": []
+    },
+    {
+      "psd": "bannerdsc.psd",
+      "dir": "bannerdsc",
+      "width": 1980,
+      "height": 1080,
+      "stats": {
+        "layers": 27,
+        "groups": 2,
+        "text": 2,
+        "pngs": 28,
+        "masks": 2,
+        "totalNodes": 29
+      },
+      "textLayers": 2,
+      "rasterLayers": 24,
+      "vectorMasks": 1,
+      "textLayerNames": [
+        "Golden",
+        "V"
+      ]
+    },
+    {
+      "psd": "bannerpsd.psd",
+      "dir": "bannerpsd",
+      "width": 1980,
+      "height": 1080,
+      "stats": {
+        "layers": 36,
+        "groups": 2,
+        "text": 0,
+        "pngs": 32,
+        "masks": 3,
+        "totalNodes": 38
+      },
+      "textLayers": 0,
+      "rasterLayers": 34,
+      "vectorMasks": 0,
+      "textLayerNames": []
+    },
+    {
+      "psd": "banner_vibefa.psd",
+      "dir": "banner_vibefa",
+      "width": 1980,
+      "height": 1080,
+      "stats": {
+        "layers": 53,
+        "groups": 6,
+        "text": 4,
+        "pngs": 52,
+        "masks": 15,
+        "totalNodes": 59
+      },
+      "textLayers": 4,
+      "rasterLayers": 43,
+      "vectorMasks": 3,
+      "textLayerNames": [
+        "VIBE",
+        "FA",
+        "SUMMER SEASON",
+        "DISCORD.GG/VIBEFA"
+      ]
+    },
+    {
+      "psd": "branding_stan.psd",
+      "dir": "branding_stan",
+      "width": 1980,
+      "height": 1080,
+      "stats": {
+        "layers": 59,
+        "groups": 7,
+        "text": 2,
+        "pngs": 39,
+        "masks": 24,
+        "totalNodes": 66
+      },
+      "textLayers": 2,
+      "rasterLayers": 36,
+      "vectorMasks": 0,
+      "textLayerNames": [
+        " Studio",
+        "sd"
+      ]
+    },
+    {
+      "psd": "ggg.psd",
+      "dir": "ggg",
+      "width": 7460,
+      "height": 432,
+      "stats": {
+        "layers": 37,
+        "groups": 6,
+        "text": 4,
+        "pngs": 40,
+        "masks": 5,
+        "totalNodes": 43
+      },
+      "textLayers": 4,
+      "rasterLayers": 31,
+      "vectorMasks": 1,
+      "textLayerNames": [
+        "sunity.tebex.io ",
+        "Sunity copie",
+        "Sunity",
+        "INVITRET"
+      ]
+    },
+    {
+      "psd": "logo.psd",
+      "dir": "logo",
+      "width": 1198,
+      "height": 1205,
+      "stats": {
+        "layers": 20,
+        "groups": 1,
+        "text": 0,
+        "pngs": 19,
+        "masks": 1,
+        "totalNodes": 21
+      },
+      "textLayers": 0,
+      "rasterLayers": 20,
+      "vectorMasks": 0,
+      "textLayerNames": []
+    },
+    {
+      "psd": "logo_gtanew.psd",
+      "dir": "logo_gtanew",
+      "width": 1024,
+      "height": 1024,
+      "stats": {
+        "layers": 21,
+        "groups": 4,
+        "text": 2,
+        "pngs": 22,
+        "masks": 3,
+        "totalNodes": 25
+      },
+      "textLayers": 2,
+      "rasterLayers": 16,
+      "vectorMasks": 1,
+      "textLayerNames": [
+        "GTA",
+        "NEW"
+      ]
+    },
+    {
+      "psd": "logo_stan.psd",
+      "dir": "logo_stan",
+      "width": 1024,
+      "height": 1024,
+      "stats": {
+        "layers": 24,
+        "groups": 2,
+        "text": 0,
+        "pngs": 23,
+        "masks": 2,
+        "totalNodes": 26
+      },
+      "textLayers": 0,
+      "rasterLayers": 23,
+      "vectorMasks": 1,
+      "textLayerNames": []
+    },
+    {
+      "psd": "losssgo.psd",
+      "dir": "losssgo",
+      "width": 1024,
+      "height": 1024,
+      "stats": {
+        "layers": 40,
+        "groups": 3,
+        "text": 0,
+        "pngs": 32,
+        "masks": 4,
+        "totalNodes": 43
+      },
+      "textLayers": 0,
+      "rasterLayers": 37,
+      "vectorMasks": 0,
+      "textLayerNames": []
+    },
+    {
+      "psd": "vulcainlogo.psd",
+      "dir": "vulcainlogo",
+      "width": 1024,
+      "height": 1024,
+      "stats": {
+        "layers": 17,
+        "groups": 1,
+        "text": 0,
+        "pngs": 17,
+        "masks": 0,
+        "totalNodes": 18
+      },
+      "textLayers": 0,
+      "rasterLayers": 17,
+      "vectorMasks": 0,
+      "textLayerNames": []
+    }
+  ],
+  "fonts": [
+    {
+      "font": "Anton-Regular",
+      "occurrences": 4,
+      "psds": [
+        "6mbanner",
+        "6mlogo"
+      ],
+      "sizes": [
+        75,
+        75,
+        75,
+        100
+      ],
+      "exemples": [
+        "Une",
+        "Longueur",
+        "D’avance",
+        "JE M’APPELLE STAN"
+      ]
+    },
+    {
+      "font": "Unbounded-Medium",
+      "occurrences": 3,
+      "psds": [
+        "ggg"
+      ],
+      "sizes": [
+        50,
+        150,
+        150
+      ],
+      "exemples": [
+        "sunity.tebex.io",
+        "Sunity",
+        "Sunity"
+      ]
+    },
+    {
+      "font": "Blacksword",
+      "occurrences": 2,
+      "psds": [
+        "bannerdsc",
+        "branding_stan"
+      ],
+      "sizes": [
+        100,
+        50
+      ],
+      "exemples": [
+        "Golden",
+        "sd"
+      ]
+    },
+    {
+      "font": "Montserrat-Black",
+      "occurrences": 2,
+      "psds": [
+        "banner_vibefa"
+      ],
+      "sizes": [
+        75,
+        50
+      ],
+      "exemples": [
+        "VIBE",
+        "FA"
+      ]
+    },
+    {
+      "font": "Carlito-Bold",
+      "occurrences": 1,
+      "psds": [
+        "6mbanner"
+      ],
+      "sizes": [
+        75
+      ],
+      "exemples": [
+        "D’avance"
+      ]
+    },
+    {
+      "font": "Roboto-Italic",
+      "occurrences": 1,
+      "psds": [
+        "bannerdsc"
+      ],
+      "sizes": [
+        100
+      ],
+      "exemples": [
+        "Golden"
+      ]
+    },
+    {
+      "font": "TekoroDemo-BlackItalic",
+      "occurrences": 1,
+      "psds": [
+        "bannerdsc"
+      ],
+      "sizes": [
+        100
+      ],
+      "exemples": [
+        "V"
+      ]
+    },
+    {
+      "font": "Montserrat-Medium",
+      "occurrences": 1,
+      "psds": [
+        "banner_vibefa"
+      ],
+      "sizes": [
+        50
+      ],
+      "exemples": [
+        "SUMMER SEASON"
+      ]
+    },
+    {
+      "font": "Montserrat-SemiBold",
+      "occurrences": 1,
+      "psds": [
+        "banner_vibefa"
+      ],
+      "sizes": [
+        50
+      ],
+      "exemples": [
+        "DISCORD.GG/VIBEFA"
+      ]
+    },
+    {
+      "font": "FONTSPRINGDEMO-MoldeCompressed-BoldReverseRegular",
+      "occurrences": 1,
+      "psds": [
+        "branding_stan"
+      ],
+      "sizes": [
+        75
+      ],
+      "exemples": [
+        " Studio"
+      ]
+    },
+    {
+      "font": "RETROTECHRegular",
+      "occurrences": 1,
+      "psds": [
+        "ggg"
+      ],
+      "sizes": [
+        100
+      ],
+      "exemples": [
+        "INVITRET"
+      ]
+    },
+    {
+      "font": "Pricedown-Black",
+      "occurrences": 1,
+      "psds": [
+        "logo_gtanew"
+      ],
+      "sizes": [
+        50
+      ],
+      "exemples": [
+        "GTA"
+      ]
+    },
+    {
+      "font": "DrukWideTrial-SuperItalic",
+      "occurrences": 1,
+      "psds": [
+        "logo_gtanew"
+      ],
+      "sizes": [
+        50
+      ],
+      "exemples": [
+        "NEW"
+      ]
+    }
+  ],
+  "blendModes": {
+    "normal": 334,
+    "pass through": 42,
+    "screen": 35,
+    "divide": 24,
+    "overlay": 10,
+    "linear dodge": 8,
+    "soft light": 7,
+    "luminosity": 7,
+    "lighten": 4,
+    "exclusion": 3,
+    "hard light": 3,
+    "lighter color": 3,
+    "color dodge": 3,
+    "pin light": 2,
+    "difference": 2,
+    "color burn": 2,
+    "multiply": 1,
+    "linear light": 1,
+    "vivid light": 1
+  },
+  "effects": {
+    "solidFill": {
+      "enabledCount": 21,
+      "psds": [
+        "6mbanner",
+        "6mlogo",
+        "bannerdsc",
+        "bannerpsd",
+        "branding_stan",
+        "ggg",
+        "logo_gtanew",
+        "logo_stan",
+        "losssgo",
+        "vulcainlogo"
+      ],
+      "opacity": {
+        "n": 21,
+        "min": 0.74,
+        "max": 1,
+        "median": 1,
+        "p25": 1,
+        "p75": 1,
+        "mean": 0.99
+      },
+      "colors": [
+        "#ffffff×5",
+        "#000000×2",
+        "#090909×2",
+        "#3becfd×2",
+        "#060606×2",
+        "#eefeed×1",
+        "#0c3a0e×1",
+        "#90f98a×1",
+        "#040401×1",
+        "#091704×1",
+        "#ffedc1×1",
+        "#10060e×1",
+        "#0a0806×1"
+      ],
+      "samples": [
+        {
+          "psd": "6mbanner",
+          "layer": "Groupe 1/Calque 0",
+          "blendMode": "normal",
+          "opacity": 1,
+          "color": "#eefeed"
+        },
+        {
+          "psd": "6mbanner",
+          "layer": "Groupe 1/Calque 12",
+          "blendMode": "overlay",
+          "opacity": 1,
+          "color": "#0c3a0e"
+        },
+        {
+          "psd": "6mbanner",
+          "layer": "Groupe 1/Calque 2 copie",
+          "blendMode": "normal",
+          "opacity": 1,
+          "color": "#000000"
+        },
+        {
+          "psd": "6mbanner",
+          "layer": "Groupe 1/Rectangle 1 copie",
+          "blendMode": "normal",
+          "opacity": 1,
+          "color": "#000000"
+        },
+        {
+          "psd": "6mbanner",
+          "layer": "Groupe 1/6Mlogo",
+          "blendMode": "normal",
+          "opacity": 1,
+          "color": "#90f98a"
+        },
+        {
+          "psd": "6mlogo",
+          "layer": "Groupe 2/Groupe 3/Groupe 1/Calque 0",
+          "blendMode": "normal",
+          "opacity": 1,
+          "color": "#040401"
+        },
+        {
+          "psd": "6mlogo",
+          "layer": "Groupe 2/Groupe 3/Groupe 1/Calque 18",
+          "blendMode": "normal",
+          "opacity": 1,
+          "color": "#091704"
+        },
+        {
+          "psd": "bannerdsc",
+          "layer": "Groupe 1/Golden",
+          "blendMode": "normal",
+          "opacity": 1,
+          "color": "#ffffff"
+        },
+        {
+          "psd": "bannerdsc",
+          "layer": "Groupe 1/V",
+          "blendMode": "normal",
+          "opacity": 1,
+          "color": "#ffffff"
+        },
+        {
+          "psd": "bannerdsc",
+          "layer": "Groupe 2/Golden V",
+          "blendMode": "normal",
+          "opacity": 1,
+          "color": "#ffedc1"
+        },
+        {
+          "psd": "bannerpsd",
+          "layer": "Groupe 1/Calque 1",
+          "blendMode": "normal",
+          "opacity": 1,
+          "color": "#090909"
+        },
+        {
+          "psd": "branding_stan",
+          "layer": "Groupe 7/Groupe 6/Texture",
+          "blendMode": "normal",
+          "opacity": 1,
+          "color": "#ffffff"
+        },
+        {
+          "psd": "ggg",
+          "layer": "Groupe 6/Calque 9",
+          "blendMode": "normal",
+          "opacity": 0.74,
+          "color": "#3becfd"
+        },
+        {
+          "psd": "ggg",
+          "layer": "Groupe 6/Rectangle 1",
+          "blendMode": "normal",
+          "opacity": 1,
+          "color": "#3becfd"
+        },
+        {
+          "psd": "ggg",
+          "layer": "Groupe 6/Groupe 2/Sunity",
+          "blendMode": "normal",
+          "opacity": 1,
+          "color": "#ffffff"
+        },
+        {
+          "psd": "logo_gtanew",
+          "layer": "Groupe 1/Groupe 2/Calque 0",
+          "blendMode": "normal",
+          "opacity": 1,
+          "color": "#10060e"
+        },
+        {
+          "psd": "logo_stan",
+          "layer": "Groupe 1/Groupe 2/Calque 0",
+          "blendMode": "normal",
+          "opacity": 1,
+          "color": "#0a0806"
+        },
+        {
+          "psd": "losssgo",
+          "layer": "Groupe 1/Groupe 2/Calque 0",
+          "blendMode": "normal",
+          "opacity": 1,
+          "color": "#060606"
+        },
+        {
+          "psd": "losssgo",
+          "layer": "Groupe 1/Groupe 2/Calque 13",
+          "blendMode": "normal",
+          "opacity": 1,
+          "color": "#060606"
+        },
+        {
+          "psd": "losssgo",
+          "layer": "Groupe 1/Calque 18",
+          "blendMode": "darker color",
+          "opacity": 1,
+          "color": "#ffffff"
+        },
+        {
+          "psd": "vulcainlogo",
+          "layer": "Groupe 1/Calque 0",
+          "blendMode": "normal",
+          "opacity": 1,
+          "color": "#090909"
+        }
+      ]
+    },
+    "dropShadow": {
+      "enabledCount": 6,
+      "psds": [
+        "6mbanner",
+        "bannerpsd",
+        "banner_vibefa",
+        "ggg"
+      ],
+      "size": {
+        "n": 6,
+        "min": 7,
+        "max": 87,
+        "median": 38,
+        "p25": 7,
+        "p75": 40,
+        "mean": 31
+      },
+      "distance": {
+        "n": 6,
+        "min": 0,
+        "max": 41,
+        "median": 12,
+        "p25": 6,
+        "p75": 20,
+        "mean": 14.17
+      },
+      "choke": {
+        "n": 6,
+        "min": 0,
+        "max": 18,
+        "median": 6,
+        "p25": 5,
+        "p75": 6,
+        "mean": 6.83
+      },
+      "opacity": {
+        "n": 6,
+        "min": 0.26,
+        "max": 1,
+        "median": 0.52,
+        "p25": 0.49,
+        "p75": 0.52,
+        "mean": 0.55
+      },
+      "angle": {
+        "n": 6,
+        "min": -171,
+        "max": 90,
+        "median": 90,
+        "p25": 90,
+        "p75": 90,
+        "mean": 46.5
+      },
+      "colors": [
+        "#000000×6"
+      ],
+      "samples": [
+        {
+          "psd": "6mbanner",
+          "layer": "Groupe 1/6Mlogo",
+          "blendMode": "multiply",
+          "opacity": 1,
+          "angle": 90,
+          "color": "#000000",
+          "size": 7,
+          "distance": 0,
+          "choke": 0
+        },
+        {
+          "psd": "bannerpsd",
+          "layer": "Groupe 1/Ligne 1",
+          "blendMode": "normal",
+          "opacity": 0.49,
+          "angle": -171,
+          "color": "#000000",
+          "size": 87,
+          "distance": 41,
+          "choke": 5
+        },
+        {
+          "psd": "banner_vibefa",
+          "layer": "Groupe 4/Groupe 2/DISCORD.GG/VIBEFA",
+          "blendMode": "multiply",
+          "opacity": 0.5,
+          "angle": 90,
+          "color": "#000000",
+          "size": 40,
+          "distance": 20,
+          "choke": 6
+        },
+        {
+          "psd": "banner_vibefa",
+          "layer": "Calque 28",
+          "blendMode": "multiply",
+          "opacity": 0.52,
+          "angle": 90,
+          "color": "#000000",
+          "size": 7,
+          "distance": 6,
+          "choke": 6
+        },
+        {
+          "psd": "banner_vibefa",
+          "layer": "Calque 29",
+          "blendMode": "multiply",
+          "opacity": 0.52,
+          "angle": 90,
+          "color": "#000000",
+          "size": 7,
+          "distance": 6,
+          "choke": 6
+        },
+        {
+          "psd": "ggg",
+          "layer": "Groupe 6/sunity.tebex.io ",
+          "blendMode": "multiply",
+          "opacity": 0.26,
+          "angle": 90,
+          "color": "#000000",
+          "size": 38,
+          "distance": 12,
+          "choke": 18
+        }
+      ]
+    },
+    "outerGlow": {
+      "enabledCount": 4,
+      "psds": [
+        "6mbanner",
+        "ggg",
+        "losssgo"
+      ],
+      "size": {
+        "n": 4,
+        "min": 0,
+        "max": 13,
+        "median": 13,
+        "p25": 7,
+        "p75": 13,
+        "mean": 8.25
+      },
+      "choke": {
+        "n": 4,
+        "min": 0,
+        "max": 15,
+        "median": 15,
+        "p25": 0,
+        "p75": 15,
+        "mean": 7.5
+      },
+      "opacity": {
+        "n": 4,
+        "min": 0.08,
+        "max": 1,
+        "median": 1,
+        "p25": 0.13,
+        "p75": 1,
+        "mean": 0.55
+      },
+      "colors": [
+        "#66ff70×2",
+        "#ffffff×1",
+        "#8ad9ff×1"
+      ],
+      "samples": [
+        {
+          "psd": "6mbanner",
+          "layer": "Groupe 1/Rectangle 1",
+          "blendMode": "screen",
+          "opacity": 1,
+          "technique": "softer",
+          "color": "#66ff70",
+          "size": 13,
+          "choke": 15
+        },
+        {
+          "psd": "6mbanner",
+          "layer": "Groupe 1/Rectangle 1 copie",
+          "blendMode": "screen",
+          "opacity": 1,
+          "technique": "softer",
+          "color": "#66ff70",
+          "size": 13,
+          "choke": 15
+        },
+        {
+          "psd": "ggg",
+          "layer": "Groupe 6/Groupe 4",
+          "blendMode": "screen",
+          "opacity": 0.13,
+          "technique": "softer",
+          "color": "#ffffff",
+          "size": 7,
+          "choke": 0
+        },
+        {
+          "psd": "losssgo",
+          "layer": "Groupe 1/Groupe 2/Calque 6",
+          "blendMode": "screen",
+          "opacity": 0.08,
+          "technique": "softer",
+          "color": "#8ad9ff",
+          "size": 0,
+          "choke": 0
+        }
+      ]
+    },
+    "stroke": {
+      "enabledCount": 11,
+      "psds": [
+        "6mbanner",
+        "6mlogo",
+        "banner_vibefa",
+        "ggg",
+        "logo_gtanew",
+        "losssgo"
+      ],
+      "size": {
+        "n": 11,
+        "min": 1,
+        "max": 6,
+        "median": 3,
+        "p25": 2,
+        "p75": 4,
+        "mean": 3
+      },
+      "opacity": {
+        "n": 11,
+        "min": 0.04,
+        "max": 1,
+        "median": 1,
+        "p25": 1,
+        "p75": 1,
+        "mean": 0.91
+      },
+      "colors": [
+        "#ffffff×8",
+        "#8fff97×3"
+      ],
+      "positions": {
+        "outside": 6,
+        "inside": 5
+      },
+      "samples": [
+        {
+          "psd": "6mbanner",
+          "layer": "Groupe 1/Rectangle 1",
+          "blendMode": "normal",
+          "opacity": 1,
+          "position": "outside",
+          "fillType": "color",
+          "color": "#8fff97",
+          "size": 4
+        },
+        {
+          "psd": "6mbanner",
+          "layer": "Groupe 1/Rectangle 1 copie",
+          "blendMode": "normal",
+          "opacity": 1,
+          "position": "outside",
+          "fillType": "color",
+          "color": "#8fff97",
+          "size": 4
+        },
+        {
+          "psd": "6mbanner",
+          "layer": "Groupe 1/Lancement",
+          "blendMode": "normal",
+          "opacity": 1,
+          "position": "inside",
+          "fillType": "gradient",
+          "color": "#8fff97",
+          "size": 4,
+          "gradientStops": [
+            {
+              "color": "#1f401d",
+              "location": 0
+            },
+            {
+              "color": "#d5ffd5",
+              "location": 1
+            }
+          ],
+          "gradientName": "Personnalisé"
+        },
+        {
+          "psd": "6mlogo",
+          "layer": "Groupe 2/Groupe 3/Calque 14",
+          "blendMode": "normal",
+          "opacity": 1,
+          "position": "inside",
+          "fillType": "color",
+          "color": "#ffffff",
+          "size": 1
+        },
+        {
+          "psd": "6mlogo",
+          "layer": "Groupe 2/Calque 14 copie 3",
+          "blendMode": "normal",
+          "opacity": 1,
+          "position": "inside",
+          "fillType": "color",
+          "color": "#ffffff",
+          "size": 1
+        },
+        {
+          "psd": "banner_vibefa",
+          "layer": "Groupe 4/Groupe 2/VIBE",
+          "blendMode": "normal",
+          "opacity": 1,
+          "position": "outside",
+          "fillType": "color",
+          "color": "#ffffff",
+          "size": 2
+        },
+        {
+          "psd": "ggg",
+          "layer": "Groupe 6/Groupe 4/Roleplay  Immersif",
+          "blendMode": "normal",
+          "opacity": 1,
+          "position": "outside",
+          "fillType": "gradient",
+          "color": "#ffffff",
+          "size": 2,
+          "gradientStops": [
+            {
+              "color": "#63a3ff",
+              "location": 0
+            },
+            {
+              "color": "#b6dcff",
+              "location": 0.5
+            },
+            {
+              "color": "#72beff",
+              "location": 1
+            }
+          ],
+          "gradientName": "Bleu_03"
+        },
+        {
+          "psd": "ggg",
+          "layer": "Groupe 6/discord.gg/sunity ",
+          "blendMode": "normal",
+          "opacity": 1,
+          "position": "inside",
+          "fillType": "gradient",
+          "color": "#ffffff",
+          "size": 6,
+          "gradientStops": [
+            {
+              "color": "#4ef4fe",
+              "location": 0
+            },
+            {
+              "color": "#b1fbff",
+              "location": 0.489990234375
+            },
+            {
+              "color": "#90eaf1",
+              "location": 0.69140625
+            },
+            {
+              "color": "#54acb3",
+              "location": 1
+            }
+          ],
+          "gradientName": "Personnalisé"
+        },
+        {
+          "psd": "logo_gtanew",
+          "layer": "Groupe 1/GTA",
+          "blendMode": "normal",
+          "opacity": 1,
+          "position": "outside",
+          "fillType": "gradient",
+          "color": "#ffffff",
+          "size": 4,
+          "gradientStops": [
+            {
+              "color": "#fb69b6",
+              "location": 0
+            },
+            {
+              "color": "#ff24f6",
+              "location": 0.26220703125
+            },
+            {
+              "color": "#ffffff",
+              "location": 0.510009765625
+            },
+            {
+              "color": "#974d42",
+              "location": 0.693603515625
+            },
+            {
+              "color": "#ffd1ca",
+              "location": 0.8505859375
+            },
+            {
+              "color": "#ffada0",
+              "location": 1
+            }
+          ],
+          "gradientName": "Personnalisé"
+        },
+        {
+          "psd": "logo_gtanew",
+          "layer": "Groupe 1/GTA",
+          "blendMode": "normal",
+          "opacity": 1,
+          "position": "inside",
+          "fillType": "color",
+          "color": "#ffffff",
+          "size": 3
+        },
+        {
+          "psd": "losssgo",
+          "layer": "Groupe 1/Calque 23",
+          "blendMode": "normal",
+          "opacity": 0.04,
+          "position": "outside",
+          "fillType": "color",
+          "color": "#ffffff",
+          "size": 2
+        }
+      ]
+    },
+    "gradientOverlay": {
+      "enabledCount": 10,
+      "psds": [
+        "6mbanner",
+        "banner_vibefa",
+        "logo_gtanew",
+        "logo_stan"
+      ],
+      "opacity": {
+        "n": 10,
+        "min": 0.72,
+        "max": 1,
+        "median": 1,
+        "p25": 1,
+        "p75": 1,
+        "mean": 0.97
+      },
+      "angle": {
+        "n": 10,
+        "min": -172,
+        "max": 179,
+        "median": 132,
+        "p25": 48,
+        "p75": 179,
+        "mean": 73.2
+      },
+      "samples": [
+        {
+          "psd": "6mbanner",
+          "layer": "Groupe 1/Une",
+          "blendMode": "normal",
+          "opacity": 1,
+          "angle": 179,
+          "reverse": false,
+          "align": true,
+          "gradientStops": [
+            {
+              "color": "#8aff44",
+              "location": 0
+            },
+            {
+              "color": "#a9ff70",
+              "location": 0
+            },
+            {
+              "color": "#67d36d",
+              "location": 0.315185546875
+            },
+            {
+              "color": "#7be181",
+              "location": 0.59619140625
+            },
+            {
+              "color": "#8fff95",
+              "location": 0.70458984375
+            },
+            {
+              "color": "#94fe8a",
+              "location": 1
+            }
+          ],
+          "gradientName": "Personnalisé"
+        },
+        {
+          "psd": "6mbanner",
+          "layer": "Groupe 1/Longueur",
+          "blendMode": "normal",
+          "opacity": 1,
+          "angle": 179,
+          "reverse": false,
+          "align": true,
+          "gradientStops": [
+            {
+              "color": "#000000",
+              "location": 0
+            },
+            {
+              "color": "#031c01",
+              "location": 1
+            }
+          ],
+          "gradientName": "Personnalisé"
+        },
+        {
+          "psd": "6mbanner",
+          "layer": "Groupe 1/D’avance",
+          "blendMode": "normal",
+          "opacity": 1,
+          "angle": 179,
+          "reverse": false,
+          "align": true,
+          "gradientStops": [
+            {
+              "color": "#000000",
+              "location": 0
+            },
+            {
+              "color": "#356133",
+              "location": 0.527587890625
+            },
+            {
+              "color": "#050505",
+              "location": 1
+            }
+          ],
+          "gradientName": "Personnalisé"
+        },
+        {
+          "psd": "banner_vibefa",
+          "layer": "Groupe 4/Groupe 2/Rectangle 1",
+          "blendMode": "normal",
+          "opacity": 1,
+          "angle": -172,
+          "reverse": false,
+          "align": true,
+          "gradientStops": [
+            {
+              "color": "#ffd76a",
+              "location": 0
+            },
+            {
+              "color": "#ff9d3d",
+              "location": 0.476806640625
+            },
+            {
+              "color": "#ffc35b",
+              "location": 0.7001953125
+            },
+            {
+              "color": "#ff5f3a",
+              "location": 1
+            }
+          ],
+          "gradientName": "Personnalisé"
+        },
+        {
+          "psd": "banner_vibefa",
+          "layer": "Rectangle 2",
+          "blendMode": "normal",
+          "opacity": 1,
+          "angle": -172,
+          "reverse": false,
+          "align": true,
+          "gradientStops": [
+            {
+              "color": "#ffd76a",
+              "location": 0
+            },
+            {
+              "color": "#ff9d3d",
+              "location": 0.476806640625
+            },
+            {
+              "color": "#ffc35b",
+              "location": 0.7001953125
+            },
+            {
+              "color": "#ff5f3a",
+              "location": 1
+            }
+          ],
+          "gradientName": "Personnalisé"
+        },
+        {
+          "psd": "banner_vibefa",
+          "layer": "Calque 28",
+          "blendMode": "normal",
+          "opacity": 1,
+          "angle": 90,
+          "reverse": false,
+          "align": true,
+          "gradientStops": [
+            {
+              "color": "#ff5a5a",
+              "location": 0
+            },
+            {
+              "color": "#ffd548",
+              "location": 1
+            }
+          ],
+          "gradientName": "Personnalisé"
+        },
+        {
+          "psd": "banner_vibefa",
+          "layer": "Calque 29",
+          "blendMode": "normal",
+          "opacity": 1,
+          "angle": 90,
+          "reverse": false,
+          "align": true,
+          "gradientStops": [
+            {
+              "color": "#ff5a5a",
+              "location": 0
+            },
+            {
+              "color": "#ffd548",
+              "location": 1
+            }
+          ],
+          "gradientName": "Personnalisé"
+        },
+        {
+          "psd": "banner_vibefa",
+          "layer": "Rectangle 3",
+          "blendMode": "normal",
+          "opacity": 1,
+          "angle": 48,
+          "reverse": false,
+          "align": true,
+          "gradientStops": [
+            {
+              "color": "#ff5a5a",
+              "location": 0
+            },
+            {
+              "color": "#ffd548",
+              "location": 1
+            }
+          ],
+          "gradientName": "Personnalisé"
+        },
+        {
+          "psd": "logo_gtanew",
+          "layer": "Groupe 1/Rectangle 1",
+          "blendMode": "normal",
+          "opacity": 0.72,
+          "angle": 132,
+          "reverse": false,
+          "align": true,
+          "gradientStops": [
+            {
+              "color": "#ffb57e",
+              "location": 0
+            },
+            {
+              "color": "#ff5e9a",
+              "location": 1
+            }
+          ],
+          "gradientName": "Personnalisé"
+        },
+        {
+          "psd": "logo_stan",
+          "layer": "Groupe 1/Calque 4",
+          "blendMode": "normal",
+          "opacity": 1,
+          "angle": 179,
+          "reverse": false,
+          "align": true,
+          "gradientStops": [
+            {
+              "color": "#d4c3a3",
+              "location": 0
+            },
+            {
+              "color": "#d4c3a3",
+              "location": 1
+            }
+          ],
+          "gradientName": "Personnalisé"
+        }
+      ]
+    },
+    "bevel": {
+      "enabledCount": 5,
+      "psds": [
+        "branding_stan",
+        "ggg",
+        "logo_stan",
+        "losssgo"
+      ],
+      "size": {
+        "n": 5,
+        "min": 0,
+        "max": 18,
+        "median": 0,
+        "p25": 0,
+        "p75": 0,
+        "mean": 3.6
+      },
+      "soften": {
+        "n": 5,
+        "min": 1,
+        "max": 10,
+        "median": 1,
+        "p25": 1,
+        "p75": 8,
+        "mean": 4.2
+      },
+      "angle": {
+        "n": 5,
+        "min": 93,
+        "max": 120,
+        "median": 93,
+        "p25": 93,
+        "p75": 93,
+        "mean": 98.4
+      },
+      "samples": [
+        {
+          "psd": "branding_stan",
+          "layer": "Groupe 4/Calque 1 copie 3",
+          "technique": "smooth",
+          "style": "inner bevel",
+          "angle": 93,
+          "size": 0,
+          "soften": 1
+        },
+        {
+          "psd": "ggg",
+          "layer": "Groupe 6/Calque 9",
+          "technique": "smooth",
+          "style": "inner bevel",
+          "angle": 93,
+          "size": 0,
+          "soften": 1
+        },
+        {
+          "psd": "ggg",
+          "layer": "Groupe 6/Rectangle 1",
+          "technique": "smooth",
+          "style": "inner bevel",
+          "angle": 93,
+          "size": 0,
+          "soften": 1
+        },
+        {
+          "psd": "logo_stan",
+          "layer": "Groupe 1/Calque 4",
+          "technique": "smooth",
+          "style": "inner bevel",
+          "angle": 120,
+          "size": 0,
+          "soften": 8
+        },
+        {
+          "psd": "losssgo",
+          "layer": "Groupe 1/Groupe 2/Calque 1",
+          "technique": "smooth",
+          "style": "inner bevel",
+          "angle": 93,
+          "size": 18,
+          "soften": 10
+        }
+      ]
+    },
+    "innerGlow": {
+      "enabledCount": 2,
+      "psds": [
+        "logo_gtanew",
+        "losssgo"
+      ],
+      "size": {
+        "n": 2,
+        "min": 6,
+        "max": 81,
+        "median": 81,
+        "p25": 6,
+        "p75": 81,
+        "mean": 43.5
+      },
+      "choke": {
+        "n": 2,
+        "min": 6,
+        "max": 25,
+        "median": 25,
+        "p25": 6,
+        "p75": 25,
+        "mean": 15.5
+      },
+      "opacity": {
+        "n": 2,
+        "min": 0.66,
+        "max": 1,
+        "median": 1,
+        "p25": 0.66,
+        "p75": 1,
+        "mean": 0.83
+      },
+      "colors": [
+        "#ffbcfc×1",
+        "#ffffff×1"
+      ],
+      "samples": [
+        {
+          "psd": "logo_gtanew",
+          "layer": "Groupe 1/GTA",
+          "blendMode": "normal",
+          "opacity": 1,
+          "technique": "softer",
+          "source": "center",
+          "color": "#ffbcfc",
+          "size": 81,
+          "choke": 25
+        },
+        {
+          "psd": "losssgo",
+          "layer": "Groupe 1/Groupe 2/Calque 1",
+          "blendMode": "normal",
+          "opacity": 0.66,
+          "technique": "softer",
+          "source": "edge",
+          "color": "#ffffff",
+          "size": 6,
+          "choke": 6
+        }
+      ]
+    },
+    "innerShadow": {
+      "enabledCount": 1,
+      "psds": [
+        "losssgo"
+      ],
+      "size": {
+        "n": 1,
+        "min": 7,
+        "max": 7,
+        "median": 7,
+        "p25": 7,
+        "p75": 7,
+        "mean": 7
+      },
+      "distance": {
+        "n": 1,
+        "min": 3,
+        "max": 3,
+        "median": 3,
+        "p25": 3,
+        "p75": 3,
+        "mean": 3
+      },
+      "choke": {
+        "n": 1,
+        "min": 0,
+        "max": 0,
+        "median": 0,
+        "p25": 0,
+        "p75": 0,
+        "mean": 0
+      },
+      "opacity": {
+        "n": 1,
+        "min": 0.33,
+        "max": 0.33,
+        "median": 0.33,
+        "p25": 0.33,
+        "p75": 0.33,
+        "mean": 0.33
+      },
+      "angle": {
+        "n": 1,
+        "min": 90,
+        "max": 90,
+        "median": 90,
+        "p25": 90,
+        "p75": 90,
+        "mean": 90
+      },
+      "colors": [
+        "#000000×1"
+      ],
+      "samples": [
+        {
+          "psd": "losssgo",
+          "layer": "Groupe 1/Groupe 2/Calque 1",
+          "blendMode": "multiply",
+          "opacity": 0.33,
+          "angle": 90,
+          "color": "#000000",
+          "size": 7,
+          "distance": 3,
+          "choke": 0
+        }
+      ]
+    }
+  }
+}

@@ -156,5 +156,839 @@
     "ratios": [
       "1:1 square aspect ratio"
     ]
+  },
+  "fonds": {
+    "genere_le": "2026-08-16T11:12:41.503Z",
+    "modele": "gemini-3.5-flash",
+    "images": 59,
+    "fonds_non_vides_pct": 90,
+    "familles": {
+      "motif_thematique": 3,
+      "micro_scene": 34,
+      "texture_graphique": 22,
+      "combinaison": 31,
+      "vide": 10
+    },
+    "texture_presente_pct": 63,
+    "scene_presente_pct": 68,
+    "combinaison_texture_scene_pct": 41,
+    "opacite_moyenne_texture_pct": 19.5,
+    "opacite_moyenne_scene_pct": 34.9,
+    "opacite_p10_p90_pct": [
+      12,
+      50
+    ],
+    "resume_en": "90% of corpus logo backgrounds are WORKED, never empty: 68% carry a contextual micro-scene layer (palms, skyline, silhouettes, foliage — mean visibility 34.9%), 63% a graphic texture layer (halftone, topo/marbled lines, arcs, grain, particles — mean visibility 19.5%), 41% combine both. Layers sit at 12-50% visibility over a nuanced base (directional gradient, vignette, glow) and are desaturated: the backdrop is sensed, never watched."
+  },
+  "familles_rendu": {
+    "source": "manifest v4, seuils relief_3d <=2 / 3-5 / >=6",
+    "familles": [
+      {
+        "famille": "plat_premium",
+        "pct": 46,
+        "glow_pct": 41,
+        "description": "flat premium silhouette/lettering, satin-matte fills, clean thick contours, optional soft glow"
+      },
+      {
+        "famille": "semi_flat_biseau",
+        "pct": 32,
+        "glow_pct": 84,
+        "description": "semi-flat two-tone marks, matte bevels, sharp fractures/cuts, dominant contour glow"
+      },
+      {
+        "famille": "dimensionnelle",
+        "pct": 22,
+        "glow_pct": 77,
+        "description": "deep bevel/extrusion, controlled chrome/metal, rim glow"
+      }
+    ],
+    "resume_en": "The corpus splits into three render families: flat premium 46% (satin fills, thick contours), semi-flat beveled two-tone 32% (matte bevels, fractures, 84% carry glow), dimensional chrome/glow 22%. No family is superior — a premium set covers them by these real weights."
+  },
+  "recettes_calques": {
+    "version": 1,
+    "source": "PackPsd — 13 PSD professionnels décomposés (ag-psd), vision gemini-3.5-flash sur calques isolés",
+    "genere_le": "2026-08-16T13:52:16.009Z",
+    "ordre_pile_canonique": [
+      {
+        "role": "fond",
+        "z_median": 0.21,
+        "n": 57
+      },
+      {
+        "role": "accent_deco",
+        "z_median": 0.36,
+        "n": 33
+      },
+      {
+        "role": "texture",
+        "z_median": 0.4,
+        "n": 43
+      },
+      {
+        "role": "effet_lumiere",
+        "z_median": 0.52,
+        "n": 93
+      },
+      {
+        "role": "embleme",
+        "z_median": 0.6,
+        "n": 29
+      },
+      {
+        "role": "lettrage",
+        "z_median": 0.6,
+        "n": 40
+      },
+      {
+        "role": "badge_forme",
+        "z_median": 0.65,
+        "n": 11
+      },
+      {
+        "role": "mascotte",
+        "z_median": 0.69,
+        "n": 24
+      },
+      {
+        "role": "ui_texte_secondaire",
+        "z_median": 0.7,
+        "n": 15
+      }
+    ],
+    "ordre_type_resume": "fond → textures (papier/roche, opacités 10-30 %) → effets lumière (glows larges) → emblème/mascotte → lettrage (texte + styles) → accents/ui — réglages colorimétriques au sommet",
+    "piles_par_psd": [
+      {
+        "psd": "6mbanner.psd",
+        "pile_bas_vers_haut": [
+          "fond",
+          "embleme",
+          "effet_lumiere×2",
+          "texture",
+          "mascotte",
+          "accent_deco×2",
+          "accent_deco×2",
+          "embleme",
+          "effet_lumiere",
+          "mascotte",
+          "effet_lumiere",
+          "mascotte",
+          "badge_forme×2",
+          "mascotte×2",
+          "effet_lumiere",
+          "fond",
+          "lettrage(texte)",
+          "texture×2",
+          "lettrage(texte)",
+          "embleme",
+          "lettrage(texte)×2",
+          "ui_texte_secondaire",
+          "badge_forme",
+          "fond",
+          "effet_lumiere×2",
+          "mascotte",
+          "effet_lumiere×2",
+          "accent_deco",
+          "fond",
+          "texture",
+          "effet_lumiere×2"
+        ]
+      },
+      {
+        "psd": "6mlogo.psd",
+        "pile_bas_vers_haut": [
+          "fond",
+          "effet_lumiere",
+          "texture×2",
+          "texture",
+          "effet_lumiere",
+          "accent_deco",
+          "ui_texte_secondaire(texte)",
+          "lettrage×2",
+          "effet_lumiere",
+          "texture",
+          "lettrage×2",
+          "embleme",
+          "fond",
+          "effet_lumiere×2",
+          "lettrage",
+          "accent_deco×2"
+        ]
+      },
+      {
+        "psd": "banner.psd",
+        "pile_bas_vers_haut": [
+          "fond×2",
+          "texture",
+          "effet_lumiere",
+          "texture",
+          "effet_lumiere×2",
+          "lettrage",
+          "effet_lumiere",
+          "fond",
+          "badge_forme×2",
+          "effet_lumiere"
+        ]
+      },
+      {
+        "psd": "bannerdsc.psd",
+        "pile_bas_vers_haut": [
+          "fond×2",
+          "accent_deco",
+          "fond",
+          "effet_lumiere",
+          "accent_deco",
+          "texture",
+          "effet_lumiere",
+          "accent_deco×2",
+          "effet_lumiere×2",
+          "accent_deco",
+          "effet_lumiere",
+          "fond",
+          "embleme",
+          "texture",
+          "lettrage(texte)×2",
+          "effet_lumiere×2",
+          "effet_lumiere",
+          "fond×2",
+          "texture",
+          "lettrage"
+        ]
+      },
+      {
+        "psd": "bannerpsd.psd",
+        "pile_bas_vers_haut": [
+          "fond×2",
+          "embleme",
+          "texture",
+          "embleme×2",
+          "embleme",
+          "effet_lumiere",
+          "texture×2",
+          "effet_lumiere",
+          "texture×2",
+          "effet_lumiere×2",
+          "effet_lumiere",
+          "mascotte",
+          "texture",
+          "mascotte",
+          "fond",
+          "mascotte",
+          "lettrage",
+          "effet_lumiere×2",
+          "fond",
+          "texture",
+          "effet_lumiere×2"
+        ]
+      },
+      {
+        "psd": "banner_vibefa.psd",
+        "pile_bas_vers_haut": [
+          "fond×2",
+          "texture×2",
+          "effet_lumiere×2",
+          "texture×2",
+          "lettrage×2",
+          "fond",
+          "lettrage(texte)×2",
+          "accent_deco",
+          "badge_forme",
+          "accent_deco",
+          "badge_forme",
+          "accent_deco",
+          "ui_texte_secondaire(texte)",
+          "effet_lumiere×2",
+          "fond",
+          "effet_lumiere×2",
+          "effet_lumiere",
+          "embleme",
+          "fond",
+          "accent_deco×2",
+          "accent_deco×2",
+          "badge_forme",
+          "ui_texte_secondaire(texte)",
+          "fond×2",
+          "embleme",
+          "fond",
+          "embleme",
+          "fond×2",
+          "badge_forme",
+          "fond×2",
+          "embleme×2",
+          "fond",
+          "accent_deco"
+        ]
+      },
+      {
+        "psd": "branding_stan.psd",
+        "pile_bas_vers_haut": [
+          "fond×2",
+          "fond",
+          "effet_lumiere",
+          "fond",
+          "embleme",
+          "effet_lumiere",
+          "ui_texte_secondaire",
+          "mascotte",
+          "texture",
+          "mascotte",
+          "fond",
+          "effet_lumiere×2",
+          "effet_lumiere×2",
+          "lettrage(texte)",
+          "embleme",
+          "effet_lumiere",
+          "texture",
+          "effet_lumiere",
+          "lettrage",
+          "mascotte×2",
+          "mascotte",
+          "effet_lumiere",
+          "mascotte",
+          "fond",
+          "mascotte×2",
+          "lettrage(texte)",
+          "mascotte×2",
+          "mascotte",
+          "texture",
+          "mascotte"
+        ]
+      },
+      {
+        "psd": "ggg.psd",
+        "pile_bas_vers_haut": [
+          "fond",
+          "accent_deco",
+          "fond×2",
+          "lettrage×2",
+          "accent_deco",
+          "fond×2",
+          "effet_lumiere",
+          "texture",
+          "ui_texte_secondaire",
+          "accent_deco",
+          "ui_texte_secondaire(texte)",
+          "effet_lumiere",
+          "ui_texte_secondaire",
+          "effet_lumiere",
+          "texture",
+          "lettrage(texte)",
+          "effet_lumiere×2",
+          "lettrage(texte)",
+          "effet_lumiere",
+          "ui_texte_secondaire",
+          "fond",
+          "embleme",
+          "effet_lumiere",
+          "embleme",
+          "ui_texte_secondaire×2",
+          "ui_texte_secondaire×2",
+          "texture",
+          "lettrage(texte)"
+        ]
+      },
+      {
+        "psd": "logo.psd",
+        "pile_bas_vers_haut": [
+          "fond×2",
+          "fond×2",
+          "effet_lumiere",
+          "fond",
+          "effet_lumiere",
+          "accent_deco",
+          "mascotte",
+          "effet_lumiere",
+          "mascotte×2",
+          "effet_lumiere",
+          "texture",
+          "effet_lumiere"
+        ]
+      },
+      {
+        "psd": "logo_gtanew.psd",
+        "pile_bas_vers_haut": [
+          "fond",
+          "effet_lumiere",
+          "texture",
+          "accent_deco×2",
+          "lettrage(texte)",
+          "effet_lumiere",
+          "accent_deco",
+          "effet_lumiere",
+          "ui_texte_secondaire(texte)",
+          "effet_lumiere",
+          "badge_forme",
+          "lettrage×2",
+          "lettrage×2",
+          "lettrage",
+          "fond"
+        ]
+      },
+      {
+        "psd": "logo_stan.psd",
+        "pile_bas_vers_haut": [
+          "fond",
+          "texture",
+          "accent_deco",
+          "effet_lumiere",
+          "texture",
+          "fond",
+          "lettrage×2",
+          "accent_deco",
+          "lettrage",
+          "effet_lumiere",
+          "lettrage",
+          "badge_forme",
+          "effet_lumiere×2",
+          "effet_lumiere×2",
+          "effet_lumiere",
+          "lettrage",
+          "ui_texte_secondaire"
+        ]
+      },
+      {
+        "psd": "losssgo.psd",
+        "pile_bas_vers_haut": [
+          "fond×2",
+          "accent_deco",
+          "effet_lumiere",
+          "texture",
+          "effet_lumiere",
+          "texture",
+          "effet_lumiere×2",
+          "lettrage×2",
+          "effet_lumiere",
+          "lettrage",
+          "texture",
+          "embleme",
+          "texture",
+          "embleme",
+          "effet_lumiere×2",
+          "effet_lumiere×2",
+          "accent_deco",
+          "effet_lumiere",
+          "accent_deco",
+          "embleme×2",
+          "effet_lumiere",
+          "embleme×2",
+          "embleme"
+        ]
+      },
+      {
+        "psd": "vulcainlogo.psd",
+        "pile_bas_vers_haut": [
+          "fond",
+          "embleme",
+          "fond",
+          "embleme×2",
+          "effet_lumiere",
+          "texture×2",
+          "effet_lumiere",
+          "texture×2",
+          "effet_lumiere×2",
+          "embleme",
+          "texture",
+          "effet_lumiere"
+        ]
+      }
+    ],
+    "parametres_effets": {
+      "stroke": {
+        "occurrences": 11,
+        "psds": 6,
+        "size": {
+          "median": 3,
+          "p25": 2,
+          "p75": 4,
+          "min": 1,
+          "max": 6
+        },
+        "opacity": {
+          "median": 1,
+          "p25": 1,
+          "p75": 1,
+          "min": 0.04,
+          "max": 1
+        },
+        "couleurs": [
+          "#ffffff×8",
+          "#8fff97×3"
+        ],
+        "positions": {
+          "outside": 6,
+          "inside": 5
+        }
+      },
+      "gradientOverlay": {
+        "occurrences": 10,
+        "psds": 4,
+        "opacity": {
+          "median": 1,
+          "p25": 1,
+          "p75": 1,
+          "min": 0.72,
+          "max": 1
+        },
+        "exemples_stops": [
+          {
+            "psd": "6mbanner",
+            "angle": 179,
+            "stops": [
+              {
+                "color": "#8aff44",
+                "location": 0
+              },
+              {
+                "color": "#a9ff70",
+                "location": 0
+              },
+              {
+                "color": "#67d36d",
+                "location": 0.315185546875
+              },
+              {
+                "color": "#7be181",
+                "location": 0.59619140625
+              },
+              {
+                "color": "#8fff95",
+                "location": 0.70458984375
+              },
+              {
+                "color": "#94fe8a",
+                "location": 1
+              }
+            ]
+          },
+          {
+            "psd": "6mbanner",
+            "angle": 179,
+            "stops": [
+              {
+                "color": "#000000",
+                "location": 0
+              },
+              {
+                "color": "#031c01",
+                "location": 1
+              }
+            ]
+          },
+          {
+            "psd": "6mbanner",
+            "angle": 179,
+            "stops": [
+              {
+                "color": "#000000",
+                "location": 0
+              },
+              {
+                "color": "#356133",
+                "location": 0.527587890625
+              },
+              {
+                "color": "#050505",
+                "location": 1
+              }
+            ]
+          },
+          {
+            "psd": "banner_vibefa",
+            "angle": -172,
+            "stops": [
+              {
+                "color": "#ffd76a",
+                "location": 0
+              },
+              {
+                "color": "#ff9d3d",
+                "location": 0.476806640625
+              },
+              {
+                "color": "#ffc35b",
+                "location": 0.7001953125
+              },
+              {
+                "color": "#ff5f3a",
+                "location": 1
+              }
+            ]
+          },
+          {
+            "psd": "banner_vibefa",
+            "angle": -172,
+            "stops": [
+              {
+                "color": "#ffd76a",
+                "location": 0
+              },
+              {
+                "color": "#ff9d3d",
+                "location": 0.476806640625
+              },
+              {
+                "color": "#ffc35b",
+                "location": 0.7001953125
+              },
+              {
+                "color": "#ff5f3a",
+                "location": 1
+              }
+            ]
+          },
+          {
+            "psd": "banner_vibefa",
+            "angle": 90,
+            "stops": [
+              {
+                "color": "#ff5a5a",
+                "location": 0
+              },
+              {
+                "color": "#ffd548",
+                "location": 1
+              }
+            ]
+          },
+          {
+            "psd": "banner_vibefa",
+            "angle": 90,
+            "stops": [
+              {
+                "color": "#ff5a5a",
+                "location": 0
+              },
+              {
+                "color": "#ffd548",
+                "location": 1
+              }
+            ]
+          },
+          {
+            "psd": "banner_vibefa",
+            "angle": 48,
+            "stops": [
+              {
+                "color": "#ff5a5a",
+                "location": 0
+              },
+              {
+                "color": "#ffd548",
+                "location": 1
+              }
+            ]
+          }
+        ]
+      },
+      "dropShadow": {
+        "occurrences": 6,
+        "psds": 4,
+        "size": {
+          "median": 38,
+          "p25": 7,
+          "p75": 40,
+          "min": 7,
+          "max": 87
+        },
+        "distance": {
+          "median": 12,
+          "p25": 6,
+          "p75": 20,
+          "min": 0,
+          "max": 41
+        },
+        "choke": {
+          "median": 6,
+          "p25": 5,
+          "p75": 6,
+          "min": 0,
+          "max": 18
+        },
+        "opacity": {
+          "median": 0.52,
+          "p25": 0.49,
+          "p75": 0.52,
+          "min": 0.26,
+          "max": 1
+        },
+        "couleurs": [
+          "#000000×6"
+        ]
+      },
+      "outerGlow": {
+        "occurrences": 4,
+        "psds": 3,
+        "size": {
+          "median": 13,
+          "p25": 7,
+          "p75": 13,
+          "min": 0,
+          "max": 13
+        },
+        "choke": {
+          "median": 15,
+          "p25": 0,
+          "p75": 15,
+          "min": 0,
+          "max": 15
+        },
+        "opacity": {
+          "median": 1,
+          "p25": 0.13,
+          "p75": 1,
+          "min": 0.08,
+          "max": 1
+        },
+        "couleurs": [
+          "#66ff70×2",
+          "#ffffff×1",
+          "#8ad9ff×1"
+        ]
+      },
+      "innerGlow": {
+        "occurrences": 2,
+        "psds": 2,
+        "size": {
+          "median": 81,
+          "p25": 6,
+          "p75": 81,
+          "min": 6,
+          "max": 81
+        },
+        "choke": {
+          "median": 25,
+          "p25": 6,
+          "p75": 25,
+          "min": 6,
+          "max": 25
+        },
+        "opacity": {
+          "median": 1,
+          "p25": 0.66,
+          "p75": 1,
+          "min": 0.66,
+          "max": 1
+        },
+        "couleurs": [
+          "#ffbcfc×1",
+          "#ffffff×1"
+        ]
+      },
+      "innerShadow": {
+        "occurrences": 1,
+        "psds": 1,
+        "size": {
+          "median": 7,
+          "p25": 7,
+          "p75": 7,
+          "min": 7,
+          "max": 7
+        },
+        "distance": {
+          "median": 3,
+          "p25": 3,
+          "p75": 3,
+          "min": 3,
+          "max": 3
+        },
+        "choke": {
+          "median": 0,
+          "p25": 0,
+          "p75": 0,
+          "min": 0,
+          "max": 0
+        },
+        "opacity": {
+          "median": 0.33,
+          "p25": 0.33,
+          "p75": 0.33,
+          "min": 0.33,
+          "max": 0.33
+        },
+        "couleurs": [
+          "#000000×1"
+        ]
+      },
+      "bevel": {
+        "occurrences": 5,
+        "psds": 4,
+        "size": {
+          "median": 0,
+          "p25": 0,
+          "p75": 0,
+          "min": 0,
+          "max": 18
+        }
+      },
+      "solidFill": {
+        "occurrences": 21,
+        "psds": 10,
+        "opacity": {
+          "median": 1,
+          "p25": 1,
+          "p75": 1,
+          "min": 0.74,
+          "max": 1
+        },
+        "couleurs": [
+          "#ffffff×5",
+          "#000000×2",
+          "#090909×2",
+          "#3becfd×2",
+          "#060606×2",
+          "#eefeed×1",
+          "#0c3a0e×1",
+          "#90f98a×1",
+          "#040401×1",
+          "#091704×1",
+          "#ffedc1×1",
+          "#10060e×1",
+          "#0a0806×1"
+        ]
+      }
+    },
+    "frequences_roles": {
+      "effet_lumiere": {
+        "n": 93,
+        "pct": 27
+      },
+      "fond": {
+        "n": 57,
+        "pct": 17
+      },
+      "texture": {
+        "n": 43,
+        "pct": 12
+      },
+      "lettrage": {
+        "n": 40,
+        "pct": 12
+      },
+      "accent_deco": {
+        "n": 33,
+        "pct": 10
+      },
+      "embleme": {
+        "n": 29,
+        "pct": 8
+      },
+      "mascotte": {
+        "n": 24,
+        "pct": 7
+      },
+      "ui_texte_secondaire": {
+        "n": 15,
+        "pct": 4
+      },
+      "badge_forme": {
+        "n": 11,
+        "pct": 3
+      }
+    },
+    "arbitrage_lettrage": {
+      "calques_texte_photoshop": 19,
+      "lettrage_typographie_rasterise": 22,
+      "lettrage_custom_dessine": 16,
+      "note": "LOT 2 : (a) texte+styles / (b) custom importé / (c) généré — verdict au rapport"
+    }
   }
 }

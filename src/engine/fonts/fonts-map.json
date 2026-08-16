@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "source": "Run 5.7 LOT 2 — tableau police PSD → police utilisée (PackPsd, 13 PSD, 19 calques texte)",
+  "note": "Toute police 'exacte' est embarquée dans ce dossier. Les équivalents remplacent les polices non libres ; scaleX/skew documentent la transformation d'approche.",
+  "familles": [
+    { "psd_font": "Anton-Regular", "occurrences": 4, "psds": ["6mbanner", "6mlogo"], "licence": "OFL", "statut": "exacte", "file": "Anton-Regular.ttf", "css_family": "Anton" },
+    { "psd_font": "Unbounded-Medium", "occurrences": 3, "psds": ["ggg"], "licence": "OFL", "statut": "exacte", "file": "Unbounded-Medium.ttf", "css_family": "Unbounded Medium" },
+    { "psd_font": "Montserrat-Black", "occurrences": 2, "psds": ["banner_vibefa"], "licence": "OFL", "statut": "exacte", "file": "Montserrat-Black.ttf", "css_family": "Montserrat Black" },
+    { "psd_font": "Montserrat-Medium", "occurrences": 1, "psds": ["banner_vibefa"], "licence": "OFL", "statut": "exacte", "file": "Montserrat-Medium.ttf", "css_family": "Montserrat Medium" },
+    { "psd_font": "Montserrat-SemiBold", "occurrences": 1, "psds": ["banner_vibefa"], "licence": "OFL", "statut": "exacte", "file": "Montserrat-SemiBold.ttf", "css_family": "Montserrat SemiBold" },
+    { "psd_font": "Carlito-Bold", "occurrences": 1, "psds": ["6mbanner"], "licence": "OFL", "statut": "exacte", "file": "Carlito-Bold.ttf", "css_family": "Carlito" },
+    { "psd_font": "Roboto-Italic", "occurrences": 1, "psds": ["bannerdsc"], "licence": "Apache-2.0/OFL", "statut": "exacte", "file": "Roboto-Italic.ttf", "css_family": "Roboto Italic" },
+    { "psd_font": "Pricedown-Black", "occurrences": 1, "psds": ["logo_gtanew"], "licence": "Typodermic freeware — EULA 2023 jointe, vérification client pour usage SaaS commercial", "statut": "exacte", "file": "Pricedown-Black.otf", "css_family": "Pricedown Bl" },
+    { "psd_font": "Blacksword", "occurrences": 2, "psds": ["bannerdsc", "branding_stan"], "licence": "usage personnel uniquement", "statut": "equivalente", "file": "GreatVibes-Regular.ttf", "css_family": "Great Vibes", "alternative": "KaushanScript-Regular.ttf" },
+    { "psd_font": "TekoroDemo-BlackItalic", "occurrences": 1, "psds": ["bannerdsc"], "licence": "démo", "statut": "equivalente", "file": "ArchivoBlack-Regular.ttf", "css_family": "Archivo Black", "skewX": -8 },
+    { "psd_font": "FONTSPRINGDEMO-MoldeCompressed-BoldReverseRegular", "occurrences": 1, "psds": ["branding_stan"], "licence": "démo Fontspring", "statut": "equivalente", "file": "Oswald-Bold.ttf", "css_family": "Oswald" },
+    { "psd_font": "RETROTECHRegular", "occurrences": 1, "psds": ["ggg"], "licence": "à vérifier", "statut": "equivalente", "file": "Audiowide-Regular.ttf", "css_family": "Audiowide", "alternative": "Orbitron-Bold.ttf" },
+    { "psd_font": "DrukWideTrial-SuperItalic", "occurrences": 1, "psds": ["logo_gtanew"], "licence": "trial commercial", "statut": "equivalente", "file": "ArchivoBlack-Regular.ttf", "css_family": "Archivo Black", "scaleX": 1.25, "skewX": -10 }
+  ],
+  "display_catalogue": {
+    "note": "Polices proposables par le director pour un lettrage neuf (toutes embarquées, libres sauf mention)",
+    "impact_condensee": ["Anton"],
+    "wide_moderne": ["Unbounded Medium", "Archivo Black"],
+    "geometrique": ["Montserrat Black", "Montserrat SemiBold"],
+    "tech_retro": ["Audiowide", "Orbitron"],
+    "script": ["Great Vibes", "Kaushan Script"],
+    "gta_heritage": ["Pricedown Bl"],
+    "condensee_sport": ["Oswald"]
+  }
+}

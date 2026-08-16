@@ -1,0 +1,54 @@
+{
+ "role": "BARRE DE NOTATION UNIQUEMENT — le jury note contre ces pépites, l'aveugle y puise ses trios. Ce set n'exclut RIEN : les 59 exemplaires restent tous des références de génération valides (le produit couvre tous les styles du corpus).",
+ "constitue_le": "2026-08-16, run 5.9 chantier 0 — identification par vision sur les exemplaires recompilés HQ (1024px q92)",
+ "pepites": [
+  {
+   "slug": "logo",
+   "pourquoi": "LE wordmark Fruitz réel : script chrome fondu dans une demi-tranche d'agrume — la cible absolue du brief fruitz",
+   "famille": "plat_premium",
+   "resolution_native": 1219
+  },
+  {
+   "slug": "4409091d08b9cb1da6aa3c72b0e1e0b4",
+   "pourquoi": "Le badge ALYA : lettrage serif custom fusionné aux dauphins, fond dégradé + doodles thématiques — cité par DIRECTOR_SYSTEM",
+   "famille": "plat_premium",
+   "resolution_native": 1024
+  },
+  {
+   "slug": "branding",
+   "pourquoi": "Planche South District : lettrage chrome vert/3D/or script — LA barre matière chrome (attention : planche multi-cases)",
+   "famille": "dimensionnelle",
+   "resolution_native": 689
+  },
+  {
+   "slug": "logo2",
+   "pourquoi": "Monogramme S chrome bleu + étoile sur scène GTA — chrome froid premium, intégration scène",
+   "famille": "dimensionnelle",
+   "resolution_native": 1500
+  },
+  {
+   "slug": "logo-sweetylife",
+   "pourquoi": "Script « Sweety Life » chrome/bleu — le script premium avec matière",
+   "famille": "dimensionnelle",
+   "resolution_native": 2000
+  },
+  {
+   "slug": "c837de5b0bc55867b68557dc928c6c6c",
+   "pourquoi": "Le R or fracturé — monogramme métal fracturé cité par DIRECTOR_SYSTEM",
+   "famille": "dimensionnelle",
+   "resolution_native": 1024
+  },
+  {
+   "slug": "flashmood-rp2",
+   "pourquoi": "FLASH MOOD chrome + éclair fusionné dans le O — wordmark chrome cité par DIRECTOR_SYSTEM",
+   "famille": "semi_flat_biseau",
+   "resolution_native": 512
+  },
+  {
+   "slug": "nin3plaz-1460350845051863082",
+   "pourquoi": "Monogramme A + dauphin fusionné, glow discipliné sur fond sombre — le semi-flat glow propre",
+   "famille": "semi_flat_biseau",
+   "resolution_native": 2048
+  }
+ ]
+}
