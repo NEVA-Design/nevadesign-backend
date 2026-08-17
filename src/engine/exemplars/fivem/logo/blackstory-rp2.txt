@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, flat two-word lockup over a night beach scene.
+1. SHAPE — Two-word lockup: 'BLACK' in a hand-cut brush display face across the full width, 'Story' in a blue script crossing it diagonally — the script passes in front of the C and behind the K. Two palm trees in white silhouette rise from behind the ends of the wordmark.
+2. RENDER — Flat 2D vector, no extrusion. Solid white fills with a thin white keyline on the script, faint snow-fleck particles over the whole frame.
+3. COLORS — Pure white #FFFFFF, electric blue #1E6FE0, night navy #101C2E.
+4. FORMAT — Square composition, lockup centred across the middle third. Full-bleed dark background: a low-contrast night street with palms, buildings and a blue-grey sky.
+5. KEYWORDS — brush wordmark, script overlay, palms, night, flat vector, duotone, low-contrast background.

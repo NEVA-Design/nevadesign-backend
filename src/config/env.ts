@@ -29,6 +29,11 @@ export const env = {
   GEMINI_FALLBACK_ENABLED: process.env.GEMINI_FALLBACK_ENABLED ?? 'true',
   GEMINI_FALLBACK_MODEL: process.env.GEMINI_FALLBACK_MODEL ?? 'gemini-3.1-flash-image',
 
+  // Run 6 (§8) : clé Anthropic — OPTIONNELLE et dormante. Tant qu'elle est
+  // vide, l'étage DA reste sur Gemini ; posée, elle bascule le directeur
+  // artistique v6 sur Claude Opus 5 (facturation SÉPARÉE du ledger Gemini).
+  ANTHROPIC_API_KEY: process.env.ANTHROPIC_API_KEY ?? '',
+
   // Discord OAuth — notre propre app Discord Developer Portal, flux géré
   // entièrement par ce backend (pas de passage par Supabase Auth).
   DISCORD_CLIENT_ID: process.env.DISCORD_CLIENT_ID ?? '',

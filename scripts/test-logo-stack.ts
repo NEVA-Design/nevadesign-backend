@@ -8,7 +8,7 @@
 import { writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import sharp from 'sharp'
-import { assembleLogo, declineMonochrome, validateCalquesRecette, type LogoCalquesRecette } from '../src/lib/engine/logo-stack'
+import { assembleLogo, declineMonochrome, spellOut, validateCalquesRecette, type LogoCalquesRecette } from '../src/lib/engine/logo-stack'
 
 const OUT = process.argv[2] ?? '.'
 let echecs = 0
@@ -16,6 +16,11 @@ const check = (nom: string, ok: boolean, detail = '') => {
   if (!ok) echecs++
   console.log(`${ok ? 'PASS' : 'ÉCHEC'}  ${nom}${detail ? ` — ${detail}` : ''}`)
 }
+
+// ── 0. épellation : un nom en plusieurs mots ne fabrique pas de tiret isolé ──
+check('spellOut : mot simple', spellOut('Fruitz') === 'F-R-U-I-T-Z', spellOut('Fruitz'))
+check('spellOut : nom en deux mots', spellOut('Northside RP') === 'N-O-R-T-H-S-I-D-E R-P', spellOut('Northside RP'))
+check('spellOut : espaces multiples absorbés', spellOut('  NOX   RP ') === 'N-O-X R-P', spellOut('  NOX   RP '))
 
 // ── 1. validation de recette : bornes PSD appliquées ──
 const bonne: LogoCalquesRecette = {

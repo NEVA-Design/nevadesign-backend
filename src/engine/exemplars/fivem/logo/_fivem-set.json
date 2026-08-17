@@ -1,0 +1,164 @@
+{
+ "role": "L'IDIOME FiveM/GTA — la seule langue visuelle que le moteur doit parler. Le rendu apprend cette langue de la PREMIÈRE image jointe : REFERENCE 1 se prend TOUJOURS dans `fivem`. Ce fichier porte aussi `hors_corpus_reference` : les pièces qui ne sont plus jointes du tout, quel que soit le slot.",
+ "constitue_le": "2026-08-17, run 6 — PIVOT IDIOME sur mandat opérateur. Reclassement complet sur planche de contrôle des 27 pièces joignables (>= 512 px), pas sur les noms de fichiers.",
+ "le_pivot": "La cible visuelle était fausse. On optimisait « chrome sur palmiers néon » — un écran de chargement GTA V, pas un logo de serveur FiveM. L'idiome réel du dossier de référence « entrainement IA fivem » est : monogrammes de 1 à 3 lettres, vectoriel PLAT à contour noir épais, texture par-dessus (trame halftone, grain, scanlines, grille), glyphe rempli d'une matière, duotone 2 couleurs, fond pleine page sombre et PEU contrasté. Le chrome 3D existe mais reste minoritaire.",
+ "critere": "pièce UNIQUE (jamais une planche de marque multi-cases) portant une marque de serveur FiveM/GTA RP, sourcée du dossier « entrainement IA fivem ». Toute marque hors gaming en est exclue quelle que soit sa qualité : elle enseigne une AUTRE langue.",
+ "regle": "REFERENCE 1 se prend TOUJOURS dans `fivem`. Les slots 2 et 3 restent ouverts au reste du catalogue joignable, SAUF les slugs de `hors_corpus_reference`, qui ne sont plus jamais joints.",
+ "familles_de_rendu": {
+  "flat_vector_texture": "formes plates, contour noir épais, trame halftone / grain / scanlines par-dessus, duotone 2 couleurs — LA famille majoritaire de l'idiome",
+  "texture_fill": "le glyphe lui-même est rempli d'une matière (lumière, ville, montagnes, feu) découpée à sa silhouette",
+  "scene_composite": "la marque, plate, se tient sur une scène photo sombre et peu contrastée (rue de Los Santos, palmiers, grillage, skyline)",
+  "chrome_3d": "métal réfléchissant et relief — MINORITAIRE : au plus 1 concept sur 3"
+ },
+ "fivem": [
+  {
+   "slug": "logotbnnn",
+   "famille_rendu": "flat_vector_texture",
+   "construction": "ENTWINED",
+   "pourquoi": "TBN — la pièce la plus complète de l'idiome : monogramme 3 lettres à contour noir épais, glyphes remplis de scanlines diagonales, statue de la Liberté TISSÉE dans le lockup (torche devant le T, robe derrière), duotone violet/blanc, fond ville sombre sous trame halftone"
+  },
+  {
+   "slug": "vulcainlogo",
+   "famille_rendu": "flat_vector_texture",
+   "construction": "HERO_MONOGRAM",
+   "pourquoi": "V et ailes découpés dans UNE seule silhouette, remplissage à trame halftone visible, duotone bleu glacé, fond grille sombre — la fusion glyphe/emblème de référence"
+  },
+  {
+   "slug": "black-world1",
+   "famille_rendu": "flat_vector_texture",
+   "construction": "HERO_MONOGRAM",
+   "pourquoi": "B blanc massif à coupes géométriques, un seul accent cyan, skyline de nuit à très bas contraste — le monogramme héros plat pur"
+  },
+  {
+   "slug": "pnl-rp-v2-4",
+   "famille_rendu": "flat_vector_texture",
+   "construction": "EMBLEM_ONLY",
+   "pourquoi": "visage vectoriel plat à contour blanc épais, duotone rose/noir, zéro relief — la démonstration du contour épais comme signature"
+  },
+  {
+   "slug": "daycity1",
+   "famille_rendu": "flat_vector_texture",
+   "construction": "LOCKUP_EMPILE",
+   "pourquoi": "cœur anatomique plat en aplat violet, DAYCITY en sans-serif dessous, fond noir/violet — duotone strict"
+  },
+  {
+   "slug": "logo-noel",
+   "famille_rendu": "flat_vector_texture",
+   "construction": "HERO_MONOGRAM",
+   "pourquoi": "D esport à contour noir très épais, rouge/blanc, deux couleurs et rien d'autre (variante festive : le fond est rouge, pas sombre)"
+  },
+  {
+   "slug": "goldenlogo",
+   "famille_rendu": "flat_vector_texture",
+   "construction": "HERO_MONOGRAM",
+   "pourquoi": "GV en ligature continue, aplat or unique sans biseau, coups de peinture et trame halftone sur noir"
+  },
+  {
+   "slug": "lakhpar",
+   "famille_rendu": "flat_vector_texture",
+   "construction": "CONTAINER",
+   "pourquoi": "NEXT LAND traversant un triangle rouge fin qui contient une carte — le contenant plat, sans matière"
+  },
+  {
+   "slug": "welllogo",
+   "famille_rendu": "texture_fill",
+   "construction": "HERO_MONOGRAM",
+   "pourquoi": "W dont le remplissage EST une matière lumineuse découpée à la silhouette, sur grillage et arme — registre cartel urbain"
+  },
+  {
+   "slug": "flashmood-rp2",
+   "famille_rendu": "texture_fill",
+   "construction": "GLYPH_FUSION",
+   "pourquoi": "FLASH MOOD en aplat blanc, éclair fusionné dans le O, palmiers verts plein cadre — wordmark plat sur texture"
+  },
+  {
+   "slug": "valesia-rp1",
+   "famille_rendu": "scene_composite",
+   "construction": "EMBLEM_ONLY",
+   "pourquoi": "vague verte en aplat sur casino de nuit passé en noir et blanc — duotone appliqué à la scène elle-même"
+  },
+  {
+   "slug": "blackstory-rp2",
+   "famille_rendu": "scene_composite",
+   "construction": "ENTWINED",
+   "pourquoi": "BLACK au pinceau traversé par un script bleu (devant le C, derrière le K), palmiers blancs derrière, rue de nuit à bas contraste"
+  },
+  {
+   "slug": "gtanewlogo",
+   "famille_rendu": "scene_composite",
+   "construction": "LOCKUP_EMPILE",
+   "pourquoi": "GTA / NEW empilés sur ruban, palmiers en silhouette et ciel magenta — la scène GTA en fond plein cadre"
+  },
+  {
+   "slug": "nin3plaz-1460350845051863082",
+   "famille_rendu": "flat_vector_texture",
+   "construction": "ENTWINED",
+   "pourquoi": "A blanc massif, dauphin passant devant la barre et derrière la jambe droite, fond sombre — le monogramme héros plat le mieux exécuté du corpus. RECLASSÉ le 17/08 : il était « hors idiome » (registre hors gaming) ; sur planche c'est la construction héros plate de référence. CONFIRMÉ par l'opérateur."
+  },
+  {
+   "slug": "logo2",
+   "famille_rendu": "chrome_3d",
+   "construction": "HERO_MONOGRAM",
+   "pourquoi": "S chrome brossé + étoile, debout sur une scène GTA (véhicules, personnages) — la pièce chrome de référence, à garder MINORITAIRE"
+  },
+  {
+   "slug": "c837de5b0bc55867b68557dc928c6c6c",
+   "famille_rendu": "chrome_3d",
+   "construction": "HERO_MONOGRAM",
+   "pourquoi": "R or fracturé, registre esport sombre — métal, mais silhouette de monogramme héros"
+  }
+ ],
+ "hors_idiome_slot_2_3": [
+  {
+   "slug": "adversitylife",
+   "raison": "serveur RP réel, mais registre ÉCRAN DE CHARGEMENT : lettrage 3D multicolore sur ciel bleu clair très contrasté. C'est exactement la cible que le pivot abandonne. Reste joignable en slot 2 ou 3 comme référence de matière festive, jamais en 1."
+  }
+ ],
+ "hors_corpus_reference": [
+  {
+   "slug": "logo",
+   "raison": "wordmark FRUITZ — marque de FRUITS. Sortie du corpus de références le 17/08 sur décision opérateur : elle enseignait une langue de marque là où le moteur doit parler serveur FiveM. Elle a occupé REFERENCE 1 sur 4 concepts d'E3 sur 5."
+  },
+  {
+   "slug": "4409091d08b9cb1da6aa3c72b0e1e0b4",
+   "raison": "badge ALYA, dauphins pastel et doodles — marque loisir hors gaming. Sortie sur décision opérateur."
+  },
+  {
+   "slug": "logo-sweetylife",
+   "raison": "script « Sweety Life » chrome sur photo — registre lifestyle hors gaming. Sortie sur décision opérateur."
+  },
+  {
+   "slug": "branding",
+   "raison": "planche de marque South District, multi-cases : ce n'est pas un logo, et jointe en référence elle enseigne « dessine-moi une planche ». Sortie sur décision opérateur."
+  },
+  {
+   "slug": "group-1",
+   "raison": "planche de marque multi-cases — même motif que `branding`. Sortie par cohérence (non nommée par l'opérateur : à confirmer)."
+  },
+  {
+   "slug": "group-1a",
+   "raison": "planche de marque multi-cases — même motif que `branding`. CONFIRMÉ par l'opérateur le 17/08."
+  },
+  {
+   "slug": "mylight1",
+   "raison": "ML rouge sur skyline — monogramme plat parfaitement dans l'idiome, MAIS son fichier source n'est plus dans « entrainement IA fivem » (le manifest déclare `mylight1.png`, absent aujourd'hui). Sortie le 17/08 sur décision opérateur : la règle est « QUE le dossier », et ce qui n'y est plus n'en est plus."
+  },
+  {
+   "slug": "v-life-rp",
+   "raison": "V bleu + palmier sur scène de véhicules — même cas que `mylight1` : source déclarée du dossier, fichier absent. Sortie le 17/08 sur décision opérateur."
+  },
+  {
+   "slug": "velocity-rouge2",
+   "raison": "V rouge sur noir — même cas : source déclarée du dossier, fichier absent. Sortie le 17/08 sur décision opérateur."
+  },
+  {
+   "slug": "venezia7",
+   "raison": "V orange + renard — même cas : source déclarée du dossier, fichier absent. Sortie le 17/08 sur décision opérateur."
+  }
+ ],
+ "notes_de_sourcing": [
+  "Les 5 pièces `logotbnnn`, `vulcainlogo`, `gtanewlogo`, `goldenlogo`, `blackstory-rp2` étaient dans le dossier « entrainement IA fivem » SANS être dans le corpus : les quatre PNG sont arrivés du sous-dossier PackPsd (sans catégorie d'entraînement) après la passe train-fivem-v4, et le GIF était écarté par l'extension. Intégrées le 17/08 par scripts/calibration/ajoute-exemplars-idiome.ts. Deux d'entre elles sont les SEULES pièces joignables portant la trame halftone.",
+  "À l'inverse, `mylight1`, `v-life-rp`, `velocity-rouge2` et `venezia7` déclarent une source du dossier (`mylight1.png`…) que le dossier ne contient plus — il a bougé depuis l'entraînement (228 fichiers aujourd'hui contre 209 analysés). L'opérateur a tranché le 17/08 : elles sortent du corpus de références. Conséquence à connaître : la famille `chrome_3d` retombe à 2 pièces (le R or et le S chrome) et `scene_composite` à 3.",
+  "Pour les faire revenir, il suffit de reposer les fichiers dans « entrainement IA fivem/logo serveur fivem gtarp » et de les déplacer de `hors_corpus_reference` vers `fivem` : leurs exemplaires, reverse-prompts et étiquettes de style sont intacts au manifest."
+ ]
+}

@@ -285,6 +285,16 @@ export async function generateWithOcrGate(opts: {
   forbidAnyText?: boolean
   /** run 5.8 (lockup monogramme) : présence non exigée, mots en trop rejetés */
   expectedOptional?: boolean
+  /*
+   * Appelé dès qu'une image est PAYÉE, avant la porte OCR.
+   *
+   * Le 17/08 : la garde budget a refusé l'appel OCR juste après un rendu 2K
+   * facturé 0,1392 € — l'image n'a jamais atteint le disque, et l'argent est
+   * parti pour rien. Toute image payée doit exister sur le disque avant qu'un
+   * appel de plus puisse échouer : c'est le piège n°7 de la passation
+   * (« archiver le rendu fautif ») dans sa version budget.
+   */
+  onImagePayee?: (dataUrl: string, essai: number) => void
   log: EngineGenerationLog
 }): Promise<OcrGatedResult> {
   let rejects = 0
@@ -303,6 +313,8 @@ export async function generateWithOcrGate(opts: {
       referenceLabels: opts.referenceLabels,
       log: opts.log,
     })
+    // l'image est payée : elle sort AVANT tout appel supplémentaire
+    opts.onImagePayee?.(result.dataUrl, attempt + 1)
 
     if (!opts.expectedTexts.length && !opts.forbidAnyText) {
       return { ...result, ocrRejects: rejects, ocrDetail: 'aucun texte attendu', ocrTokensIn: totalOcrIn, ocrTokensOut: totalOcrOut }

@@ -1,54 +1,62 @@
 {
- "role": "BARRE DE NOTATION UNIQUEMENT — le jury note contre ces pépites, l'aveugle y puise ses trios. Ce set n'exclut RIEN : les 59 exemplaires restent tous des références de génération valides (le produit couvre tous les styles du corpus).",
- "constitue_le": "2026-08-16, run 5.9 chantier 0 — identification par vision sur les exemplaires recompilés HQ (1024px q92)",
+ "role": "LA BARRE — les pièces contre lesquelles le jury note, où l'aveugle tire ses trios, et le pool prioritaire de références (au moins 2 des 3 références d'un concept y sont prises).",
+ "constitue_le": "2026-08-17, run 6 — REFONTE COMPLÈTE sur le pivot idiome. Reclassement par vision sur planche de contrôle.",
+ "revision_2026_08_17": "La barre était fausse. Elle portait quatre marques HORS GAMING (Fruitz, ALYA, Sweety Life, planche South District) qui définissaient la qualité cible du moteur : elles ont tiré trois checkpoints vers le chrome de marque au lieu de l'idiome de serveur. Les quatre sortent, et le corpus lui-même le dit dans `_fivem-set.json/hors_corpus_reference`. Les deux gagnants du test plafond du run 5.9 cessent également de servir de barre : ils étaient de la même langue.",
+ "ce_que_la_barre_mesure": "Un logo de serveur FiveM/GTA RP : monogramme de 1 à 3 lettres, vectoriel plat, contour noir épais, texture par-dessus (halftone, grain, scanlines), glyphe rempli d'une matière, duotone, fond sombre et peu contrasté. Le chrome 3D reste dans la barre mais y est MINORITAIRE (2 pièces sur 8).",
  "pepites": [
   {
-   "slug": "logo",
-   "pourquoi": "LE wordmark Fruitz réel : script chrome fondu dans une demi-tranche d'agrume — la cible absolue du brief fruitz",
-   "famille": "plat_premium",
-   "resolution_native": 1219
+   "slug": "logotbnnn",
+   "pourquoi": "TBN — le sommet de l'idiome : monogramme à contour noir épais, glyphes remplis de scanlines, illustration tissée dans le lockup, halftone de fond, duotone violet",
+   "famille_rendu": "flat_vector_texture",
+   "resolution_native": 1205
   },
   {
-   "slug": "4409091d08b9cb1da6aa3c72b0e1e0b4",
-   "pourquoi": "Le badge ALYA : lettrage serif custom fusionné aux dauphins, fond dégradé + doodles thématiques — cité par DIRECTOR_SYSTEM",
-   "famille": "plat_premium",
+   "slug": "vulcainlogo",
+   "pourquoi": "V fusionné aux ailes dans une seule silhouette, trame halftone dans le remplissage, duotone bleu glacé — la fusion glyphe/emblème de référence",
+   "famille_rendu": "flat_vector_texture",
    "resolution_native": 1024
   },
   {
-   "slug": "branding",
-   "pourquoi": "Planche South District : lettrage chrome vert/3D/or script — LA barre matière chrome (attention : planche multi-cases)",
-   "famille": "dimensionnelle",
-   "resolution_native": 689
+   "slug": "black-world1",
+   "pourquoi": "B blanc à coupes géométriques, un seul accent cyan, skyline de nuit à bas contraste — le monogramme héros plat pur",
+   "famille_rendu": "flat_vector_texture",
+   "resolution_native": 1024
   },
   {
-   "slug": "logo2",
-   "pourquoi": "Monogramme S chrome bleu + étoile sur scène GTA — chrome froid premium, intégration scène",
-   "famille": "dimensionnelle",
-   "resolution_native": 1500
+   "slug": "pnl-rp-v2-4",
+   "pourquoi": "visage vectoriel plat à contour blanc épais, duotone rose/noir, zéro relief — la signature du contour épais",
+   "famille_rendu": "flat_vector_texture",
+   "resolution_native": 1000
   },
   {
-   "slug": "logo-sweetylife",
-   "pourquoi": "Script « Sweety Life » chrome/bleu — le script premium avec matière",
-   "famille": "dimensionnelle",
-   "resolution_native": 2000
+   "slug": "nin3plaz-1460350845051863082",
+   "pourquoi": "A blanc massif enlacé par un dauphin (devant la barre, derrière la jambe) — la construction ENTWINED la mieux exécutée du corpus",
+   "famille_rendu": "flat_vector_texture",
+   "resolution_native": 2048
   },
   {
-   "slug": "c837de5b0bc55867b68557dc928c6c6c",
-   "pourquoi": "Le R or fracturé — monogramme métal fracturé cité par DIRECTOR_SYSTEM",
-   "famille": "dimensionnelle",
+   "slug": "welllogo",
+   "pourquoi": "W dont le remplissage EST une matière lumineuse découpée à la silhouette, sur grillage — la pièce texture_fill de la barre",
+   "famille_rendu": "texture_fill",
    "resolution_native": 1024
   },
   {
    "slug": "flashmood-rp2",
-   "pourquoi": "FLASH MOOD chrome + éclair fusionné dans le O — wordmark chrome cité par DIRECTOR_SYSTEM",
-   "famille": "semi_flat_biseau",
+   "pourquoi": "FLASH MOOD en aplat blanc, éclair fusionné dans le O, palmiers plein cadre — wordmark plat sur texture",
+   "famille_rendu": "texture_fill",
    "resolution_native": 512
   },
   {
-   "slug": "nin3plaz-1460350845051863082",
-   "pourquoi": "Monogramme A + dauphin fusionné, glow discipliné sur fond sombre — le semi-flat glow propre",
-   "famille": "semi_flat_biseau",
-   "resolution_native": 2048
+   "slug": "logo2",
+   "pourquoi": "S chrome brossé + étoile debout sur une scène GTA — la pièce chrome de la barre, à garder minoritaire",
+   "famille_rendu": "chrome_3d",
+   "resolution_native": 1500
+  },
+  {
+   "slug": "c837de5b0bc55867b68557dc928c6c6c",
+   "pourquoi": "R or fracturé, registre esport sombre — métal sur silhouette de monogramme héros",
+   "famille_rendu": "chrome_3d",
+   "resolution_native": 1024
   }
  ]
 }

@@ -38,7 +38,7 @@ export type GeminiContent = { role: 'user' | 'model'; parts: GeminiPart[] }
 type GeminiApiResponse = {
   candidates?: Array<{
     content?: {
-      parts?: Array<{ text?: string; inlineData?: { mimeType: string; data: string } }>
+      parts?: Array<{ text?: string; thought?: boolean; inlineData?: { mimeType: string; data: string } }>
     }
     finishReason?: string
   }>
@@ -84,8 +84,24 @@ async function post(model: string, path: string, body: Record<string, unknown>, 
   })
 }
 
+/*
+ * TOUTES les parts texte, concaténées — jamais la première seule.
+ *
+ * Le 17/08 : `finishReason: STOP`, 825 tokens de sortie, et un JSON coupé net
+ * au milieu d'un slug. Ce n'était pas une troncature de budget mais une
+ * réponse répartie sur PLUSIEURS parts, dont on ne lisait que la première.
+ * Le symptôme est identique à celui d'un dépassement de maxOutputTokens, ce
+ * qui a envoyé le diagnostic dans le mur deux fois (piège n°16). Les parts de
+ * raisonnement (`thought`) sont écartées : elles ne font pas partie de la
+ * réponse.
+ */
 function extractText(response: GeminiApiResponse): string {
-  return response.candidates?.[0]?.content?.parts?.find((p) => typeof p.text === 'string')?.text?.trim() ?? ''
+  const parts = response.candidates?.[0]?.content?.parts ?? []
+  return parts
+    .filter((p) => typeof p.text === 'string' && !p.thought)
+    .map((p) => p.text as string)
+    .join('')
+    .trim()
 }
 
 // ─── Plain text generation (single-turn) ──────────────────────────────────────
@@ -101,6 +117,12 @@ export async function geminiText(opts: {
   // Gemini 3 : niveau de raisonnement explicite — exclusif de thinkingBudget
   thinkingLevel?: ThinkingLevel
   onUsage?: (usage: GeminiUsage) => void
+  /** La raison d'arrêt du modèle. `MAX_TOKENS` signifie que la réponse est
+   *  TRONQUÉE : avec thinkingLevel, maxOutputTokens borne le raisonnement ET la
+   *  sortie, donc `candidatesTokenCount` peut rester bas alors que le budget est
+   *  bel et bien épuisé. Sans ce signal on lit un JSON coupé comme un modèle
+   *  qui compte mal (vécu 3 fois : pièges n°5 et n°13). */
+  onFinishReason?: (reason: string) => void
 }): Promise<string> {
   const body: Record<string, unknown> = {
     contents: [{ role: 'user', parts: [{ text: opts.prompt }] }],
@@ -126,6 +148,8 @@ export async function geminiText(opts: {
     throw new GeminiError(friendlyErrorMessage(res.status, message), res.status)
   }
   opts.onUsage?.(extractUsage(json))
+  const finish = json.candidates?.[0]?.finishReason
+  if (finish) opts.onFinishReason?.(finish)
   return extractText(json)
 }
 
@@ -140,11 +164,32 @@ export async function geminiJson<T>(opts: {
   thinkingBudget?: number
   thinkingLevel?: ThinkingLevel
   onUsage?: (usage: GeminiUsage) => void
+  /** Le texte BRUT quand il ne parse pas. Sans lui, un `null` remonte à
+   *  l'appelant qui n'a plus qu'un « réponse invalide » à afficher — et on
+   *  diagnostique à l'aveugle en repayant l'appel (piège n°7 de la passation,
+   *  version texte : ça a coûté deux appels DA le 17/08). */
+  onParseError?: (raw: string) => void
+  onFinishReason?: (reason: string) => void
 }): Promise<T | null> {
-  const text = await geminiText({ ...opts, json: true })
+  let finish = ''
+  const text = await geminiText({
+    ...opts,
+    json: true,
+    onFinishReason: (r) => {
+      finish = r
+      opts.onFinishReason?.(r)
+    },
+  })
   try {
     return JSON.parse(text) as T
   } catch {
+    // La troncature se NOMME. Un JSON coupé et un JSON malformé se réparent de
+    // deux manières opposées : l'un demande du budget, l'autre un gabarit.
+    opts.onParseError?.(
+      finish === 'MAX_TOKENS'
+        ? `[TRONQUÉ — finishReason MAX_TOKENS : relève maxOutputTokens, le thinking consomme le même budget] ${text}`
+        : text
+    )
     return null
   }
 }
@@ -205,11 +250,18 @@ export async function geminiVisionJson<T>(opts: {
   maxOutputTokens?: number
   thinkingBudget?: number
   onUsage?: (usage: GeminiUsage) => void
+  /** Le texte BRUT quand il ne parse pas — même besoin que sur `geminiJson`
+   *  (piège n°17 : un catch qui renvoie null coûte le prochain appel). Run 7 :
+   *  une critique de forme revenait `null` à chaque tour et bloquait la
+   *  convergence de la boucle SVG ; la cause était un gabarit JSON portant des
+   *  commentaires `//` que le modèle recopiait. Invisible sans le texte brut. */
+  onParseError?: (raw: string) => void
 }): Promise<T | null> {
   const text = await geminiVisionText({ ...opts, json: true })
   try {
     return JSON.parse(text) as T
   } catch {
+    opts.onParseError?.(text)
     return null
   }
 }
@@ -229,6 +281,11 @@ export async function geminiMultimodal(opts: {
   // passe d'étiquetage vision en raisonnement haut sur le corpus.
   thinkingLevel?: ThinkingLevel
   onUsage?: (usage: GeminiUsage) => void
+  /** Run 7 : même besoin que sur geminiText — `MAX_TOKENS` est le SEUL signal
+   *  fiable de troncature (piège n°16), et sans lui un JSON coupé se lit comme
+   *  un modèle qui compte mal. La passe corpus et la boucle SVG appellent
+   *  toutes deux par ici, avec des sorties longues. */
+  onFinishReason?: (reason: string) => void
 }): Promise<string> {
   const body: Record<string, unknown> = {
     contents: [{ role: 'user', parts: opts.parts }],
@@ -254,6 +311,8 @@ export async function geminiMultimodal(opts: {
     throw new GeminiError(friendlyErrorMessage(res.status, message), res.status)
   }
   opts.onUsage?.(extractUsage(json))
+  const finish = json.candidates?.[0]?.finishReason
+  if (finish) opts.onFinishReason?.(finish)
   return extractText(json)
 }
 

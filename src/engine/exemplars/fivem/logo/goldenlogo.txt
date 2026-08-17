@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, flat gold monogram.
+1. SHAPE — Two-letter monogram 'GV' cut as one continuous ribbon: the tail of the G runs into the left arm of the V, and the V's point drops below the baseline of the G. Sharp mitred corners, constant stroke width. The mark occupies 75% of the width.
+2. RENDER — Flat 2D vector with a single warm gold gradient across the whole silhouette, no bevel and no 3D extrusion. A soft warm glow sits behind the mark.
+3. COLORS — Bright gold #F5C542, deep amber #8A5A12, near-black #0A0805.
+4. FORMAT — Square composition, centred subject. Full-bleed dark background: torn gold paint strokes at the top and bottom edges over black, plus a faint halftone dot field.
+5. KEYWORDS — flat vector, gold gradient, monogram, ligature, paint strokes, halftone, dark background, esport.

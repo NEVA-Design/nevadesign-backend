@@ -127,6 +127,20 @@ function loadCategory(category: string): CategoryCache {
   // recettes humaines éligibles à cette catégorie — prompts sans images
   loadManifestInto(result, join(EXEMPLARS_DIR, RECETTES_HUMAINES_DIR), category)
 
+  /*
+   * Run 6 (pivot idiome) — LES PIÈCES SORTIES DU CORPUS DE RÉFÉRENCES.
+   *
+   * Même mécanique que le plancher 512 px, et pour la même raison : on retire
+   * l'IMAGE de la jointure, jamais l'exemplaire du corpus. Fruitz, ALYA, Sweety
+   * Life et la planche South District gardent leur reverse-prompt, leurs notes
+   * et leur poids dans l'ADN — elles ne sont simplement plus jamais montrées au
+   * modèle image, parce qu'elles enseignent une langue de marque hors gaming.
+   * Le principe « on ne trie ni n'exclut rien du corpus » (passation §7) tient.
+   */
+  if (category === 'logo') {
+    for (const slug of horsCorpusReferenceSlugs()) result.images.delete(slug)
+  }
+
   cache.set(category, result)
   return result
 }
@@ -323,6 +337,182 @@ export function pickExemplarsEtiquetes(opts: {
     const image = images.get(entry.slug)!
     return { slug: entry.slug, data: image.data, mimeType: image.mimeType, label: etiquetteFor(entry, i) }
   })
+}
+
+// ── Run 6 (§3) : LE CATALOGUE DE RÉFÉRENCES, choisi PAR LE DA ────────────────
+// Le run 5.10 sélectionnait les références en code, par filtre de famille dur.
+// Hypothèse n°2 de la passation : ce filtre a écarté les pièces gold les plus
+// fortes (les gagnants du plafond utilisaient `logo` + `logo2` scénique +
+// `flashmood-rp2`, INTER-FAMILLES). En v6 le DA reçoit le catalogue des
+// références joignables et choisit lui-même 3 slugs par concept, dont AU MOINS
+// DEUX gold. Le plancher 512 px reste dur : une vignette n'est jamais jointe.
+
+type GoldSetFichier = { pepites?: Array<{ slug?: string }> }
+
+let goldCache: Set<string> | null = null
+
+/** Les slugs du gold set (barre de notation ET pool prioritaire de références). */
+export function goldSlugs(): Set<string> {
+  if (goldCache) return goldCache
+  const chemin = join(EXEMPLARS_DIR, 'logo', '_gold-set.json')
+  try {
+    const parsed = JSON.parse(readFileSync(chemin, 'utf-8')) as GoldSetFichier
+    goldCache = new Set((parsed.pepites ?? []).map((p) => String(p.slug)).filter(Boolean))
+  } catch (error) {
+    console.warn('[exemplars] gold set illisible :', (error as Error).message)
+    goldCache = new Set()
+  }
+  return goldCache
+}
+
+/*
+ * Run 6 (correction opérateur post-E3) — L'IDIOME FiveM/GTA.
+ *
+ * Le rendu apprend sa langue visuelle de la première référence jointe : rue de
+ * Los Santos, néons, palmiers, asphalte mouillé. E3 l'a montré à l'envers —
+ * quatre concepts sur cinq ont mis le wordmark Fruitz (une marque de FRUITS)
+ * en REFERENCE 1, et les rendus ont hérité d'une langue de marque, pas d'une
+ * langue de serveur. REFERENCE 1 se prend donc TOUJOURS dans ce set ; les
+ * slots 2 et 3 restent ouverts au catalogue entier, où une pièce hors idiome
+ * garde toute sa valeur de référence de construction ou de matière.
+ */
+type FivemSetFichier = {
+  fivem?: Array<{ slug?: string; famille_rendu?: string; construction?: string }>
+  hors_corpus_reference?: Array<{ slug?: string }>
+}
+
+let fivemSetCache: FivemSetFichier | null = null
+
+function fivemSet(): FivemSetFichier {
+  if (fivemSetCache) return fivemSetCache
+  const chemin = join(EXEMPLARS_DIR, 'logo', '_fivem-set.json')
+  let parsed: FivemSetFichier
+  try {
+    parsed = JSON.parse(readFileSync(chemin, 'utf-8')) as FivemSetFichier
+  } catch (error) {
+    // Un `catch` qui renvoyait `{}` : le set vide se propageait en silence,
+    // aucune pièce n'était plus éligible à REFERENCE 1 ni exclue du corpus, et
+    // le DA échouait deux tentatives plus loin sur un message incompréhensible
+    // — 0,06 € pour une virgule. Une erreur de syntaxe se dit ici.
+    throw new Error(
+      `_fivem-set.json est illisible (${(error as Error).message}) — c'est le fichier qui décide de REFERENCE 1 et des pièces sorties du corpus. Corrige le JSON avant toute génération.`
+    )
+  }
+  if (!Array.isArray(parsed.fivem) || parsed.fivem.length === 0) {
+    throw new Error('_fivem-set.json ne liste aucune pièce d’idiome — REFERENCE 1 n’aurait plus aucun choix valide.')
+  }
+  fivemSetCache = parsed
+  return fivemSetCache
+}
+
+/** Les slugs qui peuvent occuper REFERENCE 1 (`_fivem-set.json`). */
+export function fivemSlugs(): Set<string> {
+  return new Set((fivemSet().fivem ?? []).map((p) => String(p.slug)).filter(Boolean))
+}
+
+/** Run 6 — les slugs dont l'IMAGE n'est plus jamais jointe, quel que soit le
+ *  slot (marques hors gaming, planches de marque multi-cases). L'exemplaire
+ *  reste au corpus : seule sa jointure est coupée. */
+export function horsCorpusReferenceSlugs(): Set<string> {
+  return new Set((fivemSet().hors_corpus_reference ?? []).map((p) => String(p.slug)).filter(Boolean))
+}
+
+/** La famille de rendu OBSERVÉE d'une pièce d'idiome (flat_vector_texture,
+ *  texture_fill, scene_composite, chrome_3d) et sa construction — c'est ce que
+ *  le DA lit dans le catalogue pour choisir des références cohérentes avec la
+ *  famille qu'il vise. */
+export function idiomeParSlug(): Map<string, { famille_rendu?: string; construction?: string }> {
+  const map = new Map<string, { famille_rendu?: string; construction?: string }>()
+  for (const p of fivemSet().fivem ?? []) {
+    if (!p.slug) continue
+    map.set(String(p.slug), { famille_rendu: p.famille_rendu, construction: p.construction })
+  }
+  return map
+}
+
+export type ReferenceCatalogueEntry = {
+  slug: string
+  gold: boolean
+  /** éligible au slot REFERENCE 1 — porte l'idiome FiveM/GTA */
+  fivem: boolean
+  /** run 6 — famille de rendu OBSERVÉE sur la pièce (l'idiome, pas le manifest) */
+  famille_rendu?: string
+  /** run 6 — construction observée (CONTAINER, HERO_MONOGRAM…) */
+  construction?: string
+  famille?: ExemplarFamille
+  traitement?: string
+  matiere?: string
+  embleme?: string | null
+  ambiance?: string
+  resolution_native?: number
+}
+
+/** Les références RÉELLEMENT joignables (image présente, >= 512 px natif),
+ *  avec leurs étiquettes de style — c'est ce catalogue que le DA reçoit. */
+export function listReferenceCatalogue(category: string): ReferenceCatalogueEntry[] {
+  const { entries, images } = loadCategory(category)
+  if (!entries.length) throw new TrainingRequiredError(`exemplaires ${category} absents`)
+  const gold = goldSlugs()
+  const fivem = fivemSlugs()
+  const idiome = idiomeParSlug()
+  return entries
+    .filter((e) => images.has(e.slug) && (e.resolution_native ?? 0) >= MIN_REFERENCE_NATIVE_PX)
+    .map((e) => ({
+      slug: e.slug,
+      gold: gold.has(e.slug),
+      fivem: fivem.has(e.slug),
+      famille_rendu: idiome.get(e.slug)?.famille_rendu,
+      construction: idiome.get(e.slug)?.construction,
+      famille: e.famille,
+      traitement: e.style?.traitement_lettrage,
+      matiere: e.style?.matiere ?? undefined,
+      embleme: e.style?.embleme?.present ? e.style.embleme.type : null,
+      ambiance: e.style?.ambiance,
+      resolution_native: e.resolution_native,
+    }))
+    // l'idiome FiveM en tête, puis les pièces gold : le DA lit le catalogue
+    // dans l'ordre où il doit remplir ses slots (1 = idiome, 2-3 = barre)
+    .sort(
+      (a, b) =>
+        Number(b.fivem) - Number(a.fivem) || Number(b.gold) - Number(a.gold) || a.slug.localeCompare(b.slug)
+    )
+}
+
+/*
+ * Run 6 (2e correction du 17/08) — REFERENCE 1 EST UNE CIBLE DE COPIE.
+ *
+ * « Transfert depuis UNE référence, plus description. » Le §4.1 de la passation
+ * l'avait prouvé et on ne l'exploitait que pour le style : demandé de REPRODUIRE
+ * une pièce, le modèle la reproduit presque parfaitement. Le slot 1 reçoit donc
+ * l'instruction de copie, écrite EN CODE — le DA choisit quelle pièce copier,
+ * jamais comment on la lui demande.
+ */
+export const LABEL_REFERENCE_1 =
+  'REFERENCE 1 — match this piece exactly: same construction, same texture, same background treatment, same level of detail. Only the glyph changes:'
+
+/** Les références choisies PAR SLUG par le DA. Le slot 1 porte l'instruction de
+ *  copie ; les suivants gardent l'étiquette écrite par le DA. Un slug
+ *  injoignable est ignoré (le validateur l'a déjà refusé). */
+export function pickExemplarsParSlugs(opts: {
+  category: string
+  choix: Array<{ slug: string; label: string }>
+}): ExemplarEtiquete[] {
+  const { images } = loadCategory(opts.category)
+  const sortie: ExemplarEtiquete[] = []
+  opts.choix.forEach((c, i) => {
+    const image = images.get(c.slug)
+    if (!image) return
+    const rang = sortie.length + 1
+    const ecrit = c.label.trim() || `REFERENCE ${i + 1} — a real logo of the target family:`
+    sortie.push({
+      slug: c.slug,
+      data: image.data,
+      mimeType: image.mimeType,
+      // le numéro est réécrit en code : le DA se trompe d'index, jamais le pipeline
+      label: rang === 1 ? LABEL_REFERENCE_1 : ecrit.replace(/^REFERENCE\s*\d+/i, `REFERENCE ${rang}`),
+    })
+  })
+  return sortie
 }
 
 // Notes descriptives des meilleures références du cluster — transmises au

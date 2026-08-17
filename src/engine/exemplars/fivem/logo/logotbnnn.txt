@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, flat vector monogram with a woven illustration.
+1. SHAPE — Three-letter monogram 'TBN' in a heavy angular display face, set on a violet chevron plate with a thick black keyline. A Statue of Liberty illustration rises behind the letters; her raised torch arm crosses in front of the T and her gown falls through the bottom of the chevron, so the figure is woven through the lockup instead of sitting above it. The lockup occupies 70% of the width.
+2. RENDER — Flat 2D vector, no 3D extrusion. The letters are filled with a violet-to-white gradient carrying fine diagonal scanlines; the illustration is a two-tone screenprint (white line work on violet). Every shape carries the same thick black outline.
+3. COLORS — Deep violet #4B1E78, light lilac #C89BE8, pure white #FFFFFF, near-black #0B0610.
+4. FORMAT — Square composition, centred subject. Full-bleed dark background: a night skyline in low contrast under a violet halftone dot screen, vignetted at the corners.
+5. KEYWORDS — flat vector, thick outline, halftone screen, scanline fill, duotone, monogram, esport, statue of liberty, night city.

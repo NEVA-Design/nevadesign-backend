@@ -256,9 +256,18 @@ const FAMILLE_FINISH: Record<LogoFamilleRendu, string> = {
     'dimensional finish: deep matte extrusion with satin faces and soft velvet falloff, polished chrome reserved for thin edge bevels and kicker lines, a single controlled specular accent per element, a tight rim glow, and dramatic studio key lighting',
 }
 
-/** Épellation lettre-par-lettre du mot du brief — verrou d'orthographe. */
+/** Épellation lettre-par-lettre du mot du brief — verrou d'orthographe.
+ *  Un nom en PLUSIEURS MOTS s'épelle mot par mot : « NORTHSIDE RP » donne
+ *  « N-O-R-T-H-S-I-D-E R-P » et non « N-O-R-T-H-S-I-D-E- -R-P », où l'espace
+ *  devenait un tiret isolé que le modèle lit comme un glyphe. */
 export function spellOut(word: string): string {
-  return word.trim().toUpperCase().split('').join('-')
+  return word
+    .trim()
+    .toUpperCase()
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((mot) => mot.split('').join('-'))
+    .join(' ')
 }
 
 /**

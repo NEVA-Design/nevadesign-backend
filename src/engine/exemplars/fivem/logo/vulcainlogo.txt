@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, flat vector monogram fused with an emblem.
+1. SHAPE — A letter 'V' whose two arms open into a pair of stylized wings, cut as one single silhouette: the feathers and the letter share the same contour, with dark negative-space slots separating the feathers. The mark occupies 65% of the width and is centred.
+2. RENDER — Flat 2D vector, no 3D extrusion. The fill is an iced blue-to-white vertical gradient carrying a visible halftone dot screen that fades from dense at the bottom to clear at the top. A soft dark drop shadow sits directly under the silhouette.
+3. COLORS — Ice white #EAF6FF, pale cyan #A8D8EE, steel blue #1E4A63, near-black #05090D.
+4. FORMAT — Square composition, centred subject, full-bleed dark background: a diagonal technical grid and a faint halftone gradient, very low contrast.
+5. KEYWORDS — flat vector, halftone dots, duotone, wings, monogram, esport, iced blue, dark grid background.

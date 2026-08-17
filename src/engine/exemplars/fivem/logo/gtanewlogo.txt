@@ -1,0 +1,6 @@
+0. CONTEXT — FiveM server logo, stacked wordmark over a night scene.
+1. SHAPE — Two-line stacked wordmark: 'GTA' in a heavy rounded display face on top, 'NEW' in an italic script sitting on a slanted ribbon plate below, tucked under the baseline of the first line. The lockup occupies 80% of the width.
+2. RENDER — Semi-flat: solid colour fills with a thin white keyline and a short soft drop shadow, a light inner bevel on the top line, no full 3D extrusion.
+3. COLORS — Hot pink #F26DC8, warm orange #F09A5A, pure white #FFFFFF, deep magenta #3B0B2A.
+4. FORMAT — Square composition, centred lockup. Full-bleed dark background: palm fronds in silhouette at the corners over a magenta night sky and a faint perspective grid.
+5. KEYWORDS — stacked wordmark, script ribbon, white keyline, palms, night city, vice-city palette, semi-flat.

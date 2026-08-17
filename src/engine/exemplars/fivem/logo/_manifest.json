@@ -2712,6 +2712,246 @@
     "ambiance": "urban",
     "fond_sombre": true
    }
+  },
+  {
+   "slug": "logotbnnn",
+   "source": "logotbnnn.png",
+   "priorite": "reverse",
+   "tags": [
+    "urbain",
+    "esport",
+    "sombre"
+   ],
+   "energie": 80,
+   "modernite": 70,
+   "couleurs": [
+    "#030204",
+    "#190a27",
+    "#fefdfe"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 2,
+    "glow": 3,
+    "saturation": 7,
+    "sombre_clair": 2,
+    "complexite": 7
+   },
+   "construction": "Three-letter monogram 'TBN' in a heavy angular display face, drawn on a violet chevron plate with a thick black keyline. A Statue of Liberty illustration rises BEHIND the letters and her raised torch arm crosses IN FRONT of the T, so the figure is woven through the lockup rather than placed above it.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "woven through the lettering",
+    "traitement_contour": "thick black keyline"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 1205,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "flat_outline",
+    "matiere": "flat violet duotone with diagonal scanlines",
+    "embleme": {
+     "present": true,
+     "type": "statue of liberty"
+    },
+    "ambiance": "urban",
+    "fond_sombre": true
+   },
+   "ajoute_le": "2026-08-17",
+   "ajoute_par": "scripts/calibration/ajoute-exemplars-idiome.ts (run 6 — pivot idiome)"
+  },
+  {
+   "slug": "vulcainlogo",
+   "source": "vulcainlogo.png",
+   "priorite": "reverse",
+   "tags": [
+    "esport",
+    "sombre",
+    "luxe"
+   ],
+   "energie": 65,
+   "modernite": 75,
+   "couleurs": [
+    "#08090a",
+    "#1a242a",
+    "#283a46"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 2,
+    "glow": 4,
+    "saturation": 3,
+    "sombre_clair": 2,
+    "complexite": 4
+   },
+   "construction": "A letter 'V' whose two arms open into a pair of stylized wings, cut as one single silhouette — the wing feathers and the letter share the same contour, no seam between them.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "dark inner cut"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 1024,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "flat_outline",
+    "matiere": "iced blue-white flat fill with halftone dots",
+    "embleme": {
+     "present": true,
+     "type": "wings"
+    },
+    "ambiance": "esport",
+    "fond_sombre": true
+   },
+   "ajoute_le": "2026-08-17",
+   "ajoute_par": "scripts/calibration/ajoute-exemplars-idiome.ts (run 6 — pivot idiome)"
+  },
+  {
+   "slug": "gtanewlogo",
+   "source": "gtanewlogo.png",
+   "priorite": "reverse",
+   "tags": [
+    "urbain",
+    "ete",
+    "retro"
+   ],
+   "energie": 75,
+   "modernite": 60,
+   "couleurs": [
+    "#15050d",
+    "#ffb7fb",
+    "#55072a"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 4,
+    "glow": 4,
+    "saturation": 8,
+    "sombre_clair": 4,
+    "complexite": 5
+   },
+   "construction": "Two-line stacked wordmark: 'GTA' in a heavy rounded display face on top, 'NEW' in italic script on a slanted ribbon plate below, the ribbon tucked under the baseline of the first line.",
+   "lettrage": {
+    "type": "wordmark",
+    "integration_embleme": "stacked lockup",
+    "traitement_contour": "white keyline"
+   },
+   "famille": "semi_flat_biseau",
+   "lettrage_riche": true,
+   "resolution_native": 1024,
+   "style": {
+    "famille": "semi_flat_biseau",
+    "traitement_lettrage": "flat_outline",
+    "matiere": "pink to orange flat gradient",
+    "embleme": {
+     "present": false,
+     "type": null
+    },
+    "ambiance": "urban",
+    "fond_sombre": true
+   },
+   "ajoute_le": "2026-08-17",
+   "ajoute_par": "scripts/calibration/ajoute-exemplars-idiome.ts (run 6 — pivot idiome)"
+  },
+  {
+   "slug": "goldenlogo",
+   "source": "GoldenLogo.png",
+   "priorite": "reverse",
+   "tags": [
+    "luxe",
+    "sombre",
+    "esport"
+   ],
+   "energie": 60,
+   "modernite": 65,
+   "couleurs": [
+    "#2a2416",
+    "#fee647",
+    "#876717"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 2,
+    "glow": 5,
+    "saturation": 6,
+    "sombre_clair": 2,
+    "complexite": 3
+   },
+   "construction": "Two-letter monogram 'GV' cut as one continuous ribbon: the tail of the G runs into the left arm of the V, and the V's point drops below the baseline of the G.",
+   "lettrage": {
+    "type": "monogram",
+    "integration_embleme": "fused in silhouette",
+    "traitement_contour": "none"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 1024,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "or",
+    "matiere": "flat gold gradient",
+    "embleme": {
+     "present": true,
+     "type": "letter G V"
+    },
+    "ambiance": "esport",
+    "fond_sombre": true
+   },
+   "ajoute_le": "2026-08-17",
+   "ajoute_par": "scripts/calibration/ajoute-exemplars-idiome.ts (run 6 — pivot idiome)"
+  },
+  {
+   "slug": "blackstory-rp2",
+   "source": "blackstory-rp2.gif",
+   "priorite": "reverse",
+   "tags": [
+    "urbain",
+    "ete",
+    "chill"
+   ],
+   "energie": 55,
+   "modernite": 55,
+   "couleurs": [
+    "#1b2b48",
+    "#fbfbfb",
+    "#0d2b7a"
+   ],
+   "ratio": "1:1",
+   "typographie_generee": "none",
+   "scores": {
+    "relief_3d": 1,
+    "glow": 2,
+    "saturation": 5,
+    "sombre_clair": 2,
+    "complexite": 4
+   },
+   "construction": "Two-word lockup: 'BLACK' in a hand-cut brush display face across the full width, 'Story' in a blue script crossing it diagonally, the script sitting in front of the C and behind the K.",
+   "lettrage": {
+    "type": "wordmark",
+    "integration_embleme": "crossing lockup",
+    "traitement_contour": "white keyline"
+   },
+   "famille": "plat_premium",
+   "lettrage_riche": true,
+   "resolution_native": 512,
+   "style": {
+    "famille": "plat_premium",
+    "traitement_lettrage": "script",
+    "matiere": "flat white and blue",
+    "embleme": {
+     "present": true,
+     "type": "palm trees"
+    },
+    "ambiance": "urban",
+    "fond_sombre": true
+   },
+   "ajoute_le": "2026-08-17",
+   "ajoute_par": "scripts/calibration/ajoute-exemplars-idiome.ts (run 6 — pivot idiome)"
   }
  ]
 }
